@@ -5,3 +5,5 @@
 #import <sqlite3.h>
 #import <spatialite/gaiageo.h>
 #import <spatialite.h>
+#import "FMDB.h"
+#import "wkb-ios-Bridging-Header.h"
