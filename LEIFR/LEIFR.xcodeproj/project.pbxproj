@@ -1,1121 +1,1882 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0CBB30751D85F413002C0EF0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0CBB30801D85F413002C0EF0</string>
-				<string>0CBB30951D85F413002C0EF0</string>
-				<string>0CBB30A01D85F413002C0EF0</string>
-				<string>0CBB307F1D85F413002C0EF0</string>
-				<string>564F41B960566399E1834DD6</string>
-				<string>5432B3B5B435532EF82F3B2E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30761D85F413002C0EF0</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Echx</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>0CBB307D1D85F413002C0EF0</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>0CBB30911D85F413002C0EF0</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>0CBB307D1D85F413002C0EF0</string>
-					</dict>
-					<key>0CBB309C1D85F413002C0EF0</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>0CBB307D1D85F413002C0EF0</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>0CBB30791D85F413002C0EF0</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>0CBB30751D85F413002C0EF0</string>
-			<key>productRefGroup</key>
-			<string>0CBB307F1D85F413002C0EF0</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>0CBB307D1D85F413002C0EF0</string>
-				<string>0CBB30911D85F413002C0EF0</string>
-				<string>0CBB309C1D85F413002C0EF0</string>
-			</array>
-		</dict>
-		<key>0CBB30791D85F413002C0EF0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>0CBB30A41D85F413002C0EF0</string>
-				<string>0CBB30A51D85F413002C0EF0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0CBB307A1D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0CBB30841D85F413002C0EF0</string>
-				<string>0CBB30821D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB307B1D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>66869C277E4FC9DFD7C4A516</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB307C1D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0CBB308C1D85F413002C0EF0</string>
-				<string>0CBB30891D85F413002C0EF0</string>
-				<string>0CBB30871D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB307D1D85F413002C0EF0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0CBB30A61D85F413002C0EF0</string>
-			<key>buildPhases</key>
-			<array>
-				<string>404C2CFABBAA609097206FF9</string>
-				<string>0CBB307A1D85F413002C0EF0</string>
-				<string>0CBB307B1D85F413002C0EF0</string>
-				<string>0CBB307C1D85F413002C0EF0</string>
-				<string>838DE5031C536E940DF40FFE</string>
-				<string>14CCA0B633F3E95CEF4DA17A</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>LEIFR</string>
-			<key>productName</key>
-			<string>LEIFR</string>
-			<key>productReference</key>
-			<string>0CBB307E1D85F413002C0EF0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>0CBB307E1D85F413002C0EF0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>LEIFR.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>0CBB307F1D85F413002C0EF0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0CBB307E1D85F413002C0EF0</string>
-				<string>0CBB30921D85F413002C0EF0</string>
-				<string>0CBB309D1D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30801D85F413002C0EF0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0CBB30811D85F413002C0EF0</string>
-				<string>0CBB30831D85F413002C0EF0</string>
-				<string>0CBB30851D85F413002C0EF0</string>
-				<string>0CBB30881D85F413002C0EF0</string>
-				<string>0CBB308A1D85F413002C0EF0</string>
-				<string>0CBB308D1D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>LEIFR</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30811D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30821D85F413002C0EF0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CBB30811D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CBB30831D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30841D85F413002C0EF0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CBB30831D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CBB30851D85F413002C0EF0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0CBB30861D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30861D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30871D85F413002C0EF0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CBB30851D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CBB30881D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30891D85F413002C0EF0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CBB30881D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CBB308A1D85F413002C0EF0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0CBB308B1D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB308B1D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB308C1D85F413002C0EF0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CBB308A1D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CBB308D1D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB308E1D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0CBB30971D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB308F1D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB30901D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB30911D85F413002C0EF0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0CBB30A91D85F413002C0EF0</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0CBB308E1D85F413002C0EF0</string>
-				<string>0CBB308F1D85F413002C0EF0</string>
-				<string>0CBB30901D85F413002C0EF0</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>0CBB30941D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>LEIFRTests</string>
-			<key>productName</key>
-			<string>LEIFRTests</string>
-			<key>productReference</key>
-			<string>0CBB30921D85F413002C0EF0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>0CBB30921D85F413002C0EF0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>LEIFRTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>0CBB30931D85F413002C0EF0</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>0CBB30761D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>0CBB307D1D85F413002C0EF0</string>
-			<key>remoteInfo</key>
-			<string>LEIFR</string>
-		</dict>
-		<key>0CBB30941D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>0CBB307D1D85F413002C0EF0</string>
-			<key>targetProxy</key>
-			<string>0CBB30931D85F413002C0EF0</string>
-		</dict>
-		<key>0CBB30951D85F413002C0EF0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0CBB30961D85F413002C0EF0</string>
-				<string>0CBB30981D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>LEIFRTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30961D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LEIFRTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30971D85F413002C0EF0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CBB30961D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CBB30981D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30991D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0CBB30A21D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB309A1D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB309B1D85F413002C0EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0CBB309C1D85F413002C0EF0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0CBB30AC1D85F413002C0EF0</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0CBB30991D85F413002C0EF0</string>
-				<string>0CBB309A1D85F413002C0EF0</string>
-				<string>0CBB309B1D85F413002C0EF0</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>0CBB309F1D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>LEIFRUITests</string>
-			<key>productName</key>
-			<string>LEIFRUITests</string>
-			<key>productReference</key>
-			<string>0CBB309D1D85F413002C0EF0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>0CBB309D1D85F413002C0EF0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>LEIFRUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>0CBB309E1D85F413002C0EF0</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>0CBB30761D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>0CBB307D1D85F413002C0EF0</string>
-			<key>remoteInfo</key>
-			<string>LEIFR</string>
-		</dict>
-		<key>0CBB309F1D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>0CBB307D1D85F413002C0EF0</string>
-			<key>targetProxy</key>
-			<string>0CBB309E1D85F413002C0EF0</string>
-		</dict>
-		<key>0CBB30A01D85F413002C0EF0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0CBB30A11D85F413002C0EF0</string>
-				<string>0CBB30A31D85F413002C0EF0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>LEIFRUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30A11D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LEIFRUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30A21D85F413002C0EF0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CBB30A11D85F413002C0EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CBB30A31D85F413002C0EF0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CBB30A41D85F413002C0EF0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>0CBB30A51D85F413002C0EF0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>0CBB30A61D85F413002C0EF0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>0CBB30A71D85F413002C0EF0</string>
-				<string>0CBB30A81D85F413002C0EF0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0CBB30A71D85F413002C0EF0</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8AE9AA9F765643C771F66EDF</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>LEIFR/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.echx.LEIFR</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>0CBB30A81D85F413002C0EF0</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2C10707EDF2CAC62D9F06197</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>LEIFR/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.echx.LEIFR</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>0CBB30A91D85F413002C0EF0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>0CBB30AA1D85F413002C0EF0</string>
-				<string>0CBB30AB1D85F413002C0EF0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0CBB30AA1D85F413002C0EF0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>LEIFRTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.echx.LEIFRTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/LEIFR.app/LEIFR</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>0CBB30AB1D85F413002C0EF0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>LEIFRTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.echx.LEIFRTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/LEIFR.app/LEIFR</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>0CBB30AC1D85F413002C0EF0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>0CBB30AD1D85F413002C0EF0</string>
-				<string>0CBB30AE1D85F413002C0EF0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0CBB30AD1D85F413002C0EF0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>LEIFRUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.echx.LEIFRUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>LEIFR</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>0CBB30AE1D85F413002C0EF0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>LEIFRUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.echx.LEIFRUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>LEIFR</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>14CCA0B633F3E95CEF4DA17A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>2C10707EDF2CAC62D9F06197</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-LEIFR.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>404C2CFABBAA609097206FF9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>4C0DBB7EBFF75B7B88F8F25E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-LEIFR.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5432B3B5B435532EF82F3B2E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4C0DBB7EBFF75B7B88F8F25E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>564F41B960566399E1834DD6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8AE9AA9F765643C771F66EDF</string>
-				<string>2C10707EDF2CAC62D9F06197</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>66869C277E4FC9DFD7C4A516</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4C0DBB7EBFF75B7B88F8F25E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>838DE5031C536E940DF40FFE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>8AE9AA9F765643C771F66EDF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-LEIFR.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>0CBB30761D85F413002C0EF0</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
+		0CBB30841D85F413002C0EF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30831D85F413002C0EF0 /* ViewController.swift */; };
+		0CBB30871D85F413002C0EF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30851D85F413002C0EF0 /* Main.storyboard */; };
+		0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30881D85F413002C0EF0 /* Assets.xcassets */; };
+		0CBB308C1D85F413002C0EF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */; };
+		0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */; };
+		0CBB30A21D85F413002C0EF0 /* LEIFRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30A11D85F413002C0EF0 /* LEIFRUITests.swift */; };
+		0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB36861D85F9BD002C0EF0 /* FMDatabase.m */; };
+		0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB36881D85F9BD002C0EF0 /* FMDatabaseAdditions.m */; };
+		0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB368A1D85F9BD002C0EF0 /* FMDatabasePool.m */; };
+		0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB368C1D85F9BD002C0EF0 /* FMDatabaseQueue.m */; };
+		0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB368F1D85F9BD002C0EF0 /* FMResultSet.m */; };
+		0CBB38531D85F9BD002C0EF0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36901D85F9BD002C0EF0 /* Info.plist */; };
+		0CBB38541D85F9BD002C0EF0 /* ConvexHull.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB369E1D85F9BD002C0EF0 /* ConvexHull.inl */; };
+		0CBB38551D85F9BD002C0EF0 /* Coordinate.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36B91D85F9BD002C0EF0 /* Coordinate.inl */; };
+		0CBB38561D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36BC1D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl */; };
+		0CBB38571D85F9BD002C0EF0 /* Envelope.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36C41D85F9BD002C0EF0 /* Envelope.inl */; };
+		0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36C71D85F9BD002C0EF0 /* GeometryCollection.inl */; };
+		0CBB38591D85F9BD002C0EF0 /* GeometryFactory.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36CA1D85F9BD002C0EF0 /* GeometryFactory.inl */; };
+		0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36D11D85F9BD002C0EF0 /* LineSegment.inl */; };
+		0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36D51D85F9BD002C0EF0 /* MultiLineString.inl */; };
+		0CBB385C1D85F9BD002C0EF0 /* MultiPolygon.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36D81D85F9BD002C0EF0 /* MultiPolygon.inl */; };
+		0CBB385D1D85F9BD002C0EF0 /* PrecisionModel.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36DD1D85F9BD002C0EF0 /* PrecisionModel.inl */; };
+		0CBB385E1D85F9BD002C0EF0 /* DirectedEdge.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB36FF1D85F9BD002C0EF0 /* DirectedEdge.inl */; };
+		0CBB385F1D85F9BD002C0EF0 /* GeometryGraph.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB370A1D85F9BD002C0EF0 /* GeometryGraph.inl */; };
+		0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB37551D85F9BD002C0EF0 /* ByteOrderDataInStream.inl */; };
+		0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB375E1D85F9BD002C0EF0 /* WKTReader.inl */; };
+		0CBB38621D85F9BD002C0EF0 /* MCIndexNoder.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB37761D85F9BD002C0EF0 /* MCIndexNoder.inl */; };
+		0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB378C1D85F9BD002C0EF0 /* HotPixel.inl */; };
+		0CBB38641D85F9BD002C0EF0 /* MinimalEdgeRing.inl in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB37B71D85F9BD002C0EF0 /* MinimalEdgeRing.inl */; };
+		0CBB38651D85F9BD002C0EF0 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38481D85F9BD002C0EF0 /* libgeos.a */; };
+		0CBB38661D85F9BD002C0EF0 /* libgeos_c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38491D85F9BD002C0EF0 /* libgeos_c.a */; };
+		0CBB38671D85F9BD002C0EF0 /* libproj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB384A1D85F9BD002C0EF0 /* libproj.a */; };
+		0CBB38681D85F9BD002C0EF0 /* libspatialite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB384B1D85F9BD002C0EF0 /* libspatialite.a */; };
+		0CBB38691D85F9BD002C0EF0 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB384C1D85F9BD002C0EF0 /* libsqlite3.a */; };
+		0CBB386A1D85F9BD002C0EF0 /* mod_spatialite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB384D1D85F9BD002C0EF0 /* mod_spatialite.a */; };
+		0CBB386C1D85F9D3002C0EF0 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB386B1D85F9D3002C0EF0 /* libiconv.tbd */; };
+		0CBB386E1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB386D1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd */; };
+		0CBB38701D85F9E4002C0EF0 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */; };
+		0CBB38721D85F9EC002C0EF0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38711D85F9EC002C0EF0 /* libz.tbd */; };
+		0CBB38741D85F9F7002C0EF0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38731D85F9F7002C0EF0 /* libc++.tbd */; };
+		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0CBB30931D85F413002C0EF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0CBB30761D85F413002C0EF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CBB307D1D85F413002C0EF0;
+			remoteInfo = LEIFR;
+		};
+		0CBB309E1D85F413002C0EF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0CBB30761D85F413002C0EF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CBB307D1D85F413002C0EF0;
+			remoteInfo = LEIFR;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0CBB30831D85F413002C0EF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CBB30861D85F413002C0EF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0CBB308B1D85F413002C0EF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0CBB308D1D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CBB30921D85F413002C0EF0 /* LEIFRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEIFRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEIFRTests.swift; sourceTree = "<group>"; };
+		0CBB30981D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CBB309D1D85F413002C0EF0 /* LEIFRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEIFRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CBB30A11D85F413002C0EF0 /* LEIFRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEIFRUITests.swift; sourceTree = "<group>"; };
+		0CBB30A31D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LEIFR-Bridging-Header.h"; sourceTree = "<group>"; };
+		0CBB36851D85F9BD002C0EF0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		0CBB36861D85F9BD002C0EF0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		0CBB36871D85F9BD002C0EF0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		0CBB36881D85F9BD002C0EF0 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		0CBB36891D85F9BD002C0EF0 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		0CBB368A1D85F9BD002C0EF0 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		0CBB368B1D85F9BD002C0EF0 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		0CBB368C1D85F9BD002C0EF0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		0CBB368D1D85F9BD002C0EF0 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		0CBB368E1D85F9BD002C0EF0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		0CBB368F1D85F9BD002C0EF0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		0CBB36901D85F9BD002C0EF0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CBB36951D85F9BD002C0EF0 /* Angle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Angle.h; sourceTree = "<group>"; };
+		0CBB36961D85F9BD002C0EF0 /* BoundaryNodeRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundaryNodeRule.h; sourceTree = "<group>"; };
+		0CBB36971D85F9BD002C0EF0 /* CentralEndpointIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentralEndpointIntersector.h; sourceTree = "<group>"; };
+		0CBB36981D85F9BD002C0EF0 /* Centroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Centroid.h; sourceTree = "<group>"; };
+		0CBB36991D85F9BD002C0EF0 /* CentroidArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentroidArea.h; sourceTree = "<group>"; };
+		0CBB369A1D85F9BD002C0EF0 /* CentroidLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentroidLine.h; sourceTree = "<group>"; };
+		0CBB369B1D85F9BD002C0EF0 /* CentroidPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentroidPoint.h; sourceTree = "<group>"; };
+		0CBB369C1D85F9BD002C0EF0 /* CGAlgorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGAlgorithms.h; sourceTree = "<group>"; };
+		0CBB369D1D85F9BD002C0EF0 /* ConvexHull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexHull.h; sourceTree = "<group>"; };
+		0CBB369E1D85F9BD002C0EF0 /* ConvexHull.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConvexHull.inl; sourceTree = "<group>"; };
+		0CBB36A01D85F9BD002C0EF0 /* DiscreteHausdorffDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscreteHausdorffDistance.h; sourceTree = "<group>"; };
+		0CBB36A11D85F9BD002C0EF0 /* DistanceToPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceToPoint.h; sourceTree = "<group>"; };
+		0CBB36A21D85F9BD002C0EF0 /* PointPairDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointPairDistance.h; sourceTree = "<group>"; };
+		0CBB36A31D85F9BD002C0EF0 /* HCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCoordinate.h; sourceTree = "<group>"; };
+		0CBB36A41D85F9BD002C0EF0 /* InteriorPointArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteriorPointArea.h; sourceTree = "<group>"; };
+		0CBB36A51D85F9BD002C0EF0 /* InteriorPointLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteriorPointLine.h; sourceTree = "<group>"; };
+		0CBB36A61D85F9BD002C0EF0 /* InteriorPointPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteriorPointPoint.h; sourceTree = "<group>"; };
+		0CBB36A71D85F9BD002C0EF0 /* LineIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineIntersector.h; sourceTree = "<group>"; };
+		0CBB36A91D85F9BD002C0EF0 /* IndexedPointInAreaLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedPointInAreaLocator.h; sourceTree = "<group>"; };
+		0CBB36AA1D85F9BD002C0EF0 /* PointOnGeometryLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointOnGeometryLocator.h; sourceTree = "<group>"; };
+		0CBB36AB1D85F9BD002C0EF0 /* SimplePointInAreaLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePointInAreaLocator.h; sourceTree = "<group>"; };
+		0CBB36AC1D85F9BD002C0EF0 /* MCPointInRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPointInRing.h; sourceTree = "<group>"; };
+		0CBB36AD1D85F9BD002C0EF0 /* MinimumDiameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinimumDiameter.h; sourceTree = "<group>"; };
+		0CBB36AE1D85F9BD002C0EF0 /* NotRepresentableException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotRepresentableException.h; sourceTree = "<group>"; };
+		0CBB36AF1D85F9BD002C0EF0 /* PointInRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointInRing.h; sourceTree = "<group>"; };
+		0CBB36B01D85F9BD002C0EF0 /* PointLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointLocator.h; sourceTree = "<group>"; };
+		0CBB36B11D85F9BD002C0EF0 /* RayCrossingCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayCrossingCounter.h; sourceTree = "<group>"; };
+		0CBB36B21D85F9BD002C0EF0 /* RobustDeterminant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobustDeterminant.h; sourceTree = "<group>"; };
+		0CBB36B31D85F9BD002C0EF0 /* SimplePointInRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePointInRing.h; sourceTree = "<group>"; };
+		0CBB36B41D85F9BD002C0EF0 /* SIRtreePointInRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIRtreePointInRing.h; sourceTree = "<group>"; };
+		0CBB36B51D85F9BD002C0EF0 /* export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = export.h; sourceTree = "<group>"; };
+		0CBB36B71D85F9BD002C0EF0 /* BinaryOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryOp.h; sourceTree = "<group>"; };
+		0CBB36B81D85F9BD002C0EF0 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
+		0CBB36B91D85F9BD002C0EF0 /* Coordinate.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Coordinate.inl; sourceTree = "<group>"; };
+		0CBB36BA1D85F9BD002C0EF0 /* CoordinateArraySequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateArraySequence.h; sourceTree = "<group>"; };
+		0CBB36BB1D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateArraySequenceFactory.h; sourceTree = "<group>"; };
+		0CBB36BC1D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoordinateArraySequenceFactory.inl; sourceTree = "<group>"; };
+		0CBB36BD1D85F9BD002C0EF0 /* CoordinateFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateFilter.h; sourceTree = "<group>"; };
+		0CBB36BE1D85F9BD002C0EF0 /* CoordinateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateList.h; sourceTree = "<group>"; };
+		0CBB36BF1D85F9BD002C0EF0 /* CoordinateSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateSequence.h; sourceTree = "<group>"; };
+		0CBB36C01D85F9BD002C0EF0 /* CoordinateSequenceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateSequenceFactory.h; sourceTree = "<group>"; };
+		0CBB36C11D85F9BD002C0EF0 /* CoordinateSequenceFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateSequenceFilter.h; sourceTree = "<group>"; };
+		0CBB36C21D85F9BD002C0EF0 /* Dimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dimension.h; sourceTree = "<group>"; };
+		0CBB36C31D85F9BD002C0EF0 /* Envelope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Envelope.h; sourceTree = "<group>"; };
+		0CBB36C41D85F9BD002C0EF0 /* Envelope.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Envelope.inl; sourceTree = "<group>"; };
+		0CBB36C51D85F9BD002C0EF0 /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		0CBB36C61D85F9BD002C0EF0 /* GeometryCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryCollection.h; sourceTree = "<group>"; };
+		0CBB36C71D85F9BD002C0EF0 /* GeometryCollection.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeometryCollection.inl; sourceTree = "<group>"; };
+		0CBB36C81D85F9BD002C0EF0 /* GeometryComponentFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryComponentFilter.h; sourceTree = "<group>"; };
+		0CBB36C91D85F9BD002C0EF0 /* GeometryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryFactory.h; sourceTree = "<group>"; };
+		0CBB36CA1D85F9BD002C0EF0 /* GeometryFactory.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeometryFactory.inl; sourceTree = "<group>"; };
+		0CBB36CB1D85F9BD002C0EF0 /* GeometryFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryFilter.h; sourceTree = "<group>"; };
+		0CBB36CC1D85F9BD002C0EF0 /* GeometryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryList.h; sourceTree = "<group>"; };
+		0CBB36CD1D85F9BD002C0EF0 /* IntersectionMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntersectionMatrix.h; sourceTree = "<group>"; };
+		0CBB36CE1D85F9BD002C0EF0 /* Lineal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lineal.h; sourceTree = "<group>"; };
+		0CBB36CF1D85F9BD002C0EF0 /* LinearRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearRing.h; sourceTree = "<group>"; };
+		0CBB36D01D85F9BD002C0EF0 /* LineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSegment.h; sourceTree = "<group>"; };
+		0CBB36D11D85F9BD002C0EF0 /* LineSegment.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineSegment.inl; sourceTree = "<group>"; };
+		0CBB36D21D85F9BD002C0EF0 /* LineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineString.h; sourceTree = "<group>"; };
+		0CBB36D31D85F9BD002C0EF0 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		0CBB36D41D85F9BD002C0EF0 /* MultiLineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLineString.h; sourceTree = "<group>"; };
+		0CBB36D51D85F9BD002C0EF0 /* MultiLineString.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiLineString.inl; sourceTree = "<group>"; };
+		0CBB36D61D85F9BD002C0EF0 /* MultiPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPoint.h; sourceTree = "<group>"; };
+		0CBB36D71D85F9BD002C0EF0 /* MultiPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPolygon.h; sourceTree = "<group>"; };
+		0CBB36D81D85F9BD002C0EF0 /* MultiPolygon.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultiPolygon.inl; sourceTree = "<group>"; };
+		0CBB36D91D85F9BD002C0EF0 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
+		0CBB36DA1D85F9BD002C0EF0 /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygon.h; sourceTree = "<group>"; };
+		0CBB36DB1D85F9BD002C0EF0 /* Polygonal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygonal.h; sourceTree = "<group>"; };
+		0CBB36DC1D85F9BD002C0EF0 /* PrecisionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrecisionModel.h; sourceTree = "<group>"; };
+		0CBB36DD1D85F9BD002C0EF0 /* PrecisionModel.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PrecisionModel.inl; sourceTree = "<group>"; };
+		0CBB36DF1D85F9BD002C0EF0 /* AbstractPreparedPolygonContains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractPreparedPolygonContains.h; sourceTree = "<group>"; };
+		0CBB36E01D85F9BD002C0EF0 /* BasicPreparedGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPreparedGeometry.h; sourceTree = "<group>"; };
+		0CBB36E11D85F9BD002C0EF0 /* PreparedGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedGeometry.h; sourceTree = "<group>"; };
+		0CBB36E21D85F9BD002C0EF0 /* PreparedGeometryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedGeometryFactory.h; sourceTree = "<group>"; };
+		0CBB36E31D85F9BD002C0EF0 /* PreparedLineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedLineString.h; sourceTree = "<group>"; };
+		0CBB36E41D85F9BD002C0EF0 /* PreparedLineStringIntersects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedLineStringIntersects.h; sourceTree = "<group>"; };
+		0CBB36E51D85F9BD002C0EF0 /* PreparedPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedPoint.h; sourceTree = "<group>"; };
+		0CBB36E61D85F9BD002C0EF0 /* PreparedPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedPolygon.h; sourceTree = "<group>"; };
+		0CBB36E71D85F9BD002C0EF0 /* PreparedPolygonContains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedPolygonContains.h; sourceTree = "<group>"; };
+		0CBB36E81D85F9BD002C0EF0 /* PreparedPolygonContainsProperly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedPolygonContainsProperly.h; sourceTree = "<group>"; };
+		0CBB36E91D85F9BD002C0EF0 /* PreparedPolygonCovers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedPolygonCovers.h; sourceTree = "<group>"; };
+		0CBB36EA1D85F9BD002C0EF0 /* PreparedPolygonIntersects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedPolygonIntersects.h; sourceTree = "<group>"; };
+		0CBB36EB1D85F9BD002C0EF0 /* PreparedPolygonPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparedPolygonPredicate.h; sourceTree = "<group>"; };
+		0CBB36EC1D85F9BD002C0EF0 /* Puntal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puntal.h; sourceTree = "<group>"; };
+		0CBB36ED1D85F9BD002C0EF0 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		0CBB36EF1D85F9BD002C0EF0 /* ComponentCoordinateExtracter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentCoordinateExtracter.h; sourceTree = "<group>"; };
+		0CBB36F01D85F9BD002C0EF0 /* CoordinateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateOperation.h; sourceTree = "<group>"; };
+		0CBB36F11D85F9BD002C0EF0 /* GeometryCombiner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryCombiner.h; sourceTree = "<group>"; };
+		0CBB36F21D85F9BD002C0EF0 /* GeometryEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryEditor.h; sourceTree = "<group>"; };
+		0CBB36F31D85F9BD002C0EF0 /* GeometryEditorOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryEditorOperation.h; sourceTree = "<group>"; };
+		0CBB36F41D85F9BD002C0EF0 /* GeometryExtracter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryExtracter.h; sourceTree = "<group>"; };
+		0CBB36F51D85F9BD002C0EF0 /* GeometryTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryTransformer.h; sourceTree = "<group>"; };
+		0CBB36F61D85F9BD002C0EF0 /* LinearComponentExtracter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearComponentExtracter.h; sourceTree = "<group>"; };
+		0CBB36F71D85F9BD002C0EF0 /* PointExtracter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointExtracter.h; sourceTree = "<group>"; };
+		0CBB36F81D85F9BD002C0EF0 /* PolygonExtracter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonExtracter.h; sourceTree = "<group>"; };
+		0CBB36F91D85F9BD002C0EF0 /* ShortCircuitedGeometryVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortCircuitedGeometryVisitor.h; sourceTree = "<group>"; };
+		0CBB36FA1D85F9BD002C0EF0 /* SineStarFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SineStarFactory.h; sourceTree = "<group>"; };
+		0CBB36FB1D85F9BD002C0EF0 /* geom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geom.h; sourceTree = "<group>"; };
+		0CBB36FD1D85F9BD002C0EF0 /* Depth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Depth.h; sourceTree = "<group>"; };
+		0CBB36FE1D85F9BD002C0EF0 /* DirectedEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectedEdge.h; sourceTree = "<group>"; };
+		0CBB36FF1D85F9BD002C0EF0 /* DirectedEdge.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DirectedEdge.inl; sourceTree = "<group>"; };
+		0CBB37001D85F9BD002C0EF0 /* DirectedEdgeStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectedEdgeStar.h; sourceTree = "<group>"; };
+		0CBB37011D85F9BD002C0EF0 /* Edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
+		0CBB37021D85F9BD002C0EF0 /* EdgeEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeEnd.h; sourceTree = "<group>"; };
+		0CBB37031D85F9BD002C0EF0 /* EdgeEndStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeEndStar.h; sourceTree = "<group>"; };
+		0CBB37041D85F9BD002C0EF0 /* EdgeIntersection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeIntersection.h; sourceTree = "<group>"; };
+		0CBB37051D85F9BD002C0EF0 /* EdgeIntersectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeIntersectionList.h; sourceTree = "<group>"; };
+		0CBB37061D85F9BD002C0EF0 /* EdgeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeList.h; sourceTree = "<group>"; };
+		0CBB37071D85F9BD002C0EF0 /* EdgeNodingValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeNodingValidator.h; sourceTree = "<group>"; };
+		0CBB37081D85F9BD002C0EF0 /* EdgeRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeRing.h; sourceTree = "<group>"; };
+		0CBB37091D85F9BD002C0EF0 /* GeometryGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryGraph.h; sourceTree = "<group>"; };
+		0CBB370A1D85F9BD002C0EF0 /* GeometryGraph.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeometryGraph.inl; sourceTree = "<group>"; };
+		0CBB370B1D85F9BD002C0EF0 /* GraphComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphComponent.h; sourceTree = "<group>"; };
+		0CBB370D1D85F9BD002C0EF0 /* EdgeSetIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeSetIntersector.h; sourceTree = "<group>"; };
+		0CBB370E1D85F9BD002C0EF0 /* MonotoneChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonotoneChain.h; sourceTree = "<group>"; };
+		0CBB370F1D85F9BD002C0EF0 /* MonotoneChainEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonotoneChainEdge.h; sourceTree = "<group>"; };
+		0CBB37101D85F9BD002C0EF0 /* MonotoneChainIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonotoneChainIndexer.h; sourceTree = "<group>"; };
+		0CBB37111D85F9BD002C0EF0 /* SegmentIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentIntersector.h; sourceTree = "<group>"; };
+		0CBB37121D85F9BD002C0EF0 /* SimpleEdgeSetIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleEdgeSetIntersector.h; sourceTree = "<group>"; };
+		0CBB37131D85F9BD002C0EF0 /* SimpleMCSweepLineIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMCSweepLineIntersector.h; sourceTree = "<group>"; };
+		0CBB37141D85F9BD002C0EF0 /* SimpleSweepLineIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSweepLineIntersector.h; sourceTree = "<group>"; };
+		0CBB37151D85F9BD002C0EF0 /* SweepLineEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepLineEvent.h; sourceTree = "<group>"; };
+		0CBB37161D85F9BD002C0EF0 /* SweepLineEventObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepLineEventObj.h; sourceTree = "<group>"; };
+		0CBB37171D85F9BD002C0EF0 /* SweepLineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepLineSegment.h; sourceTree = "<group>"; };
+		0CBB37181D85F9BD002C0EF0 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
+		0CBB37191D85F9BD002C0EF0 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		0CBB371A1D85F9BD002C0EF0 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
+		0CBB371B1D85F9BD002C0EF0 /* NodeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeMap.h; sourceTree = "<group>"; };
+		0CBB371C1D85F9BD002C0EF0 /* PlanarGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanarGraph.h; sourceTree = "<group>"; };
+		0CBB371D1D85F9BD002C0EF0 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
+		0CBB371E1D85F9BD002C0EF0 /* Quadrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadrant.h; sourceTree = "<group>"; };
+		0CBB371F1D85F9BD002C0EF0 /* TopologyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopologyLocation.h; sourceTree = "<group>"; };
+		0CBB37201D85F9BD002C0EF0 /* geomgraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geomgraph.h; sourceTree = "<group>"; };
+		0CBB37211D85F9BD002C0EF0 /* geomgraphindex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geomgraphindex.h; sourceTree = "<group>"; };
+		0CBB37221D85F9BD002C0EF0 /* geomUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geomUtil.h; sourceTree = "<group>"; };
+		0CBB37231D85F9BD002C0EF0 /* geosAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geosAlgorithm.h; sourceTree = "<group>"; };
+		0CBB37261D85F9BD002C0EF0 /* Bintree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bintree.h; sourceTree = "<group>"; };
+		0CBB37271D85F9BD002C0EF0 /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
+		0CBB37281D85F9BD002C0EF0 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		0CBB37291D85F9BD002C0EF0 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		0CBB372A1D85F9BD002C0EF0 /* NodeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeBase.h; sourceTree = "<group>"; };
+		0CBB372B1D85F9BD002C0EF0 /* Root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Root.h; sourceTree = "<group>"; };
+		0CBB372D1D85F9BD002C0EF0 /* MonotoneChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonotoneChain.h; sourceTree = "<group>"; };
+		0CBB372E1D85F9BD002C0EF0 /* MonotoneChainBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonotoneChainBuilder.h; sourceTree = "<group>"; };
+		0CBB372F1D85F9BD002C0EF0 /* MonotoneChainOverlapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonotoneChainOverlapAction.h; sourceTree = "<group>"; };
+		0CBB37301D85F9BD002C0EF0 /* MonotoneChainSelectAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonotoneChainSelectAction.h; sourceTree = "<group>"; };
+		0CBB37321D85F9BD002C0EF0 /* IntervalRTreeBranchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalRTreeBranchNode.h; sourceTree = "<group>"; };
+		0CBB37331D85F9BD002C0EF0 /* IntervalRTreeLeafNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalRTreeLeafNode.h; sourceTree = "<group>"; };
+		0CBB37341D85F9BD002C0EF0 /* IntervalRTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalRTreeNode.h; sourceTree = "<group>"; };
+		0CBB37351D85F9BD002C0EF0 /* SortedPackedIntervalRTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortedPackedIntervalRTree.h; sourceTree = "<group>"; };
+		0CBB37361D85F9BD002C0EF0 /* ItemVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemVisitor.h; sourceTree = "<group>"; };
+		0CBB37381D85F9BD002C0EF0 /* DoubleBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleBits.h; sourceTree = "<group>"; };
+		0CBB37391D85F9BD002C0EF0 /* IntervalSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalSize.h; sourceTree = "<group>"; };
+		0CBB373A1D85F9BD002C0EF0 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		0CBB373B1D85F9BD002C0EF0 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		0CBB373C1D85F9BD002C0EF0 /* NodeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeBase.h; sourceTree = "<group>"; };
+		0CBB373D1D85F9BD002C0EF0 /* Quadtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadtree.h; sourceTree = "<group>"; };
+		0CBB373E1D85F9BD002C0EF0 /* Root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Root.h; sourceTree = "<group>"; };
+		0CBB373F1D85F9BD002C0EF0 /* SpatialIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpatialIndex.h; sourceTree = "<group>"; };
+		0CBB37411D85F9BD002C0EF0 /* AbstractNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractNode.h; sourceTree = "<group>"; };
+		0CBB37421D85F9BD002C0EF0 /* AbstractSTRtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractSTRtree.h; sourceTree = "<group>"; };
+		0CBB37431D85F9BD002C0EF0 /* Boundable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boundable.h; sourceTree = "<group>"; };
+		0CBB37441D85F9BD002C0EF0 /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interval.h; sourceTree = "<group>"; };
+		0CBB37451D85F9BD002C0EF0 /* ItemBoundable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemBoundable.h; sourceTree = "<group>"; };
+		0CBB37461D85F9BD002C0EF0 /* SIRtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIRtree.h; sourceTree = "<group>"; };
+		0CBB37471D85F9BD002C0EF0 /* STRtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRtree.h; sourceTree = "<group>"; };
+		0CBB37491D85F9BD002C0EF0 /* SweepLineEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepLineEvent.h; sourceTree = "<group>"; };
+		0CBB374A1D85F9BD002C0EF0 /* SweepLineIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepLineIndex.h; sourceTree = "<group>"; };
+		0CBB374B1D85F9BD002C0EF0 /* SweepLineInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepLineInterval.h; sourceTree = "<group>"; };
+		0CBB374C1D85F9BD002C0EF0 /* SweepLineOverlapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepLineOverlapAction.h; sourceTree = "<group>"; };
+		0CBB374D1D85F9BD002C0EF0 /* indexBintree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indexBintree.h; sourceTree = "<group>"; };
+		0CBB374E1D85F9BD002C0EF0 /* indexChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indexChain.h; sourceTree = "<group>"; };
+		0CBB374F1D85F9BD002C0EF0 /* indexQuadtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indexQuadtree.h; sourceTree = "<group>"; };
+		0CBB37501D85F9BD002C0EF0 /* indexStrtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indexStrtree.h; sourceTree = "<group>"; };
+		0CBB37511D85F9BD002C0EF0 /* indexSweepline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indexSweepline.h; sourceTree = "<group>"; };
+		0CBB37521D85F9BD002C0EF0 /* inline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inline.h; sourceTree = "<group>"; };
+		0CBB37541D85F9BD002C0EF0 /* ByteOrderDataInStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteOrderDataInStream.h; sourceTree = "<group>"; };
+		0CBB37551D85F9BD002C0EF0 /* ByteOrderDataInStream.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ByteOrderDataInStream.inl; sourceTree = "<group>"; };
+		0CBB37561D85F9BD002C0EF0 /* ByteOrderValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteOrderValues.h; sourceTree = "<group>"; };
+		0CBB37571D85F9BD002C0EF0 /* CLocalizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLocalizer.h; sourceTree = "<group>"; };
+		0CBB37581D85F9BD002C0EF0 /* ParseException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseException.h; sourceTree = "<group>"; };
+		0CBB37591D85F9BD002C0EF0 /* StringTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringTokenizer.h; sourceTree = "<group>"; };
+		0CBB375A1D85F9BD002C0EF0 /* WKBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKBConstants.h; sourceTree = "<group>"; };
+		0CBB375B1D85F9BD002C0EF0 /* WKBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKBReader.h; sourceTree = "<group>"; };
+		0CBB375C1D85F9BD002C0EF0 /* WKBWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKBWriter.h; sourceTree = "<group>"; };
+		0CBB375D1D85F9BD002C0EF0 /* WKTReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTReader.h; sourceTree = "<group>"; };
+		0CBB375E1D85F9BD002C0EF0 /* WKTReader.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WKTReader.inl; sourceTree = "<group>"; };
+		0CBB375F1D85F9BD002C0EF0 /* WKTWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTWriter.h; sourceTree = "<group>"; };
+		0CBB37601D85F9BD002C0EF0 /* Writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Writer.h; sourceTree = "<group>"; };
+		0CBB37611D85F9BD002C0EF0 /* io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io.h; sourceTree = "<group>"; };
+		0CBB37631D85F9BD002C0EF0 /* ExtractLineByLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtractLineByLocation.h; sourceTree = "<group>"; };
+		0CBB37641D85F9BD002C0EF0 /* LengthIndexedLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LengthIndexedLine.h; sourceTree = "<group>"; };
+		0CBB37651D85F9BD002C0EF0 /* LengthIndexOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LengthIndexOfPoint.h; sourceTree = "<group>"; };
+		0CBB37661D85F9BD002C0EF0 /* LengthLocationMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LengthLocationMap.h; sourceTree = "<group>"; };
+		0CBB37671D85F9BD002C0EF0 /* LinearGeometryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearGeometryBuilder.h; sourceTree = "<group>"; };
+		0CBB37681D85F9BD002C0EF0 /* LinearIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearIterator.h; sourceTree = "<group>"; };
+		0CBB37691D85F9BD002C0EF0 /* LinearLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearLocation.h; sourceTree = "<group>"; };
+		0CBB376A1D85F9BD002C0EF0 /* LocationIndexedLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationIndexedLine.h; sourceTree = "<group>"; };
+		0CBB376B1D85F9BD002C0EF0 /* LocationIndexOfLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationIndexOfLine.h; sourceTree = "<group>"; };
+		0CBB376C1D85F9BD002C0EF0 /* LocationIndexOfPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationIndexOfPoint.h; sourceTree = "<group>"; };
+		0CBB376E1D85F9BD002C0EF0 /* BasicSegmentString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSegmentString.h; sourceTree = "<group>"; };
+		0CBB376F1D85F9BD002C0EF0 /* FastNodingValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastNodingValidator.h; sourceTree = "<group>"; };
+		0CBB37701D85F9BD002C0EF0 /* FastSegmentSetIntersectionFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastSegmentSetIntersectionFinder.h; sourceTree = "<group>"; };
+		0CBB37711D85F9BD002C0EF0 /* GeometryNoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryNoder.h; sourceTree = "<group>"; };
+		0CBB37721D85F9BD002C0EF0 /* IntersectionAdder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntersectionAdder.h; sourceTree = "<group>"; };
+		0CBB37731D85F9BD002C0EF0 /* IntersectionFinderAdder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntersectionFinderAdder.h; sourceTree = "<group>"; };
+		0CBB37741D85F9BD002C0EF0 /* IteratedNoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IteratedNoder.h; sourceTree = "<group>"; };
+		0CBB37751D85F9BD002C0EF0 /* MCIndexNoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIndexNoder.h; sourceTree = "<group>"; };
+		0CBB37761D85F9BD002C0EF0 /* MCIndexNoder.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MCIndexNoder.inl; sourceTree = "<group>"; };
+		0CBB37771D85F9BD002C0EF0 /* MCIndexSegmentSetMutualIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIndexSegmentSetMutualIntersector.h; sourceTree = "<group>"; };
+		0CBB37781D85F9BD002C0EF0 /* NodableSegmentString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodableSegmentString.h; sourceTree = "<group>"; };
+		0CBB37791D85F9BD002C0EF0 /* NodedSegmentString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodedSegmentString.h; sourceTree = "<group>"; };
+		0CBB377A1D85F9BD002C0EF0 /* Noder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Noder.h; sourceTree = "<group>"; };
+		0CBB377B1D85F9BD002C0EF0 /* NodingValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodingValidator.h; sourceTree = "<group>"; };
+		0CBB377C1D85F9BD002C0EF0 /* Octant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Octant.h; sourceTree = "<group>"; };
+		0CBB377D1D85F9BD002C0EF0 /* OrientedCoordinateArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientedCoordinateArray.h; sourceTree = "<group>"; };
+		0CBB377E1D85F9BD002C0EF0 /* ScaledNoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledNoder.h; sourceTree = "<group>"; };
+		0CBB377F1D85F9BD002C0EF0 /* SegmentIntersectionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentIntersectionDetector.h; sourceTree = "<group>"; };
+		0CBB37801D85F9BD002C0EF0 /* SegmentIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentIntersector.h; sourceTree = "<group>"; };
+		0CBB37811D85F9BD002C0EF0 /* SegmentNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentNode.h; sourceTree = "<group>"; };
+		0CBB37821D85F9BD002C0EF0 /* SegmentNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentNodeList.h; sourceTree = "<group>"; };
+		0CBB37831D85F9BD002C0EF0 /* SegmentPointComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentPointComparator.h; sourceTree = "<group>"; };
+		0CBB37841D85F9BD002C0EF0 /* SegmentSetMutualIntersector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentSetMutualIntersector.h; sourceTree = "<group>"; };
+		0CBB37851D85F9BD002C0EF0 /* SegmentString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentString.h; sourceTree = "<group>"; };
+		0CBB37861D85F9BD002C0EF0 /* SegmentStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentStringUtil.h; sourceTree = "<group>"; };
+		0CBB37871D85F9BD002C0EF0 /* SimpleNoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleNoder.h; sourceTree = "<group>"; };
+		0CBB37881D85F9BD002C0EF0 /* SingleInteriorIntersectionFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleInteriorIntersectionFinder.h; sourceTree = "<group>"; };
+		0CBB37891D85F9BD002C0EF0 /* SinglePassNoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePassNoder.h; sourceTree = "<group>"; };
+		0CBB378B1D85F9BD002C0EF0 /* HotPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotPixel.h; sourceTree = "<group>"; };
+		0CBB378C1D85F9BD002C0EF0 /* HotPixel.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HotPixel.inl; sourceTree = "<group>"; };
+		0CBB378D1D85F9BD002C0EF0 /* MCIndexPointSnapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIndexPointSnapper.h; sourceTree = "<group>"; };
+		0CBB378E1D85F9BD002C0EF0 /* MCIndexSnapRounder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIndexSnapRounder.h; sourceTree = "<group>"; };
+		0CBB378F1D85F9BD002C0EF0 /* SimpleSnapRounder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSnapRounder.h; sourceTree = "<group>"; };
+		0CBB37901D85F9BD002C0EF0 /* noding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noding.h; sourceTree = "<group>"; };
+		0CBB37911D85F9BD002C0EF0 /* nodingSnapround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nodingSnapround.h; sourceTree = "<group>"; };
+		0CBB37921D85F9BD002C0EF0 /* opBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opBuffer.h; sourceTree = "<group>"; };
+		0CBB37931D85F9BD002C0EF0 /* opDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opDistance.h; sourceTree = "<group>"; };
+		0CBB37961D85F9BD002C0EF0 /* BufferBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferBuilder.h; sourceTree = "<group>"; };
+		0CBB37971D85F9BD002C0EF0 /* BufferInputLineSimplifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferInputLineSimplifier.h; sourceTree = "<group>"; };
+		0CBB37981D85F9BD002C0EF0 /* BufferOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferOp.h; sourceTree = "<group>"; };
+		0CBB37991D85F9BD002C0EF0 /* BufferParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferParameters.h; sourceTree = "<group>"; };
+		0CBB379A1D85F9BD002C0EF0 /* BufferSubgraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferSubgraph.h; sourceTree = "<group>"; };
+		0CBB379B1D85F9BD002C0EF0 /* OffsetCurveBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffsetCurveBuilder.h; sourceTree = "<group>"; };
+		0CBB379C1D85F9BD002C0EF0 /* OffsetCurveSetBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffsetCurveSetBuilder.h; sourceTree = "<group>"; };
+		0CBB379D1D85F9BD002C0EF0 /* OffsetSegmentGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffsetSegmentGenerator.h; sourceTree = "<group>"; };
+		0CBB379E1D85F9BD002C0EF0 /* OffsetSegmentString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffsetSegmentString.h; sourceTree = "<group>"; };
+		0CBB379F1D85F9BD002C0EF0 /* RightmostEdgeFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightmostEdgeFinder.h; sourceTree = "<group>"; };
+		0CBB37A01D85F9BD002C0EF0 /* SubgraphDepthLocater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubgraphDepthLocater.h; sourceTree = "<group>"; };
+		0CBB37A21D85F9BD002C0EF0 /* ConnectedElementLocationFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedElementLocationFilter.h; sourceTree = "<group>"; };
+		0CBB37A31D85F9BD002C0EF0 /* ConnectedElementPointFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedElementPointFilter.h; sourceTree = "<group>"; };
+		0CBB37A41D85F9BD002C0EF0 /* DistanceOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceOp.h; sourceTree = "<group>"; };
+		0CBB37A51D85F9BD002C0EF0 /* GeometryLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryLocation.h; sourceTree = "<group>"; };
+		0CBB37A61D85F9BD002C0EF0 /* GeometryGraphOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryGraphOperation.h; sourceTree = "<group>"; };
+		0CBB37A71D85F9BD002C0EF0 /* IsSimpleOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsSimpleOp.h; sourceTree = "<group>"; };
+		0CBB37A91D85F9BD002C0EF0 /* EdgeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeString.h; sourceTree = "<group>"; };
+		0CBB37AA1D85F9BD002C0EF0 /* LineMergeDirectedEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineMergeDirectedEdge.h; sourceTree = "<group>"; };
+		0CBB37AB1D85F9BD002C0EF0 /* LineMergeEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineMergeEdge.h; sourceTree = "<group>"; };
+		0CBB37AC1D85F9BD002C0EF0 /* LineMergeGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineMergeGraph.h; sourceTree = "<group>"; };
+		0CBB37AD1D85F9BD002C0EF0 /* LineMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineMerger.h; sourceTree = "<group>"; };
+		0CBB37AE1D85F9BD002C0EF0 /* LineSequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSequencer.h; sourceTree = "<group>"; };
+		0CBB37B01D85F9BD002C0EF0 /* EdgeSetNoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeSetNoder.h; sourceTree = "<group>"; };
+		0CBB37B11D85F9BD002C0EF0 /* ElevationMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElevationMatrix.h; sourceTree = "<group>"; };
+		0CBB37B21D85F9BD002C0EF0 /* ElevationMatrixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElevationMatrixCell.h; sourceTree = "<group>"; };
+		0CBB37B31D85F9BD002C0EF0 /* FuzzyPointLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzyPointLocator.h; sourceTree = "<group>"; };
+		0CBB37B41D85F9BD002C0EF0 /* LineBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineBuilder.h; sourceTree = "<group>"; };
+		0CBB37B51D85F9BD002C0EF0 /* MaximalEdgeRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaximalEdgeRing.h; sourceTree = "<group>"; };
+		0CBB37B61D85F9BD002C0EF0 /* MinimalEdgeRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinimalEdgeRing.h; sourceTree = "<group>"; };
+		0CBB37B71D85F9BD002C0EF0 /* MinimalEdgeRing.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MinimalEdgeRing.inl; sourceTree = "<group>"; };
+		0CBB37B81D85F9BD002C0EF0 /* OffsetPointGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffsetPointGenerator.h; sourceTree = "<group>"; };
+		0CBB37B91D85F9BD002C0EF0 /* OverlayNodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayNodeFactory.h; sourceTree = "<group>"; };
+		0CBB37BA1D85F9BD002C0EF0 /* OverlayOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayOp.h; sourceTree = "<group>"; };
+		0CBB37BB1D85F9BD002C0EF0 /* OverlayResultValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayResultValidator.h; sourceTree = "<group>"; };
+		0CBB37BC1D85F9BD002C0EF0 /* PointBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointBuilder.h; sourceTree = "<group>"; };
+		0CBB37BD1D85F9BD002C0EF0 /* PolygonBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonBuilder.h; sourceTree = "<group>"; };
+		0CBB37BF1D85F9BD002C0EF0 /* GeometrySnapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometrySnapper.h; sourceTree = "<group>"; };
+		0CBB37C01D85F9BD002C0EF0 /* LineStringSnapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineStringSnapper.h; sourceTree = "<group>"; };
+		0CBB37C11D85F9BD002C0EF0 /* SnapIfNeededOverlayOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapIfNeededOverlayOp.h; sourceTree = "<group>"; };
+		0CBB37C21D85F9BD002C0EF0 /* SnapOverlayOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapOverlayOp.h; sourceTree = "<group>"; };
+		0CBB37C41D85F9BD002C0EF0 /* EdgeRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeRing.h; sourceTree = "<group>"; };
+		0CBB37C51D85F9BD002C0EF0 /* PolygonizeDirectedEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonizeDirectedEdge.h; sourceTree = "<group>"; };
+		0CBB37C61D85F9BD002C0EF0 /* PolygonizeEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonizeEdge.h; sourceTree = "<group>"; };
+		0CBB37C71D85F9BD002C0EF0 /* PolygonizeGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonizeGraph.h; sourceTree = "<group>"; };
+		0CBB37C81D85F9BD002C0EF0 /* Polygonizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygonizer.h; sourceTree = "<group>"; };
+		0CBB37CA1D85F9BD002C0EF0 /* RectangleContains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleContains.h; sourceTree = "<group>"; };
+		0CBB37CB1D85F9BD002C0EF0 /* RectangleIntersects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleIntersects.h; sourceTree = "<group>"; };
+		0CBB37CC1D85F9BD002C0EF0 /* SegmentIntersectionTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentIntersectionTester.h; sourceTree = "<group>"; };
+		0CBB37CE1D85F9BD002C0EF0 /* EdgeEndBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeEndBuilder.h; sourceTree = "<group>"; };
+		0CBB37CF1D85F9BD002C0EF0 /* EdgeEndBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeEndBundle.h; sourceTree = "<group>"; };
+		0CBB37D01D85F9BD002C0EF0 /* EdgeEndBundleStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeEndBundleStar.h; sourceTree = "<group>"; };
+		0CBB37D11D85F9BD002C0EF0 /* RelateComputer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelateComputer.h; sourceTree = "<group>"; };
+		0CBB37D21D85F9BD002C0EF0 /* RelateNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelateNode.h; sourceTree = "<group>"; };
+		0CBB37D31D85F9BD002C0EF0 /* RelateNodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelateNodeFactory.h; sourceTree = "<group>"; };
+		0CBB37D41D85F9BD002C0EF0 /* RelateNodeGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelateNodeGraph.h; sourceTree = "<group>"; };
+		0CBB37D51D85F9BD002C0EF0 /* RelateOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelateOp.h; sourceTree = "<group>"; };
+		0CBB37D71D85F9BD002C0EF0 /* SharedPathsOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPathsOp.h; sourceTree = "<group>"; };
+		0CBB37D91D85F9BD002C0EF0 /* CascadedPolygonUnion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CascadedPolygonUnion.h; sourceTree = "<group>"; };
+		0CBB37DA1D85F9BD002C0EF0 /* CascadedUnion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CascadedUnion.h; sourceTree = "<group>"; };
+		0CBB37DB1D85F9BD002C0EF0 /* GeometryListHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryListHolder.h; sourceTree = "<group>"; };
+		0CBB37DC1D85F9BD002C0EF0 /* PointGeometryUnion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointGeometryUnion.h; sourceTree = "<group>"; };
+		0CBB37DD1D85F9BD002C0EF0 /* UnaryUnionOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnaryUnionOp.h; sourceTree = "<group>"; };
+		0CBB37DF1D85F9BD002C0EF0 /* ConnectedInteriorTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedInteriorTester.h; sourceTree = "<group>"; };
+		0CBB37E01D85F9BD002C0EF0 /* ConsistentAreaTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsistentAreaTester.h; sourceTree = "<group>"; };
+		0CBB37E11D85F9BD002C0EF0 /* IsValidOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsValidOp.h; sourceTree = "<group>"; };
+		0CBB37E21D85F9BD002C0EF0 /* QuadtreeNestedRingTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadtreeNestedRingTester.h; sourceTree = "<group>"; };
+		0CBB37E31D85F9BD002C0EF0 /* RepeatedPointTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatedPointTester.h; sourceTree = "<group>"; };
+		0CBB37E41D85F9BD002C0EF0 /* SimpleNestedRingTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleNestedRingTester.h; sourceTree = "<group>"; };
+		0CBB37E51D85F9BD002C0EF0 /* SweeplineNestedRingTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweeplineNestedRingTester.h; sourceTree = "<group>"; };
+		0CBB37E61D85F9BD002C0EF0 /* TopologyValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopologyValidationError.h; sourceTree = "<group>"; };
+		0CBB37E71D85F9BD002C0EF0 /* operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = operation.h; sourceTree = "<group>"; };
+		0CBB37E81D85F9BD002C0EF0 /* opLinemerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opLinemerge.h; sourceTree = "<group>"; };
+		0CBB37E91D85F9BD002C0EF0 /* opOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opOverlay.h; sourceTree = "<group>"; };
+		0CBB37EA1D85F9BD002C0EF0 /* opPolygonize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opPolygonize.h; sourceTree = "<group>"; };
+		0CBB37EB1D85F9BD002C0EF0 /* opPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opPredicate.h; sourceTree = "<group>"; };
+		0CBB37EC1D85F9BD002C0EF0 /* opRelate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opRelate.h; sourceTree = "<group>"; };
+		0CBB37ED1D85F9BD002C0EF0 /* opValid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opValid.h; sourceTree = "<group>"; };
+		0CBB37F01D85F9BD002C0EF0 /* ConnectedSubgraphFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedSubgraphFinder.h; sourceTree = "<group>"; };
+		0CBB37F11D85F9BD002C0EF0 /* DirectedEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectedEdge.h; sourceTree = "<group>"; };
+		0CBB37F21D85F9BD002C0EF0 /* DirectedEdgeStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectedEdgeStar.h; sourceTree = "<group>"; };
+		0CBB37F31D85F9BD002C0EF0 /* Edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
+		0CBB37F41D85F9BD002C0EF0 /* GraphComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphComponent.h; sourceTree = "<group>"; };
+		0CBB37F51D85F9BD002C0EF0 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		0CBB37F61D85F9BD002C0EF0 /* NodeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeMap.h; sourceTree = "<group>"; };
+		0CBB37F71D85F9BD002C0EF0 /* PlanarGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanarGraph.h; sourceTree = "<group>"; };
+		0CBB37F81D85F9BD002C0EF0 /* Subgraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subgraph.h; sourceTree = "<group>"; };
+		0CBB37F91D85F9BD002C0EF0 /* planargraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = planargraph.h; sourceTree = "<group>"; };
+		0CBB37FA1D85F9BD002C0EF0 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		0CBB37FC1D85F9BD002C0EF0 /* CommonBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonBits.h; sourceTree = "<group>"; };
+		0CBB37FD1D85F9BD002C0EF0 /* CommonBitsOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonBitsOp.h; sourceTree = "<group>"; };
+		0CBB37FE1D85F9BD002C0EF0 /* CommonBitsRemover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonBitsRemover.h; sourceTree = "<group>"; };
+		0CBB37FF1D85F9BD002C0EF0 /* EnhancedPrecisionOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnhancedPrecisionOp.h; sourceTree = "<group>"; };
+		0CBB38001D85F9BD002C0EF0 /* GeometryPrecisionReducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryPrecisionReducer.h; sourceTree = "<group>"; };
+		0CBB38011D85F9BD002C0EF0 /* PrecisionReducerCoordinateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrecisionReducerCoordinateOperation.h; sourceTree = "<group>"; };
+		0CBB38021D85F9BD002C0EF0 /* SimpleGeometryPrecisionReducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGeometryPrecisionReducer.h; sourceTree = "<group>"; };
+		0CBB38031D85F9BD002C0EF0 /* precision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = precision.h; sourceTree = "<group>"; };
+		0CBB38041D85F9BD002C0EF0 /* profiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profiler.h; sourceTree = "<group>"; };
+		0CBB38061D85F9BD002C0EF0 /* DouglasPeuckerLineSimplifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouglasPeuckerLineSimplifier.h; sourceTree = "<group>"; };
+		0CBB38071D85F9BD002C0EF0 /* DouglasPeuckerSimplifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouglasPeuckerSimplifier.h; sourceTree = "<group>"; };
+		0CBB38081D85F9BD002C0EF0 /* LineSegmentIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSegmentIndex.h; sourceTree = "<group>"; };
+		0CBB38091D85F9BD002C0EF0 /* TaggedLineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedLineSegment.h; sourceTree = "<group>"; };
+		0CBB380A1D85F9BD002C0EF0 /* TaggedLinesSimplifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedLinesSimplifier.h; sourceTree = "<group>"; };
+		0CBB380B1D85F9BD002C0EF0 /* TaggedLineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedLineString.h; sourceTree = "<group>"; };
+		0CBB380C1D85F9BD002C0EF0 /* TaggedLineStringSimplifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedLineStringSimplifier.h; sourceTree = "<group>"; };
+		0CBB380D1D85F9BD002C0EF0 /* TopologyPreservingSimplifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopologyPreservingSimplifier.h; sourceTree = "<group>"; };
+		0CBB380E1D85F9BD002C0EF0 /* spatialIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spatialIndex.h; sourceTree = "<group>"; };
+		0CBB380F1D85F9BD002C0EF0 /* timeval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeval.h; sourceTree = "<group>"; };
+		0CBB38111D85F9BD002C0EF0 /* DelaunayTriangulationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelaunayTriangulationBuilder.h; sourceTree = "<group>"; };
+		0CBB38121D85F9BD002C0EF0 /* IncrementalDelaunayTriangulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncrementalDelaunayTriangulator.h; sourceTree = "<group>"; };
+		0CBB38141D85F9BD002C0EF0 /* LastFoundQuadEdgeLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastFoundQuadEdgeLocator.h; sourceTree = "<group>"; };
+		0CBB38151D85F9BD002C0EF0 /* LocateFailureException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocateFailureException.h; sourceTree = "<group>"; };
+		0CBB38161D85F9BD002C0EF0 /* QuadEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadEdge.h; sourceTree = "<group>"; };
+		0CBB38171D85F9BD002C0EF0 /* QuadEdgeLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadEdgeLocator.h; sourceTree = "<group>"; };
+		0CBB38181D85F9BD002C0EF0 /* QuadEdgeSubdivision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadEdgeSubdivision.h; sourceTree = "<group>"; };
+		0CBB38191D85F9BD002C0EF0 /* TrianglePredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrianglePredicate.h; sourceTree = "<group>"; };
+		0CBB381A1D85F9BD002C0EF0 /* TriangleVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleVisitor.h; sourceTree = "<group>"; };
+		0CBB381B1D85F9BD002C0EF0 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		0CBB381C1D85F9BD002C0EF0 /* unload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unload.h; sourceTree = "<group>"; };
+		0CBB381E1D85F9BD002C0EF0 /* Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assert.h; sourceTree = "<group>"; };
+		0CBB381F1D85F9BD002C0EF0 /* AssertionFailedException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssertionFailedException.h; sourceTree = "<group>"; };
+		0CBB38201D85F9BD002C0EF0 /* CoordinateArrayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinateArrayFilter.h; sourceTree = "<group>"; };
+		0CBB38211D85F9BD002C0EF0 /* GeometricShapeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricShapeFactory.h; sourceTree = "<group>"; };
+		0CBB38221D85F9BD002C0EF0 /* GEOSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOSException.h; sourceTree = "<group>"; };
+		0CBB38231D85F9BD002C0EF0 /* IllegalArgumentException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IllegalArgumentException.h; sourceTree = "<group>"; };
+		0CBB38241D85F9BD002C0EF0 /* IllegalStateException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IllegalStateException.h; sourceTree = "<group>"; };
+		0CBB38251D85F9BD002C0EF0 /* Interrupt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interrupt.h; sourceTree = "<group>"; };
+		0CBB38261D85F9BD002C0EF0 /* Machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Machine.h; sourceTree = "<group>"; };
+		0CBB38271D85F9BD002C0EF0 /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
+		0CBB38281D85F9BD002C0EF0 /* TopologyException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopologyException.h; sourceTree = "<group>"; };
+		0CBB38291D85F9BD002C0EF0 /* UniqueCoordinateArrayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniqueCoordinateArrayFilter.h; sourceTree = "<group>"; };
+		0CBB382A1D85F9BD002C0EF0 /* UnsupportedOperationException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnsupportedOperationException.h; sourceTree = "<group>"; };
+		0CBB382B1D85F9BD002C0EF0 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		0CBB382C1D85F9BD002C0EF0 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		0CBB382D1D85F9BD002C0EF0 /* geos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geos.h; sourceTree = "<group>"; };
+		0CBB382E1D85F9BD002C0EF0 /* geos_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geos_c.h; sourceTree = "<group>"; };
+		0CBB382F1D85F9BD002C0EF0 /* org_proj4_Projections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = org_proj4_Projections.h; sourceTree = "<group>"; };
+		0CBB38301D85F9BD002C0EF0 /* proj_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proj_api.h; sourceTree = "<group>"; };
+		0CBB38321D85F9BD002C0EF0 /* control_points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = control_points.h; sourceTree = "<group>"; };
+		0CBB38331D85F9BD002C0EF0 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		0CBB38341D85F9BD002C0EF0 /* gaiaaux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gaiaaux.h; sourceTree = "<group>"; };
+		0CBB38351D85F9BD002C0EF0 /* gaiaexif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gaiaexif.h; sourceTree = "<group>"; };
+		0CBB38361D85F9BD002C0EF0 /* gaiageo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gaiageo.h; sourceTree = "<group>"; };
+		0CBB38371D85F9BD002C0EF0 /* gaiamatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gaiamatrix.h; sourceTree = "<group>"; };
+		0CBB38381D85F9BD002C0EF0 /* geopackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geopackage.h; sourceTree = "<group>"; };
+		0CBB38391D85F9BD002C0EF0 /* gg_advanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_advanced.h; sourceTree = "<group>"; };
+		0CBB383A1D85F9BD002C0EF0 /* gg_const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_const.h; sourceTree = "<group>"; };
+		0CBB383B1D85F9BD002C0EF0 /* gg_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_core.h; sourceTree = "<group>"; };
+		0CBB383C1D85F9BD002C0EF0 /* gg_dxf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_dxf.h; sourceTree = "<group>"; };
+		0CBB383D1D85F9BD002C0EF0 /* gg_dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_dynamic.h; sourceTree = "<group>"; };
+		0CBB383E1D85F9BD002C0EF0 /* gg_formats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_formats.h; sourceTree = "<group>"; };
+		0CBB383F1D85F9BD002C0EF0 /* gg_mbr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_mbr.h; sourceTree = "<group>"; };
+		0CBB38401D85F9BD002C0EF0 /* gg_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_structs.h; sourceTree = "<group>"; };
+		0CBB38411D85F9BD002C0EF0 /* gg_wfs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_wfs.h; sourceTree = "<group>"; };
+		0CBB38421D85F9BD002C0EF0 /* gg_xml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gg_xml.h; sourceTree = "<group>"; };
+		0CBB38431D85F9BD002C0EF0 /* spatialite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spatialite.h; sourceTree = "<group>"; };
+		0CBB38441D85F9BD002C0EF0 /* sqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite.h; sourceTree = "<group>"; };
+		0CBB38451D85F9BD002C0EF0 /* spatialite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spatialite.h; sourceTree = "<group>"; };
+		0CBB38461D85F9BD002C0EF0 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		0CBB38471D85F9BD002C0EF0 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		0CBB38481D85F9BD002C0EF0 /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgeos.a; sourceTree = "<group>"; };
+		0CBB38491D85F9BD002C0EF0 /* libgeos_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgeos_c.a; sourceTree = "<group>"; };
+		0CBB384A1D85F9BD002C0EF0 /* libproj.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libproj.a; sourceTree = "<group>"; };
+		0CBB384B1D85F9BD002C0EF0 /* libspatialite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libspatialite.a; sourceTree = "<group>"; };
+		0CBB384C1D85F9BD002C0EF0 /* libsqlite3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsqlite3.a; sourceTree = "<group>"; };
+		0CBB384D1D85F9BD002C0EF0 /* mod_spatialite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = mod_spatialite.a; sourceTree = "<group>"; };
+		0CBB386B1D85F9D3002C0EF0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		0CBB386D1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.1.0.0.tbd; path = usr/lib/libcharset.1.0.0.tbd; sourceTree = SDKROOT; };
+		0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		0CBB38711D85F9EC002C0EF0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0CBB38731D85F9F7002C0EF0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
+		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0CBB307B1D85F413002C0EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CBB386C1D85F9D3002C0EF0 /* libiconv.tbd in Frameworks */,
+				0CBB386E1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd in Frameworks */,
+				0CBB38701D85F9E4002C0EF0 /* libxml2.2.tbd in Frameworks */,
+				0CBB38721D85F9EC002C0EF0 /* libz.tbd in Frameworks */,
+				0CBB38741D85F9F7002C0EF0 /* libc++.tbd in Frameworks */,
+				0CBB38651D85F9BD002C0EF0 /* libgeos.a in Frameworks */,
+				0CBB38691D85F9BD002C0EF0 /* libsqlite3.a in Frameworks */,
+				0CBB38681D85F9BD002C0EF0 /* libspatialite.a in Frameworks */,
+				0CBB38661D85F9BD002C0EF0 /* libgeos_c.a in Frameworks */,
+				0CBB386A1D85F9BD002C0EF0 /* mod_spatialite.a in Frameworks */,
+				0CBB38671D85F9BD002C0EF0 /* libproj.a in Frameworks */,
+				66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CBB308F1D85F413002C0EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CBB309A1D85F413002C0EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CBB30751D85F413002C0EF0 = {
+			isa = PBXGroup;
+			children = (
+				0CBB30801D85F413002C0EF0 /* LEIFR */,
+				0CBB30951D85F413002C0EF0 /* LEIFRTests */,
+				0CBB30A01D85F413002C0EF0 /* LEIFRUITests */,
+				0CBB307F1D85F413002C0EF0 /* Products */,
+				564F41B960566399E1834DD6 /* Pods */,
+				5432B3B5B435532EF82F3B2E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0CBB307F1D85F413002C0EF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB307E1D85F413002C0EF0 /* LEIFR.app */,
+				0CBB30921D85F413002C0EF0 /* LEIFRTests.xctest */,
+				0CBB309D1D85F413002C0EF0 /* LEIFRUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0CBB30801D85F413002C0EF0 /* LEIFR */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36821D85F9BD002C0EF0 /* Libraries */,
+				0CBB30811D85F413002C0EF0 /* AppDelegate.swift */,
+				0CBB30831D85F413002C0EF0 /* ViewController.swift */,
+				0CBB30851D85F413002C0EF0 /* Main.storyboard */,
+				0CBB30881D85F413002C0EF0 /* Assets.xcassets */,
+				0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */,
+				0CBB308D1D85F413002C0EF0 /* Info.plist */,
+				0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */,
+			);
+			path = LEIFR;
+			sourceTree = "<group>";
+		};
+		0CBB30951D85F413002C0EF0 /* LEIFRTests */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */,
+				0CBB30981D85F413002C0EF0 /* Info.plist */,
+			);
+			path = LEIFRTests;
+			sourceTree = "<group>";
+		};
+		0CBB30A01D85F413002C0EF0 /* LEIFRUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB30A11D85F413002C0EF0 /* LEIFRUITests.swift */,
+				0CBB30A31D85F413002C0EF0 /* Info.plist */,
+			);
+			path = LEIFRUITests;
+			sourceTree = "<group>";
+		};
+		0CBB36821D85F9BD002C0EF0 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36831D85F9BD002C0EF0 /* Database */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		0CBB36831D85F9BD002C0EF0 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36841D85F9BD002C0EF0 /* fmdb */,
+				0CBB36911D85F9BD002C0EF0 /* libspatialite */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		0CBB36841D85F9BD002C0EF0 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36851D85F9BD002C0EF0 /* FMDatabase.h */,
+				0CBB36861D85F9BD002C0EF0 /* FMDatabase.m */,
+				0CBB36871D85F9BD002C0EF0 /* FMDatabaseAdditions.h */,
+				0CBB36881D85F9BD002C0EF0 /* FMDatabaseAdditions.m */,
+				0CBB36891D85F9BD002C0EF0 /* FMDatabasePool.h */,
+				0CBB368A1D85F9BD002C0EF0 /* FMDatabasePool.m */,
+				0CBB368B1D85F9BD002C0EF0 /* FMDatabaseQueue.h */,
+				0CBB368C1D85F9BD002C0EF0 /* FMDatabaseQueue.m */,
+				0CBB368D1D85F9BD002C0EF0 /* FMDB.h */,
+				0CBB368E1D85F9BD002C0EF0 /* FMResultSet.h */,
+				0CBB368F1D85F9BD002C0EF0 /* FMResultSet.m */,
+				0CBB36901D85F9BD002C0EF0 /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		0CBB36911D85F9BD002C0EF0 /* libspatialite */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36921D85F9BD002C0EF0 /* include */,
+				0CBB38481D85F9BD002C0EF0 /* libgeos.a */,
+				0CBB38491D85F9BD002C0EF0 /* libgeos_c.a */,
+				0CBB384A1D85F9BD002C0EF0 /* libproj.a */,
+				0CBB384B1D85F9BD002C0EF0 /* libspatialite.a */,
+				0CBB384C1D85F9BD002C0EF0 /* libsqlite3.a */,
+				0CBB384D1D85F9BD002C0EF0 /* mod_spatialite.a */,
+			);
+			path = libspatialite;
+			sourceTree = "<group>";
+		};
+		0CBB36921D85F9BD002C0EF0 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36931D85F9BD002C0EF0 /* geos */,
+				0CBB382D1D85F9BD002C0EF0 /* geos.h */,
+				0CBB382E1D85F9BD002C0EF0 /* geos_c.h */,
+				0CBB382F1D85F9BD002C0EF0 /* org_proj4_Projections.h */,
+				0CBB38301D85F9BD002C0EF0 /* proj_api.h */,
+				0CBB38311D85F9BD002C0EF0 /* spatialite */,
+				0CBB38451D85F9BD002C0EF0 /* spatialite.h */,
+				0CBB38461D85F9BD002C0EF0 /* sqlite3.h */,
+				0CBB38471D85F9BD002C0EF0 /* sqlite3ext.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		0CBB36931D85F9BD002C0EF0 /* geos */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36941D85F9BD002C0EF0 /* algorithm */,
+				0CBB36B51D85F9BD002C0EF0 /* export.h */,
+				0CBB36B61D85F9BD002C0EF0 /* geom */,
+				0CBB36FB1D85F9BD002C0EF0 /* geom.h */,
+				0CBB36FC1D85F9BD002C0EF0 /* geomgraph */,
+				0CBB37201D85F9BD002C0EF0 /* geomgraph.h */,
+				0CBB37211D85F9BD002C0EF0 /* geomgraphindex.h */,
+				0CBB37221D85F9BD002C0EF0 /* geomUtil.h */,
+				0CBB37231D85F9BD002C0EF0 /* geosAlgorithm.h */,
+				0CBB37241D85F9BD002C0EF0 /* index */,
+				0CBB374D1D85F9BD002C0EF0 /* indexBintree.h */,
+				0CBB374E1D85F9BD002C0EF0 /* indexChain.h */,
+				0CBB374F1D85F9BD002C0EF0 /* indexQuadtree.h */,
+				0CBB37501D85F9BD002C0EF0 /* indexStrtree.h */,
+				0CBB37511D85F9BD002C0EF0 /* indexSweepline.h */,
+				0CBB37521D85F9BD002C0EF0 /* inline.h */,
+				0CBB37531D85F9BD002C0EF0 /* io */,
+				0CBB37611D85F9BD002C0EF0 /* io.h */,
+				0CBB37621D85F9BD002C0EF0 /* linearref */,
+				0CBB376D1D85F9BD002C0EF0 /* noding */,
+				0CBB37901D85F9BD002C0EF0 /* noding.h */,
+				0CBB37911D85F9BD002C0EF0 /* nodingSnapround.h */,
+				0CBB37921D85F9BD002C0EF0 /* opBuffer.h */,
+				0CBB37931D85F9BD002C0EF0 /* opDistance.h */,
+				0CBB37941D85F9BD002C0EF0 /* operation */,
+				0CBB37E71D85F9BD002C0EF0 /* operation.h */,
+				0CBB37E81D85F9BD002C0EF0 /* opLinemerge.h */,
+				0CBB37E91D85F9BD002C0EF0 /* opOverlay.h */,
+				0CBB37EA1D85F9BD002C0EF0 /* opPolygonize.h */,
+				0CBB37EB1D85F9BD002C0EF0 /* opPredicate.h */,
+				0CBB37EC1D85F9BD002C0EF0 /* opRelate.h */,
+				0CBB37ED1D85F9BD002C0EF0 /* opValid.h */,
+				0CBB37EE1D85F9BD002C0EF0 /* planargraph */,
+				0CBB37F91D85F9BD002C0EF0 /* planargraph.h */,
+				0CBB37FA1D85F9BD002C0EF0 /* platform.h */,
+				0CBB37FB1D85F9BD002C0EF0 /* precision */,
+				0CBB38031D85F9BD002C0EF0 /* precision.h */,
+				0CBB38041D85F9BD002C0EF0 /* profiler.h */,
+				0CBB38051D85F9BD002C0EF0 /* simplify */,
+				0CBB380E1D85F9BD002C0EF0 /* spatialIndex.h */,
+				0CBB380F1D85F9BD002C0EF0 /* timeval.h */,
+				0CBB38101D85F9BD002C0EF0 /* triangulate */,
+				0CBB381C1D85F9BD002C0EF0 /* unload.h */,
+				0CBB381D1D85F9BD002C0EF0 /* util */,
+				0CBB382B1D85F9BD002C0EF0 /* util.h */,
+				0CBB382C1D85F9BD002C0EF0 /* version.h */,
+			);
+			path = geos;
+			sourceTree = "<group>";
+		};
+		0CBB36941D85F9BD002C0EF0 /* algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36951D85F9BD002C0EF0 /* Angle.h */,
+				0CBB36961D85F9BD002C0EF0 /* BoundaryNodeRule.h */,
+				0CBB36971D85F9BD002C0EF0 /* CentralEndpointIntersector.h */,
+				0CBB36981D85F9BD002C0EF0 /* Centroid.h */,
+				0CBB36991D85F9BD002C0EF0 /* CentroidArea.h */,
+				0CBB369A1D85F9BD002C0EF0 /* CentroidLine.h */,
+				0CBB369B1D85F9BD002C0EF0 /* CentroidPoint.h */,
+				0CBB369C1D85F9BD002C0EF0 /* CGAlgorithms.h */,
+				0CBB369D1D85F9BD002C0EF0 /* ConvexHull.h */,
+				0CBB369E1D85F9BD002C0EF0 /* ConvexHull.inl */,
+				0CBB369F1D85F9BD002C0EF0 /* distance */,
+				0CBB36A31D85F9BD002C0EF0 /* HCoordinate.h */,
+				0CBB36A41D85F9BD002C0EF0 /* InteriorPointArea.h */,
+				0CBB36A51D85F9BD002C0EF0 /* InteriorPointLine.h */,
+				0CBB36A61D85F9BD002C0EF0 /* InteriorPointPoint.h */,
+				0CBB36A71D85F9BD002C0EF0 /* LineIntersector.h */,
+				0CBB36A81D85F9BD002C0EF0 /* locate */,
+				0CBB36AC1D85F9BD002C0EF0 /* MCPointInRing.h */,
+				0CBB36AD1D85F9BD002C0EF0 /* MinimumDiameter.h */,
+				0CBB36AE1D85F9BD002C0EF0 /* NotRepresentableException.h */,
+				0CBB36AF1D85F9BD002C0EF0 /* PointInRing.h */,
+				0CBB36B01D85F9BD002C0EF0 /* PointLocator.h */,
+				0CBB36B11D85F9BD002C0EF0 /* RayCrossingCounter.h */,
+				0CBB36B21D85F9BD002C0EF0 /* RobustDeterminant.h */,
+				0CBB36B31D85F9BD002C0EF0 /* SimplePointInRing.h */,
+				0CBB36B41D85F9BD002C0EF0 /* SIRtreePointInRing.h */,
+			);
+			path = algorithm;
+			sourceTree = "<group>";
+		};
+		0CBB369F1D85F9BD002C0EF0 /* distance */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36A01D85F9BD002C0EF0 /* DiscreteHausdorffDistance.h */,
+				0CBB36A11D85F9BD002C0EF0 /* DistanceToPoint.h */,
+				0CBB36A21D85F9BD002C0EF0 /* PointPairDistance.h */,
+			);
+			path = distance;
+			sourceTree = "<group>";
+		};
+		0CBB36A81D85F9BD002C0EF0 /* locate */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36A91D85F9BD002C0EF0 /* IndexedPointInAreaLocator.h */,
+				0CBB36AA1D85F9BD002C0EF0 /* PointOnGeometryLocator.h */,
+				0CBB36AB1D85F9BD002C0EF0 /* SimplePointInAreaLocator.h */,
+			);
+			path = locate;
+			sourceTree = "<group>";
+		};
+		0CBB36B61D85F9BD002C0EF0 /* geom */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36B71D85F9BD002C0EF0 /* BinaryOp.h */,
+				0CBB36B81D85F9BD002C0EF0 /* Coordinate.h */,
+				0CBB36B91D85F9BD002C0EF0 /* Coordinate.inl */,
+				0CBB36BA1D85F9BD002C0EF0 /* CoordinateArraySequence.h */,
+				0CBB36BB1D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.h */,
+				0CBB36BC1D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl */,
+				0CBB36BD1D85F9BD002C0EF0 /* CoordinateFilter.h */,
+				0CBB36BE1D85F9BD002C0EF0 /* CoordinateList.h */,
+				0CBB36BF1D85F9BD002C0EF0 /* CoordinateSequence.h */,
+				0CBB36C01D85F9BD002C0EF0 /* CoordinateSequenceFactory.h */,
+				0CBB36C11D85F9BD002C0EF0 /* CoordinateSequenceFilter.h */,
+				0CBB36C21D85F9BD002C0EF0 /* Dimension.h */,
+				0CBB36C31D85F9BD002C0EF0 /* Envelope.h */,
+				0CBB36C41D85F9BD002C0EF0 /* Envelope.inl */,
+				0CBB36C51D85F9BD002C0EF0 /* Geometry.h */,
+				0CBB36C61D85F9BD002C0EF0 /* GeometryCollection.h */,
+				0CBB36C71D85F9BD002C0EF0 /* GeometryCollection.inl */,
+				0CBB36C81D85F9BD002C0EF0 /* GeometryComponentFilter.h */,
+				0CBB36C91D85F9BD002C0EF0 /* GeometryFactory.h */,
+				0CBB36CA1D85F9BD002C0EF0 /* GeometryFactory.inl */,
+				0CBB36CB1D85F9BD002C0EF0 /* GeometryFilter.h */,
+				0CBB36CC1D85F9BD002C0EF0 /* GeometryList.h */,
+				0CBB36CD1D85F9BD002C0EF0 /* IntersectionMatrix.h */,
+				0CBB36CE1D85F9BD002C0EF0 /* Lineal.h */,
+				0CBB36CF1D85F9BD002C0EF0 /* LinearRing.h */,
+				0CBB36D01D85F9BD002C0EF0 /* LineSegment.h */,
+				0CBB36D11D85F9BD002C0EF0 /* LineSegment.inl */,
+				0CBB36D21D85F9BD002C0EF0 /* LineString.h */,
+				0CBB36D31D85F9BD002C0EF0 /* Location.h */,
+				0CBB36D41D85F9BD002C0EF0 /* MultiLineString.h */,
+				0CBB36D51D85F9BD002C0EF0 /* MultiLineString.inl */,
+				0CBB36D61D85F9BD002C0EF0 /* MultiPoint.h */,
+				0CBB36D71D85F9BD002C0EF0 /* MultiPolygon.h */,
+				0CBB36D81D85F9BD002C0EF0 /* MultiPolygon.inl */,
+				0CBB36D91D85F9BD002C0EF0 /* Point.h */,
+				0CBB36DA1D85F9BD002C0EF0 /* Polygon.h */,
+				0CBB36DB1D85F9BD002C0EF0 /* Polygonal.h */,
+				0CBB36DC1D85F9BD002C0EF0 /* PrecisionModel.h */,
+				0CBB36DD1D85F9BD002C0EF0 /* PrecisionModel.inl */,
+				0CBB36DE1D85F9BD002C0EF0 /* prep */,
+				0CBB36EC1D85F9BD002C0EF0 /* Puntal.h */,
+				0CBB36ED1D85F9BD002C0EF0 /* Triangle.h */,
+				0CBB36EE1D85F9BD002C0EF0 /* util */,
+			);
+			path = geom;
+			sourceTree = "<group>";
+		};
+		0CBB36DE1D85F9BD002C0EF0 /* prep */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36DF1D85F9BD002C0EF0 /* AbstractPreparedPolygonContains.h */,
+				0CBB36E01D85F9BD002C0EF0 /* BasicPreparedGeometry.h */,
+				0CBB36E11D85F9BD002C0EF0 /* PreparedGeometry.h */,
+				0CBB36E21D85F9BD002C0EF0 /* PreparedGeometryFactory.h */,
+				0CBB36E31D85F9BD002C0EF0 /* PreparedLineString.h */,
+				0CBB36E41D85F9BD002C0EF0 /* PreparedLineStringIntersects.h */,
+				0CBB36E51D85F9BD002C0EF0 /* PreparedPoint.h */,
+				0CBB36E61D85F9BD002C0EF0 /* PreparedPolygon.h */,
+				0CBB36E71D85F9BD002C0EF0 /* PreparedPolygonContains.h */,
+				0CBB36E81D85F9BD002C0EF0 /* PreparedPolygonContainsProperly.h */,
+				0CBB36E91D85F9BD002C0EF0 /* PreparedPolygonCovers.h */,
+				0CBB36EA1D85F9BD002C0EF0 /* PreparedPolygonIntersects.h */,
+				0CBB36EB1D85F9BD002C0EF0 /* PreparedPolygonPredicate.h */,
+			);
+			path = prep;
+			sourceTree = "<group>";
+		};
+		0CBB36EE1D85F9BD002C0EF0 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36EF1D85F9BD002C0EF0 /* ComponentCoordinateExtracter.h */,
+				0CBB36F01D85F9BD002C0EF0 /* CoordinateOperation.h */,
+				0CBB36F11D85F9BD002C0EF0 /* GeometryCombiner.h */,
+				0CBB36F21D85F9BD002C0EF0 /* GeometryEditor.h */,
+				0CBB36F31D85F9BD002C0EF0 /* GeometryEditorOperation.h */,
+				0CBB36F41D85F9BD002C0EF0 /* GeometryExtracter.h */,
+				0CBB36F51D85F9BD002C0EF0 /* GeometryTransformer.h */,
+				0CBB36F61D85F9BD002C0EF0 /* LinearComponentExtracter.h */,
+				0CBB36F71D85F9BD002C0EF0 /* PointExtracter.h */,
+				0CBB36F81D85F9BD002C0EF0 /* PolygonExtracter.h */,
+				0CBB36F91D85F9BD002C0EF0 /* ShortCircuitedGeometryVisitor.h */,
+				0CBB36FA1D85F9BD002C0EF0 /* SineStarFactory.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		0CBB36FC1D85F9BD002C0EF0 /* geomgraph */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB36FD1D85F9BD002C0EF0 /* Depth.h */,
+				0CBB36FE1D85F9BD002C0EF0 /* DirectedEdge.h */,
+				0CBB36FF1D85F9BD002C0EF0 /* DirectedEdge.inl */,
+				0CBB37001D85F9BD002C0EF0 /* DirectedEdgeStar.h */,
+				0CBB37011D85F9BD002C0EF0 /* Edge.h */,
+				0CBB37021D85F9BD002C0EF0 /* EdgeEnd.h */,
+				0CBB37031D85F9BD002C0EF0 /* EdgeEndStar.h */,
+				0CBB37041D85F9BD002C0EF0 /* EdgeIntersection.h */,
+				0CBB37051D85F9BD002C0EF0 /* EdgeIntersectionList.h */,
+				0CBB37061D85F9BD002C0EF0 /* EdgeList.h */,
+				0CBB37071D85F9BD002C0EF0 /* EdgeNodingValidator.h */,
+				0CBB37081D85F9BD002C0EF0 /* EdgeRing.h */,
+				0CBB37091D85F9BD002C0EF0 /* GeometryGraph.h */,
+				0CBB370A1D85F9BD002C0EF0 /* GeometryGraph.inl */,
+				0CBB370B1D85F9BD002C0EF0 /* GraphComponent.h */,
+				0CBB370C1D85F9BD002C0EF0 /* index */,
+				0CBB37181D85F9BD002C0EF0 /* Label.h */,
+				0CBB37191D85F9BD002C0EF0 /* Node.h */,
+				0CBB371A1D85F9BD002C0EF0 /* NodeFactory.h */,
+				0CBB371B1D85F9BD002C0EF0 /* NodeMap.h */,
+				0CBB371C1D85F9BD002C0EF0 /* PlanarGraph.h */,
+				0CBB371D1D85F9BD002C0EF0 /* Position.h */,
+				0CBB371E1D85F9BD002C0EF0 /* Quadrant.h */,
+				0CBB371F1D85F9BD002C0EF0 /* TopologyLocation.h */,
+			);
+			path = geomgraph;
+			sourceTree = "<group>";
+		};
+		0CBB370C1D85F9BD002C0EF0 /* index */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB370D1D85F9BD002C0EF0 /* EdgeSetIntersector.h */,
+				0CBB370E1D85F9BD002C0EF0 /* MonotoneChain.h */,
+				0CBB370F1D85F9BD002C0EF0 /* MonotoneChainEdge.h */,
+				0CBB37101D85F9BD002C0EF0 /* MonotoneChainIndexer.h */,
+				0CBB37111D85F9BD002C0EF0 /* SegmentIntersector.h */,
+				0CBB37121D85F9BD002C0EF0 /* SimpleEdgeSetIntersector.h */,
+				0CBB37131D85F9BD002C0EF0 /* SimpleMCSweepLineIntersector.h */,
+				0CBB37141D85F9BD002C0EF0 /* SimpleSweepLineIntersector.h */,
+				0CBB37151D85F9BD002C0EF0 /* SweepLineEvent.h */,
+				0CBB37161D85F9BD002C0EF0 /* SweepLineEventObj.h */,
+				0CBB37171D85F9BD002C0EF0 /* SweepLineSegment.h */,
+			);
+			path = index;
+			sourceTree = "<group>";
+		};
+		0CBB37241D85F9BD002C0EF0 /* index */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37251D85F9BD002C0EF0 /* bintree */,
+				0CBB372C1D85F9BD002C0EF0 /* chain */,
+				0CBB37311D85F9BD002C0EF0 /* intervalrtree */,
+				0CBB37361D85F9BD002C0EF0 /* ItemVisitor.h */,
+				0CBB37371D85F9BD002C0EF0 /* quadtree */,
+				0CBB373F1D85F9BD002C0EF0 /* SpatialIndex.h */,
+				0CBB37401D85F9BD002C0EF0 /* strtree */,
+				0CBB37481D85F9BD002C0EF0 /* sweepline */,
+			);
+			path = index;
+			sourceTree = "<group>";
+		};
+		0CBB37251D85F9BD002C0EF0 /* bintree */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37261D85F9BD002C0EF0 /* Bintree.h */,
+				0CBB37271D85F9BD002C0EF0 /* Interval.h */,
+				0CBB37281D85F9BD002C0EF0 /* Key.h */,
+				0CBB37291D85F9BD002C0EF0 /* Node.h */,
+				0CBB372A1D85F9BD002C0EF0 /* NodeBase.h */,
+				0CBB372B1D85F9BD002C0EF0 /* Root.h */,
+			);
+			path = bintree;
+			sourceTree = "<group>";
+		};
+		0CBB372C1D85F9BD002C0EF0 /* chain */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB372D1D85F9BD002C0EF0 /* MonotoneChain.h */,
+				0CBB372E1D85F9BD002C0EF0 /* MonotoneChainBuilder.h */,
+				0CBB372F1D85F9BD002C0EF0 /* MonotoneChainOverlapAction.h */,
+				0CBB37301D85F9BD002C0EF0 /* MonotoneChainSelectAction.h */,
+			);
+			path = chain;
+			sourceTree = "<group>";
+		};
+		0CBB37311D85F9BD002C0EF0 /* intervalrtree */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37321D85F9BD002C0EF0 /* IntervalRTreeBranchNode.h */,
+				0CBB37331D85F9BD002C0EF0 /* IntervalRTreeLeafNode.h */,
+				0CBB37341D85F9BD002C0EF0 /* IntervalRTreeNode.h */,
+				0CBB37351D85F9BD002C0EF0 /* SortedPackedIntervalRTree.h */,
+			);
+			path = intervalrtree;
+			sourceTree = "<group>";
+		};
+		0CBB37371D85F9BD002C0EF0 /* quadtree */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37381D85F9BD002C0EF0 /* DoubleBits.h */,
+				0CBB37391D85F9BD002C0EF0 /* IntervalSize.h */,
+				0CBB373A1D85F9BD002C0EF0 /* Key.h */,
+				0CBB373B1D85F9BD002C0EF0 /* Node.h */,
+				0CBB373C1D85F9BD002C0EF0 /* NodeBase.h */,
+				0CBB373D1D85F9BD002C0EF0 /* Quadtree.h */,
+				0CBB373E1D85F9BD002C0EF0 /* Root.h */,
+			);
+			path = quadtree;
+			sourceTree = "<group>";
+		};
+		0CBB37401D85F9BD002C0EF0 /* strtree */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37411D85F9BD002C0EF0 /* AbstractNode.h */,
+				0CBB37421D85F9BD002C0EF0 /* AbstractSTRtree.h */,
+				0CBB37431D85F9BD002C0EF0 /* Boundable.h */,
+				0CBB37441D85F9BD002C0EF0 /* Interval.h */,
+				0CBB37451D85F9BD002C0EF0 /* ItemBoundable.h */,
+				0CBB37461D85F9BD002C0EF0 /* SIRtree.h */,
+				0CBB37471D85F9BD002C0EF0 /* STRtree.h */,
+			);
+			path = strtree;
+			sourceTree = "<group>";
+		};
+		0CBB37481D85F9BD002C0EF0 /* sweepline */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37491D85F9BD002C0EF0 /* SweepLineEvent.h */,
+				0CBB374A1D85F9BD002C0EF0 /* SweepLineIndex.h */,
+				0CBB374B1D85F9BD002C0EF0 /* SweepLineInterval.h */,
+				0CBB374C1D85F9BD002C0EF0 /* SweepLineOverlapAction.h */,
+			);
+			path = sweepline;
+			sourceTree = "<group>";
+		};
+		0CBB37531D85F9BD002C0EF0 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37541D85F9BD002C0EF0 /* ByteOrderDataInStream.h */,
+				0CBB37551D85F9BD002C0EF0 /* ByteOrderDataInStream.inl */,
+				0CBB37561D85F9BD002C0EF0 /* ByteOrderValues.h */,
+				0CBB37571D85F9BD002C0EF0 /* CLocalizer.h */,
+				0CBB37581D85F9BD002C0EF0 /* ParseException.h */,
+				0CBB37591D85F9BD002C0EF0 /* StringTokenizer.h */,
+				0CBB375A1D85F9BD002C0EF0 /* WKBConstants.h */,
+				0CBB375B1D85F9BD002C0EF0 /* WKBReader.h */,
+				0CBB375C1D85F9BD002C0EF0 /* WKBWriter.h */,
+				0CBB375D1D85F9BD002C0EF0 /* WKTReader.h */,
+				0CBB375E1D85F9BD002C0EF0 /* WKTReader.inl */,
+				0CBB375F1D85F9BD002C0EF0 /* WKTWriter.h */,
+				0CBB37601D85F9BD002C0EF0 /* Writer.h */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		0CBB37621D85F9BD002C0EF0 /* linearref */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37631D85F9BD002C0EF0 /* ExtractLineByLocation.h */,
+				0CBB37641D85F9BD002C0EF0 /* LengthIndexedLine.h */,
+				0CBB37651D85F9BD002C0EF0 /* LengthIndexOfPoint.h */,
+				0CBB37661D85F9BD002C0EF0 /* LengthLocationMap.h */,
+				0CBB37671D85F9BD002C0EF0 /* LinearGeometryBuilder.h */,
+				0CBB37681D85F9BD002C0EF0 /* LinearIterator.h */,
+				0CBB37691D85F9BD002C0EF0 /* LinearLocation.h */,
+				0CBB376A1D85F9BD002C0EF0 /* LocationIndexedLine.h */,
+				0CBB376B1D85F9BD002C0EF0 /* LocationIndexOfLine.h */,
+				0CBB376C1D85F9BD002C0EF0 /* LocationIndexOfPoint.h */,
+			);
+			path = linearref;
+			sourceTree = "<group>";
+		};
+		0CBB376D1D85F9BD002C0EF0 /* noding */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB376E1D85F9BD002C0EF0 /* BasicSegmentString.h */,
+				0CBB376F1D85F9BD002C0EF0 /* FastNodingValidator.h */,
+				0CBB37701D85F9BD002C0EF0 /* FastSegmentSetIntersectionFinder.h */,
+				0CBB37711D85F9BD002C0EF0 /* GeometryNoder.h */,
+				0CBB37721D85F9BD002C0EF0 /* IntersectionAdder.h */,
+				0CBB37731D85F9BD002C0EF0 /* IntersectionFinderAdder.h */,
+				0CBB37741D85F9BD002C0EF0 /* IteratedNoder.h */,
+				0CBB37751D85F9BD002C0EF0 /* MCIndexNoder.h */,
+				0CBB37761D85F9BD002C0EF0 /* MCIndexNoder.inl */,
+				0CBB37771D85F9BD002C0EF0 /* MCIndexSegmentSetMutualIntersector.h */,
+				0CBB37781D85F9BD002C0EF0 /* NodableSegmentString.h */,
+				0CBB37791D85F9BD002C0EF0 /* NodedSegmentString.h */,
+				0CBB377A1D85F9BD002C0EF0 /* Noder.h */,
+				0CBB377B1D85F9BD002C0EF0 /* NodingValidator.h */,
+				0CBB377C1D85F9BD002C0EF0 /* Octant.h */,
+				0CBB377D1D85F9BD002C0EF0 /* OrientedCoordinateArray.h */,
+				0CBB377E1D85F9BD002C0EF0 /* ScaledNoder.h */,
+				0CBB377F1D85F9BD002C0EF0 /* SegmentIntersectionDetector.h */,
+				0CBB37801D85F9BD002C0EF0 /* SegmentIntersector.h */,
+				0CBB37811D85F9BD002C0EF0 /* SegmentNode.h */,
+				0CBB37821D85F9BD002C0EF0 /* SegmentNodeList.h */,
+				0CBB37831D85F9BD002C0EF0 /* SegmentPointComparator.h */,
+				0CBB37841D85F9BD002C0EF0 /* SegmentSetMutualIntersector.h */,
+				0CBB37851D85F9BD002C0EF0 /* SegmentString.h */,
+				0CBB37861D85F9BD002C0EF0 /* SegmentStringUtil.h */,
+				0CBB37871D85F9BD002C0EF0 /* SimpleNoder.h */,
+				0CBB37881D85F9BD002C0EF0 /* SingleInteriorIntersectionFinder.h */,
+				0CBB37891D85F9BD002C0EF0 /* SinglePassNoder.h */,
+				0CBB378A1D85F9BD002C0EF0 /* snapround */,
+			);
+			path = noding;
+			sourceTree = "<group>";
+		};
+		0CBB378A1D85F9BD002C0EF0 /* snapround */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB378B1D85F9BD002C0EF0 /* HotPixel.h */,
+				0CBB378C1D85F9BD002C0EF0 /* HotPixel.inl */,
+				0CBB378D1D85F9BD002C0EF0 /* MCIndexPointSnapper.h */,
+				0CBB378E1D85F9BD002C0EF0 /* MCIndexSnapRounder.h */,
+				0CBB378F1D85F9BD002C0EF0 /* SimpleSnapRounder.h */,
+			);
+			path = snapround;
+			sourceTree = "<group>";
+		};
+		0CBB37941D85F9BD002C0EF0 /* operation */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37951D85F9BD002C0EF0 /* buffer */,
+				0CBB37A11D85F9BD002C0EF0 /* distance */,
+				0CBB37A61D85F9BD002C0EF0 /* GeometryGraphOperation.h */,
+				0CBB37A71D85F9BD002C0EF0 /* IsSimpleOp.h */,
+				0CBB37A81D85F9BD002C0EF0 /* linemerge */,
+				0CBB37AF1D85F9BD002C0EF0 /* overlay */,
+				0CBB37C31D85F9BD002C0EF0 /* polygonize */,
+				0CBB37C91D85F9BD002C0EF0 /* predicate */,
+				0CBB37CD1D85F9BD002C0EF0 /* relate */,
+				0CBB37D61D85F9BD002C0EF0 /* sharedpaths */,
+				0CBB37D81D85F9BD002C0EF0 /* union */,
+				0CBB37DE1D85F9BD002C0EF0 /* valid */,
+			);
+			path = operation;
+			sourceTree = "<group>";
+		};
+		0CBB37951D85F9BD002C0EF0 /* buffer */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37961D85F9BD002C0EF0 /* BufferBuilder.h */,
+				0CBB37971D85F9BD002C0EF0 /* BufferInputLineSimplifier.h */,
+				0CBB37981D85F9BD002C0EF0 /* BufferOp.h */,
+				0CBB37991D85F9BD002C0EF0 /* BufferParameters.h */,
+				0CBB379A1D85F9BD002C0EF0 /* BufferSubgraph.h */,
+				0CBB379B1D85F9BD002C0EF0 /* OffsetCurveBuilder.h */,
+				0CBB379C1D85F9BD002C0EF0 /* OffsetCurveSetBuilder.h */,
+				0CBB379D1D85F9BD002C0EF0 /* OffsetSegmentGenerator.h */,
+				0CBB379E1D85F9BD002C0EF0 /* OffsetSegmentString.h */,
+				0CBB379F1D85F9BD002C0EF0 /* RightmostEdgeFinder.h */,
+				0CBB37A01D85F9BD002C0EF0 /* SubgraphDepthLocater.h */,
+			);
+			path = buffer;
+			sourceTree = "<group>";
+		};
+		0CBB37A11D85F9BD002C0EF0 /* distance */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37A21D85F9BD002C0EF0 /* ConnectedElementLocationFilter.h */,
+				0CBB37A31D85F9BD002C0EF0 /* ConnectedElementPointFilter.h */,
+				0CBB37A41D85F9BD002C0EF0 /* DistanceOp.h */,
+				0CBB37A51D85F9BD002C0EF0 /* GeometryLocation.h */,
+			);
+			path = distance;
+			sourceTree = "<group>";
+		};
+		0CBB37A81D85F9BD002C0EF0 /* linemerge */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37A91D85F9BD002C0EF0 /* EdgeString.h */,
+				0CBB37AA1D85F9BD002C0EF0 /* LineMergeDirectedEdge.h */,
+				0CBB37AB1D85F9BD002C0EF0 /* LineMergeEdge.h */,
+				0CBB37AC1D85F9BD002C0EF0 /* LineMergeGraph.h */,
+				0CBB37AD1D85F9BD002C0EF0 /* LineMerger.h */,
+				0CBB37AE1D85F9BD002C0EF0 /* LineSequencer.h */,
+			);
+			path = linemerge;
+			sourceTree = "<group>";
+		};
+		0CBB37AF1D85F9BD002C0EF0 /* overlay */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37B01D85F9BD002C0EF0 /* EdgeSetNoder.h */,
+				0CBB37B11D85F9BD002C0EF0 /* ElevationMatrix.h */,
+				0CBB37B21D85F9BD002C0EF0 /* ElevationMatrixCell.h */,
+				0CBB37B31D85F9BD002C0EF0 /* FuzzyPointLocator.h */,
+				0CBB37B41D85F9BD002C0EF0 /* LineBuilder.h */,
+				0CBB37B51D85F9BD002C0EF0 /* MaximalEdgeRing.h */,
+				0CBB37B61D85F9BD002C0EF0 /* MinimalEdgeRing.h */,
+				0CBB37B71D85F9BD002C0EF0 /* MinimalEdgeRing.inl */,
+				0CBB37B81D85F9BD002C0EF0 /* OffsetPointGenerator.h */,
+				0CBB37B91D85F9BD002C0EF0 /* OverlayNodeFactory.h */,
+				0CBB37BA1D85F9BD002C0EF0 /* OverlayOp.h */,
+				0CBB37BB1D85F9BD002C0EF0 /* OverlayResultValidator.h */,
+				0CBB37BC1D85F9BD002C0EF0 /* PointBuilder.h */,
+				0CBB37BD1D85F9BD002C0EF0 /* PolygonBuilder.h */,
+				0CBB37BE1D85F9BD002C0EF0 /* snap */,
+			);
+			path = overlay;
+			sourceTree = "<group>";
+		};
+		0CBB37BE1D85F9BD002C0EF0 /* snap */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37BF1D85F9BD002C0EF0 /* GeometrySnapper.h */,
+				0CBB37C01D85F9BD002C0EF0 /* LineStringSnapper.h */,
+				0CBB37C11D85F9BD002C0EF0 /* SnapIfNeededOverlayOp.h */,
+				0CBB37C21D85F9BD002C0EF0 /* SnapOverlayOp.h */,
+			);
+			path = snap;
+			sourceTree = "<group>";
+		};
+		0CBB37C31D85F9BD002C0EF0 /* polygonize */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37C41D85F9BD002C0EF0 /* EdgeRing.h */,
+				0CBB37C51D85F9BD002C0EF0 /* PolygonizeDirectedEdge.h */,
+				0CBB37C61D85F9BD002C0EF0 /* PolygonizeEdge.h */,
+				0CBB37C71D85F9BD002C0EF0 /* PolygonizeGraph.h */,
+				0CBB37C81D85F9BD002C0EF0 /* Polygonizer.h */,
+			);
+			path = polygonize;
+			sourceTree = "<group>";
+		};
+		0CBB37C91D85F9BD002C0EF0 /* predicate */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37CA1D85F9BD002C0EF0 /* RectangleContains.h */,
+				0CBB37CB1D85F9BD002C0EF0 /* RectangleIntersects.h */,
+				0CBB37CC1D85F9BD002C0EF0 /* SegmentIntersectionTester.h */,
+			);
+			path = predicate;
+			sourceTree = "<group>";
+		};
+		0CBB37CD1D85F9BD002C0EF0 /* relate */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37CE1D85F9BD002C0EF0 /* EdgeEndBuilder.h */,
+				0CBB37CF1D85F9BD002C0EF0 /* EdgeEndBundle.h */,
+				0CBB37D01D85F9BD002C0EF0 /* EdgeEndBundleStar.h */,
+				0CBB37D11D85F9BD002C0EF0 /* RelateComputer.h */,
+				0CBB37D21D85F9BD002C0EF0 /* RelateNode.h */,
+				0CBB37D31D85F9BD002C0EF0 /* RelateNodeFactory.h */,
+				0CBB37D41D85F9BD002C0EF0 /* RelateNodeGraph.h */,
+				0CBB37D51D85F9BD002C0EF0 /* RelateOp.h */,
+			);
+			path = relate;
+			sourceTree = "<group>";
+		};
+		0CBB37D61D85F9BD002C0EF0 /* sharedpaths */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37D71D85F9BD002C0EF0 /* SharedPathsOp.h */,
+			);
+			path = sharedpaths;
+			sourceTree = "<group>";
+		};
+		0CBB37D81D85F9BD002C0EF0 /* union */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37D91D85F9BD002C0EF0 /* CascadedPolygonUnion.h */,
+				0CBB37DA1D85F9BD002C0EF0 /* CascadedUnion.h */,
+				0CBB37DB1D85F9BD002C0EF0 /* GeometryListHolder.h */,
+				0CBB37DC1D85F9BD002C0EF0 /* PointGeometryUnion.h */,
+				0CBB37DD1D85F9BD002C0EF0 /* UnaryUnionOp.h */,
+			);
+			path = union;
+			sourceTree = "<group>";
+		};
+		0CBB37DE1D85F9BD002C0EF0 /* valid */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37DF1D85F9BD002C0EF0 /* ConnectedInteriorTester.h */,
+				0CBB37E01D85F9BD002C0EF0 /* ConsistentAreaTester.h */,
+				0CBB37E11D85F9BD002C0EF0 /* IsValidOp.h */,
+				0CBB37E21D85F9BD002C0EF0 /* QuadtreeNestedRingTester.h */,
+				0CBB37E31D85F9BD002C0EF0 /* RepeatedPointTester.h */,
+				0CBB37E41D85F9BD002C0EF0 /* SimpleNestedRingTester.h */,
+				0CBB37E51D85F9BD002C0EF0 /* SweeplineNestedRingTester.h */,
+				0CBB37E61D85F9BD002C0EF0 /* TopologyValidationError.h */,
+			);
+			path = valid;
+			sourceTree = "<group>";
+		};
+		0CBB37EE1D85F9BD002C0EF0 /* planargraph */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37EF1D85F9BD002C0EF0 /* algorithm */,
+				0CBB37F11D85F9BD002C0EF0 /* DirectedEdge.h */,
+				0CBB37F21D85F9BD002C0EF0 /* DirectedEdgeStar.h */,
+				0CBB37F31D85F9BD002C0EF0 /* Edge.h */,
+				0CBB37F41D85F9BD002C0EF0 /* GraphComponent.h */,
+				0CBB37F51D85F9BD002C0EF0 /* Node.h */,
+				0CBB37F61D85F9BD002C0EF0 /* NodeMap.h */,
+				0CBB37F71D85F9BD002C0EF0 /* PlanarGraph.h */,
+				0CBB37F81D85F9BD002C0EF0 /* Subgraph.h */,
+			);
+			path = planargraph;
+			sourceTree = "<group>";
+		};
+		0CBB37EF1D85F9BD002C0EF0 /* algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37F01D85F9BD002C0EF0 /* ConnectedSubgraphFinder.h */,
+			);
+			path = algorithm;
+			sourceTree = "<group>";
+		};
+		0CBB37FB1D85F9BD002C0EF0 /* precision */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB37FC1D85F9BD002C0EF0 /* CommonBits.h */,
+				0CBB37FD1D85F9BD002C0EF0 /* CommonBitsOp.h */,
+				0CBB37FE1D85F9BD002C0EF0 /* CommonBitsRemover.h */,
+				0CBB37FF1D85F9BD002C0EF0 /* EnhancedPrecisionOp.h */,
+				0CBB38001D85F9BD002C0EF0 /* GeometryPrecisionReducer.h */,
+				0CBB38011D85F9BD002C0EF0 /* PrecisionReducerCoordinateOperation.h */,
+				0CBB38021D85F9BD002C0EF0 /* SimpleGeometryPrecisionReducer.h */,
+			);
+			path = precision;
+			sourceTree = "<group>";
+		};
+		0CBB38051D85F9BD002C0EF0 /* simplify */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB38061D85F9BD002C0EF0 /* DouglasPeuckerLineSimplifier.h */,
+				0CBB38071D85F9BD002C0EF0 /* DouglasPeuckerSimplifier.h */,
+				0CBB38081D85F9BD002C0EF0 /* LineSegmentIndex.h */,
+				0CBB38091D85F9BD002C0EF0 /* TaggedLineSegment.h */,
+				0CBB380A1D85F9BD002C0EF0 /* TaggedLinesSimplifier.h */,
+				0CBB380B1D85F9BD002C0EF0 /* TaggedLineString.h */,
+				0CBB380C1D85F9BD002C0EF0 /* TaggedLineStringSimplifier.h */,
+				0CBB380D1D85F9BD002C0EF0 /* TopologyPreservingSimplifier.h */,
+			);
+			path = simplify;
+			sourceTree = "<group>";
+		};
+		0CBB38101D85F9BD002C0EF0 /* triangulate */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB38111D85F9BD002C0EF0 /* DelaunayTriangulationBuilder.h */,
+				0CBB38121D85F9BD002C0EF0 /* IncrementalDelaunayTriangulator.h */,
+				0CBB38131D85F9BD002C0EF0 /* quadedge */,
+			);
+			path = triangulate;
+			sourceTree = "<group>";
+		};
+		0CBB38131D85F9BD002C0EF0 /* quadedge */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB38141D85F9BD002C0EF0 /* LastFoundQuadEdgeLocator.h */,
+				0CBB38151D85F9BD002C0EF0 /* LocateFailureException.h */,
+				0CBB38161D85F9BD002C0EF0 /* QuadEdge.h */,
+				0CBB38171D85F9BD002C0EF0 /* QuadEdgeLocator.h */,
+				0CBB38181D85F9BD002C0EF0 /* QuadEdgeSubdivision.h */,
+				0CBB38191D85F9BD002C0EF0 /* TrianglePredicate.h */,
+				0CBB381A1D85F9BD002C0EF0 /* TriangleVisitor.h */,
+				0CBB381B1D85F9BD002C0EF0 /* Vertex.h */,
+			);
+			path = quadedge;
+			sourceTree = "<group>";
+		};
+		0CBB381D1D85F9BD002C0EF0 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB381E1D85F9BD002C0EF0 /* Assert.h */,
+				0CBB381F1D85F9BD002C0EF0 /* AssertionFailedException.h */,
+				0CBB38201D85F9BD002C0EF0 /* CoordinateArrayFilter.h */,
+				0CBB38211D85F9BD002C0EF0 /* GeometricShapeFactory.h */,
+				0CBB38221D85F9BD002C0EF0 /* GEOSException.h */,
+				0CBB38231D85F9BD002C0EF0 /* IllegalArgumentException.h */,
+				0CBB38241D85F9BD002C0EF0 /* IllegalStateException.h */,
+				0CBB38251D85F9BD002C0EF0 /* Interrupt.h */,
+				0CBB38261D85F9BD002C0EF0 /* Machine.h */,
+				0CBB38271D85F9BD002C0EF0 /* math.h */,
+				0CBB38281D85F9BD002C0EF0 /* TopologyException.h */,
+				0CBB38291D85F9BD002C0EF0 /* UniqueCoordinateArrayFilter.h */,
+				0CBB382A1D85F9BD002C0EF0 /* UnsupportedOperationException.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		0CBB38311D85F9BD002C0EF0 /* spatialite */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB38321D85F9BD002C0EF0 /* control_points.h */,
+				0CBB38331D85F9BD002C0EF0 /* debug.h */,
+				0CBB38341D85F9BD002C0EF0 /* gaiaaux.h */,
+				0CBB38351D85F9BD002C0EF0 /* gaiaexif.h */,
+				0CBB38361D85F9BD002C0EF0 /* gaiageo.h */,
+				0CBB38371D85F9BD002C0EF0 /* gaiamatrix.h */,
+				0CBB38381D85F9BD002C0EF0 /* geopackage.h */,
+				0CBB38391D85F9BD002C0EF0 /* gg_advanced.h */,
+				0CBB383A1D85F9BD002C0EF0 /* gg_const.h */,
+				0CBB383B1D85F9BD002C0EF0 /* gg_core.h */,
+				0CBB383C1D85F9BD002C0EF0 /* gg_dxf.h */,
+				0CBB383D1D85F9BD002C0EF0 /* gg_dynamic.h */,
+				0CBB383E1D85F9BD002C0EF0 /* gg_formats.h */,
+				0CBB383F1D85F9BD002C0EF0 /* gg_mbr.h */,
+				0CBB38401D85F9BD002C0EF0 /* gg_structs.h */,
+				0CBB38411D85F9BD002C0EF0 /* gg_wfs.h */,
+				0CBB38421D85F9BD002C0EF0 /* gg_xml.h */,
+				0CBB38431D85F9BD002C0EF0 /* spatialite.h */,
+				0CBB38441D85F9BD002C0EF0 /* sqlite.h */,
+			);
+			path = spatialite;
+			sourceTree = "<group>";
+		};
+		5432B3B5B435532EF82F3B2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB38731D85F9F7002C0EF0 /* libc++.tbd */,
+				0CBB38711D85F9EC002C0EF0 /* libz.tbd */,
+				0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */,
+				0CBB386D1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd */,
+				0CBB386B1D85F9D3002C0EF0 /* libiconv.tbd */,
+				4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		564F41B960566399E1834DD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */,
+				2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0CBB307D1D85F413002C0EF0 /* LEIFR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CBB30A61D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFR" */;
+			buildPhases = (
+				404C2CFABBAA609097206FF9 /* Check Pods Manifest.lock */,
+				0CBB307A1D85F413002C0EF0 /* Sources */,
+				0CBB307B1D85F413002C0EF0 /* Frameworks */,
+				0CBB307C1D85F413002C0EF0 /* Resources */,
+				838DE5031C536E940DF40FFE /* Embed Pods Frameworks */,
+				14CCA0B633F3E95CEF4DA17A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LEIFR;
+			productName = LEIFR;
+			productReference = 0CBB307E1D85F413002C0EF0 /* LEIFR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0CBB30911D85F413002C0EF0 /* LEIFRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CBB30A91D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFRTests" */;
+			buildPhases = (
+				0CBB308E1D85F413002C0EF0 /* Sources */,
+				0CBB308F1D85F413002C0EF0 /* Frameworks */,
+				0CBB30901D85F413002C0EF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0CBB30941D85F413002C0EF0 /* PBXTargetDependency */,
+			);
+			name = LEIFRTests;
+			productName = LEIFRTests;
+			productReference = 0CBB30921D85F413002C0EF0 /* LEIFRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0CBB309C1D85F413002C0EF0 /* LEIFRUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CBB30AC1D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFRUITests" */;
+			buildPhases = (
+				0CBB30991D85F413002C0EF0 /* Sources */,
+				0CBB309A1D85F413002C0EF0 /* Frameworks */,
+				0CBB309B1D85F413002C0EF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0CBB309F1D85F413002C0EF0 /* PBXTargetDependency */,
+			);
+			name = LEIFRUITests;
+			productName = LEIFRUITests;
+			productReference = 0CBB309D1D85F413002C0EF0 /* LEIFRUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0CBB30761D85F413002C0EF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Echx;
+				TargetAttributes = {
+					0CBB307D1D85F413002C0EF0 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					0CBB30911D85F413002C0EF0 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0CBB307D1D85F413002C0EF0;
+					};
+					0CBB309C1D85F413002C0EF0 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0CBB307D1D85F413002C0EF0;
+					};
+				};
+			};
+			buildConfigurationList = 0CBB30791D85F413002C0EF0 /* Build configuration list for PBXProject "LEIFR" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0CBB30751D85F413002C0EF0;
+			productRefGroup = 0CBB307F1D85F413002C0EF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0CBB307D1D85F413002C0EF0 /* LEIFR */,
+				0CBB30911D85F413002C0EF0 /* LEIFRTests */,
+				0CBB309C1D85F413002C0EF0 /* LEIFRUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CBB307C1D85F413002C0EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CBB385F1D85F9BD002C0EF0 /* GeometryGraph.inl in Resources */,
+				0CBB38591D85F9BD002C0EF0 /* GeometryFactory.inl in Resources */,
+				0CBB385C1D85F9BD002C0EF0 /* MultiPolygon.inl in Resources */,
+				0CBB385D1D85F9BD002C0EF0 /* PrecisionModel.inl in Resources */,
+				0CBB38561D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl in Resources */,
+				0CBB38531D85F9BD002C0EF0 /* Info.plist in Resources */,
+				0CBB308C1D85F413002C0EF0 /* LaunchScreen.storyboard in Resources */,
+				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
+				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
+				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
+				0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */,
+				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
+				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
+				0CBB38571D85F9BD002C0EF0 /* Envelope.inl in Resources */,
+				0CBB38641D85F9BD002C0EF0 /* MinimalEdgeRing.inl in Resources */,
+				0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */,
+				0CBB38551D85F9BD002C0EF0 /* Coordinate.inl in Resources */,
+				0CBB30871D85F413002C0EF0 /* Main.storyboard in Resources */,
+				0CBB38541D85F9BD002C0EF0 /* ConvexHull.inl in Resources */,
+				0CBB385E1D85F9BD002C0EF0 /* DirectedEdge.inl in Resources */,
+				0CBB38621D85F9BD002C0EF0 /* MCIndexNoder.inl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CBB30901D85F413002C0EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CBB309B1D85F413002C0EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14CCA0B633F3E95CEF4DA17A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		404C2CFABBAA609097206FF9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		838DE5031C536E940DF40FFE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0CBB307A1D85F413002C0EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
+				0CBB30841D85F413002C0EF0 /* ViewController.swift in Sources */,
+				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
+				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
+				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
+				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
+				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CBB308E1D85F413002C0EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CBB30991D85F413002C0EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CBB30A21D85F413002C0EF0 /* LEIFRUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0CBB30941D85F413002C0EF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CBB307D1D85F413002C0EF0 /* LEIFR */;
+			targetProxy = 0CBB30931D85F413002C0EF0 /* PBXContainerItemProxy */;
+		};
+		0CBB309F1D85F413002C0EF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CBB307D1D85F413002C0EF0 /* LEIFR */;
+			targetProxy = 0CBB309E1D85F413002C0EF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0CBB30851D85F413002C0EF0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0CBB30861D85F413002C0EF0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0CBB308B1D85F413002C0EF0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0CBB30A41D85F413002C0EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0CBB30A51D85F413002C0EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0CBB30A71D85F413002C0EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/wkb-ios\"",
+					"$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include",
+				);
+				INFOPLIST_FILE = LEIFR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.LEIFR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LEIFR/LEIFR-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0CBB30A81D85F413002C0EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/wkb-ios\"",
+					"$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include",
+				);
+				INFOPLIST_FILE = LEIFR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.LEIFR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LEIFR/LEIFR-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		0CBB30AA1D85F413002C0EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LEIFRTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.LEIFRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEIFR.app/LEIFR";
+			};
+			name = Debug;
+		};
+		0CBB30AB1D85F413002C0EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LEIFRTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.LEIFRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEIFR.app/LEIFR";
+			};
+			name = Release;
+		};
+		0CBB30AD1D85F413002C0EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LEIFRUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.LEIFRUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LEIFR;
+			};
+			name = Debug;
+		};
+		0CBB30AE1D85F413002C0EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LEIFRUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.echx.LEIFRUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LEIFR;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0CBB30791D85F413002C0EF0 /* Build configuration list for PBXProject "LEIFR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CBB30A41D85F413002C0EF0 /* Debug */,
+				0CBB30A51D85F413002C0EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0CBB30A61D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CBB30A71D85F413002C0EF0 /* Debug */,
+				0CBB30A81D85F413002C0EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0CBB30A91D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CBB30AA1D85F413002C0EF0 /* Debug */,
+				0CBB30AB1D85F413002C0EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0CBB30AC1D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFRUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CBB30AD1D85F413002C0EF0 /* Debug */,
+				0CBB30AE1D85F413002C0EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0CBB30761D85F413002C0EF0 /* Project object */;
+}
