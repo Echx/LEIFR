@@ -52,6 +52,8 @@
 		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
+		62B0B4231D86178F00A6AF4D /* old.realm in Resources */ = {isa = PBXBuildFile; fileRef = 62B0B4221D86178F00A6AF4D /* old.realm */; };
+		62B0B4251D86187600A6AF4D /* RFTPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B0B4241D86187600A6AF4D /* RFTPoint.swift */; };
 		62CB4AE91D86112500F4FDC7 /* LFRealmMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CB4AE81D86112500F4FDC7 /* LFRealmMigrationManager.swift */; };
 		62CB4AEE1D86129B00F4FDC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CB4AEA1D86129B00F4FDC7 /* LaunchScreen.storyboard */; };
 		62CB4AEF1D86129B00F4FDC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CB4AEC1D86129B00F4FDC7 /* Main.storyboard */; };
@@ -515,6 +517,8 @@
 		0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManagerTest.swift; sourceTree = "<group>"; };
 		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B0B4221D86178F00A6AF4D /* old.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = old.realm; sourceTree = "<group>"; };
+		62B0B4241D86187600A6AF4D /* RFTPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTPoint.swift; sourceTree = "<group>"; };
 		62CB4AE81D86112500F4FDC7 /* LFRealmMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFRealmMigrationManager.swift; sourceTree = "<group>"; };
 		62CB4AEB1D86129B00F4FDC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62CB4AED1D86129B00F4FDC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -1416,6 +1420,8 @@
 		0CBB387C1D85FD36002C0EF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62B0B4241D86187600A6AF4D /* RFTPoint.swift */,
+				62B0B4221D86178F00A6AF4D /* old.realm */,
 				0CBB38821D86027C002C0EF0 /* default.sqlite */,
 				0CBB30811D85F413002C0EF0 /* AppDelegate.swift */,
 				0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */,
@@ -1568,6 +1574,7 @@
 				0CBB38591D85F9BD002C0EF0 /* GeometryFactory.inl in Resources */,
 				0CBB385C1D85F9BD002C0EF0 /* MultiPolygon.inl in Resources */,
 				0CBB385D1D85F9BD002C0EF0 /* PrecisionModel.inl in Resources */,
+				62B0B4231D86178F00A6AF4D /* old.realm in Resources */,
 				0CBB38561D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl in Resources */,
 				0CBB38531D85F9BD002C0EF0 /* Info.plist in Resources */,
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
@@ -1663,6 +1670,7 @@
 				62CB4AE91D86112500F4FDC7 /* LFRealmMigrationManager.swift in Sources */,
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
+				62B0B4251D86187600A6AF4D /* RFTPoint.swift in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				0CBB38791D85FCE7002C0EF0 /* ViewController.swift in Sources */,
@@ -1814,6 +1822,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1839,6 +1848,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",

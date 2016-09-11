@@ -10,7 +10,10 @@ import Foundation
 import RealmSwift
 
 class LFRealmMigrationManager: NSObject {
-    public func migrate(path: NSURL) {
-        let realm = try!Realm(path)
+    class func migrate(path: NSURL) {
+        let config = Realm.Configuration(fileURL: path, readOnly: true)
+        let realm = try! Realm(configuration: config)
+        
+        let points = realm.objects(RFTPoint.self).sorted("time")
     }
 }
