@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
-		0CBB30841D85F413002C0EF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30831D85F413002C0EF0 /* ViewController.swift */; };
 		0CBB30871D85F413002C0EF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30851D85F413002C0EF0 /* Main.storyboard */; };
 		0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30881D85F413002C0EF0 /* Assets.xcassets */; };
 		0CBB308C1D85F413002C0EF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */; };
@@ -48,6 +47,7 @@
 		0CBB38701D85F9E4002C0EF0 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */; };
 		0CBB38721D85F9EC002C0EF0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38711D85F9EC002C0EF0 /* libz.tbd */; };
 		0CBB38741D85F9F7002C0EF0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38731D85F9F7002C0EF0 /* libc++.tbd */; };
+		0CBB38791D85FCE7002C0EF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38781D85FCE7002C0EF0 /* ViewController.swift */; };
 		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
 /* End PBXBuildFile section */
 
@@ -70,19 +70,18 @@
 
 /* Begin PBXFileReference section */
 		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CBB30831D85F413002C0EF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		0CBB30861D85F413002C0EF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		0CBB308B1D85F413002C0EF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0CBB308D1D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CBB308D1D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		0CBB30921D85F413002C0EF0 /* LEIFRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEIFRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEIFRTests.swift; sourceTree = "<group>"; };
 		0CBB30981D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CBB309D1D85F413002C0EF0 /* LEIFRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEIFRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30A11D85F413002C0EF0 /* LEIFRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEIFRUITests.swift; sourceTree = "<group>"; };
 		0CBB30A31D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LEIFR-Bridging-Header.h"; sourceTree = "<group>"; };
+		0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LEIFR-Bridging-Header.h"; path = "../LEIFR-Bridging-Header.h"; sourceTree = "<group>"; };
 		0CBB36851D85F9BD002C0EF0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		0CBB36861D85F9BD002C0EF0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		0CBB36871D85F9BD002C0EF0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -503,6 +502,7 @@
 		0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		0CBB38711D85F9EC002C0EF0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0CBB38731D85F9F7002C0EF0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		0CBB38781D85FCE7002C0EF0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
@@ -570,14 +570,12 @@
 		0CBB30801D85F413002C0EF0 /* LEIFR */ = {
 			isa = PBXGroup;
 			children = (
+				0CBB387D1D85FD48002C0EF0 /* Models */,
+				0CBB387B1D85FD31002C0EF0 /* Views */,
+				0CBB387A1D85FD14002C0EF0 /* Services */,
+				0CBB38771D85FCE7002C0EF0 /* ViewControllers */,
 				0CBB36821D85F9BD002C0EF0 /* Libraries */,
-				0CBB30811D85F413002C0EF0 /* AppDelegate.swift */,
-				0CBB30831D85F413002C0EF0 /* ViewController.swift */,
-				0CBB30851D85F413002C0EF0 /* Main.storyboard */,
-				0CBB30881D85F413002C0EF0 /* Assets.xcassets */,
-				0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */,
-				0CBB308D1D85F413002C0EF0 /* Info.plist */,
-				0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */,
+				0CBB387C1D85FD36002C0EF0 /* Resources */,
 			);
 			path = LEIFR;
 			sourceTree = "<group>";
@@ -1374,6 +1372,48 @@
 			path = spatialite;
 			sourceTree = "<group>";
 		};
+		0CBB38771D85FCE7002C0EF0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB38781D85FCE7002C0EF0 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0CBB387A1D85FD14002C0EF0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0CBB387B1D85FD31002C0EF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */,
+				0CBB30851D85F413002C0EF0 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0CBB387C1D85FD36002C0EF0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0CBB30811D85F413002C0EF0 /* AppDelegate.swift */,
+				0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */,
+				0CBB308D1D85F413002C0EF0 /* Info.plist */,
+				0CBB30881D85F413002C0EF0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0CBB387D1D85FD48002C0EF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5432B3B5B435532EF82F3B2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1597,11 +1637,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
-				0CBB30841D85F413002C0EF0 /* ViewController.swift in Sources */,
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
+				0CBB38791D85FCE7002C0EF0 /* ViewController.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1644,6 +1684,7 @@
 				0CBB30861D85F413002C0EF0 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */ = {
@@ -1652,6 +1693,7 @@
 				0CBB308B1D85F413002C0EF0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
