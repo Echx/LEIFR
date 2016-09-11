@@ -1,0 +1,6 @@
+framework module wkb_ios {
+  umbrella header "wkb-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
