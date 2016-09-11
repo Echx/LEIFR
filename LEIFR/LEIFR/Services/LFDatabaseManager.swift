@@ -102,6 +102,7 @@ class LFDatabaseManager: NSObject {
 			let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
 			let select = "SELECT track_id, AsBinary(Intersection(Simplify(track_geometry, \(tolerance)), " + screenPolygon + ")) FROM tracks "
 			let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
+			
 			let results = self.database.executeQuery(querySQL, withArgumentsInArray: nil)!
 			
 			var paths = [LFPath]()
