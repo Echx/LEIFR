@@ -1,1 +1,3 @@
-# Trail
+# Leifr
+
+Góðan daginn, Leifr Eiríksson! 🕵🏻
