@@ -7,3 +7,6 @@
 #import <spatialite.h>
 #import "FMDB.h"
 #import "wkb-ios-Bridging-Header.h"
+
+
+#import <MapKit/MapKit.h>

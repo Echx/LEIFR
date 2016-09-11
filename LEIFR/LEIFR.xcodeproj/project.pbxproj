@@ -51,6 +51,8 @@
 		0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB387E1D85FF66002C0EF0 /* LFPath.swift */; };
 		0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */; };
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
+		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
+		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
 /* End PBXBuildFile section */
 
@@ -1566,6 +1568,7 @@
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
 				0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */,
+				0CBB38871D861028002C0EF0 /* default.sqlite in Resources */,
 				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
 				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
 				0CBB38571D85F9BD002C0EF0 /* Envelope.inl in Resources */,
@@ -1583,6 +1586,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
