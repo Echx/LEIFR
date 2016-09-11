@@ -1,0 +1,10 @@
+PODS:
+  - wkb-ios (1.0.6)
+
+DEPENDENCIES:
+  - wkb-ios
+
+SPEC CHECKSUMS:
+  wkb-ios: 8d1526e825e3d088a5a191c8eefe213a9e41d25e
+
+COCOAPODS: 0.39.0
