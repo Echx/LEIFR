@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
+
+class LFRealmMigrationManager: NSObject {
+    public func migrate(path: NSURL) {
+        let realm = try!Realm(path)
+    }
+}
