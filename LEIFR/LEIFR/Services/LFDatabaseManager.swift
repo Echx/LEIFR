@@ -18,23 +18,50 @@ class LFDatabaseManager: NSObject {
 		return self.manager
 	}
 	
-	func createDatabaseIfNotExist(name: String) {
+	func createDatabase(name: String) -> Bool {
 		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
 		let destinationPath = databaseDirectory.stringByAppendingString("/\(name).sqlite")
 		let fileManager = NSFileManager.defaultManager()
 		
 		if !fileManager.fileExistsAtPath(destinationPath) {
 			let sourcePath = NSBundle.mainBundle().pathForResource("default", ofType: "sqlite")!
-			_ = try? fileManager.copyItemAtPath(sourcePath, toPath: destinationPath)
+			do {
+				try fileManager.copyItemAtPath(sourcePath, toPath: destinationPath)
+			} catch {
+				return false
+			}
+		} else {
+			print("Database already existed with name: \(name)")
 		}
 		
 		self.database = FMDatabase(path: destinationPath)
 		self.databaseQueue = FMDatabaseQueue(path: destinationPath)
+		
+		return true
+	}
+	
+	func removeDatabase(name: String) -> Bool {
+		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+		let destinationPath = databaseDirectory.stringByAppendingString("/\(name).sqlite")
+		let fileManager = NSFileManager.defaultManager()
+		
+		if fileManager.fileExistsAtPath(destinationPath) {
+			do {
+				try fileManager.removeItemAtPath(destinationPath)
+			} catch {
+				return false
+			}
+		}
+		
+		return true
 	}
 	
 	func openDatabase() -> Bool {
 		if self.database == nil {
-			self.createDatabaseIfNotExist("default")
+			if !self.createDatabase("default") {
+				print("Failed to create database.")
+				return false
+			}
 		}
 		
 		if self.database.open() {
@@ -46,11 +73,12 @@ class LFDatabaseManager: NSObject {
 		}
 	}
 	
-	func savePath(path: LFPath) {
+	func savePath(path: LFPath, completion:(Bool -> Void)) {
 		databaseQueue.inDatabase({
 			database in
 			let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
-			self.database.executeStatements(insertSQL)
+			let isSuccessful = self.database.executeStatements(insertSQL)
+			completion(isSuccessful)
 		})
 	}
 	
