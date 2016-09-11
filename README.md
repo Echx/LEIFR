@@ -1,3 +1,3 @@
-# Leifr
+# LEIFR
 
 Góðan daginn, Leifr Eiríksson! 🕵🏻
