@@ -18,17 +18,25 @@ class LFDatabaseManager: NSObject {
 		return self.manager
 	}
 	
-	func createDatabase(name: String) -> Bool {
+	func databasePathWithName(name: String) -> String {
 		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
 		let destinationPath = databaseDirectory.stringByAppendingString("/\(name).sqlite")
+		return destinationPath
+	}
+	
+	func createDatabase(name: String) -> Bool {
+		let destinationPath = self.databasePathWithName(name)
 		let fileManager = NSFileManager.defaultManager()
 		
 		if !fileManager.fileExistsAtPath(destinationPath) {
-			let sourcePath = NSBundle.mainBundle().pathForResource("default", ofType: "sqlite")!
-			do {
-				try fileManager.copyItemAtPath(sourcePath, toPath: destinationPath)
-			} catch {
-				return false
+			if let sourcePath = NSBundle.mainBundle().pathForResource("default", ofType: "sqlite") {
+				do {
+					try fileManager.copyItemAtPath(sourcePath, toPath: destinationPath)
+				} catch {
+					return false
+				}
+			} else {
+				print("Database template not exist")
 			}
 		} else {
 			print("Database already existed with name: \(name)")
@@ -41,8 +49,7 @@ class LFDatabaseManager: NSObject {
 	}
 	
 	func removeDatabase(name: String) -> Bool {
-		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-		let destinationPath = databaseDirectory.stringByAppendingString("/\(name).sqlite")
+		let destinationPath = self.databasePathWithName(name)
 		let fileManager = NSFileManager.defaultManager()
 		
 		if fileManager.fileExistsAtPath(destinationPath) {
