@@ -15,5 +15,7 @@ class LFRealmMigrationManager: NSObject {
         let realm = try! Realm(configuration: config)
         
         let points = realm.objects(RFTPoint.self).sorted("time")
+        
+        // TODO: use new DB api to seed to DB
     }
 }
