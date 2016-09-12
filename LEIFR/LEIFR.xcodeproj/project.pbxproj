@@ -53,6 +53,7 @@
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
 		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
+		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
 		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
 /* End PBXBuildFile section */
 
@@ -514,6 +515,7 @@
 		0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManagerTest.swift; sourceTree = "<group>"; };
 		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1394,6 +1396,7 @@
 			isa = PBXGroup;
 			children = (
 				0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */,
+				62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1657,6 +1660,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,

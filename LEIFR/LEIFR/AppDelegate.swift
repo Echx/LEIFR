@@ -12,7 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
+    private let geoRecordManager = LFGeoRecordManager.sharedManager()
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -60,6 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-        print(newLocation)
+        geoRecordManager.recordPoint(newLocation)
     }
 }
