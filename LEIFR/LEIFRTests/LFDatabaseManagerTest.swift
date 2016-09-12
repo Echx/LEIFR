@@ -20,7 +20,7 @@ class LFDatabaseManagerTest: XCTestCase {
     }
     
     override func tearDown() {
-		self.databaseManager.database.close()
+		self.databaseManager.closeDatabase()
 		self.databaseManager.removeDatabase("test")
         super.tearDown()
     }
@@ -33,13 +33,13 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		print("Database Path: \(destinationPath)\n")
 		
-		XCTAssertTrue(self.databaseManager.removeDatabase("test"), "Failed to execute removeDatabase")
+		XCTAssertTrue(self.databaseManager.removeDatabase("testCreation"), "Failed to execute removeDatabase")
 		XCTAssertFalse(fileManager.fileExistsAtPath(destinationPath), "Database not deleted")
 		
-		XCTAssertTrue(self.databaseManager.createDatabase("test"), "Failed to create database")
+		XCTAssertTrue(self.databaseManager.createDatabase("testCreation"), "Failed to create database")
 		XCTAssertTrue(fileManager.fileExistsAtPath(destinationPath), "Database not created")
 		
-		XCTAssertTrue(self.databaseManager.removeDatabase("test"), "Failed to delete database after completion")
+		XCTAssertTrue(self.databaseManager.removeDatabase("testCreation"), "Failed to delete database after completion")
 		XCTAssertFalse(fileManager.fileExistsAtPath(destinationPath), "Database not created")
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
@@ -107,12 +107,4 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
 	}
-	
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

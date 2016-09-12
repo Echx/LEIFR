@@ -80,6 +80,10 @@ class LFDatabaseManager: NSObject {
 		}
 	}
 	
+	func closeDatabase() -> Bool {
+		return self.database.close()
+	}
+	
 	func savePath(path: LFPath, completion:(Bool -> Void)) {
 		databaseQueue.inDatabase({
 			database in
