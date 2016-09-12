@@ -29,17 +29,18 @@ class LFDatabaseManagerTest: XCTestCase {
 		print("")
 		
 		let fileManager = NSFileManager.defaultManager()
-		let destinationPath = databaseManager.databasePathWithName("test")
+        let testDatabaseName = "testCreation"
+		let destinationPath = databaseManager.databasePathWithName(testDatabaseName)
 		
 		print("Database Path: \(destinationPath)\n")
 		
-		XCTAssertTrue(self.databaseManager.removeDatabase("testCreation"), "Failed to execute removeDatabase")
+		XCTAssertTrue(self.databaseManager.removeDatabase(testDatabaseName), "Failed to execute removeDatabase")
 		XCTAssertFalse(fileManager.fileExistsAtPath(destinationPath), "Database not deleted")
 		
-		XCTAssertTrue(self.databaseManager.createDatabase("testCreation"), "Failed to create database")
+		XCTAssertTrue(self.databaseManager.createDatabase(testDatabaseName), "Failed to create database")
 		XCTAssertTrue(fileManager.fileExistsAtPath(destinationPath), "Database not created")
 		
-		XCTAssertTrue(self.databaseManager.removeDatabase("testCreation"), "Failed to delete database after completion")
+		XCTAssertTrue(self.databaseManager.removeDatabase(testDatabaseName), "Failed to delete database after completion")
 		XCTAssertFalse(fileManager.fileExistsAtPath(destinationPath), "Database not created")
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
