@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
     let locationManager = CLLocationManager()
     private let geoRecordManager = LFGeoRecordManager.sharedManager()
+    private let databaseManager = LFDatabaseManager.sharedManager()
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -44,9 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationWillTerminate(application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        self.databaseManager.closeDatabase()
+        self.geoRecordManager.flushPoints()
 	}
 
     private func configureLocationManager() {
+        self.databaseManager.openDatabase()
+        
         self.locationManager.delegate = self
         
         if self.locationManager.respondsToSelector(#selector(CLLocationManager.requestAlwaysAuthorization)) {
@@ -56,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.locationManager.allowsBackgroundLocationUpdates = true
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         self.locationManager.startUpdatingLocation()
+        
+        NSTimer.scheduledTimerWithTimeInterval(600, target: self.geoRecordManager, selector: #selector(LFGeoRecordManager.flushPoints), userInfo: nil, repeats: true)
     }
 }
 
