@@ -51,13 +51,13 @@
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
 		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
-		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
 		62B0B4231D86178F00A6AF4D /* old.realm in Resources */ = {isa = PBXBuildFile; fileRef = 62B0B4221D86178F00A6AF4D /* old.realm */; };
 		62B0B4251D86187600A6AF4D /* RFTPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B0B4241D86187600A6AF4D /* RFTPoint.swift */; };
 		62CB4AE91D86112500F4FDC7 /* LFRealmMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CB4AE81D86112500F4FDC7 /* LFRealmMigrationManager.swift */; };
 		62CB4AEE1D86129B00F4FDC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CB4AEA1D86129B00F4FDC7 /* LaunchScreen.storyboard */; };
 		62CB4AEF1D86129B00F4FDC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CB4AEC1D86129B00F4FDC7 /* Main.storyboard */; };
 		6FF0B26F0D46A818FB77E20A /* Pods_LEIFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B91017FDAC5DDE2335DD3C7 /* Pods_LEIFR.framework */; };
+		A3DB0B3582D134965CBCDE80 /* Pods_LEIFRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBAB0AA57E56E93D4A4BE8A /* Pods_LEIFRTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -515,15 +515,16 @@
 		0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManager.swift; sourceTree = "<group>"; };
 		0CBB38821D86027C002C0EF0 /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManagerTest.swift; sourceTree = "<group>"; };
-		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
-		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2086C50438F89444614B23C0 /* Pods-LEIFRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		62B0B4221D86178F00A6AF4D /* old.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = old.realm; sourceTree = "<group>"; };
 		62B0B4241D86187600A6AF4D /* RFTPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFTPoint.swift; sourceTree = "<group>"; };
 		62CB4AE81D86112500F4FDC7 /* LFRealmMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFRealmMigrationManager.swift; sourceTree = "<group>"; };
 		62CB4AEB1D86129B00F4FDC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62CB4AED1D86129B00F4FDC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		9B91017FDAC5DDE2335DD3C7 /* Pods_LEIFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A8561D1E4E1CA9411D9458 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
 		D9781FF9E1DF9A14785667A9 /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
+		EBBAB0AA57E56E93D4A4BE8A /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,6 +551,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DB0B3582D134965CBCDE80 /* Pods_LEIFRTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1448,6 +1450,7 @@
 				0CBB386D1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd */,
 				0CBB386B1D85F9D3002C0EF0 /* libiconv.tbd */,
 				9B91017FDAC5DDE2335DD3C7 /* Pods_LEIFR.framework */,
+				EBBAB0AA57E56E93D4A4BE8A /* Pods_LEIFRTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1457,11 +1460,23 @@
 			children = (
 				D9781FF9E1DF9A14785667A9 /* Pods-LEIFR.debug.xcconfig */,
 				00FE4E0B3C975D516B9A1EE1 /* Pods-LEIFR.release.xcconfig */,
+				2086C50438F89444614B23C0 /* Pods-LEIFRTests.debug.xcconfig */,
+				C6A8561D1E4E1CA9411D9458 /* Pods-LEIFRTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		62A628181D86A380009D0687 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0CBB307D1D85F413002C0EF0 /* LEIFR */ = {
@@ -1474,6 +1489,7 @@
 				0CBB307C1D85F413002C0EF0 /* Resources */,
 				E058F78379B93D11BC9D6CFB /* [CP] Embed Pods Frameworks */,
 				FC12B778BED22806FFAF4C1A /* [CP] Copy Pods Resources */,
+				62A628181D86A380009D0687 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1488,9 +1504,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CBB30A91D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFRTests" */;
 			buildPhases = (
+				078E8078F1E338080B03E1B4 /* [CP] Check Pods Manifest.lock */,
 				0CBB308E1D85F413002C0EF0 /* Sources */,
 				0CBB308F1D85F413002C0EF0 /* Frameworks */,
 				0CBB30901D85F413002C0EF0 /* Resources */,
+				27FCC60449592113E91352F4 /* [CP] Embed Pods Frameworks */,
+				43E0995695D3B3FAEE0CC0A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1613,6 +1632,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		078E8078F1E338080B03E1B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		27FCC60449592113E91352F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43E0995695D3B3FAEE0CC0A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A75A08DEF93E473A939121E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1869,6 +1933,7 @@
 		};
 		0CBB30AA1D85F413002C0EF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2086C50438F89444614B23C0 /* Pods-LEIFRTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include";
@@ -1882,6 +1947,7 @@
 		};
 		0CBB30AB1D85F413002C0EF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6A8561D1E4E1CA9411D9458 /* Pods-LEIFRTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include";

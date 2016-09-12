@@ -10,3 +10,8 @@ pod 'RealmSwift'
 
 end
 
+target 'LEIFRTests' do
+
+pod 'RealmSwift'
+
+end
