@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
-		0CBB30871D85F413002C0EF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30851D85F413002C0EF0 /* Main.storyboard */; };
 		0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30881D85F413002C0EF0 /* Assets.xcassets */; };
-		0CBB308C1D85F413002C0EF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */; };
 		0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */; };
 		0CBB30A21D85F413002C0EF0 /* LEIFRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30A11D85F413002C0EF0 /* LEIFRUITests.swift */; };
 		0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB36861D85F9BD002C0EF0 /* FMDatabase.m */; };
@@ -53,8 +51,12 @@
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
 		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
+		6265F7101D8889BB00EE54B2 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265F70F1D8889BB00EE54B2 /* Mapbox.framework */; };
+		6265F7111D8889BB00EE54B2 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265F70F1D8889BB00EE54B2 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
 		62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */; };
+		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
+		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
 		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
 /* End PBXBuildFile section */
 
@@ -75,12 +77,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6265F7121D8889BB00EE54B2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6265F7111D8889BB00EE54B2 /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		0CBB30861D85F413002C0EF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		0CBB308B1D85F413002C0EF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CBB308D1D85F413002C0EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		0CBB30921D85F413002C0EF0 /* LEIFRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEIFRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEIFRTests.swift; sourceTree = "<group>"; };
@@ -516,8 +530,11 @@
 		0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManagerTest.swift; sourceTree = "<group>"; };
 		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6265F70F1D8889BB00EE54B2 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
+		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -537,6 +554,7 @@
 				0CBB38661D85F9BD002C0EF0 /* libgeos_c.a in Frameworks */,
 				0CBB386A1D85F9BD002C0EF0 /* mod_spatialite.a in Frameworks */,
 				0CBB38671D85F9BD002C0EF0 /* libproj.a in Frameworks */,
+				6265F7101D8889BB00EE54B2 /* Mapbox.framework in Frameworks */,
 				66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +579,7 @@
 		0CBB30751D85F413002C0EF0 = {
 			isa = PBXGroup;
 			children = (
+				6265F70F1D8889BB00EE54B2 /* Mapbox.framework */,
 				0CBB30801D85F413002C0EF0 /* LEIFR */,
 				0CBB30951D85F413002C0EF0 /* LEIFRTests */,
 				0CBB30A01D85F413002C0EF0 /* LEIFRUITests */,
@@ -1407,8 +1426,8 @@
 		0CBB387B1D85FD31002C0EF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */,
-				0CBB30851D85F413002C0EF0 /* Main.storyboard */,
+				62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */,
+				62F0DBFA1D888A02006D05E0 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1468,6 +1487,7 @@
 				0CBB307C1D85F413002C0EF0 /* Resources */,
 				838DE5031C536E940DF40FFE /* Embed Pods Frameworks */,
 				14CCA0B633F3E95CEF4DA17A /* Copy Pods Resources */,
+				6265F7121D8889BB00EE54B2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1577,8 +1597,8 @@
 				0CBB385C1D85F9BD002C0EF0 /* MultiPolygon.inl in Resources */,
 				0CBB385D1D85F9BD002C0EF0 /* PrecisionModel.inl in Resources */,
 				0CBB38561D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl in Resources */,
+				62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */,
 				0CBB38531D85F9BD002C0EF0 /* Info.plist in Resources */,
-				0CBB308C1D85F413002C0EF0 /* LaunchScreen.storyboard in Resources */,
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
@@ -1590,8 +1610,8 @@
 				0CBB38641D85F9BD002C0EF0 /* MinimalEdgeRing.inl in Resources */,
 				0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */,
 				0CBB38551D85F9BD002C0EF0 /* Coordinate.inl in Resources */,
-				0CBB30871D85F413002C0EF0 /* Main.storyboard in Resources */,
 				0CBB38541D85F9BD002C0EF0 /* ConvexHull.inl in Resources */,
+				62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */,
 				0CBB385E1D85F9BD002C0EF0 /* DirectedEdge.inl in Resources */,
 				0CBB38621D85F9BD002C0EF0 /* MCIndexNoder.inl in Resources */,
 			);
@@ -1714,22 +1734,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0CBB30851D85F413002C0EF0 /* Main.storyboard */ = {
+		62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0CBB30861D85F413002C0EF0 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		0CBB308A1D85F413002C0EF0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0CBB308B1D85F413002C0EF0 /* Base */,
+				62F0DBF91D888A02006D05E0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
+			sourceTree = "<group>";
+		};
+		62F0DBFA1D888A02006D05E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62F0DBFB1D888A02006D05E0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1833,6 +1851,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1861,6 +1883,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",

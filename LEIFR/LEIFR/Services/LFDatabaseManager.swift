@@ -101,7 +101,7 @@ class LFDatabaseManager: NSObject {
 			let xMax = region.center.longitude + region.span.longitudeDelta
 			let yMax = region.center.latitude + region.span.latitudeDelta
 			
-			let tolerance = region.span.longitudeDelta / 50
+			let tolerance = region.span.longitudeDelta / 100
 			
 			let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
 			let select = "SELECT track_id, AsBinary(Intersection(Simplify(track_geometry, \(tolerance)), " + screenPolygon + ")) FROM tracks "
