@@ -9,15 +9,15 @@
 import UIKit
 
 class LFGeoRecordManager: NSObject {
-    private static let manager = LFGeoRecordManager()
-    private var bufferPath = LFPath()
-    private var mutex = pthread_mutex_t()
+    fileprivate static let manager = LFGeoRecordManager()
+    fileprivate var bufferPath = LFPath()
+    fileprivate var mutex = pthread_mutex_t()
     
     class func sharedManager() -> LFGeoRecordManager {
         return self.manager
     }
     
-    func recordPoint(newPoint: CLLocation) {
+    func recordPoint(_ newPoint: CLLocation) {
         pthread_mutex_lock(&mutex)
         defer {
             pthread_mutex_unlock(&mutex)

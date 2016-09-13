@@ -11,7 +11,7 @@ import XCTest
 
 class LFGeoRecordManagerTest: XCTestCase {
     
-    private let databaseManager = LFDatabaseManager.sharedManager()
+    fileprivate let databaseManager = LFDatabaseManager.sharedManager()
     
     override func setUp() {
         super.setUp()

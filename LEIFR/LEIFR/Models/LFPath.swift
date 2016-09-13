@@ -9,7 +9,7 @@
 import UIKit
 
 class LFPath: NSObject {
-	private let lineString: WKBLineString
+	fileprivate let lineString: WKBLineString
 	
 	init(lineString: WKBLineString) {
 		self.lineString = lineString
@@ -21,14 +21,14 @@ class LFPath: NSObject {
 		super.init()
 	}
 	
-	func addPoint(latitude latitude: Double, longitude: Double, altitude: Double) {
-		addPoint(latitude: latitude, longitude: longitude, altitude: altitude, time: NSDate())
+	func addPoint(latitude: Double, longitude: Double, altitude: Double) {
+		addPoint(latitude: latitude, longitude: longitude, altitude: altitude, time: Date())
 	}
 	
-	func addPoint(latitude latitude: Double, longitude: Double, altitude: Double, time: NSDate) {
-		let point = WKBPoint(hasZ: true, andHasM: true, andX: NSDecimalNumber(double: longitude), andY: NSDecimalNumber(double: latitude))
-		point.z = NSDecimalNumber(double: altitude)
-		point.m = NSDecimalNumber(double: time.timeIntervalSince1970)
+	func addPoint(latitude: Double, longitude: Double, altitude: Double, time: Date) {
+		let point = WKBPoint(hasZ: true, andHasM: true, andX: NSDecimalNumber(value: longitude as Double), andY: NSDecimalNumber(value: latitude as Double))
+		point?.z = NSDecimalNumber(value: altitude as Double)
+		point?.m = NSDecimalNumber(value: time.timeIntervalSince1970 as Double)
 		lineString.addPoint(point)
 	}
 	
@@ -39,10 +39,10 @@ class LFPath: NSObject {
 	func WKTString() -> String{
 		let array = NSMutableArray()
 		for point in lineString.points {
-			array.addObject("\(point.x as NSDecimalNumber) \(point.y as NSDecimalNumber) \(point.z as NSDecimalNumber) \(point.m as NSDecimalNumber)")
+			array.add("\((point as AnyObject).x as NSDecimalNumber) \((point as AnyObject).y as NSDecimalNumber) \((point as AnyObject).z as NSDecimalNumber) \((point as AnyObject).m as NSDecimalNumber)")
 		}
 		
-		let pointsString = array.componentsJoinedByString(", ")
+		let pointsString = array.componentsJoined(by: ", ")
 		return "LINESTRINGZM(" + pointsString + ")"
 	}
 }
@@ -66,9 +66,9 @@ extension WKBPoint {
 		}
 	}
 	
-	var time:NSDate {
+	var time:Date {
 		get {
-			return NSDate(timeIntervalSince1970: Double(self.m))
+			return Date(timeIntervalSince1970: Double(self.m))
 		}
 	}
 }

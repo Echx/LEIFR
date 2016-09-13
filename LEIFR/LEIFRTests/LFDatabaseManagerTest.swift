@@ -11,7 +11,7 @@ import XCTest
 
 class LFDatabaseManagerTest: XCTestCase {
 	
-	private let databaseManager = LFDatabaseManager.sharedManager()
+	fileprivate let databaseManager = LFDatabaseManager.sharedManager()
 	
     override func setUp() {
         super.setUp()
@@ -28,20 +28,20 @@ class LFDatabaseManagerTest: XCTestCase {
     func testDatabaseCreationDeletion() {
 		print("")
 		
-		let fileManager = NSFileManager.defaultManager()
+		let fileManager = FileManager.default
         let testDatabaseName = "testCreation"
 		let destinationPath = databaseManager.databasePathWithName(testDatabaseName)
 		
 		print("Database Path: \(destinationPath)\n")
 		
 		XCTAssertTrue(self.databaseManager.removeDatabase(testDatabaseName), "Failed to execute removeDatabase")
-		XCTAssertFalse(fileManager.fileExistsAtPath(destinationPath), "Database not deleted")
+		XCTAssertFalse(fileManager.fileExists(atPath: destinationPath), "Database not deleted")
 		
 		XCTAssertTrue(self.databaseManager.createDatabase(testDatabaseName), "Failed to create database")
-		XCTAssertTrue(fileManager.fileExistsAtPath(destinationPath), "Database not created")
+		XCTAssertTrue(fileManager.fileExists(atPath: destinationPath), "Database not created")
 		
 		XCTAssertTrue(self.databaseManager.removeDatabase(testDatabaseName), "Failed to delete database after completion")
-		XCTAssertFalse(fileManager.fileExistsAtPath(destinationPath), "Database not created")
+		XCTAssertFalse(fileManager.fileExists(atPath: destinationPath), "Database not created")
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
     }
@@ -60,7 +60,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		}
 		
 		var response1Arrived = false
-		var timeOutDate = NSDate(timeIntervalSinceNow: 5)
+		var timeOutDate = Date(timeIntervalSinceNow: 5)
 		
 		self.databaseManager.savePath(path, completion: {
 			success in
@@ -69,7 +69,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		})
 		
 		while (!response1Arrived && timeOutDate.timeIntervalSinceNow > 0) {
-			CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.01, true)
+			CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 0.01, true)
 		}
 		
 		if (!response1Arrived) {
@@ -78,7 +78,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		var response2Arrived = false
 		var response3Arrived = false
-		timeOutDate = NSDate(timeIntervalSinceNow: 5)
+		timeOutDate = Date(timeIntervalSinceNow: 5)
 		
 		let worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld)
 		let nullRegion = MKCoordinateRegionForMapRect(MKMapRectNull)
@@ -97,7 +97,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		
 		while ((!response1Arrived || !response2Arrived || !response3Arrived) && timeOutDate.timeIntervalSinceNow > 0) {
-			CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.01, true)
+			CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 0.01, true)
 		}
 		
 		if (!response1Arrived || !response2Arrived || !response3Arrived) {

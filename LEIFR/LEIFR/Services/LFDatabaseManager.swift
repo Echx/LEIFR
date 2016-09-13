@@ -10,28 +10,28 @@ import UIKit
 import MapKit
 
 class LFDatabaseManager: NSObject {
-	private static let manager = LFDatabaseManager()
-	private var databaseQueue: FMDatabaseQueue!
+	fileprivate static let manager = LFDatabaseManager()
+	fileprivate var databaseQueue: FMDatabaseQueue!
 	var database: FMDatabase!
 	
 	class func sharedManager() -> LFDatabaseManager {
 		return self.manager
 	}
 	
-	func databasePathWithName(name: String) -> String {
-		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-		let destinationPath = databaseDirectory.stringByAppendingString("/\(name).sqlite")
+	func databasePathWithName(_ name: String) -> String {
+		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+		let destinationPath = databaseDirectory + "/\(name).sqlite"
 		return destinationPath
 	}
 	
-	func createDatabase(name: String) -> Bool {
+	func createDatabase(_ name: String) -> Bool {
 		let destinationPath = self.databasePathWithName(name)
-		let fileManager = NSFileManager.defaultManager()
+		let fileManager = FileManager.default
 		
-		if !fileManager.fileExistsAtPath(destinationPath) {
-			if let sourcePath = NSBundle.mainBundle().pathForResource("default", ofType: "sqlite") {
+		if !fileManager.fileExists(atPath: destinationPath) {
+			if let sourcePath = Bundle.main.path(forResource: "default", ofType: "sqlite") {
 				do {
-					try fileManager.copyItemAtPath(sourcePath, toPath: destinationPath)
+					try fileManager.copyItem(atPath: sourcePath, toPath: destinationPath)
 				} catch {
 					return false
 				}
@@ -48,13 +48,13 @@ class LFDatabaseManager: NSObject {
 		return true
 	}
 	
-	func removeDatabase(name: String) -> Bool {
+	func removeDatabase(_ name: String) -> Bool {
 		let destinationPath = self.databasePathWithName(name)
-		let fileManager = NSFileManager.defaultManager()
+		let fileManager = FileManager.default
 		
-		if fileManager.fileExistsAtPath(destinationPath) {
+		if fileManager.fileExists(atPath: destinationPath) {
 			do {
-				try fileManager.removeItemAtPath(destinationPath)
+				try fileManager.removeItem(atPath: destinationPath)
 			} catch {
 				return false
 			}
@@ -84,7 +84,7 @@ class LFDatabaseManager: NSObject {
 		return self.database.close()
 	}
 	
-	func savePath(path: LFPath, completion:(Bool -> Void)) {
+	func savePath(_ path: LFPath, completion:@escaping ((Bool) -> Void)) {
 		databaseQueue.inDatabase({
 			database in
 			let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
@@ -93,7 +93,7 @@ class LFDatabaseManager: NSObject {
 		})
 	}
 	
-	func getPathsInRegion(region: MKCoordinateRegion, completion: ([LFPath] -> Void)){
+	func getPathsInRegion(_ region: MKCoordinateRegion, completion: @escaping (([LFPath]) -> Void)){
 		databaseQueue.inDatabase({
 			database in
 			let xMin = region.center.longitude - region.span.longitudeDelta
@@ -107,16 +107,16 @@ class LFDatabaseManager: NSObject {
 			let select = "SELECT track_id, AsBinary(Intersection(Simplify(track_geometry, \(tolerance)), " + screenPolygon + ")) FROM tracks "
 			let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
 			
-			let results = self.database.executeQuery(querySQL, withArgumentsInArray: nil)!
+			let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
 			
 			var paths = [LFPath]()
 			
 			while (results.next()) {
 				if results.hasAnotherRow() {
-					if let data = results.dataForColumnIndex(1) {
+					if let data = results.data(forColumnIndex: 1) {
 						let reader = WKBByteReader(data: data)
-						reader.byteOrder = Int(CFByteOrderBigEndian.rawValue)
-						let geometry = WKBGeometryReader.readGeometryWithReader(reader)
+						reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
+						let geometry = WKBGeometryReader.readGeometry(with: reader)
 						
 						if let lineString = geometry as? WKBLineString {
 							let path = LFPath(lineString: lineString)
