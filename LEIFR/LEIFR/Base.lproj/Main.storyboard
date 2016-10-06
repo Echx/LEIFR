@@ -36,6 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2257" y="159"/>
         </scene>
         <!--Hover Tab Base Controller-->
         <scene sceneID="Nnl-fI-pTc">
@@ -51,7 +52,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvZ-Uz-l46">
                                 <connections>
-                                    <segue destination="lNB-3l-n5g" kind="embed" id="eUn-3O-o4E"/>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="Cu6-t4-lUq"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OoX-Bn-wu5">
@@ -81,33 +82,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e69-Pe-CSI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1112.8" y="158.77061469265368"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Nb2-rl-2yO">
-            <objects>
-                <viewController id="lNB-3l-n5g" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HaR-n8-fRj"/>
-                        <viewControllerLayoutGuide type="bottom" id="3eL-Lh-T9O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="H3B-8k-tlW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-fD-iOb"/>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3eL-Lh-T9O" firstAttribute="top" secondItem="cgf-fD-iOb" secondAttribute="bottom" id="GKA-fz-ZmG"/>
-                            <constraint firstItem="cgf-fD-iOb" firstAttribute="leading" secondItem="H3B-8k-tlW" secondAttribute="leading" id="NmM-tp-8vT"/>
-                            <constraint firstAttribute="trailing" secondItem="cgf-fD-iOb" secondAttribute="trailing" id="ZUY-TC-CnJ"/>
-                            <constraint firstItem="cgf-fD-iOb" firstAttribute="height" secondItem="H3B-8k-tlW" secondAttribute="height" id="tcm-3p-AQ7"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GEP-XT-0AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2301.5999999999999" y="158.77061469265368"/>
         </scene>
         <!--Hover Tab View Controller-->
         <scene sceneID="vjo-pV-IJ8">
