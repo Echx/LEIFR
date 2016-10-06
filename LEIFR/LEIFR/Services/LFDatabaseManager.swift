@@ -93,7 +93,7 @@ class LFDatabaseManager: NSObject {
 		})
 	}
 	
-	func getPointsInRegion(_ region: MKCoordinateRegion,  completion:@escaping ((String) -> Void)){
+	func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping ((String) -> Void)){
 		databaseQueue.inDatabase({
 			database in
 			let xMin = region.center.longitude - region.span.longitudeDelta
