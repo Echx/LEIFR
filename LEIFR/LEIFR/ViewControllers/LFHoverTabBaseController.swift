@@ -12,9 +12,13 @@ class LFHoverTabBaseController: LFViewController {
 
 	@IBOutlet var tabView: UIView!
 	@IBOutlet var tabViewTopConstraint: NSLayoutConstraint!
+	private var tabViewSnapLevels: [CGFloat] = [120, 480, UIScreen.main.bounds.height - 64]
 	
 	override func loadView() {
 		super.loadView()
+		
+		let panGesture = UIPanGestureRecognizer(target: self, action: #selector(tabViewDidDrag(gesture:)))
+		self.tabView.addGestureRecognizer(panGesture)
 	}
 	
     override func viewDidLoad() {
@@ -27,7 +31,49 @@ class LFHoverTabBaseController: LFViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	
+	private var startY = CGFloat(0)
+	private var startConstant = CGFloat(0)
+	func tabViewDidDrag(gesture: UIPanGestureRecognizer) {
+		
+		switch gesture.state {
+		case .began:
+			self.tabViewTopConstraint.constant = tabView.layer.presentation()!.frame.origin.y
+			self.tabView.layer.removeAllAnimations()
+			startY = gesture.location(ofTouch: 0, in: self.view).y
+			self.startConstant = self.tabViewTopConstraint.constant
+			view.setNeedsLayout()
+			
+		case .changed:
+			let newConstant = gesture.location(ofTouch: 0, in: self.view).y - startY + startConstant
+			if newConstant > self.tabViewSnapLevels.first! && newConstant < self.tabViewSnapLevels.last! {
+				self.tabViewTopConstraint.constant = newConstant
+				view.setNeedsLayout()
+			} else {
+				let reference = newConstant < self.tabViewSnapLevels.first! ? self.tabViewSnapLevels.first! : self.tabViewSnapLevels.last!
+				let difference = newConstant - reference
+				self.tabViewTopConstraint.constant = reference + difference * 0.1
+				view.setNeedsLayout()
+			}
+			
+		default:
+			//select snap level
+			let final = self.tabViewTopConstraint.constant
+			var difference = CGFloat(Int.max)
+			var nearest = -1;
+			for (index, level) in self.tabViewSnapLevels.enumerated() {
+				if abs(level - final) < difference {
+					difference = abs(level - final)
+					nearest = index
+				}
+			}
+			
+			let snapLevel = self.tabViewSnapLevels[nearest]
+			self.tabViewTopConstraint.constant = snapLevel
+			UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [.allowUserInteraction, .allowAnimatedContent], animations: {
+				self.view.layoutIfNeeded()
+			}, completion: nil)
+		}
+	}
 	
     /*
     // MARK: - Navigation
