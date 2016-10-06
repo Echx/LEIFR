@@ -6,12 +6,31 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Controls the translation reference point.
+ */
 typedef NS_ENUM(NSUInteger, MGLFillStyleLayerFillTranslateAnchor) {
+    /**
+     The fill is translated relative to the map.
+     */
     MGLFillStyleLayerFillTranslateAnchorMap,
+    /**
+     The fill is translated relative to the viewport.
+     */
     MGLFillStyleLayerFillTranslateAnchorViewport,
 };
 
+/**
+ A fill layer which allows customization of styling properties at runtime. You may 
+ instantiate a new fill layer to add to a map style or you may query an 
+ `MGLMapView` for its `style` and obtain existing layers using the 
+ `-[MGLStyle layerWithIdentifier:]` method. 
+ */
 @interface MGLFillStyleLayer : MGLBaseStyleLayer <MGLStyleLayer>
+
+- (instancetype)initWithLayerIdentifier:(NSString *)layerIdentifier source:(MGLSource *)source;
+
+- (instancetype)initWithLayerIdentifier:(NSString *)layerIdentifier source:(MGLSource *)source sourceLayer:(NSString *)sourceLayer;
 
 /**
  A predicate that corresponds to the layer's <a href='https://www.mapbox.com/mapbox-gl-style-spec/#types-filter'>filter</a>.
@@ -31,7 +50,7 @@ typedef NS_ENUM(NSUInteger, MGLFillStyleLayerFillTranslateAnchor) {
 @property (nonatomic, null_resettable) id <MGLStyleAttributeValue> fillAntialias;
 
 /**
- The opacity of the entire fill layer. In contrast to the fill-color, this value will also affect the 1pt stroke around the fill, if the stroke is used.
+ The opacity of the entire fill layer. In contrast to the `fillColor`, this value will also affect the 1pt stroke around the fill, if the stroke is used.
  
  The default value of this property is an `NSNumber` object containing the float `1`. Set this property to `nil` to reset it to the default value.
  */
@@ -39,7 +58,7 @@ typedef NS_ENUM(NSUInteger, MGLFillStyleLayerFillTranslateAnchor) {
 
 #if TARGET_OS_IPHONE
 /**
- The color of the filled part of this layer. This color can be specified as rgba with an alpha component and the color's opacity will not affect the opacity of the 1pt stroke, if it is used.
+ The color of the filled part of this layer. This color can be specified as `rgba` with an alpha component and the color's opacity will not affect the opacity of the 1pt stroke, if it is used.
  
  The default value of this property is `UIColor.blackColor`. Set this property to `nil` to reset it to the default value.
 
@@ -48,7 +67,7 @@ typedef NS_ENUM(NSUInteger, MGLFillStyleLayerFillTranslateAnchor) {
 @property (nonatomic, null_resettable) id <MGLStyleAttributeValue> fillColor;
 #else
 /**
- The color of the filled part of this layer. This color can be specified as rgba with an alpha component and the color's opacity will not affect the opacity of the 1pt stroke, if it is used.
+ The color of the filled part of this layer. This color can be specified as `rgba` with an alpha component and the color's opacity will not affect the opacity of the 1pt stroke, if it is used.
  
  The default value of this property is `NSColor.blackColor`. Set this property to `nil` to reset it to the default value.
 
@@ -74,7 +93,7 @@ typedef NS_ENUM(NSUInteger, MGLFillStyleLayerFillTranslateAnchor) {
 @property (nonatomic, null_resettable) id <MGLStyleAttributeValue> fillTranslate;
 
 /**
- Control whether the translation is relative to the map (north) or viewport (screen)
+ Controls the translation reference point.
  
  The default value of this property is an `NSValue` object containing `MGLFillStyleLayerFillTranslateAnchorMap`. Set this property to `nil` to reset it to the default value.
 

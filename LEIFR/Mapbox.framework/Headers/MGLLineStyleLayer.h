@@ -6,24 +6,67 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ The display of line endings.
+ */
 typedef NS_ENUM(NSUInteger, MGLLineStyleLayerLineCap) {
+    /**
+     A cap with a squared-off end which is drawn to the exact endpoint of the line.
+     */
     MGLLineStyleLayerLineCapButt,
+    /**
+     A cap with a rounded end which is drawn beyond the endpoint of the line at a radius of one-half of the line's width and centered on the endpoint of the line.
+     */
     MGLLineStyleLayerLineCapRound,
+    /**
+     A cap with a squared-off end which is drawn beyond the endpoint of the line at a distance of one-half of the line's width.
+     */
     MGLLineStyleLayerLineCapSquare,
 };
 
+/**
+ The display of lines when joining.
+ */
 typedef NS_ENUM(NSUInteger, MGLLineStyleLayerLineJoin) {
+    /**
+     A join with a squared-off end which is drawn beyond the endpoint of the line at a distance of one-half of the line's width.
+     */
     MGLLineStyleLayerLineJoinBevel,
+    /**
+     A join with a rounded end which is drawn beyond the endpoint of the line at a radius of one-half of the line's width and centered on the endpoint of the line.
+     */
     MGLLineStyleLayerLineJoinRound,
+    /**
+     A join with a sharp, angled corner which is drawn with the outer sides beyond the endpoint of the path until they meet.
+     */
     MGLLineStyleLayerLineJoinMiter,
 };
 
+/**
+ Controls the translation reference point.
+ */
 typedef NS_ENUM(NSUInteger, MGLLineStyleLayerLineTranslateAnchor) {
+    /**
+     The line is translated relative to the map.
+     */
     MGLLineStyleLayerLineTranslateAnchorMap,
+    /**
+     The line is translated relative to the viewport.
+     */
     MGLLineStyleLayerLineTranslateAnchorViewport,
 };
 
+/**
+ A line layer which allows customization of styling properties at runtime. You may 
+ instantiate a new line layer to add to a map style or you may query an 
+ `MGLMapView` for its `style` and obtain existing layers using the 
+ `-[MGLStyle layerWithIdentifier:]` method. 
+ */
 @interface MGLLineStyleLayer : MGLBaseStyleLayer <MGLStyleLayer>
+
+- (instancetype)initWithLayerIdentifier:(NSString *)layerIdentifier source:(MGLSource *)source;
+
+- (instancetype)initWithLayerIdentifier:(NSString *)layerIdentifier source:(MGLSource *)source sourceLayer:(NSString *)sourceLayer;
 
 /**
  A predicate that corresponds to the layer's <a href='https://www.mapbox.com/mapbox-gl-style-spec/#types-filter'>filter</a>.
@@ -106,7 +149,7 @@ typedef NS_ENUM(NSUInteger, MGLLineStyleLayerLineTranslateAnchor) {
 @property (nonatomic, null_resettable) id <MGLStyleAttributeValue> lineTranslate;
 
 /**
- Control whether the translation is relative to the map (north) or viewport (screen)
+ Controls the translation reference point.
  
  The default value of this property is an `NSValue` object containing `MGLLineStyleLayerLineTranslateAnchorMap`. Set this property to `nil` to reset it to the default value.
 
@@ -133,7 +176,7 @@ typedef NS_ENUM(NSUInteger, MGLLineStyleLayerLineTranslateAnchor) {
 @property (nonatomic, null_resettable) id <MGLStyleAttributeValue> lineGapWidth;
 
 /**
- The line's offset perpendicular to its direction. Values may be positive or negative, where positive indicates "rightwards" (if you were moving in the direction of the line) and negative indicates "leftwards."
+ The line's offset. For linear features, a positive value offsets the line to the right, relative to the direction of the line, and a negative value to the left. For polygon features, a positive value results in an inset, and a negative value results in an outset.
 
  This property is measured in points.
  
