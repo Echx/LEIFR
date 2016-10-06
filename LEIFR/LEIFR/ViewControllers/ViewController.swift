@@ -41,22 +41,20 @@ extension ViewController: MGLMapViewDelegate {
         
         
         databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), completion: {
-            pointsJson in
+            pointsJSON in
             
-            print(pointsJson)
-            // TODO: bind data with source
+            if let wrappedJSON = LFGeoJSONWrapper.wrap(geometry: pointsJSON) {
+                let source = MGLSource(sourceIdentifier: "symbol")!
+                let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
+                
+                let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "visited", geoJSONData: wrappedJSON.data(using: .utf8)!)
+                mapView.style().add(geoJSONSource)
+                
+                let styleLayer = MGLCircleStyleLayer(layerIdentifier: "test-layer", source: geoJSONSource)
+                styleLayer.circleColor = UIColor(colorLiteralRed: 0.7, green: 0.2, blue: 0.2, alpha: 0.6)
+                styleLayer.circleRadius = NSNumber(integerLiteral: 5)
+                mapView.style().insert(styleLayer, below: symbolLayer)
+            }
         })
-        
-        let source = MGLSource(sourceIdentifier: "symbol")!
-        let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
-        
-        let url = Bundle.main.url(forResource: "test-multipoint", withExtension: "geojson")!
-        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "test-source", url: url)
-        mapView.style().add(geoJSONSource)
-        
-        let styleLayer = MGLCircleStyleLayer(layerIdentifier: "test-layer", source: geoJSONSource)
-        styleLayer.circleColor = UIColor(colorLiteralRed: 0.7, green: 0.2, blue: 0.2, alpha: 0.6)
-        styleLayer.circleRadius = NSNumber(integerLiteral: 5)
-        mapView.style().insert(styleLayer, below: symbolLayer)
     }
 }
