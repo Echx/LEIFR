@@ -15,13 +15,13 @@ class LFGeoRecordManagerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.databaseManager.createDatabase("testGeoRecordManager")
-        self.databaseManager.openDatabase()
+        _ = self.databaseManager.createDatabase("testGeoRecordManager")
+        _ = self.databaseManager.openDatabase()
     }
     
     override func tearDown() {
-        self.databaseManager.closeDatabase()
-        self.databaseManager.removeDatabase("testGeoRecordManager")
+        _ = self.databaseManager.closeDatabase()
+        _ = self.databaseManager.removeDatabase("testGeoRecordManager")
         super.tearDown()
     }
     
