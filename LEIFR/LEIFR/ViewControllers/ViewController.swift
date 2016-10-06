@@ -67,14 +67,14 @@ extension ViewController: MGLMapViewDelegate {
         databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), completion: {
             pointsJson in
             
-//            print(pointsJson)
+            print(pointsJson)
             // TODO: bind data with source
         })
         
         let source = MGLSource(sourceIdentifier: "symbol")!
         let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
         
-        let url = Bundle.main.url(forResource: "test", withExtension: "geojson")!
+        let url = Bundle.main.url(forResource: "test-multipoint", withExtension: "geojson")!
         let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "test-source", url: url)
         mapView.style().add(geoJSONSource)
         

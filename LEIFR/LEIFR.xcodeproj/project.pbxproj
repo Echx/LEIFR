@@ -54,10 +54,11 @@
 		623EAEC31DA6D005004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		624C2BC31DA6D91100A69338 /* test.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 624C2BC21DA6D91100A69338 /* test.geojson */; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
 		62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */; };
 		62BF06961DA6F02B00E6957E /* UIColor+LFCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */; };
+		62BF06991DA6F3D900E6957E /* test-point.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62BF06981DA6F3D900E6957E /* test-point.geojson */; };
+		62BF069B1DA6F44200E6957E /* test-multipoint.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62BF069A1DA6F44200E6957E /* test-multipoint.geojson */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
 		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
@@ -534,10 +535,11 @@
 		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
-		624C2BC21DA6D91100A69338 /* test.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.geojson; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
 		62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+LFCustomization.swift"; path = "Extensions/UIColor+LFCustomization.swift"; sourceTree = "<group>"; };
+		62BF06981DA6F3D900E6957E /* test-point.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-point.geojson"; sourceTree = "<group>"; };
+		62BF069A1DA6F44200E6957E /* test-multipoint.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-multipoint.geojson"; sourceTree = "<group>"; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1442,7 +1444,8 @@
 		0CBB387C1D85FD36002C0EF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				624C2BC21DA6D91100A69338 /* test.geojson */,
+				62BF069A1DA6F44200E6957E /* test-multipoint.geojson */,
+				62BF06981DA6F3D900E6957E /* test-point.geojson */,
 				0CBB38821D86027C002C0EF0 /* default.sqlite */,
 				0CBB30811D85F413002C0EF0 /* AppDelegate.swift */,
 				0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */,
@@ -1613,13 +1616,14 @@
 				0CBB385C1D85F9BD002C0EF0 /* MultiPolygon.inl in Resources */,
 				0CBB385D1D85F9BD002C0EF0 /* PrecisionModel.inl in Resources */,
 				0CBB38561D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl in Resources */,
+				62BF06991DA6F3D900E6957E /* test-point.geojson in Resources */,
 				62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */,
 				0CBB38531D85F9BD002C0EF0 /* Info.plist in Resources */,
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
-				624C2BC31DA6D91100A69338 /* test.geojson in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
 				0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */,
+				62BF069B1DA6F44200E6957E /* test-multipoint.geojson in Resources */,
 				0CBB38871D861028002C0EF0 /* default.sqlite in Resources */,
 				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
 				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
