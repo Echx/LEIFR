@@ -59,6 +59,8 @@
 		62BF06961DA6F02B00E6957E /* UIColor+LFCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */; };
 		62BF06991DA6F3D900E6957E /* test-point.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62BF06981DA6F3D900E6957E /* test-point.geojson */; };
 		62BF069B1DA6F44200E6957E /* test-multipoint.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62BF069A1DA6F44200E6957E /* test-multipoint.geojson */; };
+		62BF069D1DA6F49200E6957E /* LFGeoJSONWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */; };
+		62BF069F1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
 		66869C277E4FC9DFD7C4A516 /* libPods-LEIFR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */; };
@@ -540,6 +542,8 @@
 		62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+LFCustomization.swift"; path = "Extensions/UIColor+LFCustomization.swift"; sourceTree = "<group>"; };
 		62BF06981DA6F3D900E6957E /* test-point.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-point.geojson"; sourceTree = "<group>"; };
 		62BF069A1DA6F44200E6957E /* test-multipoint.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-multipoint.geojson"; sourceTree = "<group>"; };
+		62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONWrapper.swift; sourceTree = "<group>"; };
+		62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONWrapperTest.swift; sourceTree = "<group>"; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		8AE9AA9F765643C771F66EDF /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
@@ -628,6 +632,7 @@
 				0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */,
 				0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */,
 				62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */,
+				62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */,
 			);
 			path = LEIFRTests;
 			sourceTree = "<group>";
@@ -1428,6 +1433,7 @@
 			children = (
 				0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */,
 				62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */,
+				62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1709,6 +1715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
+				62BF069D1DA6F49200E6957E /* LFGeoJSONWrapper.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
@@ -1727,6 +1734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */,
+				62BF069F1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift in Sources */,
 				0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */,
 				62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */,
 			);
