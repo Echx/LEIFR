@@ -51,6 +51,10 @@
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
 		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
+		0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */; };
+		0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */; };
+		0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */; };
+		0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC8B701DA6F9320084DD6F /* MapKit.framework */; };
 		623EAEC31DA6D005004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -530,6 +534,10 @@
 		0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManager.swift; sourceTree = "<group>"; };
 		0CBB38821D86027C002C0EF0 /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManagerTest.swift; sourceTree = "<group>"; };
+		0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabBaseController.swift; sourceTree = "<group>"; };
+		0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFViewController.swift; sourceTree = "<group>"; };
+		0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabViewController.swift; sourceTree = "<group>"; };
+		0CFC8B701DA6F9320084DD6F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2C10707EDF2CAC62D9F06197 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		4C0DBB7EBFF75B7B88F8F25E /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
@@ -546,6 +554,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */,
 				0CBB386C1D85F9D3002C0EF0 /* libiconv.tbd in Frameworks */,
 				0CBB386E1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd in Frameworks */,
 				0CBB38701D85F9E4002C0EF0 /* libxml2.2.tbd in Frameworks */,
@@ -1414,6 +1423,9 @@
 			isa = PBXGroup;
 			children = (
 				0CBB38781D85FCE7002C0EF0 /* ViewController.swift */,
+				0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */,
+				0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */,
+				0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1460,6 +1472,7 @@
 		5432B3B5B435532EF82F3B2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CFC8B701DA6F9320084DD6F /* MapKit.framework */,
 				0CBB38731D85F9F7002C0EF0 /* libc++.tbd */,
 				0CBB38711D85F9EC002C0EF0 /* libz.tbd */,
 				0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */,
@@ -1695,13 +1708,16 @@
 			files = (
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
+				0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
+				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				0CBB38791D85FCE7002C0EF0 /* ViewController.swift in Sources */,
 				0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */,
+				0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
