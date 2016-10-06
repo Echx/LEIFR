@@ -51,6 +51,7 @@
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
 		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
+		0CCCC57C1DA6C2D800488B2E /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265F70F1D8889BB00EE54B2 /* Mapbox.framework */; };
 		6265F7101D8889BB00EE54B2 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265F70F1D8889BB00EE54B2 /* Mapbox.framework */; };
 		6265F7111D8889BB00EE54B2 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265F70F1D8889BB00EE54B2 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
@@ -563,6 +564,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CCCC57C1DA6C2D800488B2E /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1910,6 +1912,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include";
 				INFOPLIST_FILE = LEIFRTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1924,6 +1930,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include";
 				INFOPLIST_FILE = LEIFRTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

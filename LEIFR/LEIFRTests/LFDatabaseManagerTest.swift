@@ -15,13 +15,13 @@ class LFDatabaseManagerTest: XCTestCase {
 	
     override func setUp() {
         super.setUp()
-		self.databaseManager.createDatabase("test")
-		self.databaseManager.openDatabase()
+		_ = self.databaseManager.createDatabase("test")
+		_ = self.databaseManager.openDatabase()
     }
     
     override func tearDown() {
-		self.databaseManager.closeDatabase()
-		self.databaseManager.removeDatabase("test")
+		_ = self.databaseManager.closeDatabase()
+		_ = self.databaseManager.removeDatabase("test")
         super.tearDown()
     }
     
@@ -46,10 +46,35 @@ class LFDatabaseManagerTest: XCTestCase {
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
     }
 	
+	func testDatabaseRetrievePoints() {
+		print("")
+		let path = LFPath()
+		let latitudes: [Double]	    =	[ 1,  2,  3,  4,  5,  6,  7,  8]
+		let longitudes: [Double]	=	[11, 12, 13, 14, 15, 16, 17, 18]
+		let altitudes: [Double]	    =	[21, 22, 23, 24, 25, 26, 27, 28]
+		
+		for i in 0..<latitudes.count {
+			path.addPoint(latitude: latitudes[i], longitude: longitudes[i], altitude: altitudes[i])
+		}
+		
+		self.databaseManager.savePath(path, completion: {
+			success in
+		})
+		
+		let worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld)
+		self.databaseManager.getPointsInRegion(worldRegion, completion: {
+			geoJSON in
+			print("GEOJSON: ")
+			print("\(geoJSON)")
+		})
+		
+		_ = self.databaseManager.removeDatabase("test")
+		
+		print("\n\n--------------------------------------------------\n\n\n\n\n")
+	}
+	
 	func testDatabaseAddingPath() {
 		print("")
-		
-		
 		let path = LFPath()
 		let latitudes: [Double]	    =	[ 1,  2,  3,  4,  5,  6,  7,  8]
 		let longitudes: [Double]	=	[11, 12, 13, 14, 15, 16, 17, 18]
@@ -104,7 +129,7 @@ class LFDatabaseManagerTest: XCTestCase {
 			XCTFail("Block2 or Block3 timed out")
 		}
 		
-		self.databaseManager.removeDatabase("test")
+		_ = self.databaseManager.removeDatabase("test")
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
 	}

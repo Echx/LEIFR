@@ -93,6 +93,35 @@ class LFDatabaseManager: NSObject {
 		})
 	}
 	
+	func getPointsInRegion(_ region: MKCoordinateRegion,  completion:@escaping ((String) -> Void)){
+		databaseQueue.inDatabase({
+			database in
+			let xMin = region.center.longitude - region.span.longitudeDelta
+			let yMin = region.center.latitude - region.span.latitudeDelta
+			let xMax = region.center.longitude + region.span.longitudeDelta
+			let yMax = region.center.latitude + region.span.latitudeDelta
+			
+			let gridSize: Double = 0
+			
+			let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
+			let select = "SELECT track_id, AsGeoJSON(DissolvePoints(Intersection(SnapToGrid(track_geometry, \(gridSize)), " + screenPolygon + "))) FROM tracks "
+			let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
+			
+			let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
+			
+			if (results.next()) {
+				if results.hasAnotherRow() {
+					if let geoJSON = results.string(forColumnIndex: 1) {
+						completion(geoJSON)
+						return;
+					}
+				}
+			}
+			
+			completion("")
+		})
+	}
+	
 	func getPathsInRegion(_ region: MKCoordinateRegion, completion: @escaping (([LFPath]) -> Void)){
 		databaseQueue.inDatabase({
 			database in
