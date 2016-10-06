@@ -11,8 +11,6 @@ import Mapbox
 
 class ViewController: UIViewController {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
-    
-    fileprivate var coordinates: [CLLocationCoordinate2D]?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,30 +31,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MGLMapViewDelegate {
-//    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) { 
-//        databaseManager.getPathsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), completion: {
-//            paths in
-//            if let path = paths.first {
-//                let points = path.points()
-//                if points.count != self.coordinates?.count {
-//                    if let existingAnnotations = mapView.annotations {
-//                        mapView.removeAnnotations(existingAnnotations)
-//                    }
-//                    self.coordinates = points.map({ (point) -> CLLocationCoordinate2D in
-//                        let wkbPoint = point as! WKBPoint
-//                        return CLLocationCoordinate2DMake(wkbPoint.latitude, wkbPoint.longitude)
-//                    })
-//                    
-//                    self.mapView.addAnnotation(MGLPolyline(coordinates: &self.coordinates!, count: UInt(self.coordinates!.count)))
-//                }
-//            }
-//        })
-//    }
-    
-    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
-        return 10.0
-    }
-    
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         let databaseManager = LFDatabaseManager.sharedManager()
         let visibleBounds = mapView.visibleCoordinateBounds
@@ -65,22 +39,20 @@ extension ViewController: MGLMapViewDelegate {
         
         
         databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), completion: {
-            pointsJson in
+            pointsJSON in
             
-//            print(pointsJson)
-            // TODO: bind data with source
+            if let wrappedJSON = LFGeoJSONWrapper.wrap(geometry: pointsJSON) {
+                let source = MGLSource(sourceIdentifier: "symbol")!
+                let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
+                
+                let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "visited", geoJSONData: wrappedJSON.data(using: .utf8)!)
+                mapView.style().add(geoJSONSource)
+                
+                let styleLayer = MGLCircleStyleLayer(layerIdentifier: "test-layer", source: geoJSONSource)
+                styleLayer.circleColor = UIColor(colorLiteralRed: 0.7, green: 0.2, blue: 0.2, alpha: 0.6)
+                styleLayer.circleRadius = NSNumber(integerLiteral: 5)
+                mapView.style().insert(styleLayer, below: symbolLayer)
+            }
         })
-        
-        let source = MGLSource(sourceIdentifier: "symbol")!
-        let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
-        
-        let url = Bundle.main.url(forResource: "test", withExtension: "geojson")!
-        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "test-source", url: url)
-        mapView.style().add(geoJSONSource)
-        
-        let styleLayer = MGLCircleStyleLayer(layerIdentifier: "test-layer", source: geoJSONSource)
-        styleLayer.circleColor = UIColor(colorLiteralRed: 0.7, green: 0.2, blue: 0.2, alpha: 0.6)
-        styleLayer.circleRadius = NSNumber(integerLiteral: 5)
-        mapView.style().insert(styleLayer, below: symbolLayer)
     }
 }
