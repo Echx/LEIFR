@@ -33,30 +33,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MGLMapViewDelegate {
-//    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) { 
-//        databaseManager.getPathsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), completion: {
-//            paths in
-//            if let path = paths.first {
-//                let points = path.points()
-//                if points.count != self.coordinates?.count {
-//                    if let existingAnnotations = mapView.annotations {
-//                        mapView.removeAnnotations(existingAnnotations)
-//                    }
-//                    self.coordinates = points.map({ (point) -> CLLocationCoordinate2D in
-//                        let wkbPoint = point as! WKBPoint
-//                        return CLLocationCoordinate2DMake(wkbPoint.latitude, wkbPoint.longitude)
-//                    })
-//                    
-//                    self.mapView.addAnnotation(MGLPolyline(coordinates: &self.coordinates!, count: UInt(self.coordinates!.count)))
-//                }
-//            }
-//        })
-//    }
-    
-    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
-        return 10.0
-    }
-    
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         let databaseManager = LFDatabaseManager.sharedManager()
         let visibleBounds = mapView.visibleCoordinateBounds
