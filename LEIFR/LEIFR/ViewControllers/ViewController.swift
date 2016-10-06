@@ -11,8 +11,6 @@ import Mapbox
 
 class ViewController: UIViewController {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
-    
-    fileprivate var coordinates: [CLLocationCoordinate2D]?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
