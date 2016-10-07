@@ -59,7 +59,7 @@ class LFHoverTabBaseController: LFViewController {
 		default:
 			//select snap level
 			var final = self.tabViewTopConstraint.constant
-			final = final + (final > startConstant ? 1 : -1) * 50
+			final = final + (final > startConstant ? 1 : -1) * 100
 			var difference = CGFloat(Int.max)
 			var nearest = -1;
 			for (index, level) in self.tabViewSnapLevels.enumerated() {
