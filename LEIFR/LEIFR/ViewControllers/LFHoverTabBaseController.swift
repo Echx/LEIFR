@@ -12,13 +12,14 @@ class LFHoverTabBaseController: LFViewController {
 
 	@IBOutlet var tabView: UIView!
 	@IBOutlet var tabViewTopConstraint: NSLayoutConstraint!
-	private var tabViewSnapLevels: [CGFloat] = [120, 480, UIScreen.main.bounds.height - 64]
+	private var tabViewSnapLevels: [CGFloat] = [UIScreen.main.bounds.height - 400, UIScreen.main.bounds.height - 200, UIScreen.main.bounds.height - 64]
 	
 	override func loadView() {
 		super.loadView()
 		
 		let panGesture = UIPanGestureRecognizer(target: self, action: #selector(tabViewDidDrag(gesture:)))
 		self.tabView.addGestureRecognizer(panGesture)
+		self.tabViewTopConstraint.constant = self.tabViewSnapLevels.last!
 	}
 	
     override func viewDidLoad() {
@@ -57,7 +58,8 @@ class LFHoverTabBaseController: LFViewController {
 			
 		default:
 			//select snap level
-			let final = self.tabViewTopConstraint.constant
+			var final = self.tabViewTopConstraint.constant
+			final = final + (final > startConstant ? 1 : -1) * 50
 			var difference = CGFloat(Int.max)
 			var nearest = -1;
 			for (index, level) in self.tabViewSnapLevels.enumerated() {
@@ -68,8 +70,9 @@ class LFHoverTabBaseController: LFViewController {
 			}
 			
 			let snapLevel = self.tabViewSnapLevels[nearest]
+			let duration = TimeInterval(abs(self.tabViewTopConstraint.constant - snapLevel) / self.tabViewSnapLevels.last!) * 5
 			self.tabViewTopConstraint.constant = snapLevel
-			UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [.allowUserInteraction, .allowAnimatedContent], animations: {
+			UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [.allowUserInteraction, .allowAnimatedContent], animations: {
 				self.view.layoutIfNeeded()
 			}, completion: nil)
 		}
