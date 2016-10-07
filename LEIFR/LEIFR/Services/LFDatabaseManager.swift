@@ -106,7 +106,7 @@ class LFDatabaseManager: NSObject {
             let yMax = region.center.latitude + region.span.latitudeDelta
             
             let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
-            let select = "SELECT track_id, AsGeoJSON(DissolvePoints(Intersection(SnapToGrid(track_geometry, \(gridSize)), " + screenPolygon + "))) FROM tracks "
+            let select = "SELECT track_id, AsGeoJSON(DissolvePoints(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + "))) FROM tracks "
             let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
             
             let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
