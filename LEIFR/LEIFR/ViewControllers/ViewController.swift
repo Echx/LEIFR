@@ -37,19 +37,55 @@ extension ViewController: MGLMapViewDelegate {
         let visibleLongSpan = abs(visibleBounds.ne.longitude - visibleBounds.sw.longitude)
         let visibleLatSpan = abs(visibleBounds.ne.latitude - visibleBounds.sw.latitude)
         
+        let source = MGLSource(sourceIdentifier: "symbol")!
+        let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
         
-        databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), completion: {
+        databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), gridSize: 0.01, completion: {
             pointsJSON in
             
             if let wrappedJSON = LFGeoJSONWrapper.wrapArray(geometryArray: pointsJSON) {
-                let source = MGLSource(sourceIdentifier: "symbol")!
-                let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
+                let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "lf-point-source-0", geoJSONData: wrappedJSON.data(using: .utf8)!)
+                mapView.style().add(geoJSONSource)
+
+                let styleLayerColor = MGLStyleAttributeFunction()
+                styleLayerColor.stops = [0: UIColor.red, 2: UIColor.red, 3: UIColor.clear]
                 
-                let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "visited", geoJSONData: wrappedJSON.data(using: .utf8)!)
+                let styleLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer-0", source: geoJSONSource)
+                styleLayer.circleColor = styleLayerColor
+                styleLayer.circleRadius = NSNumber(integerLiteral: 5)
+                mapView.style().insert(styleLayer, below: symbolLayer)
+            }
+        })
+        
+        databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), gridSize: 0.008, completion: {
+            pointsJSON in
+            
+            if let wrappedJSON = LFGeoJSONWrapper.wrapArray(geometryArray: pointsJSON) {
+                let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "lf-point-source-1", geoJSONData: wrappedJSON.data(using: .utf8)!)
                 mapView.style().add(geoJSONSource)
                 
-                let styleLayer = MGLCircleStyleLayer(layerIdentifier: "test-layer", source: geoJSONSource)
-                styleLayer.circleColor = UIColor(colorLiteralRed: 0.7, green: 0.2, blue: 0.2, alpha: 0.6)
+                let styleLayerColor = MGLStyleAttributeFunction()
+                styleLayerColor.stops = [0: UIColor.clear, 3: UIColor.clear, 4: UIColor.green, 7: UIColor.green, 8: UIColor.clear]
+                
+                let styleLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer-1", source: geoJSONSource)
+                styleLayer.circleColor = styleLayerColor
+                styleLayer.circleRadius = NSNumber(integerLiteral: 5)
+                mapView.style().insert(styleLayer, below: symbolLayer)
+            }
+        })
+        
+        databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), gridSize: 0.005, completion: {
+            pointsJSON in
+            
+            if let wrappedJSON = LFGeoJSONWrapper.wrapArray(geometryArray: pointsJSON) {
+                let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "lf-point-source-2", geoJSONData: wrappedJSON.data(using: .utf8)!)
+                mapView.style().add(geoJSONSource)
+                
+                let styleLayerColor = MGLStyleAttributeFunction()
+                styleLayerColor.stops = [0: UIColor.clear, 8: UIColor.clear, 9: UIColor.blue, 11: UIColor.blue, 12: UIColor.clear]
+                
+                let styleLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer-2", source: geoJSONSource)
+                styleLayer.circleColor = styleLayerColor
                 styleLayer.circleRadius = NSNumber(integerLiteral: 5)
                 mapView.style().insert(styleLayer, below: symbolLayer)
             }
