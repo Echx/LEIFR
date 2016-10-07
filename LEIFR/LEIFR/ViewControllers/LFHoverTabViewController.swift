@@ -8,8 +8,14 @@
 
 import UIKit
 
-class LFHoverTabViewController: LFViewController {
+protocol LFHoverTabDelegate {
+	func tabViewController(controller: LFViewController, tabDidSelectAtIndex index: Int);
+}
 
+class LFHoverTabViewController: LFViewController {
+	
+	var delegate: LFHoverTabDelegate?
+	
 	override func loadView() {
 		super.loadView()
 		
@@ -19,6 +25,12 @@ class LFHoverTabViewController: LFViewController {
 		layer.shadowPath = UIBezierPath(rect: CGRect(x: -5, y: 0, width: view.bounds.width + 10, height: view.bounds.height)).cgPath
 		layer.shadowOpacity = 0.15
 		layer.shadowRadius = 3
+		
+		self.delegate = LFHoverTabBaseController.defaultInstance
+	}
+	
+	@IBAction func buttonDidClick(sender: UIButton) {
+		self.delegate?.tabViewController(controller: self, tabDidSelectAtIndex: sender.tag)
 	}
 	
     override func viewDidLoad() {

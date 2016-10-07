@@ -10,13 +10,15 @@ import UIKit
 
 class LFHoverTabBaseController: LFViewController {
 
+	static var defaultInstance: LFHoverTabBaseController!;
+	
 	@IBOutlet var tabView: UIView!
 	@IBOutlet var tabViewTopConstraint: NSLayoutConstraint!
 	private var tabViewSnapLevels: [CGFloat] = [UIScreen.main.bounds.height - 400, UIScreen.main.bounds.height - 200, UIScreen.main.bounds.height - 64]
 	
 	override func loadView() {
+		LFHoverTabBaseController.defaultInstance = self
 		super.loadView()
-		
 		let panGesture = UIPanGestureRecognizer(target: self, action: #selector(tabViewDidDrag(gesture:)))
 		self.tabView.addGestureRecognizer(panGesture)
 		self.tabViewTopConstraint.constant = self.tabViewSnapLevels.last!
@@ -87,5 +89,10 @@ class LFHoverTabBaseController: LFViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension LFHoverTabBaseController: LFHoverTabDelegate {
+	func tabViewController(controller: LFViewController, tabDidSelectAtIndex index: Int) {
+		print("Tab did select: \(index)")
+	}
 }
