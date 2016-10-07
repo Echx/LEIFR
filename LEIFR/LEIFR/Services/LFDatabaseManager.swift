@@ -93,7 +93,7 @@ class LFDatabaseManager: NSObject {
 		})
 	}
 	
-	func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping ((String) -> Void)){
+	func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping (([String]) -> Void)){
 		databaseQueue.inDatabase({
 			database in
 			let xMin = region.center.longitude - region.span.longitudeDelta
@@ -108,17 +108,17 @@ class LFDatabaseManager: NSObject {
 			let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
 			
 			let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
+			var array = [String]()
 			
-			if (results.next()) {
+			while (results.next()) {
 				if results.hasAnotherRow() {
 					if let geoJSON = results.string(forColumnIndex: 1) {
-						completion(geoJSON)
-						return;
+						array.append(geoJSON)
 					}
 				}
 			}
 			
-			completion("")
+			completion(array)
 		})
 	}
 	

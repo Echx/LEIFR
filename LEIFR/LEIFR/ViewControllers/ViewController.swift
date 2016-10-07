@@ -41,7 +41,7 @@ extension ViewController: MGLMapViewDelegate {
         databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), completion: {
             pointsJSON in
             
-            if let wrappedJSON = LFGeoJSONWrapper.wrap(geometry: pointsJSON) {
+            if let wrappedJSON = LFGeoJSONWrapper.wrapArray(geometryArray: pointsJSON) {
                 let source = MGLSource(sourceIdentifier: "symbol")!
                 let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
                 
