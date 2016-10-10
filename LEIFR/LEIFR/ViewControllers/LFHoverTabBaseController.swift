@@ -72,9 +72,9 @@ class LFHoverTabBaseController: LFViewController {
 			}
 			
 			let snapLevel = self.tabViewSnapLevels[nearest]
-			let duration = TimeInterval(abs(self.tabViewTopConstraint.constant - snapLevel) / self.tabViewSnapLevels.last!) * 5
+			let duration = TimeInterval(abs(self.tabViewTopConstraint.constant - snapLevel) / self.tabViewSnapLevels.last!) * 2
 			self.tabViewTopConstraint.constant = snapLevel
-			UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [.allowUserInteraction, .allowAnimatedContent], animations: {
+			UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [.allowUserInteraction, .allowAnimatedContent], animations: {
 				self.view.layoutIfNeeded()
 			}, completion: nil)
 		}
