@@ -16,7 +16,8 @@ class LFHoverTabViewController: LFViewController {
 	
     fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
 	var delegate: LFHoverTabDelegate?
-	
+    @IBOutlet fileprivate weak var recordButton: UIButton!
+    
 	override func loadView() {
 		super.loadView()
 		
@@ -27,6 +28,9 @@ class LFHoverTabViewController: LFViewController {
 		layer.shadowOpacity = 0.15
 		layer.shadowRadius = 3
 		
+        self.recordButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        self.recordButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
+        
 		self.delegate = LFHoverTabBaseController.defaultInstance
 	}
 	
