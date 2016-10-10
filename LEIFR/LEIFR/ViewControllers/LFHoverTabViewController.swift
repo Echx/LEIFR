@@ -14,6 +14,7 @@ protocol LFHoverTabDelegate {
 
 class LFHoverTabViewController: LFViewController {
 	
+    fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
 	var delegate: LFHoverTabDelegate?
 	
 	override func loadView() {
@@ -31,6 +32,19 @@ class LFHoverTabViewController: LFViewController {
 	
 	@IBAction func buttonDidClick(sender: UIButton) {
 		self.delegate?.tabViewController(controller: self, tabDidSelectAtIndex: sender.tag)
+        
+        switch sender.tag {
+        case 1:
+            if geoRecordManager.isRecording {
+                geoRecordManager.stopRecording()
+                sender.isSelected = false
+            } else {
+                geoRecordManager.startRecording()
+                sender.isSelected = true
+            }
+        default:
+            break
+        }
 	}
 	
     override func viewDidLoad() {

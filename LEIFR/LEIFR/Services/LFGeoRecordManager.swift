@@ -13,6 +13,8 @@ class LFGeoRecordManager: NSObject {
     fileprivate var bufferPath = LFPath()
     fileprivate var mutex = pthread_mutex_t()
     
+    public private(set) var isRecording = false
+    
     class func sharedManager() -> LFGeoRecordManager {
         return self.manager
     }
@@ -33,13 +35,24 @@ class LFGeoRecordManager: NSObject {
             pthread_mutex_unlock(&mutex)
         }
         
-        let databaseManager = LFDatabaseManager.sharedManager()
-        databaseManager.savePath(bufferPath, completion: {
-            success in
-            
-            if !success {
-                self.flushPoints()
-            }
-        })
+        if self.bufferPath.points().count > 0 {
+            let databaseManager = LFDatabaseManager.sharedManager()
+            databaseManager.savePath(self.bufferPath, completion: {
+                success in
+                
+                if !success {
+                    self.flushPoints()
+                }
+            })
+        }
+    }
+    
+    func startRecording() {
+        self.isRecording = true
+    }
+    
+    func stopRecording() {
+        self.flushPoints()
+        self.isRecording = false
     }
 }

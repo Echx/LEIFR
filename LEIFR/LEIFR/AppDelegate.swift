@@ -70,6 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        geoRecordManager.recordPoint(locations.last!)
+        if geoRecordManager.isRecording {
+            geoRecordManager.recordPoint(locations.last!)
+        }
     }
 }
