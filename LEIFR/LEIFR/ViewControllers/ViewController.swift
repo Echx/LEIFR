@@ -12,7 +12,7 @@ import Mapbox
 class ViewController: UIViewController {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
     
-    fileprivate var pointLayer: MGLCircleStyleLayer?
+    fileprivate var pointSource: MGLGeoJSONSource?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,11 +39,14 @@ extension ViewController: MGLMapViewDelegate {
                 let source = MGLSource(sourceIdentifier: "symbol")!
                 let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
 
-                mapView.style().insert(self.pointLayer!, below: symbolLayer)
+                let pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: self.pointSource!)
+                pointLayer.circleColor = UIColor.yellow
+                pointLayer.circleRadius = NSNumber(integerLiteral: 5)
+                mapView.style().insert(pointLayer, below: symbolLayer)
             }
         } else {
-            if let _ = mapView.style().layer(withIdentifier: "lf-point-layer") {
-                mapView.style().remove(self.pointLayer!)
+            if let pointLayer = mapView.style().layer(withIdentifier: "lf-point-layer") {
+                mapView.style().remove(pointLayer)
             }
         }
     }
@@ -62,12 +65,8 @@ extension ViewController: MGLMapViewDelegate {
             pointsJSON in
             
             if let wrappedJSON = LFGeoJSONWrapper.wrapArray(geometryArray: pointsJSON) {
-                let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "lf-point-source", geoJSONData: wrappedJSON.data(using: .utf8)!)
-                mapView.style().add(geoJSONSource)
-                
-                self.pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: geoJSONSource)
-                self.pointLayer!.circleColor = UIColor.yellow
-                self.pointLayer!.circleRadius = NSNumber(integerLiteral: 5)
+                self.pointSource = MGLGeoJSONSource(sourceIdentifier: "lf-point-source", geoJSONData: wrappedJSON.data(using: .utf8)!)
+                mapView.style().add(self.pointSource!)
             }
         })
         
