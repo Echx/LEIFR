@@ -1,1 +1,0 @@
-../../../wkb-ios/wkb-ios/util/WKBGeometryJSONCompatible.h

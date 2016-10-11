@@ -1,10 +1,12 @@
 PODS:
-  - wkb-ios (1.0.6)
+  - FontAwesome+iOS (0.1.4)
 
 DEPENDENCIES:
-  - wkb-ios
+  - FontAwesome+iOS
 
 SPEC CHECKSUMS:
-  wkb-ios: 8d1526e825e3d088a5a191c8eefe213a9e41d25e
+  FontAwesome+iOS: 9070b682a9255ca0fdc34bcfb129ad0ba2b73b87
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 6e17dceb185db1927cd276a672378fff892b29e2
+
+COCOAPODS: 1.0.1

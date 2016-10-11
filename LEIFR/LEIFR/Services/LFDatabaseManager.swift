@@ -86,12 +86,14 @@ class LFDatabaseManager: NSObject {
 	}
 	
 	func savePath(_ path: LFPath, completion:@escaping ((Bool) -> Void)) {
-		databaseQueue.inDatabase({
-			database in
-			let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
-			let isSuccessful = self.database.executeStatements(insertSQL)
-			completion(isSuccessful)
-		})
+		self.asyncDatabaseQueue.async {
+			self.databaseQueue.inDatabase({
+				database in
+				let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
+				let isSuccessful = self.database.executeStatements(insertSQL)
+				completion(isSuccessful)
+			})
+		}
 	}
 	
     func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping (([String]) -> Void)) {

@@ -5,7 +5,7 @@
 
 target 'LEIFR' do
 
-pod 'wkb-ios'
+pod 'FontAwesome+iOS'
 
 end
 
