@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import LEIFR
+import wkb_ios
 
 class LFDatabaseManagerTest: XCTestCase {
 	

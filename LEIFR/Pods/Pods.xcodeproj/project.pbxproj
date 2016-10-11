@@ -7,82 +7,325 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19AC338F43C6F9FBF45085E1C2D0671E /* NSString+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AC22258B6BDCE5A1C97C1BFFB12B6F /* NSString+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37B44C41F9AA87998FB1422F53955BC3 /* Pods-LEIFR-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E06D1C3CA9EBEDF1D17F12186788C1 /* Pods-LEIFR-dummy.m */; };
-		41EEE47358E47C4002A56181CB3E9674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2331BAF78D4EDDCD400CF6388C7978 /* UIKit.framework */; };
-		448962DB79C880921191BEDBF1172D3C /* UIFont+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = B558A19BA3CCFAC9405A0FD8092EEC54 /* UIFont+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45A84AE65E0F9BE3BA0DFDAF0EEE6E96 /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6383F231FB0EED0D478937AB8605F2 /* FAImageView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5C68935610EC6D283E9CA36F5772141A /* FontAwesome+iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7476077B5DB4C6E2FD5D9BF04D1A59EE /* FontAwesome+iOS-dummy.m */; };
-		750F1F9ED6A157BDA2A692AB4D452E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9854452B704969D40D932335DEE0FF /* Foundation.framework */; };
-		77EE22E06C5D46A65B11A41FE4B76D6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9854452B704969D40D932335DEE0FF /* Foundation.framework */; };
-		87C267FCA6EA5092ACFA44F08DEF7344 /* FAImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 51F955D9C872A9D4D9EB7616830EAA8E /* FAImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89F0C2C845C33B5425ADB790A2FFDC28 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DB3E8BF873BB9044DE1F7B4ED32691 /* NSString+FontAwesome.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8B989B8B70F0F278FA3153D818599C35 /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCCDA3864B72D60C0A33E72EEAF5B91 /* UIImage+FontAwesome.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B05F77A3B1E212CE0A76FC1F58BF2305 /* UIImage+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = E95B13AB6860B74F53B8ECC2F0A4A29D /* UIImage+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2F327F6BCF45A61BFD129486B6DE42D /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FE4BC8C3D8444D1EDE6655127297A /* UIFont+FontAwesome.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F1D689AE29491AB7B9B30528650EE700 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CCDF0ACEE37ED4308724E62FCDE939 /* CoreGraphics.framework */; };
+		00F33AD02E52094062165058F968E98F /* wkb-ios-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = C28801A640B7822490879C282750F851 /* wkb-ios-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		013A886FC4A7A91A53FAF3CD7F833AD0 /* WKBGeometryPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = BC753BEE60B81B85782BF12BD8BC45A4 /* WKBGeometryPrinter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05DDC179E8EE57139238E3CA49D716CE /* WKBSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = FB2A6BE41ABD87EFA9444B6BFD912D1B /* WKBSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06D6EDAD3215B00A1135CEBABFE62456 /* WKBGeometryJSONCompatible.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E21698D0CB5ECEE9C9737F5B5914 /* WKBGeometryJSONCompatible.m */; };
+		0AC08E78C47F0C83321F7ED79990C170 /* FontBlaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D888C16305DFFCCB7068FBA46D5592E /* FontBlaster.swift */; };
+		0DB0DD88FC6F9B4CF52D53791C7D148E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B52758A6C4C1BD1A72DE4084FD31C54B /* FontAwesome.ttf */; };
+		0DF750F0D229129A765B2837FA338D68 /* WKBGeometryReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 66E8070B5914DE2D6A565A9017DE7A1F /* WKBGeometryReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F122B496ADD8896AF6893D3C99D5710 /* WKBMultiLineString.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BD8EDEAC3F0FC459B0E301575E22CB5 /* WKBMultiLineString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		105CC5A14E73C3332AD5CABF77A1B4A1 /* WKBGeometryEnvelope.h in Headers */ = {isa = PBXBuildFile; fileRef = 993F402FFB9622D1F0433E9F1396494D /* WKBGeometryEnvelope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		112BC31DEAEA35F387C89B5AE397E059 /* WKBTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F292022A727323BD7D8C2B4F6901D01 /* WKBTriangle.m */; };
+		142F000584CCF3D5AF39B631DF6EF869 /* WKBCircularString.h in Headers */ = {isa = PBXBuildFile; fileRef = DD35AE90E0D6A60D51533D60F8DA5843 /* WKBCircularString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16F62743ED9815760C20F1C594A4C460 /* WKBGeometryEnvelopeBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 203FE2B97F6D0ECF1515EB6DA274146A /* WKBGeometryEnvelopeBuilder.m */; };
+		1914076E53102595AEFF7F2968BA80B1 /* WKBGeometryCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BED00A5ED4B56ACD9C0EB9B5FF9A42 /* WKBGeometryCollection.m */; };
+		1C4A9C452D6C5B9D61E1C8B10FABDDF1 /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D788DFEFA74287B0ED5D119BE0E314 /* UIFont+FontAwesome.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1EEADBAEEBCBD911C96D5A4F830F1316 /* WKBLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = D62F2067AF1F86CBCCDF10AA40B92A2F /* WKBLineString.m */; };
+		2770BA2B1609CD1C3EAC63EE4F10ECF4 /* WKBGeometryTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CFB3FC4D51B40ABDCCAEE130B5C08DA /* WKBGeometryTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2823173F3714E660114774A727FDEB75 /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F570A69EE84D2B03EEA296D33F0BD7E /* UIImage+FontAwesome.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3356B6634886A3F51484EF75CF2C7CE2 /* WKBMultiPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D2EC415E9C0F2B4B3660CBB3F5FBD3E /* WKBMultiPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AC3E36DC80920B67A6D317215CFA17B /* WKBGeometryWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D3F748D54CABB316175881438C3E176 /* WKBGeometryWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		429DC6E0DC7A52B68536AFA366455792 /* WKBSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BC2CAAE71289ECC0AE9BC971239285 /* WKBSurface.m */; };
+		42FEB8B210C424C8C4CB64E72DB456EA /* WKBCompoundCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = E215D401ACB42DE2C436D8E6C0B30D36 /* WKBCompoundCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4808D997580A4485FA349DEF6B2D62D3 /* WKBMultiPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B20E85BB0945526633119EA1F26B35 /* WKBMultiPoint.m */; };
+		493EDE19E4E12CE7FEABCFE2A6DBF228 /* WKBPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 35C88D1AECA3BBC668BC9D0499416999 /* WKBPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49C01C9F0BADA4D598CD64F086926485 /* WKBCurvePolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 705EDBD6710D249997C20A274CCEF169 /* WKBCurvePolygon.m */; };
+		4BF9793C6EB49BF8799C4E35D363AA02 /* Pods-LEIFR-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91CCCE950318B1910BD5ED0595D0038A /* Pods-LEIFR-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CD7613FFA662F1C7675A7C7B7FE60AA /* WKBGeometryPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFAEF8E46DCA5D8ECA16D4B504B286B /* WKBGeometryPrinter.m */; };
+		4FF03DDBB2AF90C9C09A12314BBF0E06 /* UIFont+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF1C4DBB5B6BC95AA5E3FE14943FE6C /* UIFont+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5250F4A8639EAAB71E6BCF76AC289652 /* WKBGeometryTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F2243F1727FAB19B9CCA28148AFE9CB7 /* WKBGeometryTypes.m */; };
+		5345FE8A688D6B5FB702B14EC8E2F114 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9854452B704969D40D932335DEE0FF /* Foundation.framework */; };
+		55FCE1E1B347724C5A83253078E99BAC /* WKBMultiLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = F58ABA3722A28B49CD37E49B8346EC2D /* WKBMultiLineString.m */; };
+		580A985E63E50BE0F1EF0404797ECC91 /* WKBCurvePolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 135A180C3E4EC0512D18C874B7D15C01 /* WKBCurvePolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64D27E914489BD90CF53AFB6AF2B02AC /* WKBMultiPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC00DD98E194720A0E4A17BED81A51C /* WKBMultiPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		661335ECCA19323AB9A7386AD6F3B582 /* WKBGeometryReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8764B5379AD2DBD69AAC57D8BD164EEB /* WKBGeometryReader.m */; };
+		6C4460E5BFB9031662130BF684F17916 /* WKBPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9277D992D3B233E5476B5ADAA662AF2B /* WKBPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E520C7C33C636FCAFB3280EA448CD9F /* FontBlaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10182BFBB055B56814A11350AC91573F /* FontBlaster-dummy.m */; };
+		742F433A83C99B1092D3C3A43F5502CD /* WKBGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = EB649883F59671D289425E42328493DF /* WKBGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		745147EFDA4CA5B307EA7BB85673A4E7 /* WKBMultiSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = F6783A02623F7AF7B80F5598D85E6BED /* WKBMultiSurface.m */; };
+		77885D3DE75E5E25E2D2D4B456598287 /* WKBMultiSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 3945C07AF198D61048912C8C1AA50D71 /* WKBMultiSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77C5D34F53ED1007C35BA7FDFD4D9008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9854452B704969D40D932335DEE0FF /* Foundation.framework */; };
+		7891F500D4A967C431B3E750E9E57E5C /* WKBLineString.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9107975B1948BAAACB610A761E343F /* WKBLineString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AAC5995D9D9981885F001EFFCB2EB80 /* WKBCircularString.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C23FD6814E878221A007A9635F6068 /* WKBCircularString.m */; };
+		7BAB3203FFCBA0A30B0B32BBFDE09EE6 /* FontAwesome+iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 997F2639DD76B785B60A28B9ACAAB7A6 /* FontAwesome+iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BEC8FE1A0A3A01B0026DC2914F49172 /* WKBTIN.h in Headers */ = {isa = PBXBuildFile; fileRef = 1270F162B6C4436CA26E6B3639FE7F31 /* WKBTIN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E314DA6C9FF28522867E836E85A7F0C /* FontAwesome+iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A5F5A96A4DAED990BE64DE515FBF61 /* FontAwesome+iOS-dummy.m */; };
+		7ED1B263F4F7203C116D15A480F49209 /* wkb-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C51A16C85684E855F2C2CCE7697F8E4 /* wkb-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83273A28C6EDB2A6A24563A4B148C587 /* WKBGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B36667D8EFF2DFB20EBCF5A79FF8B /* WKBGeometry.m */; };
+		836F52046D65386585B6A4F52352D76F /* UIImage+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C0F76BC8D4946934B7A68DB360E801 /* UIImage+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C0A9A9099A66328645C9A303F5F4336 /* WKBTIN.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DA751EC151DD2426AB01BDEEAC4A0 /* WKBTIN.m */; };
+		8C2F37448792E810BC4EE895CD289F54 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2331BAF78D4EDDCD400CF6388C7978 /* UIKit.framework */; };
+		8EFFE18129490A45F7216C4527CEF78E /* WKBGeometryJSONCompatible.h in Headers */ = {isa = PBXBuildFile; fileRef = 40EB0DF90EE2ED2A0C4D1C5BDB137F45 /* WKBGeometryJSONCompatible.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FAC516415CD3CEC46784967A7D0B277 /* WKBPolyhedralSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4CE48CD70ADE1F54EF3AD92E3C40E /* WKBPolyhedralSurface.m */; };
+		93DB45E6D405C975C504C81E22CD8107 /* Pods-LEIFRTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEA34CD83F99F52C6A908B8EEF530F /* Pods-LEIFRTests-dummy.m */; };
+		94A2631693B8B896EB5A914D530F29E3 /* FAImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = CADE8C04C87458D886B19444CF8859B8 /* FAImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		973DED1C3F840711514792A5FA849B39 /* WKBByteReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C05155EE769F3E6BC6BB2AD314F07633 /* WKBByteReader.m */; };
+		9B682B5E057D162FC167B39A627B2D23 /* WKBPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 14952FEBEF161584553789EEAEBF8B31 /* WKBPolygon.m */; };
+		9CEA7F11B26E9E1273349703F13ADD66 /* WKBMultiPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAFD93C58D5962838A08C1CF3107609 /* WKBMultiPolygon.m */; };
+		9D5AC0A91E0AA605A7E049BA30FFCD69 /* WKB.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0025BBABB2DFDEF604AF00565DC1ED45 /* WKB.bundle */; };
+		9DCDA830866E7C83EC6E96B76090CC83 /* WKBGeometryEnvelopeBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = F52C618DF420EEF1695FE61AB494A892 /* WKBGeometryEnvelopeBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3D06CCEE45356998E44C162AD0EEE67 /* WKBMultiCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B85B309B256AD1D33F022E3C7D63F47 /* WKBMultiCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5D93262737991E9ED5BE5C2E68E5449 /* WKBCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC42A2634EACB114A295170751673E /* WKBCurve.m */; };
+		A9AEC450B0AA1801990CA8582D66226C /* WKBByteWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 148155DB7724B26A9CC6BB046596CEED /* WKBByteWriter.m */; };
+		AF5AFCA6CDCAC06FD4CC914625D47111 /* WKBByteReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BC4B7E83F86449C72E7CBECEFA41684 /* WKBByteReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B93CB956160CBE372647AEEF06AE4691 /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4421F1814E8B6594B0B2CB5CCFFCD08 /* FAImageView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		BE41106C477F25F1B555D6016634026D /* WKBTriangle.h in Headers */ = {isa = PBXBuildFile; fileRef = A0A829EDBF34D96E38EA770F70874BD1 /* WKBTriangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0553351FF682446A59E3D8ED1CD43FE /* NSString+FontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = EF523E3343A21E5680A7FB9F59CB23C6 /* NSString+FontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C14B93E2563E46E9EA103FFF8FA77CA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CCDF0ACEE37ED4308724E62FCDE939 /* CoreGraphics.framework */; };
+		C2EB6D13BBB38A0B035512021CB8F883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9854452B704969D40D932335DEE0FF /* Foundation.framework */; };
+		C3967B84A63D16D85BB282CF62636C02 /* Pods-LEIFR-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8D01DC7AE819AD24E66C80D2FDCD5 /* Pods-LEIFR-dummy.m */; };
+		C429FCFCB1D4C4411748881286F02438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9854452B704969D40D932335DEE0FF /* Foundation.framework */; };
+		C8053D1ADB6E17C0D0FB0BA9A9AB82E7 /* WKBMultiCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FEEC643296224A8D59A1F6C2FB8BAA /* WKBMultiCurve.m */; };
+		C8F3B12B047A3F499D86C22D64665467 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D02041865D2DE5BDE3E86FE7939EC6DE /* Info.plist */; };
+		D35A7C0DCD25951132606F20DB1C6233 /* WKBCompoundCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = FA345F67AE491E7C28EE4A6D5B06EDA1 /* WKBCompoundCurve.m */; };
+		D7F1519CF8F110DBE9409D992EB02B14 /* WKBCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = A3945386F7E434D6681C0771716FEED0 /* WKBCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E06CDFAD2364C2FFC6DEF3D362FA9477 /* wkb_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = AC2F254FD52BC81543C08DE861C73C33 /* wkb_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1015006917E72092AA8AC22347D6B7F /* WKBPolyhedralSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8019C56C414959473B01E4530DAC30 /* WKBPolyhedralSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E15EE57C0ED35C00200FA9EF775948A6 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB5806075469CBC71CB1EE7CE8E5B06 /* NSString+FontAwesome.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E1D0CDE135EDADC2DB92B3275AAC0F39 /* WKBPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F9652B86E076F756B0EC0C75F408E25F /* WKBPoint.m */; };
+		E9ADA4CB193B0039D43393C9D749AA07 /* WKBGeometryEnvelope.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E425B8AA0127540F539E9D89F7250 /* WKBGeometryEnvelope.m */; };
+		EC529F31AD42185A873D739E9A657B79 /* WKBByteWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B1FDB49A9C5DE24C9EF9B02B1AC7EF8 /* WKBByteWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F01FDD120D5ED945DABFCC8AE4648F5E /* WKBGeometryCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE359C07E706A00083B635EE73DF42C /* WKBGeometryCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F02B68CCC98496FF4B6521BF12EBFB9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9854452B704969D40D932335DEE0FF /* Foundation.framework */; };
+		F7FC0DBF2EC96C21D45D8BD9E64AA9B5 /* Pods-LEIFRTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D855D2EC101DAA04E716532D7D973F4 /* Pods-LEIFRTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA4A448F512E9E5F08C6F6C22449014E /* WKBGeometryWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A9058497FF4CAEDA9E5EFF2E5A9A76 /* WKBGeometryWriter.m */; };
+		FCF4E6E24C7F6F2C0E48337B6CCE5891 /* FontBlaster-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3C2A69E7E53AF8EECC79F96B368D42 /* FontBlaster-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF23C739B94FC74D74C3C5589F1DBB45 /* wkb-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 218124976C4837F225F417E056918206 /* wkb-ios-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7567C645264885E5A0EF3EFC2B29367B /* PBXContainerItemProxy */ = {
+		61F75C2119FC380FDA11DF7C7949C9A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 91DD3A06013D443F75BA2DDC6567987F;
+			remoteGlobalIDString = 5A2DB76FE860D5D148621EAD5B1606DD;
 			remoteInfo = "FontAwesome+iOS";
+		};
+		78E9E893895F0B6096A73A85D7BCA041 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FD88FBEDE31C5DB5E303451FCB5F244;
+			remoteInfo = "wkb-ios";
+		};
+		BBD240212AF8FEBF9F04B59F66F70E6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FD88FBEDE31C5DB5E303451FCB5F244;
+			remoteInfo = "wkb-ios";
+		};
+		BE88686A38619E02D90AE4973C6A475F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8085BA9EE7DF3DC11F1D5FD05E1617E1;
+			remoteInfo = "wkb-ios-WKB";
+		};
+		FDFF13C61C2B6C762CA356C4499DEE8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4E674DD9D88022C39F9427C0E34D5BF;
+			remoteInfo = FontBlaster;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E96F6B6BD3DB11E61AB1E9E2FA1C619 /* libPods-LEIFR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LEIFR.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E9FE4BC8C3D8444D1EDE6655127297A /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAwesome.m"; sourceTree = "<group>"; };
+		0025BBABB2DFDEF604AF00565DC1ED45 /* WKB.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKB.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D788DFEFA74287B0ED5D119BE0E314 /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAwesome.m"; sourceTree = "<group>"; };
+		046D00737FD32CA536731BACA93887AD /* wkb-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "wkb-ios.xcconfig"; sourceTree = "<group>"; };
+		07C0F76BC8D4946934B7A68DB360E801 /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+FontAwesome.h"; sourceTree = "<group>"; };
+		092B36667D8EFF2DFB20EBCF5A79FF8B /* WKBGeometry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometry.m; path = "wkb-ios/geom/WKBGeometry.m"; sourceTree = "<group>"; };
+		0AE359C07E706A00083B635EE73DF42C /* WKBGeometryCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryCollection.h; path = "wkb-ios/geom/WKBGeometryCollection.h"; sourceTree = "<group>"; };
+		0B73E21698D0CB5ECEE9C9737F5B5914 /* WKBGeometryJSONCompatible.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryJSONCompatible.m; path = "wkb-ios/util/WKBGeometryJSONCompatible.m"; sourceTree = "<group>"; };
+		0BBEA34CD83F99F52C6A908B8EEF530F /* Pods-LEIFRTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LEIFRTests-dummy.m"; sourceTree = "<group>"; };
+		0C2F9EA27C3BE4FFA525EF74C43234E4 /* FontAwesome_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontAwesome_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C4A1525752DC9E765704B63EB249E0E /* Pods-LEIFR-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFR-resources.sh"; sourceTree = "<group>"; };
+		0D3F748D54CABB316175881438C3E176 /* WKBGeometryWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryWriter.h; path = "wkb-ios/io/WKBGeometryWriter.h"; sourceTree = "<group>"; };
 		0F2331BAF78D4EDDCD400CF6388C7978 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		114467F926322A7F02CCC92FCD919C9F /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
-		170E42BCCA87431AFB4FBB3F70D77CE7 /* FontAwesome+iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "FontAwesome+iOS.xcconfig"; sourceTree = "<group>"; };
-		20AC22258B6BDCE5A1C97C1BFFB12B6F /* NSString+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
-		2B54CA4AE29B5A846BE8F0E84299EAED /* Pods-LEIFR-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFR-frameworks.sh"; sourceTree = "<group>"; };
+		10182BFBB055B56814A11350AC91573F /* FontBlaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontBlaster-dummy.m"; sourceTree = "<group>"; };
+		1270F162B6C4436CA26E6B3639FE7F31 /* WKBTIN.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBTIN.h; path = "wkb-ios/geom/WKBTIN.h"; sourceTree = "<group>"; };
+		135A180C3E4EC0512D18C874B7D15C01 /* WKBCurvePolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCurvePolygon.h; path = "wkb-ios/geom/WKBCurvePolygon.h"; sourceTree = "<group>"; };
+		13B20E85BB0945526633119EA1F26B35 /* WKBMultiPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiPoint.m; path = "wkb-ios/geom/WKBMultiPoint.m"; sourceTree = "<group>"; };
+		148155DB7724B26A9CC6BB046596CEED /* WKBByteWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBByteWriter.m; path = "wkb-ios/io/WKBByteWriter.m"; sourceTree = "<group>"; };
+		14952FEBEF161584553789EEAEBF8B31 /* WKBPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBPolygon.m; path = "wkb-ios/geom/WKBPolygon.m"; sourceTree = "<group>"; };
+		1542E1D9422CBB76DF6E02B28F82E1F2 /* wkb-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wkb-ios-prefix.pch"; sourceTree = "<group>"; };
+		1B950480244BCACDBAB0B84B4150BCCA /* FontAwesome+iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome+iOS-prefix.pch"; sourceTree = "<group>"; };
+		1BD8EDEAC3F0FC459B0E301575E22CB5 /* WKBMultiLineString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiLineString.h; path = "wkb-ios/geom/WKBMultiLineString.h"; sourceTree = "<group>"; };
+		1C51A16C85684E855F2C2CCE7697F8E4 /* wkb-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wkb-ios-umbrella.h"; sourceTree = "<group>"; };
+		1E11B5C8B62DB496061F0FCB3DDF1856 /* wkb-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "wkb-ios.modulemap"; sourceTree = "<group>"; };
+		1ECEDC57C8DDB708957478C41A3BCBEF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F292022A727323BD7D8C2B4F6901D01 /* WKBTriangle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBTriangle.m; path = "wkb-ios/geom/WKBTriangle.m"; sourceTree = "<group>"; };
+		1F570A69EE84D2B03EEA296D33F0BD7E /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FontAwesome.m"; sourceTree = "<group>"; };
+		203FE2B97F6D0ECF1515EB6DA274146A /* WKBGeometryEnvelopeBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryEnvelopeBuilder.m; path = "wkb-ios/util/WKBGeometryEnvelopeBuilder.m"; sourceTree = "<group>"; };
+		20815FEA4D2F16DE1E99664CED5B04FA /* Pods-LEIFR-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LEIFR-acknowledgements.markdown"; sourceTree = "<group>"; };
+		218124976C4837F225F417E056918206 /* wkb-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "wkb-ios-dummy.m"; sourceTree = "<group>"; };
+		27473D3D132E9DFE193C34D25993927A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27BED00A5ED4B56ACD9C0EB9B5FF9A42 /* WKBGeometryCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryCollection.m; path = "wkb-ios/geom/WKBGeometryCollection.m"; sourceTree = "<group>"; };
+		35C88D1AECA3BBC668BC9D0499416999 /* WKBPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBPoint.h; path = "wkb-ios/geom/WKBPoint.h"; sourceTree = "<group>"; };
+		3775A067879F7B712EBEEEF03764079B /* FontAwesome+iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "FontAwesome+iOS.modulemap"; sourceTree = "<group>"; };
+		3888340DA209BF29971B254BC364FAF8 /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
+		3945C07AF198D61048912C8C1AA50D71 /* WKBMultiSurface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiSurface.h; path = "wkb-ios/geom/WKBMultiSurface.h"; sourceTree = "<group>"; };
 		3C9854452B704969D40D932335DEE0FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4CB83CEBF9E65BEE244F1A1C1F7895C8 /* FontAwesome+iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome+iOS-prefix.pch"; sourceTree = "<group>"; };
-		51F955D9C872A9D4D9EB7616830EAA8E /* FAImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
-		69DB3E8BF873BB9044DE1F7B4ED32691 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
-		7476077B5DB4C6E2FD5D9BF04D1A59EE /* FontAwesome+iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontAwesome+iOS-dummy.m"; sourceTree = "<group>"; };
-		7FCCDA3864B72D60C0A33E72EEAF5B91 /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FontAwesome.m"; sourceTree = "<group>"; };
-		88F33A90B42D86A41DDB4A40DE7D9421 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
-		893FD63E55C4AA47C580CE336F5D43B6 /* Pods-LEIFR-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFR-resources.sh"; sourceTree = "<group>"; };
-		8A6383F231FB0EED0D478937AB8605F2 /* FAImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FAImageView.m; sourceTree = "<group>"; };
+		40EB0DF90EE2ED2A0C4D1C5BDB137F45 /* WKBGeometryJSONCompatible.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryJSONCompatible.h; path = "wkb-ios/util/WKBGeometryJSONCompatible.h"; sourceTree = "<group>"; };
+		48FEEC643296224A8D59A1F6C2FB8BAA /* WKBMultiCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiCurve.m; path = "wkb-ios/geom/WKBMultiCurve.m"; sourceTree = "<group>"; };
+		499E914F74E9959E3D279604647F3C88 /* Pods-LEIFRTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LEIFRTests.modulemap"; sourceTree = "<group>"; };
+		4EA0B8CF510ABEBE427354AC8FC9E883 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
+		55394F1007CEB5EBBCD9B4714C691B91 /* FontBlaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontBlaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8019C56C414959473B01E4530DAC30 /* WKBPolyhedralSurface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBPolyhedralSurface.h; path = "wkb-ios/geom/WKBPolyhedralSurface.h"; sourceTree = "<group>"; };
+		5C0D47D48C1440D0020A92493860E99A /* Pods-LEIFRTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFRTests-frameworks.sh"; sourceTree = "<group>"; };
+		5D855D2EC101DAA04E716532D7D973F4 /* Pods-LEIFRTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LEIFRTests-umbrella.h"; sourceTree = "<group>"; };
+		5DC00DD98E194720A0E4A17BED81A51C /* WKBMultiPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiPolygon.h; path = "wkb-ios/geom/WKBMultiPolygon.h"; sourceTree = "<group>"; };
+		5E9107975B1948BAAACB610A761E343F /* WKBLineString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBLineString.h; path = "wkb-ios/geom/WKBLineString.h"; sourceTree = "<group>"; };
+		5ED445B953AF909DD7CB5F50E0EFA6AF /* Pods-LEIFR-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LEIFR-acknowledgements.plist"; sourceTree = "<group>"; };
+		623BFB050AFF2F01563FD4C07AD477B3 /* FontBlaster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontBlaster.xcconfig; sourceTree = "<group>"; };
+		66E8070B5914DE2D6A565A9017DE7A1F /* WKBGeometryReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryReader.h; path = "wkb-ios/io/WKBGeometryReader.h"; sourceTree = "<group>"; };
+		6BAFD93C58D5962838A08C1CF3107609 /* WKBMultiPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiPolygon.m; path = "wkb-ios/geom/WKBMultiPolygon.m"; sourceTree = "<group>"; };
+		6C1E425B8AA0127540F539E9D89F7250 /* WKBGeometryEnvelope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryEnvelope.m; path = "wkb-ios/geom/WKBGeometryEnvelope.m"; sourceTree = "<group>"; };
+		6D2EC415E9C0F2B4B3660CBB3F5FBD3E /* WKBMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiPoint.h; path = "wkb-ios/geom/WKBMultiPoint.h"; sourceTree = "<group>"; };
+		705EDBD6710D249997C20A274CCEF169 /* WKBCurvePolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCurvePolygon.m; path = "wkb-ios/geom/WKBCurvePolygon.m"; sourceTree = "<group>"; };
+		728DA751EC151DD2426AB01BDEEAC4A0 /* WKBTIN.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBTIN.m; path = "wkb-ios/geom/WKBTIN.m"; sourceTree = "<group>"; };
+		7A17429B184CFB2FB3FE15CA42879125 /* Pods-LEIFR.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LEIFR.modulemap"; sourceTree = "<group>"; };
+		7B3E151F555737E66D97F4A1F28B876A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B85B309B256AD1D33F022E3C7D63F47 /* WKBMultiCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiCurve.h; path = "wkb-ios/geom/WKBMultiCurve.h"; sourceTree = "<group>"; };
+		7D888C16305DFFCCB7068FBA46D5592E /* FontBlaster.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FontBlaster.swift; sourceTree = "<group>"; };
+		8764B5379AD2DBD69AAC57D8BD164EEB /* WKBGeometryReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryReader.m; path = "wkb-ios/io/WKBGeometryReader.m"; sourceTree = "<group>"; };
+		8B1FDB49A9C5DE24C9EF9B02B1AC7EF8 /* WKBByteWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBByteWriter.h; path = "wkb-ios/io/WKBByteWriter.h"; sourceTree = "<group>"; };
+		8BC4B7E83F86449C72E7CBECEFA41684 /* WKBByteReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBByteReader.h; path = "wkb-ios/io/WKBByteReader.h"; sourceTree = "<group>"; };
+		8CFB3FC4D51B40ABDCCAEE130B5C08DA /* WKBGeometryTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryTypes.h; path = "wkb-ios/geom/WKBGeometryTypes.h"; sourceTree = "<group>"; };
+		8E3C2A69E7E53AF8EECC79F96B368D42 /* FontBlaster-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontBlaster-umbrella.h"; sourceTree = "<group>"; };
+		8EFAEF8E46DCA5D8ECA16D4B504B286B /* WKBGeometryPrinter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryPrinter.m; path = "wkb-ios/util/WKBGeometryPrinter.m"; sourceTree = "<group>"; };
+		91CCCE950318B1910BD5ED0595D0038A /* Pods-LEIFR-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LEIFR-umbrella.h"; sourceTree = "<group>"; };
+		9277D992D3B233E5476B5ADAA662AF2B /* WKBPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBPolygon.h; path = "wkb-ios/geom/WKBPolygon.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95E06D1C3CA9EBEDF1D17F12186788C1 /* Pods-LEIFR-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LEIFR-dummy.m"; sourceTree = "<group>"; };
-		98A49DE6D5F55358EB714C3F417696CC /* libFontAwesome+iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFontAwesome+iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F8A0451FDB01D9B51AAF77B751BE8CB /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		97A617B193A4F6ADE7901FC6F7B6BBB6 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
+		993F402FFB9622D1F0433E9F1396494D /* WKBGeometryEnvelope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryEnvelope.h; path = "wkb-ios/geom/WKBGeometryEnvelope.h"; sourceTree = "<group>"; };
+		997F2639DD76B785B60A28B9ACAAB7A6 /* FontAwesome+iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome+iOS-umbrella.h"; sourceTree = "<group>"; };
+		9A4EDB6C173D724C29CDCFA82026EEAC /* Pods-LEIFRTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LEIFRTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A0A829EDBF34D96E38EA770F70874BD1 /* WKBTriangle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBTriangle.h; path = "wkb-ios/geom/WKBTriangle.h"; sourceTree = "<group>"; };
+		A3945386F7E434D6681C0771716FEED0 /* WKBCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCurve.h; path = "wkb-ios/geom/WKBCurve.h"; sourceTree = "<group>"; };
+		A4421F1814E8B6594B0B2CB5CCFFCD08 /* FAImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FAImageView.m; sourceTree = "<group>"; };
+		AC2F254FD52BC81543C08DE861C73C33 /* wkb_ios.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = wkb_ios.h; path = "wkb-ios/wkb_ios.h"; sourceTree = "<group>"; };
+		ADBC42A2634EACB114A295170751673E /* WKBCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCurve.m; path = "wkb-ios/geom/WKBCurve.m"; sourceTree = "<group>"; };
+		B2A25C71680D492D98ACDE03B6A04584 /* Pods-LEIFR-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFR-frameworks.sh"; sourceTree = "<group>"; };
+		B32309BA601F8678D8DEE0B8F4315CFB /* Pods_LEIFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A5F5A96A4DAED990BE64DE515FBF61 /* FontAwesome+iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontAwesome+iOS-dummy.m"; sourceTree = "<group>"; };
+		B49493BB50B146249B76EBB68F137197 /* wkb_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wkb_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4A9058497FF4CAEDA9E5EFF2E5A9A76 /* WKBGeometryWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryWriter.m; path = "wkb-ios/io/WKBGeometryWriter.m"; sourceTree = "<group>"; };
 		B4CCDF0ACEE37ED4308724E62FCDE939 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		B558A19BA3CCFAC9405A0FD8092EEC54 /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAwesome.h"; sourceTree = "<group>"; };
-		C46B7A22B66DAA84181872C1FC9EE004 /* Pods-LEIFR-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LEIFR-acknowledgements.plist"; sourceTree = "<group>"; };
-		E95B13AB6860B74F53B8ECC2F0A4A29D /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+FontAwesome.h"; sourceTree = "<group>"; };
-		FE83CBD13D8E6BC593A055CFE9A3A257 /* Pods-LEIFR-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LEIFR-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B52758A6C4C1BD1A72DE4084FD31C54B /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		B5C23FD6814E878221A007A9635F6068 /* WKBCircularString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCircularString.m; path = "wkb-ios/geom/WKBCircularString.m"; sourceTree = "<group>"; };
+		BC753BEE60B81B85782BF12BD8BC45A4 /* WKBGeometryPrinter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryPrinter.h; path = "wkb-ios/util/WKBGeometryPrinter.h"; sourceTree = "<group>"; };
+		C05155EE769F3E6BC6BB2AD314F07633 /* WKBByteReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBByteReader.m; path = "wkb-ios/io/WKBByteReader.m"; sourceTree = "<group>"; };
+		C1E0F0B6419CF557C458C06936114A81 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C28801A640B7822490879C282750F851 /* wkb-ios-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "wkb-ios-Bridging-Header.h"; path = "wkb-ios/wkb-ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		C645B7361C0A1180E8A205AE153D4008 /* Pods-LEIFRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFRTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CADE8C04C87458D886B19444CF8859B8 /* FAImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
+		CB6370816D1886D868229DA192AD401F /* Pods-LEIFRTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFRTests-resources.sh"; sourceTree = "<group>"; };
+		D02041865D2DE5BDE3E86FE7939EC6DE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "wkb-ios/Info.plist"; sourceTree = "<group>"; };
+		D2AF2A5E1B0BFD7F5CE0210C1D66A7CA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D62F2067AF1F86CBCCDF10AA40B92A2F /* WKBLineString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBLineString.m; path = "wkb-ios/geom/WKBLineString.m"; sourceTree = "<group>"; };
+		D9A4CE48CD70ADE1F54EF3AD92E3C40E /* WKBPolyhedralSurface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBPolyhedralSurface.m; path = "wkb-ios/geom/WKBPolyhedralSurface.m"; sourceTree = "<group>"; };
+		DBF1C4DBB5B6BC95AA5E3FE14943FE6C /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAwesome.h"; sourceTree = "<group>"; };
+		DD35AE90E0D6A60D51533D60F8DA5843 /* WKBCircularString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCircularString.h; path = "wkb-ios/geom/WKBCircularString.h"; sourceTree = "<group>"; };
+		E0044E2D1A9269DEFBD67A44B9855E4C /* FontAwesome+iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "FontAwesome+iOS.xcconfig"; sourceTree = "<group>"; };
+		E215D401ACB42DE2C436D8E6C0B30D36 /* WKBCompoundCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCompoundCurve.h; path = "wkb-ios/geom/WKBCompoundCurve.h"; sourceTree = "<group>"; };
+		EB649883F59671D289425E42328493DF /* WKBGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometry.h; path = "wkb-ios/geom/WKBGeometry.h"; sourceTree = "<group>"; };
+		EF44C8DD686AC29385090D848D557E47 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF523E3343A21E5680A7FB9F59CB23C6 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		F1BC2CAAE71289ECC0AE9BC971239285 /* WKBSurface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBSurface.m; path = "wkb-ios/geom/WKBSurface.m"; sourceTree = "<group>"; };
+		F20B2FF994B975AA464273A34BF55088 /* Pods-LEIFRTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LEIFRTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F2243F1727FAB19B9CCA28148AFE9CB7 /* WKBGeometryTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryTypes.m; path = "wkb-ios/geom/WKBGeometryTypes.m"; sourceTree = "<group>"; };
+		F52C618DF420EEF1695FE61AB494A892 /* WKBGeometryEnvelopeBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryEnvelopeBuilder.h; path = "wkb-ios/util/WKBGeometryEnvelopeBuilder.h"; sourceTree = "<group>"; };
+		F58ABA3722A28B49CD37E49B8346EC2D /* WKBMultiLineString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiLineString.m; path = "wkb-ios/geom/WKBMultiLineString.m"; sourceTree = "<group>"; };
+		F6783A02623F7AF7B80F5598D85E6BED /* WKBMultiSurface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiSurface.m; path = "wkb-ios/geom/WKBMultiSurface.m"; sourceTree = "<group>"; };
+		F9652B86E076F756B0EC0C75F408E25F /* WKBPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBPoint.m; path = "wkb-ios/geom/WKBPoint.m"; sourceTree = "<group>"; };
+		F9AD4A0204B504377073A7076E21FB08 /* FontBlaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontBlaster-prefix.pch"; sourceTree = "<group>"; };
+		FA345F67AE491E7C28EE4A6D5B06EDA1 /* WKBCompoundCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCompoundCurve.m; path = "wkb-ios/geom/WKBCompoundCurve.m"; sourceTree = "<group>"; };
+		FAA8D01DC7AE819AD24E66C80D2FDCD5 /* Pods-LEIFR-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LEIFR-dummy.m"; sourceTree = "<group>"; };
+		FB2A6BE41ABD87EFA9444B6BFD912D1B /* WKBSurface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBSurface.h; path = "wkb-ios/geom/WKBSurface.h"; sourceTree = "<group>"; };
+		FBFA981F0AE2C702DC513F82C3634BFF /* ResourceBundle-WKB-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-WKB-Info.plist"; sourceTree = "<group>"; };
+		FC29E147327D68231DD545D883FB0E77 /* FontBlaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FontBlaster.modulemap; sourceTree = "<group>"; };
+		FCB5806075469CBC71CB1EE7CE8E5B06 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9C195B398BCB3E113B621F4571BDBD3F /* Frameworks */ = {
+		03C213AC8CF175DDF002CE053CC29033 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EE22E06C5D46A65B11A41FE4B76D6F /* Foundation.framework in Frameworks */,
+				77C5D34F53ED1007C35BA7FDFD4D9008 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2676BADF85612BCEC672EC50F44539D /* Frameworks */ = {
+		078055EE628408170613E9EF1B485054 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D689AE29491AB7B9B30528650EE700 /* CoreGraphics.framework in Frameworks */,
-				750F1F9ED6A157BDA2A692AB4D452E6C /* Foundation.framework in Frameworks */,
-				41EEE47358E47C4002A56181CB3E9674 /* UIKit.framework in Frameworks */,
+				C429FCFCB1D4C4411748881286F02438 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74EC12B16C9331D17B5F8AC17EDC45B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02B68CCC98496FF4B6521BF12EBFB9A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB8D52FF28562C4C2047960A36E75111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52A86ED6B23BCAFB685AC82EBFEFB88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14B93E2563E46E9EA103FFF8FA77CA3 /* CoreGraphics.framework in Frameworks */,
+				C2EB6D13BBB38A0B035512021CB8F883 /* Foundation.framework in Frameworks */,
+				8C2F37448792E810BC4EE895CD289F54 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5530D0006131F4EC888F53CC6CD01D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5345FE8A688D6B5FB702B14EC8E2F114 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01F2014D25D6343B7456CF305FCA14DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C2F9EA27C3BE4FFA525EF74C43234E4 /* FontAwesome_iOS.framework */,
+				55394F1007CEB5EBBCD9B4714C691B91 /* FontBlaster.framework */,
+				B32309BA601F8678D8DEE0B8F4315CFB /* Pods_LEIFR.framework */,
+				C1E0F0B6419CF557C458C06936114A81 /* Pods_LEIFRTests.framework */,
+				0025BBABB2DFDEF604AF00565DC1ED45 /* WKB.bundle */,
+				B49493BB50B146249B76EBB68F137197 /* wkb_ios.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0974B97A94ACF6111CA7B5AB88A85F54 /* FontBlaster */ = {
+			isa = PBXGroup;
+			children = (
+				7D888C16305DFFCCB7068FBA46D5592E /* FontBlaster.swift */,
+				850DD449E5217C470FBF7E16AF36D787 /* Support Files */,
+			);
+			path = FontBlaster;
+			sourceTree = "<group>";
+		};
 		0A68FE8A6158D395EC4CB10F8472F165 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,15 +336,21 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		0D09AE7B715268BD46B2382E9992DE0B /* Support Files */ = {
+		0E976FD2DDDD73E360A1B3D43C2305D8 /* FontAwesome+iOS */ = {
 			isa = PBXGroup;
 			children = (
-				170E42BCCA87431AFB4FBB3F70D77CE7 /* FontAwesome+iOS.xcconfig */,
-				7476077B5DB4C6E2FD5D9BF04D1A59EE /* FontAwesome+iOS-dummy.m */,
-				4CB83CEBF9E65BEE244F1A1C1F7895C8 /* FontAwesome+iOS-prefix.pch */,
+				CADE8C04C87458D886B19444CF8859B8 /* FAImageView.h */,
+				A4421F1814E8B6594B0B2CB5CCFFCD08 /* FAImageView.m */,
+				EF523E3343A21E5680A7FB9F59CB23C6 /* NSString+FontAwesome.h */,
+				FCB5806075469CBC71CB1EE7CE8E5B06 /* NSString+FontAwesome.m */,
+				DBF1C4DBB5B6BC95AA5E3FE14943FE6C /* UIFont+FontAwesome.h */,
+				00D788DFEFA74287B0ED5D119BE0E314 /* UIFont+FontAwesome.m */,
+				07C0F76BC8D4946934B7A68DB360E801 /* UIImage+FontAwesome.h */,
+				1F570A69EE84D2B03EEA296D33F0BD7E /* UIImage+FontAwesome.m */,
+				68E2BA655F677AD1CC7534A2E770DF42 /* Resources */,
+				FBCC9E67C4CE4AD9B840D65EF706F8B5 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/FontAwesome+iOS";
+			path = "FontAwesome+iOS";
 			sourceTree = "<group>";
 		};
 		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
@@ -112,27 +361,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		51E7E3F08EACBF029A5F41FD094DDA04 /* Targets Support Files */ = {
+		18F5898BB49B51D546697DE88BF45A00 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				558C0BB7C06FDB91193853DCA2CAF013 /* Pods-LEIFR */,
+				D2AF2A5E1B0BFD7F5CE0210C1D66A7CA /* Info.plist */,
+				FBFA981F0AE2C702DC513F82C3634BFF /* ResourceBundle-WKB-Info.plist */,
+				1E11B5C8B62DB496061F0FCB3DDF1856 /* wkb-ios.modulemap */,
+				046D00737FD32CA536731BACA93887AD /* wkb-ios.xcconfig */,
+				218124976C4837F225F417E056918206 /* wkb-ios-dummy.m */,
+				1542E1D9422CBB76DF6E02B28F82E1F2 /* wkb-ios-prefix.pch */,
+				1C51A16C85684E855F2C2CCE7697F8E4 /* wkb-ios-umbrella.h */,
 			);
-			name = "Targets Support Files";
+			name = "Support Files";
+			path = "../Target Support Files/wkb-ios";
 			sourceTree = "<group>";
 		};
-		558C0BB7C06FDB91193853DCA2CAF013 /* Pods-LEIFR */ = {
+		68E2BA655F677AD1CC7534A2E770DF42 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FE83CBD13D8E6BC593A055CFE9A3A257 /* Pods-LEIFR-acknowledgements.markdown */,
-				C46B7A22B66DAA84181872C1FC9EE004 /* Pods-LEIFR-acknowledgements.plist */,
-				95E06D1C3CA9EBEDF1D17F12186788C1 /* Pods-LEIFR-dummy.m */,
-				2B54CA4AE29B5A846BE8F0E84299EAED /* Pods-LEIFR-frameworks.sh */,
-				893FD63E55C4AA47C580CE336F5D43B6 /* Pods-LEIFR-resources.sh */,
-				114467F926322A7F02CCC92FCD919C9F /* Pods-LEIFR.debug.xcconfig */,
-				88F33A90B42D86A41DDB4A40DE7D9421 /* Pods-LEIFR.release.xcconfig */,
+				B52758A6C4C1BD1A72DE4084FD31C54B /* FontAwesome.ttf */,
 			);
-			name = "Pods-LEIFR";
-			path = "Target Support Files/Pods-LEIFR";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -140,95 +389,294 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				FB336E5D2FEFFB2B27F22547D974B74A /* Pods */,
-				A1661D6A3048B89F3338E719C2CA2AAA /* Products */,
-				51E7E3F08EACBF029A5F41FD094DDA04 /* Targets Support Files */,
+				AC4B05513220F41250FD69BB299358B3 /* Pods */,
+				01F2014D25D6343B7456CF305FCA14DA /* Products */,
+				8A28785D99A39C8A0475B408321BFEB6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A1661D6A3048B89F3338E719C2CA2AAA /* Products */ = {
+		850DD449E5217C470FBF7E16AF36D787 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				98A49DE6D5F55358EB714C3F417696CC /* libFontAwesome+iOS.a */,
-				0E96F6B6BD3DB11E61AB1E9E2FA1C619 /* libPods-LEIFR.a */,
+				FC29E147327D68231DD545D883FB0E77 /* FontBlaster.modulemap */,
+				623BFB050AFF2F01563FD4C07AD477B3 /* FontBlaster.xcconfig */,
+				10182BFBB055B56814A11350AC91573F /* FontBlaster-dummy.m */,
+				F9AD4A0204B504377073A7076E21FB08 /* FontBlaster-prefix.pch */,
+				8E3C2A69E7E53AF8EECC79F96B368D42 /* FontBlaster-umbrella.h */,
+				1ECEDC57C8DDB708957478C41A3BCBEF /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/FontBlaster";
 			sourceTree = "<group>";
 		};
-		E429A7C7B486DF388BBCB265590ABD20 /* FontAwesome+iOS */ = {
+		8A28785D99A39C8A0475B408321BFEB6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				51F955D9C872A9D4D9EB7616830EAA8E /* FAImageView.h */,
-				8A6383F231FB0EED0D478937AB8605F2 /* FAImageView.m */,
-				20AC22258B6BDCE5A1C97C1BFFB12B6F /* NSString+FontAwesome.h */,
-				69DB3E8BF873BB9044DE1F7B4ED32691 /* NSString+FontAwesome.m */,
-				B558A19BA3CCFAC9405A0FD8092EEC54 /* UIFont+FontAwesome.h */,
-				0E9FE4BC8C3D8444D1EDE6655127297A /* UIFont+FontAwesome.m */,
-				E95B13AB6860B74F53B8ECC2F0A4A29D /* UIImage+FontAwesome.h */,
-				7FCCDA3864B72D60C0A33E72EEAF5B91 /* UIImage+FontAwesome.m */,
-				FE6D8E3E014A3F65487A6512DEC9C0A0 /* Resources */,
-				0D09AE7B715268BD46B2382E9992DE0B /* Support Files */,
+				BBFCE3795565FC74600F82AAC1B91871 /* Pods-LEIFR */,
+				CFC643CB77A54A83C5934E6CF3F128BC /* Pods-LEIFRTests */,
 			);
-			path = "FontAwesome+iOS";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FB336E5D2FEFFB2B27F22547D974B74A /* Pods */ = {
+		8CEE6C6C1616C672F8330BFDF158061D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E429A7C7B486DF388BBCB265590ABD20 /* FontAwesome+iOS */,
+				D02041865D2DE5BDE3E86FE7939EC6DE /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AC4B05513220F41250FD69BB299358B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E976FD2DDDD73E360A1B3D43C2305D8 /* FontAwesome+iOS */,
+				0974B97A94ACF6111CA7B5AB88A85F54 /* FontBlaster */,
+				EED3EF43C420BEBBD42FB05DB9C2258E /* wkb-ios */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FE6D8E3E014A3F65487A6512DEC9C0A0 /* Resources */ = {
+		BBFCE3795565FC74600F82AAC1B91871 /* Pods-LEIFR */ = {
 			isa = PBXGroup;
 			children = (
-				9F8A0451FDB01D9B51AAF77B751BE8CB /* FontAwesome.ttf */,
+				EF44C8DD686AC29385090D848D557E47 /* Info.plist */,
+				7A17429B184CFB2FB3FE15CA42879125 /* Pods-LEIFR.modulemap */,
+				20815FEA4D2F16DE1E99664CED5B04FA /* Pods-LEIFR-acknowledgements.markdown */,
+				5ED445B953AF909DD7CB5F50E0EFA6AF /* Pods-LEIFR-acknowledgements.plist */,
+				FAA8D01DC7AE819AD24E66C80D2FDCD5 /* Pods-LEIFR-dummy.m */,
+				B2A25C71680D492D98ACDE03B6A04584 /* Pods-LEIFR-frameworks.sh */,
+				0C4A1525752DC9E765704B63EB249E0E /* Pods-LEIFR-resources.sh */,
+				91CCCE950318B1910BD5ED0595D0038A /* Pods-LEIFR-umbrella.h */,
+				3888340DA209BF29971B254BC364FAF8 /* Pods-LEIFR.debug.xcconfig */,
+				4EA0B8CF510ABEBE427354AC8FC9E883 /* Pods-LEIFR.release.xcconfig */,
 			);
-			name = Resources;
+			name = "Pods-LEIFR";
+			path = "Target Support Files/Pods-LEIFR";
+			sourceTree = "<group>";
+		};
+		CFC643CB77A54A83C5934E6CF3F128BC /* Pods-LEIFRTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B3E151F555737E66D97F4A1F28B876A /* Info.plist */,
+				499E914F74E9959E3D279604647F3C88 /* Pods-LEIFRTests.modulemap */,
+				F20B2FF994B975AA464273A34BF55088 /* Pods-LEIFRTests-acknowledgements.markdown */,
+				9A4EDB6C173D724C29CDCFA82026EEAC /* Pods-LEIFRTests-acknowledgements.plist */,
+				0BBEA34CD83F99F52C6A908B8EEF530F /* Pods-LEIFRTests-dummy.m */,
+				5C0D47D48C1440D0020A92493860E99A /* Pods-LEIFRTests-frameworks.sh */,
+				CB6370816D1886D868229DA192AD401F /* Pods-LEIFRTests-resources.sh */,
+				5D855D2EC101DAA04E716532D7D973F4 /* Pods-LEIFRTests-umbrella.h */,
+				C645B7361C0A1180E8A205AE153D4008 /* Pods-LEIFRTests.debug.xcconfig */,
+				97A617B193A4F6ADE7901FC6F7B6BBB6 /* Pods-LEIFRTests.release.xcconfig */,
+			);
+			name = "Pods-LEIFRTests";
+			path = "Target Support Files/Pods-LEIFRTests";
+			sourceTree = "<group>";
+		};
+		EED3EF43C420BEBBD42FB05DB9C2258E /* wkb-ios */ = {
+			isa = PBXGroup;
+			children = (
+				C28801A640B7822490879C282750F851 /* wkb-ios-Bridging-Header.h */,
+				AC2F254FD52BC81543C08DE861C73C33 /* wkb_ios.h */,
+				8BC4B7E83F86449C72E7CBECEFA41684 /* WKBByteReader.h */,
+				C05155EE769F3E6BC6BB2AD314F07633 /* WKBByteReader.m */,
+				8B1FDB49A9C5DE24C9EF9B02B1AC7EF8 /* WKBByteWriter.h */,
+				148155DB7724B26A9CC6BB046596CEED /* WKBByteWriter.m */,
+				DD35AE90E0D6A60D51533D60F8DA5843 /* WKBCircularString.h */,
+				B5C23FD6814E878221A007A9635F6068 /* WKBCircularString.m */,
+				E215D401ACB42DE2C436D8E6C0B30D36 /* WKBCompoundCurve.h */,
+				FA345F67AE491E7C28EE4A6D5B06EDA1 /* WKBCompoundCurve.m */,
+				A3945386F7E434D6681C0771716FEED0 /* WKBCurve.h */,
+				ADBC42A2634EACB114A295170751673E /* WKBCurve.m */,
+				135A180C3E4EC0512D18C874B7D15C01 /* WKBCurvePolygon.h */,
+				705EDBD6710D249997C20A274CCEF169 /* WKBCurvePolygon.m */,
+				EB649883F59671D289425E42328493DF /* WKBGeometry.h */,
+				092B36667D8EFF2DFB20EBCF5A79FF8B /* WKBGeometry.m */,
+				0AE359C07E706A00083B635EE73DF42C /* WKBGeometryCollection.h */,
+				27BED00A5ED4B56ACD9C0EB9B5FF9A42 /* WKBGeometryCollection.m */,
+				993F402FFB9622D1F0433E9F1396494D /* WKBGeometryEnvelope.h */,
+				6C1E425B8AA0127540F539E9D89F7250 /* WKBGeometryEnvelope.m */,
+				F52C618DF420EEF1695FE61AB494A892 /* WKBGeometryEnvelopeBuilder.h */,
+				203FE2B97F6D0ECF1515EB6DA274146A /* WKBGeometryEnvelopeBuilder.m */,
+				40EB0DF90EE2ED2A0C4D1C5BDB137F45 /* WKBGeometryJSONCompatible.h */,
+				0B73E21698D0CB5ECEE9C9737F5B5914 /* WKBGeometryJSONCompatible.m */,
+				BC753BEE60B81B85782BF12BD8BC45A4 /* WKBGeometryPrinter.h */,
+				8EFAEF8E46DCA5D8ECA16D4B504B286B /* WKBGeometryPrinter.m */,
+				66E8070B5914DE2D6A565A9017DE7A1F /* WKBGeometryReader.h */,
+				8764B5379AD2DBD69AAC57D8BD164EEB /* WKBGeometryReader.m */,
+				8CFB3FC4D51B40ABDCCAEE130B5C08DA /* WKBGeometryTypes.h */,
+				F2243F1727FAB19B9CCA28148AFE9CB7 /* WKBGeometryTypes.m */,
+				0D3F748D54CABB316175881438C3E176 /* WKBGeometryWriter.h */,
+				B4A9058497FF4CAEDA9E5EFF2E5A9A76 /* WKBGeometryWriter.m */,
+				5E9107975B1948BAAACB610A761E343F /* WKBLineString.h */,
+				D62F2067AF1F86CBCCDF10AA40B92A2F /* WKBLineString.m */,
+				7B85B309B256AD1D33F022E3C7D63F47 /* WKBMultiCurve.h */,
+				48FEEC643296224A8D59A1F6C2FB8BAA /* WKBMultiCurve.m */,
+				1BD8EDEAC3F0FC459B0E301575E22CB5 /* WKBMultiLineString.h */,
+				F58ABA3722A28B49CD37E49B8346EC2D /* WKBMultiLineString.m */,
+				6D2EC415E9C0F2B4B3660CBB3F5FBD3E /* WKBMultiPoint.h */,
+				13B20E85BB0945526633119EA1F26B35 /* WKBMultiPoint.m */,
+				5DC00DD98E194720A0E4A17BED81A51C /* WKBMultiPolygon.h */,
+				6BAFD93C58D5962838A08C1CF3107609 /* WKBMultiPolygon.m */,
+				3945C07AF198D61048912C8C1AA50D71 /* WKBMultiSurface.h */,
+				F6783A02623F7AF7B80F5598D85E6BED /* WKBMultiSurface.m */,
+				35C88D1AECA3BBC668BC9D0499416999 /* WKBPoint.h */,
+				F9652B86E076F756B0EC0C75F408E25F /* WKBPoint.m */,
+				9277D992D3B233E5476B5ADAA662AF2B /* WKBPolygon.h */,
+				14952FEBEF161584553789EEAEBF8B31 /* WKBPolygon.m */,
+				5B8019C56C414959473B01E4530DAC30 /* WKBPolyhedralSurface.h */,
+				D9A4CE48CD70ADE1F54EF3AD92E3C40E /* WKBPolyhedralSurface.m */,
+				FB2A6BE41ABD87EFA9444B6BFD912D1B /* WKBSurface.h */,
+				F1BC2CAAE71289ECC0AE9BC971239285 /* WKBSurface.m */,
+				1270F162B6C4436CA26E6B3639FE7F31 /* WKBTIN.h */,
+				728DA751EC151DD2426AB01BDEEAC4A0 /* WKBTIN.m */,
+				A0A829EDBF34D96E38EA770F70874BD1 /* WKBTriangle.h */,
+				1F292022A727323BD7D8C2B4F6901D01 /* WKBTriangle.m */,
+				8CEE6C6C1616C672F8330BFDF158061D /* Resources */,
+				18F5898BB49B51D546697DE88BF45A00 /* Support Files */,
+			);
+			path = "wkb-ios";
+			sourceTree = "<group>";
+		};
+		FBCC9E67C4CE4AD9B840D65EF706F8B5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3775A067879F7B712EBEEEF03764079B /* FontAwesome+iOS.modulemap */,
+				E0044E2D1A9269DEFBD67A44B9855E4C /* FontAwesome+iOS.xcconfig */,
+				B3A5F5A96A4DAED990BE64DE515FBF61 /* FontAwesome+iOS-dummy.m */,
+				1B950480244BCACDBAB0B84B4150BCCA /* FontAwesome+iOS-prefix.pch */,
+				997F2639DD76B785B60A28B9ACAAB7A6 /* FontAwesome+iOS-umbrella.h */,
+				27473D3D132E9DFE193C34D25993927A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FontAwesome+iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D89BFD1F0D75ECB29AF55D847C97D2C4 /* Headers */ = {
+		179A3F78521FF8AFB8EA1FF701695119 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87C267FCA6EA5092ACFA44F08DEF7344 /* FAImageView.h in Headers */,
-				19AC338F43C6F9FBF45085E1C2D0671E /* NSString+FontAwesome.h in Headers */,
-				448962DB79C880921191BEDBF1172D3C /* UIFont+FontAwesome.h in Headers */,
-				B05F77A3B1E212CE0A76FC1F58BF2305 /* UIImage+FontAwesome.h in Headers */,
+				FCF4E6E24C7F6F2C0E48337B6CCE5891 /* FontBlaster-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C5E8A1B487AB45AB22E7EC8D820104 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F33AD02E52094062165058F968E98F /* wkb-ios-Bridging-Header.h in Headers */,
+				7ED1B263F4F7203C116D15A480F49209 /* wkb-ios-umbrella.h in Headers */,
+				E06CDFAD2364C2FFC6DEF3D362FA9477 /* wkb_ios.h in Headers */,
+				AF5AFCA6CDCAC06FD4CC914625D47111 /* WKBByteReader.h in Headers */,
+				EC529F31AD42185A873D739E9A657B79 /* WKBByteWriter.h in Headers */,
+				142F000584CCF3D5AF39B631DF6EF869 /* WKBCircularString.h in Headers */,
+				42FEB8B210C424C8C4CB64E72DB456EA /* WKBCompoundCurve.h in Headers */,
+				D7F1519CF8F110DBE9409D992EB02B14 /* WKBCurve.h in Headers */,
+				580A985E63E50BE0F1EF0404797ECC91 /* WKBCurvePolygon.h in Headers */,
+				742F433A83C99B1092D3C3A43F5502CD /* WKBGeometry.h in Headers */,
+				F01FDD120D5ED945DABFCC8AE4648F5E /* WKBGeometryCollection.h in Headers */,
+				105CC5A14E73C3332AD5CABF77A1B4A1 /* WKBGeometryEnvelope.h in Headers */,
+				9DCDA830866E7C83EC6E96B76090CC83 /* WKBGeometryEnvelopeBuilder.h in Headers */,
+				8EFFE18129490A45F7216C4527CEF78E /* WKBGeometryJSONCompatible.h in Headers */,
+				013A886FC4A7A91A53FAF3CD7F833AD0 /* WKBGeometryPrinter.h in Headers */,
+				0DF750F0D229129A765B2837FA338D68 /* WKBGeometryReader.h in Headers */,
+				2770BA2B1609CD1C3EAC63EE4F10ECF4 /* WKBGeometryTypes.h in Headers */,
+				3AC3E36DC80920B67A6D317215CFA17B /* WKBGeometryWriter.h in Headers */,
+				7891F500D4A967C431B3E750E9E57E5C /* WKBLineString.h in Headers */,
+				A3D06CCEE45356998E44C162AD0EEE67 /* WKBMultiCurve.h in Headers */,
+				0F122B496ADD8896AF6893D3C99D5710 /* WKBMultiLineString.h in Headers */,
+				3356B6634886A3F51484EF75CF2C7CE2 /* WKBMultiPoint.h in Headers */,
+				64D27E914489BD90CF53AFB6AF2B02AC /* WKBMultiPolygon.h in Headers */,
+				77885D3DE75E5E25E2D2D4B456598287 /* WKBMultiSurface.h in Headers */,
+				493EDE19E4E12CE7FEABCFE2A6DBF228 /* WKBPoint.h in Headers */,
+				6C4460E5BFB9031662130BF684F17916 /* WKBPolygon.h in Headers */,
+				E1015006917E72092AA8AC22347D6B7F /* WKBPolyhedralSurface.h in Headers */,
+				05DDC179E8EE57139238E3CA49D716CE /* WKBSurface.h in Headers */,
+				7BEC8FE1A0A3A01B0026DC2914F49172 /* WKBTIN.h in Headers */,
+				BE41106C477F25F1B555D6016634026D /* WKBTriangle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8076FDDA94B305EF1509D9F3F02D0886 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A2631693B8B896EB5A914D530F29E3 /* FAImageView.h in Headers */,
+				7BAB3203FFCBA0A30B0B32BBFDE09EE6 /* FontAwesome+iOS-umbrella.h in Headers */,
+				C0553351FF682446A59E3D8ED1CD43FE /* NSString+FontAwesome.h in Headers */,
+				4FF03DDBB2AF90C9C09A12314BBF0E06 /* UIFont+FontAwesome.h in Headers */,
+				836F52046D65386585B6A4F52352D76F /* UIImage+FontAwesome.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2B7661F56C1CB8943CCBFE2ED06746 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7FC0DBF2EC96C21D45D8BD9E64AA9B5 /* Pods-LEIFRTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97FB4D3A6C6231FC90AC4E3DEC275B11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BF9793C6EB49BF8799C4E35D363AA02 /* Pods-LEIFR-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7C60F94EA751FF543EB90CBDC46C9A74 /* Pods-LEIFR */ = {
+		04F572D227C001825EF5106E0F74E2FE /* Pods-LEIFR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C0D2F52942DBE8563D53491EBE81978 /* Build configuration list for PBXNativeTarget "Pods-LEIFR" */;
+			buildConfigurationList = 7D081F731F09BFD284471F4BCC38FE7A /* Build configuration list for PBXNativeTarget "Pods-LEIFR" */;
 			buildPhases = (
-				F3D2E6D73CEDB50BCED6B255B8E673AB /* Sources */,
-				9C195B398BCB3E113B621F4571BDBD3F /* Frameworks */,
+				B4E1C553D7A1294BE0EAD11D423E9484 /* Sources */,
+				F5530D0006131F4EC888F53CC6CD01D1 /* Frameworks */,
+				97FB4D3A6C6231FC90AC4E3DEC275B11 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B40E6EB85957D8C4A4293A2AE9702FCB /* PBXTargetDependency */,
+				2AABCC419E9714B8C85CB69725B88B44 /* PBXTargetDependency */,
+				9BF011044F1B14791F39EE2346B5B5FF /* PBXTargetDependency */,
+				89D1106DE6DF8D737F0705FB8F05E4FA /* PBXTargetDependency */,
 			);
 			name = "Pods-LEIFR";
 			productName = "Pods-LEIFR";
-			productReference = 0E96F6B6BD3DB11E61AB1E9E2FA1C619 /* libPods-LEIFR.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = B32309BA601F8678D8DEE0B8F4315CFB /* Pods_LEIFR.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		91DD3A06013D443F75BA2DDC6567987F /* FontAwesome+iOS */ = {
+		1FD88FBEDE31C5DB5E303451FCB5F244 /* wkb-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37E626E2D31266A7FB8E021E16CA7809 /* Build configuration list for PBXNativeTarget "FontAwesome+iOS" */;
+			buildConfigurationList = FD0598083AE7B2EB46437A1FE40D4FFE /* Build configuration list for PBXNativeTarget "wkb-ios" */;
 			buildPhases = (
-				E0DE7361D48F2F800A5409F87FFCEAF7 /* Sources */,
-				A2676BADF85612BCEC672EC50F44539D /* Frameworks */,
-				D89BFD1F0D75ECB29AF55D847C97D2C4 /* Headers */,
+				08A8AA23AFF3339485E08D416328679A /* Sources */,
+				74EC12B16C9331D17B5F8AC17EDC45B2 /* Frameworks */,
+				B6C014A4ECAC2C373377D210A541F6FC /* Resources */,
+				30C5E8A1B487AB45AB22E7EC8D820104 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F126FAEE804725387068413F2297CE32 /* PBXTargetDependency */,
+			);
+			name = "wkb-ios";
+			productName = "wkb-ios";
+			productReference = B49493BB50B146249B76EBB68F137197 /* wkb_ios.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5A2DB76FE860D5D148621EAD5B1606DD /* FontAwesome+iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D93B27F00AA8279256F4DEA6F84362AD /* Build configuration list for PBXNativeTarget "FontAwesome+iOS" */;
+			buildPhases = (
+				39ADBAE2792D0C649E90F53CC6993CB6 /* Sources */,
+				E52A86ED6B23BCAFB685AC82EBFEFB88 /* Frameworks */,
+				8076FDDA94B305EF1509D9F3F02D0886 /* Headers */,
+				3107B6C8B6C4F5D8383ED62F8A962B7F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -236,8 +684,60 @@
 			);
 			name = "FontAwesome+iOS";
 			productName = "FontAwesome+iOS";
-			productReference = 98A49DE6D5F55358EB714C3F417696CC /* libFontAwesome+iOS.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 0C2F9EA27C3BE4FFA525EF74C43234E4 /* FontAwesome_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8085BA9EE7DF3DC11F1D5FD05E1617E1 /* wkb-ios-WKB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9E6ABD26A5A141C639F2E9D513867DC /* Build configuration list for PBXNativeTarget "wkb-ios-WKB" */;
+			buildPhases = (
+				FB28CB363C7C53C66E97A9B8463FAA21 /* Sources */,
+				CB8D52FF28562C4C2047960A36E75111 /* Frameworks */,
+				31D1F393CF30493795595E3896D7C869 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "wkb-ios-WKB";
+			productName = "wkb-ios-WKB";
+			productReference = 0025BBABB2DFDEF604AF00565DC1ED45 /* WKB.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		D4E674DD9D88022C39F9427C0E34D5BF /* FontBlaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C87D9EA3AD7F901622A24E765E0C1E /* Build configuration list for PBXNativeTarget "FontBlaster" */;
+			buildPhases = (
+				4865153BA30D4B7533E3F6AD4109C1B9 /* Sources */,
+				078055EE628408170613E9EF1B485054 /* Frameworks */,
+				179A3F78521FF8AFB8EA1FF701695119 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FontBlaster;
+			productName = FontBlaster;
+			productReference = 55394F1007CEB5EBBCD9B4714C691B91 /* FontBlaster.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5BDDDD0AA47AB763499AD8B526AB8D5 /* Pods-LEIFRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA357031A00D7DB2017D80908B7B2A84 /* Build configuration list for PBXNativeTarget "Pods-LEIFRTests" */;
+			buildPhases = (
+				E664EBA6A5E6A1D56D656C97C72A89F5 /* Sources */,
+				03C213AC8CF175DDF002CE053CC29033 /* Frameworks */,
+				8A2B7661F56C1CB8943CCBFE2ED06746 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04CDAA3DE5A3EE2476980F3620D9AD22 /* PBXTargetDependency */,
+			);
+			name = "Pods-LEIFRTests";
+			productName = "Pods-LEIFRTests";
+			productReference = C1E0F0B6419CF557C458C06936114A81 /* Pods_LEIFRTests.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -247,6 +747,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					04F572D227C001825EF5106E0F74E2FE = {
+						LastSwiftMigration = 0800;
+					};
+					D4E674DD9D88022C39F9427C0E34D5BF = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -256,90 +764,231 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = A1661D6A3048B89F3338E719C2CA2AAA /* Products */;
+			productRefGroup = 01F2014D25D6343B7456CF305FCA14DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				91DD3A06013D443F75BA2DDC6567987F /* FontAwesome+iOS */,
-				7C60F94EA751FF543EB90CBDC46C9A74 /* Pods-LEIFR */,
+				5A2DB76FE860D5D148621EAD5B1606DD /* FontAwesome+iOS */,
+				D4E674DD9D88022C39F9427C0E34D5BF /* FontBlaster */,
+				04F572D227C001825EF5106E0F74E2FE /* Pods-LEIFR */,
+				D5BDDDD0AA47AB763499AD8B526AB8D5 /* Pods-LEIFRTests */,
+				1FD88FBEDE31C5DB5E303451FCB5F244 /* wkb-ios */,
+				8085BA9EE7DF3DC11F1D5FD05E1617E1 /* wkb-ios-WKB */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		E0DE7361D48F2F800A5409F87FFCEAF7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		3107B6C8B6C4F5D8383ED62F8A962B7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A84AE65E0F9BE3BA0DFDAF0EEE6E96 /* FAImageView.m in Sources */,
-				5C68935610EC6D283E9CA36F5772141A /* FontAwesome+iOS-dummy.m in Sources */,
-				89F0C2C845C33B5425ADB790A2FFDC28 /* NSString+FontAwesome.m in Sources */,
-				E2F327F6BCF45A61BFD129486B6DE42D /* UIFont+FontAwesome.m in Sources */,
-				8B989B8B70F0F278FA3153D818599C35 /* UIImage+FontAwesome.m in Sources */,
+				0DB0DD88FC6F9B4CF52D53791C7D148E /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3D2E6D73CEDB50BCED6B255B8E673AB /* Sources */ = {
+		31D1F393CF30493795595E3896D7C869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F3B12B047A3F499D86C22D64665467 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C014A4ECAC2C373377D210A541F6FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D5AC0A91E0AA605A7E049BA30FFCD69 /* WKB.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08A8AA23AFF3339485E08D416328679A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37B44C41F9AA87998FB1422F53955BC3 /* Pods-LEIFR-dummy.m in Sources */,
+				FF23C739B94FC74D74C3C5589F1DBB45 /* wkb-ios-dummy.m in Sources */,
+				973DED1C3F840711514792A5FA849B39 /* WKBByteReader.m in Sources */,
+				A9AEC450B0AA1801990CA8582D66226C /* WKBByteWriter.m in Sources */,
+				7AAC5995D9D9981885F001EFFCB2EB80 /* WKBCircularString.m in Sources */,
+				D35A7C0DCD25951132606F20DB1C6233 /* WKBCompoundCurve.m in Sources */,
+				A5D93262737991E9ED5BE5C2E68E5449 /* WKBCurve.m in Sources */,
+				49C01C9F0BADA4D598CD64F086926485 /* WKBCurvePolygon.m in Sources */,
+				83273A28C6EDB2A6A24563A4B148C587 /* WKBGeometry.m in Sources */,
+				1914076E53102595AEFF7F2968BA80B1 /* WKBGeometryCollection.m in Sources */,
+				E9ADA4CB193B0039D43393C9D749AA07 /* WKBGeometryEnvelope.m in Sources */,
+				16F62743ED9815760C20F1C594A4C460 /* WKBGeometryEnvelopeBuilder.m in Sources */,
+				06D6EDAD3215B00A1135CEBABFE62456 /* WKBGeometryJSONCompatible.m in Sources */,
+				4CD7613FFA662F1C7675A7C7B7FE60AA /* WKBGeometryPrinter.m in Sources */,
+				661335ECCA19323AB9A7386AD6F3B582 /* WKBGeometryReader.m in Sources */,
+				5250F4A8639EAAB71E6BCF76AC289652 /* WKBGeometryTypes.m in Sources */,
+				FA4A448F512E9E5F08C6F6C22449014E /* WKBGeometryWriter.m in Sources */,
+				1EEADBAEEBCBD911C96D5A4F830F1316 /* WKBLineString.m in Sources */,
+				C8053D1ADB6E17C0D0FB0BA9A9AB82E7 /* WKBMultiCurve.m in Sources */,
+				55FCE1E1B347724C5A83253078E99BAC /* WKBMultiLineString.m in Sources */,
+				4808D997580A4485FA349DEF6B2D62D3 /* WKBMultiPoint.m in Sources */,
+				9CEA7F11B26E9E1273349703F13ADD66 /* WKBMultiPolygon.m in Sources */,
+				745147EFDA4CA5B307EA7BB85673A4E7 /* WKBMultiSurface.m in Sources */,
+				E1D0CDE135EDADC2DB92B3275AAC0F39 /* WKBPoint.m in Sources */,
+				9B682B5E057D162FC167B39A627B2D23 /* WKBPolygon.m in Sources */,
+				8FAC516415CD3CEC46784967A7D0B277 /* WKBPolyhedralSurface.m in Sources */,
+				429DC6E0DC7A52B68536AFA366455792 /* WKBSurface.m in Sources */,
+				8C0A9A9099A66328645C9A303F5F4336 /* WKBTIN.m in Sources */,
+				112BC31DEAEA35F387C89B5AE397E059 /* WKBTriangle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39ADBAE2792D0C649E90F53CC6993CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93CB956160CBE372647AEEF06AE4691 /* FAImageView.m in Sources */,
+				7E314DA6C9FF28522867E836E85A7F0C /* FontAwesome+iOS-dummy.m in Sources */,
+				E15EE57C0ED35C00200FA9EF775948A6 /* NSString+FontAwesome.m in Sources */,
+				1C4A9C452D6C5B9D61E1C8B10FABDDF1 /* UIFont+FontAwesome.m in Sources */,
+				2823173F3714E660114774A727FDEB75 /* UIImage+FontAwesome.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4865153BA30D4B7533E3F6AD4109C1B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E520C7C33C636FCAFB3280EA448CD9F /* FontBlaster-dummy.m in Sources */,
+				0AC08E78C47F0C83321F7ED79990C170 /* FontBlaster.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4E1C553D7A1294BE0EAD11D423E9484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3967B84A63D16D85BB282CF62636C02 /* Pods-LEIFR-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E664EBA6A5E6A1D56D656C97C72A89F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93DB45E6D405C975C504C81E22CD8107 /* Pods-LEIFRTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB28CB363C7C53C66E97A9B8463FAA21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B40E6EB85957D8C4A4293A2AE9702FCB /* PBXTargetDependency */ = {
+		04CDAA3DE5A3EE2476980F3620D9AD22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "wkb-ios";
+			target = 1FD88FBEDE31C5DB5E303451FCB5F244 /* wkb-ios */;
+			targetProxy = 78E9E893895F0B6096A73A85D7BCA041 /* PBXContainerItemProxy */;
+		};
+		2AABCC419E9714B8C85CB69725B88B44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "FontAwesome+iOS";
-			target = 91DD3A06013D443F75BA2DDC6567987F /* FontAwesome+iOS */;
-			targetProxy = 7567C645264885E5A0EF3EFC2B29367B /* PBXContainerItemProxy */;
+			target = 5A2DB76FE860D5D148621EAD5B1606DD /* FontAwesome+iOS */;
+			targetProxy = 61F75C2119FC380FDA11DF7C7949C9A7 /* PBXContainerItemProxy */;
+		};
+		89D1106DE6DF8D737F0705FB8F05E4FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "wkb-ios";
+			target = 1FD88FBEDE31C5DB5E303451FCB5F244 /* wkb-ios */;
+			targetProxy = BBD240212AF8FEBF9F04B59F66F70E6C /* PBXContainerItemProxy */;
+		};
+		9BF011044F1B14791F39EE2346B5B5FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FontBlaster;
+			target = D4E674DD9D88022C39F9427C0E34D5BF /* FontBlaster */;
+			targetProxy = FDFF13C61C2B6C762CA356C4499DEE8A /* PBXContainerItemProxy */;
+		};
+		F126FAEE804725387068413F2297CE32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "wkb-ios-WKB";
+			target = 8085BA9EE7DF3DC11F1D5FD05E1617E1 /* wkb-ios-WKB */;
+			targetProxy = BE88686A38619E02D90AE4973C6A475F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		089C5D1BA92F2EDEE0289CB692AA3923 /* Release */ = {
+		0119892BFF45F23E537475E26D79E895 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88F33A90B42D86A41DDB4A40DE7D9421 /* Pods-LEIFR.release.xcconfig */;
+			baseConfigurationReference = 3888340DA209BF29971B254BC364FAF8 /* Pods-LEIFR.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LEIFR/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LEIFR/Pods-LEIFR.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LEIFR;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0938CB88F9B469178ACB026F39F4F9A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EA0B8CF510ABEBE427354AC8FC9E883 /* Pods-LEIFR.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LEIFR/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LEIFR/Pods-LEIFR.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pods_LEIFR;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		2A44C807E0496318ABD5A9B8B68408F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 170E42BCCA87431AFB4FBB3F70D77CE7 /* FontAwesome+iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome+iOS/FontAwesome+iOS-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
 		};
 		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -376,6 +1025,65 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		51498607155BB1528B419247812106C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 046D00737FD32CA536731BACA93887AD /* wkb-ios.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/wkb-ios/wkb-ios-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/wkb-ios/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/wkb-ios/wkb-ios.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = wkb_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		58CBF617E339A16B5F6D68CE3188E758 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 623BFB050AFF2F01563FD4C07AD477B3 /* FontBlaster.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FontBlaster/FontBlaster-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontBlaster/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FontBlaster/FontBlaster.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FontBlaster;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -421,51 +1129,236 @@
 			};
 			name = Debug;
 		};
-		A5D9F32E357DB467F90E3286B5028A63 /* Debug */ = {
+		6F84A7D79C25AF73153D60FAE940CDD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 114467F926322A7F02CCC92FCD919C9F /* Pods-LEIFR.debug.xcconfig */;
+			baseConfigurationReference = 623BFB050AFF2F01563FD4C07AD477B3 /* FontBlaster.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FontBlaster/FontBlaster-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontBlaster/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FontBlaster/FontBlaster.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FontBlaster;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73BA6A81CA4BD1D4F8D67C3451EA8165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0044E2D1A9269DEFBD67A44B9855E4C /* FontAwesome+iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome+iOS/FontAwesome+iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontAwesome+iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FontAwesome+iOS/FontAwesome+iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FontAwesome_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		91B22CA3D4C13312FB6BEA7624DF73D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 046D00737FD32CA536731BACA93887AD /* wkb-ios.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/wkb-ios/wkb-ios-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/wkb-ios/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/wkb-ios/wkb-ios.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = wkb_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A6FA9E77B8812F509E8C9B3FA4545A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97A617B193A4F6ADE7901FC6F7B6BBB6 /* Pods-LEIFRTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LEIFRTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LEIFRTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B5EB32EB8C60AE66FA3747B4B7019CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C645B7361C0A1180E8A205AE153D4008 /* Pods-LEIFRTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LEIFRTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pods_LEIFRTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		C89E4A45A5C615291239812D4665D358 /* Release */ = {
+		C01F84929FFB9B6117C6FE1F257DC868 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 170E42BCCA87431AFB4FBB3F70D77CE7 /* FontAwesome+iOS.xcconfig */;
+			baseConfigurationReference = 046D00737FD32CA536731BACA93887AD /* wkb-ios.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/wkb-ios";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/wkb-ios/ResourceBundle-WKB-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = WKB;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FD09D1FB3AF725B187F2CB89A053E29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 046D00737FD32CA536731BACA93887AD /* wkb-ios.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/wkb-ios";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/wkb-ios/ResourceBundle-WKB-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = WKB;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FD68867B325D942559DC1FDF6ABD5526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0044E2D1A9269DEFBD67A44B9855E4C /* FontAwesome+iOS.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome+iOS/FontAwesome+iOS-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				INFOPLIST_FILE = "Target Support Files/FontAwesome+iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FontAwesome+iOS/FontAwesome+iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FontAwesome_iOS;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04C87D9EA3AD7F901622A24E765E0C1E /* Build configuration list for PBXNativeTarget "FontBlaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F84A7D79C25AF73153D60FAE940CDD5 /* Debug */,
+				58CBF617E339A16B5F6D68CE3188E758 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -475,20 +1368,47 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37E626E2D31266A7FB8E021E16CA7809 /* Build configuration list for PBXNativeTarget "FontAwesome+iOS" */ = {
+		7D081F731F09BFD284471F4BCC38FE7A /* Build configuration list for PBXNativeTarget "Pods-LEIFR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A44C807E0496318ABD5A9B8B68408F6 /* Debug */,
-				C89E4A45A5C615291239812D4665D358 /* Release */,
+				0119892BFF45F23E537475E26D79E895 /* Debug */,
+				0938CB88F9B469178ACB026F39F4F9A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C0D2F52942DBE8563D53491EBE81978 /* Build configuration list for PBXNativeTarget "Pods-LEIFR" */ = {
+		A9E6ABD26A5A141C639F2E9D513867DC /* Build configuration list for PBXNativeTarget "wkb-ios-WKB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5D9F32E357DB467F90E3286B5028A63 /* Debug */,
-				089C5D1BA92F2EDEE0289CB692AA3923 /* Release */,
+				FD09D1FB3AF725B187F2CB89A053E29D /* Debug */,
+				C01F84929FFB9B6117C6FE1F257DC868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA357031A00D7DB2017D80908B7B2A84 /* Build configuration list for PBXNativeTarget "Pods-LEIFRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5EB32EB8C60AE66FA3747B4B7019CF1 /* Debug */,
+				A6FA9E77B8812F509E8C9B3FA4545A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D93B27F00AA8279256F4DEA6F84362AD /* Build configuration list for PBXNativeTarget "FontAwesome+iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD68867B325D942559DC1FDF6ABD5526 /* Debug */,
+				73BA6A81CA4BD1D4F8D67C3451EA8165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD0598083AE7B2EB46437A1FE40D4FFE /* Build configuration list for PBXNativeTarget "wkb-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51498607155BB1528B419247812106C1 /* Debug */,
+				91B22CA3D4C13312FB6BEA7624DF73D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

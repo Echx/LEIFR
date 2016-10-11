@@ -1,11 +1,17 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '8.0'
-# Uncomment this line if you're using Swift
-# use_frameworks!
+use_frameworks!
 
 target 'LEIFR' do
 
 pod 'FontAwesome+iOS'
+pod 'FontBlaster'
+pod 'wkb-ios'
 
 end
 
+target 'LEIFRTests' do
+	
+pod 'wkb-ios'
+
+end

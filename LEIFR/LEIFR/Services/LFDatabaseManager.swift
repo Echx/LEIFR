@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import wkb_ios
 
 class LFDatabaseManager: NSObject {
 	fileprivate static let manager = LFDatabaseManager()

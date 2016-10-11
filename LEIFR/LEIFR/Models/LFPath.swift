@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import wkb_ios
 
 class LFPath: NSObject {
 	fileprivate let lineString: WKBLineString
