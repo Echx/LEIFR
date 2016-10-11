@@ -36,3 +36,17 @@ class LFViewController: UIViewController {
     }
     */
 }
+
+extension LFViewController: LFHoverTabBarDataSource {
+	func controlViewForTab() -> UIView? {
+		return nil
+	}
+	
+	func accessoryViewForTab() -> UIView? {
+		return nil
+	}
+	
+	func accessoryTextForTab() -> String? {
+		return "Accessory view hasn't been implemented"
+	}
+}

@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol LFHoverTabBarDataSource {
+	func controlViewForTab() -> UIView?
+	func accessoryViewForTab() -> UIView?
+	func accessoryTextForTab() -> String?
+}
+
 class LFHoverTabBaseController: LFViewController {
 
 	static var defaultInstance: LFHoverTabBaseController!;
@@ -144,19 +150,14 @@ extension LFHoverTabBaseController: LFHoverTabDelegate {
 
 extension LFHoverTabBaseController: LFHoverTabDataSource {
 	func accessoryTextForTab(atIndex index: Int) -> String? {
-		return nil
+		return tabControllers[index].accessoryTextForTab()
 	}
 
 	func controlViewForTab(atIndex index: Int) -> UIView? {
-		switch index {
-		case 0:
-			return nil
-		default:
-			return nil
-		}
+		return tabControllers[index].controlViewForTab()
 	}
 	
 	func accessoryViewForTab(atIndex index: Int) -> UIView? {
-		return nil
+		return tabControllers[index].accessoryViewForTab()
 	}
 }
