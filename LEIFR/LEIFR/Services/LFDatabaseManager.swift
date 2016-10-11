@@ -11,6 +11,7 @@ import MapKit
 
 class LFDatabaseManager: NSObject {
 	fileprivate static let manager = LFDatabaseManager()
+	fileprivate var asyncDatabaseQueue = DispatchQueue(label: "FMDB_ACCESS")
 	fileprivate var databaseQueue: FMDatabaseQueue!
 	var database: FMDatabase!
 	
@@ -98,30 +99,34 @@ class LFDatabaseManager: NSObject {
     }
     
     func getPointsInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion:@escaping (([String]) -> Void)) {
-        databaseQueue.inDatabase({
-            database in
-            let xMin = region.center.longitude - region.span.longitudeDelta
-            let yMin = region.center.latitude - region.span.latitudeDelta
-            let xMax = region.center.longitude + region.span.longitudeDelta
-            let yMax = region.center.latitude + region.span.latitudeDelta
-            
-            let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
-            let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
-            let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
-            
-            let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
-            var array = [String]()
-            
-            while (results.next()) {
-                if results.hasAnotherRow() {
-                    if let geoJSON = results.string(forColumnIndex: 1) {
-                        array.append(geoJSON)
-                    }
-                }
-            }
-            
-            completion(array)
-        })
+		asyncDatabaseQueue.async {
+			self.databaseQueue.inDatabase({
+				database in
+				let xMin = region.center.longitude - region.span.longitudeDelta
+				let yMin = region.center.latitude - region.span.latitudeDelta
+				let xMax = region.center.longitude + region.span.longitudeDelta
+				let yMax = region.center.latitude + region.span.latitudeDelta
+				
+				let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
+				let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
+				let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
+				
+				let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
+				var array = [String]()
+				
+				while (results.next()) {
+					if results.hasAnotherRow() {
+						if let geoJSON = results.string(forColumnIndex: 1) {
+							array.append(geoJSON)
+						}
+					}
+				}
+				
+				DispatchQueue.main.async {
+					completion(array)
+				}
+			})
+		}
     }
 
 	
