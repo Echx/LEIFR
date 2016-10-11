@@ -39,11 +39,12 @@ extension ViewController: MGLMapViewDelegate {
             if mapView.style().layer(withIdentifier: "lf-point-layer") == nil {
                 let source = MGLSource(sourceIdentifier: "symbol")!
                 let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
-
-                let pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: self.pointSource!)
-                pointLayer.circleColor = UIColor.yellow
-                pointLayer.circleRadius = NSNumber(integerLiteral: 5)
-                mapView.style().insert(pointLayer, below: symbolLayer)
+                if self.pointSource != nil {
+                    let pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: self.pointSource!)
+                    pointLayer.circleColor = UIColor.yellow
+                    pointLayer.circleRadius = NSNumber(integerLiteral: 5)
+                    mapView.style().insert(pointLayer, below: symbolLayer)
+                }
             }
         } else {
             if let pointLayer = mapView.style().layer(withIdentifier: "lf-point-layer") {
