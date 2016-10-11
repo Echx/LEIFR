@@ -9,7 +9,7 @@
 import UIKit
 import Mapbox
 
-class ViewController: UIViewController {
+class LFOverallViewController: LFViewController {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
     
     fileprivate var pointSource: MGLGeoJSONSource?
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: MGLMapViewDelegate {
+extension LFOverallViewController: MGLMapViewDelegate {
     func mapViewRegionIsChanging(_ mapView: MGLMapView) {
         if mapView.zoomLevel > 13 {
             if mapView.style().layer(withIdentifier: "lf-point-layer") == nil {
@@ -100,4 +100,13 @@ extension ViewController: MGLMapViewDelegate {
             }
         })
     }
+}
+
+extension LFOverallViewController: LFStoryboardBasedController {
+	class func defaultControllerFromStoryboard() -> LFViewController {
+		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+		let controller = storyboard.instantiateViewController(withIdentifier: "LFOverallViewController") as! LFViewController
+		
+		return controller
+	}
 }

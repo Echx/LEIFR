@@ -17,7 +17,7 @@ class LFHoverTabBaseController: LFViewController {
 	
 	@IBOutlet var containerView: UIView!
 	fileprivate var tabControllers = [LFViewController]()
-	fileprivate var currentTab = 0;
+	fileprivate var currentTab = 1;
 	fileprivate var currentTabConstraints = [NSLayoutConstraint]()
 	
 	private var tabViewSnapLevels: [CGFloat] = [UIScreen.main.bounds.height - 400, UIScreen.main.bounds.height - 200, UIScreen.main.bounds.height - 64]
@@ -30,7 +30,7 @@ class LFHoverTabBaseController: LFViewController {
 		self.tabViewTopConstraint.constant = self.tabViewSnapLevels.last!
 		
 		do {
-			let controller = LFPlaybackViewController.defaultControllerFromStoryboard()
+			let controller = LFOverallViewController.defaultControllerFromStoryboard()
 			self.tabControllers.append(controller)
 		}
 		
