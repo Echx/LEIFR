@@ -69,7 +69,7 @@
                         <constraints>
                             <constraint firstItem="gvZ-Uz-l46" firstAttribute="leading" secondItem="CH3-9x-n6v" secondAttribute="leading" id="5mW-Eg-Vcs"/>
                             <constraint firstAttribute="height" secondItem="OoX-Bn-wu5" secondAttribute="height" id="DEn-wm-DwJ"/>
-                            <constraint firstItem="OoX-Bn-wu5" firstAttribute="top" secondItem="CH3-9x-n6v" secondAttribute="top" constant="120" id="M79-kO-s1c"/>
+                            <constraint firstItem="OoX-Bn-wu5" firstAttribute="top" secondItem="CH3-9x-n6v" secondAttribute="top" constant="267" id="M79-kO-s1c"/>
                             <constraint firstItem="gvZ-Uz-l46" firstAttribute="top" secondItem="CH3-9x-n6v" secondAttribute="top" id="fE5-1J-f2q"/>
                             <constraint firstAttribute="trailing" secondItem="gvZ-Uz-l46" secondAttribute="trailing" id="jU2-O4-Lwn"/>
                             <constraint firstItem="84A-gu-ohV" firstAttribute="top" secondItem="gvZ-Uz-l46" secondAttribute="bottom" id="quc-9H-yl6"/>
@@ -151,15 +151,59 @@
                                                     <constraint firstAttribute="trailing" secondItem="Rkd-xE-kKH" secondAttribute="trailing" constant="10" id="wFB-RN-g7a"/>
                                                 </constraints>
                                             </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="olS-cN-SA2"/>
+                                            </constraints>
                                             <vibrancyEffect>
                                                 <blurEffect style="extraLight"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8n-T7-oPr">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sXi-UY-V5x">
+                                                <frame key="frameInset"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-Ld-coc">
+                                                        <string key="text">"We are all leaders-whether we want to be or not. There is always someone we are influencing-either leading them to good-or away from good."</string>
+                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="9uo-Ld-coc" secondAttribute="trailing" constant="45" id="8Tl-sc-Mk2"/>
+                                                    <constraint firstItem="9uo-Ld-coc" firstAttribute="leading" secondItem="sXi-UY-V5x" secondAttribute="leading" constant="45" id="Eeo-Po-TOF"/>
+                                                    <constraint firstItem="9uo-Ld-coc" firstAttribute="centerY" secondItem="sXi-UY-V5x" secondAttribute="centerY" id="ItR-tU-ChB"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="NcH-Tk-68e"/>
+                                            </constraints>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDj-UA-LuE">
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PsZ-UM-l3h"/>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.01" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="PsZ-UM-l3h" firstAttribute="centerY" secondItem="WDj-UA-LuE" secondAttribute="centerY" id="avR-gF-a3i"/>
+                                                <constraint firstAttribute="height" constant="136" id="dPA-xr-6Rd"/>
+                                                <constraint firstItem="PsZ-UM-l3h" firstAttribute="centerX" secondItem="WDj-UA-LuE" secondAttribute="centerX" id="kyv-Uk-I1d"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="0IQ-NB-H7U" secondAttribute="bottom" id="Zf5-94-nah"/>
+                                        <constraint firstItem="N8n-T7-oPr" firstAttribute="leading" secondItem="TFO-Da-UwQ" secondAttribute="leading" id="4Ao-hw-Sc6"/>
+                                        <constraint firstItem="N8n-T7-oPr" firstAttribute="top" secondItem="WDj-UA-LuE" secondAttribute="bottom" id="8OQ-rd-ecb"/>
+                                        <constraint firstItem="WDj-UA-LuE" firstAttribute="top" secondItem="0IQ-NB-H7U" secondAttribute="bottom" id="ATJ-oR-sRa"/>
+                                        <constraint firstAttribute="trailing" secondItem="N8n-T7-oPr" secondAttribute="trailing" id="OYG-sq-tub"/>
+                                        <constraint firstAttribute="trailing" secondItem="WDj-UA-LuE" secondAttribute="trailing" id="TGw-7d-PkH"/>
                                         <constraint firstItem="0IQ-NB-H7U" firstAttribute="top" secondItem="TFO-Da-UwQ" secondAttribute="top" id="cNS-mw-10q"/>
                                         <constraint firstItem="0IQ-NB-H7U" firstAttribute="leading" secondItem="TFO-Da-UwQ" secondAttribute="leading" id="iue-zW-bhn"/>
+                                        <constraint firstItem="WDj-UA-LuE" firstAttribute="leading" secondItem="TFO-Da-UwQ" secondAttribute="leading" id="muG-9a-ZF7"/>
                                         <constraint firstAttribute="trailing" secondItem="0IQ-NB-H7U" secondAttribute="trailing" id="s2k-Jz-Tnd"/>
                                     </constraints>
                                 </view>
