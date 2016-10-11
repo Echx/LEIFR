@@ -41,7 +41,9 @@ extension LFOverallViewController: MGLMapViewDelegate {
                 let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
                 if self.pointSource != nil {
                     let pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: self.pointSource!)
-                    pointLayer.circleColor = UIColor.yellow
+                    let styleLayerColor = MGLStyleAttributeFunction()
+                    styleLayerColor.stops = [0: UIColor.clear, 12: UIColor.clear, 14: Color.IRON]
+                    pointLayer.circleColor = styleLayerColor
                     pointLayer.circleRadius = NSNumber(integerLiteral: 5)
                     mapView.style().insert(pointLayer, below: symbolLayer)
                 }
@@ -63,11 +65,11 @@ extension LFOverallViewController: MGLMapViewDelegate {
         let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
         
         let preloadPointsOptions = [["gridSize": 0.01, "sourceIdentifier": "lf-point-source-0", "layerIdentifier": "lf-point-layer-0",
-                                     "stops": [0: UIColor.red, 2: UIColor.red, 3: UIColor.clear]],
+                                     "stops": [0: Color.IRON, 2: Color.IRON, 3: UIColor.clear]],
                                     ["gridSize": 0.005, "sourceIdentifier": "lf-point-source-1", "layerIdentifier": "lf-point-layer-1",
-                                     "stops": [0: UIColor.clear, 3: UIColor.clear, 4: UIColor.green, 7: UIColor.green, 8: UIColor.clear]],
+                                     "stops": [0: UIColor.clear, 3: UIColor.clear, 4: Color.IRON, 7: Color.IRON, 8: UIColor.clear]],
                                     ["gridSize": 0.001, "sourceIdentifier": "lf-point-source-2", "layerIdentifier": "lf-point-layer-2",
-                                     "stops": [0: UIColor.clear, 8: UIColor.clear, 9: UIColor.blue, 12: UIColor.blue, 13: UIColor.clear]]]
+                                     "stops": [0: UIColor.clear, 8: UIColor.clear, 9: Color.IRON, 12: Color.IRON, 13: UIColor.clear]]]
         
         for option in preloadPointsOptions {
             databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), gridSize: option["gridSize"] as! Double, completion: {
