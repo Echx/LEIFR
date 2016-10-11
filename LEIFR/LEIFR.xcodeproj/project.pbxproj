@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */; };
 		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
 		0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30881D85F413002C0EF0 /* Assets.xcassets */; };
 		0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */; };
@@ -103,6 +104,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -602,6 +604,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C42AF241DAD47CF00849A5C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0CBB30751D85F413002C0EF0 = {
 			isa = PBXGroup;
 			children = (
@@ -1467,6 +1477,7 @@
 		0CBB387C1D85FD36002C0EF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0C42AF241DAD47CF00849A5C /* Fonts */,
 				62BF069A1DA6F44200E6957E /* test-multipoint.geojson */,
 				62BF06981DA6F3D900E6957E /* test-point.geojson */,
 				0CBB38821D86027C002C0EF0 /* default.sqlite */,
@@ -1657,6 +1668,7 @@
 				0CBB38871D861028002C0EF0 /* default.sqlite in Resources */,
 				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
 				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
+				0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */,
 				0CBB38571D85F9BD002C0EF0 /* Envelope.inl in Resources */,
 				0CBB38641D85F9BD002C0EF0 /* MinimalEdgeRing.inl in Resources */,
 				0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontBlaster
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		spatialite_init(1)
         configureLocationManager()
+		FontBlaster.blast()
 		
 		return true
 	}
