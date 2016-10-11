@@ -108,47 +108,42 @@
                                                 <frame key="frameInset"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-xE-kKH">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-xE-kKH">
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-uT-dnu">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <state key="normal" title="♳"/>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-uT-dnu">
+                                                                <state key="normal" image="ic_public_36pt"/>
                                                                 <connections>
                                                                     <action selector="buttonDidClickWithSender:" destination="Gba-mv-eLi" eventType="touchUpInside" id="FeT-Og-qgO"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" alpha="0.20000000000000001" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuG-lM-XTp">
-                                                                <state key="normal" image="GPS off"/>
-                                                                <state key="selected" image="GPS on"/>
+                                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuG-lM-XTp">
+                                                                <state key="normal" image="ic_watch_later_36pt"/>
                                                                 <connections>
                                                                     <action selector="buttonDidClickWithSender:" destination="Gba-mv-eLi" eventType="touchUpInside" id="Pm6-5g-uj3"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF3-gu-d6b">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <state key="normal" title="♳"/>
+                                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF3-gu-d6b">
+                                                                <state key="normal" image="ic_explore_36pt"/>
                                                                 <connections>
                                                                     <action selector="buttonDidClickWithSender:" destination="Gba-mv-eLi" eventType="touchUpInside" id="UjX-ew-6Zz"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4I-D6-bg0">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <state key="normal" title="♳"/>
+                                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4I-D6-bg0">
+                                                                <state key="normal" image="ic_sentiment_very_satisfied_36pt"/>
                                                                 <connections>
                                                                     <action selector="buttonDidClickWithSender:" destination="Gba-mv-eLi" eventType="touchUpInside" id="q1V-2b-LvU"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="VYS-W9-AMY"/>
+                                                            <constraint firstAttribute="height" constant="64" id="VYS-W9-AMY"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Rkd-xE-kKH" firstAttribute="top" secondItem="Ooc-gu-GKb" secondAttribute="top" constant="10" id="0LC-BO-Un0"/>
-                                                    <constraint firstItem="Rkd-xE-kKH" firstAttribute="centerX" secondItem="Ooc-gu-GKb" secondAttribute="centerX" id="Ahu-AH-8AC"/>
-                                                    <constraint firstItem="Rkd-xE-kKH" firstAttribute="leading" secondItem="Ooc-gu-GKb" secondAttribute="leading" constant="10" id="TcR-uZ-lvI"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Rkd-xE-kKH" secondAttribute="trailing" constant="10" id="wFB-RN-g7a"/>
+                                                    <constraint firstItem="Rkd-xE-kKH" firstAttribute="top" secondItem="Ooc-gu-GKb" secondAttribute="top" id="0LC-BO-Un0"/>
+                                                    <constraint firstItem="Rkd-xE-kKH" firstAttribute="leading" secondItem="Ooc-gu-GKb" secondAttribute="leading" id="TcR-uZ-lvI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rkd-xE-kKH" secondAttribute="trailing" id="wFB-RN-g7a"/>
                                                 </constraints>
                                             </view>
                                             <constraints>
@@ -164,7 +159,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uo-Ld-coc">
-                                                        <string key="text">"We are all leaders-whether we want to be or not. There is always someone we are influencing-either leading them to good-or away from good."</string>
+                                                        <string key="text">"We are all leaders-whether we want to be or not. There is always someone we are influencing, either leading them to good or away from good."</string>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -184,14 +179,9 @@
                                             </vibrancyEffect>
                                         </visualEffectView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDj-UA-LuE">
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PsZ-UM-l3h"/>
-                                            </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.01" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="PsZ-UM-l3h" firstAttribute="centerY" secondItem="WDj-UA-LuE" secondAttribute="centerY" id="avR-gF-a3i"/>
                                                 <constraint firstAttribute="height" constant="136" id="dPA-xr-6Rd"/>
-                                                <constraint firstItem="PsZ-UM-l3h" firstAttribute="centerX" secondItem="WDj-UA-LuE" secondAttribute="centerX" id="kyv-Uk-I1d"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -224,7 +214,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="recordButton" destination="ZuG-lM-XTp" id="Uwz-9H-u8m"/>
+                        <outlet property="tabButton0" destination="a0J-uT-dnu" id="1Gz-Km-F5N"/>
+                        <outlet property="tabButton1" destination="ZuG-lM-XTp" id="cmK-oQ-ZKu"/>
+                        <outlet property="tabButton2" destination="MF3-gu-d6b" id="6Mx-hs-F5z"/>
+                        <outlet property="tabButton3" destination="a4I-D6-bg0" id="zMB-KN-45f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTz-8t-OMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,7 +226,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GPS off" width="48" height="48"/>
-        <image name="GPS on" width="48" height="48"/>
+        <image name="ic_explore_36pt" width="36" height="36"/>
+        <image name="ic_public_36pt" width="36" height="36"/>
+        <image name="ic_sentiment_very_satisfied_36pt" width="36" height="36"/>
+        <image name="ic_watch_later_36pt" width="36" height="36"/>
     </resources>
 </document>

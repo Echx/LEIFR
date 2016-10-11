@@ -16,7 +16,11 @@ class LFHoverTabViewController: LFViewController {
 	
     fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
 	var delegate: LFHoverTabDelegate?
-    @IBOutlet fileprivate weak var recordButton: UIButton!
+    @IBOutlet fileprivate weak var tabButton0: UIButton!
+	@IBOutlet fileprivate weak var tabButton1: UIButton!
+	@IBOutlet fileprivate weak var tabButton2: UIButton!
+	@IBOutlet fileprivate weak var tabButton3: UIButton!
+	fileprivate var tabButtons = [UIButton]()
     
 	override func loadView() {
 		super.loadView()
@@ -28,27 +32,18 @@ class LFHoverTabViewController: LFViewController {
 		layer.shadowOpacity = 0.15
 		layer.shadowRadius = 3
 		
-        self.recordButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
-        self.recordButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
-        
 		self.delegate = LFHoverTabBaseController.defaultInstance
+		
+		tabButtons = [tabButton0, tabButton1, tabButton2, tabButton3]
+		
 	}
 	
 	@IBAction func buttonDidClick(sender: UIButton) {
 		self.delegate?.tabViewController(controller: self, tabDidSelectAtIndex: sender.tag)
-        
-        switch sender.tag {
-        case 1:
-            if geoRecordManager.isRecording {
-                geoRecordManager.stopRecording()
-                sender.isSelected = false
-            } else {
-                geoRecordManager.startRecording()
-                sender.isSelected = true
-            }
-        default:
-            break
-        }
+		
+		for button in tabButtons {
+			button.isSelected = button == sender ? true : false
+		}
 	}
 	
     override func viewDidLoad() {
