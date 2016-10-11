@@ -18,7 +18,6 @@ class LFHoverTabBaseController: LFViewController {
 	@IBOutlet var containerView: UIView!
 	fileprivate var tabControllers = [LFViewController]()
 	fileprivate var currentTab = 1;
-	fileprivate var currentTabConstraints = [NSLayoutConstraint]()
 	
 	private var tabViewSnapLevels: [CGFloat] = [UIScreen.main.bounds.height - 400, UIScreen.main.bounds.height - 200, UIScreen.main.bounds.height - 64]
 	
@@ -35,8 +34,6 @@ class LFHoverTabBaseController: LFViewController {
 			LFStatisticViewController.defaultControllerFromStoryboard(),
 			LFSettingViewController.defaultControllerFromStoryboard()
 		]
-		
-		self.switchToPage(index: 0)
 	}
 	
     override func viewDidLoad() {
@@ -112,14 +109,14 @@ class LFHoverTabBaseController: LFViewController {
 			let viewBindings = ["toView" : toView]
 			
 			newTabConstraints.append(contentsOf: NSLayoutConstraint.constraints(
-				withVisualFormat: "V:|-(-5)-[toView]-(-5)-|",
+				withVisualFormat: "V:|-(0)-[toView]-(0)-|",
 				options: [],
 				metrics: nil,
 				views: viewBindings)
 			)
 			
 			newTabConstraints.append(contentsOf: NSLayoutConstraint.constraints(
-				withVisualFormat: "H:|-(-5)-[toView]-(-5)-|",
+				withVisualFormat: "H:|-(0)-[toView]-(0)-|",
 				options: [],
 				metrics: nil,
 				views: viewBindings)
@@ -128,17 +125,12 @@ class LFHoverTabBaseController: LFViewController {
 			self.containerView.addConstraints(newTabConstraints)
 			
 			//remove original tab view
-			self.containerView.removeConstraints(self.currentTabConstraints)
 			fromController.view.removeFromSuperview()
 			fromController.removeFromParentViewController()
 			
-			self.currentTabConstraints = newTabConstraints
+			self.currentTab = index
 			
 			toController.didMove(toParentViewController: self)
-			
-			
-			self.currentTab = index
-			self.currentTabConstraints = newTabConstraints
 		}
 	}
 }
@@ -147,5 +139,26 @@ extension LFHoverTabBaseController: LFHoverTabDelegate {
 	func tabViewController(controller: LFViewController, tabDidSelectAtIndex index: Int) {
 		print("Tab did select: \(index)")
 		self.switchToPage(index: index)
+	}
+}
+
+extension LFHoverTabBaseController: LFHoverTabDataSource {
+	func accessoryTextForTab(atIndex index: Int) -> String? {
+		return ""
+	}
+
+	func controlViewForTab(atIndex index: Int) -> UIView? {
+		switch index {
+		case 0:
+			let view = UIView()
+			view.backgroundColor = UIColor.green
+			return view
+		default:
+			return nil
+		}
+	}
+	
+	func accessoryViewForTab(atIndex index: Int) -> UIView? {
+		return nil
 	}
 }

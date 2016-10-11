@@ -9,18 +9,33 @@
 import UIKit
 
 protocol LFHoverTabDelegate {
-	func tabViewController(controller: LFViewController, tabDidSelectAtIndex index: Int);
+	func tabViewController(controller: LFViewController, tabDidSelectAtIndex index: Int)
+}
+
+protocol LFHoverTabDataSource {
+	func controlViewForTab(atIndex index: Int) -> UIView?
+	func accessoryViewForTab(atIndex index: Int) -> UIView?
+	func accessoryTextForTab(atIndex index: Int) -> String?
 }
 
 class LFHoverTabViewController: LFViewController {
 	
     fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
 	var delegate: LFHoverTabDelegate?
+	var dataSource: LFHoverTabDataSource?
+	
+	
     @IBOutlet fileprivate weak var tabButton0: UIButton!
 	@IBOutlet fileprivate weak var tabButton1: UIButton!
 	@IBOutlet fileprivate weak var tabButton2: UIButton!
 	@IBOutlet fileprivate weak var tabButton3: UIButton!
+	
+	@IBOutlet fileprivate weak var controlView: UIView!
+	@IBOutlet fileprivate weak var accessoryView: UIView!
+	@IBOutlet fileprivate weak var accessoryTextLabel: UIView!
+	
 	fileprivate var tabButtons = [UIButton]()
+	fileprivate var currentTab = 1
     
 	override func loadView() {
 		super.loadView()
@@ -33,16 +48,53 @@ class LFHoverTabViewController: LFViewController {
 		layer.shadowRadius = 3
 		
 		self.delegate = LFHoverTabBaseController.defaultInstance
+		self.dataSource = LFHoverTabBaseController.defaultInstance
 		
 		tabButtons = [tabButton0, tabButton1, tabButton2, tabButton3]
+		
+		self.buttonDidClick(sender: tabButton0)
 		
 	}
 	
 	@IBAction func buttonDidClick(sender: UIButton) {
 		self.delegate?.tabViewController(controller: self, tabDidSelectAtIndex: sender.tag)
+		self.loadControlViewForTab(atIndex: sender.tag)
 		
 		for button in tabButtons {
-			button.isSelected = button == sender ? true : false
+			button.isSelected = false
+		}
+		
+		sender.isSelected = true
+		self.currentTab = sender.tag
+	}
+	
+	func loadControlViewForTab(atIndex index: Int) {
+		if self.currentTab != index && index < self.tabButtons.count {
+			let _ = self.controlView.subviews.map {$0.removeFromSuperview()}
+			if let view = self.dataSource?.controlViewForTab(atIndex: index) {
+				view.translatesAutoresizingMaskIntoConstraints = false
+				var constraints = [NSLayoutConstraint]()
+				let viewBindings = ["view" : view]
+				
+				self.controlView.addSubview(view)
+				
+				constraints.append(contentsOf: NSLayoutConstraint.constraints(
+					withVisualFormat: "V:|-(0)-[view]-(0)-|",
+					options: [],
+					metrics: nil,
+					views: viewBindings)
+				)
+				
+				constraints.append(contentsOf: NSLayoutConstraint.constraints(
+					withVisualFormat: "H:|-(0)-[view]-(0)-|",
+					options: [],
+					metrics: nil,
+					views: viewBindings)
+				)
+				
+				self.controlView.addConstraints(constraints)
+				
+			}
 		}
 	}
 	

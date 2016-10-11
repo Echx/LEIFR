@@ -298,6 +298,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accessoryTextLabel" destination="9uo-Ld-coc" id="Zhv-6h-rUt"/>
+                        <outlet property="accessoryView" destination="sXi-UY-V5x" id="ZNr-TX-Yal"/>
+                        <outlet property="controlView" destination="WDj-UA-LuE" id="DbL-yi-Ou8"/>
                         <outlet property="tabButton0" destination="a0J-uT-dnu" id="1Gz-Km-F5N"/>
                         <outlet property="tabButton1" destination="ZuG-lM-XTp" id="cmK-oQ-ZKu"/>
                         <outlet property="tabButton2" destination="MF3-gu-d6b" id="6Mx-hs-F5z"/>
