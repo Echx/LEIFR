@@ -29,25 +29,12 @@ class LFHoverTabBaseController: LFViewController {
 		self.tabView.addGestureRecognizer(panGesture)
 		self.tabViewTopConstraint.constant = self.tabViewSnapLevels.last!
 		
-		do {
-			let controller = LFOverallViewController.defaultControllerFromStoryboard()
-			self.tabControllers.append(controller)
-		}
-		
-		do {
-			let controller = LFPlaybackViewController.defaultControllerFromStoryboard()
-			self.tabControllers.append(controller)
-		}
-		
-		do {
-			let controller = LFPlaybackViewController.defaultControllerFromStoryboard()
-			self.tabControllers.append(controller)
-		}
-		
-		do {
-			let controller = LFSettingViewController.defaultControllerFromStoryboard()
-			self.tabControllers.append(controller)
-		}
+		self.tabControllers = [
+			LFOverallViewController.defaultControllerFromStoryboard(),
+			LFPlaybackViewController.defaultControllerFromStoryboard(),
+			LFPlaybackViewController.defaultControllerFromStoryboard(),
+			LFSettingViewController.defaultControllerFromStoryboard()
+		]
 		
 		self.switchToPage(index: 0)
 	}
@@ -121,6 +108,7 @@ class LFHoverTabBaseController: LFViewController {
 			toView.translatesAutoresizingMaskIntoConstraints = false
 			var newTabConstraints = [NSLayoutConstraint]()
 			self.containerView.addSubview(toView)
+			self.addChildViewController(toController)
 			let viewBindings = ["toView" : toView]
 			
 			newTabConstraints.append(contentsOf: NSLayoutConstraint.constraints(
