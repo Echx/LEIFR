@@ -15,6 +15,8 @@ class LFOverallViewController: LFViewController {
     fileprivate var pointSource: MGLGeoJSONSource?
 	fileprivate var mapSourceProcessingQueue = DispatchQueue(label: "MAP_SOURCE_PROCESSING_QUEUE")
 
+	@IBOutlet weak var recordButton: UIButton!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -26,7 +28,7 @@ class LFOverallViewController: LFViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
+	
     // MARK: basic configuration
     fileprivate func configureMap() {
         self.mapView.delegate = self
@@ -139,9 +141,40 @@ extension LFOverallViewController: MGLMapViewDelegate {
 
 extension LFOverallViewController {
 	override func controlViewForTab() -> UIView? {
-		let view = UIView()
-		
+		let view = Bundle.main.loadNibNamed("LFOverallControlView", owner: self, options: nil)![0] as? UIView
+		self.configureControlView()
 		return view
+	}
+	
+	fileprivate func configureControlView() {
+		let layer = self.recordButton.layer
+		layer.borderColor = UIColor.white.cgColor
+		layer.borderWidth = 8
+		layer.cornerRadius = 48
+	}
+	
+	@IBAction func recordButtonTouchDown(sender: UIButton) {
+		
+	}
+	
+	@IBAction func toggleRecordButton(sender: UIButton) {
+		UIView.transition(with:self.recordButton,
+		                  duration: 0.2,
+		                  options: [.transitionCrossDissolve],
+		                  animations: {
+			if self.recordButton.titleLabel?.text == "■" {
+				self.recordButton.titleLabel?.font = UIFont.systemFont(ofSize: 95)
+				self.recordButton.setTitle("●", for: .normal)
+			} else {
+				self.recordButton.titleLabel?.font = UIFont.systemFont(ofSize: 70)
+				self.recordButton.setTitle("■", for: .normal)
+			}
+			
+		}, completion: nil)
+	}
+	
+	@IBAction func toggleUserLocation(sender: UIButton) {
+		sender.isSelected = !sender.isSelected
 	}
 	
 	override func accessoryViewForTab() -> UIView? {
