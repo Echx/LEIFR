@@ -4,7 +4,6 @@ use_frameworks!
 
 target 'LEIFR' do
 
-pod 'FontAwesome+iOS'
 pod 'FontBlaster'
 pod 'wkb-ios'
 
