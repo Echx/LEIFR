@@ -9,5 +9,5 @@
 import Foundation
 
 struct Color {
-
+    let IRON = UIColor.eightBitColor(red: 74, green: 75, blue: 72, alpha: 1)
 }
