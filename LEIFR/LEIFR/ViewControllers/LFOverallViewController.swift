@@ -41,10 +41,15 @@ extension LFOverallViewController: MGLMapViewDelegate {
                 let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
                 if self.pointSource != nil {
                     let pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: self.pointSource!)
+                    
                     let styleLayerColor = MGLStyleAttributeFunction()
                     styleLayerColor.stops = [0: UIColor.clear, 13: UIColor.clear, 14: Color.IRON]
                     pointLayer.circleColor = styleLayerColor
-                    pointLayer.circleRadius = NSNumber(integerLiteral: 5)
+                    
+                    let styleLayerRadius = MGLStyleAttributeFunction()
+                    styleLayerRadius.stops = [0: NSNumber(integerLiteral: 5), 15: NSNumber(integerLiteral: 5), 22: NSNumber(integerLiteral: 35)]
+                    pointLayer.circleRadius = styleLayerRadius
+                    
                     mapView.style().insert(pointLayer, below: symbolLayer)
                 }
             }
@@ -64,25 +69,22 @@ extension LFOverallViewController: MGLMapViewDelegate {
         let source = MGLSource(sourceIdentifier: "symbol")!
         let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
         
-        let preloadPointsOptions = [["gridSize": 0.01, "sourceIdentifier": "lf-point-source-0", "layerIdentifier": "lf-point-layer-0",
-                                     "stops": [0: Color.IRON, 2: Color.IRON, 4: UIColor.clear]],
-                                    ["gridSize": 0.005, "sourceIdentifier": "lf-point-source-1", "layerIdentifier": "lf-point-layer-1",
-                                     "stops": [0: UIColor.clear, 3: UIColor.clear, 4: Color.IRON, 7: Color.IRON, 9: UIColor.clear]],
-                                    ["gridSize": 0.001, "sourceIdentifier": "lf-point-source-2", "layerIdentifier": "lf-point-layer-2",
-                                     "stops": [0: UIColor.clear, 8: UIColor.clear, 9: Color.IRON, 12: Color.IRON, 14: UIColor.clear]]]
+        let preloadPointsOptions = [["gridSize": 0.01, "stops": [0: Color.IRON, 2: Color.IRON, 4: UIColor.clear]],
+                                    ["gridSize": 0.005, "stops": [0: UIColor.clear, 3: UIColor.clear, 4: Color.IRON, 7: Color.IRON, 9: UIColor.clear]],
+                                    ["gridSize": 0.001, "stops": [0: UIColor.clear, 8: UIColor.clear, 9: Color.IRON, 12: Color.IRON, 14: UIColor.clear]]]
         
-        for option in preloadPointsOptions {
+        for (index, option) in preloadPointsOptions.enumerated() {
             databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), gridSize: option["gridSize"] as! Double, completion: {
                 pointsJSON in
                 self.mapSourceProcessingQueue.async {
                     if let wrappedJSON = LFGeoJSONWrapper.wrapArray(geometryArray: pointsJSON) {
-                        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: option["sourceIdentifier"] as! String, geoJSONData: wrappedJSON.data(using: .utf8)!)
+                        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "lf-point-source-\(index)", geoJSONData: wrappedJSON.data(using: .utf8)!)
                         mapView.style().add(geoJSONSource)
 
                         let styleLayerColor = MGLStyleAttributeFunction()
                         styleLayerColor.stops = option["stops"] as! [NSNumber : UIColor]
                         
-                        let styleLayer = MGLCircleStyleLayer(layerIdentifier: option["layerIdentifier"] as! String, source: geoJSONSource)
+                        let styleLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer-\(index)", source: geoJSONSource)
                         styleLayer.circleColor = styleLayerColor
                         styleLayer.circleRadius = NSNumber(integerLiteral: 5)
                         
