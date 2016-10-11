@@ -28,6 +28,12 @@
                     </state>
                     <state key="selected" title="■"/>
                     <connections>
+                        <action selector="recordButtonTouchDownWithSender:" destination="-1" eventType="touchDown" id="L2q-vl-mdI"/>
+                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchCancel" id="8Dw-mU-F9t"/>
+                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchDragExit" id="Jje-Zy-FBK"/>
+                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchDragOutside" id="Ufp-q1-2Oh"/>
+                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchUpOutside" id="ajy-Lg-Fac"/>
+                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchUpInside" id="hbm-29-GqH"/>
                         <action selector="toggleRecordButtonWithSender:" destination="-1" eventType="touchUpInside" id="q3J-jt-zFt"/>
                     </connections>
                 </button>

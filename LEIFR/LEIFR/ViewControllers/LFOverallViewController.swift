@@ -154,7 +154,11 @@ extension LFOverallViewController {
 	}
 	
 	@IBAction func recordButtonTouchDown(sender: UIButton) {
-		
+		self.recordButton.titleLabel?.alpha = 0.2
+	}
+	
+	@IBAction func recordButtonTouchUp(sender: UIButton) {
+		self.recordButton.titleLabel?.alpha = 1
 	}
 	
 	@IBAction func toggleRecordButton(sender: UIButton) {
