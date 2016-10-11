@@ -41,6 +41,42 @@
             </objects>
             <point key="canvasLocation" x="2257" y="159"/>
         </scene>
+        <!--Playback View Controller-->
+        <scene sceneID="odD-o6-hRT">
+            <objects>
+                <viewController storyboardIdentifier="LFPlaybackViewController" id="cFq-5f-daY" customClass="LFPlaybackViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bpv-F1-PeA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Niv-5T-yYG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tDs-Pd-mWy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qql-qF-fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2257" y="851"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="125-Bx-sJZ">
+            <objects>
+                <viewController storyboardIdentifier="LFSettingViewController" id="dVI-lz-Ab1" customClass="LFSettingViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xaI-3C-v6U"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aea-VV-AON"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FCo-On-mNE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b0-KD-ZwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2990" y="851"/>
+        </scene>
         <!--Hover Tab Base Controller-->
         <scene sceneID="Nnl-fI-pTc">
             <objects>
@@ -53,11 +89,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvZ-Uz-l46">
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="embed" id="Cu6-t4-lUq"/>
-                                </connections>
-                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMT-tu-AH2">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OoX-Bn-wu5">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -67,17 +101,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gvZ-Uz-l46" firstAttribute="leading" secondItem="CH3-9x-n6v" secondAttribute="leading" id="5mW-Eg-Vcs"/>
                             <constraint firstAttribute="height" secondItem="OoX-Bn-wu5" secondAttribute="height" id="DEn-wm-DwJ"/>
+                            <constraint firstItem="jMT-tu-AH2" firstAttribute="top" secondItem="CH3-9x-n6v" secondAttribute="top" id="LgK-JJ-EwG"/>
                             <constraint firstItem="OoX-Bn-wu5" firstAttribute="top" secondItem="CH3-9x-n6v" secondAttribute="top" constant="267" id="M79-kO-s1c"/>
-                            <constraint firstItem="gvZ-Uz-l46" firstAttribute="top" secondItem="CH3-9x-n6v" secondAttribute="top" id="fE5-1J-f2q"/>
-                            <constraint firstAttribute="trailing" secondItem="gvZ-Uz-l46" secondAttribute="trailing" id="jU2-O4-Lwn"/>
-                            <constraint firstItem="84A-gu-ohV" firstAttribute="top" secondItem="gvZ-Uz-l46" secondAttribute="bottom" id="quc-9H-yl6"/>
+                            <constraint firstAttribute="trailing" secondItem="jMT-tu-AH2" secondAttribute="trailing" id="QxA-tR-OLc"/>
+                            <constraint firstItem="jMT-tu-AH2" firstAttribute="leading" secondItem="CH3-9x-n6v" secondAttribute="leading" id="lrh-zo-XVL"/>
+                            <constraint firstItem="84A-gu-ohV" firstAttribute="top" secondItem="jMT-tu-AH2" secondAttribute="bottom" id="tbD-Mm-uRc"/>
                             <constraint firstItem="OoX-Bn-wu5" firstAttribute="leading" secondItem="CH3-9x-n6v" secondAttribute="leading" id="vmo-3z-HLg"/>
                             <constraint firstAttribute="trailing" secondItem="OoX-Bn-wu5" secondAttribute="trailing" id="xFi-Sf-Ik9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="jMT-tu-AH2" id="7Bw-7L-cYY"/>
                         <outlet property="tabView" destination="OoX-Bn-wu5" id="4WT-4p-8Qs"/>
                         <outlet property="tabViewTopConstraint" destination="M79-kO-s1c" id="tUE-vl-zwf"/>
                     </connections>

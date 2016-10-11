@@ -1,18 +1,14 @@
 //
-//  LFViewController.swift
+//  LFSettingViewController.swift
 //  LEIFR
 //
-//  Created by Jinghan Wang on 7/10/16.
+//  Created by Jinghan Wang on 12/10/16.
 //  Copyright © 2016 Echx. All rights reserved.
 //
 
 import UIKit
 
-protocol LFStoryboardBasedController {
-	static func defaultControllerFromStoryboard() -> LFViewController
-}
-
-class LFViewController: UIViewController {
+class LFSettingViewController: LFViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,4 +31,14 @@ class LFViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+extension LFSettingViewController: LFStoryboardBasedController {
+	class func defaultControllerFromStoryboard() -> LFViewController {
+		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+		let controller = storyboard.instantiateViewController(withIdentifier: "LFSettingViewController") as! LFViewController
+		
+		return controller
+	}
 }

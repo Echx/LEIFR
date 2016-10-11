@@ -14,6 +14,12 @@ class LFHoverTabBaseController: LFViewController {
 	
 	@IBOutlet var tabView: UIView!
 	@IBOutlet var tabViewTopConstraint: NSLayoutConstraint!
+	
+	@IBOutlet var containerView: UIView!
+	fileprivate var tabControllers = [LFViewController]()
+	fileprivate var currentTab = 0;
+	fileprivate var currentTabConstraints = [NSLayoutConstraint]()
+	
 	private var tabViewSnapLevels: [CGFloat] = [UIScreen.main.bounds.height - 400, UIScreen.main.bounds.height - 200, UIScreen.main.bounds.height - 64]
 	
 	override func loadView() {
@@ -22,6 +28,28 @@ class LFHoverTabBaseController: LFViewController {
 		let panGesture = UIPanGestureRecognizer(target: self, action: #selector(tabViewDidDrag(gesture:)))
 		self.tabView.addGestureRecognizer(panGesture)
 		self.tabViewTopConstraint.constant = self.tabViewSnapLevels.last!
+		
+		do {
+			let controller = LFPlaybackViewController.defaultControllerFromStoryboard()
+			self.tabControllers.append(controller)
+		}
+		
+		do {
+			let controller = LFPlaybackViewController.defaultControllerFromStoryboard()
+			self.tabControllers.append(controller)
+		}
+		
+		do {
+			let controller = LFPlaybackViewController.defaultControllerFromStoryboard()
+			self.tabControllers.append(controller)
+		}
+		
+		do {
+			let controller = LFSettingViewController.defaultControllerFromStoryboard()
+			self.tabControllers.append(controller)
+		}
+		
+		self.switchToPage(index: 0)
 	}
 	
     override func viewDidLoad() {
@@ -80,19 +108,56 @@ class LFHoverTabBaseController: LFViewController {
 		}
 	}
 	
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	func switchToPage(index: Int) {
+		if self.currentTab != index && index < self.tabControllers.count {
+			let toController = self.tabControllers[index]
+			let fromController = self.tabControllers[self.currentTab]
+			
+			toController.willMove(toParentViewController: self)
+			
+			
+			//add new tab view
+			let toView = toController.view!
+			toView.translatesAutoresizingMaskIntoConstraints = false
+			var newTabConstraints = [NSLayoutConstraint]()
+			self.containerView.addSubview(toView)
+			let viewBindings = ["toView" : toView]
+			
+			newTabConstraints.append(contentsOf: NSLayoutConstraint.constraints(
+				withVisualFormat: "V:|-(-5)-[toView]-(-5)-|",
+				options: [],
+				metrics: nil,
+				views: viewBindings)
+			)
+			
+			newTabConstraints.append(contentsOf: NSLayoutConstraint.constraints(
+				withVisualFormat: "H:|-(-5)-[toView]-(-5)-|",
+				options: [],
+				metrics: nil,
+				views: viewBindings)
+			)
+			
+			self.containerView.addConstraints(newTabConstraints)
+			
+			//remove original tab view
+			self.containerView.removeConstraints(self.currentTabConstraints)
+			fromController.view.removeFromSuperview()
+			fromController.removeFromParentViewController()
+			
+			self.currentTabConstraints = newTabConstraints
+			
+			toController.didMove(toParentViewController: self)
+			
+			
+			self.currentTab = index
+			self.currentTabConstraints = newTabConstraints
+		}
+	}
 }
 
 extension LFHoverTabBaseController: LFHoverTabDelegate {
 	func tabViewController(controller: LFViewController, tabDidSelectAtIndex index: Int) {
 		print("Tab did select: \(index)")
+		self.switchToPage(index: index)
 	}
 }
