@@ -84,9 +84,7 @@ extension ViewController: MGLMapViewDelegate {
                         styleLayer.circleColor = styleLayerColor
                         styleLayer.circleRadius = NSNumber(integerLiteral: 5)
                         
-                        DispatchQueue.main.async {
-                            mapView.style().insert(styleLayer, below: symbolLayer)
-                        }
+                        mapView.style().insert(styleLayer, below: symbolLayer)
                     }
                 }
             })
@@ -97,9 +95,7 @@ extension ViewController: MGLMapViewDelegate {
             self.mapSourceProcessingQueue.async {
                 if let wrappedJSON = LFGeoJSONWrapper.wrapArray(geometryArray: pointsJSON) {
                     self.pointSource = MGLGeoJSONSource(sourceIdentifier: "lf-point-source", geoJSONData: wrappedJSON.data(using: .utf8)!)
-                    DispatchQueue.main.async {
-                        mapView.style().add(self.pointSource!)
-                    }
+                    mapView.style().add(self.pointSource!)
                 }
             }
         })
