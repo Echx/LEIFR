@@ -32,6 +32,7 @@ class LFOverallViewController: LFViewController {
     // MARK: basic configuration
     fileprivate func configureMap() {
         self.mapView.delegate = self
+        self.mapView.showsUserLocation = true
     }
     
     // MARK: helper functions
@@ -179,6 +180,7 @@ extension LFOverallViewController {
 	
 	@IBAction func toggleUserLocation(sender: UIButton) {
 		sender.isSelected = !sender.isSelected
+        self.mapView.showsUserLocation = !self.mapView.showsUserLocation
 	}
 	
 	override func accessoryViewForTab() -> UIView? {
