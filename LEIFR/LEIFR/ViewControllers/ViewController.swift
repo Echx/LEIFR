@@ -78,7 +78,7 @@ extension ViewController: MGLMapViewDelegate {
                         mapView.style().add(geoJSONSource)
 
                         let styleLayerColor = MGLStyleAttributeFunction()
-                        styleLayerColor.stops = option["stops"] as! [NSNumber : Any]
+                        styleLayerColor.stops = option["stops"] as! [NSNumber : UIColor]
                         
                         let styleLayer = MGLCircleStyleLayer(layerIdentifier: option["layerIdentifier"] as! String, source: geoJSONSource)
                         styleLayer.circleColor = styleLayerColor
