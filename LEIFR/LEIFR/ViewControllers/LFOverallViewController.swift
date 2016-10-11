@@ -186,7 +186,7 @@ extension LFOverallViewController {
 	}
 	
 	override func accessoryTextForTab() -> String? {
-		return "\"We are all leaders-whether we want to be or not. There is always someone we are influencing, either leading them to good or away from good.\""
+		return "\"We are all leaders: whether we want to be or not. There is always someone we are influencing, either leading them to good or away from good.\""
 	}
 }
 
