@@ -16,6 +16,7 @@ class LFOverallViewController: LFViewController {
 	fileprivate var mapSourceProcessingQueue = DispatchQueue(label: "MAP_SOURCE_PROCESSING_QUEUE")
 
 	@IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var recordButtonContent: UIView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -152,31 +153,33 @@ extension LFOverallViewController {
 		layer.borderColor = UIColor.white.cgColor
 		layer.borderWidth = 8
 		layer.cornerRadius = 48
+        
+        let contentLayer = self.recordButtonContent.layer
+        contentLayer.cornerRadius = 35
 	}
 	
 	@IBAction func recordButtonTouchDown(sender: UIButton) {
-		self.recordButton.titleLabel?.alpha = 0.2
+		self.recordButtonContent.alpha = 0.2
 	}
 	
 	@IBAction func recordButtonTouchUp(sender: UIButton) {
-		self.recordButton.titleLabel?.alpha = 1
+		self.recordButtonContent.alpha = 1
 	}
 	
 	@IBAction func toggleRecordButton(sender: UIButton) {
-		UIView.transition(with:self.recordButton,
-		                  duration: 0.2,
-		                  options: [.transitionCrossDissolve],
-		                  animations: {
-			if self.recordButton.titleLabel?.text == "■" {
-				self.recordButton.titleLabel?.font = UIFont.systemFont(ofSize: 95)
-				self.recordButton.setTitle("●", for: .normal)
-			} else {
-				self.recordButton.titleLabel?.font = UIFont.systemFont(ofSize: 70)
-				self.recordButton.setTitle("■", for: .normal)
-			}
-			
-		}, completion: nil)
-	}
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.recordButtonContent.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                self.recordButtonContent.layer.cornerRadius = 10
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.recordButtonContent.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.recordButtonContent.layer.cornerRadius = 35
+            }, completion: nil)
+        }
+    }
 	
 	@IBAction func toggleUserLocation(sender: UIButton) {
 		sender.isSelected = !sender.isSelected

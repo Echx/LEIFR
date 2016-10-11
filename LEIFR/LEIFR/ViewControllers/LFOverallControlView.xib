@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LFOverallViewController" customModule="LEIFR" customModuleProvider="target">
             <connections>
                 <outlet property="recordButton" destination="xyR-I7-pI9" id="rzb-S5-fHo"/>
+                <outlet property="recordButtonContent" destination="15v-Vl-mYg" id="Oce-aj-qTF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -17,16 +18,22 @@
             <rect key="frame" x="0.0" y="0.0" width="348" height="136"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15v-Vl-mYg" userLabel="Record Button Content">
+                    <color key="backgroundColor" red="1" green="0.092421955149999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="15v-Vl-mYg" secondAttribute="height" multiplier="1:1" id="by4-HW-mIp"/>
+                        <constraint firstAttribute="height" constant="70" id="tYN-IY-GJ4"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyR-I7-pI9">
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="UbT-y2-E4t"/>
                         <constraint firstAttribute="width" secondItem="xyR-I7-pI9" secondAttribute="height" id="YdX-RK-bdV"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="95"/>
-                    <state key="normal" title="●">
+                    <state key="normal">
                         <color key="titleColor" red="0.67760968210000005" green="0.23106917739999999" blue="0.2407194376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
-                    <state key="selected" title="■"/>
                     <connections>
                         <action selector="recordButtonTouchDownWithSender:" destination="-1" eventType="touchDown" id="L2q-vl-mdI"/>
                         <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchCancel" id="8Dw-mU-F9t"/>
@@ -48,7 +55,9 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.34901960780000002" blue="0.32156862749999998" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="15v-Vl-mYg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="60l-8c-mQV"/>
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FlW-cY-hwF"/>
+                <constraint firstItem="15v-Vl-mYg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NuH-uB-YNV"/>
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OHT-Fd-Xdn"/>
                 <constraint firstItem="hQs-9w-GBp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Yo1-cx-255"/>
                 <constraint firstItem="hQs-9w-GBp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="emw-Sy-Swg"/>
