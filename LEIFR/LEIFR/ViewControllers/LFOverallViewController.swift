@@ -31,11 +31,40 @@ class LFOverallViewController: LFViewController {
     fileprivate func configureMap() {
         self.mapView.delegate = self
     }
+    
+    // MARK: helper functions
+    fileprivate func generateColorStops(minZoom: Int, maxZoom: Int, color: UIColor, bufferZoomLevel: Int) -> [Int: UIColor] {
+        var result = [
+            minZoom: color,
+        ]
+        
+        if minZoom != maxZoom {
+            result[maxZoom] = color
+        }
+        
+        if minZoom > 0 {
+            result[0] = UIColor.clear
+        }
+        
+        if minZoom > bufferZoomLevel {
+            result[minZoom - bufferZoomLevel] = UIColor.clear
+        }
+        
+        if maxZoom < 22 {
+            result[22] = UIColor.clear
+        }
+        
+        if maxZoom < 22 - bufferZoomLevel {
+            result[maxZoom + bufferZoomLevel] = UIColor.clear
+        }
+        
+        return result
+    }
 }
 
 extension LFOverallViewController: MGLMapViewDelegate {
     func mapViewRegionIsChanging(_ mapView: MGLMapView) {
-        if mapView.zoomLevel > 13 {
+        if mapView.zoomLevel > 12 {
             if mapView.style().layer(withIdentifier: "lf-point-layer") == nil {
                 let source = MGLSource(sourceIdentifier: "symbol")!
                 let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
@@ -43,7 +72,7 @@ extension LFOverallViewController: MGLMapViewDelegate {
                     let pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: self.pointSource!)
                     
                     let styleLayerColor = MGLStyleAttributeFunction()
-                    styleLayerColor.stops = [0: UIColor.clear, 13: UIColor.clear, 14: Color.IRON]
+                    styleLayerColor.stops = [0: UIColor.clear, 12: UIColor.clear, 14: Color.IRON]
                     pointLayer.circleColor = styleLayerColor
                     
                     let styleLayerRadius = MGLStyleAttributeFunction()
@@ -69,9 +98,11 @@ extension LFOverallViewController: MGLMapViewDelegate {
         let source = MGLSource(sourceIdentifier: "symbol")!
         let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
         
-        let preloadPointsOptions = [["gridSize": 0.01, "stops": [0: Color.IRON, 2: Color.IRON, 4: UIColor.clear]],
-                                    ["gridSize": 0.005, "stops": [0: UIColor.clear, 3: UIColor.clear, 4: Color.IRON, 7: Color.IRON, 9: UIColor.clear]],
-                                    ["gridSize": 0.001, "stops": [0: UIColor.clear, 8: UIColor.clear, 9: Color.IRON, 12: Color.IRON, 14: UIColor.clear]]]
+        let preloadPointsOptions = [["gridSize": 0.15, "stops": generateColorStops(minZoom: 0, maxZoom: 2, color: Color.IRON, bufferZoomLevel: 2)],
+                                    ["gridSize": 0.05, "stops": generateColorStops(minZoom: 4, maxZoom: 5, color: Color.IRON, bufferZoomLevel: 2)],
+                                    ["gridSize": 0.02, "stops": generateColorStops(minZoom: 7, maxZoom: 8, color: Color.IRON, bufferZoomLevel: 2)],
+                                    ["gridSize": 0.005, "stops": generateColorStops(minZoom: 10, maxZoom: 11, color: Color.IRON, bufferZoomLevel: 1)],
+                                    ["gridSize": 0.002, "stops": generateColorStops(minZoom: 12, maxZoom: 12, color: Color.IRON, bufferZoomLevel: 1)]]
         
         for (index, option) in preloadPointsOptions.enumerated() {
             databaseManager.getPointsInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), gridSize: option["gridSize"] as! Double, completion: {
