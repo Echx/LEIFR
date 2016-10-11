@@ -15,7 +15,7 @@ class LFOverallViewController: LFViewController {
     fileprivate var pointSource: MGLGeoJSONSource?
 	fileprivate var mapSourceProcessingQueue = DispatchQueue(label: "MAP_SOURCE_PROCESSING_QUEUE")
 
-	@IBOutlet weak var recordButton: UIButton!
+	@IBOutlet weak var recordButton: LFRecordButton!
     @IBOutlet weak var recordButtonContent: UIView!
 	
 	override func viewDidLoad() {
@@ -156,6 +156,8 @@ extension LFOverallViewController {
         
         let contentLayer = self.recordButtonContent.layer
         contentLayer.cornerRadius = 35
+        
+        self.recordButton.delegate = self
 	}
 	
 	@IBAction func recordButtonTouchDown(sender: UIButton) {
@@ -202,4 +204,11 @@ extension LFOverallViewController: LFStoryboardBasedController {
 		
 		return controller
 	}
+}
+
+extension LFOverallViewController: LFRecordButtonDelegate {
+    func button(_ button: LFRecordButton, isForceTouchedWithForce force: CGFloat) {
+        print(force)
+        // TODO animation
+    }
 }

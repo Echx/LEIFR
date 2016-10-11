@@ -71,6 +71,7 @@
 		62BF069B1DA6F44200E6957E /* test-multipoint.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 62BF069A1DA6F44200E6957E /* test-multipoint.geojson */; };
 		62BF069D1DA6F49200E6957E /* LFGeoJSONWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */; };
 		62BF069F1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */; };
+		62E6F9801DAD9D9600CD0988 /* LFRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6F97F1DAD9D9600CD0988 /* LFRecordButton.swift */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
 		6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */; };
@@ -565,6 +566,7 @@
 		62BF069A1DA6F44200E6957E /* test-multipoint.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-multipoint.geojson"; sourceTree = "<group>"; };
 		62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONWrapper.swift; sourceTree = "<group>"; };
 		62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONWrapperTest.swift; sourceTree = "<group>"; };
+		62E6F97F1DAD9D9600CD0988 /* LFRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFRecordButton.swift; path = LEIFR/ViewControllers/LFRecordButton.swift; sourceTree = SOURCE_ROOT; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
@@ -1484,6 +1486,7 @@
 				62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */,
 				62F0DBFA1D888A02006D05E0 /* Main.storyboard */,
 				0CD4AD8F1DAD856800081876 /* LFOverallControlView.xib */,
+				62E6F97F1DAD9D9600CD0988 /* LFRecordButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1826,6 +1829,7 @@
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				0CBB38791D85FCE7002C0EF0 /* LFOverallViewController.swift in Sources */,
+				62E6F9801DAD9D9600CD0988 /* LFRecordButton.swift in Sources */,
 				62BF06961DA6F02B00E6957E /* UIColor+LFCustomization.swift in Sources */,
 				0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */,
 				0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */,

@@ -25,7 +25,7 @@
                         <constraint firstAttribute="height" constant="70" id="tYN-IY-GJ4"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyR-I7-pI9">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyR-I7-pI9" customClass="LFRecordButton" customModule="LEIFR" customModuleProvider="target">
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="UbT-y2-E4t"/>
                         <constraint firstAttribute="width" secondItem="xyR-I7-pI9" secondAttribute="height" id="YdX-RK-bdV"/>
