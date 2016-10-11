@@ -10,6 +10,7 @@
 		0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */; };
 		0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */; };
 		0C42AF2C1DAD662F00849A5C /* LFSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */; };
+		0C42AF2E1DAD6EA600849A5C /* LFStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2D1DAD6EA600849A5C /* LFStatisticViewController.swift */; };
 		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
 		0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30881D85F413002C0EF0 /* Assets.xcassets */; };
 		0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */; };
@@ -110,6 +111,7 @@
 		0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaybackViewController.swift; sourceTree = "<group>"; };
 		0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFSettingViewController.swift; sourceTree = "<group>"; };
+		0C42AF2D1DAD6EA600849A5C /* LFStatisticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticViewController.swift; sourceTree = "<group>"; };
 		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -1458,6 +1460,7 @@
 				0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */,
 				0CBB38781D85FCE7002C0EF0 /* LFOverallViewController.swift */,
 				0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */,
+				0C42AF2D1DAD6EA600849A5C /* LFStatisticViewController.swift */,
 				0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */,
 			);
 			path = ViewControllers;
@@ -1804,6 +1807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C42AF2E1DAD6EA600849A5C /* LFStatisticViewController.swift in Sources */,
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONWrapper.swift in Sources */,

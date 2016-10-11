@@ -32,7 +32,7 @@ class LFHoverTabBaseController: LFViewController {
 		self.tabControllers = [
 			LFOverallViewController.defaultControllerFromStoryboard(),
 			LFPlaybackViewController.defaultControllerFromStoryboard(),
-			LFPlaybackViewController.defaultControllerFromStoryboard(),
+			LFStatisticViewController.defaultControllerFromStoryboard(),
 			LFSettingViewController.defaultControllerFromStoryboard()
 		]
 		
