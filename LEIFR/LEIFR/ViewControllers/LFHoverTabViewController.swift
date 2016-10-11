@@ -32,10 +32,13 @@ class LFHoverTabViewController: LFViewController {
 	
 	@IBOutlet fileprivate weak var controlView: UIView!
 	@IBOutlet fileprivate weak var accessoryView: UIView!
-	@IBOutlet fileprivate weak var accessoryTextLabel: UIView!
+	@IBOutlet fileprivate weak var accessoryTextLabel: UILabel!
 	
 	fileprivate var tabButtons = [UIButton]()
 	fileprivate var currentTab = 1
+	
+	fileprivate var tabControlView: UIView?
+	fileprivate var tabAccessoryView: UIView?
     
 	override func loadView() {
 		super.loadView()
@@ -59,10 +62,9 @@ class LFHoverTabViewController: LFViewController {
 	@IBAction func buttonDidClick(sender: UIButton) {
 		self.delegate?.tabViewController(controller: self, tabDidSelectAtIndex: sender.tag)
 		self.loadControlViewForTab(atIndex: sender.tag)
+		self.loadAccessoryViewForTab(atIndex: sender.tag)
 		
-		for button in tabButtons {
-			button.isSelected = false
-		}
+		_ = tabButtons.map{$0.isSelected = false}
 		
 		sender.isSelected = true
 		self.currentTab = sender.tag
@@ -70,7 +72,7 @@ class LFHoverTabViewController: LFViewController {
 	
 	func loadControlViewForTab(atIndex index: Int) {
 		if self.currentTab != index && index < self.tabButtons.count {
-			let _ = self.controlView.subviews.map {$0.removeFromSuperview()}
+			self.tabControlView?.removeFromSuperview()
 			if let view = self.dataSource?.controlViewForTab(atIndex: index) {
 				view.translatesAutoresizingMaskIntoConstraints = false
 				var constraints = [NSLayoutConstraint]()
@@ -93,7 +95,41 @@ class LFHoverTabViewController: LFViewController {
 				)
 				
 				self.controlView.addConstraints(constraints)
+				self.tabControlView = view
+			}
+		}
+	}
+	
+	func loadAccessoryViewForTab(atIndex index: Int) {
+		if (self.currentTab != index && index < self.tabButtons.count) {
+			self.tabAccessoryView?.removeFromSuperview()
+			if let view = self.dataSource?.accessoryViewForTab(atIndex: index) {
+				self.accessoryTextLabel.isHidden = true
+				view.translatesAutoresizingMaskIntoConstraints = false
+				var constraints = [NSLayoutConstraint]()
+				let viewBindings = ["view" : view]
 				
+				self.accessoryView.addSubview(view)
+				
+				constraints.append(contentsOf: NSLayoutConstraint.constraints(
+					withVisualFormat: "V:|-(0)-[view]-(0)-|",
+					options: [],
+					metrics: nil,
+					views: viewBindings)
+				)
+				
+				constraints.append(contentsOf: NSLayoutConstraint.constraints(
+					withVisualFormat: "H:|-(0)-[view]-(0)-|",
+					options: [],
+					metrics: nil,
+					views: viewBindings)
+				)
+				
+				self.accessoryView.addConstraints(constraints)
+				self.tabAccessoryView = view
+			} else if let accessoryText = self.dataSource?.accessoryTextForTab(atIndex: index) {
+				self.accessoryTextLabel.isHidden = false
+				self.accessoryTextLabel.text = accessoryText
 			}
 		}
 	}

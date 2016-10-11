@@ -144,15 +144,13 @@ extension LFHoverTabBaseController: LFHoverTabDelegate {
 
 extension LFHoverTabBaseController: LFHoverTabDataSource {
 	func accessoryTextForTab(atIndex index: Int) -> String? {
-		return ""
+		return nil
 	}
 
 	func controlViewForTab(atIndex index: Int) -> UIView? {
 		switch index {
 		case 0:
-			let view = UIView()
-			view.backgroundColor = UIColor.green
-			return view
+			return nil
 		default:
 			return nil
 		}
