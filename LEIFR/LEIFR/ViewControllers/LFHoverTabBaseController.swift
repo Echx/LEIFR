@@ -35,7 +35,7 @@ class LFHoverTabBaseController: LFViewController {
 		self.tabViewTopConstraint.constant = self.tabViewSnapLevels.last!
 		
 		self.tabControllers = [
-			LFOverallViewController.defaultControllerFromStoryboard(),
+			LFHistoryViewController.defaultControllerFromStoryboard(),
 			LFPlaybackViewController.defaultControllerFromStoryboard(),
 			LFStatisticViewController.defaultControllerFromStoryboard(),
 			LFSettingViewController.defaultControllerFromStoryboard()

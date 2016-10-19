@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="159"/>
+            <point key="canvasLocation" x="1757" y="159"/>
         </scene>
         <!--Playback View Controller-->
         <scene sceneID="odD-o6-hRT">
@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qql-qF-fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2990" y="159"/>
+            <point key="canvasLocation" x="2404" y="159"/>
         </scene>
         <!--Statistic View Controller-->
         <scene sceneID="KqB-k5-WDw">
@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9WD-Gf-2Xl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="851"/>
+            <point key="canvasLocation" x="1757" y="928"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="125-Bx-sJZ">
@@ -124,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b0-KD-ZwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2990" y="851"/>
+            <point key="canvasLocation" x="2404" y="928"/>
         </scene>
         <!--Hover Tab Base Controller-->
         <scene sceneID="Nnl-fI-pTc">
@@ -310,6 +310,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTz-8t-OMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1112.8" y="927.88605697151434"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="RbQ-3y-Ty5">
+            <objects>
+                <viewController storyboardIdentifier="LFHistoryViewController" id="cwe-I3-6jU" customClass="LFHistoryViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MxR-6M-Jea"/>
+                        <viewControllerLayoutGuide type="bottom" id="fp0-EA-4iZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uoo-2v-c0D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYB-gK-px0" customClass="MKMapView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dYB-gK-px0" firstAttribute="height" secondItem="Uoo-2v-c0D" secondAttribute="height" id="ZH8-BK-04B"/>
+                            <constraint firstItem="dYB-gK-px0" firstAttribute="centerX" secondItem="Uoo-2v-c0D" secondAttribute="centerX" id="iUu-xC-Puy"/>
+                            <constraint firstItem="dYB-gK-px0" firstAttribute="width" secondItem="Uoo-2v-c0D" secondAttribute="width" id="iVr-tD-jhF"/>
+                            <constraint firstItem="dYB-gK-px0" firstAttribute="centerY" secondItem="Uoo-2v-c0D" secondAttribute="centerY" id="ssA-V8-lES"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="dYB-gK-px0" id="IMc-hi-72l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KI0-ZV-GY9" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="-620"/>
         </scene>
     </scenes>
     <resources>

@@ -58,9 +58,10 @@
 		0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */; };
 		0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */; };
 		0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */; };
-		0CD4AD901DAD856800081876 /* LFOverallControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4AD8F1DAD856800081876 /* LFOverallControlView.xib */; };
+		0CD4AD901DAD856800081876 /* LFHistoryControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4AD8F1DAD856800081876 /* LFHistoryControlView.xib */; };
 		0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC8B701DA6F9320084DD6F /* MapKit.framework */; };
 		62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62054EC91DAD697400FEC851 /* LFConstant.swift */; };
+		62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */; };
 		623EAEC31DA6D005004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -553,11 +554,12 @@
 		0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabBaseController.swift; sourceTree = "<group>"; };
 		0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFViewController.swift; sourceTree = "<group>"; };
 		0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabViewController.swift; sourceTree = "<group>"; };
-		0CD4AD8F1DAD856800081876 /* LFOverallControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFOverallControlView.xib; path = LEIFR/ViewControllers/LFOverallControlView.xib; sourceTree = SOURCE_ROOT; };
+		0CD4AD8F1DAD856800081876 /* LFHistoryControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFHistoryControlView.xib; path = LEIFR/ViewControllers/LFHistoryControlView.xib; sourceTree = SOURCE_ROOT; };
 		0CFC8B701DA6F9320084DD6F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
 		62054EC91DAD697400FEC851 /* LFConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFConstant.swift; path = Extensions/LFConstant.swift; sourceTree = "<group>"; };
+		62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryViewController.swift; sourceTree = "<group>"; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
@@ -1466,6 +1468,7 @@
 				0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */,
 				0C42AF2D1DAD6EA600849A5C /* LFStatisticViewController.swift */,
 				0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */,
+				62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1485,7 +1488,7 @@
 			children = (
 				62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */,
 				62F0DBFA1D888A02006D05E0 /* Main.storyboard */,
-				0CD4AD8F1DAD856800081876 /* LFOverallControlView.xib */,
+				0CD4AD8F1DAD856800081876 /* LFHistoryControlView.xib */,
 				62E6F97F1DAD9D9600CD0988 /* LFRecordButton.swift */,
 			);
 			path = Views;
@@ -1681,7 +1684,7 @@
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
-				0CD4AD901DAD856800081876 /* LFOverallControlView.xib in Resources */,
+				0CD4AD901DAD856800081876 /* LFHistoryControlView.xib in Resources */,
 				0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */,
 				62BF069B1DA6F44200E6957E /* test-multipoint.geojson in Resources */,
 				0CBB38871D861028002C0EF0 /* default.sqlite in Resources */,
@@ -1828,6 +1831,7 @@
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
+				62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */,
 				0CBB38791D85FCE7002C0EF0 /* LFOverallViewController.swift in Sources */,
 				62E6F9801DAD9D9600CD0988 /* LFRecordButton.swift in Sources */,
 				62BF06961DA6F02B00E6957E /* UIColor+LFCustomization.swift in Sources */,
