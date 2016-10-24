@@ -14,6 +14,8 @@ class LFHistoryViewController: LFViewController {
     @IBOutlet weak var recordButton: LFRecordButton!
     @IBOutlet weak var recordButtonContent: UIView!
     
+    fileprivate var tileOverlay: MKTileOverlay?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,7 +30,11 @@ class LFHistoryViewController: LFViewController {
     
     // MARK: basic configuration
     fileprivate func configureMap() {
+        mapView.delegate = self
         
+        tileOverlay = MKTileOverlay(urlTemplate: "https://api.mapbox.com/styles/v1/echx/cit1xa01k00112wljpa9qu6dg/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWNoeCIsImEiOiJjaXBwZjhhZDcwM3RzZm1uYzVmM2E5MjhtIn0.Z3Qh-zpuvIf7KlVZLCRutA")
+        tileOverlay?.canReplaceMapContent = true
+        mapView.add(tileOverlay!)
     }
 }
 
@@ -36,7 +42,7 @@ class LFHistoryViewController: LFViewController {
 extension LFHistoryViewController {
     override func controlViewForTab() -> UIView? {
         let view = Bundle.main.loadNibNamed("LFHistoryControlView", owner: self, options: nil)![0] as? UIView
-        self.configureControlView()
+        configureControlView()
         return view
     }
     
@@ -102,6 +108,16 @@ extension LFHistoryViewController: LFRecordButtonDelegate {
     func button(_ button: LFRecordButton, isForceTouchedWithForce force: CGFloat) {
         print(force)
         // TODO animation
+    }
+}
+
+extension LFHistoryViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let tileOverlay = overlay as? MKTileOverlay else {
+            return MKTileOverlayRenderer()
+        }
+
+        return MKTileOverlayRenderer(tileOverlay: tileOverlay)
     }
 }
 
