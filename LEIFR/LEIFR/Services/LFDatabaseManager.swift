@@ -109,7 +109,6 @@ class LFDatabaseManager: NSObject {
             completion(coordinates)
         }
     }
-
 	
     func getPointsGeoJSONInRegion(_ region: MKCoordinateRegion, completion:@escaping (([String]) -> Void)) {
         self.getPointsGeoJSONInRegion(region, gridSize: 0.0, completion: completion)
