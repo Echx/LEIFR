@@ -32,7 +32,8 @@ class LFHistoryViewController: LFViewController {
     fileprivate func configureMap() {
         mapView.delegate = self
         
-        tileOverlay = MKTileOverlay(urlTemplate: "https://api.mapbox.com/styles/v1/echx/cit1xa01k00112wljpa9qu6dg/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWNoeCIsImEiOiJjaXBwZjhhZDcwM3RzZm1uYzVmM2E5MjhtIn0.Z3Qh-zpuvIf7KlVZLCRutA")
+//        tileOverlay = MKTileOverlay(urlTemplate: "https://api.mapbox.com/styles/v1/echx/cit1xa01k00112wljpa9qu6dg/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWNoeCIsImEiOiJjaXBwZjhhZDcwM3RzZm1uYzVmM2E5MjhtIn0.Z3Qh-zpuvIf7KlVZLCRutA")
+        tileOverlay = LFBackgroundOverlay()
         tileOverlay?.canReplaceMapContent = true
         mapView.add(tileOverlay!)
     }
