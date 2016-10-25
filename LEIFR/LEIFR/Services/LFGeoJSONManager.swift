@@ -37,7 +37,7 @@ class LFGeoJSONManager: NSObject {
 	}
     
     class func convertToCoordinates(geoJSON: [String]) -> [CLLocationCoordinate2D] {
-        var coordinates = [CLLocationCoordinate2DMake(1, 1)];
+        var coordinates: [CLLocationCoordinate2D] = [];
         
         for pointsString in geoJSON {
             if let pointsData = pointsString.data(using: String.Encoding.utf8) {

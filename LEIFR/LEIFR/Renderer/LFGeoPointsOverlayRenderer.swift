@@ -18,6 +18,7 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	}
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
+        let databaseManager = LFDatabaseManager.sharedManager()
 		
 		gridSize = 1 / zoomScale * 25
 		
@@ -38,6 +39,25 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 				context.fill(rect)
 			}
 		}
+        
+        databaseManager.getPointsInRegion(MKCoordinateRegionForMapRect(mapRect)) {
+            coordinates in
+            
+            // has some bug here, only enter once
+            let region = MKCoordinateRegionForMapRect(mapRect)
+            let minLong = region.center.longitude - region.span.longitudeDelta / 2
+            let maxLong = region.center.longitude + region.span.longitudeDelta / 2
+            let minLat = region.center.latitude - region.span.latitudeDelta / 2
+            let maxLat = region.center.latitude + region.span.latitudeDelta / 2
+
+            print(region.span.latitudeDelta)
+            for coordinate in coordinates {
+                let i = Int((coordinate.longitude - minLong) / region.span.longitudeDelta) * xNumberOfGrid
+                let j = Int((coordinate.latitude - minLat) / region.span.latitudeDelta) * yNumberOfGrid
+                
+                print("\(i), \(j)")
+            }
+        }
 	}
 	
 }
