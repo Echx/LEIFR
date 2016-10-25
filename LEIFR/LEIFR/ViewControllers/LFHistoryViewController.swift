@@ -31,11 +31,6 @@ class LFHistoryViewController: LFViewController {
     // MARK: basic configuration
     fileprivate func configureMap() {
         mapView.delegate = self
-        
-//        tileOverlay = MKTileOverlay(urlTemplate: "https://api.mapbox.com/styles/v1/echx/cit1xa01k00112wljpa9qu6dg/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWNoeCIsImEiOiJjaXBwZjhhZDcwM3RzZm1uYzVmM2E5MjhtIn0.Z3Qh-zpuvIf7KlVZLCRutA")
-        tileOverlay = LFBackgroundOverlay()
-        tileOverlay?.canReplaceMapContent = true
-        mapView.add(tileOverlay!)
     }
 }
 
@@ -113,12 +108,6 @@ extension LFHistoryViewController: LFRecordButtonDelegate {
 }
 
 extension LFHistoryViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        guard let tileOverlay = overlay as? MKTileOverlay else {
-            return MKTileOverlayRenderer()
-        }
 
-        return MKTileOverlayRenderer(tileOverlay: tileOverlay)
-    }
 }
 
