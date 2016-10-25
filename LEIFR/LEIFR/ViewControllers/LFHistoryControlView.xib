@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LFOverallViewController" customModule="LEIFR" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LFHistoryViewController" customModule="LEIFR" customModuleProvider="target">
             <connections>
                 <outlet property="recordButton" destination="xyR-I7-pI9" id="rzb-S5-fHo"/>
                 <outlet property="recordButtonContent" destination="15v-Vl-mYg" id="Oce-aj-qTF"/>
