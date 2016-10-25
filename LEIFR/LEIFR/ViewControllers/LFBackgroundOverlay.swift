@@ -12,7 +12,8 @@ class LFBackgroundOverlay: MKTileOverlay {
     override func url(forTilePath path: MKTileOverlayPath) -> URL {
         let fileName = "\(path.z)-\(path.x)-\(path.y)"
         
-        if path.z > 7 {
+        if path.z >= 7 {
+            // from 7 onwards we load from mapbox
             let url = URL(string: "https://api.mapbox.com/styles/v1/echx/cit1xa01k00112wljpa9qu6dg/tiles/256/\(path.z)/\(path.x)/\(path.y)?access_token=pk.eyJ1IjoiZWNoeCIsImEiOiJjaXBwZjhhZDcwM3RzZm1uYzVmM2E5MjhtIn0.Z3Qh-zpuvIf7KlVZLCRutA")!
             return url
         } else {
