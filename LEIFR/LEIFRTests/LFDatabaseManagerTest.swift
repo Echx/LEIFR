@@ -47,7 +47,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
     }
 	
-	func testDatabaseRetrievePoints() {
+	func testDatabaseRetrieveGeoJSON() {
 		print("")
 		let path = LFPath()
 		let latitudes: [Double]	    =	[ 1,  2,  3,  4,  5,  6,  7,  8]
@@ -63,7 +63,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		})
 		
 		let worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld)
-		self.databaseManager.getPointsInRegion(worldRegion, completion: {
+		self.databaseManager.getPointsGeoJSONInRegion(worldRegion, completion: {
 			geoJSON in
 			print("GEOJSON: ")
 			print("\(geoJSON)")
@@ -73,7 +73,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
 	}
-	
+    	
 	func testDatabaseAddingPath() {
 		print("")
 		let path = LFPath()

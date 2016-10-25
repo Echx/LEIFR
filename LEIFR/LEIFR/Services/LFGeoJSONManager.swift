@@ -1,5 +1,5 @@
 //
-//  LFGeoJSONWrapper.swift
+//  LFGeoJSONManager.swift
 //  LEIFR
 //
 //  Wrapping a general geoJSON data into a MapBox-reginizable format
@@ -10,7 +10,7 @@
 
 import UIKit
 
-class LFGeoJSONWrapper: NSObject {
+class LFGeoJSONManager: NSObject {
     class func wrap(geometry: String) -> String? {
         let wrappedResult = "{\"type\": \"Feature\", \"properties\": {}, \"geometry\":" + geometry + "}";
         let data = wrappedResult.data(using: .utf8)!
@@ -35,4 +35,22 @@ class LFGeoJSONWrapper: NSObject {
 		result.append("]}")
 		return result
 	}
+    
+    class func convertToCoordinates(geoJSON: [String]) -> [CLLocationCoordinate2D] {
+        var coordinates = [CLLocationCoordinate2DMake(1, 1)];
+        
+        for pointsString in geoJSON {
+            if let pointsData = pointsString.data(using: String.Encoding.utf8) {
+                if let pointsObject = try? JSONSerialization.jsonObject(with: pointsData, options: []) as? [String: AnyObject] {
+                    if let pointsArray = pointsObject!["coordinates"] as? [[Double]] {
+                        for point in pointsArray {
+                            coordinates.append(CLLocationCoordinate2DMake(point[0], point[1]))
+                        }
+                    }
+                }
+            }
+        }
+        
+        return coordinates
+    }
 }

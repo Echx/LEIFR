@@ -97,11 +97,25 @@ class LFDatabaseManager: NSObject {
 		}
 	}
     
-    func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping (([String]) -> Void)) {
+    func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping (([CLLocationCoordinate2D]) -> Void)) {
         self.getPointsInRegion(region, gridSize: 0.0, completion: completion)
     }
     
-    func getPointsInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion:@escaping (([String]) -> Void)) {
+    func getPointsInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion:@escaping (([CLLocationCoordinate2D]) -> Void)) {
+        self.getPointsGeoJSONInRegion(region, gridSize: gridSize) {
+            geoJSON in
+            
+            let coordinates = LFGeoJSONManager.convertToCoordinates(geoJSON: geoJSON)
+            completion(coordinates)
+        }
+    }
+
+	
+    func getPointsGeoJSONInRegion(_ region: MKCoordinateRegion, completion:@escaping (([String]) -> Void)) {
+        self.getPointsGeoJSONInRegion(region, gridSize: 0.0, completion: completion)
+    }
+    
+    func getPointsGeoJSONInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion:@escaping (([String]) -> Void)) {
 		asyncDatabaseQueue.async {
 			self.databaseQueue.inDatabase({
 				database in

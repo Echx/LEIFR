@@ -69,8 +69,8 @@
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
 		62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */; };
 		62BF06961DA6F02B00E6957E /* UIColor+LFCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */; };
-		62BF069D1DA6F49200E6957E /* LFGeoJSONWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */; };
-		62BF069F1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */; };
+		62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */; };
+		62BF069F1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */; };
 		62E6F9801DAD9D9600CD0988 /* LFRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6F97F1DAD9D9600CD0988 /* LFRecordButton.swift */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
@@ -564,8 +564,8 @@
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
 		62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+LFCustomization.swift"; path = "Extensions/UIColor+LFCustomization.swift"; sourceTree = "<group>"; };
-		62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONWrapper.swift; sourceTree = "<group>"; };
-		62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONWrapperTest.swift; sourceTree = "<group>"; };
+		62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManager.swift; sourceTree = "<group>"; };
+		62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManagerTest.swift; sourceTree = "<group>"; };
 		62E6F97F1DAD9D9600CD0988 /* LFRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFRecordButton.swift; path = LEIFR/ViewControllers/LFRecordButton.swift; sourceTree = SOURCE_ROOT; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -669,7 +669,7 @@
 				0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */,
 				0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */,
 				62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */,
-				62BF069E1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift */,
+				62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */,
 			);
 			path = LEIFRTests;
 			sourceTree = "<group>";
@@ -1477,7 +1477,7 @@
 			children = (
 				0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */,
 				62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */,
-				62BF069C1DA6F49200E6957E /* LFGeoJSONWrapper.swift */,
+				62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1824,7 +1824,7 @@
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */,
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
-				62BF069D1DA6F49200E6957E /* LFGeoJSONWrapper.swift in Sources */,
+				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
 				0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
@@ -1850,7 +1850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */,
-				62BF069F1DA6F6FE00E6957E /* LFGeoJSONWrapperTest.swift in Sources */,
+				62BF069F1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift in Sources */,
 				0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */,
 				62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */,
 			);
