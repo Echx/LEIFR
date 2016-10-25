@@ -67,7 +67,9 @@ class LFOverallViewController: LFViewController {
 }
 
 extension LFOverallViewController: MGLMapViewDelegate {
+	
     func mapViewRegionIsChanging(_ mapView: MGLMapView) {
+		
         if mapView.zoomLevel > 12 {
             if mapView.style().layer(withIdentifier: "lf-point-layer") == nil {
                 let source = MGLSource(sourceIdentifier: "symbol")!

@@ -14,7 +14,8 @@ class LFHistoryViewController: LFViewController {
     @IBOutlet weak var recordButton: LFRecordButton!
     @IBOutlet weak var recordButtonContent: UIView!
     
-    fileprivate var tileOverlay: MKTileOverlay?
+    fileprivate var overlay: MKOverlay?
+	fileprivate var overlayRenderer: LFGeoPointsOverlayRenderer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,24 @@ class LFHistoryViewController: LFViewController {
     // MARK: basic configuration
     fileprivate func configureMap() {
         mapView.delegate = self
+		
+		let overlay = LFGeoPointsOverlay()
+		self.mapView.add(overlay)
     }
+}
+
+extension LFHistoryViewController: MKMapViewDelegate {
+	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+		if overlay is LFGeoPointsOverlay {
+			if self.overlayRenderer == nil {
+				self.overlayRenderer = LFGeoPointsOverlayRenderer(overlay: overlay)
+			}
+			
+			return self.overlayRenderer
+		} else {
+			return MKOverlayRenderer(overlay: overlay)
+		}
+	}
 }
 
 
@@ -106,8 +124,3 @@ extension LFHistoryViewController: LFRecordButtonDelegate {
         // TODO animation
     }
 }
-
-extension LFHistoryViewController: MKMapViewDelegate {
-
-}
-
