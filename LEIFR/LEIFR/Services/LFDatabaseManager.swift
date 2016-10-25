@@ -96,7 +96,7 @@ class LFDatabaseManager: NSObject {
 			})
 		}
 	}
-	
+    
     func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping (([String]) -> Void)) {
         self.getPointsInRegion(region, gridSize: 0.0, completion: completion)
     }
@@ -114,16 +114,17 @@ class LFDatabaseManager: NSObject {
 				let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
 				let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
 				
-				let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
-				var array = [String]()
-				
-				while (results.next()) {
-					if results.hasAnotherRow() {
-						if let geoJSON = results.string(forColumnIndex: 1) {
-							array.append(geoJSON)
-						}
-					}
-				}
+                var array = [String]()
+                
+                if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+                    while (results.next()) {
+                        if results.hasAnotherRow() {
+                            if let geoJSON = results.string(forColumnIndex: 1) {
+                                array.append(geoJSON)
+                            }
+                        }
+                    }
+                }
 				
 				DispatchQueue.main.async {
 					completion(array)
