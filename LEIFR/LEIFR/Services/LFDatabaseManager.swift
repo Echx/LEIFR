@@ -12,8 +12,8 @@ import wkb_ios
 
 class LFDatabaseManager: NSObject {
 	fileprivate static let manager = LFDatabaseManager()
-	fileprivate var asyncDatabaseQueue = DispatchQueue(label: "FMDB_ACCESS")
-	fileprivate var databaseQueue: FMDatabaseQueue!
+	var asyncDatabaseQueue = DispatchQueue(label: "FMDB_ACCESS")
+	var databaseQueue: FMDatabaseQueue!
 	var database: FMDatabase!
 	
 	class func sharedManager() -> LFDatabaseManager {
@@ -113,7 +113,7 @@ class LFDatabaseManager: NSObject {
     func getPointsGeoJSONInRegion(_ region: MKCoordinateRegion, completion:@escaping (([String]) -> Void)) {
         self.getPointsGeoJSONInRegion(region, gridSize: 0.0, completion: completion)
     }
-    
+	
     func getPointsGeoJSONInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion:@escaping (([String]) -> Void)) {
 		asyncDatabaseQueue.async {
 			self.databaseQueue.inDatabase({

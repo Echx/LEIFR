@@ -17,6 +17,7 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	
 	override func canDraw(_ mapRect: MKMapRect, zoomScale: MKZoomScale) -> Bool {
+		return true
 		let key = self.cacheKey(for: mapRect, zoomScale: zoomScale)
 		if let _ = cache[key] {
 			return true
@@ -38,11 +39,46 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
 		let key = self.cacheKey(for: mapRect, zoomScale: zoomScale)
-		var cachedPoints: [CGPoint]?
+		let manager = LFDatabaseManager.sharedManager()
+		let region = MKCoordinateRegionForMapRect(mapRect)
+		var coordinates = [CLLocationCoordinate2D]()
+		let gridSize = self.gridSize(for: zoomScale)
 		
-		cacheAccessQueue.sync {
-			cachedPoints = self.cache[key]
+		manager.asyncDatabaseQueue.sync {
+			manager.databaseQueue.inDatabase({
+				database in
+				let xMin = region.center.longitude - region.span.longitudeDelta
+				let yMin = region.center.latitude - region.span.latitudeDelta
+				let xMax = region.center.longitude + region.span.longitudeDelta
+				let yMax = region.center.latitude + region.span.latitudeDelta
+				
+				let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
+				let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
+				let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
+				
+				var array = [String]()
+				
+				if let results = manager.database.executeQuery(querySQL, withArgumentsIn: nil) {
+					while (results.next()) {
+						if results.hasAnotherRow() {
+							if let geoJSON = results.string(forColumnIndex: 1) {
+								array.append(geoJSON)
+							}
+						}
+					}
+				}
+				
+				coordinates = LFGeoJSONManager.convertToCoordinates(geoJSON: array)
+			})
 		}
+		
+		var cachedPoints: [CGPoint]?
+
+//		cacheAccessQueue.sync {
+//			cachedPoints = self.cache[key]
+//		}
+		
+		cachedPoints = coordinates.map({ return self.point(for: MKMapPointForCoordinate($0)) })
 		
 		if let points = cachedPoints {
 			let gridSize = self.gridSizeDrawn(for: zoomScale)
