@@ -10,54 +10,63 @@ import UIKit
 
 class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
-	var gridSize: CGFloat = 10000
 	var filledPercentage: CGFloat = 0.9
 	
+	fileprivate var cache = [String: [CGPoint]]()
+	fileprivate var cacheAccessQueue = DispatchQueue(label: "CACHE_QUEUE")
+	
+	
 	override func canDraw(_ mapRect: MKMapRect, zoomScale: MKZoomScale) -> Bool {
-		return true
+		let key = self.cacheKey(for: mapRect, zoomScale: zoomScale)
+		if let _ = cache[key] {
+			return true
+		} else {
+			let region = MKCoordinateRegionForMapRect(mapRect)
+			let gridSize = self.gridSize(for: zoomScale)
+			LFDatabaseManager.sharedManager().getPointsInRegion(region, gridSize: gridSize, completion: {
+				coordinates in
+				let points = coordinates.map({ return self.point(for: MKMapPointForCoordinate($0)) })
+				self.cacheAccessQueue.async {
+					self.cache[key] = points
+					self.setNeedsDisplayIn(mapRect, zoomScale: zoomScale)
+				}
+			})
+			
+			return false
+		}
 	}
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
-        let databaseManager = LFDatabaseManager.sharedManager()
+		let key = self.cacheKey(for: mapRect, zoomScale: zoomScale)
+		var cachedPoints: [CGPoint]?
 		
-		gridSize = 1 / zoomScale * 25
+		cacheAccessQueue.sync {
+			cachedPoints = self.cache[key]
+		}
 		
-		let cgRect = rect(for: mapRect)
-		context.setFillColor(red: 1, green: 1, blue: 1, alpha: 0.2)
-		
-		let xNumberOfGrid = Int(ceil(cgRect.width / gridSize)) * 2
-		let yNumberOfGrid = Int(ceil(cgRect.width) / gridSize) * 2
-		let minX = CGFloat(Int(cgRect.minX) / Int(gridSize) * Int(gridSize))
-		let minY = CGFloat(Int(cgRect.minY) / Int(gridSize) * Int(gridSize))
-		
-		for i in 0..<xNumberOfGrid {
-			for j in 0..<yNumberOfGrid {
-				let x = CGFloat(i) * gridSize + minX
-				let y = CGFloat(j) * gridSize + minY
-				let size = gridSize * filledPercentage
-				let rect = CGRect(x: x, y: y, width: size, height: size)
+		if let points = cachedPoints {
+			let gridSize = self.gridSizeDrawn(for: zoomScale)
+			context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+			for point in points {
+				let rect = CGRect(x: point.x - gridSize/2, y: point.y - gridSize/2, width: gridSize, height: gridSize)
 				context.fill(rect)
 			}
+			self.cacheAccessQueue.async {
+				self.cache.removeValue(forKey: key)
+			}
 		}
-        
-        databaseManager.getPointsInRegion(MKCoordinateRegionForMapRect(mapRect)) {
-            coordinates in
-            
-            // has some bug here, only enter once
-            let region = MKCoordinateRegionForMapRect(mapRect)
-            let minLong = region.center.longitude - region.span.longitudeDelta / 2
-            let maxLong = region.center.longitude + region.span.longitudeDelta / 2
-            let minLat = region.center.latitude - region.span.latitudeDelta / 2
-            let maxLat = region.center.latitude + region.span.latitudeDelta / 2
-
-            print(region.span.latitudeDelta)
-            for coordinate in coordinates {
-                let i = Int((coordinate.longitude - minLong) / region.span.longitudeDelta) * xNumberOfGrid
-                let j = Int((coordinate.latitude - minLat) / region.span.latitudeDelta) * yNumberOfGrid
-                
-                print("\(i), \(j)")
-            }
-        }
+	}
+	
+	fileprivate func cacheKey(for mapRect: MKMapRect, zoomScale: MKZoomScale) -> String {
+		return "\(mapRect), \(zoomScale)"
+	}
+	
+	fileprivate func gridSize(for zoomScale: MKZoomScale) -> Double {
+		return 1 / Double(zoomScale) / 20000
+	}
+	
+	fileprivate func gridSizeDrawn(for zoomScale: MKZoomScale) -> CGFloat {
+		return 1 / zoomScale * 30
 	}
 	
 }

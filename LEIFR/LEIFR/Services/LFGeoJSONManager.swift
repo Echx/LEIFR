@@ -44,7 +44,7 @@ class LFGeoJSONManager: NSObject {
                 if let pointsObject = try? JSONSerialization.jsonObject(with: pointsData, options: []) as? [String: AnyObject] {
                     if let pointsArray = pointsObject!["coordinates"] as? [[Double]] {
                         for point in pointsArray {
-                            coordinates.append(CLLocationCoordinate2DMake(point[0], point[1]))
+                            coordinates.append(CLLocationCoordinate2DMake(point[1], point[0]))
                         }
                     }
                 }
