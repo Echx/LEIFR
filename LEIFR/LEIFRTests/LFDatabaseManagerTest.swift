@@ -121,8 +121,8 @@ class LFDatabaseManagerTest: XCTestCase {
             paths in
             
             fetchResponseReceived = true
-//            let resultJSON = "{\"type\":\"MultiPoint\",\"coordinates\":[[11,1,21],[12,2,22],[13,3,23],[14,4,24],[15,5,25],[16,6,26],[17,7,27],[18,8,28]]}"
-//            XCTAssertEqual(geoJSON, [resultJSON], "Path not fetched correctly")
+            XCTAssertEqual(paths.count, 2, "Incorrect path number")
+            XCTAssertEqual(paths[1].WKTString(), "LINESTRINGZM(11 1 21 0, 18 8 28 0)", "Incorrect path string")
         })
         
         while ((!saveResponseReceived || !fetchResponseReceived) && timeOutDate.timeIntervalSinceNow > 0) {
