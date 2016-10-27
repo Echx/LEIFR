@@ -50,24 +50,45 @@ class LFDatabaseManagerTest: XCTestCase {
 	func testDatabaseRetrieveGeoJSON() {
 		print("")
 		let path = LFPath()
-		let latitudes: [Double]	    =	[ 1,  2,  3,  4,  5,  6,  7,  8]
-		let longitudes: [Double]	=	[11, 12, 13, 14, 15, 16, 17, 18]
-		let altitudes: [Double]	    =	[21, 22, 23, 24, 25, 26, 27, 28]
+		let latitudes: [Double] = [1, 2, 3, 4, 5, 6, 7, 8]
+		let longitudes: [Double] = [11, 12, 13, 14, 15, 16, 17, 18]
+		let altitudes: [Double] = [21, 22, 23, 24, 25, 26, 27, 28]
 		
 		for i in 0..<latitudes.count {
 			path.addPoint(latitude: latitudes[i], longitude: longitudes[i], altitude: altitudes[i])
 		}
-		
+        
+        let timeOutDate = Date(timeIntervalSinceNow: 5)
+        var saveResponseReceived = false
+        var fetchResponseReceived = false
+        
 		self.databaseManager.savePath(path, completion: {
 			success in
+            
+            saveResponseReceived = true
 		})
 		
 		let worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld)
 		self.databaseManager.getPointsGeoJSONInRegion(worldRegion, completion: {
 			geoJSON in
-			print("GEOJSON: ")
-			print("\(geoJSON)")
+			
+            fetchResponseReceived = true
+            let resultJSON = "{\"type\":\"MultiPoint\",\"coordinates\":[[11,1,21],[12,2,22],[13,3,23],[14,4,24],[15,5,25],[16,6,26],[17,7,27],[18,8,28]]}"
+            XCTAssertEqual(geoJSON, [resultJSON], "Path not fetched correctly")
 		})
+        
+        while ((!saveResponseReceived || !fetchResponseReceived) && timeOutDate.timeIntervalSinceNow > 0) {
+            CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 0.01, true)
+        }
+        
+        if (!saveResponseReceived) {
+            XCTFail("Saving points timed out")
+        }
+        
+        if (!fetchResponseReceived) {
+            XCTFail("Fetching points timed out")
+        }
+
 		
 		_ = self.databaseManager.removeDatabase("test")
 		

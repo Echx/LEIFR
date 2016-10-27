@@ -53,8 +53,6 @@
 		0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB387E1D85FF66002C0EF0 /* LFPath.swift */; };
 		0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */; };
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
-		0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
-		0CBB38871D861028002C0EF0 /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB38821D86027C002C0EF0 /* default.sqlite */; };
 		0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC333EC1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift */; };
 		0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */; };
 		0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */; };
@@ -63,6 +61,7 @@
 		0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC8B701DA6F9320084DD6F /* MapKit.framework */; };
 		62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62054EC91DAD697400FEC851 /* LFConstant.swift */; };
 		62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */; };
+		623A63521DC2098100F80E7F /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 623A63511DC2098100F80E7F /* default.sqlite */; };
 		623EAEC31DA6D005004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -548,7 +547,6 @@
 		0CBB38781D85FCE7002C0EF0 /* LFOverallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFOverallViewController.swift; sourceTree = "<group>"; };
 		0CBB387E1D85FF66002C0EF0 /* LFPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPath.swift; sourceTree = "<group>"; };
 		0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManager.swift; sourceTree = "<group>"; };
-		0CBB38821D86027C002C0EF0 /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManagerTest.swift; sourceTree = "<group>"; };
 		0CC333EC1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoPointsOverlayRenderer.swift; sourceTree = "<group>"; };
 		0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabBaseController.swift; sourceTree = "<group>"; };
@@ -560,6 +558,7 @@
 		58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
 		62054EC91DAD697400FEC851 /* LFConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFConstant.swift; path = Extensions/LFConstant.swift; sourceTree = "<group>"; };
 		62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryViewController.swift; sourceTree = "<group>"; };
+		623A63511DC2098100F80E7F /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
@@ -1496,8 +1495,8 @@
 		0CBB387C1D85FD36002C0EF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				623A63511DC2098100F80E7F /* default.sqlite */,
 				0C42AF241DAD47CF00849A5C /* Fonts */,
-				0CBB38821D86027C002C0EF0 /* default.sqlite */,
 				0CBB30811D85F413002C0EF0 /* AppDelegate.swift */,
 				0CBB367E1D85F9A3002C0EF0 /* LEIFR-Bridging-Header.h */,
 				0CBB308D1D85F413002C0EF0 /* Info.plist */,
@@ -1690,7 +1689,6 @@
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
 				0CD4AD901DAD856800081876 /* LFHistoryControlView.xib in Resources */,
 				0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */,
-				0CBB38871D861028002C0EF0 /* default.sqlite in Resources */,
 				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
 				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
 				0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */,
@@ -1698,6 +1696,7 @@
 				0CBB38641D85F9BD002C0EF0 /* MinimalEdgeRing.inl in Resources */,
 				0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */,
 				0CBB38551D85F9BD002C0EF0 /* Coordinate.inl in Resources */,
+				623A63521DC2098100F80E7F /* default.sqlite in Resources */,
 				0CBB38541D85F9BD002C0EF0 /* ConvexHull.inl in Resources */,
 				62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */,
 				0CBB385E1D85F9BD002C0EF0 /* DirectedEdge.inl in Resources */,
@@ -1709,7 +1708,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CBB38861D860F6E002C0EF0 /* default.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
