@@ -132,7 +132,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		self.databaseManager.getPathsInRegion(worldRegion, completion: {
 			paths in
-			XCTAssertEqual(paths[0].WKTString(), "LINESTRINGZM(-122.24223433999996928 37.43463237000000512 0 0, -122.03875936999999488 37.33450378999999488 0 0)", "Path not identical")
+			XCTAssertEqual(paths[0].WKTString(), "LINESTRINGZM(11 1 21 0, 18 8 28 0)", "Path not identical")
 			response2Arrived = true
 		})
 		
