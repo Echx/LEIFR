@@ -189,4 +189,49 @@ class LFDatabaseManager: NSObject {
 			completion(paths)
 		})
 	}
+    
+    func getSnappedPathsInRegion(_ region: MKCoordinateRegion, completion: @escaping (([LFPath]) -> Void)) {
+        self.getSnappedPathsInRegion(region, gridSize: 0.0, completion: completion)
+    }
+    
+    func getSnappedPathsInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion: @escaping (([LFPath]) -> Void)) {
+        databaseQueue.inDatabase({
+            database in
+            let xMin = region.center.longitude - region.span.longitudeDelta
+            let yMin = region.center.latitude - region.span.latitudeDelta
+            let xMax = region.center.longitude + region.span.longitudeDelta
+            let yMax = region.center.latitude + region.span.latitudeDelta
+            
+            let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
+            let select = "SELECT track_id, AsBinary(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize))) FROM tracks "
+            let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
+            
+            let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
+            
+            var paths = [LFPath]()
+            
+            while (results.next()) {
+                if results.hasAnotherRow() {
+                    if let data = results.data(forColumnIndex: 1) {
+                        let reader = WKBByteReader(data: data)
+                        reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
+                        let geometry = WKBGeometryReader.readGeometry(with: reader)
+                        
+                        if let lineString = geometry as? WKBLineString {
+                            let path = LFPath(lineString: lineString)
+                            paths.append(path)
+                        } else if let multiLineString = geometry as? WKBMultiLineString {
+                            print("multiline")
+                            for lineString in multiLineString.getLineStrings() {
+                                let path = LFPath(lineString: lineString as! WKBLineString)
+                                paths.append(path)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            completion(paths)
+        })
+    }
 }
