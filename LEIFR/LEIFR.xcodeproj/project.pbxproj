@@ -65,6 +65,7 @@
 		62027DCE1DC3B55A00B35F76 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62027DCB1DC3B55A00B35F76 /* Realm.framework */; };
 		62027DCF1DC3B55A00B35F76 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62027DCB1DC3B55A00B35F76 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */; };
+		62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */; };
 		62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62054EC91DAD697400FEC851 /* LFConstant.swift */; };
 		62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */; };
 		623A63521DC2098100F80E7F /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 623A63511DC2098100F80E7F /* default.sqlite */; };
@@ -567,6 +568,7 @@
 		62027DCA1DC3B55A00B35F76 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		62027DCB1DC3B55A00B35F76 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedLevel.swift; sourceTree = "<group>"; };
+		62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedDatabaseManager.swift; sourceTree = "<group>"; };
 		62054EC91DAD697400FEC851 /* LFConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFConstant.swift; path = Extensions/LFConstant.swift; sourceTree = "<group>"; };
 		62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryViewController.swift; sourceTree = "<group>"; };
 		623A63511DC2098100F80E7F /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
@@ -1491,6 +1493,7 @@
 				0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */,
 				62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */,
 				62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */,
+				62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1840,6 +1843,7 @@
 				62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */,
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
+				62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
 				0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
