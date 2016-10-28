@@ -22,16 +22,24 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 			return true
 		} else {
 			let region = MKCoordinateRegionForMapRect(mapRect)
-			let gridSize = self.gridSize(for: zoomScale)
-			LFDatabaseManager.sharedManager().getPointsInRegion(region, gridSize: gridSize, completion: {
-				coordinates in
-				let points = coordinates.map({ return self.point(for: MKMapPointForCoordinate($0)) })
-				self.cacheAccessQueue.async {
-					self.cache[key] = points
-					self.setNeedsDisplayIn(mapRect, zoomScale: zoomScale)
-				}
-			})
-			
+//			let gridSize = self.gridSize(for: zoomScale)
+//			LFDatabaseManager.sharedManager().getPointsInRegion(region, gridSize: gridSize, completion: {
+//				coordinates in
+//				let points = coordinates.map({ return self.point(for: MKMapPointForCoordinate($0)) })
+//				self.cacheAccessQueue.async {
+//					self.cache[key] = points
+//					self.setNeedsDisplayIn(mapRect, zoomScale: zoomScale)
+//				}
+//			})
+            
+            DispatchQueue.main.async {
+                let points = LFCachedDatabaseManager.sharedManager().getPointsInRegion(region, zoomScale: zoomScale)
+                self.cacheAccessQueue.async {
+                    self.cache[key] = points.map{self.point(for: $0)}
+                    self.setNeedsDisplayIn(mapRect, zoomScale: zoomScale)
+                }
+            }
+            
 			return false
 		}
 	}
