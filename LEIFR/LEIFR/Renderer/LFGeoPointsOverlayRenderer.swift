@@ -51,9 +51,6 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 				let rect = CGRect(x: point.x - gridSize/2, y: point.y - gridSize/2, width: gridSize, height: gridSize)
 				context.fill(rect)
 			}
-			self.cacheAccessQueue.async {
-				self.cache.removeValue(forKey: key)
-			}
 		}
 	}
 	
