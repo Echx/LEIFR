@@ -62,7 +62,6 @@
 		62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62054EC91DAD697400FEC851 /* LFConstant.swift */; };
 		62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */; };
 		623A63521DC2098100F80E7F /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 623A63511DC2098100F80E7F /* default.sqlite */; };
-		623EAEC31DA6D005004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
@@ -592,7 +591,6 @@
 				0CBB38661D85F9BD002C0EF0 /* libgeos_c.a in Frameworks */,
 				0CBB386A1D85F9BD002C0EF0 /* mod_spatialite.a in Frameworks */,
 				0CBB38671D85F9BD002C0EF0 /* libproj.a in Frameworks */,
-				623EAEC31DA6D005004B1C76 /* Mapbox.framework in Frameworks */,
 				6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1991,6 +1989,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD554A7B469F9393D5BD63B8 /* Pods-LEIFR.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2023,6 +2022,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
