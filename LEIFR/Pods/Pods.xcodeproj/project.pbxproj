@@ -1,1202 +1,3782 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0119E5F91EEE12D797DE50C05BC541DD /* WKBGeometryJSONCompatible.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AC5C7FCBD5CAEE5CCA58C2526AD77EF /* WKBGeometryJSONCompatible.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0339F18E27E0DDDA9019DAB4ADB1EFBE /* WKBPolyhedralSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = 234F0494C5644FAEE63EF0CD4E039B37 /* WKBPolyhedralSurface.m */; };
-		08D9816FFA8F3D720D87F81DD5EA00EA /* WKBTriangle.h in Headers */ = {isa = PBXBuildFile; fileRef = AF5A6CA4BCEBE1AA942142AF58E2054E /* WKBTriangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AC08E78C47F0C83321F7ED79990C170 /* FontBlaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD147FCC1E6D00D2BDC721992E77932 /* FontBlaster.swift */; };
-		0F61019543C9C3920604492BC8186AED /* WKBMultiLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = D8369F4BBAD088DB008A12349198C2E0 /* WKBMultiLineString.m */; };
-		15203D4531E2C65E0E36D5B761EBC32E /* WKB.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 015E786267FA647031034BD9950A0E52 /* WKB.bundle */; };
-		1AA60390CB6669473D0440B49F911CC7 /* wkb-ios-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 541C8DBBACDBD5820A7E6C10C3AE0FD2 /* wkb-ios-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B611DC0B3CAB2D8F260FEEBECF1F745 /* WKBTIN.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D78ED0653ECC0818421A88733A826 /* WKBTIN.m */; };
-		1D6992D2959CD65312A71C59C1099FC1 /* WKBTIN.h in Headers */ = {isa = PBXBuildFile; fileRef = 640B463D515C96BC2772966E48CE5B5D /* WKBTIN.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E553F78959D91B971B5D74B9902A0A1 /* WKBMultiPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 51887B574FDC5D09EDF55DBCAE0846AE /* WKBMultiPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20E5E23D3706E0EF6F31E26A35E8417C /* WKBByteWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BB0F62DF2152DF61393594DB2E8DD /* WKBByteWriter.m */; };
-		263DC0B10E89C8F148776688763A8EB4 /* WKBTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F50D5A3ED31B04B97280678FA6B5489 /* WKBTriangle.m */; };
-		267F6372BAA7491708B74764C60C9FFB /* WKBCompoundCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E03673BA19518F23940897053A94E4 /* WKBCompoundCurve.m */; };
-		2835455C131179E9031660A07B701817 /* WKBByteReader.h in Headers */ = {isa = PBXBuildFile; fileRef = EEA84E7D28AFBAC3A5C01020B86EE3D0 /* WKBByteReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28B1FD5035F7E5EAE87A9A8A3CF085EB /* WKBGeometryTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = C1B57996EEF5A3153F27E81B843473CB /* WKBGeometryTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28E9313C84C83BE3196C137D905D0763 /* WKBGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EF63381B5243C86ABC54A9A60D8E25 /* WKBGeometry.m */; };
-		2EB721E7C6F5260B3C3C78D1AC870E2C /* Pods-LEIFR-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8D01DC7AE819AD24E66C80D2FDCD5 /* Pods-LEIFR-dummy.m */; };
-		2F20DFDF0F15E8317E7FFDAAC721EE16 /* WKBGeometryWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6256690D737C23C682DAE077351EBC6F /* WKBGeometryWriter.m */; };
-		35D22F43FB002CC5FCB5FDB2A3BC879D /* wkb-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBFCE04709F9AC1D82DE564483A4727 /* wkb-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C7855C072057CCCD9C909FC4DB91A12 /* WKBSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FC11E10D89274BB0717C2C45DBA927F /* WKBSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F1537EEC15B9670D434E6C89EE8B5D6 /* WKBMultiCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = B6F5AC0D319DBF1D8858D2B066A0D966 /* WKBMultiCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FAD89F3CA12BACC011DF61361C46C2E /* WKBGeometryTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3AD5BE530DE39A169055F568E571C /* WKBGeometryTypes.m */; };
-		44716DC7754D74A8D7EC618E6B1A915D /* WKBGeometryEnvelopeBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = E6F0FBEB70717272B5114B182F51E461 /* WKBGeometryEnvelopeBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47778C567E53FDC764A55104A98B3FD8 /* WKBGeometryJSONCompatible.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF941CF005557D67265AC8A291F1416 /* WKBGeometryJSONCompatible.m */; };
-		55C7823814470B80A23514B3F0FC5070 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		56042F2A8596E2F8D5DD03A81356894F /* WKBMultiPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD9CA4918BE4F20A935D0590E80542 /* WKBMultiPoint.m */; };
-		60BE57BF83413DF9A0111E10E5AC3C45 /* WKBCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 2869DE446A1195E506E6CA16136EF10E /* WKBCurve.m */; };
-		61CFCA8F163DC1311B55784E59A22356 /* WKBGeometryPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4103171B6834402FE3FE27569D3C5 /* WKBGeometryPrinter.m */; };
-		6457051C54BFCEDAB1085780580E8DE8 /* WKBGeometryReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 070C0AA6891CCE7F183736372D2F7B31 /* WKBGeometryReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6521E8A2B71C5DD8703824C97797ACF9 /* WKBGeometryEnvelopeBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C441CDA8FB1D76A397B1A3F1A9D9D90 /* WKBGeometryEnvelopeBuilder.m */; };
-		6C6E55951C388D540343B2AF8E491217 /* WKBCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = BA990F1743425E5D80DF698A4F94B0D4 /* WKBCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E520C7C33C636FCAFB3280EA448CD9F /* FontBlaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86031E70BDE23BFAC00385C7E8F61ACD /* FontBlaster-dummy.m */; };
-		74BCF85BDA186B8A2A1C909B3BFA040B /* WKBGeometryCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F8A52AC84B61919A0EC36677C32602 /* WKBGeometryCollection.m */; };
-		77C5D34F53ED1007C35BA7FDFD4D9008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		7BB572B8751B6703906C96B60F6B675B /* wkb_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C4347853D942D8D7D9508DD70D3271 /* wkb_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C61B55A7EC85FB58C8F207C7F07B16E /* WKBMultiCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FD6133C6F0CF2E1E2924B046ADEA5 /* WKBMultiCurve.m */; };
-		7D36E2FAD850EC8745D1FA8FE2E45F0C /* Pods-LEIFR-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91CCCE950318B1910BD5ED0595D0038A /* Pods-LEIFR-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA0D68B0CDD176E56409C46130C5D05 /* WKBSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F02684F07C67766AEA349A479D455F /* WKBSurface.m */; };
-		8C8771D5F90CA2346C374821CF74B76C /* wkb-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A249248578F479D130E4F16C305F89DB /* wkb-ios-dummy.m */; };
-		8C935B3E457307323B46E06D0B00CFF2 /* WKBCircularString.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D8F754909DFEB2BA8DEFFD7CCC7837 /* WKBCircularString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		93DB45E6D405C975C504C81E22CD8107 /* Pods-LEIFRTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEA34CD83F99F52C6A908B8EEF530F /* Pods-LEIFRTests-dummy.m */; };
-		9A4BD202B6448161298DA61882D8B6F8 /* WKBPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BD84B037E7B26272FCB81906D1E673 /* WKBPoint.m */; };
-		9B21B340D90B175332A8DA256486437B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		A30F14D1BE679865B93899D6E257E481 /* WKBGeometryPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B595D1CA7B77E7E95739CF55220272 /* WKBGeometryPrinter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9A06AEC9A6416CA2AE5C0B94082D172 /* WKBCurvePolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = C388127812F50EA6A215F2420D3EC449 /* WKBCurvePolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AFD6106BFB7767EBC50BD7A2E0252BCD /* WKBMultiPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A94011EABBA84D2CA9DFBF22917EE8 /* WKBMultiPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2AAE756D4B414946E48C8A39E1D1702 /* WKBGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = BE96300BB6D09CB85810382BBE87AA38 /* WKBGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4A6AC2B6A7542ED6ECC1B7FC4A9D5EE /* WKBPolyhedralSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9DED1DB03D6CF38AD2DC57EAD5DDCB /* WKBPolyhedralSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7205F27B9CAE5D0C16A2937E433BF55 /* WKBCurvePolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = F5725B74D49798B61CE786908BD4FD57 /* WKBCurvePolygon.m */; };
-		B98B435D45A8D92850680DE1A93E42F8 /* WKBPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2383F83C9A02530C369EDCAC1F701F80 /* WKBPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BAF19DEEB194F378B509A7CF0F992A91 /* WKBCompoundCurve.h in Headers */ = {isa = PBXBuildFile; fileRef = 882353D4BB6C78610C60C8A38F291B47 /* WKBCompoundCurve.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C429FCFCB1D4C4411748881286F02438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		CD4282711AE2D1CA488245B6FD07D069 /* WKBMultiSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B21790FF1221559CF9E3185C5141161 /* WKBMultiSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFC884629D9A44D9557166E71DAF8718 /* WKBMultiSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE217D8F8DABF93E4AD04327DFF8833 /* WKBMultiSurface.m */; };
-		D0DCAC73A2C53264220D3836E83C59FE /* WKBPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 807D7F2B200F9A0922182FFFFC77C646 /* WKBPolygon.m */; };
-		D2FAB5F2A6BC4FF57EC4CC96596B3C93 /* WKBGeometryReader.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB36EF106CEE2F343B32FCB6F7F4368 /* WKBGeometryReader.m */; };
-		D371515A6EE5824F932D6FDEBECAB30E /* WKBGeometryCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = CBE39BE82FD1BEDAB6D0B4046C32C350 /* WKBGeometryCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB80BBD267F321E62117FEEC48EDBA34 /* WKBPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69A3A106DECE7B951471A958A0BAC7 /* WKBPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBF3286DD4F030E2C36A187DAE48309A /* WKBGeometryWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = E12BE88F2875CE4309A8FBFCE7AD4807 /* WKBGeometryWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBFBD3502B19EBA9C6CAAA6D365044DF /* WKBMultiPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DD858A732819FA162B7294D8A34F01 /* WKBMultiPolygon.m */; };
-		DF7A245849F6FF66633E2027CE9EC28C /* WKBGeometryEnvelope.m in Sources */ = {isa = PBXBuildFile; fileRef = D70462159328ACF34C098204C897121C /* WKBGeometryEnvelope.m */; };
-		E29FC638CC71487D3FD0DFF67EE453E7 /* WKBMultiLineString.h in Headers */ = {isa = PBXBuildFile; fileRef = C8491847A2E933580EF569FDA3974229 /* WKBMultiLineString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC16BA6589803B36CE3A93704DC32688 /* WKBGeometryEnvelope.h in Headers */ = {isa = PBXBuildFile; fileRef = E2AD814A6684C0795AF9BB4344D3E3C9 /* WKBGeometryEnvelope.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFBDC5722335A3D4836D5621980113B4 /* WKBLineString.h in Headers */ = {isa = PBXBuildFile; fileRef = 032AD16C2ED6EF47975E00E9875FD7A2 /* WKBLineString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F21BDBE7B3F32AC896CE9322924096A4 /* WKBByteWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = A719FDD8C0F89472F1501D7EF96BB791 /* WKBByteWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F646CA038F27C8F20EA9E90634B110FB /* WKBCircularString.m in Sources */ = {isa = PBXBuildFile; fileRef = 13024C242F28920D2286BD473684357C /* WKBCircularString.m */; };
-		F7FC0DBF2EC96C21D45D8BD9E64AA9B5 /* Pods-LEIFRTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D855D2EC101DAA04E716532D7D973F4 /* Pods-LEIFRTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F80696FD681728F48215B9C24680C042 /* WKBByteReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF29AC6DECD5BF0E57639658A868EA0 /* WKBByteReader.m */; };
-		F872E25F147E83FB1AFA05F490F1EAE7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6724342980B211CFC6AAFD9FFD0F0D00 /* Info.plist */; };
-		FCF4E6E24C7F6F2C0E48337B6CCE5891 /* FontBlaster-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44CE0A56B4D84875B14C3999E3449376 /* FontBlaster-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE590C764FBB49FA03A25859C2C2B470 /* WKBLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8EFEF172F08A6B5139FA138835B49E /* WKBLineString.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		78E9E893895F0B6096A73A85D7BCA041 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 91E2D8A898CD7A3899E087527A7399AC;
-			remoteInfo = "wkb-ios";
-		};
-		83962C69271D5179FBD7E064FE93A123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D4E674DD9D88022C39F9427C0E34D5BF;
-			remoteInfo = FontBlaster;
-		};
-		BEA8CF294502E743046D3CB06BDCEDEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1120A328EE771D19EBEC434348C747B9;
-			remoteInfo = "wkb-ios-WKB";
-		};
-		EB896819F315296DCDF4E71733ACB143 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 91E2D8A898CD7A3899E087527A7399AC;
-			remoteInfo = "wkb-ios";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		015E786267FA647031034BD9950A0E52 /* WKB.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKB.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		01F02684F07C67766AEA349A479D455F /* WKBSurface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBSurface.m; path = "wkb-ios/geom/WKBSurface.m"; sourceTree = "<group>"; };
-		032AD16C2ED6EF47975E00E9875FD7A2 /* WKBLineString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBLineString.h; path = "wkb-ios/geom/WKBLineString.h"; sourceTree = "<group>"; };
-		070C0AA6891CCE7F183736372D2F7B31 /* WKBGeometryReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryReader.h; path = "wkb-ios/io/WKBGeometryReader.h"; sourceTree = "<group>"; };
-		0BBEA34CD83F99F52C6A908B8EEF530F /* Pods-LEIFRTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LEIFRTests-dummy.m"; sourceTree = "<group>"; };
-		0C4A1525752DC9E765704B63EB249E0E /* Pods-LEIFR-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFR-resources.sh"; sourceTree = "<group>"; };
-		0C8EFEF172F08A6B5139FA138835B49E /* WKBLineString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBLineString.m; path = "wkb-ios/geom/WKBLineString.m"; sourceTree = "<group>"; };
-		13024C242F28920D2286BD473684357C /* WKBCircularString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCircularString.m; path = "wkb-ios/geom/WKBCircularString.m"; sourceTree = "<group>"; };
-		186FD6133C6F0CF2E1E2924B046ADEA5 /* WKBMultiCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiCurve.m; path = "wkb-ios/geom/WKBMultiCurve.m"; sourceTree = "<group>"; };
-		1A5D78ED0653ECC0818421A88733A826 /* WKBTIN.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBTIN.m; path = "wkb-ios/geom/WKBTIN.m"; sourceTree = "<group>"; };
-		1F50D5A3ED31B04B97280678FA6B5489 /* WKBTriangle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBTriangle.m; path = "wkb-ios/geom/WKBTriangle.m"; sourceTree = "<group>"; };
-		20815FEA4D2F16DE1E99664CED5B04FA /* Pods-LEIFR-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LEIFR-acknowledgements.markdown"; sourceTree = "<group>"; };
-		215ACEF27A81A3934A916090A1BDEF4B /* wkb-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wkb-ios-prefix.pch"; sourceTree = "<group>"; };
-		234F0494C5644FAEE63EF0CD4E039B37 /* WKBPolyhedralSurface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBPolyhedralSurface.m; path = "wkb-ios/geom/WKBPolyhedralSurface.m"; sourceTree = "<group>"; };
-		2383F83C9A02530C369EDCAC1F701F80 /* WKBPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBPoint.h; path = "wkb-ios/geom/WKBPoint.h"; sourceTree = "<group>"; };
-		23FF1F20210ED7F725AD186E5C53F6EC /* Pods_LEIFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24DD9CA4918BE4F20A935D0590E80542 /* WKBMultiPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiPoint.m; path = "wkb-ios/geom/WKBMultiPoint.m"; sourceTree = "<group>"; };
-		24EF63381B5243C86ABC54A9A60D8E25 /* WKBGeometry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometry.m; path = "wkb-ios/geom/WKBGeometry.m"; sourceTree = "<group>"; };
-		2869DE446A1195E506E6CA16136EF10E /* WKBCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCurve.m; path = "wkb-ios/geom/WKBCurve.m"; sourceTree = "<group>"; };
-		2AC5C7FCBD5CAEE5CCA58C2526AD77EF /* WKBGeometryJSONCompatible.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryJSONCompatible.h; path = "wkb-ios/util/WKBGeometryJSONCompatible.h"; sourceTree = "<group>"; };
-		2BB4103171B6834402FE3FE27569D3C5 /* WKBGeometryPrinter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryPrinter.m; path = "wkb-ios/util/WKBGeometryPrinter.m"; sourceTree = "<group>"; };
-		2BD17144772753B2B0855A67F0154D96 /* FontBlaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontBlaster-prefix.pch"; sourceTree = "<group>"; };
-		2C441CDA8FB1D76A397B1A3F1A9D9D90 /* WKBGeometryEnvelopeBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryEnvelopeBuilder.m; path = "wkb-ios/util/WKBGeometryEnvelopeBuilder.m"; sourceTree = "<group>"; };
-		3888340DA209BF29971B254BC364FAF8 /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
-		3991A871D9ECB8DC3FFF6EEE4DD9A2E8 /* FontBlaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FontBlaster.modulemap; sourceTree = "<group>"; };
-		40BE92A21D10D31AED48D104553E5515 /* wkb-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "wkb-ios.xcconfig"; sourceTree = "<group>"; };
-		42E03673BA19518F23940897053A94E4 /* WKBCompoundCurve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCompoundCurve.m; path = "wkb-ios/geom/WKBCompoundCurve.m"; sourceTree = "<group>"; };
-		44CE0A56B4D84875B14C3999E3449376 /* FontBlaster-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontBlaster-umbrella.h"; sourceTree = "<group>"; };
-		47B595D1CA7B77E7E95739CF55220272 /* WKBGeometryPrinter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryPrinter.h; path = "wkb-ios/util/WKBGeometryPrinter.h"; sourceTree = "<group>"; };
-		499E914F74E9959E3D279604647F3C88 /* Pods-LEIFRTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LEIFRTests.modulemap"; sourceTree = "<group>"; };
-		4AC3AD5BE530DE39A169055F568E571C /* WKBGeometryTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryTypes.m; path = "wkb-ios/geom/WKBGeometryTypes.m"; sourceTree = "<group>"; };
-		4B21790FF1221559CF9E3185C5141161 /* WKBMultiSurface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiSurface.h; path = "wkb-ios/geom/WKBMultiSurface.h"; sourceTree = "<group>"; };
-		4CD147FCC1E6D00D2BDC721992E77932 /* FontBlaster.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FontBlaster.swift; sourceTree = "<group>"; };
-		4EA0B8CF510ABEBE427354AC8FC9E883 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
-		51887B574FDC5D09EDF55DBCAE0846AE /* WKBMultiPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiPolygon.h; path = "wkb-ios/geom/WKBMultiPolygon.h"; sourceTree = "<group>"; };
-		541C8DBBACDBD5820A7E6C10C3AE0FD2 /* wkb-ios-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "wkb-ios-Bridging-Header.h"; path = "wkb-ios/wkb-ios-Bridging-Header.h"; sourceTree = "<group>"; };
-		5C0D47D48C1440D0020A92493860E99A /* Pods-LEIFRTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFRTests-frameworks.sh"; sourceTree = "<group>"; };
-		5D855D2EC101DAA04E716532D7D973F4 /* Pods-LEIFRTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LEIFRTests-umbrella.h"; sourceTree = "<group>"; };
-		5ED445B953AF909DD7CB5F50E0EFA6AF /* Pods-LEIFR-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LEIFR-acknowledgements.plist"; sourceTree = "<group>"; };
-		6256690D737C23C682DAE077351EBC6F /* WKBGeometryWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryWriter.m; path = "wkb-ios/io/WKBGeometryWriter.m"; sourceTree = "<group>"; };
-		62A94011EABBA84D2CA9DFBF22917EE8 /* WKBMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiPoint.h; path = "wkb-ios/geom/WKBMultiPoint.h"; sourceTree = "<group>"; };
-		640B463D515C96BC2772966E48CE5B5D /* WKBTIN.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBTIN.h; path = "wkb-ios/geom/WKBTIN.h"; sourceTree = "<group>"; };
-		6724342980B211CFC6AAFD9FFD0F0D00 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "wkb-ios/Info.plist"; sourceTree = "<group>"; };
-		68FA6EEECAAD9F874ADB798AD0EAB87F /* ResourceBundle-WKB-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-WKB-Info.plist"; sourceTree = "<group>"; };
-		6BE217D8F8DABF93E4AD04327DFF8833 /* WKBMultiSurface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiSurface.m; path = "wkb-ios/geom/WKBMultiSurface.m"; sourceTree = "<group>"; };
-		6E9C18959B674AAA2DF270F883C53A80 /* wkb_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = wkb_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E9DA1CCDDEE3CD45B7D96B2716B3951 /* FontBlaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontBlaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72F8A52AC84B61919A0EC36677C32602 /* WKBGeometryCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryCollection.m; path = "wkb-ios/geom/WKBGeometryCollection.m"; sourceTree = "<group>"; };
-		7A17429B184CFB2FB3FE15CA42879125 /* Pods-LEIFR.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LEIFR.modulemap"; sourceTree = "<group>"; };
-		7B3E151F555737E66D97F4A1F28B876A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E2F3A54A72706B8A224E00F07526680 /* FontBlaster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontBlaster.xcconfig; sourceTree = "<group>"; };
-		7FC11E10D89274BB0717C2C45DBA927F /* WKBSurface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBSurface.h; path = "wkb-ios/geom/WKBSurface.h"; sourceTree = "<group>"; };
-		807D7F2B200F9A0922182FFFFC77C646 /* WKBPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBPolygon.m; path = "wkb-ios/geom/WKBPolygon.m"; sourceTree = "<group>"; };
-		86031E70BDE23BFAC00385C7E8F61ACD /* FontBlaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontBlaster-dummy.m"; sourceTree = "<group>"; };
-		882353D4BB6C78610C60C8A38F291B47 /* WKBCompoundCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCompoundCurve.h; path = "wkb-ios/geom/WKBCompoundCurve.h"; sourceTree = "<group>"; };
-		902B1C43E84FB2C0BDDECCA4AA3FFEEA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91CCCE950318B1910BD5ED0595D0038A /* Pods-LEIFR-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LEIFR-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96D8F754909DFEB2BA8DEFFD7CCC7837 /* WKBCircularString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCircularString.h; path = "wkb-ios/geom/WKBCircularString.h"; sourceTree = "<group>"; };
-		97A617B193A4F6ADE7901FC6F7B6BBB6 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
-		97DD858A732819FA162B7294D8A34F01 /* WKBMultiPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiPolygon.m; path = "wkb-ios/geom/WKBMultiPolygon.m"; sourceTree = "<group>"; };
-		99C4347853D942D8D7D9508DD70D3271 /* wkb_ios.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = wkb_ios.h; path = "wkb-ios/wkb_ios.h"; sourceTree = "<group>"; };
-		9A4BB0F62DF2152DF61393594DB2E8DD /* WKBByteWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBByteWriter.m; path = "wkb-ios/io/WKBByteWriter.m"; sourceTree = "<group>"; };
-		9A4EDB6C173D724C29CDCFA82026EEAC /* Pods-LEIFRTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LEIFRTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9C69A3A106DECE7B951471A958A0BAC7 /* WKBPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBPolygon.h; path = "wkb-ios/geom/WKBPolygon.h"; sourceTree = "<group>"; };
-		A249248578F479D130E4F16C305F89DB /* wkb-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "wkb-ios-dummy.m"; sourceTree = "<group>"; };
-		A719FDD8C0F89472F1501D7EF96BB791 /* WKBByteWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBByteWriter.h; path = "wkb-ios/io/WKBByteWriter.h"; sourceTree = "<group>"; };
-		ABBFCE04709F9AC1D82DE564483A4727 /* wkb-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "wkb-ios-umbrella.h"; sourceTree = "<group>"; };
-		AF5A6CA4BCEBE1AA942142AF58E2054E /* WKBTriangle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBTriangle.h; path = "wkb-ios/geom/WKBTriangle.h"; sourceTree = "<group>"; };
-		B0CFC4E1C3FC3C1B460FF7F094864D97 /* wkb-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "wkb-ios.modulemap"; sourceTree = "<group>"; };
-		B2A25C71680D492D98ACDE03B6A04584 /* Pods-LEIFR-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFR-frameworks.sh"; sourceTree = "<group>"; };
-		B6F5AC0D319DBF1D8858D2B066A0D966 /* WKBMultiCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiCurve.h; path = "wkb-ios/geom/WKBMultiCurve.h"; sourceTree = "<group>"; };
-		BA990F1743425E5D80DF698A4F94B0D4 /* WKBCurve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCurve.h; path = "wkb-ios/geom/WKBCurve.h"; sourceTree = "<group>"; };
-		BCBC5D26E40465319A320C12167514FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE96300BB6D09CB85810382BBE87AA38 /* WKBGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometry.h; path = "wkb-ios/geom/WKBGeometry.h"; sourceTree = "<group>"; };
-		C1B57996EEF5A3153F27E81B843473CB /* WKBGeometryTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryTypes.h; path = "wkb-ios/geom/WKBGeometryTypes.h"; sourceTree = "<group>"; };
-		C388127812F50EA6A215F2420D3EC449 /* WKBCurvePolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBCurvePolygon.h; path = "wkb-ios/geom/WKBCurvePolygon.h"; sourceTree = "<group>"; };
-		C4CDD6E61430227D5608582E5F462D56 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C645B7361C0A1180E8A205AE153D4008 /* Pods-LEIFRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LEIFRTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C8491847A2E933580EF569FDA3974229 /* WKBMultiLineString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBMultiLineString.h; path = "wkb-ios/geom/WKBMultiLineString.h"; sourceTree = "<group>"; };
-		CB6370816D1886D868229DA192AD401F /* Pods-LEIFRTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LEIFRTests-resources.sh"; sourceTree = "<group>"; };
-		CBE39BE82FD1BEDAB6D0B4046C32C350 /* WKBGeometryCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryCollection.h; path = "wkb-ios/geom/WKBGeometryCollection.h"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CFF29AC6DECD5BF0E57639658A868EA0 /* WKBByteReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBByteReader.m; path = "wkb-ios/io/WKBByteReader.m"; sourceTree = "<group>"; };
-		D70462159328ACF34C098204C897121C /* WKBGeometryEnvelope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryEnvelope.m; path = "wkb-ios/geom/WKBGeometryEnvelope.m"; sourceTree = "<group>"; };
-		D8369F4BBAD088DB008A12349198C2E0 /* WKBMultiLineString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBMultiLineString.m; path = "wkb-ios/geom/WKBMultiLineString.m"; sourceTree = "<group>"; };
-		E12BE88F2875CE4309A8FBFCE7AD4807 /* WKBGeometryWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryWriter.h; path = "wkb-ios/io/WKBGeometryWriter.h"; sourceTree = "<group>"; };
-		E2AD814A6684C0795AF9BB4344D3E3C9 /* WKBGeometryEnvelope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryEnvelope.h; path = "wkb-ios/geom/WKBGeometryEnvelope.h"; sourceTree = "<group>"; };
-		E6F0FBEB70717272B5114B182F51E461 /* WKBGeometryEnvelopeBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBGeometryEnvelopeBuilder.h; path = "wkb-ios/util/WKBGeometryEnvelopeBuilder.h"; sourceTree = "<group>"; };
-		E8BD84B037E7B26272FCB81906D1E673 /* WKBPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBPoint.m; path = "wkb-ios/geom/WKBPoint.m"; sourceTree = "<group>"; };
-		EEA84E7D28AFBAC3A5C01020B86EE3D0 /* WKBByteReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBByteReader.h; path = "wkb-ios/io/WKBByteReader.h"; sourceTree = "<group>"; };
-		EF44C8DD686AC29385090D848D557E47 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F20B2FF994B975AA464273A34BF55088 /* Pods-LEIFRTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LEIFRTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F5725B74D49798B61CE786908BD4FD57 /* WKBCurvePolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBCurvePolygon.m; path = "wkb-ios/geom/WKBCurvePolygon.m"; sourceTree = "<group>"; };
-		FAA8D01DC7AE819AD24E66C80D2FDCD5 /* Pods-LEIFR-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LEIFR-dummy.m"; sourceTree = "<group>"; };
-		FAF941CF005557D67265AC8A291F1416 /* WKBGeometryJSONCompatible.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryJSONCompatible.m; path = "wkb-ios/util/WKBGeometryJSONCompatible.m"; sourceTree = "<group>"; };
-		FCB36EF106CEE2F343B32FCB6F7F4368 /* WKBGeometryReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKBGeometryReader.m; path = "wkb-ios/io/WKBGeometryReader.m"; sourceTree = "<group>"; };
-		FD9DED1DB03D6CF38AD2DC57EAD5DDCB /* WKBPolyhedralSurface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKBPolyhedralSurface.h; path = "wkb-ios/geom/WKBPolyhedralSurface.h"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		03C213AC8CF175DDF002CE053CC29033 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77C5D34F53ED1007C35BA7FDFD4D9008 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		078055EE628408170613E9EF1B485054 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C429FCFCB1D4C4411748881286F02438 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2382C58D2A0B66E7799F4D7CBB69B80E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B91F09689F68E8DAD0C09C6B71EA824 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B21B340D90B175332A8DA256486437B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D273831FA07206E912D482F5B680E1F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55C7823814470B80A23514B3F0FC5070 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		03E888214611F4326C190D613E12E45A /* wkb-ios */ = {
-			isa = PBXGroup;
-			children = (
-				541C8DBBACDBD5820A7E6C10C3AE0FD2 /* wkb-ios-Bridging-Header.h */,
-				99C4347853D942D8D7D9508DD70D3271 /* wkb_ios.h */,
-				EEA84E7D28AFBAC3A5C01020B86EE3D0 /* WKBByteReader.h */,
-				CFF29AC6DECD5BF0E57639658A868EA0 /* WKBByteReader.m */,
-				A719FDD8C0F89472F1501D7EF96BB791 /* WKBByteWriter.h */,
-				9A4BB0F62DF2152DF61393594DB2E8DD /* WKBByteWriter.m */,
-				96D8F754909DFEB2BA8DEFFD7CCC7837 /* WKBCircularString.h */,
-				13024C242F28920D2286BD473684357C /* WKBCircularString.m */,
-				882353D4BB6C78610C60C8A38F291B47 /* WKBCompoundCurve.h */,
-				42E03673BA19518F23940897053A94E4 /* WKBCompoundCurve.m */,
-				BA990F1743425E5D80DF698A4F94B0D4 /* WKBCurve.h */,
-				2869DE446A1195E506E6CA16136EF10E /* WKBCurve.m */,
-				C388127812F50EA6A215F2420D3EC449 /* WKBCurvePolygon.h */,
-				F5725B74D49798B61CE786908BD4FD57 /* WKBCurvePolygon.m */,
-				BE96300BB6D09CB85810382BBE87AA38 /* WKBGeometry.h */,
-				24EF63381B5243C86ABC54A9A60D8E25 /* WKBGeometry.m */,
-				CBE39BE82FD1BEDAB6D0B4046C32C350 /* WKBGeometryCollection.h */,
-				72F8A52AC84B61919A0EC36677C32602 /* WKBGeometryCollection.m */,
-				E2AD814A6684C0795AF9BB4344D3E3C9 /* WKBGeometryEnvelope.h */,
-				D70462159328ACF34C098204C897121C /* WKBGeometryEnvelope.m */,
-				E6F0FBEB70717272B5114B182F51E461 /* WKBGeometryEnvelopeBuilder.h */,
-				2C441CDA8FB1D76A397B1A3F1A9D9D90 /* WKBGeometryEnvelopeBuilder.m */,
-				2AC5C7FCBD5CAEE5CCA58C2526AD77EF /* WKBGeometryJSONCompatible.h */,
-				FAF941CF005557D67265AC8A291F1416 /* WKBGeometryJSONCompatible.m */,
-				47B595D1CA7B77E7E95739CF55220272 /* WKBGeometryPrinter.h */,
-				2BB4103171B6834402FE3FE27569D3C5 /* WKBGeometryPrinter.m */,
-				070C0AA6891CCE7F183736372D2F7B31 /* WKBGeometryReader.h */,
-				FCB36EF106CEE2F343B32FCB6F7F4368 /* WKBGeometryReader.m */,
-				C1B57996EEF5A3153F27E81B843473CB /* WKBGeometryTypes.h */,
-				4AC3AD5BE530DE39A169055F568E571C /* WKBGeometryTypes.m */,
-				E12BE88F2875CE4309A8FBFCE7AD4807 /* WKBGeometryWriter.h */,
-				6256690D737C23C682DAE077351EBC6F /* WKBGeometryWriter.m */,
-				032AD16C2ED6EF47975E00E9875FD7A2 /* WKBLineString.h */,
-				0C8EFEF172F08A6B5139FA138835B49E /* WKBLineString.m */,
-				B6F5AC0D319DBF1D8858D2B066A0D966 /* WKBMultiCurve.h */,
-				186FD6133C6F0CF2E1E2924B046ADEA5 /* WKBMultiCurve.m */,
-				C8491847A2E933580EF569FDA3974229 /* WKBMultiLineString.h */,
-				D8369F4BBAD088DB008A12349198C2E0 /* WKBMultiLineString.m */,
-				62A94011EABBA84D2CA9DFBF22917EE8 /* WKBMultiPoint.h */,
-				24DD9CA4918BE4F20A935D0590E80542 /* WKBMultiPoint.m */,
-				51887B574FDC5D09EDF55DBCAE0846AE /* WKBMultiPolygon.h */,
-				97DD858A732819FA162B7294D8A34F01 /* WKBMultiPolygon.m */,
-				4B21790FF1221559CF9E3185C5141161 /* WKBMultiSurface.h */,
-				6BE217D8F8DABF93E4AD04327DFF8833 /* WKBMultiSurface.m */,
-				2383F83C9A02530C369EDCAC1F701F80 /* WKBPoint.h */,
-				E8BD84B037E7B26272FCB81906D1E673 /* WKBPoint.m */,
-				9C69A3A106DECE7B951471A958A0BAC7 /* WKBPolygon.h */,
-				807D7F2B200F9A0922182FFFFC77C646 /* WKBPolygon.m */,
-				FD9DED1DB03D6CF38AD2DC57EAD5DDCB /* WKBPolyhedralSurface.h */,
-				234F0494C5644FAEE63EF0CD4E039B37 /* WKBPolyhedralSurface.m */,
-				7FC11E10D89274BB0717C2C45DBA927F /* WKBSurface.h */,
-				01F02684F07C67766AEA349A479D455F /* WKBSurface.m */,
-				640B463D515C96BC2772966E48CE5B5D /* WKBTIN.h */,
-				1A5D78ED0653ECC0818421A88733A826 /* WKBTIN.m */,
-				AF5A6CA4BCEBE1AA942142AF58E2054E /* WKBTriangle.h */,
-				1F50D5A3ED31B04B97280678FA6B5489 /* WKBTriangle.m */,
-				189926CF449D2A9913BF4236D28C809D /* Resources */,
-				58E5EF0EAB4BC63B413E6D1F8DD3D11D /* Support Files */,
-			);
-			path = "wkb-ios";
-			sourceTree = "<group>";
-		};
-		11BA35C75BF53FE81662C4D46B6D7FDD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				44C1080D1402721124C3D21AC02A0432 /* FontBlaster */,
-				03E888214611F4326C190D613E12E45A /* wkb-ios */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		189926CF449D2A9913BF4236D28C809D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6724342980B211CFC6AAFD9FFD0F0D00 /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		36F3F5E66BE2A9D7DBF1ADF313E602A3 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3991A871D9ECB8DC3FFF6EEE4DD9A2E8 /* FontBlaster.modulemap */,
-				7E2F3A54A72706B8A224E00F07526680 /* FontBlaster.xcconfig */,
-				86031E70BDE23BFAC00385C7E8F61ACD /* FontBlaster-dummy.m */,
-				2BD17144772753B2B0855A67F0154D96 /* FontBlaster-prefix.pch */,
-				44CE0A56B4D84875B14C3999E3449376 /* FontBlaster-umbrella.h */,
-				902B1C43E84FB2C0BDDECCA4AA3FFEEA /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FontBlaster";
-			sourceTree = "<group>";
-		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		44C1080D1402721124C3D21AC02A0432 /* FontBlaster */ = {
-			isa = PBXGroup;
-			children = (
-				4CD147FCC1E6D00D2BDC721992E77932 /* FontBlaster.swift */,
-				36F3F5E66BE2A9D7DBF1ADF313E602A3 /* Support Files */,
-			);
-			path = FontBlaster;
-			sourceTree = "<group>";
-		};
-		58E5EF0EAB4BC63B413E6D1F8DD3D11D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BCBC5D26E40465319A320C12167514FF /* Info.plist */,
-				68FA6EEECAAD9F874ADB798AD0EAB87F /* ResourceBundle-WKB-Info.plist */,
-				B0CFC4E1C3FC3C1B460FF7F094864D97 /* wkb-ios.modulemap */,
-				40BE92A21D10D31AED48D104553E5515 /* wkb-ios.xcconfig */,
-				A249248578F479D130E4F16C305F89DB /* wkb-ios-dummy.m */,
-				215ACEF27A81A3934A916090A1BDEF4B /* wkb-ios-prefix.pch */,
-				ABBFCE04709F9AC1D82DE564483A4727 /* wkb-ios-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/wkb-ios";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				11BA35C75BF53FE81662C4D46B6D7FDD /* Pods */,
-				E42A0046C63843536B09811F1DE25296 /* Products */,
-				8A28785D99A39C8A0475B408321BFEB6 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8A28785D99A39C8A0475B408321BFEB6 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BBFCE3795565FC74600F82AAC1B91871 /* Pods-LEIFR */,
-				CFC643CB77A54A83C5934E6CF3F128BC /* Pods-LEIFRTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BBFCE3795565FC74600F82AAC1B91871 /* Pods-LEIFR */ = {
-			isa = PBXGroup;
-			children = (
-				EF44C8DD686AC29385090D848D557E47 /* Info.plist */,
-				7A17429B184CFB2FB3FE15CA42879125 /* Pods-LEIFR.modulemap */,
-				20815FEA4D2F16DE1E99664CED5B04FA /* Pods-LEIFR-acknowledgements.markdown */,
-				5ED445B953AF909DD7CB5F50E0EFA6AF /* Pods-LEIFR-acknowledgements.plist */,
-				FAA8D01DC7AE819AD24E66C80D2FDCD5 /* Pods-LEIFR-dummy.m */,
-				B2A25C71680D492D98ACDE03B6A04584 /* Pods-LEIFR-frameworks.sh */,
-				0C4A1525752DC9E765704B63EB249E0E /* Pods-LEIFR-resources.sh */,
-				91CCCE950318B1910BD5ED0595D0038A /* Pods-LEIFR-umbrella.h */,
-				3888340DA209BF29971B254BC364FAF8 /* Pods-LEIFR.debug.xcconfig */,
-				4EA0B8CF510ABEBE427354AC8FC9E883 /* Pods-LEIFR.release.xcconfig */,
-			);
-			name = "Pods-LEIFR";
-			path = "Target Support Files/Pods-LEIFR";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CFC643CB77A54A83C5934E6CF3F128BC /* Pods-LEIFRTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B3E151F555737E66D97F4A1F28B876A /* Info.plist */,
-				499E914F74E9959E3D279604647F3C88 /* Pods-LEIFRTests.modulemap */,
-				F20B2FF994B975AA464273A34BF55088 /* Pods-LEIFRTests-acknowledgements.markdown */,
-				9A4EDB6C173D724C29CDCFA82026EEAC /* Pods-LEIFRTests-acknowledgements.plist */,
-				0BBEA34CD83F99F52C6A908B8EEF530F /* Pods-LEIFRTests-dummy.m */,
-				5C0D47D48C1440D0020A92493860E99A /* Pods-LEIFRTests-frameworks.sh */,
-				CB6370816D1886D868229DA192AD401F /* Pods-LEIFRTests-resources.sh */,
-				5D855D2EC101DAA04E716532D7D973F4 /* Pods-LEIFRTests-umbrella.h */,
-				C645B7361C0A1180E8A205AE153D4008 /* Pods-LEIFRTests.debug.xcconfig */,
-				97A617B193A4F6ADE7901FC6F7B6BBB6 /* Pods-LEIFRTests.release.xcconfig */,
-			);
-			name = "Pods-LEIFRTests";
-			path = "Target Support Files/Pods-LEIFRTests";
-			sourceTree = "<group>";
-		};
-		E42A0046C63843536B09811F1DE25296 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6E9DA1CCDDEE3CD45B7D96B2716B3951 /* FontBlaster.framework */,
-				23FF1F20210ED7F725AD186E5C53F6EC /* Pods_LEIFR.framework */,
-				C4CDD6E61430227D5608582E5F462D56 /* Pods_LEIFRTests.framework */,
-				015E786267FA647031034BD9950A0E52 /* WKB.bundle */,
-				6E9C18959B674AAA2DF270F883C53A80 /* wkb_ios.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		179A3F78521FF8AFB8EA1FF701695119 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FCF4E6E24C7F6F2C0E48337B6CCE5891 /* FontBlaster-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5BDF5B4E029A4AFA681146B7A6A5806F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D36E2FAD850EC8745D1FA8FE2E45F0C /* Pods-LEIFR-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7612BC997F3A7C028A7381315FC2575A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AA60390CB6669473D0440B49F911CC7 /* wkb-ios-Bridging-Header.h in Headers */,
-				35D22F43FB002CC5FCB5FDB2A3BC879D /* wkb-ios-umbrella.h in Headers */,
-				7BB572B8751B6703906C96B60F6B675B /* wkb_ios.h in Headers */,
-				2835455C131179E9031660A07B701817 /* WKBByteReader.h in Headers */,
-				F21BDBE7B3F32AC896CE9322924096A4 /* WKBByteWriter.h in Headers */,
-				8C935B3E457307323B46E06D0B00CFF2 /* WKBCircularString.h in Headers */,
-				BAF19DEEB194F378B509A7CF0F992A91 /* WKBCompoundCurve.h in Headers */,
-				6C6E55951C388D540343B2AF8E491217 /* WKBCurve.h in Headers */,
-				A9A06AEC9A6416CA2AE5C0B94082D172 /* WKBCurvePolygon.h in Headers */,
-				B2AAE756D4B414946E48C8A39E1D1702 /* WKBGeometry.h in Headers */,
-				D371515A6EE5824F932D6FDEBECAB30E /* WKBGeometryCollection.h in Headers */,
-				EC16BA6589803B36CE3A93704DC32688 /* WKBGeometryEnvelope.h in Headers */,
-				44716DC7754D74A8D7EC618E6B1A915D /* WKBGeometryEnvelopeBuilder.h in Headers */,
-				0119E5F91EEE12D797DE50C05BC541DD /* WKBGeometryJSONCompatible.h in Headers */,
-				A30F14D1BE679865B93899D6E257E481 /* WKBGeometryPrinter.h in Headers */,
-				6457051C54BFCEDAB1085780580E8DE8 /* WKBGeometryReader.h in Headers */,
-				28B1FD5035F7E5EAE87A9A8A3CF085EB /* WKBGeometryTypes.h in Headers */,
-				DBF3286DD4F030E2C36A187DAE48309A /* WKBGeometryWriter.h in Headers */,
-				EFBDC5722335A3D4836D5621980113B4 /* WKBLineString.h in Headers */,
-				3F1537EEC15B9670D434E6C89EE8B5D6 /* WKBMultiCurve.h in Headers */,
-				E29FC638CC71487D3FD0DFF67EE453E7 /* WKBMultiLineString.h in Headers */,
-				AFD6106BFB7767EBC50BD7A2E0252BCD /* WKBMultiPoint.h in Headers */,
-				1E553F78959D91B971B5D74B9902A0A1 /* WKBMultiPolygon.h in Headers */,
-				CD4282711AE2D1CA488245B6FD07D069 /* WKBMultiSurface.h in Headers */,
-				B98B435D45A8D92850680DE1A93E42F8 /* WKBPoint.h in Headers */,
-				DB80BBD267F321E62117FEEC48EDBA34 /* WKBPolygon.h in Headers */,
-				B4A6AC2B6A7542ED6ECC1B7FC4A9D5EE /* WKBPolyhedralSurface.h in Headers */,
-				3C7855C072057CCCD9C909FC4DB91A12 /* WKBSurface.h in Headers */,
-				1D6992D2959CD65312A71C59C1099FC1 /* WKBTIN.h in Headers */,
-				08D9816FFA8F3D720D87F81DD5EA00EA /* WKBTriangle.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A2B7661F56C1CB8943CCBFE2ED06746 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7FC0DBF2EC96C21D45D8BD9E64AA9B5 /* Pods-LEIFRTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		1120A328EE771D19EBEC434348C747B9 /* wkb-ios-WKB */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5EAD8D56ED09801AE4CC676602AF1F29 /* Build configuration list for PBXNativeTarget "wkb-ios-WKB" */;
-			buildPhases = (
-				9F44F94ECE00305BFA54C562369852B0 /* Sources */,
-				2382C58D2A0B66E7799F4D7CBB69B80E /* Frameworks */,
-				FA7B2E45898E1FACBA040FFA1E0DD3E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "wkb-ios-WKB";
-			productName = "wkb-ios-WKB";
-			productReference = 015E786267FA647031034BD9950A0E52 /* WKB.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		7E1871770EC7B79430C1341B84CD37A0 /* Pods-LEIFR */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C1CA9234AE2260F74C78704A69286A2B /* Build configuration list for PBXNativeTarget "Pods-LEIFR" */;
-			buildPhases = (
-				3A9940D6E19439A32A8D190AF949A1C4 /* Sources */,
-				8B91F09689F68E8DAD0C09C6B71EA824 /* Frameworks */,
-				5BDF5B4E029A4AFA681146B7A6A5806F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FE545DB9E7D03E2601CB4991613023AB /* PBXTargetDependency */,
-				2C9B8B19638A72C794C34DF86E60BB13 /* PBXTargetDependency */,
-			);
-			name = "Pods-LEIFR";
-			productName = "Pods-LEIFR";
-			productReference = 23FF1F20210ED7F725AD186E5C53F6EC /* Pods_LEIFR.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		91E2D8A898CD7A3899E087527A7399AC /* wkb-ios */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0CA8626836B53FAAA76798546AC9FD80 /* Build configuration list for PBXNativeTarget "wkb-ios" */;
-			buildPhases = (
-				D5A087CE9487AE8D631926BB0DEE4253 /* Sources */,
-				D273831FA07206E912D482F5B680E1F2 /* Frameworks */,
-				977ADFE9594747A35B99F6053CDB560B /* Resources */,
-				7612BC997F3A7C028A7381315FC2575A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3539AFFE79F5B5C80FFCD57B7C7E4215 /* PBXTargetDependency */,
-			);
-			name = "wkb-ios";
-			productName = "wkb-ios";
-			productReference = 6E9C18959B674AAA2DF270F883C53A80 /* wkb_ios.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D4E674DD9D88022C39F9427C0E34D5BF /* FontBlaster */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04C87D9EA3AD7F901622A24E765E0C1E /* Build configuration list for PBXNativeTarget "FontBlaster" */;
-			buildPhases = (
-				4865153BA30D4B7533E3F6AD4109C1B9 /* Sources */,
-				078055EE628408170613E9EF1B485054 /* Frameworks */,
-				179A3F78521FF8AFB8EA1FF701695119 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FontBlaster;
-			productName = FontBlaster;
-			productReference = 6E9DA1CCDDEE3CD45B7D96B2716B3951 /* FontBlaster.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D5BDDDD0AA47AB763499AD8B526AB8D5 /* Pods-LEIFRTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA357031A00D7DB2017D80908B7B2A84 /* Build configuration list for PBXNativeTarget "Pods-LEIFRTests" */;
-			buildPhases = (
-				E664EBA6A5E6A1D56D656C97C72A89F5 /* Sources */,
-				03C213AC8CF175DDF002CE053CC29033 /* Frameworks */,
-				8A2B7661F56C1CB8943CCBFE2ED06746 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04CDAA3DE5A3EE2476980F3620D9AD22 /* PBXTargetDependency */,
-			);
-			name = "Pods-LEIFRTests";
-			productName = "Pods-LEIFRTests";
-			productReference = C4CDD6E61430227D5608582E5F462D56 /* Pods_LEIFRTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					7E1871770EC7B79430C1341B84CD37A0 = {
-						LastSwiftMigration = 0800;
-					};
-					D4E674DD9D88022C39F9427C0E34D5BF = {
-						LastSwiftMigration = 0800;
-					};
-				};
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E42A0046C63843536B09811F1DE25296 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				D4E674DD9D88022C39F9427C0E34D5BF /* FontBlaster */,
-				7E1871770EC7B79430C1341B84CD37A0 /* Pods-LEIFR */,
-				D5BDDDD0AA47AB763499AD8B526AB8D5 /* Pods-LEIFRTests */,
-				91E2D8A898CD7A3899E087527A7399AC /* wkb-ios */,
-				1120A328EE771D19EBEC434348C747B9 /* wkb-ios-WKB */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		977ADFE9594747A35B99F6053CDB560B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15203D4531E2C65E0E36D5B761EBC32E /* WKB.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA7B2E45898E1FACBA040FFA1E0DD3E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F872E25F147E83FB1AFA05F490F1EAE7 /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		3A9940D6E19439A32A8D190AF949A1C4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2EB721E7C6F5260B3C3C78D1AC870E2C /* Pods-LEIFR-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4865153BA30D4B7533E3F6AD4109C1B9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E520C7C33C636FCAFB3280EA448CD9F /* FontBlaster-dummy.m in Sources */,
-				0AC08E78C47F0C83321F7ED79990C170 /* FontBlaster.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F44F94ECE00305BFA54C562369852B0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5A087CE9487AE8D631926BB0DEE4253 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C8771D5F90CA2346C374821CF74B76C /* wkb-ios-dummy.m in Sources */,
-				F80696FD681728F48215B9C24680C042 /* WKBByteReader.m in Sources */,
-				20E5E23D3706E0EF6F31E26A35E8417C /* WKBByteWriter.m in Sources */,
-				F646CA038F27C8F20EA9E90634B110FB /* WKBCircularString.m in Sources */,
-				267F6372BAA7491708B74764C60C9FFB /* WKBCompoundCurve.m in Sources */,
-				60BE57BF83413DF9A0111E10E5AC3C45 /* WKBCurve.m in Sources */,
-				B7205F27B9CAE5D0C16A2937E433BF55 /* WKBCurvePolygon.m in Sources */,
-				28E9313C84C83BE3196C137D905D0763 /* WKBGeometry.m in Sources */,
-				74BCF85BDA186B8A2A1C909B3BFA040B /* WKBGeometryCollection.m in Sources */,
-				DF7A245849F6FF66633E2027CE9EC28C /* WKBGeometryEnvelope.m in Sources */,
-				6521E8A2B71C5DD8703824C97797ACF9 /* WKBGeometryEnvelopeBuilder.m in Sources */,
-				47778C567E53FDC764A55104A98B3FD8 /* WKBGeometryJSONCompatible.m in Sources */,
-				61CFCA8F163DC1311B55784E59A22356 /* WKBGeometryPrinter.m in Sources */,
-				D2FAB5F2A6BC4FF57EC4CC96596B3C93 /* WKBGeometryReader.m in Sources */,
-				3FAD89F3CA12BACC011DF61361C46C2E /* WKBGeometryTypes.m in Sources */,
-				2F20DFDF0F15E8317E7FFDAAC721EE16 /* WKBGeometryWriter.m in Sources */,
-				FE590C764FBB49FA03A25859C2C2B470 /* WKBLineString.m in Sources */,
-				7C61B55A7EC85FB58C8F207C7F07B16E /* WKBMultiCurve.m in Sources */,
-				0F61019543C9C3920604492BC8186AED /* WKBMultiLineString.m in Sources */,
-				56042F2A8596E2F8D5DD03A81356894F /* WKBMultiPoint.m in Sources */,
-				DBFBD3502B19EBA9C6CAAA6D365044DF /* WKBMultiPolygon.m in Sources */,
-				CFC884629D9A44D9557166E71DAF8718 /* WKBMultiSurface.m in Sources */,
-				9A4BD202B6448161298DA61882D8B6F8 /* WKBPoint.m in Sources */,
-				D0DCAC73A2C53264220D3836E83C59FE /* WKBPolygon.m in Sources */,
-				0339F18E27E0DDDA9019DAB4ADB1EFBE /* WKBPolyhedralSurface.m in Sources */,
-				7DA0D68B0CDD176E56409C46130C5D05 /* WKBSurface.m in Sources */,
-				1B611DC0B3CAB2D8F260FEEBECF1F745 /* WKBTIN.m in Sources */,
-				263DC0B10E89C8F148776688763A8EB4 /* WKBTriangle.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E664EBA6A5E6A1D56D656C97C72A89F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93DB45E6D405C975C504C81E22CD8107 /* Pods-LEIFRTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		04CDAA3DE5A3EE2476980F3620D9AD22 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "wkb-ios";
-			target = 91E2D8A898CD7A3899E087527A7399AC /* wkb-ios */;
-			targetProxy = 78E9E893895F0B6096A73A85D7BCA041 /* PBXContainerItemProxy */;
-		};
-		2C9B8B19638A72C794C34DF86E60BB13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "wkb-ios";
-			target = 91E2D8A898CD7A3899E087527A7399AC /* wkb-ios */;
-			targetProxy = EB896819F315296DCDF4E71733ACB143 /* PBXContainerItemProxy */;
-		};
-		3539AFFE79F5B5C80FFCD57B7C7E4215 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "wkb-ios-WKB";
-			target = 1120A328EE771D19EBEC434348C747B9 /* wkb-ios-WKB */;
-			targetProxy = BEA8CF294502E743046D3CB06BDCEDEA /* PBXContainerItemProxy */;
-		};
-		FE545DB9E7D03E2601CB4991613023AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FontBlaster;
-			target = D4E674DD9D88022C39F9427C0E34D5BF /* FontBlaster */;
-			targetProxy = 83962C69271D5179FBD7E064FE93A123 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		0062C7B41413D0605B5FB1B2FD2E40C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3888340DA209BF29971B254BC364FAF8 /* Pods-LEIFR.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-LEIFR/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LEIFR/Pods-LEIFR.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LEIFR;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		17F1D7F464FDD196A9B94876451F8760 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40BE92A21D10D31AED48D104553E5515 /* wkb-ios.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/wkb-ios/wkb-ios-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/wkb-ios/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/wkb-ios/wkb-ios.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = wkb_ios;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		58CBF617E339A16B5F6D68CE3188E758 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E2F3A54A72706B8A224E00F07526680 /* FontBlaster.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FontBlaster/FontBlaster-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FontBlaster/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FontBlaster/FontBlaster.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FontBlaster;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		6F84A7D79C25AF73153D60FAE940CDD5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E2F3A54A72706B8A224E00F07526680 /* FontBlaster.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FontBlaster/FontBlaster-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FontBlaster/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FontBlaster/FontBlaster.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FontBlaster;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		754D34FB1AC28CB080FE4AEC93B26C34 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40BE92A21D10D31AED48D104553E5515 /* wkb-ios.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/wkb-ios";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/wkb-ios/ResourceBundle-WKB-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = WKB;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		86D6211D2DDE6B3C6E480E9E5B773D53 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40BE92A21D10D31AED48D104553E5515 /* wkb-ios.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/wkb-ios";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/wkb-ios/ResourceBundle-WKB-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = WKB;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		A6FA9E77B8812F509E8C9B3FA4545A39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97A617B193A4F6ADE7901FC6F7B6BBB6 /* Pods-LEIFRTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-LEIFRTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LEIFRTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B5EB32EB8C60AE66FA3747B4B7019CF1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C645B7361C0A1180E8A205AE153D4008 /* Pods-LEIFRTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-LEIFRTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LEIFRTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C4FB0E79DF6F62555BE9A0AC7817C4A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40BE92A21D10D31AED48D104553E5515 /* wkb-ios.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/wkb-ios/wkb-ios-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/wkb-ios/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/wkb-ios/wkb-ios.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = wkb_ios;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CF2CEFDEE319653C81D3F5C908A7C627 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EA0B8CF510ABEBE427354AC8FC9E883 /* Pods-LEIFR.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-LEIFR/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LEIFR/Pods-LEIFR.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LEIFR;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		04C87D9EA3AD7F901622A24E765E0C1E /* Build configuration list for PBXNativeTarget "FontBlaster" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6F84A7D79C25AF73153D60FAE940CDD5 /* Debug */,
-				58CBF617E339A16B5F6D68CE3188E758 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0CA8626836B53FAAA76798546AC9FD80 /* Build configuration list for PBXNativeTarget "wkb-ios" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				17F1D7F464FDD196A9B94876451F8760 /* Debug */,
-				C4FB0E79DF6F62555BE9A0AC7817C4A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
-				3FA451D268613890FA8A5A03801E11D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5EAD8D56ED09801AE4CC676602AF1F29 /* Build configuration list for PBXNativeTarget "wkb-ios-WKB" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				86D6211D2DDE6B3C6E480E9E5B773D53 /* Debug */,
-				754D34FB1AC28CB080FE4AEC93B26C34 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AA357031A00D7DB2017D80908B7B2A84 /* Build configuration list for PBXNativeTarget "Pods-LEIFRTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5EB32EB8C60AE66FA3747B4B7019CF1 /* Debug */,
-				A6FA9E77B8812F509E8C9B3FA4545A39 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C1CA9234AE2260F74C78704A69286A2B /* Build configuration list for PBXNativeTarget "Pods-LEIFR" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0062C7B41413D0605B5FB1B2FD2E40C6 /* Debug */,
-				CF2CEFDEE319653C81D3F5C908A7C627 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0119E5F91EEE12D797DE50C05BC541DD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2AC5C7FCBD5CAEE5CCA58C2526AD77EF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>015E786267FA647031034BD9950A0E52</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>WKB.bundle</string>
+			<key>path</key>
+			<string>WKB.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>01F02684F07C67766AEA349A479D455F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBSurface.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBSurface.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>032AD16C2ED6EF47975E00E9875FD7A2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBLineString.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBLineString.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0339F18E27E0DDDA9019DAB4ADB1EFBE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>234F0494C5644FAEE63EF0CD4E039B37</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>03C213AC8CF175DDF002CE053CC29033</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>77C5D34F53ED1007C35BA7FDFD4D9008</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>03E888214611F4326C190D613E12E45A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>541C8DBBACDBD5820A7E6C10C3AE0FD2</string>
+				<string>99C4347853D942D8D7D9508DD70D3271</string>
+				<string>EEA84E7D28AFBAC3A5C01020B86EE3D0</string>
+				<string>CFF29AC6DECD5BF0E57639658A868EA0</string>
+				<string>A719FDD8C0F89472F1501D7EF96BB791</string>
+				<string>9A4BB0F62DF2152DF61393594DB2E8DD</string>
+				<string>96D8F754909DFEB2BA8DEFFD7CCC7837</string>
+				<string>13024C242F28920D2286BD473684357C</string>
+				<string>882353D4BB6C78610C60C8A38F291B47</string>
+				<string>42E03673BA19518F23940897053A94E4</string>
+				<string>BA990F1743425E5D80DF698A4F94B0D4</string>
+				<string>2869DE446A1195E506E6CA16136EF10E</string>
+				<string>C388127812F50EA6A215F2420D3EC449</string>
+				<string>F5725B74D49798B61CE786908BD4FD57</string>
+				<string>BE96300BB6D09CB85810382BBE87AA38</string>
+				<string>24EF63381B5243C86ABC54A9A60D8E25</string>
+				<string>CBE39BE82FD1BEDAB6D0B4046C32C350</string>
+				<string>72F8A52AC84B61919A0EC36677C32602</string>
+				<string>E2AD814A6684C0795AF9BB4344D3E3C9</string>
+				<string>D70462159328ACF34C098204C897121C</string>
+				<string>E6F0FBEB70717272B5114B182F51E461</string>
+				<string>2C441CDA8FB1D76A397B1A3F1A9D9D90</string>
+				<string>2AC5C7FCBD5CAEE5CCA58C2526AD77EF</string>
+				<string>FAF941CF005557D67265AC8A291F1416</string>
+				<string>47B595D1CA7B77E7E95739CF55220272</string>
+				<string>2BB4103171B6834402FE3FE27569D3C5</string>
+				<string>070C0AA6891CCE7F183736372D2F7B31</string>
+				<string>FCB36EF106CEE2F343B32FCB6F7F4368</string>
+				<string>C1B57996EEF5A3153F27E81B843473CB</string>
+				<string>4AC3AD5BE530DE39A169055F568E571C</string>
+				<string>E12BE88F2875CE4309A8FBFCE7AD4807</string>
+				<string>6256690D737C23C682DAE077351EBC6F</string>
+				<string>032AD16C2ED6EF47975E00E9875FD7A2</string>
+				<string>0C8EFEF172F08A6B5139FA138835B49E</string>
+				<string>B6F5AC0D319DBF1D8858D2B066A0D966</string>
+				<string>186FD6133C6F0CF2E1E2924B046ADEA5</string>
+				<string>C8491847A2E933580EF569FDA3974229</string>
+				<string>D8369F4BBAD088DB008A12349198C2E0</string>
+				<string>62A94011EABBA84D2CA9DFBF22917EE8</string>
+				<string>24DD9CA4918BE4F20A935D0590E80542</string>
+				<string>51887B574FDC5D09EDF55DBCAE0846AE</string>
+				<string>97DD858A732819FA162B7294D8A34F01</string>
+				<string>4B21790FF1221559CF9E3185C5141161</string>
+				<string>6BE217D8F8DABF93E4AD04327DFF8833</string>
+				<string>2383F83C9A02530C369EDCAC1F701F80</string>
+				<string>E8BD84B037E7B26272FCB81906D1E673</string>
+				<string>9C69A3A106DECE7B951471A958A0BAC7</string>
+				<string>807D7F2B200F9A0922182FFFFC77C646</string>
+				<string>FD9DED1DB03D6CF38AD2DC57EAD5DDCB</string>
+				<string>234F0494C5644FAEE63EF0CD4E039B37</string>
+				<string>7FC11E10D89274BB0717C2C45DBA927F</string>
+				<string>01F02684F07C67766AEA349A479D455F</string>
+				<string>640B463D515C96BC2772966E48CE5B5D</string>
+				<string>1A5D78ED0653ECC0818421A88733A826</string>
+				<string>AF5A6CA4BCEBE1AA942142AF58E2054E</string>
+				<string>1F50D5A3ED31B04B97280678FA6B5489</string>
+				<string>189926CF449D2A9913BF4236D28C809D</string>
+				<string>58E5EF0EAB4BC63B413E6D1F8DD3D11D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>wkb-ios</string>
+			<key>path</key>
+			<string>wkb-ios</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>04C87D9EA3AD7F901622A24E765E0C1E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>71566BB5A98BA3D6E641522D2A66D395</string>
+				<string>62D9AE31471453F9D0079D75DBA25300</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>04CDAA3DE5A3EE2476980F3620D9AD22</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>wkb-ios</string>
+			<key>target</key>
+			<string>91E2D8A898CD7A3899E087527A7399AC</string>
+			<key>targetProxy</key>
+			<string>78E9E893895F0B6096A73A85D7BCA041</string>
+		</dict>
+		<key>070C0AA6891CCE7F183736372D2F7B31</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryReader.h</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBGeometryReader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>078055EE628408170613E9EF1B485054</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C429FCFCB1D4C4411748881286F02438</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>08D9816FFA8F3D720D87F81DD5EA00EA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AF5A6CA4BCEBE1AA942142AF58E2054E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>0AC08E78C47F0C83321F7ED79990C170</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4CD147FCC1E6D00D2BDC721992E77932</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0BBEA34CD83F99F52C6A908B8EEF530F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0C4A1525752DC9E765704B63EB249E0E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-LEIFR-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0C8EFEF172F08A6B5139FA138835B49E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBLineString.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBLineString.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0CA8626836B53FAAA76798546AC9FD80</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>BD4881E4A9FB22CB659110692727B1E8</string>
+				<string>39626425F5F5D32B29B1C1455DD197E0</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>0F61019543C9C3920604492BC8186AED</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D8369F4BBAD088DB008A12349198C2E0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1120A328EE771D19EBEC434348C747B9</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>5EAD8D56ED09801AE4CC676602AF1F29</string>
+			<key>buildPhases</key>
+			<array>
+				<string>9F44F94ECE00305BFA54C562369852B0</string>
+				<string>2382C58D2A0B66E7799F4D7CBB69B80E</string>
+				<string>FA7B2E45898E1FACBA040FFA1E0DD3E0</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>wkb-ios-WKB</string>
+			<key>productName</key>
+			<string>wkb-ios-WKB</string>
+			<key>productReference</key>
+			<string>015E786267FA647031034BD9950A0E52</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>11BA35C75BF53FE81662C4D46B6D7FDD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>44C1080D1402721124C3D21AC02A0432</string>
+				<string>03E888214611F4326C190D613E12E45A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>13024C242F28920D2286BD473684357C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBCircularString.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCircularString.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>14C63A997B71642477D9FBF478BEC44F</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3888340DA209BF29971B254BC364FAF8</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-LEIFR/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-LEIFR/Pods-LEIFR.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_LEIFR</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>15203D4531E2C65E0E36D5B761EBC32E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>015E786267FA647031034BD9950A0E52</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>179A3F78521FF8AFB8EA1FF701695119</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FCF4E6E24C7F6F2C0E48337B6CCE5891</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>186FD6133C6F0CF2E1E2924B046ADEA5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBMultiCurve.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiCurve.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>189926CF449D2A9913BF4236D28C809D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6724342980B211CFC6AAFD9FFD0F0D00</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A5D78ED0653ECC0818421A88733A826</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBTIN.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBTIN.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1AA60390CB6669473D0440B49F911CC7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>541C8DBBACDBD5820A7E6C10C3AE0FD2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>1B611DC0B3CAB2D8F260FEEBECF1F745</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1A5D78ED0653ECC0818421A88733A826</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1D6992D2959CD65312A71C59C1099FC1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>640B463D515C96BC2772966E48CE5B5D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>1E006F0681ECDF8740F65894F099FEE2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C645B7361C0A1180E8A205AE153D4008</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-LEIFRTests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_LEIFRTests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>1E553F78959D91B971B5D74B9902A0A1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>51887B574FDC5D09EDF55DBCAE0846AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>1F50D5A3ED31B04B97280678FA6B5489</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBTriangle.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBTriangle.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>20815FEA4D2F16DE1E99664CED5B04FA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-LEIFR-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>20E5E23D3706E0EF6F31E26A35E8417C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9A4BB0F62DF2152DF61393594DB2E8DD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>215ACEF27A81A3934A916090A1BDEF4B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>wkb-ios-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>234F0494C5644FAEE63EF0CD4E039B37</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBPolyhedralSurface.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBPolyhedralSurface.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2382C58D2A0B66E7799F4D7CBB69B80E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2383F83C9A02530C369EDCAC1F701F80</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBPoint.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBPoint.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>23FF1F20210ED7F725AD186E5C53F6EC</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_LEIFR.framework</string>
+			<key>path</key>
+			<string>Pods-LEIFR.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>24DD9CA4918BE4F20A935D0590E80542</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBMultiPoint.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiPoint.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>24EF63381B5243C86ABC54A9A60D8E25</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometry.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometry.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>263DC0B10E89C8F148776688763A8EB4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1F50D5A3ED31B04B97280678FA6B5489</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>267F6372BAA7491708B74764C60C9FFB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>42E03673BA19518F23940897053A94E4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2835455C131179E9031660A07B701817</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EEA84E7D28AFBAC3A5C01020B86EE3D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>2869DE446A1195E506E6CA16136EF10E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBCurve.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCurve.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>28B1FD5035F7E5EAE87A9A8A3CF085EB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C1B57996EEF5A3153F27E81B843473CB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>28E9313C84C83BE3196C137D905D0763</key>
+		<dict>
+			<key>fileRef</key>
+			<string>24EF63381B5243C86ABC54A9A60D8E25</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2AC5C7FCBD5CAEE5CCA58C2526AD77EF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryJSONCompatible.h</string>
+			<key>path</key>
+			<string>wkb-ios/util/WKBGeometryJSONCompatible.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2BB4103171B6834402FE3FE27569D3C5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryPrinter.m</string>
+			<key>path</key>
+			<string>wkb-ios/util/WKBGeometryPrinter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2BD17144772753B2B0855A67F0154D96</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FontBlaster-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C441CDA8FB1D76A397B1A3F1A9D9D90</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryEnvelopeBuilder.m</string>
+			<key>path</key>
+			<string>wkb-ios/util/WKBGeometryEnvelopeBuilder.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C9B8B19638A72C794C34DF86E60BB13</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>wkb-ios</string>
+			<key>target</key>
+			<string>91E2D8A898CD7A3899E087527A7399AC</string>
+			<key>targetProxy</key>
+			<string>EB896819F315296DCDF4E71733ACB143</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>5E62115DE8C09934BF8D2FE5D15FED1E</string>
+				<string>3FA451D268613890FA8A5A03801E11D5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2EB721E7C6F5260B3C3C78D1AC870E2C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FAA8D01DC7AE819AD24E66C80D2FDCD5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2F20DFDF0F15E8317E7FFDAAC721EE16</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6256690D737C23C682DAE077351EBC6F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3539AFFE79F5B5C80FFCD57B7C7E4215</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>wkb-ios-WKB</string>
+			<key>target</key>
+			<string>1120A328EE771D19EBEC434348C747B9</string>
+			<key>targetProxy</key>
+			<string>BEA8CF294502E743046D3CB06BDCEDEA</string>
+		</dict>
+		<key>35D22F43FB002CC5FCB5FDB2A3BC879D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ABBFCE04709F9AC1D82DE564483A4727</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>36F3F5E66BE2A9D7DBF1ADF313E602A3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3991A871D9ECB8DC3FFF6EEE4DD9A2E8</string>
+				<string>7E2F3A54A72706B8A224E00F07526680</string>
+				<string>86031E70BDE23BFAC00385C7E8F61ACD</string>
+				<string>2BD17144772753B2B0855A67F0154D96</string>
+				<string>44CE0A56B4D84875B14C3999E3449376</string>
+				<string>902B1C43E84FB2C0BDDECCA4AA3FFEEA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/FontBlaster</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3888340DA209BF29971B254BC364FAF8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-LEIFR.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>39626425F5F5D32B29B1C1455DD197E0</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>40BE92A21D10D31AED48D104553E5515</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/wkb-ios/wkb-ios-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/wkb-ios/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/wkb-ios/wkb-ios.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>wkb_ios</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3991A871D9ECB8DC3FFF6EEE4DD9A2E8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FontBlaster.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3A9940D6E19439A32A8D190AF949A1C4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2EB721E7C6F5260B3C3C78D1AC870E2C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3C7855C072057CCCD9C909FC4DB91A12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7FC11E10D89274BB0717C2C45DBA927F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>3DCAB2B7CDE207B3958B6CB957FCC758</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3F1537EEC15B9670D434E6C89EE8B5D6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B6F5AC0D319DBF1D8858D2B066A0D966</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>3FA451D268613890FA8A5A03801E11D5</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>POD_CONFIGURATION_RELEASE=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3FAD89F3CA12BACC011DF61361C46C2E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4AC3AD5BE530DE39A169055F568E571C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>40BE92A21D10D31AED48D104553E5515</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>wkb-ios.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>42E03673BA19518F23940897053A94E4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBCompoundCurve.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCompoundCurve.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>44716DC7754D74A8D7EC618E6B1A915D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E6F0FBEB70717272B5114B182F51E461</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>44C1080D1402721124C3D21AC02A0432</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4CD147FCC1E6D00D2BDC721992E77932</string>
+				<string>36F3F5E66BE2A9D7DBF1ADF313E602A3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>FontBlaster</string>
+			<key>path</key>
+			<string>FontBlaster</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>44CE0A56B4D84875B14C3999E3449376</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FontBlaster-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>47778C567E53FDC764A55104A98B3FD8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FAF941CF005557D67265AC8A291F1416</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>47B595D1CA7B77E7E95739CF55220272</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryPrinter.h</string>
+			<key>path</key>
+			<string>wkb-ios/util/WKBGeometryPrinter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4865153BA30D4B7533E3F6AD4109C1B9</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6E520C7C33C636FCAFB3280EA448CD9F</string>
+				<string>0AC08E78C47F0C83321F7ED79990C170</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>499E914F74E9959E3D279604647F3C88</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4AC3AD5BE530DE39A169055F568E571C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryTypes.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometryTypes.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B21790FF1221559CF9E3185C5141161</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBMultiSurface.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiSurface.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4CD147FCC1E6D00D2BDC721992E77932</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FontBlaster.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4EA0B8CF510ABEBE427354AC8FC9E883</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-LEIFR.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>51887B574FDC5D09EDF55DBCAE0846AE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBMultiPolygon.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiPolygon.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>541C8DBBACDBD5820A7E6C10C3AE0FD2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>wkb-ios-Bridging-Header.h</string>
+			<key>path</key>
+			<string>wkb-ios/wkb-ios-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>55C7823814470B80A23514B3F0FC5070</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>56042F2A8596E2F8D5DD03A81356894F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>24DD9CA4918BE4F20A935D0590E80542</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>58E5EF0EAB4BC63B413E6D1F8DD3D11D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BCBC5D26E40465319A320C12167514FF</string>
+				<string>68FA6EEECAAD9F874ADB798AD0EAB87F</string>
+				<string>B0CFC4E1C3FC3C1B460FF7F094864D97</string>
+				<string>40BE92A21D10D31AED48D104553E5515</string>
+				<string>A249248578F479D130E4F16C305F89DB</string>
+				<string>215ACEF27A81A3934A916090A1BDEF4B</string>
+				<string>ABBFCE04709F9AC1D82DE564483A4727</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/wkb-ios</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5BDF5B4E029A4AFA681146B7A6A5806F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7D36E2FAD850EC8745D1FA8FE2E45F0C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5C0D47D48C1440D0020A92493860E99A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5D855D2EC101DAA04E716532D7D973F4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E62115DE8C09934BF8D2FE5D15FED1E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>POD_CONFIGURATION_DEBUG=1</string>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>5EAD8D56ED09801AE4CC676602AF1F29</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>D7031F103A802D221ACF34691F9AA87D</string>
+				<string>9F4A29EDEAF582C5AD55A5B216A140DD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>5ED445B953AF909DD7CB5F50E0EFA6AF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-LEIFR-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>60BE57BF83413DF9A0111E10E5AC3C45</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2869DE446A1195E506E6CA16136EF10E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>61CFCA8F163DC1311B55784E59A22356</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BB4103171B6834402FE3FE27569D3C5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6256690D737C23C682DAE077351EBC6F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryWriter.m</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBGeometryWriter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>62A94011EABBA84D2CA9DFBF22917EE8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBMultiPoint.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiPoint.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>62D9AE31471453F9D0079D75DBA25300</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7E2F3A54A72706B8A224E00F07526680</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/FontBlaster/FontBlaster-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/FontBlaster/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/FontBlaster/FontBlaster.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>FontBlaster</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>640B463D515C96BC2772966E48CE5B5D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBTIN.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBTIN.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6457051C54BFCEDAB1085780580E8DE8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>070C0AA6891CCE7F183736372D2F7B31</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6521E8A2B71C5DD8703824C97797ACF9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C441CDA8FB1D76A397B1A3F1A9D9D90</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6724342980B211CFC6AAFD9FFD0F0D00</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>name</key>
+			<string>Info.plist</string>
+			<key>path</key>
+			<string>wkb-ios/Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>68FA6EEECAAD9F874ADB798AD0EAB87F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>ResourceBundle-WKB-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6BE217D8F8DABF93E4AD04327DFF8833</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBMultiSurface.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiSurface.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6C6E55951C388D540343B2AF8E491217</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BA990F1743425E5D80DF698A4F94B0D4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>6E520C7C33C636FCAFB3280EA448CD9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>86031E70BDE23BFAC00385C7E8F61ACD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6E9C18959B674AAA2DF270F883C53A80</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>wkb_ios.framework</string>
+			<key>path</key>
+			<string>wkb-ios.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>6E9DA1CCDDEE3CD45B7D96B2716B3951</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FontBlaster.framework</string>
+			<key>path</key>
+			<string>FontBlaster.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>71566BB5A98BA3D6E641522D2A66D395</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7E2F3A54A72706B8A224E00F07526680</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/FontBlaster/FontBlaster-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/FontBlaster/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/FontBlaster/FontBlaster.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>FontBlaster</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>72F8A52AC84B61919A0EC36677C32602</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryCollection.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometryCollection.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>74BCF85BDA186B8A2A1C909B3BFA040B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>72F8A52AC84B61919A0EC36677C32602</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7612BC997F3A7C028A7381315FC2575A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1AA60390CB6669473D0440B49F911CC7</string>
+				<string>35D22F43FB002CC5FCB5FDB2A3BC879D</string>
+				<string>7BB572B8751B6703906C96B60F6B675B</string>
+				<string>2835455C131179E9031660A07B701817</string>
+				<string>F21BDBE7B3F32AC896CE9322924096A4</string>
+				<string>8C935B3E457307323B46E06D0B00CFF2</string>
+				<string>BAF19DEEB194F378B509A7CF0F992A91</string>
+				<string>6C6E55951C388D540343B2AF8E491217</string>
+				<string>A9A06AEC9A6416CA2AE5C0B94082D172</string>
+				<string>B2AAE756D4B414946E48C8A39E1D1702</string>
+				<string>D371515A6EE5824F932D6FDEBECAB30E</string>
+				<string>EC16BA6589803B36CE3A93704DC32688</string>
+				<string>44716DC7754D74A8D7EC618E6B1A915D</string>
+				<string>0119E5F91EEE12D797DE50C05BC541DD</string>
+				<string>A30F14D1BE679865B93899D6E257E481</string>
+				<string>6457051C54BFCEDAB1085780580E8DE8</string>
+				<string>28B1FD5035F7E5EAE87A9A8A3CF085EB</string>
+				<string>DBF3286DD4F030E2C36A187DAE48309A</string>
+				<string>EFBDC5722335A3D4836D5621980113B4</string>
+				<string>3F1537EEC15B9670D434E6C89EE8B5D6</string>
+				<string>E29FC638CC71487D3FD0DFF67EE453E7</string>
+				<string>AFD6106BFB7767EBC50BD7A2E0252BCD</string>
+				<string>1E553F78959D91B971B5D74B9902A0A1</string>
+				<string>CD4282711AE2D1CA488245B6FD07D069</string>
+				<string>B98B435D45A8D92850680DE1A93E42F8</string>
+				<string>DB80BBD267F321E62117FEEC48EDBA34</string>
+				<string>B4A6AC2B6A7542ED6ECC1B7FC4A9D5EE</string>
+				<string>3C7855C072057CCCD9C909FC4DB91A12</string>
+				<string>1D6992D2959CD65312A71C59C1099FC1</string>
+				<string>08D9816FFA8F3D720D87F81DD5EA00EA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>77C5D34F53ED1007C35BA7FDFD4D9008</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>78E9E893895F0B6096A73A85D7BCA041</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>91E2D8A898CD7A3899E087527A7399AC</string>
+			<key>remoteInfo</key>
+			<string>wkb-ios</string>
+		</dict>
+		<key>7A17429B184CFB2FB3FE15CA42879125</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-LEIFR.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7B3E151F555737E66D97F4A1F28B876A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7BB572B8751B6703906C96B60F6B675B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>99C4347853D942D8D7D9508DD70D3271</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>7C61B55A7EC85FB58C8F207C7F07B16E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>186FD6133C6F0CF2E1E2924B046ADEA5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7D36E2FAD850EC8745D1FA8FE2E45F0C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>91CCCE950318B1910BD5ED0595D0038A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>7DA0D68B0CDD176E56409C46130C5D05</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01F02684F07C67766AEA349A479D455F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
+				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
+				<string>11BA35C75BF53FE81662C4D46B6D7FDD</string>
+				<string>E42A0046C63843536B09811F1DE25296</string>
+				<string>8A28785D99A39C8A0475B408321BFEB6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E1871770EC7B79430C1341B84CD37A0</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C1CA9234AE2260F74C78704A69286A2B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>3A9940D6E19439A32A8D190AF949A1C4</string>
+				<string>8B91F09689F68E8DAD0C09C6B71EA824</string>
+				<string>5BDF5B4E029A4AFA681146B7A6A5806F</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>FE545DB9E7D03E2601CB4991613023AB</string>
+				<string>2C9B8B19638A72C794C34DF86E60BB13</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-LEIFR</string>
+			<key>productName</key>
+			<string>Pods-LEIFR</string>
+			<key>productReference</key>
+			<string>23FF1F20210ED7F725AD186E5C53F6EC</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>7E2F3A54A72706B8A224E00F07526680</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>FontBlaster.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7FC11E10D89274BB0717C2C45DBA927F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBSurface.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBSurface.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>807D7F2B200F9A0922182FFFFC77C646</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBPolygon.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBPolygon.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>83962C69271D5179FBD7E064FE93A123</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>D4E674DD9D88022C39F9427C0E34D5BF</string>
+			<key>remoteInfo</key>
+			<string>FontBlaster</string>
+		</dict>
+		<key>86031E70BDE23BFAC00385C7E8F61ACD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FontBlaster-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>86F2CBA6F27A54BBD059344A2694A453</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4EA0B8CF510ABEBE427354AC8FC9E883</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-LEIFR/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-LEIFR/Pods-LEIFR.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_LEIFR</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>882353D4BB6C78610C60C8A38F291B47</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBCompoundCurve.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCompoundCurve.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A28785D99A39C8A0475B408321BFEB6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BBFCE3795565FC74600F82AAC1B91871</string>
+				<string>CFC643CB77A54A83C5934E6CF3F128BC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A2B7661F56C1CB8943CCBFE2ED06746</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F7FC0DBF2EC96C21D45D8BD9E64AA9B5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8B91F09689F68E8DAD0C09C6B71EA824</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9B21B340D90B175332A8DA256486437B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8C8771D5F90CA2346C374821CF74B76C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A249248578F479D130E4F16C305F89DB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8C935B3E457307323B46E06D0B00CFF2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>96D8F754909DFEB2BA8DEFFD7CCC7837</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>902B1C43E84FB2C0BDDECCA4AA3FFEEA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>91CCCE950318B1910BD5ED0595D0038A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-LEIFR-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>91E2D8A898CD7A3899E087527A7399AC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>0CA8626836B53FAAA76798546AC9FD80</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D5A087CE9487AE8D631926BB0DEE4253</string>
+				<string>D273831FA07206E912D482F5B680E1F2</string>
+				<string>977ADFE9594747A35B99F6053CDB560B</string>
+				<string>7612BC997F3A7C028A7381315FC2575A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>3539AFFE79F5B5C80FFCD57B7C7E4215</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>wkb-ios</string>
+			<key>productName</key>
+			<string>wkb-ios</string>
+			<key>productReference</key>
+			<string>6E9C18959B674AAA2DF270F883C53A80</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>93A4A3777CF96A4AAC1D13BA6DCCEA73</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>text.script.ruby</string>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>93DB45E6D405C975C504C81E22CD8107</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0BBEA34CD83F99F52C6A908B8EEF530F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>96D8F754909DFEB2BA8DEFFD7CCC7837</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBCircularString.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCircularString.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>977ADFE9594747A35B99F6053CDB560B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>15203D4531E2C65E0E36D5B761EBC32E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>97A617B193A4F6ADE7901FC6F7B6BBB6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>97DD858A732819FA162B7294D8A34F01</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBMultiPolygon.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiPolygon.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>99C4347853D942D8D7D9508DD70D3271</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>wkb_ios.h</string>
+			<key>path</key>
+			<string>wkb-ios/wkb_ios.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9A4BB0F62DF2152DF61393594DB2E8DD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBByteWriter.m</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBByteWriter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9A4BD202B6448161298DA61882D8B6F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E8BD84B037E7B26272FCB81906D1E673</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9A4EDB6C173D724C29CDCFA82026EEAC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9B21B340D90B175332A8DA256486437B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9C69A3A106DECE7B951471A958A0BAC7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBPolygon.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBPolygon.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F44F94ECE00305BFA54C562369852B0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9F4A29EDEAF582C5AD55A5B216A140DD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>40BE92A21D10D31AED48D104553E5515</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CONFIGURATION_BUILD_DIR</key>
+				<string>$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/wkb-ios</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/wkb-ios/ResourceBundle-WKB-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>WKB</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A249248578F479D130E4F16C305F89DB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>wkb-ios-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A30F14D1BE679865B93899D6E257E481</key>
+		<dict>
+			<key>fileRef</key>
+			<string>47B595D1CA7B77E7E95739CF55220272</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>A719FDD8C0F89472F1501D7EF96BB791</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBByteWriter.h</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBByteWriter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A9A06AEC9A6416CA2AE5C0B94082D172</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C388127812F50EA6A215F2420D3EC449</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>AA357031A00D7DB2017D80908B7B2A84</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>1E006F0681ECDF8740F65894F099FEE2</string>
+				<string>E7433333E74FD0F25E294E1E04AFF06D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>ABBFCE04709F9AC1D82DE564483A4727</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>wkb-ios-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AF5A6CA4BCEBE1AA942142AF58E2054E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBTriangle.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBTriangle.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFD6106BFB7767EBC50BD7A2E0252BCD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>62A94011EABBA84D2CA9DFBF22917EE8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>B0CFC4E1C3FC3C1B460FF7F094864D97</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>wkb-ios.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B2A25C71680D492D98ACDE03B6A04584</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-LEIFR-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B2AAE756D4B414946E48C8A39E1D1702</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BE96300BB6D09CB85810382BBE87AA38</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>B4A6AC2B6A7542ED6ECC1B7FC4A9D5EE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD9DED1DB03D6CF38AD2DC57EAD5DDCB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>B6F5AC0D319DBF1D8858D2B066A0D966</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBMultiCurve.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiCurve.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B7205F27B9CAE5D0C16A2937E433BF55</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F5725B74D49798B61CE786908BD4FD57</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B98B435D45A8D92850680DE1A93E42F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2383F83C9A02530C369EDCAC1F701F80</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>BA990F1743425E5D80DF698A4F94B0D4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBCurve.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCurve.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BAF19DEEB194F378B509A7CF0F992A91</key>
+		<dict>
+			<key>fileRef</key>
+			<string>882353D4BB6C78610C60C8A38F291B47</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>BBFCE3795565FC74600F82AAC1B91871</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EF44C8DD686AC29385090D848D557E47</string>
+				<string>7A17429B184CFB2FB3FE15CA42879125</string>
+				<string>20815FEA4D2F16DE1E99664CED5B04FA</string>
+				<string>5ED445B953AF909DD7CB5F50E0EFA6AF</string>
+				<string>FAA8D01DC7AE819AD24E66C80D2FDCD5</string>
+				<string>B2A25C71680D492D98ACDE03B6A04584</string>
+				<string>0C4A1525752DC9E765704B63EB249E0E</string>
+				<string>91CCCE950318B1910BD5ED0595D0038A</string>
+				<string>3888340DA209BF29971B254BC364FAF8</string>
+				<string>4EA0B8CF510ABEBE427354AC8FC9E883</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-LEIFR</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-LEIFR</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3DCAB2B7CDE207B3958B6CB957FCC758</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BCBC5D26E40465319A320C12167514FF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD4881E4A9FB22CB659110692727B1E8</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>40BE92A21D10D31AED48D104553E5515</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/wkb-ios/wkb-ios-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/wkb-ios/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/wkb-ios/wkb-ios.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>wkb_ios</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>BE96300BB6D09CB85810382BBE87AA38</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometry.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometry.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BEA8CF294502E743046D3CB06BDCEDEA</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>1120A328EE771D19EBEC434348C747B9</string>
+			<key>remoteInfo</key>
+			<string>wkb-ios-WKB</string>
+		</dict>
+		<key>C1B57996EEF5A3153F27E81B843473CB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryTypes.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometryTypes.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C1CA9234AE2260F74C78704A69286A2B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>14C63A997B71642477D9FBF478BEC44F</string>
+				<string>86F2CBA6F27A54BBD059344A2694A453</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C388127812F50EA6A215F2420D3EC449</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBCurvePolygon.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCurvePolygon.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C429FCFCB1D4C4411748881286F02438</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CEC22C73C1608DFA5D5D78BDCB218219</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C4CDD6E61430227D5608582E5F462D56</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_LEIFRTests.framework</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C645B7361C0A1180E8A205AE153D4008</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C8491847A2E933580EF569FDA3974229</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBMultiLineString.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiLineString.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CB6370816D1886D868229DA192AD401F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CBE39BE82FD1BEDAB6D0B4046C32C350</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryCollection.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometryCollection.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CD4282711AE2D1CA488245B6FD07D069</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4B21790FF1221559CF9E3185C5141161</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CEC22C73C1608DFA5D5D78BDCB218219</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>CFC643CB77A54A83C5934E6CF3F128BC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7B3E151F555737E66D97F4A1F28B876A</string>
+				<string>499E914F74E9959E3D279604647F3C88</string>
+				<string>F20B2FF994B975AA464273A34BF55088</string>
+				<string>9A4EDB6C173D724C29CDCFA82026EEAC</string>
+				<string>0BBEA34CD83F99F52C6A908B8EEF530F</string>
+				<string>5C0D47D48C1440D0020A92493860E99A</string>
+				<string>CB6370816D1886D868229DA192AD401F</string>
+				<string>5D855D2EC101DAA04E716532D7D973F4</string>
+				<string>C645B7361C0A1180E8A205AE153D4008</string>
+				<string>97A617B193A4F6ADE7901FC6F7B6BBB6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-LEIFRTests</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-LEIFRTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CFC884629D9A44D9557166E71DAF8718</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6BE217D8F8DABF93E4AD04327DFF8833</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CFF29AC6DECD5BF0E57639658A868EA0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBByteReader.m</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBByteReader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D0DCAC73A2C53264220D3836E83C59FE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>807D7F2B200F9A0922182FFFFC77C646</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D273831FA07206E912D482F5B680E1F2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>55C7823814470B80A23514B3F0FC5070</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D2FAB5F2A6BC4FF57EC4CC96596B3C93</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FCB36EF106CEE2F343B32FCB6F7F4368</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D371515A6EE5824F932D6FDEBECAB30E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CBE39BE82FD1BEDAB6D0B4046C32C350</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0730</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>E42A0046C63843536B09811F1DE25296</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>D4E674DD9D88022C39F9427C0E34D5BF</string>
+				<string>7E1871770EC7B79430C1341B84CD37A0</string>
+				<string>D5BDDDD0AA47AB763499AD8B526AB8D5</string>
+				<string>91E2D8A898CD7A3899E087527A7399AC</string>
+				<string>1120A328EE771D19EBEC434348C747B9</string>
+			</array>
+		</dict>
+		<key>D4E674DD9D88022C39F9427C0E34D5BF</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>04C87D9EA3AD7F901622A24E765E0C1E</string>
+			<key>buildPhases</key>
+			<array>
+				<string>4865153BA30D4B7533E3F6AD4109C1B9</string>
+				<string>078055EE628408170613E9EF1B485054</string>
+				<string>179A3F78521FF8AFB8EA1FF701695119</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FontBlaster</string>
+			<key>productName</key>
+			<string>FontBlaster</string>
+			<key>productReference</key>
+			<string>6E9DA1CCDDEE3CD45B7D96B2716B3951</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>D5A087CE9487AE8D631926BB0DEE4253</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8C8771D5F90CA2346C374821CF74B76C</string>
+				<string>F80696FD681728F48215B9C24680C042</string>
+				<string>20E5E23D3706E0EF6F31E26A35E8417C</string>
+				<string>F646CA038F27C8F20EA9E90634B110FB</string>
+				<string>267F6372BAA7491708B74764C60C9FFB</string>
+				<string>60BE57BF83413DF9A0111E10E5AC3C45</string>
+				<string>B7205F27B9CAE5D0C16A2937E433BF55</string>
+				<string>28E9313C84C83BE3196C137D905D0763</string>
+				<string>74BCF85BDA186B8A2A1C909B3BFA040B</string>
+				<string>DF7A245849F6FF66633E2027CE9EC28C</string>
+				<string>6521E8A2B71C5DD8703824C97797ACF9</string>
+				<string>47778C567E53FDC764A55104A98B3FD8</string>
+				<string>61CFCA8F163DC1311B55784E59A22356</string>
+				<string>D2FAB5F2A6BC4FF57EC4CC96596B3C93</string>
+				<string>3FAD89F3CA12BACC011DF61361C46C2E</string>
+				<string>2F20DFDF0F15E8317E7FFDAAC721EE16</string>
+				<string>FE590C764FBB49FA03A25859C2C2B470</string>
+				<string>7C61B55A7EC85FB58C8F207C7F07B16E</string>
+				<string>0F61019543C9C3920604492BC8186AED</string>
+				<string>56042F2A8596E2F8D5DD03A81356894F</string>
+				<string>DBFBD3502B19EBA9C6CAAA6D365044DF</string>
+				<string>CFC884629D9A44D9557166E71DAF8718</string>
+				<string>9A4BD202B6448161298DA61882D8B6F8</string>
+				<string>D0DCAC73A2C53264220D3836E83C59FE</string>
+				<string>0339F18E27E0DDDA9019DAB4ADB1EFBE</string>
+				<string>7DA0D68B0CDD176E56409C46130C5D05</string>
+				<string>1B611DC0B3CAB2D8F260FEEBECF1F745</string>
+				<string>263DC0B10E89C8F148776688763A8EB4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D5BDDDD0AA47AB763499AD8B526AB8D5</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>AA357031A00D7DB2017D80908B7B2A84</string>
+			<key>buildPhases</key>
+			<array>
+				<string>E664EBA6A5E6A1D56D656C97C72A89F5</string>
+				<string>03C213AC8CF175DDF002CE053CC29033</string>
+				<string>8A2B7661F56C1CB8943CCBFE2ED06746</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>04CDAA3DE5A3EE2476980F3620D9AD22</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-LEIFRTests</string>
+			<key>productName</key>
+			<string>Pods-LEIFRTests</string>
+			<key>productReference</key>
+			<string>C4CDD6E61430227D5608582E5F462D56</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>D7031F103A802D221ACF34691F9AA87D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>40BE92A21D10D31AED48D104553E5515</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CONFIGURATION_BUILD_DIR</key>
+				<string>$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/wkb-ios</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/wkb-ios/ResourceBundle-WKB-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>WKB</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>D70462159328ACF34C098204C897121C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryEnvelope.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometryEnvelope.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D8369F4BBAD088DB008A12349198C2E0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBMultiLineString.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBMultiLineString.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DB80BBD267F321E62117FEEC48EDBA34</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9C69A3A106DECE7B951471A958A0BAC7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>DBF3286DD4F030E2C36A187DAE48309A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E12BE88F2875CE4309A8FBFCE7AD4807</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>DBFBD3502B19EBA9C6CAAA6D365044DF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>97DD858A732819FA162B7294D8A34F01</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DF7A245849F6FF66633E2027CE9EC28C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D70462159328ACF34C098204C897121C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E12BE88F2875CE4309A8FBFCE7AD4807</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryWriter.h</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBGeometryWriter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E29FC638CC71487D3FD0DFF67EE453E7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C8491847A2E933580EF569FDA3974229</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>E2AD814A6684C0795AF9BB4344D3E3C9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryEnvelope.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBGeometryEnvelope.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E42A0046C63843536B09811F1DE25296</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6E9DA1CCDDEE3CD45B7D96B2716B3951</string>
+				<string>23FF1F20210ED7F725AD186E5C53F6EC</string>
+				<string>C4CDD6E61430227D5608582E5F462D56</string>
+				<string>015E786267FA647031034BD9950A0E52</string>
+				<string>6E9C18959B674AAA2DF270F883C53A80</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E664EBA6A5E6A1D56D656C97C72A89F5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>93DB45E6D405C975C504C81E22CD8107</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>E6F0FBEB70717272B5114B182F51E461</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBGeometryEnvelopeBuilder.h</string>
+			<key>path</key>
+			<string>wkb-ios/util/WKBGeometryEnvelopeBuilder.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E7433333E74FD0F25E294E1E04AFF06D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>97A617B193A4F6ADE7901FC6F7B6BBB6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-LEIFRTests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_LEIFRTests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>E8BD84B037E7B26272FCB81906D1E673</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBPoint.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBPoint.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EB896819F315296DCDF4E71733ACB143</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>91E2D8A898CD7A3899E087527A7399AC</string>
+			<key>remoteInfo</key>
+			<string>wkb-ios</string>
+		</dict>
+		<key>EC16BA6589803B36CE3A93704DC32688</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E2AD814A6684C0795AF9BB4344D3E3C9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>EEA84E7D28AFBAC3A5C01020B86EE3D0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBByteReader.h</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBByteReader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EF44C8DD686AC29385090D848D557E47</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EFBDC5722335A3D4836D5621980113B4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>032AD16C2ED6EF47975E00E9875FD7A2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>F20B2FF994B975AA464273A34BF55088</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-LEIFRTests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F21BDBE7B3F32AC896CE9322924096A4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A719FDD8C0F89472F1501D7EF96BB791</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>F5725B74D49798B61CE786908BD4FD57</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBCurvePolygon.m</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBCurvePolygon.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F646CA038F27C8F20EA9E90634B110FB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>13024C242F28920D2286BD473684357C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7FC0DBF2EC96C21D45D8BD9E64AA9B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5D855D2EC101DAA04E716532D7D973F4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>F80696FD681728F48215B9C24680C042</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CFF29AC6DECD5BF0E57639658A868EA0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F872E25F147E83FB1AFA05F490F1EAE7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6724342980B211CFC6AAFD9FFD0F0D00</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA7B2E45898E1FACBA040FFA1E0DD3E0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F872E25F147E83FB1AFA05F490F1EAE7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FAA8D01DC7AE819AD24E66C80D2FDCD5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-LEIFR-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FAF941CF005557D67265AC8A291F1416</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryJSONCompatible.m</string>
+			<key>path</key>
+			<string>wkb-ios/util/WKBGeometryJSONCompatible.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FCB36EF106CEE2F343B32FCB6F7F4368</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>WKBGeometryReader.m</string>
+			<key>path</key>
+			<string>wkb-ios/io/WKBGeometryReader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FCF4E6E24C7F6F2C0E48337B6CCE5891</key>
+		<dict>
+			<key>fileRef</key>
+			<string>44CE0A56B4D84875B14C3999E3449376</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>FD9DED1DB03D6CF38AD2DC57EAD5DDCB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>WKBPolyhedralSurface.h</string>
+			<key>path</key>
+			<string>wkb-ios/geom/WKBPolyhedralSurface.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FE545DB9E7D03E2601CB4991613023AB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>FontBlaster</string>
+			<key>target</key>
+			<string>D4E674DD9D88022C39F9427C0E34D5BF</string>
+			<key>targetProxy</key>
+			<string>83962C69271D5179FBD7E064FE93A123</string>
+		</dict>
+		<key>FE590C764FBB49FA03A25859C2C2B470</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0C8EFEF172F08A6B5139FA138835B49E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>

@@ -50,29 +50,160 @@ class LFDatabaseManagerTest: XCTestCase {
 	func testDatabaseRetrieveGeoJSON() {
 		print("")
 		let path = LFPath()
-		let latitudes: [Double]	    =	[ 1,  2,  3,  4,  5,  6,  7,  8]
-		let longitudes: [Double]	=	[11, 12, 13, 14, 15, 16, 17, 18]
-		let altitudes: [Double]	    =	[21, 22, 23, 24, 25, 26, 27, 28]
+		let latitudes: [Double] = [1, 2, 3, 4, 5, 6, 7, 8]
+		let longitudes: [Double] = [11, 12, 13, 14, 15, 16, 17, 18]
+		let altitudes: [Double] = [21, 22, 23, 24, 25, 26, 27, 28]
 		
 		for i in 0..<latitudes.count {
 			path.addPoint(latitude: latitudes[i], longitude: longitudes[i], altitude: altitudes[i])
 		}
-		
+        
+        let timeOutDate = Date(timeIntervalSinceNow: 5)
+        var saveResponseReceived = false
+        var fetchResponseReceived = false
+        
 		self.databaseManager.savePath(path, completion: {
 			success in
+            
+            saveResponseReceived = true
 		})
 		
 		let worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld)
 		self.databaseManager.getPointsGeoJSONInRegion(worldRegion, completion: {
 			geoJSON in
-			print("GEOJSON: ")
-			print("\(geoJSON)")
+			
+            fetchResponseReceived = true
+            let resultJSON = "{\"type\":\"MultiPoint\",\"coordinates\":[[11,1,21],[12,2,22],[13,3,23],[14,4,24],[15,5,25],[16,6,26],[17,7,27],[18,8,28]]}"
+            XCTAssertEqual(geoJSON, [resultJSON], "Path not fetched correctly")
 		})
+        
+        while ((!saveResponseReceived || !fetchResponseReceived) && timeOutDate.timeIntervalSinceNow > 0) {
+            CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 0.01, true)
+        }
+        
+        if (!saveResponseReceived) {
+            XCTFail("Saving points timed out")
+        }
+        
+        if (!fetchResponseReceived) {
+            XCTFail("Fetching points timed out")
+        }
+
 		
 		_ = self.databaseManager.removeDatabase("test")
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
 	}
+    
+    func testDatabaseRetrievePath() {
+        print("")
+        let path = LFPath()
+        let latitudes: [Double] = [1, 2, 3, 4, 5, 6, 7, 8]
+        let longitudes: [Double] = [11, 12, 13, 14, 15, 16, 17, 18]
+        let altitudes: [Double] = [21, 22, 23, 24, 25, 26, 27, 28]
+        
+        for i in 0..<latitudes.count {
+            path.addPoint(latitude: latitudes[i], longitude: longitudes[i], altitude: altitudes[i])
+        }
+        
+        let timeOutDate = Date(timeIntervalSinceNow: 5)
+        var saveResponseReceived = false
+        var fetchResponseReceived = false
+        
+        self.databaseManager.savePath(path, completion: {
+            success in
+            
+            saveResponseReceived = true
+        })
+        
+        let worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld)
+        self.databaseManager.getPathsInRegion(worldRegion, completion: {
+            paths in
+            
+            fetchResponseReceived = true
+            XCTAssertEqual(paths.count, 1, "Incorrect path number")
+            if paths.count == 1 {
+                XCTAssertEqual(paths[0].WKTString(), "LINESTRINGZM(11 1 21 0, 18 8 28 0)", "Incorrect path string")
+            }
+        })
+        
+        while ((!saveResponseReceived || !fetchResponseReceived) && timeOutDate.timeIntervalSinceNow > 0) {
+            CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 0.01, true)
+        }
+        
+        if (!saveResponseReceived) {
+            XCTFail("Saving points timed out")
+        }
+        
+        if (!fetchResponseReceived) {
+            XCTFail("Fetching points timed out")
+        }
+        
+        
+        _ = self.databaseManager.removeDatabase("test")
+        
+        print("\n\n--------------------------------------------------\n\n\n\n\n")
+    }
+    
+    func testDatabaseRetrieveSnappedPath() {
+        print("")
+        let path = LFPath()
+        let latitudes: [Double] = [1, 2, 3, 4, 5, 6, 7, 8]
+        let longitudes: [Double] = [11, 12, 13, 14, 15, 16, 17, 18]
+        let altitudes: [Double] = [21, 22, 23, 24, 25, 26, 27, 28]
+        
+        for i in 0..<latitudes.count {
+            path.addPoint(latitude: latitudes[i], longitude: longitudes[i], altitude: altitudes[i])
+        }
+        
+        let timeOutDate = Date(timeIntervalSinceNow: 5)
+        var saveResponseReceived = false
+        var fetchResponse1Received = false
+        var fetchResponse2Received = false
+        
+        self.databaseManager.savePath(path, completion: {
+            success in
+            
+            saveResponseReceived = true
+        })
+        
+        let worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld)
+        self.databaseManager.getSnappedPathsInRegion(worldRegion, gridSize: 0.0000001, completion: {
+            paths in
+            
+            fetchResponse1Received = true
+            XCTAssertEqual(paths.count, 1, "Incorrect path number")
+            if paths.count == 1 {
+                XCTAssertEqual(paths[0].WKTString(), "LINESTRINGZM(11 1 21 0, 12 2 22 0, 13 3 23 0, 14 4 24 0, 15 5 25 0, 16 6 26 0, 17 7 27 0, 18 8 28 0)", "Incorrect path string")
+            }
+        })
+        
+        self.databaseManager.getSnappedPathsInRegion(worldRegion, gridSize: 10, completion: {
+            paths in
+            
+            fetchResponse2Received = true
+            XCTAssertEqual(paths.count, 1, "Incorrect path number")
+            let point = paths[0].points()[0] as! WKBPoint
+            XCTAssertEqual(point.x!, 10, "Incorrect point")
+        })
+        
+        while ((!saveResponseReceived || !fetchResponse1Received || !fetchResponse2Received) && timeOutDate.timeIntervalSinceNow > 0) {
+            CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 0.01, true)
+        }
+        
+        if (!saveResponseReceived) {
+            XCTFail("Saving points timed out")
+        }
+        
+        if (!fetchResponse1Received || !fetchResponse2Received) {
+            XCTFail("Fetching points timed out")
+        }
+        
+        
+        _ = self.databaseManager.removeDatabase("test")
+        
+        print("\n\n--------------------------------------------------\n\n\n\n\n")
+    }
     	
 	func testDatabaseAddingPath() {
 		print("")
@@ -111,7 +242,7 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		self.databaseManager.getPathsInRegion(worldRegion, completion: {
 			paths in
-			XCTAssertEqual(paths[0].WKTString(), "LINESTRINGZM(-122.24223433999996928 37.43463237000000512 0 0, -122.03875936999999488 37.33450378999999488 0 0)", "Path not identical")
+			XCTAssertEqual(paths[0].WKTString(), "LINESTRINGZM(11 1 21 0, 18 8 28 0)", "Path not identical")
 			response2Arrived = true
 		})
 		
