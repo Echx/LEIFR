@@ -60,10 +60,6 @@
 		0CD4AD901DAD856800081876 /* LFHistoryControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4AD8F1DAD856800081876 /* LFHistoryControlView.xib */; };
 		0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC8B701DA6F9320084DD6F /* MapKit.framework */; };
 		62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */; };
-		62027DCC1DC3B55A00B35F76 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62027DCA1DC3B55A00B35F76 /* RealmSwift.framework */; };
-		62027DCD1DC3B55A00B35F76 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62027DCA1DC3B55A00B35F76 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		62027DCE1DC3B55A00B35F76 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62027DCB1DC3B55A00B35F76 /* Realm.framework */; };
-		62027DCF1DC3B55A00B35F76 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62027DCB1DC3B55A00B35F76 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */; };
 		62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */; };
 		62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62054EC91DAD697400FEC851 /* LFConstant.swift */; };
@@ -107,8 +103,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				62027DCF1DC3B55A00B35F76 /* Realm.framework in Embed Frameworks */,
-				62027DCD1DC3B55A00B35F76 /* RealmSwift.framework in Embed Frameworks */,
 				623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -565,8 +559,6 @@
 		4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
 		62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedPoint.swift; sourceTree = "<group>"; };
-		62027DCA1DC3B55A00B35F76 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		62027DCB1DC3B55A00B35F76 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedLevel.swift; sourceTree = "<group>"; };
 		62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedDatabaseManager.swift; sourceTree = "<group>"; };
 		62054EC91DAD697400FEC851 /* LFConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFConstant.swift; path = Extensions/LFConstant.swift; sourceTree = "<group>"; };
@@ -603,8 +595,6 @@
 				623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */,
 				0CBB38681D85F9BD002C0EF0 /* libspatialite.a in Frameworks */,
 				0CBB38661D85F9BD002C0EF0 /* libgeos_c.a in Frameworks */,
-				62027DCC1DC3B55A00B35F76 /* RealmSwift.framework in Frameworks */,
-				62027DCE1DC3B55A00B35F76 /* Realm.framework in Frameworks */,
 				0CBB386A1D85F9BD002C0EF0 /* mod_spatialite.a in Frameworks */,
 				0CBB38671D85F9BD002C0EF0 /* libproj.a in Frameworks */,
 				6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */,
@@ -640,8 +630,6 @@
 		0CBB30751D85F413002C0EF0 = {
 			isa = PBXGroup;
 			children = (
-				62027DCA1DC3B55A00B35F76 /* RealmSwift.framework */,
-				62027DCB1DC3B55A00B35F76 /* Realm.framework */,
 				623EAEC21DA6D005004B1C76 /* Mapbox.framework */,
 				0CBB30801D85F413002C0EF0 /* LEIFR */,
 				0CBB30951D85F413002C0EF0 /* LEIFRTests */,
