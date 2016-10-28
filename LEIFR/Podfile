@@ -6,12 +6,14 @@ target 'LEIFR' do
 
 pod 'FontBlaster'
 pod 'wkb-ios'
+pod 'RealmSwift'
 
 end
 
 target 'LEIFRTests' do
 	
 pod 'wkb-ios'
+pod 'RealmSwift'
 
 end
 
