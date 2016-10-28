@@ -12,7 +12,6 @@ import wkb_ios
 
 class LFDatabaseManager: NSObject {
 	fileprivate static let manager = LFDatabaseManager()
-	fileprivate var asyncDatabaseQueue = DispatchQueue(label: "FMDB_ACCESS")
 	fileprivate var databaseQueue: FMDatabaseQueue!
 	var database: FMDatabase!
 	
@@ -87,14 +86,12 @@ class LFDatabaseManager: NSObject {
 	}
 	
 	func savePath(_ path: LFPath, completion:@escaping ((Bool) -> Void)) {
-		self.asyncDatabaseQueue.async {
-			self.databaseQueue.inDatabase({
-				database in
-				let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
-				let isSuccessful = self.database.executeStatements(insertSQL)
-				completion(isSuccessful)
-			})
-		}
+		self.databaseQueue.inDatabase({
+			database in
+			let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
+			let isSuccessful = self.database.executeStatements(insertSQL)
+			completion(isSuccessful)
+		})
 	}
     
     func getPointsInRegion(_ region: MKCoordinateRegion, completion:@escaping (([CLLocationCoordinate2D]) -> Void)) {
@@ -115,35 +112,33 @@ class LFDatabaseManager: NSObject {
     }
     
     func getPointsGeoJSONInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion:@escaping (([String]) -> Void)) {
-		asyncDatabaseQueue.async {
-			self.databaseQueue.inDatabase({
-				database in
-				let xMin = region.center.longitude - region.span.longitudeDelta
-				let yMin = region.center.latitude - region.span.latitudeDelta
-				let xMax = region.center.longitude + region.span.longitudeDelta
-				let yMax = region.center.latitude + region.span.latitudeDelta
-				
-				let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
-				let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
-				let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
-				
-                var array = [String]()
-                
-                if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
-                    while (results.next()) {
-                        if results.hasAnotherRow() {
-                            if let geoJSON = results.string(forColumnIndex: 1) {
-                                array.append(geoJSON)
-                            }
-                        }
-                    }
-                }
-				
-				DispatchQueue.main.async {
-					completion(array)
+		self.databaseQueue.inDatabase({
+			database in
+			let xMin = region.center.longitude - region.span.longitudeDelta
+			let yMin = region.center.latitude - region.span.latitudeDelta
+			let xMax = region.center.longitude + region.span.longitudeDelta
+			let yMax = region.center.latitude + region.span.latitudeDelta
+			
+			let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
+			let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
+			let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
+			
+			var array = [String]()
+			
+			if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+				while (results.next()) {
+					if results.hasAnotherRow() {
+						if let geoJSON = results.string(forColumnIndex: 1) {
+							array.append(geoJSON)
+						}
+					}
 				}
-			})
-		}
+			}
+			
+			DispatchQueue.main.async {
+				completion(array)
+			}
+		})
     }
 
 	
@@ -189,7 +184,7 @@ class LFDatabaseManager: NSObject {
 			completion(paths)
 		})
 	}
-    
+	
     func getSnappedPathsInRegion(_ region: MKCoordinateRegion, completion: @escaping (([LFPath]) -> Void)) {
         self.getSnappedPathsInRegion(region, gridSize: 0.0, completion: completion)
     }
