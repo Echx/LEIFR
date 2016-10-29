@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureLocationManager()
 		FontBlaster.blast()
 		
-//        LFCachedDatabaseManager.shared.clearRealm()
+//        LFCachedDatabaseManager.shared.destroyRealm()
 		
 		return true
 	}
