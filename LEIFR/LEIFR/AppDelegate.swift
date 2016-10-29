@@ -24,6 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureLocationManager()
 		FontBlaster.blast()
 		
+//		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+//		let array = try! FileManager.default.contentsOfDirectory(atPath: databaseDirectory)
+		
+//		for name in array {
+//			if name != "default.sqlite" {
+//				try! FileManager.default.removeItem(atPath: "\(databaseDirectory)/\(name)")
+//			}
+//		}
+		
 		return true
 	}
 
