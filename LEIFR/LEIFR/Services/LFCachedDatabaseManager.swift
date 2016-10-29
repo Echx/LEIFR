@@ -72,14 +72,14 @@ class LFCachedDatabaseManager: NSObject {
         return currentLevels[0].points.map{MKMapPoint(x: Double($0.x), y: Double($0.y))}
     }
     
-    func clearRealm() {
+    func clearDatabase() {
         let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
         }
     }
     
-    func destroyRealm() {
+    func destroyDatabase() {
         let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         let array = try! FileManager.default.contentsOfDirectory(atPath: databaseDirectory)
         
