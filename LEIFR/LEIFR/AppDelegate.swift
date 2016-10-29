@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
     let locationManager = CLLocationManager()
-    fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
+    fileprivate let geoRecordManager = LFGeoRecordManager.shared
     fileprivate let databaseManager = LFDatabaseManager.shared
 
 

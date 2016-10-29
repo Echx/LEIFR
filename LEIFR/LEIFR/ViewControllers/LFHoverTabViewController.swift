@@ -20,7 +20,7 @@ protocol LFHoverTabDataSource {
 
 class LFHoverTabViewController: LFViewController {
 	
-    fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
+    fileprivate let geoRecordManager = LFGeoRecordManager.shared
 	var delegate: LFHoverTabDelegate?
 	var dataSource: LFHoverTabDataSource?
 	
