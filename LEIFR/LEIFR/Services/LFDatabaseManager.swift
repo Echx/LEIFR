@@ -11,13 +11,9 @@ import MapKit
 import wkb_ios
 
 class LFDatabaseManager: NSObject {
-	fileprivate static let manager = LFDatabaseManager()
+	static let shared = LFDatabaseManager()
 	fileprivate var databaseQueue: FMDatabaseQueue!
 	var database: FMDatabase!
-	
-	class func sharedManager() -> LFDatabaseManager {
-		return self.manager
-	}
 	
 	func databasePathWithName(_ name: String) -> String {
 		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!

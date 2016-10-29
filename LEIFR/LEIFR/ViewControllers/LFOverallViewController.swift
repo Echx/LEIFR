@@ -96,7 +96,7 @@ extension LFOverallViewController: MGLMapViewDelegate {
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        let databaseManager = LFDatabaseManager.sharedManager()
+        let databaseManager = LFDatabaseManager.shared
         let visibleBounds = mapView.visibleCoordinateBounds
         let visibleLongSpan = abs(visibleBounds.ne.longitude - visibleBounds.sw.longitude)
         let visibleLatSpan = abs(visibleBounds.ne.latitude - visibleBounds.sw.latitude)

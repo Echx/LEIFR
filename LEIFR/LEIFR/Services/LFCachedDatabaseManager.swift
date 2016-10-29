@@ -70,7 +70,7 @@ class LFCachedDatabaseManager: NSObject {
         guard currentLevels.count > 0 else {
             let gridSize = self.gridSize(for: zoomScale)
             
-            LFDatabaseManager.sharedManager().getPointsInRegion(region, gridSize: gridSize, completion: {
+            LFDatabaseManager.shared.getPointsInRegion(region, gridSize: gridSize, completion: {
                 coordinates in
                 
                 self.savePoints(coordinates: coordinates, zoomLevel: zoomLevel)

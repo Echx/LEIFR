@@ -36,7 +36,7 @@ class LFGeoRecordManager: NSObject {
         }
         
         if self.bufferPath.points().count > 0 {
-            let databaseManager = LFDatabaseManager.sharedManager()
+            let databaseManager = LFDatabaseManager.shared
             databaseManager.savePath(self.bufferPath, completion: {
                 success in
                 

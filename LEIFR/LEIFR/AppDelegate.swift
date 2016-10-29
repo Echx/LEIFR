@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
     let locationManager = CLLocationManager()
     fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
-    fileprivate let databaseManager = LFDatabaseManager.sharedManager()
+    fileprivate let databaseManager = LFDatabaseManager.shared
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
