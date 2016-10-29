@@ -55,7 +55,7 @@ extension LFHistoryViewController: MKMapViewDelegate {
 
 extension LFHistoryViewController {
     override func controlViewForTab() -> UIView? {
-        let view = UIView.view(fromNib: "LFHistoryControlView")
+		let view = UIView.view(fromNib: "LFHistoryControlView", owner: self)
         configureControlView()
         return view
     }
@@ -70,9 +70,10 @@ extension LFHistoryViewController {
 		
 		if sender.isSelected {
 			//start recording
-			
+			LFGeoRecordManager.shared.startRecording()
 		} else {
 			//end recording
+			LFGeoRecordManager.shared.stopRecording()
 		}
     }
     

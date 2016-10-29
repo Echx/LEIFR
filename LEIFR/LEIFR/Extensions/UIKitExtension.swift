@@ -15,7 +15,7 @@ extension UIColor {
 }
 
 extension UIView {
-	class func view(fromNib nibName: String) -> UIView? {
-		return Bundle.main.loadNibNamed("nibName", owner: self, options: nil)![0] as? UIView
+	class func view(fromNib nibName: String, owner: Any?) -> UIView? {
+		return Bundle.main.loadNibNamed(nibName, owner: owner, options: nil)![0] as? UIView
 	}
 }

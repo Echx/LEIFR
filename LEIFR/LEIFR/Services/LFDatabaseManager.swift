@@ -81,12 +81,16 @@ class LFDatabaseManager: NSObject {
 		return self.database.close()
 	}
 	
-	func savePath(_ path: LFPath, completion:@escaping ((Bool) -> Void)) {
+	func savePath(_ path: LFPath, completion:@escaping ((Error?) -> Void)) {
 		self.databaseQueue.inDatabase({
 			database in
 			let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
 			let isSuccessful = self.database.executeStatements(insertSQL)
-			completion(isSuccessful)
+			if isSuccessful {
+				completion(nil)
+			} else {
+				completion(database?.lastError())
+			}
 		})
 	}
     

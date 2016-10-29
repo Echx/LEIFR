@@ -34,10 +34,10 @@ class LFGeoRecordManager: NSObject {
         if self.bufferPath.points().count > 0 {
             let databaseManager = LFDatabaseManager.shared
             databaseManager.savePath(self.bufferPath, completion: {
-                success in
+                error in
                 
-                if !success {
-                    self.flushPoints()
+                if error != nil {
+					print(error ?? "no error")
                 }
             })
         }
@@ -45,10 +45,12 @@ class LFGeoRecordManager: NSObject {
     
     func startRecording() {
         self.isRecording = true
+		print("GPS recording starts")
     }
     
     func stopRecording() {
         self.flushPoints()
         self.isRecording = false
+		print("GPS recording ends")
     }
 }
