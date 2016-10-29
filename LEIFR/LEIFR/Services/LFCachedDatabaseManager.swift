@@ -10,13 +10,9 @@ import RealmSwift
 import MapKit
 
 class LFCachedDatabaseManager: NSObject {
-    fileprivate static let manager = LFCachedDatabaseManager()
+    static let shared = LFCachedDatabaseManager()
     
     fileprivate let cacheRealm = try! Realm()
-    
-    class func sharedManager() -> LFCachedDatabaseManager {
-        return self.manager
-    }
     
     func savePoints(coordinates: [CLLocationCoordinate2D], zoomLevel: Int) {
         for coordinate in coordinates {
