@@ -8,7 +8,6 @@
 
 import UIKit
 import FontBlaster
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
