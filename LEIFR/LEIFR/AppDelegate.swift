@@ -24,20 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureLocationManager()
 		FontBlaster.blast()
 		
-//        self.clearRealm()
+//        LFCachedDatabaseManager.shared.clearRealm()
 		
 		return true
-	}
-	
-	fileprivate func clearRealm() {
-		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-		let array = try! FileManager.default.contentsOfDirectory(atPath: databaseDirectory)
-		
-		for name in array {
-			if name != "default.sqlite" {
-				try! FileManager.default.removeItem(atPath: "\(databaseDirectory)/\(name)")
-			}
-		}
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {
