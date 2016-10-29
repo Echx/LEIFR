@@ -53,20 +53,12 @@ class LFCachedDatabaseManager: NSObject {
     }
     
     func getPointsInRegion(_ region: MKCoordinateRegion, zoomScale: MKZoomScale) -> [MKMapPoint] {
-        let zoomLevel = self.zoomLevel(for: zoomScale)
+        let zoomLevel = zoomScale.toZoomLevel()
 		let cacheRealm = try! Realm()
         let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
-        let result = [MKMapPoint]()
+        
         guard currentLevels.count > 0 else {
-            let gridSize = self.gridSize(for: zoomScale)
-            
-            LFDatabaseManager.shared.getPointsInRegion(region, gridSize: gridSize, completion: {
-                coordinates in
-                
-                self.savePoints(coordinates: coordinates, zoomLevel: zoomLevel)
-            })
-            
-            return result
+            return [MKMapPoint]()
         }
         
         return currentLevels[0].points.map{MKMapPoint(x: Double($0.x), y: Double($0.y))}
@@ -77,8 +69,18 @@ class LFCachedDatabaseManager: NSObject {
     }
     
     func reconstructDatabase() {
-        for level in 0...22 {
+        clearDatabase()
+        
+        for level in 1...20 {
             print("reconstructing database at level \(level)")
+            
+            let gridSize = self.gridSize(for: level)
+            
+            LFDatabaseManager.shared.getPointsInRegion(MKCoordinateRegionForMapRect(MKMapRectWorld), gridSize: gridSize, completion: {
+                coordinates in
+                
+                self.savePoints(coordinates: coordinates, zoomLevel: level)
+            })
         }
     }
     
@@ -100,11 +102,7 @@ class LFCachedDatabaseManager: NSObject {
         }
     }
     
-    fileprivate func gridSize(for zoomScale: MKZoomScale) -> Double {
-        return 1 / Double(zoomScale) / 20000
-    }
-    
-    fileprivate func zoomLevel(for zoomScale: MKZoomScale) -> Int {
-        return max(0, Int(log2(MKMapSizeWorld.width / 256.0) + log2(Double(zoomScale))))
+    fileprivate func gridSize(for zoomLevel: Int) -> Double {
+        return 1 / pow(2.0, Double(zoomLevel)) * MKMapSizeWorld.width / 5120000
     }
 }
