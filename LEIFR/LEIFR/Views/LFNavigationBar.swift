@@ -25,7 +25,7 @@ class LFNavigationBar: UIVisualEffectView {
 		layer.shadowColor = UIColor.black.cgColor
 		layer.shadowOffset = CGSize(width: 0, height: 0)
 		layer.shadowPath = UIBezierPath(rect: CGRect(x: -5, y: 0, width: self.bounds.width + 10, height: self.bounds.height)).cgPath
-		layer.shadowOpacity = 0.10
+		layer.shadowOpacity = 0.15
 		layer.shadowRadius = 3
 	}
 

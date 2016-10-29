@@ -78,7 +78,7 @@ extension LFOverallViewController: MGLMapViewDelegate {
                     let pointLayer = MGLCircleStyleLayer(layerIdentifier: "lf-point-layer", source: self.pointSource!)
                     
                     let styleLayerColor = MGLStyleAttributeFunction()
-                    styleLayerColor.stops = [0: UIColor.clear, 12: UIColor.clear, 14: Color.IRON]
+                    styleLayerColor.stops = [0: UIColor.clear, 12: UIColor.clear, 14: Color.iron]
                     pointLayer.circleColor = styleLayerColor
                     
                     let styleLayerRadius = MGLStyleAttributeFunction()
@@ -104,11 +104,11 @@ extension LFOverallViewController: MGLMapViewDelegate {
         let source = MGLSource(sourceIdentifier: "symbol")!
         let symbolLayer = MGLSymbolStyleLayer(layerIdentifier: "place-city-sm", source: source)
         
-        let preloadPointsOptions = [["gridSize": 0.15, "stops": generateColorStops(minZoom: 0, maxZoom: 2, color: Color.IRON, bufferZoomLevel: 2)],
-                                    ["gridSize": 0.05, "stops": generateColorStops(minZoom: 4, maxZoom: 5, color: Color.IRON, bufferZoomLevel: 2)],
-                                    ["gridSize": 0.02, "stops": generateColorStops(minZoom: 7, maxZoom: 8, color: Color.IRON, bufferZoomLevel: 2)],
-                                    ["gridSize": 0.005, "stops": generateColorStops(minZoom: 10, maxZoom: 11, color: Color.IRON, bufferZoomLevel: 1)],
-                                    ["gridSize": 0.002, "stops": generateColorStops(minZoom: 12, maxZoom: 12, color: Color.IRON, bufferZoomLevel: 1)]]
+        let preloadPointsOptions = [["gridSize": 0.15, "stops": generateColorStops(minZoom: 0, maxZoom: 2, color: Color.iron, bufferZoomLevel: 2)],
+                                    ["gridSize": 0.05, "stops": generateColorStops(minZoom: 4, maxZoom: 5, color: Color.iron, bufferZoomLevel: 2)],
+                                    ["gridSize": 0.02, "stops": generateColorStops(minZoom: 7, maxZoom: 8, color: Color.iron, bufferZoomLevel: 2)],
+                                    ["gridSize": 0.005, "stops": generateColorStops(minZoom: 10, maxZoom: 11, color: Color.iron, bufferZoomLevel: 1)],
+                                    ["gridSize": 0.002, "stops": generateColorStops(minZoom: 12, maxZoom: 12, color: Color.iron, bufferZoomLevel: 1)]]
         
         for (index, option) in preloadPointsOptions.enumerated() {
             databaseManager.getPointsGeoJSONInRegion(MKCoordinateRegionMake(mapView.centerCoordinate, MKCoordinateSpanMake(visibleLatSpan, visibleLongSpan)), gridSize: option["gridSize"] as! Double, completion: {

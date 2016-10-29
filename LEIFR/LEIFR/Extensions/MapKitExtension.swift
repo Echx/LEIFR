@@ -1,5 +1,5 @@
 //
-//  MKZoomScale+MapLevel.swift
+//  MapKitExtension.swift
 //  LEIFR
 //
 //  Created by Lei Mingyu on 30/10/16.

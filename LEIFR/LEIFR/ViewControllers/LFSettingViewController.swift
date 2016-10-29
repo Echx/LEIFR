@@ -29,6 +29,8 @@ class LFSettingViewController: LFViewController {
 		tableView.contentInset = UIEdgeInsetsMake(84, 0, 64, 0)
 		tableView.dataSource = self
 		tableView.delegate = self
+		tableView.backgroundColor = Color.limeCyan
+		
 		registerCells()
 	}
 	

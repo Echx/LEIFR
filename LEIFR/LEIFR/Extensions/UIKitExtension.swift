@@ -1,5 +1,5 @@
 //
-//  UIColor+LFCustomization.swift
+//  UIKitExtension.swift
 //  LEIFR
 //
 //  Created by Lei Mingyu on 7/10/16.
