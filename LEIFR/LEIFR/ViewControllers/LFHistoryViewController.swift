@@ -55,23 +55,30 @@ extension LFHistoryViewController: MKMapViewDelegate {
 
 extension LFHistoryViewController {
     override func controlViewForTab() -> UIView? {
-        let view = Bundle.main.loadNibNamed("LFHistoryControlView", owner: self, options: nil)![0] as? UIView
+        let view = UIView.view(fromNib: "LFHistoryControlView")
         configureControlView()
         return view
     }
     
     fileprivate func configureControlView() {
-		self.recordButton.setButtonContent(contentView: self.recordButtonContent)
-        self.recordButton.delegate = self
+		recordButton.setButtonContent(contentView: recordButtonContent)
+        recordButton.delegate = self
     }
 	
     @IBAction func toggleRecordButton(sender: UIButton) {
         sender.isSelected = !sender.isSelected
+		
+		if sender.isSelected {
+			//start recording
+			
+		} else {
+			//end recording
+		}
     }
     
     @IBAction func toggleUserLocation(sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        self.mapView.showsUserLocation = !self.mapView.showsUserLocation
+        mapView.showsUserLocation = !self.mapView.showsUserLocation
     }
     
     override func accessoryViewForTab() -> UIView? {
