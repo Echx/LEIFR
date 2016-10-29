@@ -15,18 +15,20 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	
 	override func canDraw(_ mapRect: MKMapRect, zoomScale: MKZoomScale) -> Bool {
-		return true
+		return zoomScale <= 1
 	}
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
 		let region = MKCoordinateRegionForMapRect(mapRect)
-		let mapPoints = LFCachedDatabaseManager.shared.getPointsInRegion(region, zoomScale: zoomScale)
-		let gridSize = self.gridSizeDrawn(for: zoomScale)
-		context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
-		for mapPoint in mapPoints {
-			let point = self.point(for: mapPoint)
-			let rect = CGRect(x: point.x, y: point.y, width: gridSize, height: gridSize)
-			context.fill(rect)
+		if zoomScale <= 1 {
+			let mapPoints = LFCachedDatabaseManager.shared.getPointsInRegion(region, zoomScale: zoomScale * 2)
+			let gridSize = self.gridSizeDrawn(for: zoomScale)
+			context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+			for mapPoint in mapPoints {
+				let point = self.point(for: mapPoint)
+				let rect = CGRect(x: point.x, y: point.y, width: gridSize, height: gridSize)
+				context.fill(rect)
+			}
 		}
 	}
 	
@@ -35,7 +37,7 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	}
 	
 	fileprivate func gridSizeDrawn(for zoomScale: MKZoomScale) -> CGFloat {
-		return 1 / zoomScale * 30
+		return 1 / zoomScale * 15
 	}
 }
 
