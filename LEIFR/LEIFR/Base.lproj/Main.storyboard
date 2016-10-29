@@ -116,35 +116,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sma-LH-59g">
-                                <rect key="frame" x="156" y="323" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVW-9u-pXk">
-                                <rect key="frame" x="98" y="40" width="180" height="60"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eXq-fI-Wet">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUK-y4-1fx" customClass="LFNavigationBar" customModule="LEIFR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eCy-gO-3LX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LnR-nv-gJL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cjo-cN-ftl">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="938-nc-WE7">
+                                                        <rect key="frame" x="20" y="41" width="70" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="938-nc-WE7" firstAttribute="leading" secondItem="Cjo-cN-ftl" secondAttribute="leading" constant="20" id="PRq-sj-lxF"/>
+                                                    <constraint firstItem="938-nc-WE7" firstAttribute="centerY" secondItem="Cjo-cN-ftl" secondAttribute="centerY" constant="10" id="tLP-PI-elG"/>
+                                                </constraints>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LnR-nv-gJL" firstAttribute="top" secondItem="eCy-gO-3LX" secondAttribute="top" id="E3y-Jm-A37"/>
+                                        <constraint firstItem="LnR-nv-gJL" firstAttribute="leading" secondItem="eCy-gO-3LX" secondAttribute="leading" id="krz-zl-U3t"/>
+                                        <constraint firstAttribute="trailing" secondItem="LnR-nv-gJL" secondAttribute="trailing" id="qJE-0j-dS3"/>
+                                        <constraint firstAttribute="bottom" secondItem="LnR-nv-gJL" secondAttribute="bottom" id="vEu-eL-SaE"/>
+                                    </constraints>
+                                </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="2PT-fc-CxJ"/>
-                                    <constraint firstAttribute="width" constant="180" id="cUS-nA-b86"/>
+                                    <constraint firstAttribute="height" constant="84" id="DgT-ww-Ki9"/>
                                 </constraints>
-                                <state key="normal" title="Reconstruct Database"/>
-                                <connections>
-                                    <action selector="reconstructDatabaseWithSender:" destination="dVI-lz-Ab1" eventType="touchUpInside" id="lXl-nb-T58"/>
-                                </connections>
-                            </button>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="sma-LH-59g" firstAttribute="centerY" secondItem="FCo-On-mNE" secondAttribute="centerY" id="6gp-lV-Hj0"/>
-                            <constraint firstItem="HVW-9u-pXk" firstAttribute="centerX" secondItem="FCo-On-mNE" secondAttribute="centerX" id="OIc-Ye-384"/>
-                            <constraint firstItem="HVW-9u-pXk" firstAttribute="top" secondItem="xaI-3C-v6U" secondAttribute="bottom" constant="20" id="n3Q-du-pw6"/>
-                            <constraint firstItem="sma-LH-59g" firstAttribute="centerX" secondItem="FCo-On-mNE" secondAttribute="centerX" id="sWz-dT-85N"/>
+                            <constraint firstItem="Aea-VV-AON" firstAttribute="top" secondItem="eXq-fI-Wet" secondAttribute="bottom" id="0GN-lh-9FS"/>
+                            <constraint firstItem="GUK-y4-1fx" firstAttribute="leading" secondItem="FCo-On-mNE" secondAttribute="leading" id="49D-q5-EEE"/>
+                            <constraint firstItem="GUK-y4-1fx" firstAttribute="top" secondItem="FCo-On-mNE" secondAttribute="top" id="7mT-2f-Alq"/>
+                            <constraint firstAttribute="trailing" secondItem="eXq-fI-Wet" secondAttribute="trailing" id="HiX-Q8-763"/>
+                            <constraint firstItem="eXq-fI-Wet" firstAttribute="top" secondItem="FCo-On-mNE" secondAttribute="top" id="OGT-ct-ef4"/>
+                            <constraint firstAttribute="trailing" secondItem="GUK-y4-1fx" secondAttribute="trailing" id="rp9-lY-uvz"/>
+                            <constraint firstItem="eXq-fI-Wet" firstAttribute="leading" secondItem="FCo-On-mNE" secondAttribute="leading" id="xn0-fm-ndk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="eXq-fI-Wet" id="LwB-86-5Fh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b0-KD-ZwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="928"/>
+            <point key="canvasLocation" x="2404" y="927.88605697151434"/>
         </scene>
         <!--Hover Tab Base Controller-->
         <scene sceneID="Nnl-fI-pTc">

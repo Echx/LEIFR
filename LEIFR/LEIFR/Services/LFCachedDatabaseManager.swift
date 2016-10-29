@@ -82,6 +82,8 @@ class LFCachedDatabaseManager: NSObject {
                 self.savePoints(coordinates: coordinates, zoomLevel: level)
             })
         }
+		
+		print("database reconstruction completed")
     }
     
     func clearDatabase() {
