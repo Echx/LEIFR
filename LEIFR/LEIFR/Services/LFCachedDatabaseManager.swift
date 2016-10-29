@@ -15,14 +15,7 @@ class LFCachedDatabaseManager: NSObject {
     fileprivate let cacheRealm = try! Realm()
     
     func savePoints(coordinates: [CLLocationCoordinate2D], zoomLevel: Int) {
-        for coordinate in coordinates {
-            self.savePoint(coordinate: coordinate, zoomLevel: zoomLevel)
-        }
-    }
-    
-    func savePoint(coordinate: CLLocationCoordinate2D, zoomLevel: Int) {
-        let mapPoint = MKMapPointForCoordinate(coordinate)
-		let cacheRealm = try! Realm()
+        let cacheRealm = try! Realm()
         let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
         var currentLevel = LFCachedLevel()
         
@@ -35,27 +28,28 @@ class LFCachedDatabaseManager: NSObject {
             }
         }
         
+        cacheRealm.beginWrite()
         
-        let x = Int(mapPoint.x)
-        let y = Int(mapPoint.y)
-        
-        let cachedPoints = currentLevel.points.filter("x = \(x) AND y = \(y)")
-        if cachedPoints.count > 0 {
-            let cachedPoint = cachedPoints.first!
-            try! cacheRealm.write {
-                cachedPoint.count += 1
-            }
-        } else {
-            let newPoint = LFCachedPoint()
-            newPoint.count = 1
-            newPoint.x = x
-            newPoint.y = y
+        for coordinate in coordinates {
+            let mapPoint = MKMapPointForCoordinate(coordinate)
             
-            try! cacheRealm.write {
-                cacheRealm.add(newPoint)
+            let x = Int(mapPoint.x)
+            let y = Int(mapPoint.y)
+            
+            let cachedPoints = currentLevel.points.filter("x = \(x) AND y = \(y)")
+            if cachedPoints.count > 0 {
+                let cachedPoint = cachedPoints.first!
+                cachedPoint.count += 1
+            } else {
+                let newPoint = LFCachedPoint()
+                newPoint.count = 1
+                newPoint.x = x
+                newPoint.y = y
                 currentLevel.points.append(newPoint)
             }
         }
+        
+        try! cacheRealm.commitWrite()
     }
     
     func getPointsInRegion(_ region: MKCoordinateRegion, zoomScale: MKZoomScale) -> [MKMapPoint] {
