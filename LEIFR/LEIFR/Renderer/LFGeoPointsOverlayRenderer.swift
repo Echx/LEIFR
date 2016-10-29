@@ -11,9 +11,6 @@ import RealmSwift
 
 class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
-	var filledPercentage: CGFloat = 0.9
-	
-	fileprivate var cache = [String: [CGPoint]]()
 	fileprivate var cacheAccessQueue = DispatchQueue(label: "CACHE_QUEUE")
 	
 	
@@ -25,40 +22,19 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 //            realm.deleteAll()
 //        }
         // end of testing block
-
-		let key = self.cacheKey(for: mapRect, zoomScale: zoomScale)
-		if let _ = cache[key] {
-			return true
-		} else {
-			let region = MKCoordinateRegionForMapRect(mapRect)
-            
-            DispatchQueue.main.async {
-                let points = LFCachedDatabaseManager.sharedManager().getPointsInRegion(region, zoomScale: zoomScale)
-                self.cacheAccessQueue.async {
-                    self.cache[key] = points.map{self.point(for: $0)}
-                    self.setNeedsDisplayIn(mapRect, zoomScale: zoomScale)
-                }
-            }
-            
-			return false
-		}
+		
+		return true
 	}
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
-		let key = self.cacheKey(for: mapRect, zoomScale: zoomScale)
-		var cachedPoints: [CGPoint]?
-		
-		cacheAccessQueue.sync {
-			cachedPoints = self.cache[key]
-		}
-		
-		if let points = cachedPoints {
-			let gridSize = self.gridSizeDrawn(for: zoomScale)
-			context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
-			for point in points {
-				let rect = CGRect(x: point.x - gridSize/2, y: point.y - gridSize/2, width: gridSize, height: gridSize)
-				context.fill(rect)
-			}
+		let region = MKCoordinateRegionForMapRect(mapRect)
+		let mapPoints = LFCachedDatabaseManager.sharedManager().getPointsInRegion(region, zoomScale: zoomScale)
+		let gridSize = self.gridSizeDrawn(for: zoomScale)
+		context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+		for mapPoint in mapPoints {
+			let point = self.point(for: mapPoint)
+			let rect = CGRect(x: point.x - gridSize/2, y: point.y - gridSize/2, width: gridSize, height: gridSize)
+			context.fill(rect)
 		}
 	}
 	
@@ -69,7 +45,6 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	fileprivate func gridSizeDrawn(for zoomScale: MKZoomScale) -> CGFloat {
 		return 1 / zoomScale * 30
 	}
-	
 }
 
 

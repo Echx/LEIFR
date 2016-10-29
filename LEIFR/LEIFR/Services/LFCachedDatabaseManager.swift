@@ -26,6 +26,7 @@ class LFCachedDatabaseManager: NSObject {
     
     func savePoint(coordinate: CLLocationCoordinate2D, zoomLevel: Int) {
         let mapPoint = MKMapPointForCoordinate(coordinate)
+		let cacheRealm = try! Realm()
         let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
         var currentLevel = LFCachedLevel()
         
@@ -63,6 +64,7 @@ class LFCachedDatabaseManager: NSObject {
     
     func getPointsInRegion(_ region: MKCoordinateRegion, zoomScale: MKZoomScale) -> [MKMapPoint] {
         let zoomLevel = self.zoomLevel(for: zoomScale)
+		let cacheRealm = try! Realm()
         let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
         let result = [MKMapPoint]()
         guard currentLevels.count > 0 else {
