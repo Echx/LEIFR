@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
@@ -17,20 +18,19 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	
 	override func canDraw(_ mapRect: MKMapRect, zoomScale: MKZoomScale) -> Bool {
+        
+        // testing block
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.deleteAll()
+//        }
+        // end of testing block
+
 		let key = self.cacheKey(for: mapRect, zoomScale: zoomScale)
 		if let _ = cache[key] {
 			return true
 		} else {
 			let region = MKCoordinateRegionForMapRect(mapRect)
-//			let gridSize = self.gridSize(for: zoomScale)
-//			LFDatabaseManager.sharedManager().getPointsInRegion(region, gridSize: gridSize, completion: {
-//				coordinates in
-//				let points = coordinates.map({ return self.point(for: MKMapPointForCoordinate($0)) })
-//				self.cacheAccessQueue.async {
-//					self.cache[key] = points
-//					self.setNeedsDisplayIn(mapRect, zoomScale: zoomScale)
-//				}
-//			})
             
             DispatchQueue.main.async {
                 let points = LFCachedDatabaseManager.sharedManager().getPointsInRegion(region, zoomScale: zoomScale)
@@ -64,10 +64,6 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	fileprivate func cacheKey(for mapRect: MKMapRect, zoomScale: MKZoomScale) -> String {
 		return "\(mapRect), \(zoomScale)"
-	}
-	
-	fileprivate func gridSize(for zoomScale: MKZoomScale) -> Double {
-		return 1 / Double(zoomScale) / 20000
 	}
 	
 	fileprivate func gridSizeDrawn(for zoomScale: MKZoomScale) -> CGFloat {

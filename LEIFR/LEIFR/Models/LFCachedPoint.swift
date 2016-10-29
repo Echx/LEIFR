@@ -9,7 +9,7 @@
 import RealmSwift
 
 class LFCachedPoint: Object {
-    dynamic var x = 0.0
-    dynamic var y = 0.0
+    dynamic var x = 0
+    dynamic var y = 0
     dynamic var count = 0
 }

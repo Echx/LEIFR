@@ -26,15 +26,11 @@ class LFCachedDatabaseManager: NSObject {
     
     func savePoint(coordinate: CLLocationCoordinate2D, zoomLevel: Int) {
         let mapPoint = MKMapPointForCoordinate(coordinate)
-        let newPoint = LFCachedPoint()
-        newPoint.x = mapPoint.x
-        newPoint.y = mapPoint.y
-        newPoint.count = 1
-        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level == \(zoomLevel)")
+        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
         var currentLevel = LFCachedLevel()
         
         if currentLevels.count > 0 {
-            currentLevel = currentLevels[0]
+            currentLevel = currentLevels.first!
         } else {
             try! cacheRealm.write {
                 currentLevel.level = zoomLevel
@@ -42,15 +38,32 @@ class LFCachedDatabaseManager: NSObject {
             }
         }
         
-        try! cacheRealm.write {
-            cacheRealm.add(newPoint)
-            currentLevel.points.append(newPoint)
+        
+        let x = Int(mapPoint.x)
+        let y = Int(mapPoint.y)
+        
+        let cachedPoints = currentLevel.points.filter("x = \(x) AND y = \(y)")
+        if cachedPoints.count > 0 {
+            let cachedPoint = cachedPoints.first!
+            try! cacheRealm.write {
+                cachedPoint.count += 1
+            }
+        } else {
+            let newPoint = LFCachedPoint()
+            newPoint.count = 1
+            newPoint.x = x
+            newPoint.y = y
+            
+            try! cacheRealm.write {
+                cacheRealm.add(newPoint)
+                currentLevel.points.append(newPoint)
+            }
         }
     }
     
     func getPointsInRegion(_ region: MKCoordinateRegion, zoomScale: MKZoomScale) -> [MKMapPoint] {
         let zoomLevel = self.zoomLevel(for: zoomScale)
-        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level == \(zoomLevel)")
+        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
         let result = [MKMapPoint]()
         guard currentLevels.count > 0 else {
             let gridSize = self.gridSize(for: zoomScale)
@@ -64,7 +77,7 @@ class LFCachedDatabaseManager: NSObject {
             return result
         }
         
-        return currentLevels[0].points.map{MKMapPoint(x: $0.x, y: $0.y)}
+        return currentLevels[0].points.map{MKMapPoint(x: Double($0.x), y: Double($0.y))}
     }
     
     fileprivate func gridSize(for zoomScale: MKZoomScale) -> Double {
