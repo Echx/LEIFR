@@ -9,16 +9,18 @@
 import XCTest
 @testable import LEIFR
 
+import MapKit
+
 class LFZoomLevelTest: XCTestCase {
     func testScaleToLevel() {
-        let level1 = LFZoomLevel(zoomScale: MKZoomScale(0.325))
-        let level2 = LFZoomLevel(zoomScale: MKZoomScale(0.021412))
-        let level3 = LFZoomLevel(zoomScale: MKZoomScale(0.1))
-        let level4 = LFZoomLevel(zoomScale: MKZoomScale(0.000001))
+        let scale1 = MKZoomScale(0.325)
+        let scale2 = MKZoomScale(0.021412)
+        let scale3 = MKZoomScale(0.1)
+        let scale4 = MKZoomScale(0.000001)
         
-        XCTAssertEqual(level1.zoomLevel, 18)
-        XCTAssertEqual(level2.zoomLevel, 14)
-        XCTAssertEqual(level3.zoomLevel, 16)
-        XCTAssertEqual(level4.zoomLevel, 0)
+        XCTAssertEqual(scale1.toZoomLevel(), 18)
+        XCTAssertEqual(scale2.toZoomLevel(), 14)
+        XCTAssertEqual(scale3.toZoomLevel(), 16)
+        XCTAssertEqual(scale4.toZoomLevel(), 0)
     }
 }
