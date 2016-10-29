@@ -67,6 +67,7 @@
 		623A63521DC2098100F80E7F /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 623A63511DC2098100F80E7F /* default.sqlite */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		626A13B41DC5215D0051FE90 /* LFZoomLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B31DC5215D0051FE90 /* LFZoomLevel.swift */; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
 		62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */; };
 		62BF06961DA6F02B00E6957E /* UIColor+LFCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */; };
@@ -565,6 +566,7 @@
 		62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryViewController.swift; sourceTree = "<group>"; };
 		623A63511DC2098100F80E7F /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		626A13B31DC5215D0051FE90 /* LFZoomLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevel.swift; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
 		62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+LFCustomization.swift"; path = "Extensions/UIColor+LFCustomization.swift"; sourceTree = "<group>"; };
@@ -1516,6 +1518,7 @@
 				0CBB387E1D85FF66002C0EF0 /* LFPath.swift */,
 				62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */,
 				62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */,
+				626A13B31DC5215D0051FE90 /* LFZoomLevel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1842,6 +1845,7 @@
 				62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
+				626A13B41DC5215D0051FE90 /* LFZoomLevel.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */,
 				0CBB38791D85FCE7002C0EF0 /* LFOverallViewController.swift in Sources */,

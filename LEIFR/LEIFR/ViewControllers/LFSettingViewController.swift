@@ -38,7 +38,7 @@ class LFSettingViewController: LFViewController {
 
 extension LFSettingViewController {
 	@IBAction func reconstructDatabase(sender: Any?) {
-		print("Reconstructing Database...")
+		LFCachedDatabaseManager.shared.reconstructDatabase()
 	}
 }
 
