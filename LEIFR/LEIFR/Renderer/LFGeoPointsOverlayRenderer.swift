@@ -25,7 +25,7 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 		context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
 		for mapPoint in mapPoints {
 			let point = self.point(for: mapPoint)
-			let rect = CGRect(x: point.x - gridSize/2, y: point.y - gridSize/2, width: gridSize, height: gridSize)
+			let rect = CGRect(x: point.x, y: point.y, width: gridSize, height: gridSize)
 			context.fill(rect)
 		}
 	}
