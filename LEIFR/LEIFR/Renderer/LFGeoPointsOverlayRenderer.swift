@@ -15,14 +15,6 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	
 	override func canDraw(_ mapRect: MKMapRect, zoomScale: MKZoomScale) -> Bool {
-        
-        // testing block
-//        let realm = try! Realm()
-//        try! realm.write {
-//            realm.deleteAll()
-//        }
-        // end of testing block
-		
 		return true
 	}
 	

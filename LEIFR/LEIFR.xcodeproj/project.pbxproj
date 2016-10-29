@@ -68,6 +68,7 @@
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		626A13B41DC5215D0051FE90 /* LFZoomLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B31DC5215D0051FE90 /* LFZoomLevel.swift */; };
+		626A13B61DC522270051FE90 /* LFZoomLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
 		62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */; };
 		62BF06961DA6F02B00E6957E /* UIColor+LFCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */; };
@@ -567,6 +568,7 @@
 		623A63511DC2098100F80E7F /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		626A13B31DC5215D0051FE90 /* LFZoomLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevel.swift; sourceTree = "<group>"; };
+		626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevelTest.swift; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
 		62BF06951DA6F02B00E6957E /* UIColor+LFCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+LFCustomization.swift"; path = "Extensions/UIColor+LFCustomization.swift"; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 				0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */,
 				62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */,
 				62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */,
+				626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */,
 			);
 			path = LEIFRTests;
 			sourceTree = "<group>";
@@ -1865,6 +1868,7 @@
 				62BF069F1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift in Sources */,
 				0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */,
 				62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */,
+				626A13B61DC522270051FE90 /* LFZoomLevelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
