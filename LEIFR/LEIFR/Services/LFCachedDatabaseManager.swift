@@ -72,6 +72,17 @@ class LFCachedDatabaseManager: NSObject {
         return currentLevels[0].points.map{MKMapPoint(x: Double($0.x), y: Double($0.y))}
     }
     
+    func destroyRealm() {
+        let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let array = try! FileManager.default.contentsOfDirectory(atPath: databaseDirectory)
+        
+        for name in array {
+            if name != "default.sqlite" {
+                try! FileManager.default.removeItem(atPath: "\(databaseDirectory)/\(name)")
+            }
+        }
+    }
+    
     fileprivate func gridSize(for zoomScale: MKZoomScale) -> Double {
         return 1 / Double(zoomScale) / 20000
     }

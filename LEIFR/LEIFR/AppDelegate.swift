@@ -23,21 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		spatialite_init(1)
         configureLocationManager()
 		FontBlaster.blast()
-		
-		//服用速效救心丸()
+//        LFCachedDatabaseManager.shared.destroyRealm()
 		
 		return true
-	}
-	
-	fileprivate func 服用速效救心丸() {
-		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-		let array = try! FileManager.default.contentsOfDirectory(atPath: databaseDirectory)
-		
-		for name in array {
-			if name != "default.sqlite" {
-				try! FileManager.default.removeItem(atPath: "\(databaseDirectory)/\(name)")
-			}
-		}
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {
