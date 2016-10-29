@@ -32,10 +32,6 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 		}
 	}
 	
-	fileprivate func cacheKey(for mapRect: MKMapRect, zoomScale: MKZoomScale) -> String {
-		return "\(mapRect), \(zoomScale)"
-	}
-	
 	fileprivate func gridSizeDrawn(for zoomScale: MKZoomScale) -> CGFloat {
 		return 1 / zoomScale * 15
 	}
