@@ -61,38 +61,12 @@ extension LFHistoryViewController {
     }
     
     fileprivate func configureControlView() {
-        let layer = self.recordButton.layer
-        layer.borderColor = UIColor.white.cgColor
-        layer.borderWidth = 8
-        layer.cornerRadius = 48
-        
-        let contentLayer = self.recordButtonContent.layer
-        contentLayer.cornerRadius = 35
-        
+		self.recordButton.setButtonContent(contentView: self.recordButtonContent)
         self.recordButton.delegate = self
     }
-    
-    @IBAction func recordButtonTouchDown(sender: UIButton) {
-        self.recordButtonContent.alpha = 0.7
-    }
-    
-    @IBAction func recordButtonTouchUp(sender: UIButton) {
-        self.recordButtonContent.alpha = 1
-    }
-    
+	
     @IBAction func toggleRecordButton(sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.2, options: [], animations: {
-                self.recordButtonContent.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-                self.recordButtonContent.layer.cornerRadius = 10
-                }, completion: nil)
-        } else {
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.2, options: [], animations: {
-                self.recordButtonContent.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                self.recordButtonContent.layer.cornerRadius = 35
-                }, completion: nil)
-        }
     }
     
     @IBAction func toggleUserLocation(sender: UIButton) {

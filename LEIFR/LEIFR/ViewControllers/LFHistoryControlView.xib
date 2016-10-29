@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,6 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15v-Vl-mYg" userLabel="Record Button Content">
+                    <rect key="frame" x="139" y="33" width="70" height="70"/>
                     <color key="backgroundColor" red="1" green="0.092421955149999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="15v-Vl-mYg" secondAttribute="height" multiplier="1:1" id="by4-HW-mIp"/>
@@ -26,6 +30,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyR-I7-pI9" customClass="LFRecordButton" customModule="LEIFR" customModuleProvider="target">
+                    <rect key="frame" x="126" y="20" width="96" height="96"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="UbT-y2-E4t"/>
                         <constraint firstAttribute="width" secondItem="xyR-I7-pI9" secondAttribute="height" id="YdX-RK-bdV"/>
@@ -35,16 +40,11 @@
                         <color key="titleColor" red="0.67760968210000005" green="0.23106917739999999" blue="0.2407194376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordButtonTouchDownWithSender:" destination="-1" eventType="touchDown" id="L2q-vl-mdI"/>
-                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchCancel" id="8Dw-mU-F9t"/>
-                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchDragExit" id="Jje-Zy-FBK"/>
-                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchDragOutside" id="Ufp-q1-2Oh"/>
-                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchUpOutside" id="ajy-Lg-Fac"/>
-                        <action selector="recordButtonTouchUpWithSender:" destination="-1" eventType="touchUpInside" id="hbm-29-GqH"/>
                         <action selector="toggleRecordButtonWithSender:" destination="-1" eventType="touchUpInside" id="q3J-jt-zFt"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQs-9w-GBp">
+                    <rect key="frame" x="16" y="44" width="48" height="48"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="GPS on"/>
                     <state key="selected" image="GPS off"/>
