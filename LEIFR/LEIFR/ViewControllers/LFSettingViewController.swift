@@ -34,6 +34,14 @@ class LFSettingViewController: LFViewController {
 
 }
 
+// MARK: IBActions
+
+extension LFSettingViewController {
+	@IBAction func reconstructDatabase(sender: Any?) {
+		print("Reconstructing Database...")
+	}
+}
+
 extension LFSettingViewController: LFStoryboardBasedController {
 	class func defaultControllerFromStoryboard() -> LFViewController {
 		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
