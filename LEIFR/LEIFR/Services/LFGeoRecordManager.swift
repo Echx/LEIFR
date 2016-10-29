@@ -35,10 +35,11 @@ class LFGeoRecordManager: NSObject {
             let databaseManager = LFDatabaseManager.shared
             databaseManager.savePath(self.bufferPath, completion: {
                 error in
-                
                 if error != nil {
-					print(error ?? "no error")
-                }
+					print(error!)
+				} else {
+					print("path flushed")
+				}
             })
         }
     }
