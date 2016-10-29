@@ -24,12 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureLocationManager()
 		FontBlaster.blast()
 		
-		//self.clearRealm()
+		//服用速效救心丸()
 		
 		return true
 	}
 	
-	fileprivate func clearRealm() {
+	fileprivate func 服用速效救心丸() {
 		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 		let array = try! FileManager.default.contentsOfDirectory(atPath: databaseDirectory)
 		
