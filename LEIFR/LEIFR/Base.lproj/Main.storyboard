@@ -355,26 +355,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYB-gK-px0" customClass="MKMapView">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="og7-6n-kPk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dYB-gK-px0" firstAttribute="height" secondItem="Uoo-2v-c0D" secondAttribute="height" id="ZH8-BK-04B"/>
-                            <constraint firstItem="dYB-gK-px0" firstAttribute="centerX" secondItem="Uoo-2v-c0D" secondAttribute="centerX" id="iUu-xC-Puy"/>
-                            <constraint firstItem="dYB-gK-px0" firstAttribute="width" secondItem="Uoo-2v-c0D" secondAttribute="width" id="iVr-tD-jhF"/>
-                            <constraint firstItem="dYB-gK-px0" firstAttribute="centerY" secondItem="Uoo-2v-c0D" secondAttribute="centerY" id="ssA-V8-lES"/>
+                            <constraint firstItem="og7-6n-kPk" firstAttribute="centerY" secondItem="Uoo-2v-c0D" secondAttribute="centerY" id="2oF-JO-s7C"/>
+                            <constraint firstItem="og7-6n-kPk" firstAttribute="height" secondItem="Uoo-2v-c0D" secondAttribute="height" id="9xA-9a-VFH"/>
+                            <constraint firstItem="og7-6n-kPk" firstAttribute="width" secondItem="Uoo-2v-c0D" secondAttribute="width" id="kU6-1O-dUH"/>
+                            <constraint firstItem="og7-6n-kPk" firstAttribute="centerX" secondItem="Uoo-2v-c0D" secondAttribute="centerX" id="pJ2-4a-l1G"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="dYB-gK-px0" id="IMc-hi-72l"/>
+                        <outlet property="mapView" destination="og7-6n-kPk" id="dC9-Za-q0r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KI0-ZV-GY9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="159"/>
+            <point key="canvasLocation" x="1756" y="158.77061469265368"/>
         </scene>
     </scenes>
     <resources>
