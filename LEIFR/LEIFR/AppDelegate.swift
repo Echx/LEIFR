@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		spatialite_init(1)
         configureLocationManager()
 		FontBlaster.blast()
+
+//        LFCachedDatabaseManager.shared.destroyDatabase()
 		
 		return true
 	}
