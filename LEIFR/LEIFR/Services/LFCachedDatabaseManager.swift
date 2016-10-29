@@ -72,6 +72,16 @@ class LFCachedDatabaseManager: NSObject {
         return currentLevels[0].points.map{MKMapPoint(x: Double($0.x), y: Double($0.y))}
     }
     
+    func synchronizeDatabase() {
+        print("synchronizing database")
+    }
+    
+    func reconstructDatabase() {
+        for level in 0...22 {
+            print("reconstructing database at level \(level)")
+        }
+    }
+    
     func clearDatabase() {
         let realm = try! Realm()
         try! realm.write {
