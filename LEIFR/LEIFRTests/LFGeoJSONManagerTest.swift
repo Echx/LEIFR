@@ -19,7 +19,7 @@ class LFGeoJSONManagerTest: XCTestCase {
         
         let parsedResult = "{\"type\": \"FeatureCollection\", \"features\": [{\"type\": \"Feature\", \"properties\": {}, \"geometry\":" + validJSON +  "}]}";
             
-        XCTAssertTrue(parsedResult == LFGeoJSONManager.wrap(geometry: validJSON), "JSON wrapped wrongly!")
+        XCTAssertTrue(parsedResult == LFGeoJSONManager.wrapArray(geometryArray: [validJSON]), "JSON wrapped wrongly!")
                 
         print("\n\n--------------------------------------------------\n\n\n\n\n")
     }
