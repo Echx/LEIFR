@@ -34,7 +34,7 @@ class LFHistoryViewController: LFViewController {
         mapView.delegate = self
 		
 		let overlay = LFGeoPointsOverlay()
-		self.mapView.add(overlay)
+		mapView.add(overlay)
     }
 }
 

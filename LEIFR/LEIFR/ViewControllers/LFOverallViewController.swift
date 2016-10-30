@@ -6,6 +6,8 @@
 //  Copyright © 2016 Echx. All rights reserved.
 //
 
+/// This is an obsolete view controller for previous Mapbox integration
+
 import UIKit
 import Mapbox
 
