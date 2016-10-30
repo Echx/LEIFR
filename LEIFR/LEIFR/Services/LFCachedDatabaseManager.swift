@@ -13,6 +13,7 @@ class LFCachedDatabaseManager: NSObject {
     static let shared = LFCachedDatabaseManager()
     
     fileprivate let cacheRealm = try! Realm()
+    fileprivate let bufferSize = 2000
     
     func savePoints(coordinates: [CLLocationCoordinate2D], zoomLevel: Int) {
         let cacheRealm = try! Realm()
@@ -28,28 +29,33 @@ class LFCachedDatabaseManager: NSObject {
             }
         }
         
-        cacheRealm.beginWrite()
-        
-        for coordinate in coordinates {
-            let mapPoint = MKMapPointForCoordinate(coordinate)
-            
-            let x = Int(mapPoint.x)
-            let y = Int(mapPoint.y)
-            
-            let cachedPoints = currentLevel.points.filter("x = \(x) AND y = \(y)")
-            if cachedPoints.count > 0 {
-                let cachedPoint = cachedPoints.first!
-                cachedPoint.count += 1
-            } else {
-                let newPoint = LFCachedPoint()
-                newPoint.count = 1
-                newPoint.x = x
-                newPoint.y = y
-                currentLevel.points.append(newPoint)
+        var size = coordinates.count
+        var current = 0
+        while size > 0 {
+            var count = 0
+            size -= bufferSize
+            cacheRealm.beginWrite()
+            while current < coordinates.count - 1 && count < bufferSize - 1 {
+                current += 1
+                count += 1
+                let mapPoint = MKMapPointForCoordinate(coordinates[current])
+                let x = Int(mapPoint.x)
+                let y = Int(mapPoint.y)
+                
+                let cachedPoints = currentLevel.points.filter("x = \(x) AND y = \(y)")
+                if cachedPoints.count > 0 {
+                    let cachedPoint = cachedPoints.first!
+                    cachedPoint.count += 1
+                } else {
+                    let newPoint = LFCachedPoint()
+                    newPoint.count = 1
+                    newPoint.x = x
+                    newPoint.y = y
+                    currentLevel.points.append(newPoint)
+                }
             }
+            try! cacheRealm.commitWrite()
         }
-        
-        try! cacheRealm.commitWrite()
     }
     
     func getPointsInRegion(_ region: MKCoordinateRegion, zoomScale: MKZoomScale) -> [MKMapPoint] {
@@ -69,7 +75,7 @@ class LFCachedDatabaseManager: NSObject {
     }
     
     func reconstructDatabase() {
-        clearDatabase()
+//        clearDatabase()
         
         for level in 1...20 {
             print("reconstructing database at level \(level)")
