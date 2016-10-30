@@ -84,7 +84,7 @@ class LFCachedDatabaseManager: NSObject {
     }
     
     func reconstructDatabase() {
-//        clearDatabase()
+        clearDatabase()
         
         for level in 1...21 {
             print("reconstructing database at level \(level)")
