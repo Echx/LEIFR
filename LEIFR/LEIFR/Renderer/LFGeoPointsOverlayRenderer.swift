@@ -19,9 +19,8 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	}
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
-		let region = MKCoordinateRegionForMapRect(mapRect)
 		if zoomScale <= 1 {
-			let mapPoints = LFCachedDatabaseManager.shared.getPointsInRegion(region, zoomScale: zoomScale * 2)
+			let mapPoints = LFCachedDatabaseManager.shared.getPointsInRect(mapRect, zoomScale: zoomScale * 2)
 			let gridSize = self.gridSizeDrawn(for: zoomScale)
 			context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
 			for mapPoint in mapPoints {

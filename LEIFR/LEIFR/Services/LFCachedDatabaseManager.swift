@@ -58,7 +58,7 @@ class LFCachedDatabaseManager: NSObject {
         }
     }
     
-    func getPointsInRegion(_ region: MKCoordinateRegion, zoomScale: MKZoomScale) -> [MKMapPoint] {
+    func getPointsInRect(_ rect: MKMapRect, zoomScale: MKZoomScale) -> [MKMapPoint] {
         let zoomLevel = zoomScale.toZoomLevel()
 		let cacheRealm = try! Realm()
         let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
