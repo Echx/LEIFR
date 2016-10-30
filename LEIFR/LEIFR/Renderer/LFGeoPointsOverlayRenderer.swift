@@ -20,12 +20,23 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
 		if zoomScale <= 1 {
-			let mapPoints = LFCachedDatabaseManager.shared.getPointsInRect(mapRect, zoomScale: zoomScale * 2)
+			let cachedPoints = LFCachedDatabaseManager.shared.getPointsInRect(mapRect, zoomScale: zoomScale * 2)
+            guard cachedPoints.count > 0 else {
+                return
+            }
 			let gridSize = self.gridSizeDrawn(for: zoomScale)
-			context.setFillColor(red: 0, green: 0, blue: 0, alpha: 0.1)
-			for mapPoint in mapPoints {
+            let counts = cachedPoints.map{$0.count}
+            let maxCount = counts.max()!
+            let minCount = counts.min()!
+            let maxAlpha = 0.9
+            let minAlpha = 0.2
+			for cachedPoint in cachedPoints {
+                let mapPoint = MKMapPoint(x: Double(cachedPoint.x), y: Double(cachedPoint.y))
 				let point = self.point(for: mapPoint)
 				let rect = CGRect(x: point.x, y: point.y, width: gridSize, height: gridSize)
+                let count = cachedPoint.count
+                let weightedAlpha = Double(count - minCount) / Double(maxCount - count) * (maxAlpha - minAlpha) + minAlpha
+                context.setFillColor(red: 0, green: 0, blue: 0, alpha: CGFloat(weightedAlpha))
 				context.fill(rect)
 			}
 		}
