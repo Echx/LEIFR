@@ -61,13 +61,22 @@ class LFCachedDatabaseManager: NSObject {
     func getPointsInRect(_ rect: MKMapRect, zoomScale: MKZoomScale) -> [MKMapPoint] {
         let zoomLevel = zoomScale.toZoomLevel()
 		let cacheRealm = try! Realm()
-        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter("level = \(zoomLevel)")
+        let levelPredicate = "level = \(zoomLevel)"
+        
+        let minX = Int(rect.origin.x - rect.size.width)
+        let maxX = Int(rect.origin.x + rect.size.width)
+        let minY = Int(rect.origin.y - rect.size.height)
+        let maxY = Int(rect.origin.y + rect.size.height)
+        let xPredicate = "x >= \(minX) AND x <= \(maxX)"
+        let yPredicate = "y >= \(minY) AND y <= \(maxY)"
+        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter(levelPredicate)
         
         guard currentLevels.count > 0 else {
             return [MKMapPoint]()
         }
         
-        return currentLevels[0].points.map{MKMapPoint(x: Double($0.x), y: Double($0.y))}
+        let points = currentLevels[0].points.filter("\(xPredicate) AND \(yPredicate)")
+        return points.map{MKMapPoint(x: Double($0.x), y: Double($0.y))}
     }
     
     func synchronizeDatabase() {
