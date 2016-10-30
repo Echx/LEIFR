@@ -1,5 +1,5 @@
 //
-//  UIColor+LFCustomization.swift
+//  UIKitExtension.swift
 //  LEIFR
 //
 //  Created by Lei Mingyu on 7/10/16.
@@ -14,3 +14,8 @@ extension UIColor {
     }
 }
 
+extension UIView {
+	class func view(fromNib nibName: String, owner: Any?) -> UIView? {
+		return Bundle.main.loadNibNamed(nibName, owner: owner, options: nil)![0] as? UIView
+	}
+}

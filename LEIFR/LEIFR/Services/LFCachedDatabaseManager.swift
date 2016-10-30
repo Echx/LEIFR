@@ -77,7 +77,7 @@ class LFCachedDatabaseManager: NSObject {
     func reconstructDatabase() {
 //        clearDatabase()
         
-        for level in 1...20 {
+        for level in 1...21 {
             print("reconstructing database at level \(level)")
             
             let gridSize = self.gridSize(for: level)
@@ -88,6 +88,8 @@ class LFCachedDatabaseManager: NSObject {
                 self.savePoints(coordinates: coordinates, zoomLevel: level)
             })
         }
+		
+		print("database reconstruction completed")
     }
     
     func clearDatabase() {
