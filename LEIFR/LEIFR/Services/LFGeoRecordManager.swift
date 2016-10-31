@@ -20,7 +20,7 @@ class LFGeoRecordManager: NSObject {
         defer {
             pthread_mutex_unlock(&mutex)
         }
-        
+        print("save point")
         let coordinate = newPoint.coordinate
         self.bufferPath.addPoint(latitude: coordinate.latitude, longitude: coordinate.longitude, altitude: newPoint.altitude)
     }
@@ -30,7 +30,7 @@ class LFGeoRecordManager: NSObject {
         defer {
             pthread_mutex_unlock(&mutex)
         }
-        
+        print("flush point")
         if self.bufferPath.points().count > 0 {
             let databaseManager = LFDatabaseManager.shared
             databaseManager.savePath(self.bufferPath, completion: {
@@ -41,6 +41,11 @@ class LFGeoRecordManager: NSObject {
 					print("path flushed")
 				}
             })
+			
+			databaseManager.getLatestTrackID(completion: {
+				trackID in
+				LFCachedDatabaseManager.shared.cachePath(with: trackID)
+			})
         }
     }
     

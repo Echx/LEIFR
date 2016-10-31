@@ -47,6 +47,12 @@ extension LFSettingViewController {
 			LFCachedDatabaseManager.shared.reconstructDatabase()
 		}
 	}
+	
+	@IBAction func flushPoints(sender: Any?) {
+		DispatchQueue(label: "DatabaseQueue").async {
+			LFGeoRecordManager.shared.flushPoints()
+		}
+	}
 }
 
 extension LFSettingViewController: LFStoryboardBasedController {
@@ -62,9 +68,9 @@ extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
-		switch indexPath.row {
+		switch indexPath.section {
 		case Section.reconstructDatabase.rawValue:
-			self.reconstructDatabase(sender: nil)
+			indexPath.row == 0 ? self.reconstructDatabase(sender: nil) : self.flushPoints(sender: nil)
 		default:
 			print("No action")
 		}
@@ -76,12 +82,18 @@ extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return 2
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "default-cell", for: indexPath)
-		cell.textLabel?.text = "Reconstruct Database"
+		
+		if indexPath.row == 0 {
+			cell.textLabel?.text = "Reconstruct Database"
+		} else {
+			cell.textLabel?.text = "Flush"
+		}
+		
 		return cell
 	}
 }

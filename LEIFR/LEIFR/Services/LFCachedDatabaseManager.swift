@@ -100,7 +100,22 @@ class LFCachedDatabaseManager: NSObject {
 		
 		print("database reconstruction completed")
     }
-    
+	
+	func cachePath(with trackId: Int) {
+		for level in 1...21 {
+			print("processing path at level \(level)")
+			
+			let gridSize = self.gridSize(for: level)
+			
+			LFDatabaseManager.shared.getPointsWithTrackID(id: trackId, gridSize: gridSize, completion: {
+				coordinates in
+				self.savePoints(coordinates: coordinates, zoomLevel: level)
+			})
+		}
+		
+		print("path processing completed")
+	}
+	
     func clearDatabase() {
         let realm = try! Realm()
         try! realm.write {
