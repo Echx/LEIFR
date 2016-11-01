@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
     let locationManager = CLLocationManager()
-    fileprivate let geoRecordManager = LFGeoRecordManager.sharedManager()
-    fileprivate let databaseManager = LFDatabaseManager.sharedManager()
+    fileprivate let geoRecordManager = LFGeoRecordManager.shared
+    fileprivate let databaseManager = LFDatabaseManager.shared
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		spatialite_init(1)
         configureLocationManager()
 		FontBlaster.blast()
+
+//        LFCachedDatabaseManager.shared.destroyDatabase()
 		
 		return true
 	}
@@ -47,8 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+		self.geoRecordManager.flushPoints()
         let _ = self.databaseManager.closeDatabase()
-        self.geoRecordManager.flushPoints()
 	}
 
     fileprivate func configureLocationManager() {

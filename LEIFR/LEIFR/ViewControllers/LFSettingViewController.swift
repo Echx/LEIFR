@@ -10,28 +10,48 @@ import UIKit
 
 class LFSettingViewController: LFViewController {
 
+	@IBOutlet weak var tableView: UITableView!
+	
+	enum Section: Int {
+		case reconstructDatabase = 0
+		case count
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configureTableView()
     }
+	
+	func configureTableView() {
+		tableView.estimatedRowHeight = 100
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.contentInset = UIEdgeInsetsMake(84, 0, 64, 0)
+		tableView.dataSource = self
+		tableView.delegate = self
+		
+		registerCells()
+	}
+	
+	func registerCells() {
+		LFButtonCell.registerCell(tableView: self.tableView, reuseIdentifier: LFButtonCell.identifier)
+	}
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+// MARK: IBActions
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension LFSettingViewController {
+	@IBAction func reconstructDatabase(sender: Any?) {
+		DispatchQueue(label: "DatabaseQueue").async {
+			LFCachedDatabaseManager.shared.reconstructDatabase()
+		}
+	}
+	
+	@IBAction func flushPoints(sender: Any?) {
+		DispatchQueue(label: "DatabaseQueue").async {
+			LFGeoRecordManager.shared.flushPoints()
+		}
+	}
 }
 
 extension LFSettingViewController: LFStoryboardBasedController {
@@ -40,5 +60,37 @@ extension LFSettingViewController: LFStoryboardBasedController {
 		let controller = storyboard.instantiateViewController(withIdentifier: "LFSettingViewController") as! LFViewController
 		
 		return controller
+	}
+}
+
+extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		switch indexPath.section {
+		case Section.reconstructDatabase.rawValue:
+			indexPath.row == 0 ? self.reconstructDatabase(sender: nil) : self.flushPoints(sender: nil)
+		default:
+			print("No action")
+		}
+		
+	}
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return Section.count.rawValue
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 2
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: LFButtonCell.identifier, for: indexPath) as! LFButtonCell
+		
+		if indexPath.row == 0 {
+			cell.buttonTitleLabel.text = "Reconstruct Database"
+		} else {
+			cell.buttonTitleLabel.text = "Flush"
+		}
+		
+		return cell
 	}
 }

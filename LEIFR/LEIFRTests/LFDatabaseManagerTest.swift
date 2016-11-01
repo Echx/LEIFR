@@ -12,7 +12,7 @@ import wkb_ios
 
 class LFDatabaseManagerTest: XCTestCase {
 	
-	fileprivate let databaseManager = LFDatabaseManager.sharedManager()
+	fileprivate let databaseManager = LFDatabaseManager.shared
 	
     override func setUp() {
         super.setUp()

@@ -11,13 +11,9 @@ import MapKit
 import wkb_ios
 
 class LFDatabaseManager: NSObject {
-	fileprivate static let manager = LFDatabaseManager()
+	static let shared = LFDatabaseManager()
 	fileprivate var databaseQueue: FMDatabaseQueue!
 	var database: FMDatabase!
-	
-	class func sharedManager() -> LFDatabaseManager {
-		return self.manager
-	}
 	
 	func databasePathWithName(_ name: String) -> String {
 		let databaseDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -85,12 +81,53 @@ class LFDatabaseManager: NSObject {
 		return self.database.close()
 	}
 	
-	func savePath(_ path: LFPath, completion:@escaping ((Bool) -> Void)) {
+	func savePath(_ path: LFPath, completion:@escaping ((Error?) -> Void)) {
+		let pathString = path.WKTString()
 		self.databaseQueue.inDatabase({
 			database in
-			let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(path.WKTString())'));"
+			let insertSQL = "INSERT OR REPLACE INTO tracks (track_geometry) VALUES (LineStringFromText('\(pathString)'));"
 			let isSuccessful = self.database.executeStatements(insertSQL)
-			completion(isSuccessful)
+			if isSuccessful {
+				completion(nil)
+			} else {
+				completion(database?.lastError())
+			}
+		})
+	}
+	
+	func getLatestTrackID(completion:@escaping ((Int) -> Void)) {
+		let querySQL = "SELECT track_id FROM tracks ORDER BY track_id DESC LIMIT 1"
+		if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+			if (results.next()) {
+				if results.hasAnotherRow() {
+					let id = Int(results.int(forColumnIndex: 0))
+					completion(id)
+					return
+				}
+			}
+		}
+		
+		completion(-1)
+	}
+	
+	func getPointsWithTrackID(id: Int, gridSize: Double, completion:@escaping (([CLLocationCoordinate2D]) -> Void)) {
+		self.databaseQueue.inDatabase({
+			database in
+			
+			let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)))) FROM tracks "
+			let querySQL = select + "WHERE track_id=\(id)"
+			
+			if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+				if (results.next()) {
+					if results.hasAnotherRow() {
+						if let geoJSON = results.string(forColumnIndex: 1) {
+							let cooridnates = LFGeoJSONManager.convertToCoordinates(geoJSON: [geoJSON])
+							completion(cooridnates)
+						}
+					}
+				}
+			}
+			completion([])
 		})
 	}
     
