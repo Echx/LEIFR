@@ -16,7 +16,6 @@ class LFViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -26,15 +25,12 @@ class LFViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	class func controllerFromStoryboard() -> LFViewController {
+		let className = NSStringFromClass(self).components(separatedBy: ".").last!
+		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+		let controller = storyboard.instantiateViewController(withIdentifier: className) as! LFViewController
+		return controller
+	}
 }
 
 extension LFViewController: LFHoverTabBarDataSource {

@@ -42,9 +42,12 @@ class LFSettingViewController: LFViewController {
 
 extension LFSettingViewController {
 	@IBAction func reconstructDatabase(sender: Any?) {
-		DispatchQueue(label: "DatabaseQueue").async {
-			LFCachedDatabaseManager.shared.reconstructDatabase()
-		}
+		let loadingController = LFLoadingViewController.controllerFromStoryboard()
+		self.present(loadingController, animated: true, completion: {
+			DispatchQueue(label: "DatabaseQueue").async {
+				LFCachedDatabaseManager.shared.reconstructDatabase()
+			}
+		})
 	}
 	
 	@IBAction func flushPoints(sender: Any?) {
