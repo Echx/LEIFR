@@ -87,11 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/FontBlaster/FontBlaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UICircularProgressRing/UICircularProgressRing.framework"
   install_framework "$BUILT_PRODUCTS_DIR/wkb-ios/wkb_ios.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/FontBlaster/FontBlaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UICircularProgressRing/UICircularProgressRing.framework"
   install_framework "$BUILT_PRODUCTS_DIR/wkb-ios/wkb_ios.framework"
 fi

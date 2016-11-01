@@ -5,19 +5,22 @@ PODS:
   - Realm/Headers (2.0.3)
   - RealmSwift (2.0.3):
     - Realm (= 2.0.3)
+  - UICircularProgressRing (1.1.3)
   - wkb-ios (1.0.6)
 
 DEPENDENCIES:
   - FontBlaster
-  - RealmSwift
+  - RealmSwift (= 2.0.3)
+  - UICircularProgressRing
   - wkb-ios
 
 SPEC CHECKSUMS:
   FontBlaster: 0f4a3e2f965968e2dfc3f7f5cec7214c3f3b2f07
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  UICircularProgressRing: 2da995fa7434af0438398d16400b9b825dbf9ddb
   wkb-ios: 8d1526e825e3d088a5a191c8eefe213a9e41d25e
 
-PODFILE CHECKSUM: c8b993dbb478b18f8081cc1c6de14792f81541d7
+PODFILE CHECKSUM: eb14b010932b2160143f664698aa0f41bc7d0946
 
 COCOAPODS: 1.0.1
