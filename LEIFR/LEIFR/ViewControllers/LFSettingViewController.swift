@@ -25,17 +25,16 @@ class LFSettingViewController: LFViewController {
 	
 	func configureTableView() {
 		tableView.estimatedRowHeight = 100
-		tableView.rowHeight = 60
+		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.contentInset = UIEdgeInsetsMake(84, 0, 64, 0)
 		tableView.dataSource = self
 		tableView.delegate = self
-		tableView.backgroundColor = Color.limeCyan
 		
 		registerCells()
 	}
 	
 	func registerCells() {
-		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default-cell")
+		LFButtonCell.registerCell(tableView: self.tableView, reuseIdentifier: LFButtonCell.identifier)
 	}
 }
 
@@ -66,8 +65,6 @@ extension LFSettingViewController: LFStoryboardBasedController {
 
 extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		tableView.deselectRow(at: indexPath, animated: true)
-		
 		switch indexPath.section {
 		case Section.reconstructDatabase.rawValue:
 			indexPath.row == 0 ? self.reconstructDatabase(sender: nil) : self.flushPoints(sender: nil)
@@ -86,12 +83,12 @@ extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "default-cell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: LFButtonCell.identifier, for: indexPath) as! LFButtonCell
 		
 		if indexPath.row == 0 {
-			cell.textLabel?.text = "Reconstruct Database"
+			cell.buttonTitleLabel.text = "Reconstruct Database"
 		} else {
-			cell.textLabel?.text = "Flush"
+			cell.buttonTitleLabel.text = "Flush"
 		}
 		
 		return cell

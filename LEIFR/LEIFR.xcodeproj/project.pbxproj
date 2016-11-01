@@ -60,6 +60,10 @@
 		0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */; };
 		0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */; };
 		0CD4AD901DAD856800081876 /* LFHistoryControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4AD8F1DAD856800081876 /* LFHistoryControlView.xib */; };
+		0CF1361A1DC8E2BD00E122AC /* LFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF136181DC8E2BD00E122AC /* LFTableViewCell.swift */; };
+		0CF1361B1DC8E2BD00E122AC /* LFTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */; };
+		0CF1361E1DC8E38200E122AC /* LFButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */; };
+		0CF1361F1DC8E38200E122AC /* LFButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF1361D1DC8E38200E122AC /* LFButtonCell.xib */; };
 		0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC8B701DA6F9320084DD6F /* MapKit.framework */; };
 		62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */; };
 		62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */; };
@@ -561,6 +565,10 @@
 		0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFViewController.swift; sourceTree = "<group>"; };
 		0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabViewController.swift; sourceTree = "<group>"; };
 		0CD4AD8F1DAD856800081876 /* LFHistoryControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFHistoryControlView.xib; path = LEIFR/ViewControllers/LFHistoryControlView.xib; sourceTree = SOURCE_ROOT; };
+		0CF136181DC8E2BD00E122AC /* LFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTableViewCell.swift; sourceTree = "<group>"; };
+		0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFTableViewCell.xib; sourceTree = "<group>"; };
+		0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFButtonCell.swift; sourceTree = "<group>"; };
+		0CF1361D1DC8E38200E122AC /* LFButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFButtonCell.xib; sourceTree = "<group>"; };
 		0CFC8B701DA6F9320084DD6F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -629,6 +637,7 @@
 		0C4242501DC55405004F47F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CF136171DC8E2AE00E122AC /* Cells */,
 				62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */,
 				62F0DBFA1D888A02006D05E0 /* Main.storyboard */,
 				0CD4AD8F1DAD856800081876 /* LFHistoryControlView.xib */,
@@ -1537,6 +1546,17 @@
 			path = Renderer;
 			sourceTree = "<group>";
 		};
+		0CF136171DC8E2AE00E122AC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0CF136181DC8E2BD00E122AC /* LFTableViewCell.swift */,
+				0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */,
+				0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */,
+				0CF1361D1DC8E38200E122AC /* LFButtonCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		5432B3B5B435532EF82F3B2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1644,7 +1664,7 @@
 			attributes = {
 				CLASSPREFIX = LF;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Echx;
 				TargetAttributes = {
 					0CBB307D1D85F413002C0EF0 = {
@@ -1715,7 +1735,9 @@
 				0CBB38551D85F9BD002C0EF0 /* Coordinate.inl in Resources */,
 				623A63521DC2098100F80E7F /* default.sqlite in Resources */,
 				0CBB38541D85F9BD002C0EF0 /* ConvexHull.inl in Resources */,
+				0CF1361B1DC8E2BD00E122AC /* LFTableViewCell.xib in Resources */,
 				62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */,
+				0CF1361F1DC8E38200E122AC /* LFButtonCell.xib in Resources */,
 				0CBB385E1D85F9BD002C0EF0 /* DirectedEdge.inl in Resources */,
 				0CBB38621D85F9BD002C0EF0 /* MCIndexNoder.inl in Resources */,
 			);
@@ -1840,6 +1862,7 @@
 				0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */,
 				0C4242541DC5541E004F47F2 /* LFNavigationBar.swift in Sources */,
 				626A13B81DC5259B0051FE90 /* MapKitExtension.swift in Sources */,
+				0CF1361A1DC8E2BD00E122AC /* LFTableViewCell.swift in Sources */,
 				62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */,
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
@@ -1861,6 +1884,7 @@
 				0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */,
 				0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */,
 				0C4242521DC55405004F47F2 /* LFRecordButton.swift in Sources */,
+				0CF1361E1DC8E38200E122AC /* LFButtonCell.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2015,6 +2039,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD554A7B469F9393D5BD63B8 /* Pods-LEIFR.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2047,6 +2072,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2078,6 +2104,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E37A1D54B317D122EE629093 /* Pods-LEIFRTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2097,6 +2124,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
