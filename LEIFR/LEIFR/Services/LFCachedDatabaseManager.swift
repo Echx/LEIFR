@@ -85,10 +85,11 @@ class LFCachedDatabaseManager: NSObject {
     
     func reconstructDatabase() {
         clearDatabase()
-        
+		
+		let notificationCenter = NotificationCenter.default
+		
         for level in 1...21 {
-            print("reconstructing database at level \(level)")
-            
+			
             let gridSize = self.gridSize(for: level)
             
             LFDatabaseManager.shared.getPointsInRegion(MKCoordinateRegionForMapRect(MKMapRectWorld), gridSize: gridSize, completion: {
@@ -96,9 +97,11 @@ class LFCachedDatabaseManager: NSObject {
                 
                 self.savePoints(coordinates: coordinates, zoomLevel: level)
             })
+			
+			notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionProgress), object: nil, userInfo: ["progress": CGFloat(level)/21 * 100])
         }
 		
-		print("database reconstruction completed")
+		notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionComplete), object: nil, userInfo: nil)
     }
 	
 	func cachePath(with trackId: Int) {

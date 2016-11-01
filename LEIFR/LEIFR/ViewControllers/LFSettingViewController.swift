@@ -42,7 +42,10 @@ class LFSettingViewController: LFViewController {
 
 extension LFSettingViewController {
 	@IBAction func reconstructDatabase(sender: Any?) {
-		let loadingController = LFLoadingViewController.controllerFromStoryboard()
+		let loadingController = LFLoadingViewController.controllerFromStoryboard() as! LFLoadingViewController
+		loadingController.completionNotificationName = LFNotification.databaseReconstructionComplete
+		loadingController.progressNotificationName = LFNotification.databaseReconstructionProgress
+		
 		self.present(loadingController, animated: true, completion: {
 			DispatchQueue(label: "DatabaseQueue").async {
 				LFCachedDatabaseManager.shared.reconstructDatabase()
