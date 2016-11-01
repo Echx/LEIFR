@@ -45,7 +45,7 @@ class LFLoadingViewController: LFViewController {
 			notification in
 			DispatchQueue.main.async {
 				self.progressView.setProgress(value: self.progressView.maxValue, animationDuration: 1, completion: {
-					DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+					DispatchQueue.main.asyncAfter(deadline: .now() + 1	, execute: {
 						self.dismiss(animated: true, completion: nil)
 					})
 				})

@@ -73,7 +73,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rE8-NP-YOe" firstAttribute="centerY" secondItem="jNX-5y-Fds" secondAttribute="centerY" id="6Ye-ek-V28"/>
                             <constraint firstItem="rE8-NP-YOe" firstAttribute="centerX" secondItem="jNX-5y-Fds" secondAttribute="centerX" id="VgS-NV-hUC"/>
@@ -81,7 +81,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progressView" destination="rE8-NP-YOe" id="QRx-k1-cZx"/>
+                        <outlet property="progressView" destination="rE8-NP-YOe" id="fjh-o2-GAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFP-sC-cPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
