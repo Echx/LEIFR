@@ -26,6 +26,7 @@ class LFLoadingViewController: LFViewController {
 		super.viewWillAppear(animated)
 		
 		let center = NotificationCenter.default
+        let startingDate = Date()
 		
 		center.addObserver(forName: NSNotification.Name(rawValue: progressNotificationName), object: nil, queue: nil, using: {
 			notification in
@@ -33,7 +34,18 @@ class LFLoadingViewController: LFViewController {
 				self.updateInProgress = true
 				if let progress = (notification.userInfo as? [String: CGFloat])?["progress"] {
 					DispatchQueue.main.async {
-						self.progressView.setProgress(value: progress, animationDuration: 1, completion: {
+//                        所需时间成几何级增长
+//                        testing result:
+//                        1.12842601537704
+//                        2.32507395744324
+//                        5.11427700519562
+//                        11.7953410148621
+//                        36.2655509710312
+//                        77.3947529792786
+//                        237.614533007145
+//                        526.361443996429
+                        let interval = Date().timeIntervalSince(startingDate) * 1.1
+						self.progressView.setProgress(value: progress, animationDuration: interval, completion: {
 							self.updateInProgress = false
 						})
 					}
@@ -45,7 +57,7 @@ class LFLoadingViewController: LFViewController {
 			notification in
 			DispatchQueue.main.async {
 				self.progressView.setProgress(value: self.progressView.maxValue, animationDuration: 1, completion: {
-					DispatchQueue.main.asyncAfter(deadline: .now() + 1	, execute: {
+					DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 						self.dismiss(animated: true, completion: nil)
 					})
 				})

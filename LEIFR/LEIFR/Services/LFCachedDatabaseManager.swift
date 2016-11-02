@@ -14,6 +14,7 @@ class LFCachedDatabaseManager: NSObject {
     
     fileprivate let cacheRealm = try! Realm()
     fileprivate let bufferSize = 2000
+    fileprivate let maxLevel = 21
     
     func savePoints(coordinates: [CLLocationCoordinate2D], zoomLevel: Int) {
         let cacheRealm = try! Realm()
@@ -88,7 +89,7 @@ class LFCachedDatabaseManager: NSObject {
 		
 		let notificationCenter = NotificationCenter.default
 		
-        for level in 1...21 {
+        for level in 1...maxLevel {
 			
             let gridSize = self.gridSize(for: level)
             
@@ -98,14 +99,14 @@ class LFCachedDatabaseManager: NSObject {
                 self.savePoints(coordinates: coordinates, zoomLevel: level)
             })
 			
-			notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionProgress), object: nil, userInfo: ["progress": CGFloat(level)/21 * 100])
+			notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionProgress), object: nil, userInfo: ["progress": progress(for: level + 1)])
         }
 		
 		notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionComplete), object: nil, userInfo: nil)
     }
 	
 	func cachePath(with trackId: Int) {
-		for level in 1...21 {
+		for level in 1...maxLevel {
 			print("processing path at level \(level)")
 			
 			let gridSize = self.gridSize(for: level)
@@ -139,5 +140,10 @@ class LFCachedDatabaseManager: NSObject {
     
     fileprivate func gridSize(for zoomLevel: Int) -> Double {
         return 1 / pow(2.0, Double(zoomLevel)) * MKMapSizeWorld.width / 5120000
+    }
+    
+    fileprivate func progress(for level: Int) -> CGFloat {
+        // geometric sequence sum
+        return pow(4, CGFloat(level)) / pow(4, CGFloat(maxLevel)) * 100
     }
 }
