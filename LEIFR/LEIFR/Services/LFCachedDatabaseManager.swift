@@ -139,7 +139,7 @@ class LFCachedDatabaseManager: NSObject {
     }
     
     fileprivate func gridSize(for zoomLevel: Int) -> Double {
-        return 1 / pow(2.0, Double(zoomLevel)) * MKMapSizeWorld.width / 5120000
+        return 1 / pow(2.0, Double(zoomLevel)) * MKMapSizeWorld.width / 10240000
     }
     
     fileprivate func progress(for level: Int) -> CGFloat {
