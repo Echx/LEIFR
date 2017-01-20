@@ -1667,7 +1667,7 @@
 			attributes = {
 				CLASSPREFIX = LF;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Echx;
 				TargetAttributes = {
 					0CBB307D1D85F413002C0EF0 = {
