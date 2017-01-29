@@ -19,16 +19,16 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	}
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
-		let cachedPoints = LFCachedDatabaseManager.shared.getPointsInRect(mapRect, zoomScale: zoomScale)
+        let dbManager = LFCachedDatabaseManager.shared
+		let cachedPoints = dbManager.getPointsInRect(mapRect, zoomScale: zoomScale)
 		guard cachedPoints.count > 0 else {
 			return
 		}
 		
 		let gridSize = self.gridSizeDrawn(for: zoomScale)
-		let counts = cachedPoints.map{$0.count}
 		// quick and dirty fix
-		let maxCount = counts.max()! + 1
-		let minCount = counts.min()! - 1
+		let maxCount = dbManager.getMaxPointsCountIn(zoomScale: zoomScale) + 1
+		let minCount = dbManager.getMinPointsCountIn(zoomScale: zoomScale) + 1
 		let maxAlpha = 1.0
 		let minAlpha = 0.1
 		

@@ -80,6 +80,44 @@ class LFCachedDatabaseManager: NSObject {
         return Array(points)
     }
     
+    func getMaxPointsCountIn(zoomScale: MKZoomScale) -> Int {
+        let zoomLevel = zoomScale.toZoomLevel()
+        let cacheRealm = try! Realm()
+        let levelPredicate = "level = \(zoomLevel)"
+        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter(levelPredicate)
+        
+        guard currentLevels.count > 0 else {
+            return 0
+        }
+        
+        let points = currentLevels[0].points
+        let count = points.max(ofProperty: "count") as Int?
+        return count!
+    }
+    
+    func getMinPointsCountIn(zoomScale: MKZoomScale) -> Int {
+        let zoomLevel = zoomScale.toZoomLevel()
+        let cacheRealm = try! Realm()
+        let levelPredicate = "level = \(zoomLevel)"
+        let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter(levelPredicate)
+        
+        guard currentLevels.count > 0 else {
+            return 0
+        }
+        
+        let points = currentLevels[0].points
+        let count = points.min(ofProperty: "count") as Int?
+        return count!
+    }
+    
+    func getPointsCountIn(zoomScale: MKZoomScale) -> Int {
+        let zoomLevel = zoomScale.toZoomLevel()
+        let cacheRealm = try! Realm()
+        let levelPredicate = "level = \(zoomLevel)"
+        
+        return cacheRealm.objects(LFCachedLevel.self).filter(levelPredicate).count
+    }
+    
     func synchronizeDatabase() {
         print("synchronizing database")
     }
