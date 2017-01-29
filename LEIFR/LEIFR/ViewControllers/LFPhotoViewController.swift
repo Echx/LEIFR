@@ -29,12 +29,16 @@ class LFPhotoViewController: LFViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.collectionView.alpha = 0
 		DispatchQueue(label: "background").async {
 			self.fetchResult = LFPhotoManager.shared.fetchAllAssets()
 			DispatchQueue.main.async {
 				self.collectionView.reloadData()
 				let indexPath = IndexPath(item: self.fetchResult.count - 1, section: 0)
 				self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: false)
+				UIView.animate(withDuration: 0.2, animations: {
+					self.collectionView.alpha = 1
+				})
 			}
 		}
 		self.setupCollectionView()

@@ -218,7 +218,7 @@
                                 <blurEffect style="extraLight"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="v3B-pk-xG9" firstAttribute="top" secondItem="6RX-rw-K96" secondAttribute="top" id="4HN-Sp-Gfo"/>
                             <constraint firstAttribute="trailing" secondItem="r6X-DI-HcX" secondAttribute="trailing" id="BWC-7z-v7C"/>
