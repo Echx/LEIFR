@@ -26,19 +26,15 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 		}
 		
 		let gridSize = self.gridSizeDrawn(for: zoomScale)
-		// quick and dirty fix
-		let maxCount = dbManager.getMaxPointsCountIn(zoomScale: zoomScale) + 1
-		let minCount = dbManager.getMinPointsCountIn(zoomScale: zoomScale) + 1
-		let maxAlpha = 1.0
-		let minAlpha = 0.1
-		
 		
 		for cachedPoint in cachedPoints {
 			let mapPoint = MKMapPoint(x: Double(cachedPoint.x), y: Double(cachedPoint.y))
 			let point = self.point(for: mapPoint)
 			let rect = CGRect(x: point.x, y: point.y, width: gridSize, height: gridSize)
 			let count = cachedPoint.count
-			let weightedAlpha = Double(count - minCount) / Double(maxCount - minCount) * (maxAlpha - minAlpha) + minAlpha
+            
+            let weightedAlpha = Double(min(count, 5)) / 10.0
+            
 			context.setFillColor(red: 0, green: 0, blue: 0, alpha: CGFloat(weightedAlpha))
 			context.fill(rect)
 		}
