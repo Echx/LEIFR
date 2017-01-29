@@ -169,6 +169,8 @@ extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDel
 	fileprivate func setupCollectionView() {
 		self.collectionView.dataSource = self
 		self.collectionView.delegate = self
+		self.collectionView.contentInset = UIEdgeInsets(top: 84 + gridSpacing, left: 0, bottom: 64 + gridSpacing, right: 0)
+		self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 84, left: 0, bottom: 64, right: 0)
 		LFGridViewCell.registerCell(collectionView: self.collectionView, reuseIdentifier: String(describing: LFGridViewCell.self))
 	}
 	
