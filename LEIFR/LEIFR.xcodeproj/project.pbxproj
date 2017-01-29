@@ -15,6 +15,8 @@
 		0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
+		0CA7EE921E3E75570031A8C1 /* LFGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA7EE901E3E75570031A8C1 /* LFGridViewCell.swift */; };
+		0CA7EE931E3E75570031A8C1 /* LFGridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CA7EE911E3E75570031A8C1 /* LFGridViewCell.xib */; };
 		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
 		0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30881D85F413002C0EF0 /* Assets.xcassets */; };
 		0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */; };
@@ -130,6 +132,8 @@
 		0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoViewController.swift; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
+		0CA7EE901E3E75570031A8C1 /* LFGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGridViewCell.swift; sourceTree = "<group>"; };
+		0CA7EE911E3E75570031A8C1 /* LFGridViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFGridViewCell.xib; sourceTree = "<group>"; };
 		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -1562,6 +1566,8 @@
 				0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */,
 				0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */,
 				0CF1361D1DC8E38200E122AC /* LFButtonCell.xib */,
+				0CA7EE901E3E75570031A8C1 /* LFGridViewCell.swift */,
+				0CA7EE911E3E75570031A8C1 /* LFGridViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1730,6 +1736,7 @@
 				0CBB38561D85F9BD002C0EF0 /* CoordinateArraySequenceFactory.inl in Resources */,
 				62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */,
 				0CBB38531D85F9BD002C0EF0 /* Info.plist in Resources */,
+				0CA7EE931E3E75570031A8C1 /* LFGridViewCell.xib in Resources */,
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
@@ -1868,6 +1875,7 @@
 			files = (
 				0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */,
 				0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */,
+				0CA7EE921E3E75570031A8C1 /* LFGridViewCell.swift in Sources */,
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */,
 				0CF136211DC9003C00E122AC /* LFLoadingViewController.swift in Sources */,

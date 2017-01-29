@@ -14,42 +14,37 @@ class LFPhotoManager: NSObject {
 	let thumbnailSize = CGSize(width: 200, height: 200)
 	let imageManager = PHCachingImageManager()
 	
-	func fetchAssets(from fromDate: Date, till endDate: Date) -> [PHAsset] {
+	func fetchAssets(from fromDate: Date, till endDate: Date) -> PHFetchResult<PHAsset> {
 		let fetchOptions = PHFetchOptions()
 		fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
 		fetchOptions.predicate = NSPredicate(format: "(creationDate >= %@) AND (creationDate <= %@) AND (mediaType == %ld)", fromDate as NSDate, endDate as NSDate, PHAssetMediaType.image.rawValue)
 		let fetchResult = PHAsset.fetchAssets(with: fetchOptions)
 		
-		var assets = [PHAsset]()
-		fetchResult.enumerateObjects({
-			(asset, _, _) in
-			assets.append(asset)
-		})
-		
-		return assets
+		return fetchResult
 	}
 	
-	func fetchAllAssets() -> [PHAsset] {
+	func fetchAllAssets() -> PHFetchResult<PHAsset> {
 		let fetchOptions = PHFetchOptions()
 		fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
 		fetchOptions.predicate = NSPredicate(format: "(creationDate != nil) AND (mediaType == %ld)", PHAssetMediaType.image.rawValue)
 		let fetchResult = PHAsset.fetchAssets(with: fetchOptions)
-		
-		var assets = [PHAsset]()
-		fetchResult.enumerateObjects({
-			(asset, _, _) in
-			assets.append(asset)
-		})
-		
-		return assets
+		return fetchResult
 	}
 	
-	func startCachingAssets(assets: [PHAsset], sizes: [CGSize]) {
-		let options = PHImageRequestOptions()
-		options.resizeMode = .exact
-		options.deliveryMode = .opportunistic
-		for size in sizes {
-			self.imageManager.startCachingImages(for: assets, targetSize: size, contentMode: .aspectFill, options: options)
+	func startCachingAssets(fetchResult: PHFetchResult<PHAsset>, sizes: [CGSize]) {
+		DispatchQueue(label: "image-caching-queue").async {
+			var assets = [PHAsset]()
+			fetchResult.enumerateObjects({
+				(asset, _, _) in
+				assets.append(asset)
+			})
+			
+			let options = PHImageRequestOptions()
+			options.resizeMode = .exact
+			options.deliveryMode = .opportunistic
+			for size in sizes {
+				self.imageManager.startCachingImages(for: assets, targetSize: size, contentMode: .aspectFill, options: options)
+			}
 		}
 	}
 	
