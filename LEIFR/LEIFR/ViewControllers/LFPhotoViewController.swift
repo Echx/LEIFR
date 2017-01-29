@@ -1,5 +1,5 @@
 //
-//  LFStatisticViewController.swift
+//  LFPhotoViewController.swift
 //  LEIFR
 //
 //  Created by Jinghan Wang on 12/10/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LFStatisticViewController: LFViewController {
+class LFPhotoViewController: LFViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +34,10 @@ class LFStatisticViewController: LFViewController {
 
 }
 
-extension LFStatisticViewController: LFStoryboardBasedController {
+extension LFPhotoViewController: LFStoryboardBasedController {
 	class func defaultControllerFromStoryboard() -> LFViewController {
 		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-		let controller = storyboard.instantiateViewController(withIdentifier: "LFStatisticViewController") as! LFViewController
+		let controller = storyboard.instantiateViewController(withIdentifier: "LFPhotoViewController") as! LFViewController
 		
 		return controller
 	}

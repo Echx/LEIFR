@@ -12,7 +12,7 @@
 		0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */; };
 		0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */; };
 		0C42AF2C1DAD662F00849A5C /* LFSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */; };
-		0C42AF2E1DAD6EA600849A5C /* LFStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2D1DAD6EA600849A5C /* LFStatisticViewController.swift */; };
+		0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
@@ -127,7 +127,7 @@
 		0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaybackViewController.swift; sourceTree = "<group>"; };
 		0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFSettingViewController.swift; sourceTree = "<group>"; };
-		0C42AF2D1DAD6EA600849A5C /* LFStatisticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticViewController.swift; sourceTree = "<group>"; };
+		0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoViewController.swift; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1505,7 +1505,7 @@
 				0CBB38781D85FCE7002C0EF0 /* LFOverallViewController.swift */,
 				62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */,
 				0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */,
-				0C42AF2D1DAD6EA600849A5C /* LFStatisticViewController.swift */,
+				0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */,
 				0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */,
 				0CF136201DC9003C00E122AC /* LFLoadingViewController.swift */,
 			);
@@ -1866,7 +1866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C42AF2E1DAD6EA600849A5C /* LFStatisticViewController.swift in Sources */,
+				0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */,
 				0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */,
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */,
