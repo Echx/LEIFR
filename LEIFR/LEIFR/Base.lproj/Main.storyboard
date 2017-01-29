@@ -348,7 +348,7 @@
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF3-gu-d6b">
                                                                 <rect key="frame" x="187.5" y="0.0" width="94" height="64"/>
-                                                                <state key="normal" image="ic_stars_36pt"/>
+                                                                <state key="normal" image="ic_camera_36pt"/>
                                                                 <connections>
                                                                     <action selector="buttonDidClickWithSender:" destination="Gba-mv-eLi" eventType="touchUpInside" id="UjX-ew-6Zz"/>
                                                                 </connections>
@@ -490,9 +490,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_camera_36pt" width="36" height="36"/>
         <image name="ic_public_36pt" width="36" height="36"/>
         <image name="ic_sentiment_very_satisfied_36pt" width="36" height="36"/>
-        <image name="ic_stars_36pt" width="36" height="36"/>
         <image name="ic_watch_later_36pt" width="36" height="36"/>
     </resources>
 </document>
