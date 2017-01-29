@@ -186,6 +186,12 @@ extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDel
 		LFGridViewCell.registerCell(collectionView: self.collectionView, reuseIdentifier: String(describing: LFGridViewCell.self))
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let index = indexPath.item
+		let asset = self.fetchResult[index]
+		print(asset)
+	}
+	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1
 	}
