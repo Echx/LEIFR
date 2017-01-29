@@ -16,14 +16,13 @@ class LFPhotoManager: NSObject {
 	func fetchAssets(from fromDate: Date, till endDate: Date) -> PHFetchResult<PHAsset> {
 		let fetchOptions = PHFetchOptions()
 		fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-		fetchOptions.predicate = NSPredicate(format: "(creationDate >= %@) AND (creationDate <= %@)", fromDate as NSDate, endDate as NSDate)
-		
+		fetchOptions.predicate = NSPredicate(format: "(creationDate >= %@) AND (creationDate <= %@) AND (mediaType == %ld)", fromDate as NSDate, endDate as NSDate, PHAssetMediaType.image.rawValue)
 		let fetchResult = PHAsset.fetchAssets(with: fetchOptions)
 		return fetchResult
 	}
 	
 	func getImageForAsset(asset: PHAsset, size: CGSize, completion: @escaping ((UIImage?) -> Void)) {
-		let manager = PHImageManager.default()
+		let manager = PHCachingImageManager.default()
 		let options = PHImageRequestOptions()
 		options.resizeMode = .exact
 		options.deliveryMode = .opportunistic
