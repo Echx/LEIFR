@@ -47,12 +47,9 @@ class LFPhotoViewController: LFViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		// Determine the size of the thumbnails to request from the PHCachingImageManager
 		let scale = UIScreen.main.scale
-		let cellSize = CGSize(width: 80, height: 80)//(collectionViewLayout as! UICollectionViewFlowLayout).itemSize
-		thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
+		self.thumbnailSize = CGSize(width: self.gridItemSize * scale, height: self.gridItemSize * scale)
+		super.viewWillAppear(animated)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -122,6 +119,15 @@ class LFPhotoViewController: LFViewController {
 			return (added, removed)
 		} else {
 			return ([new], [old])
+		}
+	}
+	
+	fileprivate var gridItemSize: CGFloat {
+		get {
+			let width = collectionView.bounds.width
+			let numberOfItemsPerRow: CGFloat = 4
+			let sideLength = (width - (numberOfItemsPerRow - 1) * gridSpacing) / numberOfItemsPerRow
+			return sideLength
 		}
 	}
 }
@@ -203,10 +209,7 @@ extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDel
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let width = collectionView.bounds.width
-		let numberOfItemsPerRow: CGFloat = 4
-		let sideLength = (width - (numberOfItemsPerRow - 1) * gridSpacing) / numberOfItemsPerRow
-		return CGSize(width: sideLength, height: sideLength)
+		return CGSize(width: self.gridItemSize, height: self.gridItemSize)
 	}
 }
 
