@@ -26,6 +26,8 @@
 	<string>sk.eyJ1IjoiZWNoeCIsImEiOiJjaXQxdjY5bTAwMGFjMnRvM3FvemxndWliIn0.eCSId3dwcOkL8tHCG5W17g</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>LEIFR needs to know your location to record them.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>LEIFR needs to know your photo</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
