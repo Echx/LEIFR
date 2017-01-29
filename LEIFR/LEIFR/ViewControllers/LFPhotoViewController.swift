@@ -20,6 +20,8 @@ class LFPhotoViewController: LFViewController {
 	
 	@IBOutlet var collectionView: UICollectionView!
 	
+	fileprivate var gridSpacing: CGFloat = 2
+	
 	fileprivate var fetchResult = PHFetchResult<PHAsset>()
 	fileprivate let imageManager = PHCachingImageManager()
 	fileprivate var thumbnailSize: CGSize!
@@ -166,6 +168,7 @@ extension LFPhotoViewController: PHPhotoLibraryChangeObserver {
 extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 	fileprivate func setupCollectionView() {
 		self.collectionView.dataSource = self
+		self.collectionView.delegate = self
 		LFGridViewCell.registerCell(collectionView: self.collectionView, reuseIdentifier: String(describing: LFGridViewCell.self))
 	}
 	
@@ -196,7 +199,10 @@ extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDel
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return CGSize(width: 80, height: 80)
+		let width = collectionView.bounds.width
+		let numberOfItemsPerRow: CGFloat = 4
+		let sideLength = (width - (numberOfItemsPerRow - 1) * gridSpacing) / numberOfItemsPerRow
+		return CGSize(width: sideLength, height: sideLength)
 	}
 }
 
