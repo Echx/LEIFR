@@ -9,6 +9,8 @@
 import UIKit
 
 class LFPhotoViewController: LFViewController {
+	
+	@IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

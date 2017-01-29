@@ -26,6 +26,7 @@ class LFPhotoManagerTest: XCTestCase {
 		let fromDate = Date(timeIntervalSince1970: 0)
 		let endDate = Date()
 		let result = manager.fetchAssets(from: fromDate, till: endDate)
+		print(result.count)
 		XCTAssertTrue(result.count != 0)
     }
 	
@@ -35,7 +36,7 @@ class LFPhotoManagerTest: XCTestCase {
 		let endDate = Date()
 		let result = manager.fetchAssets(from: fromDate, till: endDate)
 		for i in 0..<result.count {
-			let asset = result.object(at: i)
+			let asset = result[i]
 			asset.thumbnail(completion: {
 				result in
 				if let image = result {

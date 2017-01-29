@@ -29,6 +29,21 @@ class LFPhotoManager: NSObject {
 		return assets
 	}
 	
+	func fetchAllAssets() -> [PHAsset] {
+		let fetchOptions = PHFetchOptions()
+		fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+		fetchOptions.predicate = NSPredicate(format: "(creationDate != nil) AND (mediaType == %ld)", PHAssetMediaType.image.rawValue)
+		let fetchResult = PHAsset.fetchAssets(with: fetchOptions)
+		
+		var assets = [PHAsset]()
+		fetchResult.enumerateObjects({
+			(asset, _, _) in
+			assets.append(asset)
+		})
+		
+		return assets
+	}
+	
 	func startCachingAssets(assets: [PHAsset], sizes: [CGSize]) {
 		let options = PHImageRequestOptions()
 		options.resizeMode = .exact
