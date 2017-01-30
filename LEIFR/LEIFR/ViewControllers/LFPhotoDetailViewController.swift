@@ -75,6 +75,7 @@ extension LFPhotoDetailViewController: UICollectionViewDelegate, UICollectionVie
 			fatalError("unexpected cell in collection view")
 		}
 		
+		cell.delegate = self
 		cell.asset = asset
 		
 		return cell

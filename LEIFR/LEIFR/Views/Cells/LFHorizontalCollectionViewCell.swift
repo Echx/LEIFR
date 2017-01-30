@@ -9,7 +9,10 @@
 import UIKit
 import Photos
 
-class LFHorizontalCollectionViewCell: LFCollectionViewCell {	
+class LFHorizontalCollectionViewCell: LFCollectionViewCell {
+	
+	weak var delegate: UIViewController?
+	
 	fileprivate enum Section: Int {
 		case image = 0
 		case map, count
@@ -136,6 +139,15 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 		if let imageCell = self.tableView.visibleCells.first as? LFImageCell {
 			let maxOffset = UIScreen.main.bounds.size.height * 2 / 3
 			imageCell.adjustImageViewFrame(offset: scrollView.contentOffset.y, maxOffset: maxOffset)
+		}
+	}
+	
+	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+		print(scrollView.contentOffset)
+		if scrollView.contentOffset.y < -100 {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+				self.delegate?.dismiss(animated: true, completion: nil)
+			})
 		}
 	}
 	
