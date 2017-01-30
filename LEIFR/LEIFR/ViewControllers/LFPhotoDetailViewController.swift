@@ -1,0 +1,61 @@
+//
+//  LFPhotoDetailViewController.swift
+//  LEIFR
+//
+//  Created by Jinghan Wang on 30/1/17.
+//  Copyright © 2017 Echx. All rights reserved.
+//
+
+import UIKit
+import Photos
+
+class LFPhotoDetailViewController: LFViewController {
+
+	var asset: PHAsset!
+	@IBOutlet var imageView: UIImageView!
+	
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		let size = self.imageView.bounds.size
+		let scale = UIScreen.main.scale
+		let targetImageSize = CGSize(width: size.width * scale, height: size.height * scale)
+		LFPhotoManager.shared.getImageForAsset(asset: self.asset, size: targetImageSize, completion: {
+			image in
+			DispatchQueue.main.async {
+				self.imageView.image = image
+			}
+		})
+		
+	}
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+extension LFPhotoDetailViewController: LFStoryboardBasedController {
+	class func defaultControllerFromStoryboard() -> LFViewController {
+		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+		let controller = storyboard.instantiateViewController(withIdentifier: "LFPhotoDetailViewController") as! LFViewController
+		
+		return controller
+	}
+}

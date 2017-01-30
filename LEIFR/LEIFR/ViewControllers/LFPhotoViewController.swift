@@ -189,7 +189,9 @@ extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDel
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let index = indexPath.item
 		let asset = self.fetchResult[index]
-		print(asset)
+		let photoDetailViewController = LFPhotoDetailViewController.defaultControllerFromStoryboard() as! LFPhotoDetailViewController
+		photoDetailViewController.asset = asset
+		self.present(photoDetailViewController, animated: true, completion: nil)
 	}
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {

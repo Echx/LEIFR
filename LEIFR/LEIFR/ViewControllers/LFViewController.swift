@@ -23,7 +23,10 @@ class LFViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	@IBAction func dismissWithAnimation() {
+		self.dismiss(animated: true, completion: nil)
+	}
 
 	class func controllerFromStoryboard() -> LFViewController {
 		let className = NSStringFromClass(self).components(separatedBy: ".").last!
