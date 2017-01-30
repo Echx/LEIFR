@@ -11,6 +11,8 @@ import wkb_ios
 
 class LFPlaybackViewController: LFViewController {
     
+    @IBOutlet weak var mapView: MKMapView!
+    
     fileprivate var paths: [LFPath]?
 
     override func viewDidLoad() {
@@ -32,17 +34,43 @@ class LFPlaybackViewController: LFViewController {
             print(paths.count) // 336
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
-            let start = formatter.date(from: "2016/08/01")!
-            let end = formatter.date(from: "2016/09/09")!
+            let start = formatter.date(from: "2016/06/01")!
+            let end = formatter.date(from: "2016/12/09")!
             
             self.paths = paths.filter {
                 $0.isOverlappedWith(startDate: start, endDate: end)
             }
             
-            print(self.paths?.count)
+            // for testing and demo
+            self.runAnimation()
         }
     }
+    
+    fileprivate func runAnimation() {
+        let path = self.paths?[0]
+        let points = (path?.points())!
+        let point = points[0] as! WKBPoint
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
 
+        mapView.addAnnotation(annotation)
+        
+//        DispatchQueue.main.async {
+//            var delay = 0.0
+//            UIView.animateKeyframes(withDuration: 10.0, delay: 0.0, options: UIViewKeyframeAnimationOptions(rawValue: UIViewAnimationOptions.curveEaseInOut.rawValue), animations: {
+//                for point in points {
+//                    let wkbPoint = point as! WKBPoint
+//                    
+//                    UIView.addKeyframe(withRelativeStartTime: 3, relativeDuration: 3, animations: {
+//                        annotation.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
+//                    })
+//                }
+//            }, completion: nil)
+//        }
+
+    }
+    
     /*
     // MARK: - Navigation
 
