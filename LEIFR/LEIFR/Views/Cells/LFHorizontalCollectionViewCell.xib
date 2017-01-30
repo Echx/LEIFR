@@ -18,8 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="289" height="398"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qo7-Dg-mNn">
-                        <rect key="frame" x="0.0" y="0.0" width="289" height="398"/>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qo7-Dg-mNn">
+                        <rect key="frame" x="0.0" y="0.0" width="289" height="399"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tableView>
@@ -27,7 +27,7 @@
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Qo7-Dg-mNn" secondAttribute="trailing" id="PVi-ND-bPi"/>
-                <constraint firstAttribute="bottom" secondItem="Qo7-Dg-mNn" secondAttribute="bottom" id="Po9-u6-xam"/>
+                <constraint firstAttribute="bottom" secondItem="Qo7-Dg-mNn" secondAttribute="bottom" constant="-1" id="Po9-u6-xam"/>
                 <constraint firstItem="Qo7-Dg-mNn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gG5-1W-17K"/>
                 <constraint firstItem="Qo7-Dg-mNn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yjH-RO-UGv"/>
             </constraints>

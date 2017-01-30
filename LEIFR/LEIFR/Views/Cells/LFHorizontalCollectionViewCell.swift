@@ -37,7 +37,7 @@ class LFHorizontalCollectionViewCell: LFCollectionViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		asset = nil
-		tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+		self.tableView.setContentOffset(CGPoint(x: 0, y: -self.tableView.contentInset.top), animated: true)
 	}
 	
 	override func layoutSubviews() {
@@ -52,7 +52,6 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 		tableView.dataSource = self
 		tableView.backgroundColor = UIColor.clear
 		tableView.isPagingEnabled = true
-		tableView.contentInset = UIEdgeInsets(top: 84, left: 0, bottom: 0, right: 0)
 		
 		LFImageCell.registerCell(tableView: tableView, reuseIdentifier: LFImageCell.identifier)
 		LFMapCell.registerCell(tableView: tableView, reuseIdentifier: LFMapCell.identifier)
@@ -89,7 +88,7 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 			}
 			
 		case Section.map.rawValue:
-			return 400
+			return UIScreen.main.bounds.size.height * 2 / 3
 			
 		default:
 			return 0
@@ -122,4 +121,12 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 			return UITableViewCell()
 		}
 	}
+
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		if let imageCell = self.tableView.visibleCells.first as? LFImageCell {
+			let maxOffset = UIScreen.main.bounds.size.height * 2 / 3
+			imageCell.adjustImageViewFrame(offset: scrollView.contentOffset.y, maxOffset: maxOffset)
+		}
+	}
+	
 }
