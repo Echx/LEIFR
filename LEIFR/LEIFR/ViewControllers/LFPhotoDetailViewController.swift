@@ -20,20 +20,15 @@ class LFPhotoDetailViewController: LFViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-
-//		
-//		let layer = self.imageView.layer
-//		layer.shadowColor = UIColor.black.cgColor
-//		layer.shadowOffset = CGSize(width: 0, height: 0)
-//		layer.shadowOpacity = 0.15
-//		layer.shadowRadius = 3
-		
+				
 		self.setup(collectionView: self.collectionView)
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		
+		let indexPath = IndexPath(item: displayIndex, section: 0)
+		self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
 	}
 
     override func didReceiveMemoryWarning() {

@@ -51,8 +51,11 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.backgroundColor = UIColor.clear
-		LFImageCell.registerCell(tableView: tableView, reuseIdentifier: LFImageCell.identifier)
+		tableView.isPagingEnabled = true
 		tableView.contentInset = UIEdgeInsets(top: 84, left: 0, bottom: 0, right: 0)
+		
+		LFImageCell.registerCell(tableView: tableView, reuseIdentifier: LFImageCell.identifier)
+		LFMapCell.registerCell(tableView: tableView, reuseIdentifier: LFMapCell.identifier)
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,7 +89,7 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 			}
 			
 		case Section.map.rawValue:
-			return 20
+			return 400
 			
 		default:
 			return 0
@@ -94,18 +97,29 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: LFImageCell.identifier, for: indexPath) as! LFImageCell
-
-		let size = UIScreen.main.bounds.size
-		let scale = UIScreen.main.scale
-		let targetImageSize = CGSize(width: size.width * scale, height: size.height * scale)
-		LFPhotoManager.shared.getFullImageForAsset(asset: self.asset, size: targetImageSize, completion: {
-			image in
-			DispatchQueue.main.async {
-				cell.mainImageView.image = image
-			}
-		})
 		
-		return cell
+		switch indexPath.section {
+		case Section.image.rawValue:
+			let cell = tableView.dequeueReusableCell(withIdentifier: LFImageCell.identifier, for: indexPath) as! LFImageCell
+			
+			let size = UIScreen.main.bounds.size
+			let scale = UIScreen.main.scale
+			let targetImageSize = CGSize(width: size.width * scale, height: size.height * scale)
+			LFPhotoManager.shared.getFullImageForAsset(asset: self.asset, size: targetImageSize, completion: {
+				image in
+				DispatchQueue.main.async {
+					cell.mainImageView.image = image
+				}
+			})
+			
+			return cell
+			
+		case Section.map.rawValue:
+			let cell = tableView.dequeueReusableCell(withIdentifier: LFMapCell.identifier, for: indexPath) as! LFMapCell
+			return cell
+			
+		default:
+			return UITableViewCell()
+		}
 	}
 }

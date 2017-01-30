@@ -76,6 +76,8 @@
 		0CF715F81E3F234100FA419F /* LFCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF715F61E3F234100FA419F /* LFCollectionViewCell.xib */; };
 		0CF715FD1E3F2DFC00FA419F /* LFImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF715FB1E3F2DFC00FA419F /* LFImageCell.swift */; };
 		0CF715FE1E3F2DFC00FA419F /* LFImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF715FC1E3F2DFC00FA419F /* LFImageCell.xib */; };
+		0CF716011E3F398500FA419F /* LFMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF715FF1E3F398500FA419F /* LFMapCell.swift */; };
+		0CF716021E3F398500FA419F /* LFMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF716001E3F398500FA419F /* LFMapCell.xib */; };
 		0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC8B701DA6F9320084DD6F /* MapKit.framework */; };
 		62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */; };
 		62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */; };
@@ -593,6 +595,8 @@
 		0CF715F61E3F234100FA419F /* LFCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFCollectionViewCell.xib; sourceTree = "<group>"; };
 		0CF715FB1E3F2DFC00FA419F /* LFImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFImageCell.swift; sourceTree = "<group>"; };
 		0CF715FC1E3F2DFC00FA419F /* LFImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFImageCell.xib; sourceTree = "<group>"; };
+		0CF715FF1E3F398500FA419F /* LFMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFMapCell.swift; sourceTree = "<group>"; };
+		0CF716001E3F398500FA419F /* LFMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFMapCell.xib; sourceTree = "<group>"; };
 		0CFC8B701DA6F9320084DD6F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1632,6 +1636,8 @@
 				0CF1361D1DC8E38200E122AC /* LFButtonCell.xib */,
 				0CF715FB1E3F2DFC00FA419F /* LFImageCell.swift */,
 				0CF715FC1E3F2DFC00FA419F /* LFImageCell.xib */,
+				0CF715FF1E3F398500FA419F /* LFMapCell.swift */,
+				0CF716001E3F398500FA419F /* LFMapCell.xib */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -1825,6 +1831,7 @@
 				0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */,
 				0CBB38571D85F9BD002C0EF0 /* Envelope.inl in Resources */,
 				0CF136231DC9006500E122AC /* LFHistoryControlView.xib in Resources */,
+				0CF716021E3F398500FA419F /* LFMapCell.xib in Resources */,
 				0CF715FE1E3F2DFC00FA419F /* LFImageCell.xib in Resources */,
 				0CBB38641D85F9BD002C0EF0 /* MinimalEdgeRing.inl in Resources */,
 				0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */,
@@ -1975,6 +1982,7 @@
 				0CF715F31E3F227800FA419F /* LFHorizontalCollectionViewCell.swift in Sources */,
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
+				0CF716011E3F398500FA419F /* LFMapCell.swift in Sources */,
 				62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */,
 				62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,

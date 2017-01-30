@@ -1,5 +1,5 @@
 //
-//  LFImageCell.swift
+//  LFMapCell.swift
 //  LEIFR
 //
 //  Created by Jinghan Wang on 30/1/17.
@@ -8,19 +8,11 @@
 
 import UIKit
 
-class LFImageCell: LFTableViewCell {
-	
-	@IBOutlet var mainImageView: UIImageView!
+class LFMapCell: LFTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-		
-
-		let layer = self.mainImageView.layer
-		layer.shadowColor = UIColor.black.cgColor
-		layer.shadowOffset = CGSize(width: 0, height: 0)
-		layer.shadowOpacity = 0.15
-		layer.shadowRadius = 3
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
