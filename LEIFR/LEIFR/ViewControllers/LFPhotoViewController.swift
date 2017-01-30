@@ -41,7 +41,7 @@ class LFPhotoViewController: LFViewController {
 				})
 			}
 		}
-		self.setupCollectionView()
+		self.setup(collectionView: self.collectionView)
 		
 		PHPhotoLibrary.shared().register(self)
     }
@@ -178,19 +178,19 @@ extension LFPhotoViewController: PHPhotoLibraryChangeObserver {
 }
 
 extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-	fileprivate func setupCollectionView() {
-		self.collectionView.dataSource = self
-		self.collectionView.delegate = self
-		self.collectionView.contentInset = UIEdgeInsets(top: 84 + gridSpacing, left: 0, bottom: 64 + gridSpacing, right: 0)
-		self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 84, left: 0, bottom: 64, right: 0)
-		LFGridViewCell.registerCell(collectionView: self.collectionView, reuseIdentifier: String(describing: LFGridViewCell.self))
+	fileprivate func setup(collectionView: UICollectionView) {
+		collectionView.dataSource = self
+		collectionView.delegate = self
+		collectionView.contentInset = UIEdgeInsets(top: 84 + gridSpacing, left: 0, bottom: 64 + gridSpacing, right: 0)
+		collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 84, left: 0, bottom: 64, right: 0)
+		LFGridViewCell.registerCell(collectionView: collectionView, reuseIdentifier: String(describing: LFGridViewCell.self))
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let index = indexPath.item
-		let asset = self.fetchResult[index]
 		let photoDetailViewController = LFPhotoDetailViewController.defaultControllerFromStoryboard() as! LFPhotoDetailViewController
-		photoDetailViewController.asset = asset
+		photoDetailViewController.fetchResult = self.fetchResult
+		photoDetailViewController.displayIndex = index
 		self.present(photoDetailViewController, animated: true, completion: nil)
 	}
 	

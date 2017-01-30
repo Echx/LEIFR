@@ -12,12 +12,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LFHorizontalCollectionViewCell" customModule="LEIFR" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="289" height="398"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="289" height="398"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qo7-Dg-mNn">
+                        <rect key="frame" x="0.0" y="0.0" width="289" height="398"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Qo7-Dg-mNn" secondAttribute="trailing" id="PVi-ND-bPi"/>
+                <constraint firstAttribute="bottom" secondItem="Qo7-Dg-mNn" secondAttribute="bottom" id="Po9-u6-xam"/>
+                <constraint firstItem="Qo7-Dg-mNn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gG5-1W-17K"/>
+                <constraint firstItem="Qo7-Dg-mNn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yjH-RO-UGv"/>
+            </constraints>
+            <size key="customSize" width="289" height="398"/>
+            <connections>
+                <outlet property="tableView" destination="Qo7-Dg-mNn" id="NID-uh-3vP"/>
+            </connections>
+            <point key="canvasLocation" x="-72.5" y="37"/>
         </collectionViewCell>
     </objects>
 </document>
