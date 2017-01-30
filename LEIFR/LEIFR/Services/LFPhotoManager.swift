@@ -57,6 +57,16 @@ class LFPhotoManager: NSObject {
 			completion(result);
 		})
 	}
+	
+	func getFullImageForAsset(asset: PHAsset, size: CGSize, completion: @escaping ((UIImage?) -> Void)) {
+		let options = PHImageRequestOptions()
+		options.resizeMode = .exact
+		options.deliveryMode = .opportunistic
+		self.imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFit, options: options, resultHandler: {
+			(result, _) in
+			completion(result);
+		})
+	}
 }
 
 extension PHAsset {

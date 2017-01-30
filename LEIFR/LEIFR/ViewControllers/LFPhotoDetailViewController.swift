@@ -24,7 +24,7 @@ class LFPhotoDetailViewController: LFViewController {
 		let size = self.imageView.bounds.size
 		let scale = UIScreen.main.scale
 		let targetImageSize = CGSize(width: size.width * scale, height: size.height * scale)
-		LFPhotoManager.shared.getImageForAsset(asset: self.asset, size: targetImageSize, completion: {
+		LFPhotoManager.shared.getFullImageForAsset(asset: self.asset, size: targetImageSize, completion: {
 			image in
 			DispatchQueue.main.async {
 				self.imageView.image = image
@@ -55,7 +55,7 @@ extension LFPhotoDetailViewController: LFStoryboardBasedController {
 	class func defaultControllerFromStoryboard() -> LFViewController {
 		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 		let controller = storyboard.instantiateViewController(withIdentifier: "LFPhotoDetailViewController") as! LFViewController
-		
+		controller.modalTransitionStyle = .crossDissolve
 		return controller
 	}
 }
