@@ -33,12 +33,26 @@ class LFHorizontalCollectionViewCell: LFCollectionViewCell {
 		
 		self.setUp(tableView: self.tableView)
     }
+	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		asset = nil
+		tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+	}
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		self.tableView.reloadData()
+	}
 }
 
 extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
 	func setUp(tableView: UITableView) {
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.backgroundColor = UIColor.clear
 		LFImageCell.registerCell(tableView: tableView, reuseIdentifier: LFImageCell.identifier)
-		tableView.contentInset = UIEdgeInsets(top: 84, left: 0, bottom: 64, right: 0)
+		tableView.contentInset = UIEdgeInsets(top: 84, left: 0, bottom: 0, right: 0)
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
