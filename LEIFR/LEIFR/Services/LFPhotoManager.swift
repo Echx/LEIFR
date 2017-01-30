@@ -17,7 +17,7 @@ class LFPhotoManager: NSObject {
 	func fetchAssets(from fromDate: Date, till endDate: Date) -> PHFetchResult<PHAsset> {
 		let fetchOptions = PHFetchOptions()
 		fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-		fetchOptions.predicate = NSPredicate(format: "(creationDate >= %@) AND (creationDate <= %@) AND (mediaType == %ld) AND (mediaSubtype != %d)", fromDate as NSDate, endDate as NSDate, PHAssetMediaType.image.rawValue, PHAssetMediaSubtype.photoScreenshot.rawValue)
+		fetchOptions.predicate = NSPredicate(format: "(creationDate >= %@) AND (creationDate <= %@) AND (mediaType == %ld)", fromDate as NSDate, endDate as NSDate, PHAssetMediaType.image.rawValue)
 		let fetchResult = PHAsset.fetchAssets(with: fetchOptions)
 		
 		return fetchResult
@@ -26,7 +26,7 @@ class LFPhotoManager: NSObject {
 	func fetchAllAssets() -> PHFetchResult<PHAsset> {
 		let fetchOptions = PHFetchOptions()
 		fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-		fetchOptions.predicate = NSPredicate(format: "(creationDate != nil) AND (mediaType == %ld) AND (mediaSubtype != %d)", PHAssetMediaType.image.rawValue, PHAssetMediaSubtype.photoScreenshot.rawValue)
+		fetchOptions.predicate = NSPredicate(format: "(creationDate != nil) AND (mediaType == %ld)", PHAssetMediaType.image.rawValue)
 		let fetchResult = PHAsset.fetchAssets(with: fetchOptions)
 		return fetchResult
 	}

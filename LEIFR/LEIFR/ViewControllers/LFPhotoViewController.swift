@@ -19,6 +19,7 @@ private extension UICollectionView {
 class LFPhotoViewController: LFViewController {
 	
 	@IBOutlet var collectionView: UICollectionView!
+	@IBOutlet var timeSlider: UISlider!
 	
 	fileprivate var gridSpacing: CGFloat = 2
 	
@@ -181,7 +182,7 @@ extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDel
 	fileprivate func setup(collectionView: UICollectionView) {
 		collectionView.dataSource = self
 		collectionView.delegate = self
-		collectionView.contentInset = UIEdgeInsets(top: 84 + gridSpacing, left: 0, bottom: 64 + gridSpacing, right: 0)
+		collectionView.contentInset = UIEdgeInsets(top: 84 + gridSpacing, left: 0, bottom: 200 + gridSpacing, right: 0)
 		collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 84, left: 0, bottom: 64, right: 0)
 		LFGridViewCell.registerCell(collectionView: collectionView, reuseIdentifier: String(describing: LFGridViewCell.self))
 	}
@@ -224,6 +225,33 @@ extension LFPhotoViewController: UICollectionViewDataSource, UICollectionViewDel
 		return CGSize(width: self.gridItemSize, height: self.gridItemSize)
 	}
 }
+
+extension LFPhotoViewController {
+	override func controlViewForTab() -> UIView? {
+		let view = UIView.view(fromNib: "LFPhotoControlView", owner: self)
+		configureControlView()
+		return view
+	}
+	
+	fileprivate func configureControlView() {
+		
+	}
+	
+	@IBAction func sliderDidChange(slider: UISlider) {
+		let max = self.collectionView.contentSize.height - self.collectionView.contentInset.top * 2 - self.collectionView.contentInset.bottom
+		let offset = CGFloat(slider.value / slider.maximumValue) * max - self.collectionView.contentInset.top
+		self.collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
+	}
+	
+	override func accessoryViewForTab() -> UIView? {
+		return nil
+	}
+	
+	override func accessoryTextForTab() -> String? {
+		return "\(self.fetchResult.count) Photos"
+	}
+}
+
 
 extension LFPhotoViewController: LFStoryboardBasedController {
 	class func defaultControllerFromStoryboard() -> LFViewController {
