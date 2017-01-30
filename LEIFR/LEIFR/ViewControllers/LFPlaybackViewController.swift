@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import wkb_ios
 
 class LFPlaybackViewController: LFViewController {
+    
+    fileprivate var paths: [LFPath]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.loadMapData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +25,23 @@ class LFPlaybackViewController: LFViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    fileprivate func loadMapData() {
+        LFDatabaseManager.shared.getAllPaths { paths in
+            
+            
+            print(paths.count) // 336
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let start = formatter.date(from: "2016/08/01")!
+            let end = formatter.date(from: "2016/09/09")!
+            
+            self.paths = paths.filter {
+                $0.isOverlappedWith(startDate: start, endDate: end)
+            }
+            
+            print(self.paths?.count)
+        }
+    }
 
     /*
     // MARK: - Navigation
