@@ -46,6 +46,18 @@ class LFPath: NSObject {
 		let pointsString = array.componentsJoined(by: ", ")
 		return "LINESTRINGZM(" + pointsString + ")"
 	}
+    
+    func isOverlappedWith(startDate: Date, endDate: Date) -> Bool {
+        let points = self.points()
+        if points.count == 0 {
+            return false
+        }
+        
+        let firstPoint = points.firstObject as! WKBPoint
+        let lastPoint = points.lastObject as! WKBPoint
+        return !(firstPoint.time > endDate || lastPoint.time < startDate)
+        
+    }
 }
 
 extension WKBPoint {
@@ -67,7 +79,7 @@ extension WKBPoint {
 		}
 	}
 	
-	var time:Date {
+	var time: Date {
 		get {
 			return Date(timeIntervalSince1970: Double(self.m))
 		}
