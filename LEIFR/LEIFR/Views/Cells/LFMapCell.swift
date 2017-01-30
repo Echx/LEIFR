@@ -10,6 +10,8 @@ import UIKit
 
 class LFMapCell: LFTableViewCell {
 
+	@IBOutlet var map: MKMapView!
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none

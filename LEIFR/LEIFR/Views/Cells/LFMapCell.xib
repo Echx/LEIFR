@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="329" height="186"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3B-Mh-Rsh">
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3B-Mh-Rsh">
                         <rect key="frame" x="0.0" y="0.0" width="329" height="187"/>
                     </mapView>
                 </subviews>
@@ -29,6 +29,9 @@
                     <constraint firstItem="a3B-Mh-Rsh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="s9d-bi-luY"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="map" destination="a3B-Mh-Rsh" id="i27-aS-Esv"/>
+            </connections>
             <point key="canvasLocation" x="20.5" y="123.5"/>
         </tableViewCell>
     </objects>

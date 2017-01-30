@@ -115,6 +115,16 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 			
 		case Section.map.rawValue:
 			let cell = tableView.dequeueReusableCell(withIdentifier: LFMapCell.identifier, for: indexPath) as! LFMapCell
+			if let location = self.asset.location {
+				let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+				let region = MKCoordinateRegion(center: location.coordinate, span: span)
+				cell.map.setRegion(region, animated: false)
+				
+				let point = MKPointAnnotation()
+				point.coordinate = location.coordinate
+				point.title = "\(self.asset.creationDate!)"
+				cell.map.addAnnotation(point)
+			}
 			return cell
 			
 		default:
