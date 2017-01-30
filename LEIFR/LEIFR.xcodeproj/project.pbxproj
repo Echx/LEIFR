@@ -70,6 +70,10 @@
 		0CF136211DC9003C00E122AC /* LFLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF136201DC9003C00E122AC /* LFLoadingViewController.swift */; };
 		0CF136231DC9006500E122AC /* LFHistoryControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF136221DC9006500E122AC /* LFHistoryControlView.xib */; };
 		0CF715F01E3F15A500FA419F /* LFPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF715EF1E3F15A500FA419F /* LFPhotoDetailViewController.swift */; };
+		0CF715F31E3F227800FA419F /* LFHorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF715F11E3F227800FA419F /* LFHorizontalCollectionViewCell.swift */; };
+		0CF715F41E3F227800FA419F /* LFHorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF715F21E3F227800FA419F /* LFHorizontalCollectionViewCell.xib */; };
+		0CF715F71E3F234100FA419F /* LFCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF715F51E3F234100FA419F /* LFCollectionViewCell.swift */; };
+		0CF715F81E3F234100FA419F /* LFCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF715F61E3F234100FA419F /* LFCollectionViewCell.xib */; };
 		0CFC8B711DA6F9320084DD6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC8B701DA6F9320084DD6F /* MapKit.framework */; };
 		62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */; };
 		62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */; };
@@ -581,6 +585,10 @@
 		0CF136201DC9003C00E122AC /* LFLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLoadingViewController.swift; sourceTree = "<group>"; };
 		0CF136221DC9006500E122AC /* LFHistoryControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFHistoryControlView.xib; sourceTree = "<group>"; };
 		0CF715EF1E3F15A500FA419F /* LFPhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoDetailViewController.swift; sourceTree = "<group>"; };
+		0CF715F11E3F227800FA419F /* LFHorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		0CF715F21E3F227800FA419F /* LFHorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFHorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
+		0CF715F51E3F234100FA419F /* LFCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCollectionViewCell.swift; sourceTree = "<group>"; };
+		0CF715F61E3F234100FA419F /* LFCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFCollectionViewCell.xib; sourceTree = "<group>"; };
 		0CFC8B701DA6F9320084DD6F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1560,12 +1568,8 @@
 		0CF136171DC8E2AE00E122AC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0CF136181DC8E2BD00E122AC /* LFTableViewCell.swift */,
-				0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */,
-				0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */,
-				0CF1361D1DC8E38200E122AC /* LFButtonCell.xib */,
-				0CA7EE901E3E75570031A8C1 /* LFGridViewCell.swift */,
-				0CA7EE911E3E75570031A8C1 /* LFGridViewCell.xib */,
+				0CF715F91E3F234900FA419F /* Table View Cells */,
+				0CF715FA1E3F235600FA419F /* Collection View Cells */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1613,6 +1617,30 @@
 				0CF715EF1E3F15A500FA419F /* LFPhotoDetailViewController.swift */,
 			);
 			name = "Tab 3";
+			sourceTree = "<group>";
+		};
+		0CF715F91E3F234900FA419F /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0CF136181DC8E2BD00E122AC /* LFTableViewCell.swift */,
+				0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */,
+				0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */,
+				0CF1361D1DC8E38200E122AC /* LFButtonCell.xib */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		0CF715FA1E3F235600FA419F /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0CF715F51E3F234100FA419F /* LFCollectionViewCell.swift */,
+				0CF715F61E3F234100FA419F /* LFCollectionViewCell.xib */,
+				0CA7EE901E3E75570031A8C1 /* LFGridViewCell.swift */,
+				0CA7EE911E3E75570031A8C1 /* LFGridViewCell.xib */,
+				0CF715F11E3F227800FA419F /* LFHorizontalCollectionViewCell.swift */,
+				0CF715F21E3F227800FA419F /* LFHorizontalCollectionViewCell.xib */,
+			);
+			name = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 		5432B3B5B435532EF82F3B2E /* Frameworks */ = {
@@ -1782,7 +1810,9 @@
 				0CA7EE931E3E75570031A8C1 /* LFGridViewCell.xib in Resources */,
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
+				0CF715F41E3F227800FA419F /* LFHorizontalCollectionViewCell.xib in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
+				0CF715F81E3F234100FA419F /* LFCollectionViewCell.xib in Resources */,
 				0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */,
 				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
 				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
@@ -1919,6 +1949,7 @@
 				0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */,
 				0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */,
 				0CA7EE921E3E75570031A8C1 /* LFGridViewCell.swift in Sources */,
+				0CF715F71E3F234100FA419F /* LFCollectionViewCell.swift in Sources */,
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */,
 				0CF136211DC9003C00E122AC /* LFLoadingViewController.swift in Sources */,
@@ -1934,6 +1965,7 @@
 				0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
 				0C42AF2C1DAD662F00849A5C /* LFSettingViewController.swift in Sources */,
+				0CF715F31E3F227800FA419F /* LFHorizontalCollectionViewCell.swift in Sources */,
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
 				62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */,

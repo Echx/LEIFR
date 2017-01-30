@@ -23,15 +23,14 @@ class LFTableViewCell: UITableViewCell {
 	
 	static var identifier: String {
 		get {
-			return NSStringFromClass(self)
+			return String(describing: self)
 		}
 	}
 	
 	class func registerCell(tableView: UITableView, reuseIdentifier: String) {
-		if let nibName = NSStringFromClass(self).components(separatedBy: ".").last {
-			let nib = UINib(nibName: nibName, bundle: Bundle.main)
-			tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
-		}
+		let nibName = String(describing: self)
+		let nib = UINib(nibName: nibName, bundle: Bundle.main)
+		tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
 	}
 	
 }

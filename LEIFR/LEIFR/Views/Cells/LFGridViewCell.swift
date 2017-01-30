@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LFGridViewCell: UICollectionViewCell {
+class LFGridViewCell: LFCollectionViewCell {
 	@IBOutlet var imageView: UIImageView!
 	
 	var representedAssetIdentifier: String!
@@ -22,11 +22,5 @@ class LFGridViewCell: UICollectionViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		imageView.image = nil
-	}
-	
-	class func registerCell(collectionView: UICollectionView, reuseIdentifier: String) {
-		let nibName = String(describing: LFGridViewCell.self)
-		let nib = UINib(nibName: nibName, bundle: Bundle.main)
-		collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
 	}
 }

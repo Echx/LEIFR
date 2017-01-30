@@ -12,25 +12,33 @@ import Photos
 class LFPhotoDetailViewController: LFViewController {
 
 	var asset: PHAsset!
+	
+	@IBOutlet var collectionView: UICollectionView!
+	
 	@IBOutlet var imageView: UIImageView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+//		let size = UIScreen.main.bounds.size
+//		let scale = UIScreen.main.scale
+//		let targetImageSize = CGSize(width: size.width * scale, height: size.height * scale)
+//		LFPhotoManager.shared.getFullImageForAsset(asset: self.asset, size: targetImageSize, completion: {
+//			image in
+//			DispatchQueue.main.async {
+//				self.imageView.image = image
+//			}
+//		})
+//		
+//		let layer = self.imageView.layer
+//		layer.shadowColor = UIColor.black.cgColor
+//		layer.shadowOffset = CGSize(width: 0, height: 0)
+//		layer.shadowOpacity = 0.15
+//		layer.shadowRadius = 3
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		let size = self.imageView.bounds.size
-		let scale = UIScreen.main.scale
-		let targetImageSize = CGSize(width: size.width * scale, height: size.height * scale)
-		LFPhotoManager.shared.getFullImageForAsset(asset: self.asset, size: targetImageSize, completion: {
-			image in
-			DispatchQueue.main.async {
-				self.imageView.image = image
-			}
-		})
-		
 	}
 
     override func didReceiveMemoryWarning() {
