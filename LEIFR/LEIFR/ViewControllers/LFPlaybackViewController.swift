@@ -63,23 +63,6 @@ extension LFPlaybackViewController {
         let view = UIView.view(fromNib: "LFPlaybackControlView", owner: self)
         return view
     }
-
-//    @IBAction func playAnimation() {
-//        let path = self.paths?[1]
-//        let points = (path?.points())!
-//        let wkbPoint = points[0] as! WKBPoint
-//        
-//        self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
-//        self.mapView.addAnnotation(self.animateAnnotation!)
-//        
-//        UIView.animate(withDuration: 1, delay: 1, options: .curveEaseInOut, animations: {
-//            self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude + 0.1, longitude: wkbPoint.longitude + 0.1)
-//        }, completion: nil)
-//        
-//        UIView.animate(withDuration: 1, delay: 2, options: .curveEaseInOut, animations: {
-//            self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude - 0.1, longitude: wkbPoint.longitude - 0.1)
-//        }, completion: nil)
-//    }
     
     @IBAction func playAnimation() {
         let path = self.paths?[0]
