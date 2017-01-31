@@ -14,12 +14,14 @@ class LFPlaybackViewController: LFViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     fileprivate var paths: [LFPath]?
+    fileprivate var animateAnnotation: MKPointAnnotation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.loadMapData()
+        self.animateAnnotation = MKPointAnnotation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,36 +43,9 @@ class LFPlaybackViewController: LFViewController {
                 $0.isOverlappedWith(startDate: start, endDate: end)
             }
             
-            // for testing and demo
-            self.runAnimation()
         }
     }
-    
-    fileprivate func runAnimation() {
-        let path = self.paths?[0]
-        let points = (path?.points())!
-        let point = points[0] as! WKBPoint
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
 
-        mapView.addAnnotation(annotation)
-        
-//        DispatchQueue.main.async {
-//            var delay = 0.0
-//            UIView.animateKeyframes(withDuration: 10.0, delay: 0.0, options: UIViewKeyframeAnimationOptions(rawValue: UIViewAnimationOptions.curveEaseInOut.rawValue), animations: {
-//                for point in points {
-//                    let wkbPoint = point as! WKBPoint
-//                    
-//                    UIView.addKeyframe(withRelativeStartTime: 3, relativeDuration: 3, animations: {
-//                        annotation.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
-//                    })
-//                }
-//            }, completion: nil)
-//        }
-
-    }
-    
     /*
     // MARK: - Navigation
 
@@ -81,6 +56,55 @@ class LFPlaybackViewController: LFViewController {
     }
     */
 
+}
+
+extension LFPlaybackViewController {
+    override func controlViewForTab() -> UIView? {
+        let view = UIView.view(fromNib: "LFPlaybackControlView", owner: self)
+        return view
+    }
+
+//    @IBAction func playAnimation() {
+//        let path = self.paths?[1]
+//        let points = (path?.points())!
+//        let wkbPoint = points[0] as! WKBPoint
+//        
+//        self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
+//        self.mapView.addAnnotation(self.animateAnnotation!)
+//        
+//        UIView.animate(withDuration: 1, delay: 1, options: .curveEaseInOut, animations: {
+//            self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude + 0.1, longitude: wkbPoint.longitude + 0.1)
+//        }, completion: nil)
+//        
+//        UIView.animate(withDuration: 1, delay: 2, options: .curveEaseInOut, animations: {
+//            self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude - 0.1, longitude: wkbPoint.longitude - 0.1)
+//        }, completion: nil)
+//    }
+    
+    @IBAction func playAnimation() {
+        let path = self.paths?[0]
+        let points = (path?.points())!
+        let wkbPoint = points[0] as! WKBPoint
+        var delay = 0.0
+        
+        self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
+        self.mapView.addAnnotation(self.animateAnnotation!)
+        
+        for point in points {
+            let wkbPoint = point as! WKBPoint
+            UIView.animate(withDuration: 0.01, delay: delay, options: .curveEaseInOut, animations: {
+                self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
+            }, completion: nil)
+            
+            delay += 0.01
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
+            _ in
+            
+            self.mapView.removeAnnotation(self.animateAnnotation!)
+        }
+    }
 }
 
 extension LFPlaybackViewController: LFStoryboardBasedController {
