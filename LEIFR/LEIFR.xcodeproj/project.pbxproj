@@ -88,6 +88,7 @@
 		623A63521DC2098100F80E7F /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 623A63511DC2098100F80E7F /* default.sqlite */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		62604E9A1E407E9600D17937 /* LFPlaybackControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62604E991E407E9600D17937 /* LFPlaybackControlView.xib */; };
 		626A13B61DC522270051FE90 /* LFZoomLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */; };
 		626A13B81DC5259B0051FE90 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B71DC5259B0051FE90 /* MapKitExtension.swift */; };
 		626A13B91DC526910051FE90 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B71DC5259B0051FE90 /* MapKitExtension.swift */; };
@@ -609,6 +610,7 @@
 		62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryViewController.swift; sourceTree = "<group>"; };
 		623A63511DC2098100F80E7F /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		62604E991E407E9600D17937 /* LFPlaybackControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFPlaybackControlView.xib; path = Cells/LFPlaybackControlView.xib; sourceTree = "<group>"; };
 		626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevelTest.swift; sourceTree = "<group>"; };
 		626A13B71DC5259B0051FE90 /* MapKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapKitExtension.swift; path = Extensions/MapKitExtension.swift; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */,
 				62F0DBFA1D888A02006D05E0 /* Main.storyboard */,
 				0CF136221DC9006500E122AC /* LFHistoryControlView.xib */,
+				62604E991E407E9600D17937 /* LFPlaybackControlView.xib */,
 				0CF716061E3F82EE00FA419F /* LFPhotoControlView.xib */,
 				0C4242511DC55405004F47F2 /* LFRecordButton.swift */,
 				0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */,
@@ -1840,6 +1843,7 @@
 				0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */,
 				0CBB38551D85F9BD002C0EF0 /* Coordinate.inl in Resources */,
 				623A63521DC2098100F80E7F /* default.sqlite in Resources */,
+				62604E9A1E407E9600D17937 /* LFPlaybackControlView.xib in Resources */,
 				0CBB38541D85F9BD002C0EF0 /* ConvexHull.inl in Resources */,
 				0CF1361B1DC8E2BD00E122AC /* LFTableViewCell.xib in Resources */,
 				62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */,
@@ -2171,6 +2175,7 @@
 					"$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include",
 				);
 				INFOPLIST_FILE = LEIFR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2204,6 +2209,7 @@
 					"$(PROJECT_DIR)/LEIFR/Libraries/Database/libspatialite/include",
 				);
 				INFOPLIST_FILE = LEIFR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
