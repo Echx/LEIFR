@@ -1,5 +1,5 @@
 framework module RealmSwift {
-  umbrella header "RealmSwift-umbrella.h"
+  umbrella header "RealmSwift-iOS9.3-umbrella.h"
 
   export *
   module * { export * }

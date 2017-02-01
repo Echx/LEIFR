@@ -1,5 +1,5 @@
 framework module wkb_ios {
-  umbrella header "wkb-ios-umbrella.h"
+  umbrella header "wkb-ios-iOS10.2-umbrella.h"
 
   export *
   module * { export * }
