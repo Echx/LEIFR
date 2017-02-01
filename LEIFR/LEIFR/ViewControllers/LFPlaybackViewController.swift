@@ -20,6 +20,7 @@ class LFPlaybackViewController: LFViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.mapView.delegate = self
         self.loadMapData()
         self.animateAnnotation = MKPointAnnotation()
     }
@@ -97,4 +98,16 @@ extension LFPlaybackViewController: LFStoryboardBasedController {
 		
 		return controller
 	}
+}
+
+extension LFPlaybackViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: LFPlaybackAnnotationView.identifier)
+        
+        if annotationView == nil {
+            annotationView = LFPlaybackAnnotationView(annotation: annotation, reuseIdentifier: LFPlaybackAnnotationView.identifier)
+        }
+        
+        return annotationView
+    }
 }

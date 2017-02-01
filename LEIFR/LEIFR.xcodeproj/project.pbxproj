@@ -99,6 +99,7 @@
 		62BF069F1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
+		62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */; };
 		6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */; };
 		E85EA76925BBD5C425DBCD78 /* Pods_LEIFRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */; };
 /* End PBXBuildFile section */
@@ -620,6 +621,7 @@
 		62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManagerTest.swift; sourceTree = "<group>"; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayBackAnnotationView.swift; sourceTree = "<group>"; };
 		9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		CD554A7B469F9393D5BD63B8 /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -677,6 +679,7 @@
 				0CF716061E3F82EE00FA419F /* LFPhotoControlView.xib */,
 				0C4242511DC55405004F47F2 /* LFRecordButton.swift */,
 				0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */,
+				62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1980,6 +1983,7 @@
 				626A13B81DC5259B0051FE90 /* MapKitExtension.swift in Sources */,
 				0CF1361A1DC8E2BD00E122AC /* LFTableViewCell.swift in Sources */,
 				62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */,
+				62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */,
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
 				62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */,
