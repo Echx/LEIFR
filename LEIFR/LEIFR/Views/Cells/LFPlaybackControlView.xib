@@ -16,14 +16,20 @@
             <rect key="frame" x="0.0" y="0.0" width="348" height="136"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xi-Sz-Qwv">
+                    <rect key="frame" x="16" y="44" width="48" height="48"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_date_range_48pt"/>
+                    <state key="selected" image="GPS off"/>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyR-I7-pI9">
                     <rect key="frame" x="126" y="20" width="96" height="96"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="UbT-y2-E4t"/>
                         <constraint firstAttribute="width" secondItem="xyR-I7-pI9" secondAttribute="height" id="YdX-RK-bdV"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="95"/>
-                    <state key="normal" title="$">
+                    <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="140"/>
+                    <state key="normal" title="▸">
                         <color key="titleColor" red="0.96037770258799682" green="1" blue="0.98201989085758601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -35,9 +41,15 @@
             <constraints>
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FlW-cY-hwF"/>
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OHT-Fd-Xdn"/>
+                <constraint firstItem="8xi-Sz-Qwv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="SIv-gD-wrL"/>
+                <constraint firstItem="8xi-Sz-Qwv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fc9-dQ-8Gf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-11" y="-483"/>
         </view>
     </objects>
+    <resources>
+        <image name="GPS off" width="48" height="48"/>
+        <image name="ic_date_range_48pt" width="48" height="48"/>
+    </resources>
 </document>
