@@ -12,7 +12,7 @@ import MapKit
 class LFPlaybackAnnotationView: MKAnnotationView {
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        
+        self.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
         self.backgroundColor = .black
     }
     
