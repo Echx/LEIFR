@@ -147,10 +147,18 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 					let region = MKCoordinateRegion(center: location, span: span)
 					cell.map.setRegion(region, animated: false)
 					
-					let point = MKPointAnnotation()
-					point.coordinate = location
-					point.title = "\(self.asset.creationDate!)"
-					cell.map.addAnnotation(point)
+					let annotation = MKPointAnnotation()
+					annotation.coordinate = location
+					annotation.title = "\(self.asset.creationDate!)"
+					
+					let locationA = CLLocation(latitude: firstPoint.latitude, longitude: firstPoint.longitude)
+					let locationB = CLLocation(latitude: secondPoint.latitude, longitude: secondPoint.longitude)
+					let distance = locationA.distance(from: locationB)
+				
+					let circleOverlay = MKCircle(center: location, radius: distance/2)
+					
+					cell.map.addOverlays([circleOverlay])
+					cell.map.addAnnotation(annotation)
 					
 				})
 			}

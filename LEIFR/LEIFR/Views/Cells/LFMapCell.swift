@@ -36,6 +36,7 @@ class LFMapCell: LFTableViewCell {
 }
 
 extension LFMapCell: MKMapViewDelegate {
+	
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
 		if overlay is LFGeoPointsOverlay {
 			if self.overlayRenderer == nil {
@@ -43,6 +44,10 @@ extension LFMapCell: MKMapViewDelegate {
 			}
 			
 			return self.overlayRenderer
+		} else if overlay is MKCircle {
+			let circleRenderer = MKCircleRenderer(overlay: overlay)
+			circleRenderer.fillColor = UIColor(red:0.79216, green:0.86274, blue:0.85490, alpha:0.7)
+			return circleRenderer
 		} else {
 			return MKOverlayRenderer(overlay: overlay)
 		}
