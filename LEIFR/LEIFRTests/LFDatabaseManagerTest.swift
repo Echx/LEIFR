@@ -274,19 +274,19 @@ class LFDatabaseManagerTest: XCTestCase {
 			(start, till) in
 			
 			if let first = start {
-				print("Lon:  \(first.x.doubleValue)")
-				print("Lat:  \(first.y.doubleValue)")
-				print("Alt:  \(first.z.doubleValue)")
-				print("Time: \(Date(timeIntervalSince1970: first.m.doubleValue))")
+				print("Lon:  \(first.longitude)")
+				print("Lat:  \(first.latitude)")
+				print("Alt:  \(first.altitude)")
+				print("Time: \(first.time)")
 			}
 			
 			print("")
 			
 			if let second = till {
-				print("Lon:  \(second.x.doubleValue)")
-				print("Lat:  \(second.y.doubleValue)")
-				print("Alt:  \(second.z.doubleValue)")
-				print("Time: \(Date(timeIntervalSince1970: second.m.doubleValue))")
+				print("Lon:  \(second.longitude)")
+				print("Lat:  \(second.latitude)")
+				print("Alt:  \(second.altitude)")
+				print("Time: \(second.time)")
 			}
 			
 		})

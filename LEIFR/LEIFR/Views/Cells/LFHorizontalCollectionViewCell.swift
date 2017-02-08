@@ -127,6 +127,32 @@ extension LFHorizontalCollectionViewCell: UITableViewDelegate, UITableViewDataSo
 				point.coordinate = location.coordinate
 				point.title = "\(self.asset.creationDate!)"
 				cell.map.addAnnotation(point)
+			} else if let creationTime = self.asset.creationDate {
+				LFDatabaseManager.shared.getPointsAtTime(creationTime, completion: {
+					(first, second) in
+					
+					guard let firstPoint = first else {
+						print("first nil")
+						return
+					}
+					
+					guard let secondPoint = second else {
+						print("second nil")
+						return
+					}
+					
+					let location = CLLocationCoordinate2D(latitude: (firstPoint.latitude + secondPoint.latitude)/2, longitude: (firstPoint.longitude + secondPoint.longitude)/2)
+					
+					let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+					let region = MKCoordinateRegion(center: location, span: span)
+					cell.map.setRegion(region, animated: false)
+					
+					let point = MKPointAnnotation()
+					point.coordinate = location
+					point.title = "\(self.asset.creationDate!)"
+					cell.map.addAnnotation(point)
+					
+				})
 			}
 			return cell
 			
