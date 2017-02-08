@@ -305,7 +305,7 @@ class LFDatabaseManager: NSObject {
         })
     }
 	
-	func getPointsAtTime(_ time: Date, completion: @escaping (((WKBPoint?, WKBPoint?)) -> Void)) {
+	func getPointsAtTime(_ time: Date, completion: @escaping (((LFPoint?, LFPoint?)) -> Void)) {
 		self.databaseQueue.inDatabase({
 			database in
 			
@@ -329,7 +329,7 @@ class LFDatabaseManager: NSObject {
 										let nextPoint = points.object(at: i + 1) as! WKBPoint
 										
 										if thisPoint.m.doubleValue < timestamp && nextPoint.m.doubleValue >= timestamp {
-											completion((thisPoint, nextPoint))
+											completion((LFPoint(wkbPoint: thisPoint), LFPoint(wkbPoint: nextPoint)))
 											return
 										}
 									}
@@ -340,8 +340,8 @@ class LFDatabaseManager: NSObject {
 				}
 			}
 			
-			var first: WKBPoint?
-			var second: WKBPoint?
+			var first: LFPoint?
+			var second: LFPoint?
 			
 			// No tracks covers the time
 			do {
@@ -357,7 +357,9 @@ class LFDatabaseManager: NSObject {
 								if let data = results.data(forColumnIndex: 0) {
 									let reader = WKBByteReader(data: data)
 									reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
-									first = WKBGeometryReader.readGeometry(with: reader) as? WKBPoint
+									if let wkbPoint = WKBGeometryReader.readGeometry(with: reader) as? WKBPoint {
+										first = LFPoint(wkbPoint: wkbPoint)
+									}
 								}
 							}
 						}
@@ -377,7 +379,9 @@ class LFDatabaseManager: NSObject {
 								if let data = results.data(forColumnIndex: 0) {
 									let reader = WKBByteReader(data: data)
 									reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
-									second = WKBGeometryReader.readGeometry(with: reader) as? WKBPoint
+									if let wkbPoint = WKBGeometryReader.readGeometry(with: reader) as? WKBPoint {
+										second = LFPoint(wkbPoint: wkbPoint)
+									}
 								}
 							}
 						}
