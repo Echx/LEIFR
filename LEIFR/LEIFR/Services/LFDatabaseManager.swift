@@ -159,10 +159,12 @@ class LFDatabaseManager: NSObject {
 						if let geoJSON = results.string(forColumnIndex: 1) {
 							let cooridnates = LFGeoJSONManager.convertToCoordinates(geoJSON: [geoJSON])
 							completion(cooridnates)
+							return
 						}
 					}
 				}
 			}
+			
 			completion([])
 		})
 	}
@@ -303,25 +305,102 @@ class LFDatabaseManager: NSObject {
         })
     }
 	
-	func getPointsAtTime(_ time: Date, completion: @escaping (([CLLocationCoordinate2D]) -> Void)) {
+	func getPointsAtTime(_ time: Date, completion: @escaping (((WKBPoint?, WKBPoint?)) -> Void)) {
 		self.databaseQueue.inDatabase({
 			database in
 			
+			let timestamp = time.timeIntervalSince1970
 			
-			let select = "SELECT track_id, AsGeoJSON(DissolvePoints(track_geometry)) FROM tracks "
-			let querySQL = select
-			
-			if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
-				if (results.next()) {
-					if results.hasAnotherRow() {
-						if let geoJSON = results.string(forColumnIndex: 1) {
-							let cooridnates = LFGeoJSONManager.convertToCoordinates(geoJSON: [geoJSON])
-							completion(cooridnates)
+			do {
+				let selectStatement = "SELECT AsBinary(DissolvePoints(track_geometry)) FROM tracks "
+				let whereStatement = "WHERE M(StartPoint(track_geometry)) < \(timestamp) AND M(EndPoint(track_geometry)) > \(timestamp)"
+				let querySQL = selectStatement + whereStatement
+				
+				if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+					if (results.next()) {
+						if results.hasAnotherRow() {
+							if let data = results.data(forColumnIndex: 0) {
+								let reader = WKBByteReader(data: data)
+								reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
+								if let multiPoint = WKBGeometryReader.readGeometry(with: reader) as? WKBMultiPoint {
+									let points = multiPoint.getPoints()!
+									for i in 0..<points.count - 1 {
+										let thisPoint = points.object(at: i) as! WKBPoint
+										let nextPoint = points.object(at: i + 1) as! WKBPoint
+										
+										if thisPoint.m.doubleValue < timestamp && nextPoint.m.doubleValue >= timestamp {
+											completion((thisPoint, nextPoint))
+											return
+										}
+									}
+								}
+							}
 						}
 					}
 				}
 			}
-			completion([])
+			
+			var first: WKBPoint?
+			var second: WKBPoint?
+			
+			// No tracks covers the time
+			do {
+				// select the last point in previous tracks
+				do {
+					let selectStatement = "SELECT AsBinary(EndPoint(track_geometry)) FROM tracks "
+					let whereStatement = "WHERE M(EndPoint(track_geometry)) < \(timestamp) "
+					let sortStatement = "ORDER BY track_id DESC"
+					let querySQL = selectStatement + whereStatement + sortStatement
+					if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+						if (results.next()) {
+							if results.hasAnotherRow() {
+								if let data = results.data(forColumnIndex: 0) {
+									let reader = WKBByteReader(data: data)
+									reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
+									first = WKBGeometryReader.readGeometry(with: reader) as? WKBPoint
+								}
+							}
+						}
+					}
+				}
+				
+				
+				// select the first point in subsequent tracks
+				do {
+					let selectStatement = "SELECT AsBinary(StartPoint(track_geometry)) FROM tracks "
+					let whereStatement = "WHERE M(StartPoint(track_geometry)) > \(timestamp) "
+					let sortStatement = "ORDER BY track_id ASC"
+					let querySQL = selectStatement + whereStatement + sortStatement
+					if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+						if (results.next()) {
+							if results.hasAnotherRow() {
+								if let data = results.data(forColumnIndex: 0) {
+									let reader = WKBByteReader(data: data)
+									reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
+									second = WKBGeometryReader.readGeometry(with: reader) as? WKBPoint
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			completion((first, second))
 		})
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

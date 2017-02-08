@@ -267,8 +267,27 @@ class LFDatabaseManagerTest: XCTestCase {
 	}
 	
 	func testDatabaseRetrieveWithTime() {
-		self.databaseManager.getPointsAtTime(Date(), completion: {
-			coordinates in
+		_ = self.databaseManager.createDatabase("default")
+		_ = self.databaseManager.openDatabase()
+		let testDate = Date(timeIntervalSinceNow: -7 * 24 * 3600)
+		self.databaseManager.getPointsAtTime(testDate, completion: {
+			(start, till) in
+			
+			if let first = start {
+				print("Lon:  \(first.x.doubleValue)")
+				print("Lat:  \(first.y.doubleValue)")
+				print("Alt:  \(first.z.doubleValue)")
+				print("Time: \(Date(timeIntervalSince1970: first.m.doubleValue))")
+			}
+			
+			print("")
+			
+			if let second = till {
+				print("Lon:  \(second.x.doubleValue)")
+				print("Lat:  \(second.y.doubleValue)")
+				print("Alt:  \(second.z.doubleValue)")
+				print("Time: \(Date(timeIntervalSince1970: second.m.doubleValue))")
+			}
 			
 		})
 	}
