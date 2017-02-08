@@ -302,4 +302,26 @@ class LFDatabaseManager: NSObject {
             completion(paths)
         })
     }
+	
+	func getPointsAtTime(_ time: Date, completion: @escaping (([CLLocationCoordinate2D]) -> Void)) {
+		self.databaseQueue.inDatabase({
+			database in
+			
+			
+			let select = "SELECT track_id, AsGeoJSON(DissolvePoints(track_geometry)) FROM tracks "
+			let querySQL = select
+			
+			if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+				if (results.next()) {
+					if results.hasAnotherRow() {
+						if let geoJSON = results.string(forColumnIndex: 1) {
+							let cooridnates = LFGeoJSONManager.convertToCoordinates(geoJSON: [geoJSON])
+							completion(cooridnates)
+						}
+					}
+				}
+			}
+			completion([])
+		})
+	}
 }

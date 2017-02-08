@@ -265,4 +265,11 @@ class LFDatabaseManagerTest: XCTestCase {
 		
 		print("\n\n--------------------------------------------------\n\n\n\n\n")
 	}
+	
+	func testDatabaseRetrieveWithTime() {
+		self.databaseManager.getPointsAtTime(Date(), completion: {
+			coordinates in
+			
+		})
+	}
 }
