@@ -36,7 +36,7 @@ class LFPlaybackViewController: LFViewController {
         LFDatabaseManager.shared.getPathsFromTime(formatter.date(from: "2016/06/01")!) { paths in
             
             print(paths.count) // 341
-            let start = formatter.date(from: "2016/06/01")!
+            let start = formatter.date(from: "2016/12/05")!
             let end = formatter.date(from: "2016/12/09")!
             
             self.paths = paths.filter {
@@ -74,7 +74,13 @@ extension LFPlaybackViewController {
     }
     
     @IBAction func playAnimation() {
-        let path = self.paths?[0]
+        let path = self.paths?[4]
+        var x = 0
+        for path in self.paths! {
+            x += 1
+            print("\(x)::::")
+            print(path.points().count)
+        }
         let points = (path?.points())!
         let wkbPoint = points[0] as! WKBPoint
         var delay = 0.0
@@ -101,28 +107,28 @@ extension LFPlaybackViewController {
         }
         
         DispatchQueue(label: "background").asyncAfter(deadline: .now() + 3) {
-            print(Date())
-            let animationOrigin = DispatchTime.now()
             for point in points {
                 let wkbPoint = point as! WKBPoint
-                print(delay)
-                DispatchQueue.main.asyncAfter(deadline: animationOrigin + delay, execute: {
-                    UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
-                        self.animateAnnotation?.coordinate = wkbPoint.coordinate()
-                    }, completion: nil)
-                })
-                print("haha")
-                delay += 1
+                DispatchQueue.main.async {
+                    Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
+                        _ in
+                        
+                        UIView.animate(withDuration: 0.1, animations: {
+                            self.animateAnnotation?.coordinate = wkbPoint.coordinate()
+                        })
+                    }
+                    delay += 0.1
+                }
             }
             
-            print(Date())
-            
-            delay += 1
-            
-            Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
-                _ in
-                
-                self.mapView.removeAnnotation(self.animateAnnotation!)
+            delay += 0.1
+            DispatchQueue.main.async {
+
+                Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
+                    _ in
+                    
+                    self.mapView.removeAnnotation(self.animateAnnotation!)
+                }
             }
         }
     }
