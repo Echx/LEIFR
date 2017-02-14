@@ -98,6 +98,7 @@
 		62BF06961DA6F02B00E6957E /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIKitExtension.swift */; };
 		62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */; };
 		62BF069F1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */; };
+		62D739671E5397A300F95B5F /* WKBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D739661E5397A300F95B5F /* WKBExtension.swift */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
 		62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */; };
@@ -622,6 +623,7 @@
 		62BF06951DA6F02B00E6957E /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtension.swift; path = Extensions/UIKitExtension.swift; sourceTree = "<group>"; };
 		62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManager.swift; sourceTree = "<group>"; };
 		62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManagerTest.swift; sourceTree = "<group>"; };
+		62D739661E5397A300F95B5F /* WKBExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKBExtension.swift; path = Extensions/WKBExtension.swift; sourceTree = "<group>"; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayBackAnnotationView.swift; sourceTree = "<group>"; };
@@ -1702,6 +1704,7 @@
 				62BF06951DA6F02B00E6957E /* UIKitExtension.swift */,
 				62054EC91DAD697400FEC851 /* LFConstant.swift */,
 				626A13B71DC5259B0051FE90 /* MapKitExtension.swift */,
+				62D739661E5397A300F95B5F /* WKBExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1994,6 +1997,7 @@
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
 				62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
+				62D739671E5397A300F95B5F /* WKBExtension.swift in Sources */,
 				0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */,
 				0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,

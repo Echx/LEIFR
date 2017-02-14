@@ -31,12 +31,11 @@ class LFPlaybackViewController: LFViewController {
     }
     
     fileprivate func loadMapData() {
-        LFDatabaseManager.shared.getAllPaths { paths in
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        LFDatabaseManager.shared.getPathsFromTime(formatter.date(from: "2016/06/01")!) { paths in
             
-            
-            print(paths.count) // 336
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
+            print(paths.count) // 341
             let start = formatter.date(from: "2016/06/01")!
             let end = formatter.date(from: "2016/12/09")!
             
@@ -79,23 +78,52 @@ extension LFPlaybackViewController {
         let points = (path?.points())!
         let wkbPoint = points[0] as! WKBPoint
         var delay = 0.0
-        
-        self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
+
+        self.animateAnnotation?.coordinate = wkbPoint.coordinate()
         self.mapView.addAnnotation(self.animateAnnotation!)
         
-        for point in points {
-            let wkbPoint = point as! WKBPoint
-            UIView.animate(withDuration: 0.01, delay: delay, options: .curveEaseInOut, animations: {
-                self.animateAnnotation?.coordinate = CLLocationCoordinate2D(latitude: wkbPoint.latitude, longitude: wkbPoint.longitude)
-            }, completion: nil)
+        var zoomRect = MKMapRectNull
+        DispatchQueue(label: "background").async {
+            for point in points {
+                let wkbPoint = point as! WKBPoint
+                let fakeAnnotationPoint = MKMapPointForCoordinate(wkbPoint.coordinate())
+                let fakePointRect = MKMapRectMake(fakeAnnotationPoint.x, fakeAnnotationPoint.y, 0, 0)
+                if MKMapRectIsNull(zoomRect) {
+                    zoomRect = fakePointRect
+                } else {
+                    zoomRect = MKMapRectUnion(zoomRect, fakePointRect)
+                }
+            }
             
-            delay += 0.01
+            DispatchQueue.main.async {
+                self.mapView.setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsetsMake(10, 10, 10, 10), animated: true)
+            }
         }
         
-        Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
-            _ in
+        DispatchQueue(label: "background").asyncAfter(deadline: .now() + 3) {
+            print(Date())
+            let animationOrigin = DispatchTime.now()
+            for point in points {
+                let wkbPoint = point as! WKBPoint
+                print(delay)
+                DispatchQueue.main.asyncAfter(deadline: animationOrigin + delay, execute: {
+                    UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
+                        self.animateAnnotation?.coordinate = wkbPoint.coordinate()
+                    }, completion: nil)
+                })
+                print("haha")
+                delay += 1
+            }
             
-            self.mapView.removeAnnotation(self.animateAnnotation!)
+            print(Date())
+            
+            delay += 1
+            
+            Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
+                _ in
+                
+                self.mapView.removeAnnotation(self.animateAnnotation!)
+            }
         }
     }
 }

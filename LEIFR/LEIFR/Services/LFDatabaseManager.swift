@@ -99,7 +99,6 @@ class LFDatabaseManager: NSObject {
         databaseQueue.inDatabase({
             database in
             
-            
             let querySQL = "SELECT track_id, AsBinary(track_geometry) FROM tracks"
             
             let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
@@ -130,6 +129,46 @@ class LFDatabaseManager: NSObject {
             completion(paths)
         })
     }
+    
+    func getPathsFromTime(_ time: Date, completion: @escaping (([LFPath]) -> Void)) {
+        databaseQueue.inDatabase({
+            database in
+            
+            let timestamp = time.timeIntervalSince1970
+            
+            let selectStatement = "SELECT track_id, AsBinary(track_geometry) FROM tracks "
+            let whereStatement = "WHERE M(EndPoint(track_geometry)) > \(timestamp)"
+            let querySQL = selectStatement + whereStatement
+            
+            let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
+            
+            var paths = [LFPath]()
+            
+            while (results.next()) {
+                if results.hasAnotherRow() {
+                    if let data = results.data(forColumnIndex: 1) {
+                        let reader = WKBByteReader(data: data)
+                        reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
+                        let geometry = WKBGeometryReader.readGeometry(with: reader)
+                        
+                        if let lineString = geometry as? WKBLineString {
+                            let path = LFPath(lineString: lineString)
+                            paths.append(path)
+                        } else if let multiLineString = geometry as? WKBMultiLineString {
+                            print("multiline")
+                            for lineString in multiLineString.getLineStrings() {
+                                let path = LFPath(lineString: lineString as! WKBLineString)
+                                paths.append(path)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            completion(paths)
+        })
+    }
+
 	
 	func getLatestTrackID(completion:@escaping ((Int) -> Void)) {
 		let querySQL = "SELECT track_id FROM tracks ORDER BY track_id DESC LIMIT 1"
