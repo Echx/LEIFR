@@ -65,6 +65,15 @@ extension LFPlaybackViewController {
         return view
     }
     
+    @IBAction func showCalendarPicker() {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let calenderViewController = storyboard.instantiateViewController(withIdentifier: "LFPlaybackCalendarViewController") as! LFPlaybackCalendarViewController
+        calenderViewController.modalTransitionStyle = .crossDissolve
+        
+        self.present(calenderViewController, animated: true, completion: nil)
+
+    }
+    
     @IBAction func playAnimation() {
         let path = self.paths?[0]
         let points = (path?.points())!

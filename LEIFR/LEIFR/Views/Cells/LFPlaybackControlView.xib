@@ -21,6 +21,9 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="ic_date_range_48pt"/>
                     <state key="selected" image="GPS off"/>
+                    <connections>
+                        <action selector="showCalendarPicker" destination="-1" eventType="touchUpInside" id="6D1-S6-ChI"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyR-I7-pI9">
                     <rect key="frame" x="126" y="20" width="96" height="96"/>

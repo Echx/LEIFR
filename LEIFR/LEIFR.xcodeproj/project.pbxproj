@@ -101,6 +101,7 @@
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
 		62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */; };
+		62F5A7A91E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A81E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift */; };
 		6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */; };
 		E85EA76925BBD5C425DBCD78 /* Pods_LEIFRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */; };
 /* End PBXBuildFile section */
@@ -624,6 +625,7 @@
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayBackAnnotationView.swift; sourceTree = "<group>"; };
+		62F5A7A81E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaybackCalendarViewController.swift; sourceTree = "<group>"; };
 		9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
 		CD554A7B469F9393D5BD63B8 /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1626,6 +1628,7 @@
 			isa = PBXGroup;
 			children = (
 				0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */,
+				62F5A7A81E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift */,
 			);
 			name = "Tab 2";
 			sourceTree = "<group>";
@@ -2002,6 +2005,7 @@
 				62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */,
 				62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
+				62F5A7A91E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift in Sources */,
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */,
