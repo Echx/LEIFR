@@ -19,6 +19,8 @@ protocol LFHoverTabDataSource {
 }
 
 class LFHoverTabViewController: LFViewController {
+    
+    static var defaultInstance: LFHoverTabViewController!;
 	
     fileprivate let geoRecordManager = LFGeoRecordManager.shared
 	var delegate: LFHoverTabDelegate?
@@ -41,6 +43,7 @@ class LFHoverTabViewController: LFViewController {
 	fileprivate var tabAccessoryView: UIView?
     
 	override func loadView() {
+        LFHoverTabViewController.defaultInstance = self
 		super.loadView()
 		
 		let layer = view.layer
@@ -69,35 +72,43 @@ class LFHoverTabViewController: LFViewController {
 		sender.isSelected = true
 		self.currentTab = sender.tag
 	}
+    
+    private func reloadControlViewForTab(atIndex index: Int) {
+        self.tabControlView?.removeFromSuperview()
+        if let view = self.dataSource?.controlViewForTab(atIndex: index) {
+            view.translatesAutoresizingMaskIntoConstraints = false
+            var constraints = [NSLayoutConstraint]()
+            let viewBindings = ["view" : view]
+            
+            self.controlView.addSubview(view)
+            
+            constraints.append(contentsOf: NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|-(0)-[view]-(0)-|",
+                options: [],
+                metrics: nil,
+                views: viewBindings)
+            )
+            
+            constraints.append(contentsOf: NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-(0)-[view]-(0)-|",
+                options: [],
+                metrics: nil,
+                views: viewBindings)
+            )
+            
+            self.controlView.addConstraints(constraints)
+            self.tabControlView = view
+        }
+    }
+    
+    func reloadControlView() {
+        self.reloadControlViewForTab(atIndex: self.currentTab)
+    }
 	
 	func loadControlViewForTab(atIndex index: Int) {
 		if self.currentTab != index && index < self.tabButtons.count {
-			self.tabControlView?.removeFromSuperview()
-			if let view = self.dataSource?.controlViewForTab(atIndex: index) {
-				view.translatesAutoresizingMaskIntoConstraints = false
-				var constraints = [NSLayoutConstraint]()
-				let viewBindings = ["view" : view]
-				
-				self.controlView.addSubview(view)
-				
-				constraints.append(contentsOf: NSLayoutConstraint.constraints(
-					withVisualFormat: "V:|-(0)-[view]-(0)-|",
-					options: [],
-					metrics: nil,
-					views: viewBindings)
-				)
-				
-				constraints.append(contentsOf: NSLayoutConstraint.constraints(
-					withVisualFormat: "H:|-(0)-[view]-(0)-|",
-					options: [],
-					metrics: nil,
-					views: viewBindings)
-				)
-				
-				self.controlView.addConstraints(constraints)
-				self.tabControlView = view
-			}
-		}
+            self.reloadControlViewForTab(atIndex: index)
+        }
 	}
 	
 	func loadAccessoryViewForTab(atIndex index: Int) {

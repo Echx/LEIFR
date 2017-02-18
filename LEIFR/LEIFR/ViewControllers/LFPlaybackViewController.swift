@@ -15,6 +15,7 @@ class LFPlaybackViewController: LFViewController {
     
     fileprivate var paths: [LFPath]?
     fileprivate var animateAnnotation: MKPointAnnotation?
+    fileprivate var startDate: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,12 @@ class LFPlaybackViewController: LFViewController {
 
 extension LFPlaybackViewController {
     override func controlViewForTab() -> UIView? {
-        let view = UIView.view(fromNib: "LFPlaybackControlView", owner: self)
+        var view: UIView?
+        if startDate != nil {
+            view = UIView.view(fromNib: "LFPlaybackControlView", owner: self)
+        } else {
+            view = UIView.view(fromNib: "LFPlaybackCalendarView", owner: self)
+        }
         return view
     }
     
@@ -68,9 +74,9 @@ extension LFPlaybackViewController {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let calenderViewController = storyboard.instantiateViewController(withIdentifier: "LFPlaybackCalendarViewController") as! LFPlaybackCalendarViewController
         calenderViewController.modalTransitionStyle = .crossDissolve
+        calenderViewController.delegate = self
         
         self.present(calenderViewController, animated: true, completion: nil)
-
     }
     
     @IBAction func playAnimation() {
@@ -152,5 +158,12 @@ extension LFPlaybackViewController: MKMapViewDelegate {
         }
         
         return annotationView
+    }
+}
+
+extension LFPlaybackViewController: LFPlaybackCalendarDelagate {
+    func dateDidSelect(date: Date) {
+        startDate = date
+        LFHoverTabViewController.defaultInstance.reloadControlView()
     }
 }

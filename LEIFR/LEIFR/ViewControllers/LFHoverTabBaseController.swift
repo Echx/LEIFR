@@ -22,6 +22,7 @@ class LFHoverTabBaseController: LFViewController {
 	@IBOutlet var tabViewTopConstraint: NSLayoutConstraint!
 	
 	@IBOutlet var containerView: UIView!
+    
 	fileprivate var tabControllers = [LFViewController]()
 	fileprivate var currentTab = 1;
 	

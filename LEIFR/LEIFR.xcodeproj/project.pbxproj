@@ -89,6 +89,7 @@
 		623A63521DC2098100F80E7F /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 623A63511DC2098100F80E7F /* default.sqlite */; };
 		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
 		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		625B56201E58B3F400FE623E /* LFPlaybackCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 625B561F1E58B3F400FE623E /* LFPlaybackCalendarView.xib */; };
 		62604E9A1E407E9600D17937 /* LFPlaybackControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62604E991E407E9600D17937 /* LFPlaybackControlView.xib */; };
 		626A13B61DC522270051FE90 /* LFZoomLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */; };
 		626A13B81DC5259B0051FE90 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B71DC5259B0051FE90 /* MapKitExtension.swift */; };
@@ -615,6 +616,7 @@
 		62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryViewController.swift; sourceTree = "<group>"; };
 		623A63511DC2098100F80E7F /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
 		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		625B561F1E58B3F400FE623E /* LFPlaybackCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFPlaybackCalendarView.xib; path = Cells/LFPlaybackCalendarView.xib; sourceTree = "<group>"; };
 		62604E991E407E9600D17937 /* LFPlaybackControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFPlaybackControlView.xib; path = Cells/LFPlaybackControlView.xib; sourceTree = "<group>"; };
 		626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevelTest.swift; sourceTree = "<group>"; };
 		626A13B71DC5259B0051FE90 /* MapKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapKitExtension.swift; path = Extensions/MapKitExtension.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				62F0DBFA1D888A02006D05E0 /* Main.storyboard */,
 				0CF136221DC9006500E122AC /* LFHistoryControlView.xib */,
 				62604E991E407E9600D17937 /* LFPlaybackControlView.xib */,
+				625B561F1E58B3F400FE623E /* LFPlaybackCalendarView.xib */,
 				0CF716061E3F82EE00FA419F /* LFPhotoControlView.xib */,
 				0C4242511DC55405004F47F2 /* LFRecordButton.swift */,
 				0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */,
@@ -1847,6 +1850,7 @@
 				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
 				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
 				0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */,
+				625B56201E58B3F400FE623E /* LFPlaybackCalendarView.xib in Resources */,
 				0CBB38571D85F9BD002C0EF0 /* Envelope.inl in Resources */,
 				0CF136231DC9006500E122AC /* LFHistoryControlView.xib in Resources */,
 				0CF716021E3F398500FA419F /* LFMapCell.xib in Resources */,

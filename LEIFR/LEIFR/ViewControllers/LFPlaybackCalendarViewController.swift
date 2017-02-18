@@ -14,9 +14,22 @@ class LFPlaybackCalendarViewController: LFViewController {
     @IBOutlet fileprivate weak var showAnimationButton: UIButton!
 
     fileprivate var selectedDate: Date?
+    var delegate: LFPlaybackCalendarDelagate?
     
     override func viewDidLoad() {
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
+        
+        if selectedDate != nil {
+            calendarView.select(selectedDate!)
+        }
+    }
+    
+    @IBAction func showAnimation() {
+        if selectedDate != nil {
+            delegate?.dateDidSelect(date: selectedDate!)
+        }
+        
+        dismissWithAnimation()
     }
 }
 
@@ -25,4 +38,8 @@ extension LFPlaybackCalendarViewController: FSCalendarDelegate, FSCalendarDataSo
         showAnimationButton.isHidden = false
         selectedDate = date
     }
+}
+
+protocol LFPlaybackCalendarDelagate {
+    func dateDidSelect(date: Date)
 }

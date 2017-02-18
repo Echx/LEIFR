@@ -667,7 +667,7 @@
                                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
                                                         <state key="normal" title="Show"/>
                                                         <connections>
-                                                            <action selector="dismissWithAnimation" destination="Wvh-s1-uqP" eventType="touchUpInside" id="man-9I-uxf"/>
+                                                            <action selector="showAnimation" destination="Wvh-s1-uqP" eventType="touchUpInside" id="66X-wR-VZX"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
