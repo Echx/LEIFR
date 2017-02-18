@@ -662,10 +662,20 @@
                                                             <action selector="dismissWithAnimation" destination="Wvh-s1-uqP" eventType="touchUpInside" id="KOz-8F-B2u"/>
                                                         </connections>
                                                     </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0s-gX-ihC">
+                                                        <rect key="frame" x="308" y="34.5" width="47" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
+                                                        <state key="normal" title="Show"/>
+                                                        <connections>
+                                                            <action selector="dismissWithAnimation" destination="Wvh-s1-uqP" eventType="touchUpInside" id="man-9I-uxf"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="3L9-Nd-k3U" firstAttribute="centerY" secondItem="KHU-YY-eod" secondAttribute="centerY" constant="10" id="a0T-Nr-yub"/>
+                                                    <constraint firstItem="l0s-gX-ihC" firstAttribute="centerY" secondItem="KHU-YY-eod" secondAttribute="centerY" constant="10" id="a3R-QR-7eX"/>
                                                     <constraint firstItem="3L9-Nd-k3U" firstAttribute="leading" secondItem="KHU-YY-eod" secondAttribute="leading" constant="20" id="jGO-yQ-PPc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="l0s-gX-ihC" secondAttribute="trailing" constant="20" id="sVC-nK-uTu"/>
                                                 </constraints>
                                             </view>
                                             <vibrancyEffect>
@@ -695,6 +705,13 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="titlePlaceholderColor">
                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" red="0.96037770259999999" green="1" blue="0.98201989089999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="Wvh-s1-uqP" id="uhO-YR-Ggh"/>
@@ -713,6 +730,10 @@
                             <constraint firstItem="lEa-77-0D9" firstAttribute="top" secondItem="eir-jy-lkd" secondAttribute="top" id="zw1-Nn-nNC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="0sz-pI-7aC" id="jNH-VV-BTF"/>
+                        <outlet property="showAnimationButton" destination="l0s-gX-ihC" id="RhY-0o-cW2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zK0-1g-Fv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
