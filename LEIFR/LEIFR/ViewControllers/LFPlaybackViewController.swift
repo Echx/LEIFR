@@ -11,12 +11,20 @@ import wkb_ios
 
 class LFPlaybackViewController: LFViewController {
     
+    enum PlaybackState {
+        case stop, pause, play
+    }
+    
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     fileprivate var paths: [LFPath]?
     fileprivate var animateAnnotation: MKPointAnnotation?
     fileprivate var startDate: Date?
     fileprivate var animationFactor = 60.0
+    fileprivate var playbackState: PlaybackState = .stop
+    fileprivate var playingIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,55 +44,32 @@ class LFPlaybackViewController: LFViewController {
             LFDatabaseManager.shared.getPathsFromTime(startDate!) {
                 paths in
                 
-                self.paths = paths
+                if paths.count == 0 {
+                    self.startDate = nil
+                    LFHoverTabViewController.defaultInstance.reloadControlView()
+                } else {
+                    self.paths = paths
+                }
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension LFPlaybackViewController {
-    override func controlViewForTab() -> UIView? {
-        var view: UIView?
-        if startDate != nil {
-            view = UIView.view(fromNib: "LFPlaybackControlView", owner: self)
-        } else {
-            view = UIView.view(fromNib: "LFPlaybackCalendarView", owner: self)
-        }
-        return view
-    }
     
-    @IBAction func showCalendarPicker() {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let calenderViewController = storyboard.instantiateViewController(withIdentifier: "LFPlaybackCalendarViewController") as! LFPlaybackCalendarViewController
-        calenderViewController.modalTransitionStyle = .crossDissolve
-        calenderViewController.delegate = self
+    fileprivate func playAnimation() {
+        guard playingIndex < (self.paths?.count)!
+            else {
+                self.playButton.isSelected = false
+                self.playbackState = .play
+                self.stopButton.isHidden = true
+                
+                return
+        }
         
-        self.present(calenderViewController, animated: true, completion: nil)
-    }
-    
-    @IBAction func playAnimation() {
-        let path = self.paths?[4]
-        var x = 0
-        for path in self.paths! {
-            x += 1
-            print("\(x)::::")
-            print(path.points().count)
-        }
+        let path = self.paths?[playingIndex]
+        playingIndex += 1
         let points = (path?.points())!
         let wkbPoint = points[0] as! WKBPoint
         var delay = 0.0
-
+        
         self.animateAnnotation?.coordinate = wkbPoint.coordinate()
         self.mapView.addAnnotation(self.animateAnnotation!)
         
@@ -121,7 +106,7 @@ extension LFPlaybackViewController {
                         
                         UIView.animate(withDuration: animationTime, animations: {
                             self.animateAnnotation?.coordinate = wkbPoint.coordinate()
-//                            self.mapView.centerCoordinate = wkbPoint.coordinate()
+                            //                            self.mapView.centerCoordinate = wkbPoint.coordinate()
                         })
                     }
                     delay += animationTime
@@ -130,14 +115,76 @@ extension LFPlaybackViewController {
             
             delay += 0.1
             DispatchQueue.main.async {
-
+                
                 Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
                     _ in
                     
                     self.mapView.removeAnnotation(self.animateAnnotation!)
+                    self.playAnimation()
                 }
             }
         }
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+extension LFPlaybackViewController {
+    override func controlViewForTab() -> UIView? {
+        var view: UIView?
+        if startDate != nil {
+            view = UIView.view(fromNib: "LFPlaybackControlView", owner: self)
+        } else {
+            view = UIView.view(fromNib: "LFPlaybackCalendarView", owner: self)
+        }
+        return view
+    }
+    
+    @IBAction func showCalendarPicker() {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let calenderViewController = storyboard.instantiateViewController(withIdentifier: "LFPlaybackCalendarViewController") as! LFPlaybackCalendarViewController
+        calenderViewController.modalTransitionStyle = .crossDissolve
+        calenderViewController.delegate = self
+        
+        self.present(calenderViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func togglePlay() {
+        switch playbackState {
+        case .stop:
+            // change state
+            playButton.isSelected = true
+            playbackState = .play
+            // show stop button
+            stopButton.isHidden = false
+            
+            playAnimation()
+            break
+            
+        case .play:
+            // change state
+            playButton.isSelected = false
+            playbackState = .pause
+            
+            break
+            
+        case.pause:
+            // change state
+            playButton.isSelected = true
+            playbackState = .play
+            
+            break
+        }
+        
     }
 }
 

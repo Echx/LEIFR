@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LFPlaybackViewController" customModule="LEIFR" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LFPlaybackViewController" customModule="LEIFR" customModuleProvider="target">
+            <connections>
+                <outlet property="playButton" destination="xyR-I7-pI9" id="oKQ-SA-OBe"/>
+                <outlet property="stopButton" destination="SHb-eg-Ea6" id="h6c-RJ-peS"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="348" height="136"/>
@@ -31,13 +36,20 @@
                         <constraint firstAttribute="height" constant="96" id="UbT-y2-E4t"/>
                         <constraint firstAttribute="width" secondItem="xyR-I7-pI9" secondAttribute="height" id="YdX-RK-bdV"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="140"/>
-                    <state key="normal" title="▸">
-                        <color key="titleColor" red="0.96037770258799682" green="1" blue="0.98201989085758601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_play_arrow_48pt"/>
+                    <state key="selected" image="ic_pause_48pt"/>
+                    <state key="highlighted" image="ic_pause_48pt"/>
                     <connections>
-                        <action selector="playAnimation" destination="-1" eventType="touchUpInside" id="CrQ-Gi-Bua"/>
+                        <action selector="togglePlay" destination="-1" eventType="touchUpInside" id="kGC-W9-PM1"/>
                     </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHb-eg-Ea6">
+                    <rect key="frame" x="284" y="44" width="48" height="48"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_stop_48pt"/>
+                    <state key="selected" image="GPS off"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.34901960780000002" blue="0.32156862749999998" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
@@ -45,7 +57,9 @@
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FlW-cY-hwF"/>
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OHT-Fd-Xdn"/>
                 <constraint firstItem="8xi-Sz-Qwv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="SIv-gD-wrL"/>
+                <constraint firstItem="SHb-eg-Ea6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Znm-x3-opg"/>
                 <constraint firstItem="8xi-Sz-Qwv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fc9-dQ-8Gf"/>
+                <constraint firstAttribute="trailing" secondItem="SHb-eg-Ea6" secondAttribute="trailing" constant="16" id="mJ3-6g-Ilv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-11" y="-483"/>
@@ -54,5 +68,8 @@
     <resources>
         <image name="GPS off" width="48" height="48"/>
         <image name="ic_date_range_48pt" width="48" height="48"/>
+        <image name="ic_pause_48pt" width="48" height="48"/>
+        <image name="ic_play_arrow_48pt" width="48" height="48"/>
+        <image name="ic_stop_48pt" width="48" height="48"/>
     </resources>
 </document>
