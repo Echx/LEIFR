@@ -23,7 +23,6 @@ class LFPlaybackViewController: LFViewController {
 
         // Do any additional setup after loading the view.
         self.mapView.delegate = self
-        self.loadMapData()
         self.animateAnnotation = MKPointAnnotation()
     }
 
@@ -33,18 +32,12 @@ class LFPlaybackViewController: LFViewController {
     }
     
     fileprivate func loadMapData() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        LFDatabaseManager.shared.getPathsFromTime(formatter.date(from: "2016/12/05")!) { paths in
-            
-            self.paths = paths
-//            let start = formatter.date(from: "2016/12/05")!
-//            let end = formatter.date(from: "2016/12/09")!
-//            
-//            self.paths = paths.filter {
-//                $0.isOverlappedWith(startDate: start, endDate: end)
-//            }
-            
+        if startDate != nil {
+            LFDatabaseManager.shared.getPathsFromTime(startDate!) {
+                paths in
+                
+                self.paths = paths
+            }
         }
     }
 
@@ -173,5 +166,6 @@ extension LFPlaybackViewController: LFPlaybackCalendarDelagate {
     func dateDidSelect(date: Date) {
         startDate = date
         LFHoverTabViewController.defaultInstance.reloadControlView()
+        self.loadMapData()
     }
 }
