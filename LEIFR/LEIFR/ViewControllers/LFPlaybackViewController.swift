@@ -16,6 +16,7 @@ class LFPlaybackViewController: LFViewController {
     fileprivate var paths: [LFPath]?
     fileprivate var animateAnnotation: MKPointAnnotation?
     fileprivate var startDate: Date?
+    fileprivate var animationFactor = 60.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +35,15 @@ class LFPlaybackViewController: LFViewController {
     fileprivate func loadMapData() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-        LFDatabaseManager.shared.getPathsFromTime(formatter.date(from: "2016/06/01")!) { paths in
+        LFDatabaseManager.shared.getPathsFromTime(formatter.date(from: "2016/12/05")!) { paths in
             
-            print(paths.count) // 341
-            let start = formatter.date(from: "2016/12/05")!
-            let end = formatter.date(from: "2016/12/09")!
-            
-            self.paths = paths.filter {
-                $0.isOverlappedWith(startDate: start, endDate: end)
-            }
+            self.paths = paths
+//            let start = formatter.date(from: "2016/12/05")!
+//            let end = formatter.date(from: "2016/12/09")!
+//            
+//            self.paths = paths.filter {
+//                $0.isOverlappedWith(startDate: start, endDate: end)
+//            }
             
         }
     }
@@ -112,18 +113,25 @@ extension LFPlaybackViewController {
             }
         }
         
-        DispatchQueue(label: "background").asyncAfter(deadline: .now() + 3) {
+        DispatchQueue(label: "background").asyncAfter(deadline: .now() + 1) {
+            var previousM: Double?
+            var animationTime = 0.1
             for point in points {
                 let wkbPoint = point as! WKBPoint
+                if previousM != nil {
+                    animationTime = (Double(wkbPoint.m) - previousM!) / self.animationFactor
+                }
+                previousM = wkbPoint.m as Double?
                 DispatchQueue.main.async {
                     Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
                         _ in
                         
-                        UIView.animate(withDuration: 0.1, animations: {
+                        UIView.animate(withDuration: animationTime, animations: {
                             self.animateAnnotation?.coordinate = wkbPoint.coordinate()
+//                            self.mapView.centerCoordinate = wkbPoint.coordinate()
                         })
                     }
-                    delay += 0.1
+                    delay += animationTime
                 }
             }
             
