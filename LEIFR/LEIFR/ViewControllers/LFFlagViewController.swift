@@ -70,7 +70,7 @@ extension LFFlagViewController: UICollectionViewDataSource, UICollectionViewDele
 		}
 
 		cell.nameLabel.text = country.localizedName()
-		cell.flagImageView.backgroundColor = UIColor.brown
+		cell.flagImageView.image = UIImage(named: country.twoDigitCountryCode())
 		cell.setActive(active: country.visited)
 		
 		return cell
