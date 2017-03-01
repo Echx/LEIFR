@@ -64,6 +64,8 @@
 		0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */; };
 		0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */; };
 		0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */; };
+		0CE2D99C1E671E2D0070DC15 /* LFReverseGeocodingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2D99B1E671E2D0070DC15 /* LFReverseGeocodingManager.swift */; };
+		0CE2D9A01E6722EB0070DC15 /* LFCachedCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2D99F1E6722EB0070DC15 /* LFCachedCountry.swift */; };
 		0CF1361A1DC8E2BD00E122AC /* LFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF136181DC8E2BD00E122AC /* LFTableViewCell.swift */; };
 		0CF1361B1DC8E2BD00E122AC /* LFTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */; };
 		0CF1361E1DC8E38200E122AC /* LFButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */; };
@@ -590,6 +592,8 @@
 		0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabBaseController.swift; sourceTree = "<group>"; };
 		0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFViewController.swift; sourceTree = "<group>"; };
 		0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHoverTabViewController.swift; sourceTree = "<group>"; };
+		0CE2D99B1E671E2D0070DC15 /* LFReverseGeocodingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFReverseGeocodingManager.swift; sourceTree = "<group>"; };
+		0CE2D99F1E6722EB0070DC15 /* LFCachedCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedCountry.swift; sourceTree = "<group>"; };
 		0CF136181DC8E2BD00E122AC /* LFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTableViewCell.swift; sourceTree = "<group>"; };
 		0CF136191DC8E2BD00E122AC /* LFTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFTableViewCell.xib; sourceTree = "<group>"; };
 		0CF1361C1DC8E38200E122AC /* LFButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFButtonCell.swift; sourceTree = "<group>"; };
@@ -1556,6 +1560,7 @@
 				62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */,
 				62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */,
 				0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */,
+				0CE2D99B1E671E2D0070DC15 /* LFReverseGeocodingManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1580,6 +1585,7 @@
 				0C99600E1E4B57A800403B5A /* LFPoint.swift */,
 				62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */,
 				62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */,
+				0CE2D99F1E6722EB0070DC15 /* LFCachedCountry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2000,6 +2006,7 @@
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
 				62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */,
+				0CE2D9A01E6722EB0070DC15 /* LFCachedCountry.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
 				62D739671E5397A300F95B5F /* WKBExtension.swift in Sources */,
 				0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */,
@@ -2010,6 +2017,7 @@
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
 				0CF716011E3F398500FA419F /* LFMapCell.swift in Sources */,
+				0CE2D99C1E671E2D0070DC15 /* LFReverseGeocodingManager.swift in Sources */,
 				62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */,
 				62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,

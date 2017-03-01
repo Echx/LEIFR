@@ -9,6 +9,7 @@ pod 'wkb-ios'
 pod 'RealmSwift', '2.0.3'
 pod 'UICircularProgressRing'
 pod 'FSCalendar'
+pod 'APOfflineReverseGeocoding'
 
 end
 

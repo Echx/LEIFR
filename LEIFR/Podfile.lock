@@ -1,4 +1,5 @@
 PODS:
+  - APOfflineReverseGeocoding (0.0.2)
   - FontBlaster (3.0.0)
   - FSCalendar (2.7.0)
   - Realm (2.0.3):
@@ -10,6 +11,7 @@ PODS:
   - wkb-ios (1.0.6)
 
 DEPENDENCIES:
+  - APOfflineReverseGeocoding
   - FontBlaster
   - FSCalendar
   - RealmSwift (= 2.0.3)
@@ -17,6 +19,7 @@ DEPENDENCIES:
   - wkb-ios
 
 SPEC CHECKSUMS:
+  APOfflineReverseGeocoding: 8adf31a848f2af5bc83cffbc821420542dd419dc
   FontBlaster: 0f4a3e2f965968e2dfc3f7f5cec7214c3f3b2f07
   FSCalendar: 4957703ebd99b4fd0bfd46bf3e3c6465c0a25482
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
@@ -24,6 +27,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: 2da995fa7434af0438398d16400b9b825dbf9ddb
   wkb-ios: 8d1526e825e3d088a5a191c8eefe213a9e41d25e
 
-PODFILE CHECKSUM: a4b952816230414a922426b98cbd6e42d6475365
+PODFILE CHECKSUM: 1f4fa46884eda63aca5c30b33f45a26b0449981d
 
 COCOAPODS: 1.2.0

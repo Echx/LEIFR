@@ -89,14 +89,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Realm-iOS9.3/Realm.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift-iOS9.3/RealmSwift.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/wkb-ios-iOS9.3/wkb_ios.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/wkb-ios/wkb_ios.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Realm-iOS9.3/Realm.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift-iOS9.3/RealmSwift.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/wkb-ios-iOS9.3/wkb_ios.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/wkb-ios/wkb_ios.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

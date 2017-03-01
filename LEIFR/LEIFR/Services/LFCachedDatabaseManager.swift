@@ -39,6 +39,11 @@ class LFCachedDatabaseManager: NSObject {
             while current < coordinates.count - 1 && count < bufferSize - 1 {
                 current += 1
                 count += 1
+				
+				if zoomLevel == maxLevel {
+					LFReverseGeocodingManager.shared.reverseGeocoding(coordinate: coordinates[current])
+				}
+				
                 let mapPoint = MKMapPointForCoordinate(coordinates[current])
                 let x = Int(mapPoint.x)
                 let y = Int(mapPoint.y)
@@ -184,4 +189,26 @@ class LFCachedDatabaseManager: NSObject {
         // geometric sequence sum
         return pow(4, CGFloat(level)) / pow(4, CGFloat(maxLevel)) * 100
     }
+}
+
+// MARK: Statistics Related
+
+extension LFCachedDatabaseManager {
+	
+	func isCachedCountryAlreadyExist(code: String) -> Bool {
+		let cacheRealm = try! Realm()
+		return cacheRealm.objects(LFCachedCountry.self).filter("code == '\(code)'").count != 0
+	}
+	
+	func cacheCountry(code: String, shortCode: String, name: String, localizedName: String) {
+		let cacheRealm = try! Realm()
+		let country = LFCachedCountry()
+		country.code = code
+		country.shortCode = shortCode
+		country.name = name
+		country.localizedName = localizedName
+		try! cacheRealm.write {
+			cacheRealm.add(country)
+		}
+	}
 }
