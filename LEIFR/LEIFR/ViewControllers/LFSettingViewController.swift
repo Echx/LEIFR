@@ -14,6 +14,7 @@ class LFSettingViewController: LFViewController {
 	
 	enum Section: Int {
 		case reconstructDatabase = 0
+		case dismiss
 		case count
 	}
 	
@@ -64,7 +65,7 @@ extension LFSettingViewController: LFStoryboardBasedController {
 	class func defaultControllerFromStoryboard() -> LFViewController {
 		let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 		let controller = storyboard.instantiateViewController(withIdentifier: "LFSettingViewController") as! LFViewController
-		
+		controller.modalTransitionStyle = .flipHorizontal
 		return controller
 	}
 }
@@ -75,7 +76,7 @@ extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
 		case Section.reconstructDatabase.rawValue:
 			indexPath.row == 0 ? self.reconstructDatabase(sender: nil) : self.flushPoints(sender: nil)
 		default:
-			print("No action")
+			self.dismissWithAnimation()
 		}
 		
 	}
@@ -85,16 +86,20 @@ extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 2
+		return section == Section.reconstructDatabase.rawValue ? 2 : 1
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: LFButtonCell.identifier, for: indexPath) as! LFButtonCell
 		
-		if indexPath.row == 0 {
-			cell.buttonTitleLabel.text = "Reconstruct Database"
+		if indexPath.section == Section.reconstructDatabase.rawValue {
+			if indexPath.row == 0 {
+				cell.buttonTitleLabel.text = "Reconstruct Database"
+			} else {
+				cell.buttonTitleLabel.text = "Flush"
+			}
 		} else {
-			cell.buttonTitleLabel.text = "Flush"
+			cell.buttonTitleLabel.text = "Dismiss"
 		}
 		
 		return cell

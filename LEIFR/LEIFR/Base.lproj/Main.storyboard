@@ -399,7 +399,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b0-KD-ZwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="927.88605697151434"/>
+            <point key="canvasLocation" x="2548" y="1612"/>
+        </scene>
+        <!--Statistics View Controller-->
+        <scene sceneID="Y0A-ia-Bey">
+            <objects>
+                <viewController storyboardIdentifier="LFStatisticsViewController" id="PjB-ap-Qrg" customClass="LFStatisticsViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cXz-gU-qwI"/>
+                        <viewControllerLayoutGuide type="bottom" id="YaX-lL-vsK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ePR-jq-lYg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Idk-Ab-8Q6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Xk-br-Tgw" customClass="LFNavigationBar" customModule="LEIFR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xfr-N9-AJV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXf-xC-sQ0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BRg-dU-ILu">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAy-Hc-EFD">
+                                                        <rect key="frame" x="20" y="41" width="77" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="XAy-Hc-EFD" firstAttribute="leading" secondItem="BRg-dU-ILu" secondAttribute="leading" constant="20" id="BR8-X8-cZt"/>
+                                                    <constraint firstItem="XAy-Hc-EFD" firstAttribute="centerY" secondItem="BRg-dU-ILu" secondAttribute="centerY" constant="10" id="SAf-JJ-YZK"/>
+                                                </constraints>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="kXf-xC-sQ0" secondAttribute="bottom" id="Jn4-rK-LOb"/>
+                                        <constraint firstItem="kXf-xC-sQ0" firstAttribute="leading" secondItem="Xfr-N9-AJV" secondAttribute="leading" id="d8E-pK-wsQ"/>
+                                        <constraint firstItem="kXf-xC-sQ0" firstAttribute="top" secondItem="Xfr-N9-AJV" secondAttribute="top" id="fu6-I7-gsD"/>
+                                        <constraint firstAttribute="trailing" secondItem="kXf-xC-sQ0" secondAttribute="trailing" id="ybX-bN-KPJ"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="wUH-tK-1XL"/>
+                                </constraints>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Idk-Ab-8Q6" firstAttribute="leading" secondItem="ePR-jq-lYg" secondAttribute="leading" id="6LM-ob-j4G"/>
+                            <constraint firstItem="9Xk-br-Tgw" firstAttribute="top" secondItem="ePR-jq-lYg" secondAttribute="top" id="85E-Ru-7Vj"/>
+                            <constraint firstItem="9Xk-br-Tgw" firstAttribute="leading" secondItem="ePR-jq-lYg" secondAttribute="leading" id="BjN-FT-qXt"/>
+                            <constraint firstItem="Idk-Ab-8Q6" firstAttribute="top" secondItem="ePR-jq-lYg" secondAttribute="top" id="SoP-N1-Tqo"/>
+                            <constraint firstAttribute="trailing" secondItem="9Xk-br-Tgw" secondAttribute="trailing" id="Xb5-5n-6wu"/>
+                            <constraint firstAttribute="trailing" secondItem="Idk-Ab-8Q6" secondAttribute="trailing" id="m7D-oA-DNY"/>
+                            <constraint firstItem="YaX-lL-vsK" firstAttribute="top" secondItem="Idk-Ab-8Q6" secondAttribute="bottom" id="xB0-qo-ZuK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Idk-Ab-8Q6" id="zxK-cm-Bqz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywc-UA-ssK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548" y="928"/>
         </scene>
         <!--Hover Tab Base Controller-->
         <scene sceneID="Nnl-fI-pTc">

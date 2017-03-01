@@ -39,7 +39,7 @@ class LFHoverTabBaseController: LFViewController {
 			LFHistoryViewController.defaultControllerFromStoryboard(),
 			LFPlaybackViewController.defaultControllerFromStoryboard(),
 			LFPhotoViewController.defaultControllerFromStoryboard(),
-			LFSettingViewController.defaultControllerFromStoryboard()
+			LFStatisticsViewController.defaultControllerFromStoryboard()
 		]
 	}
 	
