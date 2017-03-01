@@ -243,7 +243,17 @@ extension LFCachedDatabaseManager {
 			SortDescriptor(property: "continentCode", ascending: true),
 			SortDescriptor(property: "code", ascending: true)
 		]
-		let countries = Array(realm.objects(LFCachedCountry.self).sorted(by: sortDescriptors))
-		return countries
+		let countries = realm.objects(LFCachedCountry.self).sorted(by: sortDescriptors)
+		return Array(countries)
+	}
+	
+	func getCountriesFromContinent(continentCode: String)  -> [LFCachedCountry] {
+		let realm = try! Realm()
+		let sortDescriptors = [
+			SortDescriptor(property: "visited", ascending: false),
+			SortDescriptor(property: "code", ascending: true)
+		]
+		let countries = realm.objects(LFCachedCountry.self).filter("continentCode == '\(continentCode)'").sorted(by: sortDescriptors)
+		return Array(countries)
 	}
 }

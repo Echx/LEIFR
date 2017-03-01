@@ -280,10 +280,23 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdQ-Hg-PCE">
+                                                        <rect key="frame" x="325" y="32.5" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="MGR-0h-rOW"/>
+                                                            <constraint firstAttribute="width" secondItem="MdQ-Hg-PCE" secondAttribute="height" id="Mco-Uq-Zqp"/>
+                                                        </constraints>
+                                                        <state key="normal" image="ic_clear"/>
+                                                        <connections>
+                                                            <action selector="dismissWithAnimation" destination="w49-UQ-vs8" eventType="touchUpInside" id="KXq-Ts-edG"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="YMV-2x-jbI" firstAttribute="centerY" secondItem="d63-b1-Vhx" secondAttribute="centerY" constant="10" id="Ixn-8e-OJs"/>
                                                     <constraint firstItem="YMV-2x-jbI" firstAttribute="leading" secondItem="d63-b1-Vhx" secondAttribute="leading" constant="20" id="JWS-x1-6Tk"/>
+                                                    <constraint firstItem="MdQ-Hg-PCE" firstAttribute="centerY" secondItem="YMV-2x-jbI" secondAttribute="centerY" id="bec-YA-ihr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MdQ-Hg-PCE" secondAttribute="trailing" constant="10" id="mqB-cK-HWj"/>
                                                 </constraints>
                                             </view>
                                             <vibrancyEffect>
@@ -321,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd1-GJ-MoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="1612"/>
+            <point key="canvasLocation" x="2548" y="1611.5442278860571"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="Poa-cA-vxm">
@@ -902,6 +915,7 @@
     </scenes>
     <resources>
         <image name="ic_camera_36pt" width="36" height="36"/>
+        <image name="ic_clear" width="24" height="24"/>
         <image name="ic_public_36pt" width="36" height="36"/>
         <image name="ic_sentiment_very_satisfied_36pt" width="36" height="36"/>
         <image name="ic_watch_later_36pt" width="36" height="36"/>

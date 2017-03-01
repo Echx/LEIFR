@@ -64,8 +64,18 @@ extension LFStatisticsViewController: UITableViewDataSource, UITableViewDelegate
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		switch indexPath.section {
 		case Section.continents.rawValue:
-			let controller = LFFlagViewController.controllerFromStoryboard() as! LFFlagViewController
-			controller.countries = [LFCachedDatabaseManager.shared.getAllCountries()]
+			let controller = LFFlagViewController.defaultControllerFromStoryboard() as! LFFlagViewController
+			let countries = [
+				LFCachedDatabaseManager.shared.getCountriesFromContinent(continentCode: "AS"),
+				LFCachedDatabaseManager.shared.getCountriesFromContinent(continentCode: "EU"),
+				LFCachedDatabaseManager.shared.getCountriesFromContinent(continentCode: "NA"),
+				LFCachedDatabaseManager.shared.getCountriesFromContinent(continentCode: "SA"),
+				LFCachedDatabaseManager.shared.getCountriesFromContinent(continentCode: "OC"),
+				LFCachedDatabaseManager.shared.getCountriesFromContinent(continentCode: "AF")
+			];
+			
+			
+			controller.countries = countries
 			self.present(controller, animated: true, completion: nil)
 			
 		default:
