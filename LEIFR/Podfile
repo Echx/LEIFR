@@ -10,6 +10,7 @@ pod 'RealmSwift', '2.0.3'
 pod 'UICircularProgressRing'
 pod 'FSCalendar'
 pod 'APOfflineReverseGeocoding'
+pod 'UIImage+SVG', '~> 0.1'
 
 end
 
