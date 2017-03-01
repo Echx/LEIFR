@@ -64,7 +64,9 @@ extension LFStatisticsViewController: UITableViewDataSource, UITableViewDelegate
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		switch indexPath.section {
 		case Section.continents.rawValue:
-			print("All");
+			let controller = LFFlagViewController.controllerFromStoryboard() as! LFFlagViewController
+			controller.countries = [LFCachedDatabaseManager.shared.getAllCountries()]
+			self.present(controller, animated: true, completion: nil)
 			
 		default:
 			let settingViewController = LFSettingViewController.controllerFromStoryboard()

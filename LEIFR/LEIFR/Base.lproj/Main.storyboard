@@ -239,6 +239,90 @@
             </objects>
             <point key="canvasLocation" x="1756" y="927.88605697151434"/>
         </scene>
+        <!--Flag View Controller-->
+        <scene sceneID="YkR-xR-CeN">
+            <objects>
+                <viewController storyboardIdentifier="LFFlagViewController" id="w49-UQ-vs8" customClass="LFFlagViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yh4-mi-Dm2"/>
+                        <viewControllerLayoutGuide type="bottom" id="zgc-je-zKg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2V7-ax-qZw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x0I-1c-xoA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="8gT-hM-PtK">
+                                    <size key="itemSize" width="88" height="88"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BgT-r1-kcw" customClass="LFNavigationBar" customModule="LEIFR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Euw-LH-bAr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVd-w8-DBP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="d63-b1-Vhx">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-2x-jbI">
+                                                        <rect key="frame" x="20" y="41" width="82" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="YMV-2x-jbI" firstAttribute="centerY" secondItem="d63-b1-Vhx" secondAttribute="centerY" constant="10" id="Ixn-8e-OJs"/>
+                                                    <constraint firstItem="YMV-2x-jbI" firstAttribute="leading" secondItem="d63-b1-Vhx" secondAttribute="leading" constant="20" id="JWS-x1-6Tk"/>
+                                                </constraints>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QVd-w8-DBP" firstAttribute="leading" secondItem="Euw-LH-bAr" secondAttribute="leading" id="Ifl-KP-C9b"/>
+                                        <constraint firstItem="QVd-w8-DBP" firstAttribute="top" secondItem="Euw-LH-bAr" secondAttribute="top" id="UoQ-BV-MSt"/>
+                                        <constraint firstAttribute="trailing" secondItem="QVd-w8-DBP" secondAttribute="trailing" id="W51-bn-WxH"/>
+                                        <constraint firstAttribute="bottom" secondItem="QVd-w8-DBP" secondAttribute="bottom" id="wHk-vA-bsk"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="XTE-Ae-Dwa"/>
+                                </constraints>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="x0I-1c-xoA" firstAttribute="leading" secondItem="2V7-ax-qZw" secondAttribute="leading" id="4Y8-M3-wDf"/>
+                            <constraint firstItem="x0I-1c-xoA" firstAttribute="top" secondItem="2V7-ax-qZw" secondAttribute="top" id="Voq-uq-Jsa"/>
+                            <constraint firstAttribute="trailing" secondItem="BgT-r1-kcw" secondAttribute="trailing" id="dWr-YZ-GJn"/>
+                            <constraint firstItem="BgT-r1-kcw" firstAttribute="leading" secondItem="2V7-ax-qZw" secondAttribute="leading" id="mHs-wE-JRR"/>
+                            <constraint firstItem="zgc-je-zKg" firstAttribute="top" secondItem="x0I-1c-xoA" secondAttribute="bottom" id="onS-QD-ccE"/>
+                            <constraint firstItem="BgT-r1-kcw" firstAttribute="top" secondItem="2V7-ax-qZw" secondAttribute="top" id="rFe-GW-ESh"/>
+                            <constraint firstAttribute="trailing" secondItem="x0I-1c-xoA" secondAttribute="trailing" id="yZr-2R-xdN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="x0I-1c-xoA" id="QPa-nf-sSO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hd1-GJ-MoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548" y="1612"/>
+        </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="Poa-cA-vxm">
             <objects>
@@ -399,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b0-KD-ZwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="1612"/>
+            <point key="canvasLocation" x="3353" y="928"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="Y0A-ia-Bey">

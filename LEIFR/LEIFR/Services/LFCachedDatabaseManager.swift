@@ -230,12 +230,20 @@ extension LFCachedDatabaseManager {
 		}
 	}
 	
-	func getVisitedCountries() {
-		print("Visited Countries: ")
+	func getVisitedCountries() -> [LFCachedCountry] {
 		let realm = try! Realm()
-		let countries = realm.objects(LFCachedCountry.self).filter("visited == YES")
-		for country in countries {
-			print(country.code)
-		}
+		let countries = Array(realm.objects(LFCachedCountry.self).filter("visited == YES"))
+		return countries
+	}
+	
+	func getAllCountries() -> [LFCachedCountry] {
+		let realm = try! Realm()
+		let sortDescriptors = [
+			SortDescriptor(property: "visited", ascending: false),
+			SortDescriptor(property: "continentCode", ascending: true),
+			SortDescriptor(property: "code", ascending: true)
+		]
+		let countries = Array(realm.objects(LFCachedCountry.self).sorted(by: sortDescriptors))
+		return countries
 	}
 }
