@@ -12,13 +12,14 @@ class LFFlagCollectionViewCell: LFCollectionViewCell {
 
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var flagImageView: UIImageView!
+	@IBOutlet weak var overlayView: UIView!
 	
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = UIColor.white
     }
 	
 	func setActive(active: Bool) {
-		self.flagImageView.alpha = active ? 1 : 0.3
+		self.overlayView.alpha = active ? 0 : 0.8
 	}
 }

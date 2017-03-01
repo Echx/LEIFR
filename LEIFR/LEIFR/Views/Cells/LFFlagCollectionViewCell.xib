@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="126" width="156" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPW-5N-LA1">
-                                <rect key="frame" x="37.5" y="7" width="81" height="16"/>
+                                <rect key="frame" x="38" y="7" width="81" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -38,14 +38,22 @@
                             <constraint firstItem="fPW-5N-LA1" firstAttribute="centerY" secondItem="9f8-da-Xy8" secondAttribute="centerY" id="nnq-3T-7oU"/>
                         </constraints>
                     </view>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wau-yH-Jfh">
+                        <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="t8R-Rv-IKN" secondAttribute="trailing" id="7KH-t0-KmM"/>
                 <constraint firstItem="t8R-Rv-IKN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BaJ-Rp-cSu"/>
+                <constraint firstItem="Wau-yH-Jfh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EEB-8L-dk5"/>
                 <constraint firstAttribute="trailing" secondItem="9f8-da-Xy8" secondAttribute="trailing" id="H9V-Lc-gHB"/>
+                <constraint firstItem="Wau-yH-Jfh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HAb-WX-JXa"/>
+                <constraint firstAttribute="trailing" secondItem="Wau-yH-Jfh" secondAttribute="trailing" id="HJ9-VF-gc5"/>
                 <constraint firstItem="9f8-da-Xy8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IIP-sj-Bah"/>
                 <constraint firstAttribute="bottom" secondItem="t8R-Rv-IKN" secondAttribute="bottom" id="SFS-T9-Ee1"/>
+                <constraint firstAttribute="bottom" secondItem="Wau-yH-Jfh" secondAttribute="bottom" id="UNN-xm-WTE"/>
                 <constraint firstAttribute="bottom" secondItem="9f8-da-Xy8" secondAttribute="bottom" id="fk3-bh-KOd"/>
                 <constraint firstItem="t8R-Rv-IKN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="y0m-Ug-bEM"/>
             </constraints>
@@ -53,6 +61,7 @@
             <connections>
                 <outlet property="flagImageView" destination="t8R-Rv-IKN" id="DtB-Gg-hTf"/>
                 <outlet property="nameLabel" destination="fPW-5N-LA1" id="bPv-eY-13Y"/>
+                <outlet property="overlayView" destination="Wau-yH-Jfh" id="JOz-Hg-P96"/>
             </connections>
             <point key="canvasLocation" x="78" y="105"/>
         </collectionViewCell>

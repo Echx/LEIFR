@@ -46,8 +46,6 @@ class LFReverseGeocodingManager: NSObject {
 				return
 			}
 			
-			LFCachedDatabaseManager.shared.getVisitedCountries()
-			
 			print("Reverse geocoding finished!")
 			NotificationCenter.default.post(self.queueJobsCompleteNotification)
 		}
