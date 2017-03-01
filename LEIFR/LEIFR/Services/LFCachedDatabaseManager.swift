@@ -15,6 +15,7 @@ class LFCachedDatabaseManager: NSObject {
     fileprivate let cacheRealm = try! Realm()
     fileprivate let bufferSize = 2000
     fileprivate let maxLevel = 21
+	fileprivate let reverseGeocodingSamplingLevel = 13
     
     func savePoints(coordinates: [CLLocationCoordinate2D], zoomLevel: Int) {
         let cacheRealm = try! Realm()
@@ -40,7 +41,7 @@ class LFCachedDatabaseManager: NSObject {
                 current += 1
                 count += 1
 				
-				if zoomLevel == maxLevel {
+				if zoomLevel == reverseGeocodingSamplingLevel {
 					LFReverseGeocodingManager.shared.reverseGeocoding(coordinate: coordinates[current])
 				}
 				
@@ -129,6 +130,7 @@ class LFCachedDatabaseManager: NSObject {
     
     func reconstructDatabase() {
         clearDatabase()
+		resetCountries()
 		
 		let notificationCenter = NotificationCenter.default
 		
@@ -195,20 +197,45 @@ class LFCachedDatabaseManager: NSObject {
 
 extension LFCachedDatabaseManager {
 	
-	func isCachedCountryAlreadyExist(code: String) -> Bool {
-		let cacheRealm = try! Realm()
-		return cacheRealm.objects(LFCachedCountry.self).filter("code == '\(code)'").count != 0
+	func resetCountries() {
+		let realm = try! Realm()
+		try! realm.write {
+			realm.delete(realm.objects(LFCachedCountry.self))
+		}
+		let countryCodes = CountryCode.allCountries()
+		try! realm.write {
+			for codePair in countryCodes {
+				let country = LFCachedCountry()
+				country.continentCode = codePair[0]
+				country.code = codePair[1]
+				realm.add(country)
+			}
+		}
 	}
 	
-	func cacheCountry(code: String, shortCode: String, name: String, localizedName: String) {
-		let cacheRealm = try! Realm()
-		let country = LFCachedCountry()
-		country.code = code
-		country.shortCode = shortCode
-		country.name = name
-		country.localizedName = localizedName
-		try! cacheRealm.write {
-			cacheRealm.add(country)
+	func updateCountryVisited(code: String) {
+		let realm = try! Realm()
+		if let first = realm.objects(LFCachedCountry.self).filter("code == '\(code)'").first {
+			guard !first.isInvalidated else {
+				return
+			}
+			
+			guard !first.visited else {
+				return
+			}
+			
+			try! realm.write {
+				first.visited = true
+			}
+		}
+	}
+	
+	func getVisitedCountries() {
+		print("Visited Countries: ")
+		let realm = try! Realm()
+		let countries = realm.objects(LFCachedCountry.self).filter("visited == YES")
+		for country in countries {
+			print(country.code)
 		}
 	}
 }

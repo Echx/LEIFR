@@ -12,11 +12,8 @@ import RealmSwift
 class LFCachedCountry: Object {
 	
 	dynamic var code: String = ""
-	dynamic var shortCode: String = ""
-	dynamic var name: String = ""
-	dynamic var localizedName: String = ""
-	
-	dynamic var addedDate = Date()
+	dynamic var continentCode: String = ""
+	dynamic var visited: Bool = false
 	
 // Specify properties to ignore (Realm won't persist these)
     

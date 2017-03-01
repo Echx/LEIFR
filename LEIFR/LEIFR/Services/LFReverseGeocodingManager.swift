@@ -26,10 +26,7 @@ class LFReverseGeocodingManager: NSObject {
 		let databaseManager = LFCachedDatabaseManager.shared
 		self.reverseGeocodingQueue.addOperation {
 			if let result = APReverseGeocoding.default().geocodeCountry(with: coordinate) {
-				if !databaseManager.isCachedCountryAlreadyExist(code: result.code) {
-					print(result.name)
-					databaseManager.cacheCountry(code: result.code, shortCode: result.shortCode, name: result.name, localizedName: result.localizedName)
-				}
+				databaseManager.updateCountryVisited(code: result.code)
 			}
 		}
 	}
@@ -48,6 +45,8 @@ class LFReverseGeocodingManager: NSObject {
 			guard keyPath == self.keyPathOperation else {
 				return
 			}
+			
+			LFCachedDatabaseManager.shared.getVisitedCountries()
 			
 			print("Reverse geocoding finished!")
 			NotificationCenter.default.post(self.queueJobsCompleteNotification)
