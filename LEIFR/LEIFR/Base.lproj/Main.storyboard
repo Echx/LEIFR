@@ -281,7 +281,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdQ-Hg-PCE">
-                                                        <rect key="frame" x="325" y="32.5" width="40" height="40"/>
+                                                        <rect key="frame" x="325" y="33" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="MGR-0h-rOW"/>
                                                             <constraint firstAttribute="width" secondItem="MdQ-Hg-PCE" secondAttribute="height" id="Mco-Uq-Zqp"/>
@@ -372,7 +372,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ok9-4q-6Yk">
-                                                        <rect key="frame" x="20" y="34.5" width="42" height="35"/>
+                                                        <rect key="frame" x="20" y="35" width="42" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
                                                         <state key="normal" title="Back"/>
                                                         <connections>
@@ -456,9 +456,22 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3d-PQ-U6o">
+                                                        <rect key="frame" x="325" y="32" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="f3d-PQ-U6o" secondAttribute="height" id="mb4-mh-s6A"/>
+                                                            <constraint firstAttribute="width" constant="40" id="nY5-wj-AGQ"/>
+                                                        </constraints>
+                                                        <state key="normal" image="ic_clear"/>
+                                                        <connections>
+                                                            <action selector="dismissWithAnimation" destination="dVI-lz-Ab1" eventType="touchUpInside" id="3Pz-lq-wec"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="938-nc-WE7" firstAttribute="leading" secondItem="Cjo-cN-ftl" secondAttribute="leading" constant="20" id="PRq-sj-lxF"/>
+                                                    <constraint firstItem="f3d-PQ-U6o" firstAttribute="centerY" secondItem="938-nc-WE7" secondAttribute="centerY" id="aXP-wP-8Zl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="f3d-PQ-U6o" secondAttribute="trailing" constant="10" id="god-fg-uJT"/>
                                                     <constraint firstItem="938-nc-WE7" firstAttribute="centerY" secondItem="Cjo-cN-ftl" secondAttribute="centerY" constant="10" id="tLP-PI-elG"/>
                                                 </constraints>
                                             </view>

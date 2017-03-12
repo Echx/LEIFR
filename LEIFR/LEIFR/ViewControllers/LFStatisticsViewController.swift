@@ -14,7 +14,6 @@ class LFStatisticsViewController: LFViewController {
 	
 	enum Section: Int {
 		case continents = 0
-		case settings
 		case count
 	}
 	
@@ -79,8 +78,7 @@ extension LFStatisticsViewController: UITableViewDataSource, UITableViewDelegate
 			self.present(controller, animated: true, completion: nil)
 			
 		default:
-			let settingViewController = LFSettingViewController.controllerFromStoryboard()
-			self.present(settingViewController, animated: true, completion: nil)
+			break
 		}
 		
 	}
@@ -94,7 +92,7 @@ extension LFStatisticsViewController: UITableViewDataSource, UITableViewDelegate
 		case Section.continents.rawValue:
 			return 3//Continent.count.rawValue
 		default:
-			return 1
+			return 0
 		}
 	}
 	

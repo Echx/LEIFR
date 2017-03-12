@@ -14,7 +14,6 @@ class LFSettingViewController: LFViewController {
 	
 	enum Section: Int {
 		case reconstructDatabase = 0
-		case dismiss
 		case count
 	}
 	
@@ -98,8 +97,6 @@ extension LFSettingViewController: UITableViewDataSource, UITableViewDelegate {
 			} else {
 				cell.buttonTitleLabel.text = "Flush"
 			}
-		} else {
-			cell.buttonTitleLabel.text = "Dismiss"
 		}
 		
 		return cell

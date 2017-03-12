@@ -242,14 +242,6 @@ extension LFPhotoViewController {
 		let offset = CGFloat(slider.value / slider.maximumValue) * max - self.collectionView.contentInset.top
 		self.collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
 	}
-	
-	override func accessoryViewForTab() -> UIView? {
-		return nil
-	}
-	
-	override func accessoryTextForTab() -> String? {
-		return "\(self.fetchResult.count) Photos"
-	}
 }
 
 

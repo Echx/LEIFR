@@ -13,6 +13,7 @@
 		0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */; };
 		0C42AF2C1DAD662F00849A5C /* LFSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */; };
 		0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */; };
+		0C6174981E75DE36003AD136 /* LFSettingAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C6174971E75DE36003AD136 /* LFSettingAccessoryView.xib */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
@@ -56,7 +57,6 @@
 		0CBB38701D85F9E4002C0EF0 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */; };
 		0CBB38721D85F9EC002C0EF0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38711D85F9EC002C0EF0 /* libz.tbd */; };
 		0CBB38741D85F9F7002C0EF0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBB38731D85F9F7002C0EF0 /* libc++.tbd */; };
-		0CBB38791D85FCE7002C0EF0 /* LFOverallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38781D85FCE7002C0EF0 /* LFOverallViewController.swift */; };
 		0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB387E1D85FF66002C0EF0 /* LFPath.swift */; };
 		0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */; };
 		0CBB38841D8608DB002C0EF0 /* LFDatabaseManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */; };
@@ -152,6 +152,7 @@
 		0C42AF291DAD661D00849A5C /* LFPlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaybackViewController.swift; sourceTree = "<group>"; };
 		0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFSettingViewController.swift; sourceTree = "<group>"; };
 		0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoViewController.swift; sourceTree = "<group>"; };
+		0C6174971E75DE36003AD136 /* LFSettingAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFSettingAccessoryView.xib; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
@@ -588,7 +589,6 @@
 		0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		0CBB38711D85F9EC002C0EF0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0CBB38731D85F9F7002C0EF0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		0CBB38781D85FCE7002C0EF0 /* LFOverallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFOverallViewController.swift; sourceTree = "<group>"; };
 		0CBB387E1D85FF66002C0EF0 /* LFPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPath.swift; sourceTree = "<group>"; };
 		0CBB38801D85FFBF002C0EF0 /* LFDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManager.swift; sourceTree = "<group>"; };
 		0CBB38831D8608DB002C0EF0 /* LFDatabaseManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDatabaseManagerTest.swift; sourceTree = "<group>"; };
@@ -701,6 +701,7 @@
 				0C4242511DC55405004F47F2 /* LFRecordButton.swift */,
 				0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */,
 				62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */,
+				0C6174971E75DE36003AD136 /* LFSettingAccessoryView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1639,7 +1640,6 @@
 		0CF715EC1E3F157500FA419F /* Tab 1 */ = {
 			isa = PBXGroup;
 			children = (
-				0CBB38781D85FCE7002C0EF0 /* LFOverallViewController.swift */,
 				62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */,
 			);
 			name = "Tab 1";
@@ -1861,6 +1861,7 @@
 				0CA7EE931E3E75570031A8C1 /* LFGridViewCell.xib in Resources */,
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
+				0C6174981E75DE36003AD136 /* LFSettingAccessoryView.xib in Resources */,
 				0CF715F41E3F227800FA419F /* LFHorizontalCollectionViewCell.xib in Resources */,
 				0CFAEC201E675AEA00392BEE /* LFFlagCollectionViewCell.xib in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
@@ -2040,7 +2041,6 @@
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */,
-				0CBB38791D85FCE7002C0EF0 /* LFOverallViewController.swift in Sources */,
 				0CF715FD1E3F2DFC00FA419F /* LFImageCell.swift in Sources */,
 				62BF06961DA6F02B00E6957E /* UIKitExtension.swift in Sources */,
 				0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */,

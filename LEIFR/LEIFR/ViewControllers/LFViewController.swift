@@ -34,6 +34,11 @@ class LFViewController: UIViewController {
 		let controller = storyboard.instantiateViewController(withIdentifier: className) as! LFViewController
 		return controller
 	}
+	
+	@IBAction func showSettingView() {
+		let settingViewController = LFSettingViewController.controllerFromStoryboard()
+		self.present(settingViewController, animated: true, completion: nil)
+	}
 }
 
 extension LFViewController: LFHoverTabBarDataSource {
@@ -42,7 +47,8 @@ extension LFViewController: LFHoverTabBarDataSource {
 	}
 	
 	func accessoryViewForTab() -> UIView? {
-		return nil
+		let view = Bundle.main.loadNibNamed("LFSettingAccessoryView", owner: self, options: nil)![0] as? UIView
+		return view
 	}
 	
 	func accessoryTextForTab() -> String? {
