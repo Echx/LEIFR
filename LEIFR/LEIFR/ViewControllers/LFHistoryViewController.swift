@@ -16,6 +16,7 @@ class LFHistoryViewController: LFViewController {
     
     fileprivate var overlay: MKOverlay?
 	fileprivate var overlayRenderer: LFGeoPointsOverlayRenderer!
+	fileprivate var isTrackingUserLocation = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +56,17 @@ extension LFHistoryViewController: MKMapViewDelegate {
 			return MKOverlayRenderer(overlay: overlay)
 		}
 	}
+	
+	
+	
+	func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+		if isTrackingUserLocation {
+			mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+		}
+	}
 }
 
-
+// MARK: Control Panel
 extension LFHistoryViewController {
     override func controlViewForTab() -> UIView? {
 		let view = UIView.view(fromNib: "LFHistoryControlView", owner: self)
@@ -85,6 +94,7 @@ extension LFHistoryViewController {
     @IBAction func toggleUserLocation(sender: UIButton) {
         sender.isSelected = !sender.isSelected
         mapView.showsUserLocation = !self.mapView.showsUserLocation
+		isTrackingUserLocation = mapView.showsUserLocation;
     }
     
     override func accessoryTextForTab() -> String? {
