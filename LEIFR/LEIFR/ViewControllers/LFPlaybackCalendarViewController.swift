@@ -67,14 +67,8 @@ extension LFPlaybackCalendarViewController: FSCalendarDelegate, FSCalendarDataSo
                 return UIColor.white
             }
         }
-        
-        let currentMonth = gregorian.dateComponents([.month], from: calendar.currentPage)
-        let dateMonth = gregorian.dateComponents([.month], from: date)
-        if currentMonth == dateMonth {
-            return #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        } else {
-            return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        }
+    
+        return #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
 }
 
