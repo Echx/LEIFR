@@ -25,6 +25,8 @@ class LFPlaybackViewController: LFViewController {
     fileprivate var animationFactor = 60.0
     fileprivate var playbackState: PlaybackState = .stop
     fileprivate var playingIndex = 0
+    fileprivate let gregorian = Calendar(identifier: .gregorian)
+    fileprivate var availableDates = [(Date, Date)]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class LFPlaybackViewController: LFViewController {
         // Do any additional setup after loading the view.
         self.mapView.delegate = self
         self.animateAnnotation = MKPointAnnotation()
+        loadDateData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +52,34 @@ class LFPlaybackViewController: LFViewController {
                     LFHoverTabViewController.defaultInstance.reloadControlView()
                 } else {
                     self.paths = paths
+                }
+            }
+        }
+    }
+    
+    fileprivate func loadDateData() {
+        if availableDates.count == 0 {
+            LFDatabaseManager.shared.getAllPaths {
+                paths in
+                
+                for path in paths {
+                    let startPoint = path.points().firstObject as! WKBPoint
+                    let endPoint = path.points().lastObject as! WKBPoint
+                    var startDate = startPoint.time
+                    var endDate = endPoint.time
+                    var startComponent = self.gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: startDate)
+                    var endComponent = self.gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: endDate)
+                    startComponent.hour = 0
+                    startComponent.minute = 0
+                    startComponent.second = 0
+                    endComponent.hour = 23
+                    endComponent.minute = 59
+                    endComponent.second = 59
+                    startDate = self.gregorian.date(from: startComponent)!
+                    endDate = self.gregorian.date(from: endComponent)!
+                    
+                    // optimize later
+                    self.availableDates.append((startDate, endDate))
                 }
             }
         }
@@ -154,6 +185,7 @@ extension LFPlaybackViewController {
         let calenderViewController = storyboard.instantiateViewController(withIdentifier: "LFPlaybackCalendarViewController") as! LFPlaybackCalendarViewController
         calenderViewController.modalTransitionStyle = .crossDissolve
         calenderViewController.delegate = self
+        calenderViewController.availableDates = availableDates
         
         self.present(calenderViewController, animated: true, completion: nil)
     }
