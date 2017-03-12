@@ -17,6 +17,7 @@ class LFHistoryViewController: LFViewController {
     fileprivate var overlay: MKOverlay?
 	fileprivate var overlayRenderer: LFGeoPointsOverlayRenderer!
 	fileprivate var isTrackingUserLocation = false
+	fileprivate var visualLocationBuffer = [CLLocationCoordinate2D]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,11 @@ extension LFHistoryViewController: MKMapViewDelegate {
 			}
 			
 			return self.overlayRenderer
+		} else if overlay is MKPolyline {
+			let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+			polylineRenderer.strokeColor = UIColor.black
+			polylineRenderer.lineWidth = 5
+			return polylineRenderer
 		} else {
 			return MKOverlayRenderer(overlay: overlay)
 		}
@@ -60,6 +66,21 @@ extension LFHistoryViewController: MKMapViewDelegate {
 	func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
 		if isTrackingUserLocation {
 			mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+		}
+		
+		if LFGeoRecordManager.shared.isRecording {
+			self.visualLocationBuffer.append(userLocation.coordinate)
+			
+			if (visualLocationBuffer.count > 1){
+				let sourceIndex = visualLocationBuffer.count - 1
+				let destinationIndex = visualLocationBuffer.count - 2
+				
+				let c1 = visualLocationBuffer[sourceIndex]
+				let c2 = visualLocationBuffer[destinationIndex]
+				var a = [c1, c2]
+				let polyline = MKPolyline(coordinates: &a, count: a.count)
+				mapView.add(polyline)
+			}
 		}
 	}
 	
@@ -82,7 +103,7 @@ extension LFHistoryViewController {
         configureControlView()
         return view
     }
-    
+	
     fileprivate func configureControlView() {
 		recordButton.setButtonContent(contentView: recordButtonContent)
         recordButton.delegate = self
