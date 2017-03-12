@@ -57,11 +57,20 @@ extension LFHistoryViewController: MKMapViewDelegate {
 		}
 	}
 	
-	
-	
 	func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
 		if isTrackingUserLocation {
 			mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+		}
+	}
+	
+	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+		super.touchesMoved(touches, with: event)
+		for touch in touches {
+			let location = touch.location(in: self.mapView)
+			if self.mapView.point(inside: location, with: event) {
+				isTrackingUserLocation = false;
+				break;
+			}
 		}
 	}
 }
