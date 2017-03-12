@@ -22,6 +22,7 @@ class LFGeoRecordManager: NSObject {
         }
         print("save point")
         let coordinate = newPoint.coordinate
+		LFReverseGeocodingManager.shared.reverseGeocoding(coordinate: coordinate)
         self.bufferPath.addPoint(latitude: coordinate.latitude, longitude: coordinate.longitude, altitude: newPoint.altitude)
     }
     

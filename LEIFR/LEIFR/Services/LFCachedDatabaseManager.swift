@@ -215,6 +215,10 @@ extension LFCachedDatabaseManager {
 	
 	func updateCountryVisited(code: String) {
 		let realm = try! Realm()
+		if realm.objects(LFCachedCountry.self).count == 0 {
+			self.resetCountries()
+		}
+		
 		if let first = realm.objects(LFCachedCountry.self).filter("code == '\(code)'").first {
 			guard !first.isInvalidated else {
 				return
@@ -232,12 +236,18 @@ extension LFCachedDatabaseManager {
 	
 	func getVisitedCountries() -> [LFCachedCountry] {
 		let realm = try! Realm()
+		if realm.objects(LFCachedCountry.self).count == 0 {
+			self.resetCountries()
+		}
 		let countries = Array(realm.objects(LFCachedCountry.self).filter("visited == YES"))
 		return countries
 	}
 	
 	func getAllCountries() -> [LFCachedCountry] {
 		let realm = try! Realm()
+		if realm.objects(LFCachedCountry.self).count == 0 {
+			self.resetCountries()
+		}
 		let sortDescriptors = [
 			SortDescriptor(property: "visited", ascending: false),
 			SortDescriptor(property: "continentCode", ascending: true),
@@ -249,6 +259,9 @@ extension LFCachedDatabaseManager {
 	
 	func getCountriesFromContinent(continentCode: String)  -> [LFCachedCountry] {
 		let realm = try! Realm()
+		if realm.objects(LFCachedCountry.self).count == 0 {
+			self.resetCountries()
+		}
 		let sortDescriptors = [
 			SortDescriptor(property: "visited", ascending: false),
 			SortDescriptor(property: "code", ascending: true)
