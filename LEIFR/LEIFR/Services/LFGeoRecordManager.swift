@@ -39,6 +39,7 @@ class LFGeoRecordManager: NSObject {
 					print(error!)
 				} else {
 					print("path flushed")
+					self.bufferPath = LFPath()
 				}
             })
 			
