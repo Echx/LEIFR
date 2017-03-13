@@ -55,6 +55,7 @@ class LFHoverTabBaseController: LFViewController {
 	
 	private var startY = CGFloat(0)
 	private var startConstant = CGFloat(0)
+    
 	func tabViewDidDrag(gesture: UIPanGestureRecognizer) {
 		
 		switch gesture.state {
@@ -90,14 +91,22 @@ class LFHoverTabBaseController: LFViewController {
 				}
 			}
 			
-			let snapLevel = self.tabViewSnapLevels[nearest]
-			let duration = TimeInterval(abs(self.tabViewTopConstraint.constant - snapLevel) / self.tabViewSnapLevels.last!) * 2
-			self.tabViewTopConstraint.constant = snapLevel
-			UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [.allowUserInteraction, .allowAnimatedContent], animations: {
-				self.view.layoutIfNeeded()
-			}, completion: nil)
+			snapHeightConstant(snapLevelIndex: nearest)
 		}
 	}
+    
+    func collapseTabView() {
+        snapHeightConstant(snapLevelIndex: tabViewSnapLevels.count - 1)
+    }
+    
+    fileprivate func snapHeightConstant(snapLevelIndex: Int) {
+        let snapLevel = self.tabViewSnapLevels[snapLevelIndex]
+        let duration = TimeInterval(abs(self.tabViewTopConstraint.constant - snapLevel) / self.tabViewSnapLevels.last!) * 2
+        self.tabViewTopConstraint.constant = snapLevel
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [.allowUserInteraction, .allowAnimatedContent], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
 	
 	func switchToPage(index: Int) {
 		if self.currentTab != index && index < self.tabControllers.count {
