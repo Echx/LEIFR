@@ -12,7 +12,14 @@ class LFStatisticsCollectionViewCell: LFCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+		
+		let layer = self.layer
+		layer.cornerRadius = 5
+		layer.shadowRadius = 3
+		layer.shadowColor = UIColor.black.cgColor
+		layer.shadowOpacity = 0.05
+		layer.shadowOffset = CGSize.zero
+		layer.masksToBounds = false
     }
 
 }
