@@ -15,6 +15,10 @@
 		0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */; };
 		0C6174981E75DE36003AD136 /* LFSettingAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C6174971E75DE36003AD136 /* LFSettingAccessoryView.xib */; };
 		0C61749A1E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6174991E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift */; };
+		0C61749C1E76F226003AD136 /* LFStatisticsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61749B1E76F226003AD136 /* LFStatisticsCollectionViewController.swift */; };
+		0C6174A11E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61749F1E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift */; };
+		0C6174A21E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C6174A01E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib */; };
+		0C6174A41E7713C6003AD136 /* LFStatisticsViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
@@ -155,6 +159,10 @@
 		0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoViewController.swift; sourceTree = "<group>"; };
 		0C6174971E75DE36003AD136 /* LFSettingAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFSettingAccessoryView.xib; sourceTree = "<group>"; };
 		0C6174991E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCurrentPathOverlayRenderer.swift; sourceTree = "<group>"; };
+		0C61749B1E76F226003AD136 /* LFStatisticsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticsCollectionViewController.swift; sourceTree = "<group>"; };
+		0C61749F1E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0C6174A01E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFStatisticsCollectionViewCell.xib; sourceTree = "<group>"; };
+		0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticsViewLayout.swift; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
@@ -1623,9 +1631,9 @@
 			isa = PBXGroup;
 			children = (
 				0CE2D9A11E6750A50070DC15 /* LFStatisticsViewController.swift */,
-				0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */,
-				0CF136201DC9003C00E122AC /* LFLoadingViewController.swift */,
 				0CFAEC1B1E6758B800392BEE /* LFFlagViewController.swift */,
+				0C61749B1E76F226003AD136 /* LFStatisticsCollectionViewController.swift */,
+				0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */,
 			);
 			name = "Tab 4";
 			sourceTree = "<group>";
@@ -1633,6 +1641,8 @@
 		0CF715EB1E3F156C00FA419F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0CF136201DC9003C00E122AC /* LFLoadingViewController.swift */,
+				0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */,
 				0CCCC5A21DA6F38D00488B2E /* LFViewController.swift */,
 				0CCCC5A01DA6F2E900488B2E /* LFHoverTabBaseController.swift */,
 				0CCCC5A41DA6F4B900488B2E /* LFHoverTabViewController.swift */,
@@ -1692,6 +1702,8 @@
 				0CF715F21E3F227800FA419F /* LFHorizontalCollectionViewCell.xib */,
 				0CFAEC1D1E675AEA00392BEE /* LFFlagCollectionViewCell.swift */,
 				0CFAEC1E1E675AEA00392BEE /* LFFlagCollectionViewCell.xib */,
+				0C61749F1E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift */,
+				0C6174A01E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib */,
 			);
 			name = "Collection View Cells";
 			sourceTree = "<group>";
@@ -1885,6 +1897,7 @@
 				62604E9A1E407E9600D17937 /* LFPlaybackControlView.xib in Resources */,
 				0CBB38541D85F9BD002C0EF0 /* ConvexHull.inl in Resources */,
 				0CF1361B1DC8E2BD00E122AC /* LFTableViewCell.xib in Resources */,
+				0C6174A21E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib in Resources */,
 				62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */,
 				0CF1361F1DC8E38200E122AC /* LFButtonCell.xib in Resources */,
 				0CBB385E1D85F9BD002C0EF0 /* DirectedEdge.inl in Resources */,
@@ -2010,6 +2023,7 @@
 				0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */,
 				0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */,
 				0CA7EE921E3E75570031A8C1 /* LFGridViewCell.swift in Sources */,
+				0C6174A11E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift in Sources */,
 				0CF715F71E3F234100FA419F /* LFCollectionViewCell.swift in Sources */,
 				62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */,
 				0C42AF2A1DAD661D00849A5C /* LFPlaybackViewController.swift in Sources */,
@@ -2026,6 +2040,7 @@
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
 				62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */,
+				0C6174A41E7713C6003AD136 /* LFStatisticsViewLayout.swift in Sources */,
 				0CE2D9A01E6722EB0070DC15 /* LFCachedCountry.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
 				62D739671E5397A300F95B5F /* WKBExtension.swift in Sources */,
@@ -2051,6 +2066,7 @@
 				0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */,
 				0C4242521DC55405004F47F2 /* LFRecordButton.swift in Sources */,
 				0CF1361E1DC8E38200E122AC /* LFButtonCell.swift in Sources */,
+				0C61749C1E76F226003AD136 /* LFStatisticsCollectionViewController.swift in Sources */,
 				0CE2D9A21E6750A50070DC15 /* LFStatisticsViewController.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
 			);

@@ -509,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b0-KD-ZwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3353" y="928"/>
+            <point key="canvasLocation" x="3223" y="159"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="Y0A-ia-Bey">
@@ -523,10 +523,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Idk-Ab-8Q6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8J-bU-HE9">
+                                <rect key="frame" x="0.0" y="84" width="375" height="519"/>
+                                <connections>
+                                    <segue destination="wDW-Sx-Zln" kind="embed" id="OeH-VU-gmx"/>
+                                </connections>
+                            </containerView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Xk-br-Tgw" customClass="LFNavigationBar" customModule="LEIFR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xfr-N9-AJV">
@@ -569,23 +571,41 @@
                                 <blurEffect style="extraLight"/>
                             </visualEffectView>
                         </subviews>
+                        <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Idk-Ab-8Q6" firstAttribute="leading" secondItem="ePR-jq-lYg" secondAttribute="leading" id="6LM-ob-j4G"/>
+                            <constraint firstItem="L8J-bU-HE9" firstAttribute="leading" secondItem="ePR-jq-lYg" secondAttribute="leading" id="3SS-hP-8lG"/>
                             <constraint firstItem="9Xk-br-Tgw" firstAttribute="top" secondItem="ePR-jq-lYg" secondAttribute="top" id="85E-Ru-7Vj"/>
                             <constraint firstItem="9Xk-br-Tgw" firstAttribute="leading" secondItem="ePR-jq-lYg" secondAttribute="leading" id="BjN-FT-qXt"/>
-                            <constraint firstItem="Idk-Ab-8Q6" firstAttribute="top" secondItem="ePR-jq-lYg" secondAttribute="top" id="SoP-N1-Tqo"/>
                             <constraint firstAttribute="trailing" secondItem="9Xk-br-Tgw" secondAttribute="trailing" id="Xb5-5n-6wu"/>
-                            <constraint firstAttribute="trailing" secondItem="Idk-Ab-8Q6" secondAttribute="trailing" id="m7D-oA-DNY"/>
-                            <constraint firstItem="YaX-lL-vsK" firstAttribute="top" secondItem="Idk-Ab-8Q6" secondAttribute="bottom" id="xB0-qo-ZuK"/>
+                            <constraint firstAttribute="trailing" secondItem="L8J-bU-HE9" secondAttribute="trailing" id="dge-O8-V1K"/>
+                            <constraint firstItem="YaX-lL-vsK" firstAttribute="top" secondItem="L8J-bU-HE9" secondAttribute="bottom" constant="64" id="elW-7U-Ahc"/>
+                            <constraint firstItem="L8J-bU-HE9" firstAttribute="top" secondItem="9Xk-br-Tgw" secondAttribute="bottom" id="jmy-dM-p3l"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="Idk-Ab-8Q6" id="zxK-cm-Bqz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywc-UA-ssK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="928"/>
+            <point key="canvasLocation" x="2548" y="927.88605697151434"/>
+        </scene>
+        <!--Statistics Collection View Controller-->
+        <scene sceneID="13N-cR-1iv">
+            <objects>
+                <collectionViewController id="wDW-Sx-Zln" customClass="LFStatisticsCollectionViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="TyL-dn-e5R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewLayout key="collectionViewLayout" id="geu-CZ-3BH" customClass="LFStatisticsViewLayout" customModule="LEIFR" customModuleProvider="target"/>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="wDW-Sx-Zln" id="1Vj-vF-JAz"/>
+                            <outlet property="delegate" destination="wDW-Sx-Zln" id="lp1-Hc-MmF"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vd-xd-GlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3222" y="938"/>
         </scene>
         <!--Hover Tab Base Controller-->
         <scene sceneID="Nnl-fI-pTc">

@@ -32,7 +32,7 @@ class LFStatisticsViewController: LFViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureTableView()
+//        configureTableView()
     }
 	
 	func configureTableView() {
