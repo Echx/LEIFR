@@ -63,7 +63,7 @@ extension LFPlaybackCalendarViewController: FSCalendarDelegate, FSCalendarDataSo
         }
         
         if availableDates.count == 0 || date < availableDates[0].0 || date > (availableDates.last?.1)! {
-            return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            return #colorLiteral(red: 0.748046875, green: 0.748046875, blue: 0.748046875, alpha: 1)
         }
         
         for dates in availableDates {
