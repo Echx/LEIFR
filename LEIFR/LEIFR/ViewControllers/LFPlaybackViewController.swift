@@ -21,13 +21,17 @@ class LFPlaybackViewController: LFViewController {
     
     fileprivate var paths: [LFPath]?
     fileprivate var animateAnnotation: MKPointAnnotation?
+    fileprivate var pauseAnnotation: MKPointAnnotation?
     fileprivate var startDate: Date?
     fileprivate var animationFactor = 60.0
     fileprivate var playbackState: PlaybackState = .stop
-    fileprivate var playingIndex = 0
+    fileprivate var playingPathIndex = 0
+    fileprivate var playingPointIndex = 0
+    fileprivate var pausePathIndex = 0
+    fileprivate var pausePointIndex = 0
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     fileprivate var availableDates = [(Date, Date)]()
-    fileprivate var animationTimer: Timer?
+    fileprivate var animationTimers = [Timer]()
     fileprivate var annotationRemovalTimer: Timer?
 
     override func viewDidLoad() {
@@ -113,23 +117,25 @@ class LFPlaybackViewController: LFViewController {
     }
     
     fileprivate func playAnimation() {
-        guard playingIndex < (self.paths?.count)!
-            else {
-                self.playButton.isSelected = false
-                self.playbackState = .play
-                self.stopButton.isHidden = true
-                
-                return
+        playingPathIndex = max(playingPathIndex, pausePathIndex)
+        
+        guard playingPathIndex < (self.paths?.count)! else {
+            self.mapView.removeAnnotation(self.animateAnnotation!)
+            
+            self.playButton.isSelected = false
+            self.playbackState = .play
+            self.stopButton.isHidden = true
+            
+            return
         }
         
-        let path = self.paths?[playingIndex]
-        playingIndex += 1
-        let points = (path?.points())!
-        let wkbPoint = points[0] as! WKBPoint
-        var delay = 0.0
+        let path = self.paths?[playingPathIndex]
+        playingPathIndex += 1
+        playingPointIndex = pausePointIndex
+        pausePathIndex = 0
         
-        self.animateAnnotation?.coordinate = wkbPoint.coordinate()
-        self.mapView.addAnnotation(self.animateAnnotation!)
+        var delay = 0.0
+        let points = (path?.points())!
         
         var zoomRect = MKMapRectNull
         DispatchQueue(label: "background").async {
@@ -149,24 +155,33 @@ class LFPlaybackViewController: LFViewController {
             }
         }
         
-        DispatchQueue(label: "background").asyncAfter(deadline: .now() + 1) {
+        var startDelay = 1
+        if pausePointIndex > 0 {
+            startDelay = 0
+        }
+        DispatchQueue(label: "background").asyncAfter(deadline: .now()) {
             var previousM: Double?
             var animationTime = 0.1
-            for point in points {
+            for k in self.pausePointIndex..<points.count {
+                self.pausePointIndex = 0
+                let point = points[k]
                 let wkbPoint = point as! WKBPoint
                 if previousM != nil {
                     animationTime = (Double(wkbPoint.m) - previousM!) / self.animationFactor
                 }
                 previousM = wkbPoint.m as Double?
                 DispatchQueue.main.async {
-                    self.animationTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
+                    let timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
                         _ in
+                        
+                        self.playingPointIndex += 1
                         
                         UIView.animate(withDuration: animationTime, animations: {
                             self.animateAnnotation?.coordinate = wkbPoint.coordinate()
                             //                            self.mapView.centerCoordinate = wkbPoint.coordinate()
                         })
                     }
+                    self.animationTimers.append(timer)
                     delay += animationTime
                 }
             }
@@ -177,7 +192,6 @@ class LFPlaybackViewController: LFViewController {
                 self.annotationRemovalTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
                     _ in
                     
-                    self.mapView.removeAnnotation(self.animateAnnotation!)
                     self.playAnimation()
                 }
             }
@@ -219,6 +233,9 @@ extension LFPlaybackViewController {
     
     @IBAction func togglePlay() {
         switch playbackState {
+        case .pause:
+            fallthrough
+            
         case .stop:
             // change state
             playButton.isSelected = true
@@ -226,6 +243,10 @@ extension LFPlaybackViewController {
             // show stop button
             stopButton.isHidden = false
             
+            if pauseAnnotation != nil {
+                mapView.removeAnnotation(pauseAnnotation!)
+            }
+            mapView.addAnnotation(animateAnnotation!)
             playAnimation()
             LFHoverTabBaseController.defaultInstance.collapseTabView()
             break
@@ -235,12 +256,26 @@ extension LFPlaybackViewController {
             playButton.isSelected = false
             playbackState = .pause
             
-            break
+            for timer in animationTimers {
+                timer.invalidate()
+            }
             
-        case.pause:
-            // change state
-            playButton.isSelected = true
-            playbackState = .play
+            animationTimers = [Timer]()
+            
+            if annotationRemovalTimer != nil {
+                annotationRemovalTimer?.invalidate()
+                annotationRemovalTimer = nil
+            }
+            
+            pausePathIndex = playingPathIndex - 1
+            playingPathIndex = 0
+            pausePointIndex = playingPointIndex
+            pauseAnnotation = MKPointAnnotation()
+            pauseAnnotation?.coordinate = (animateAnnotation?.coordinate)!
+            mapView.addAnnotation(pauseAnnotation!)
+            if animateAnnotation != nil {
+                mapView.removeAnnotation(animateAnnotation!)
+            }
             
             break
         }
@@ -253,18 +288,26 @@ extension LFPlaybackViewController {
         
         stopButton.isHidden = true
         
-        if animationTimer != nil {
-            animationTimer?.invalidate()
-            animationTimer = nil
+        for timer in animationTimers {
+            timer.invalidate()
         }
+        
+        animationTimers = [Timer]()
         
         if annotationRemovalTimer != nil {
             annotationRemovalTimer?.invalidate()
             annotationRemovalTimer = nil
         }
         
-        mapView.removeAnnotation(self.animateAnnotation!)
-        playingIndex = 0
+        if pauseAnnotation != nil {
+            mapView.removeAnnotation(pauseAnnotation!)
+        }
+        
+        if animateAnnotation != nil {
+            mapView.removeAnnotation(animateAnnotation!)
+        }
+        
+        playingPathIndex = 0
     }
 }
 
