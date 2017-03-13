@@ -81,8 +81,8 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 		
 		cell.label.text = continent.1
 		cell.imageView.image = continent.2
-		cell.configureSecondaryColor(color: UIColor(hexString: continent.3))
-		cell.configurePrimaryColor(color: UIColor(hexString: continent.4))
+		cell.secondaryColor = UIColor(hexString: continent.3)
+		cell.primaryColor = UIColor(hexString: continent.4)
 		cell.updateProgress(done: continent.7, all: continent.6)
 		
         return cell
