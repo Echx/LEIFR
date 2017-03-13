@@ -227,6 +227,7 @@ extension LFPlaybackViewController {
             stopButton.isHidden = false
             
             playAnimation()
+            LFHoverTabBaseController.defaultInstance.collapseTabView()
             break
             
         case .play:
