@@ -78,11 +78,36 @@ class LFPlaybackViewController: LFViewController {
                     startDate = self.gregorian.date(from: startComponent)!
                     endDate = self.gregorian.date(from: endComponent)!
                     
-                    // optimize later
                     self.availableDates.append((startDate, endDate))
                 }
+                
+                self.mergeDates()
             }
         }
+    }
+    
+    fileprivate func mergeDates() {
+        guard availableDates.count > 0 else {
+            return
+        }
+        
+        availableDates.sort {
+            $0.0 < $1.0
+        }
+        
+        var mergedDates = [(Date, Date)]()
+        var currentDates = availableDates[0]
+        for (startDate, endDate) in availableDates {
+            // check overlap
+            if (startDate < currentDates.0 && endDate < currentDates.0) || (startDate > currentDates.1 && endDate > currentDates.1) {
+                mergedDates.append(currentDates)
+                currentDates = (startDate, endDate)
+            } else {
+                currentDates = (min(startDate, currentDates.0), max(endDate, currentDates.1))
+            }
+        }
+        mergedDates.append(currentDates)
+        availableDates = mergedDates
     }
     
     fileprivate func playAnimation() {
