@@ -14,6 +14,16 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 	fileprivate let bottomBarHeight: CGFloat = 60
 	fileprivate let spacing: CGFloat = 20
 	fileprivate let marginHorizontal: CGFloat = 20
+	fileprivate let continents = [
+		("World", "world-map", "#F2F3F4", "#ABB2B9"),
+		("Asia", "as-map", "#FADBD8", "#EC7063"),
+		("Europe", "eu-map", "#D4E6F1", "#5499C7"),
+		("North America", "na-map", "#D5F5E3", "#58D68D"),
+		("South America", "sa-map", "#EBDEF0", "#AF7AC5"),
+		("Oceania", "oc-map", "#FCF3CF", "#F4D03F"),
+		("Africa", "af-map", "#F6DDCC", "#DC7633")
+	]
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +50,18 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return continents.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LFStatisticsCollectionViewCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LFStatisticsCollectionViewCell.identifier, for: indexPath) as! LFStatisticsCollectionViewCell
+		
+		let index = indexPath.row
+		
+		cell.label.text = continents[index].0
+		cell.imageView.image = UIImage(named: continents[index].1)
+		cell.configureSecondaryColor(color: UIColor(hexString: continents[index].2))
+		cell.configurePrimaryColor(color: UIColor(hexString: continents[index].3))
 		
         return cell
     }
