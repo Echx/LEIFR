@@ -13,11 +13,17 @@ class LFHistoryViewController: LFViewController {
     
     @IBOutlet weak var recordButton: LFRecordButton!
     @IBOutlet weak var recordButtonContent: UIView!
+	@IBOutlet weak var userLocationToggleButton: UIView!
     
     fileprivate var overlay: MKOverlay?
 	fileprivate var overlayRenderer: LFGeoPointsOverlayRenderer!
-	fileprivate var isTrackingUserLocation = false
+	fileprivate var isTrackingUserLocation = false {
+		didSet {
+			self.userLocationToggleButton.tintColor = isTrackingUserLocation ? UIColor.wetasphalt : UIColor.white
+		}
+	}
 	fileprivate var visualLocationBuffer = [CLLocationCoordinate2D]()
+	fileprivate var pathOverlays = [MKPolyline]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +45,6 @@ class LFHistoryViewController: LFViewController {
     // MARK: basic configuration
     fileprivate func configureMap() {
         mapView.delegate = self
-		
 		let overlay = LFGeoPointsOverlay()
 		mapView.add(overlay, level: .aboveRoads)
     }
@@ -55,8 +60,15 @@ extension LFHistoryViewController: MKMapViewDelegate {
 			return self.overlayRenderer
 		} else if overlay is MKPolyline {
 			let polylineRenderer = MKPolylineRenderer(overlay: overlay)
-			polylineRenderer.strokeColor = UIColor.black
 			polylineRenderer.lineWidth = 5
+			polylineRenderer.lineCap = .butt
+			
+			for (index, storedOverlay) in self.pathOverlays.enumerated() {
+				if (overlay as! MKPolyline) == storedOverlay {
+					polylineRenderer.strokeColor = UIColor.black.withAlphaComponent(CGFloat(index) / 200)
+				}
+			}
+			
 			return polylineRenderer
 		} else {
 			return MKOverlayRenderer(overlay: overlay)
@@ -79,6 +91,15 @@ extension LFHistoryViewController: MKMapViewDelegate {
 				let c2 = visualLocationBuffer[destinationIndex]
 				var a = [c1, c2]
 				let polyline = MKPolyline(coordinates: &a, count: a.count)
+				
+				if self.pathOverlays.count == 200 {
+					mapView.remove(self.pathOverlays.first!)
+					self.pathOverlays.removeFirst()
+					self.visualLocationBuffer.removeFirst()
+				}
+				
+				self.pathOverlays.append(polyline)
+				
 				mapView.add(polyline)
 			}
 		}
@@ -122,9 +143,13 @@ extension LFHistoryViewController {
     }
     
     @IBAction func toggleUserLocation(sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        mapView.showsUserLocation = !self.mapView.showsUserLocation
-		isTrackingUserLocation = mapView.showsUserLocation;
+		if !isTrackingUserLocation && self.mapView.showsUserLocation {
+			isTrackingUserLocation = true
+		} else {
+			sender.isSelected = !sender.isSelected
+			mapView.showsUserLocation = !self.mapView.showsUserLocation
+			isTrackingUserLocation = mapView.showsUserLocation;
+		}
     }
     
     override func accessoryTextForTab() -> String? {
