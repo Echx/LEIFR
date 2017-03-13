@@ -266,7 +266,7 @@ extension LFCachedDatabaseManager {
 			SortDescriptor(property: "visited", ascending: false),
 			SortDescriptor(property: "code", ascending: true)
 		]
-		let countries = realm.objects(LFCachedCountry.self).filter("continentCode == '\(continentCode)'").sorted(by: sortDescriptors)
+		let countries = realm.objects(LFCachedCountry.self).filter("continentCode == '\(continentCode.uppercased())'").sorted(by: sortDescriptors)
 		return Array(countries)
 	}
 }

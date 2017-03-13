@@ -14,14 +14,14 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 	fileprivate let bottomBarHeight: CGFloat = 60
 	fileprivate let spacing: CGFloat = 20
 	fileprivate let marginHorizontal: CGFloat = 20
-	fileprivate let continents = [
-		("World", UIImage(named: "world-map"), "#F2F3F4", "#ABB2B9"),
-		("Asia", UIImage(named: "as-map"), "#FADBD8", "#EC7063"),
-		("Europe", UIImage(named: "eu-map"), "#D4E6F1", "#5499C7"),
-		("North America", UIImage(named: "na-map"), "#D5F5E3", "#58D68D"),
-		("South America", UIImage(named: "sa-map"), "#EBDEF0", "#AF7AC5"),
-		("Oceania", UIImage(named: "oc-map"), "#FCF3CF", "#F4D03F"),
-		("Africa", UIImage(named: "af-map"), "#F6DDCC", "#DC7633")
+	fileprivate var continents = [
+		("wd", "World", UIImage(named: "world-map"), "#F2F3F4", "#ABB2B9", [LFCachedCountry](), 0, 0),
+		("as", "Asia", UIImage(named: "as-map"), "#FADBD8", "#EC7063", [LFCachedCountry](), 0, 0),
+		("eu", "Europe", UIImage(named: "eu-map"), "#D4E6F1", "#5499C7", [LFCachedCountry](), 0, 0),
+		("na", "North America", UIImage(named: "na-map"), "#D5F5E3", "#58D68D", [LFCachedCountry](), 0, 0),
+		("sa", "South America", UIImage(named: "sa-map"), "#EBDEF0", "#AF7AC5", [LFCachedCountry](), 0, 0),
+		("oc", "Oceania", UIImage(named: "oc-map"), "#FCF3CF", "#F4D03F", [LFCachedCountry](), 0, 0),
+		("af", "Africa", UIImage(named: "af-map"), "#F6DDCC", "#DC7633", [LFCachedCountry](), 0, 0)
 	]
 	
 	
@@ -32,6 +32,27 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 		self.collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
         self.registerCells()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.loadCountries()
+	}
+	
+	private func loadCountries() {
+		let manager = LFCachedDatabaseManager.shared
+		for (index, continent) in continents.enumerated() {
+			var countries: [LFCachedCountry]
+			if index == 0 {
+				countries = manager.getAllCountries()
+			} else {
+				countries = manager.getCountriesFromContinent(continentCode: continent.0)
+			}
+			
+			continents[index].5 = countries
+			continents[index].6 = countries.count
+			continents[index].7 = countries.filter({ return $0.visited }).count
+		}
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,17 +77,24 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LFStatisticsCollectionViewCell.identifier, for: indexPath) as! LFStatisticsCollectionViewCell
 		
-		let index = indexPath.row
+		let continent = continents[indexPath.row]
 		
-		cell.label.text = continents[index].0
-		cell.imageView.image = continents[index].1
-		cell.configureSecondaryColor(color: UIColor(hexString: continents[index].2))
-		cell.configurePrimaryColor(color: UIColor(hexString: continents[index].3))
+		cell.label.text = continent.1
+		cell.imageView.image = continent.2
+		cell.configureSecondaryColor(color: UIColor(hexString: continent.3))
+		cell.configurePrimaryColor(color: UIColor(hexString: continent.4))
+		cell.updateProgress(done: continent.7, all: continent.6)
 		
         return cell
     }
 
     // MARK: UICollectionViewDelegate
+	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let controller = LFFlagViewController.defaultControllerFromStoryboard() as! LFFlagViewController
+		controller.countries = [continents[indexPath.row].5]
+		self.present(controller, animated: true, completion: nil)
+	}
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

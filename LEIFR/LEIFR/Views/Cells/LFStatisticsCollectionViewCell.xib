@@ -29,14 +29,23 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North America" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAP-Wq-icf">
-                                <rect key="frame" x="0.0" y="210" width="210" height="147"/>
+                                <rect key="frame" x="0.0" y="210" width="210" height="122"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="1 / 341" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlr-Xt-dQp">
+                                <rect key="frame" x="0.0" y="332" width="210" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="f3o-WY-bdk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylD-5V-9w5">
                                 <rect key="frame" x="0.0" y="357" width="210" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="09l-rb-CKo"/>
                                 </constraints>
@@ -56,12 +65,13 @@
             <connections>
                 <outlet property="imageView" destination="u25-iJ-nEH" id="ljC-np-wKA"/>
                 <outlet property="label" destination="ZAP-Wq-icf" id="7Tc-Ey-Avq"/>
+                <outlet property="progressLabel" destination="vlr-Xt-dQp" id="iPz-vU-KBq"/>
                 <outlet property="seperator" destination="ylD-5V-9w5" id="uLI-nc-wYY"/>
             </connections>
             <point key="canvasLocation" x="9" y="83"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="world-map" width="1024" height="1024"/>
+        <image name="world-map" width="255" height="255"/>
     </resources>
 </document>

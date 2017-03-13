@@ -13,6 +13,7 @@ class LFStatisticsCollectionViewCell: LFCollectionViewCell {
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var seperator: UIView!
 	@IBOutlet var label: UILabel!
+	@IBOutlet var progressLabel: UILabel!
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,10 +29,15 @@ class LFStatisticsCollectionViewCell: LFCollectionViewCell {
 		self.imageView.tintColor = color
 		self.seperator.backgroundColor = color
 		self.label.textColor = color
+		self.progressLabel.textColor = color
 	}
 	
 	func configureSecondaryColor(color: UIColor) {
 		self.backgroundColor = color
+	}
+	
+	func updateProgress(done: Int, all: Int) {
+		self.progressLabel.text = "\(done) / \(all)"
 	}
 
 }
