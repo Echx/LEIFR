@@ -27,6 +27,8 @@ class LFPlaybackViewController: LFViewController {
     fileprivate var playingIndex = 0
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     fileprivate var availableDates = [(Date, Date)]()
+    fileprivate var animationTimer: Timer?
+    fileprivate var annotationRemovalTimer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,7 +159,7 @@ class LFPlaybackViewController: LFViewController {
                 }
                 previousM = wkbPoint.m as Double?
                 DispatchQueue.main.async {
-                    Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
+                    self.animationTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
                         _ in
                         
                         UIView.animate(withDuration: animationTime, animations: {
@@ -172,7 +174,7 @@ class LFPlaybackViewController: LFViewController {
             delay += 0.1
             DispatchQueue.main.async {
                 
-                Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
+                self.annotationRemovalTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
                     _ in
                     
                     self.mapView.removeAnnotation(self.animateAnnotation!)
@@ -242,6 +244,26 @@ extension LFPlaybackViewController {
             break
         }
         
+    }
+    
+    @IBAction func stopPlay() {
+        playButton.isSelected = false
+        playbackState = .stop
+        
+        stopButton.isHidden = true
+        
+        if animationTimer != nil {
+            animationTimer?.invalidate()
+            animationTimer = nil
+        }
+        
+        if annotationRemovalTimer != nil {
+            annotationRemovalTimer?.invalidate()
+            annotationRemovalTimer = nil
+        }
+        
+        mapView.removeAnnotation(self.animateAnnotation!)
+        playingIndex = 0
     }
 }
 
