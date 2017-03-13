@@ -62,6 +62,10 @@ extension LFPlaybackCalendarViewController: FSCalendarDelegate, FSCalendarDataSo
             return UIColor.white
         }
         
+        if availableDates.count == 0 || date < availableDates[0].0 || date > (availableDates.last?.1)! {
+            return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        }
+        
         for dates in availableDates {
             if (dates.0...dates.1).contains(date) {
                 return UIColor.white
@@ -70,6 +74,15 @@ extension LFPlaybackCalendarViewController: FSCalendarDelegate, FSCalendarDataSo
     
         return #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
+    
+    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+        if availableDates.count == 0 {
+            return false
+        }
+        
+        return date > availableDates[0].0 && date < (availableDates.last?.1)!
+    }
+    
 }
 
 protocol LFPlaybackCalendarDelagate {
