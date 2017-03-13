@@ -15,13 +15,13 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 	fileprivate let spacing: CGFloat = 20
 	fileprivate let marginHorizontal: CGFloat = 20
 	fileprivate let continents = [
-		("World", "world-map", "#F2F3F4", "#ABB2B9"),
-		("Asia", "as-map", "#FADBD8", "#EC7063"),
-		("Europe", "eu-map", "#D4E6F1", "#5499C7"),
-		("North America", "na-map", "#D5F5E3", "#58D68D"),
-		("South America", "sa-map", "#EBDEF0", "#AF7AC5"),
-		("Oceania", "oc-map", "#FCF3CF", "#F4D03F"),
-		("Africa", "af-map", "#F6DDCC", "#DC7633")
+		("World", UIImage(named: "world-map"), "#F2F3F4", "#ABB2B9"),
+		("Asia", UIImage(named: "as-map"), "#FADBD8", "#EC7063"),
+		("Europe", UIImage(named: "eu-map"), "#D4E6F1", "#5499C7"),
+		("North America", UIImage(named: "na-map"), "#D5F5E3", "#58D68D"),
+		("South America", UIImage(named: "sa-map"), "#EBDEF0", "#AF7AC5"),
+		("Oceania", UIImage(named: "oc-map"), "#FCF3CF", "#F4D03F"),
+		("Africa", UIImage(named: "af-map"), "#F6DDCC", "#DC7633")
 	]
 	
 	
@@ -59,7 +59,7 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 		let index = indexPath.row
 		
 		cell.label.text = continents[index].0
-		cell.imageView.image = UIImage(named: continents[index].1)
+		cell.imageView.image = continents[index].1
 		cell.configureSecondaryColor(color: UIColor(hexString: continents[index].2))
 		cell.configurePrimaryColor(color: UIColor(hexString: continents[index].3))
 		
