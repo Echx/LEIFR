@@ -15,14 +15,15 @@ class LFHistoryViewController: LFViewController {
     @IBOutlet weak var recordButtonContent: UIView!
 	@IBOutlet weak var userLocationToggleButton: UIView!
     
-    fileprivate var overlay: MKOverlay?
+    fileprivate var overlay: MKOverlay!
 	fileprivate var overlayRenderer: LFGeoPointsOverlayRenderer!
+	fileprivate var currentPathOverlay: LFCurrentPathOverlay!
+	fileprivate var currentPathOverlayRenderer: LFCurrentPathOverlayRenderer!
 	fileprivate var isTrackingUserLocation = false {
 		didSet {
 			self.userLocationToggleButton.tintColor = isTrackingUserLocation ? UIColor.wetasphalt : UIColor.white
 		}
 	}
-	fileprivate var visualLocationBuffer = [CLLocationCoordinate2D]()
 	fileprivate var pathOverlays = [MKPolyline]()
 
     override func viewDidLoad() {
@@ -45,7 +46,8 @@ class LFHistoryViewController: LFViewController {
     // MARK: basic configuration
     fileprivate func configureMap() {
         mapView.delegate = self
-		let overlay = LFGeoPointsOverlay()
+		overlay = LFGeoPointsOverlay()
+		currentPathOverlay = LFCurrentPathOverlay()
 		mapView.add(overlay, level: .aboveRoads)
     }
 }
@@ -58,18 +60,12 @@ extension LFHistoryViewController: MKMapViewDelegate {
 			}
 			
 			return self.overlayRenderer
-		} else if overlay is MKPolyline {
-			let polylineRenderer = MKPolylineRenderer(overlay: overlay)
-			polylineRenderer.lineWidth = 5
-			polylineRenderer.lineCap = .butt
-			
-			for (index, storedOverlay) in self.pathOverlays.enumerated() {
-				if (overlay as! MKPolyline) == storedOverlay {
-					polylineRenderer.strokeColor = UIColor.black.withAlphaComponent(CGFloat(index) / 200)
-				}
+		} else if overlay is LFCurrentPathOverlay {
+			if self.currentPathOverlayRenderer == nil {
+				self.currentPathOverlayRenderer = LFCurrentPathOverlayRenderer(overlay: overlay)
 			}
 			
-			return polylineRenderer
+			return self.currentPathOverlayRenderer
 		} else {
 			return MKOverlayRenderer(overlay: overlay)
 		}
@@ -77,31 +73,14 @@ extension LFHistoryViewController: MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
 		if isTrackingUserLocation {
-			mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+			let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpanMake(0.05, 0.05))
+			mapView.setRegion(region, animated: true)
 		}
 		
 		if LFGeoRecordManager.shared.isRecording {
-			self.visualLocationBuffer.append(userLocation.coordinate)
-			
-			if (visualLocationBuffer.count > 1){
-				let sourceIndex = visualLocationBuffer.count - 1
-				let destinationIndex = visualLocationBuffer.count - 2
-				
-				let c1 = visualLocationBuffer[sourceIndex]
-				let c2 = visualLocationBuffer[destinationIndex]
-				var a = [c1, c2]
-				let polyline = MKPolyline(coordinates: &a, count: a.count)
-				
-				if self.pathOverlays.count == 200 {
-					mapView.remove(self.pathOverlays.first!)
-					self.pathOverlays.removeFirst()
-					self.visualLocationBuffer.removeFirst()
-				}
-				
-				self.pathOverlays.append(polyline)
-				
-				mapView.add(polyline)
-			}
+			self.currentPathOverlay.addCoordinate(coordinate: userLocation.coordinate)
+			mapView.remove(self.currentPathOverlay)
+			mapView.add(self.currentPathOverlay)
 		}
 	}
 	

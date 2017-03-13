@@ -14,6 +14,7 @@
 		0C42AF2C1DAD662F00849A5C /* LFSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */; };
 		0C42AF2E1DAD6EA600849A5C /* LFPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */; };
 		0C6174981E75DE36003AD136 /* LFSettingAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C6174971E75DE36003AD136 /* LFSettingAccessoryView.xib */; };
+		0C61749A1E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6174991E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
@@ -153,6 +154,7 @@
 		0C42AF2B1DAD662F00849A5C /* LFSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFSettingViewController.swift; sourceTree = "<group>"; };
 		0C42AF2D1DAD6EA600849A5C /* LFPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoViewController.swift; sourceTree = "<group>"; };
 		0C6174971E75DE36003AD136 /* LFSettingAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFSettingAccessoryView.xib; sourceTree = "<group>"; };
+		0C6174991E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCurrentPathOverlayRenderer.swift; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
@@ -1603,6 +1605,7 @@
 			isa = PBXGroup;
 			children = (
 				0CC333EC1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift */,
+				0C6174991E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -2018,6 +2021,7 @@
 				0CF1361A1DC8E2BD00E122AC /* LFTableViewCell.swift in Sources */,
 				62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */,
 				62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */,
+				0C61749A1E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift in Sources */,
 				0CFAEC1C1E6758B800392BEE /* LFFlagViewController.swift in Sources */,
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
