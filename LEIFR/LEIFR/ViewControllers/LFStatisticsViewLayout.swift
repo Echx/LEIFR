@@ -17,7 +17,7 @@ class LFStatisticsViewLayout: UICollectionViewFlowLayout {
 		
 		self.scrollDirection = .horizontal
 		self.minimumLineSpacing = 15
-		self.sectionInset = UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 45)
+		self.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 	}
 	
 	override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
