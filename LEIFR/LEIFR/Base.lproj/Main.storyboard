@@ -140,21 +140,69 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mrr-Ud-Tb6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyy-d0-Daf" customClass="LFNavigationBar" customModule="LEIFR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kcv-qn-agR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fG9-5U-06P">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ccc-E8-L5X">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-10-31 17:31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-U5-YnA">
+                                                        <rect key="frame" x="0.0" y="45" width="375" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="TUe-U5-YnA" secondAttribute="trailing" id="8gR-57-fhd"/>
+                                                    <constraint firstItem="TUe-U5-YnA" firstAttribute="leading" secondItem="Ccc-E8-L5X" secondAttribute="leading" id="JVQ-pd-1qs"/>
+                                                    <constraint firstItem="TUe-U5-YnA" firstAttribute="top" secondItem="Ccc-E8-L5X" secondAttribute="top" constant="45" id="wvl-iU-fD4"/>
+                                                </constraints>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fG9-5U-06P" secondAttribute="trailing" id="UyI-ew-No3"/>
+                                        <constraint firstItem="fG9-5U-06P" firstAttribute="leading" secondItem="Kcv-qn-agR" secondAttribute="leading" id="bC0-4m-OU7"/>
+                                        <constraint firstAttribute="bottom" secondItem="fG9-5U-06P" secondAttribute="bottom" id="rnO-9u-kse"/>
+                                        <constraint firstItem="fG9-5U-06P" firstAttribute="top" secondItem="Kcv-qn-agR" secondAttribute="top" id="xK9-AP-pi5"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="Xtj-HK-oXf"/>
+                                </constraints>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jyy-d0-Daf" secondAttribute="trailing" id="9C7-4V-kBQ"/>
                             <constraint firstItem="mrr-Ud-Tb6" firstAttribute="top" secondItem="tDs-Pd-mWy" secondAttribute="top" id="Jx3-FV-4q7"/>
+                            <constraint firstItem="jyy-d0-Daf" firstAttribute="top" secondItem="tDs-Pd-mWy" secondAttribute="top" id="Lkm-x0-8W0"/>
                             <constraint firstItem="mrr-Ud-Tb6" firstAttribute="leading" secondItem="tDs-Pd-mWy" secondAttribute="leading" id="OmV-dT-rdS"/>
+                            <constraint firstItem="jyy-d0-Daf" firstAttribute="leading" secondItem="tDs-Pd-mWy" secondAttribute="leading" id="Q4d-7u-Vkb"/>
                             <constraint firstItem="Niv-5T-yYG" firstAttribute="top" secondItem="mrr-Ud-Tb6" secondAttribute="bottom" id="U2r-l4-f7j"/>
                             <constraint firstAttribute="trailing" secondItem="mrr-Ud-Tb6" secondAttribute="trailing" id="dJA-KS-UrO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateTimeLabel" destination="TUe-U5-YnA" id="Wbb-h6-HLE"/>
+                        <outlet property="dateTimeView" destination="jyy-d0-Daf" id="bq7-M0-Byd"/>
+                        <outlet property="dateTimeViewTopConstraint" destination="Lkm-x0-8W0" id="TF3-S8-Om5"/>
                         <outlet property="mapView" destination="mrr-Ud-Tb6" id="S5m-6U-NaS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qql-qF-fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="158.77061469265368"/>
+            <point key="canvasLocation" x="2548" y="159"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="KqB-k5-WDw">
@@ -381,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8x-MD-qxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3304.8000000000002" y="1611.5442278860571"/>
+            <point key="canvasLocation" x="3620" y="1612"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="Poa-cA-vxm">
@@ -556,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b0-KD-ZwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3223" y="159"/>
+            <point key="canvasLocation" x="3620" y="159"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="Y0A-ia-Bey">
@@ -652,7 +700,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vd-xd-GlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3222" y="938"/>
+            <point key="canvasLocation" x="3620" y="928"/>
         </scene>
         <!--Hover Tab Base Controller-->
         <scene sceneID="Nnl-fI-pTc">
@@ -881,7 +929,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KI0-ZV-GY9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="158.77061469265368"/>
+            <point key="canvasLocation" x="1756" y="159"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="tFR-ro-GyQ">
@@ -990,7 +1038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zK0-1g-Fv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="2548" y="-546"/>
         </scene>
     </scenes>
     <resources>

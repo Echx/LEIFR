@@ -18,6 +18,9 @@ class LFPlaybackViewController: LFViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var dateTimeView: UIView!
+    @IBOutlet weak var dateTimeViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dateTimeLabel: UILabel!
     
     fileprivate var paths: [LFPath]?
     fileprivate var animateAnnotation: MKPointAnnotation?
@@ -33,13 +36,18 @@ class LFPlaybackViewController: LFViewController {
     fileprivate var availableDates = [(Date, Date)]()
     fileprivate var animationTimers = [Timer]()
     fileprivate var annotationRemovalTimer: Timer?
+    fileprivate var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.mapView.delegate = self
-        self.animateAnnotation = MKPointAnnotation()
+        dateTimeViewTopConstraint.constant = -self.dateTimeView.frame.size.height
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        dateFormatter.timeZone = TimeZone(abbreviation: "SGT")
+        mapView.delegate = self
+        animateAnnotation = MKPointAnnotation()
         loadDateData()
     }
 
@@ -155,11 +163,8 @@ class LFPlaybackViewController: LFViewController {
             }
         }
         
-        var startDelay = 1
-        if pausePointIndex > 0 {
-            startDelay = 0
-        }
-        DispatchQueue(label: "background").asyncAfter(deadline: .now()) {
+        DispatchQueue(label:
+            "background").asyncAfter(deadline: .now()) {
             var previousM: Double?
             var animationTime = 0.1
             for k in self.pausePointIndex..<points.count {
@@ -178,7 +183,8 @@ class LFPlaybackViewController: LFViewController {
                         
                         UIView.animate(withDuration: animationTime, animations: {
                             self.animateAnnotation?.coordinate = wkbPoint.coordinate()
-                            //                            self.mapView.centerCoordinate = wkbPoint.coordinate()
+                            self.dateTimeLabel.text = self.dateFormatter.string(from: wkbPoint.time)
+//                            self.mapView.centerCoordinate = wkbPoint.coordinate()
                         })
                     }
                     self.animationTimers.append(timer)
@@ -242,6 +248,10 @@ extension LFPlaybackViewController {
             playbackState = .play
             // show stop button
             stopButton.isHidden = false
+            // show date time view
+            UIView.animate(withDuration: 0.5, animations: {
+                self.dateTimeViewTopConstraint.constant = 0
+            })
             
             if pauseAnnotation != nil {
                 mapView.removeAnnotation(pauseAnnotation!)
@@ -287,6 +297,11 @@ extension LFPlaybackViewController {
         playbackState = .stop
         
         stopButton.isHidden = true
+        
+        // hide date time view
+        UIView.animate(withDuration: 0.5, animations: {
+            self.dateTimeViewTopConstraint.constant = -self.dateTimeView.frame.size.height
+        })
         
         for timer in animationTimers {
             timer.invalidate()
