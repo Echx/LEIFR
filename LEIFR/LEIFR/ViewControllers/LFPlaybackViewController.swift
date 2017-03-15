@@ -194,7 +194,7 @@ class LFPlaybackViewController: LFViewController {
                 }
             }
         
-            delay += 0.1
+            delay += 1
             DispatchQueue.main.async {
                 
                 self.annotationRemovalTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
@@ -303,6 +303,8 @@ extension LFPlaybackViewController {
         // hide date time view
         UIView.animate(withDuration: 0.5, animations: {
             self.dateTimeViewTopConstraint.constant = -self.dateTimeView.frame.size.height
+            
+            self.view.layoutIfNeeded()
         })
         
         for timer in animationTimers {
