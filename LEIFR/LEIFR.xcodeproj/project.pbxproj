@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C0946951E798A2600B76B50 /* APReverseGeocodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946941E798A2600B76B50 /* APReverseGeocodingExtension.swift */; };
 		0C0946BE1E798C0100B76B50 /* APCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946B11E798C0100B76B50 /* APCountry.m */; };
 		0C0946BF1E798C0100B76B50 /* APReverseGeocoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946B31E798C0100B76B50 /* APReverseGeocoding.m */; };
 		0C0946C01E798C0100B76B50 /* countries.geo.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C0946B51E798C0100B76B50 /* countries.geo.json */; };
@@ -118,7 +117,6 @@
 		62BF06961DA6F02B00E6957E /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIKitExtension.swift */; };
 		62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */; };
 		62BF069F1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */; };
-		62D739671E5397A300F95B5F /* WKBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D739661E5397A300F95B5F /* WKBExtension.swift */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
 		62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */; };
@@ -159,7 +157,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C0946941E798A2600B76B50 /* APReverseGeocodingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APReverseGeocodingExtension.swift; sourceTree = "<group>"; };
 		0C0946B01E798C0100B76B50 /* APCountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCountry.h; sourceTree = "<group>"; };
 		0C0946B11E798C0100B76B50 /* APCountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCountry.m; sourceTree = "<group>"; };
 		0C0946B21E798C0100B76B50 /* APReverseGeocoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APReverseGeocoding.h; sourceTree = "<group>"; };
@@ -668,7 +665,6 @@
 		62BF06951DA6F02B00E6957E /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtension.swift; path = Extensions/UIKitExtension.swift; sourceTree = "<group>"; };
 		62BF069C1DA6F49200E6957E /* LFGeoJSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManager.swift; sourceTree = "<group>"; };
 		62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManagerTest.swift; sourceTree = "<group>"; };
-		62D739661E5397A300F95B5F /* WKBExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKBExtension.swift; path = Extensions/WKBExtension.swift; sourceTree = "<group>"; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayBackAnnotationView.swift; sourceTree = "<group>"; };
@@ -1805,8 +1801,6 @@
 				62BF06951DA6F02B00E6957E /* UIKitExtension.swift */,
 				62054EC91DAD697400FEC851 /* LFConstant.swift */,
 				626A13B71DC5259B0051FE90 /* MapKitExtension.swift */,
-				62D739661E5397A300F95B5F /* WKBExtension.swift */,
-				0C0946941E798A2600B76B50 /* APReverseGeocodingExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -2102,7 +2096,6 @@
 				0CFAEC1F1E675AEA00392BEE /* LFFlagCollectionViewCell.swift in Sources */,
 				0CF1361A1DC8E2BD00E122AC /* LFTableViewCell.swift in Sources */,
 				0C0946C21E798C0100B76B50 /* APPolygon.m in Sources */,
-				0C0946951E798A2600B76B50 /* APReverseGeocodingExtension.swift in Sources */,
 				62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */,
 				62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */,
 				0CB053DB1E7996E50011BEF0 /* LFMapPreviewViewController.swift in Sources */,
@@ -2115,7 +2108,6 @@
 				0C6174A41E7713C6003AD136 /* LFStatisticsViewLayout.swift in Sources */,
 				0CE2D9A01E6722EB0070DC15 /* LFCachedCountry.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
-				62D739671E5397A300F95B5F /* WKBExtension.swift in Sources */,
 				0CCCC5A51DA6F4B900488B2E /* LFHoverTabViewController.swift in Sources */,
 				0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */,
 				0CBB384E1D85F9BD002C0EF0 /* FMDatabase.m in Sources */,
