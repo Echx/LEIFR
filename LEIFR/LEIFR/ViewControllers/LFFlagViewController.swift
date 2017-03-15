@@ -51,7 +51,9 @@ extension LFFlagViewController: UICollectionViewDataSource, UICollectionViewDele
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let country = countries[indexPath.section][indexPath.row]
 		let region = APReverseGeocoding.default().regionForCountry(withCode: country.code)
-		
+		let controller = LFMapPreviewViewController.controllerFromStoryboard() as! LFMapPreviewViewController
+		controller.startRegion = region
+		self.present(controller, animated: true, completion: nil)
 	}
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {

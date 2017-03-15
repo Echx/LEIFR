@@ -31,6 +31,7 @@
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
 		0CA7EE921E3E75570031A8C1 /* LFGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA7EE901E3E75570031A8C1 /* LFGridViewCell.swift */; };
 		0CA7EE931E3E75570031A8C1 /* LFGridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CA7EE911E3E75570031A8C1 /* LFGridViewCell.xib */; };
+		0CB053DB1E7996E50011BEF0 /* LFMapPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB053DA1E7996E50011BEF0 /* LFMapPreviewViewController.swift */; };
 		0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30811D85F413002C0EF0 /* AppDelegate.swift */; };
 		0CBB30891D85F413002C0EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBB30881D85F413002C0EF0 /* Assets.xcassets */; };
 		0CBB30971D85F413002C0EF0 /* LEIFRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBB30961D85F413002C0EF0 /* LEIFRTests.swift */; };
@@ -187,6 +188,7 @@
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
 		0CA7EE901E3E75570031A8C1 /* LFGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGridViewCell.swift; sourceTree = "<group>"; };
 		0CA7EE911E3E75570031A8C1 /* LFGridViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFGridViewCell.xib; sourceTree = "<group>"; };
+		0CB053DA1E7996E50011BEF0 /* LFMapPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFMapPreviewViewController.swift; sourceTree = "<group>"; };
 		0CBB307E1D85F413002C0EF0 /* LEIFR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEIFR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBB30811D85F413002C0EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		0CBB30881D85F413002C0EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -1696,6 +1698,7 @@
 				0CFAEC1B1E6758B800392BEE /* LFFlagViewController.swift */,
 				0C61749B1E76F226003AD136 /* LFStatisticsCollectionViewController.swift */,
 				0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */,
+				0CB053DA1E7996E50011BEF0 /* LFMapPreviewViewController.swift */,
 			);
 			name = "Tab 4";
 			sourceTree = "<group>";
@@ -2102,6 +2105,7 @@
 				0C0946951E798A2600B76B50 /* APReverseGeocodingExtension.swift in Sources */,
 				62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */,
 				62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */,
+				0CB053DB1E7996E50011BEF0 /* LFMapPreviewViewController.swift in Sources */,
 				0C61749A1E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift in Sources */,
 				0CFAEC1C1E6758B800392BEE /* LFFlagViewController.swift in Sources */,
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,

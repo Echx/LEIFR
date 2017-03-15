@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -335,6 +336,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd1-GJ-MoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2548" y="1611.5442278860571"/>
+        </scene>
+        <!--Map Preview View Controller-->
+        <scene sceneID="AmF-Wn-adW">
+            <objects>
+                <viewController storyboardIdentifier="LFMapPreviewViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="veU-fb-8Uw" customClass="LFMapPreviewViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lyD-bF-RSI"/>
+                        <viewControllerLayoutGuide type="bottom" id="eRy-Wy-TeY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AbU-aq-m3a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRp-am-0jd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="dismissWithAnimation" destination="veU-fb-8Uw" eventType="touchUpInside" id="RBI-yz-aa9"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-LV-fxN">
+                                <rect key="frame" x="46" y="145" width="283" height="377"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Nea-LV-fxN" secondAttribute="height" multiplier="0.75" id="y0K-PK-BFe"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fRp-am-0jd" firstAttribute="top" secondItem="AbU-aq-m3a" secondAttribute="top" id="0Fb-vn-7fH"/>
+                            <constraint firstItem="eRy-Wy-TeY" firstAttribute="top" secondItem="fRp-am-0jd" secondAttribute="bottom" id="0O8-s3-Cnm"/>
+                            <constraint firstItem="Nea-LV-fxN" firstAttribute="centerY" secondItem="fRp-am-0jd" secondAttribute="centerY" id="Yoq-FX-EEf"/>
+                            <constraint firstItem="fRp-am-0jd" firstAttribute="leading" secondItem="AbU-aq-m3a" secondAttribute="leading" id="d2X-JP-AoQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nea-LV-fxN" secondAttribute="trailing" constant="30" id="pCY-Nv-mmv"/>
+                            <constraint firstItem="Nea-LV-fxN" firstAttribute="leading" secondItem="AbU-aq-m3a" secondAttribute="leadingMargin" constant="30" id="sll-2k-JRU"/>
+                            <constraint firstAttribute="trailing" secondItem="fRp-am-0jd" secondAttribute="trailing" id="vKV-Dc-xXI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Nea-LV-fxN" id="thY-1Q-W3G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8x-MD-qxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3304.8000000000002" y="1611.5442278860571"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="Poa-cA-vxm">
