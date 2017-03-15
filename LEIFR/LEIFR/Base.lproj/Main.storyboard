@@ -158,10 +158,18 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-Nl-HOL">
+                                                        <rect key="frame" x="15" y="74" width="345" height="2"/>
+                                                        <color key="progressTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="trackTintColor" red="0.51373046874999995" green="0.51373046874999995" blue="0.51373046874999995" alpha="0.17082634228187921" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </progressView>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="rbZ-Nl-HOL" secondAttribute="bottom" constant="8" id="2mr-og-97y"/>
                                                     <constraint firstAttribute="trailing" secondItem="TUe-U5-YnA" secondAttribute="trailing" id="8gR-57-fhd"/>
                                                     <constraint firstItem="TUe-U5-YnA" firstAttribute="leading" secondItem="Ccc-E8-L5X" secondAttribute="leading" id="JVQ-pd-1qs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rbZ-Nl-HOL" secondAttribute="trailing" constant="15" id="PY9-FP-IKh"/>
+                                                    <constraint firstItem="rbZ-Nl-HOL" firstAttribute="leading" secondItem="Ccc-E8-L5X" secondAttribute="leading" constant="15" id="dY2-sW-7YJ"/>
                                                     <constraint firstItem="TUe-U5-YnA" firstAttribute="top" secondItem="Ccc-E8-L5X" secondAttribute="top" constant="45" id="wvl-iU-fD4"/>
                                                 </constraints>
                                             </view>
@@ -198,6 +206,7 @@
                         <outlet property="dateTimeView" destination="jyy-d0-Daf" id="bq7-M0-Byd"/>
                         <outlet property="dateTimeViewTopConstraint" destination="Lkm-x0-8W0" id="TF3-S8-Om5"/>
                         <outlet property="mapView" destination="mrr-Ud-Tb6" id="S5m-6U-NaS"/>
+                        <outlet property="playbackProgressView" destination="rbZ-Nl-HOL" id="3TW-6f-AgQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qql-qF-fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>

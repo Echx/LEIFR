@@ -21,6 +21,7 @@ class LFPlaybackViewController: LFViewController {
     @IBOutlet weak var dateTimeView: UIView!
     @IBOutlet weak var dateTimeViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var playbackProgressView: UIProgressView!
     
     fileprivate var paths: [LFPath]?
     fileprivate var animateAnnotation: MKPointAnnotation?
@@ -42,6 +43,7 @@ class LFPlaybackViewController: LFViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        playbackProgressView.progress = 0
         dateTimeViewTopConstraint.constant = -self.dateTimeView.frame.size.height
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .medium
@@ -50,6 +52,7 @@ class LFPlaybackViewController: LFViewController {
         animateAnnotation = MKPointAnnotation()
         loadDateData()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -189,12 +192,14 @@ class LFPlaybackViewController: LFViewController {
                         _ in
                         
                         self.playingPointIndex += 1
+                        self.playbackProgressView.progress = Float(self.playingPointIndex) / Float(points.count)
                         
                         UIView.animate(withDuration: animationTime, animations: {
                             self.animateAnnotation?.coordinate = wkbPoint.coordinate()
                             self.dateTimeLabel.text = self.dateFormatter.string(from: wkbPoint.time)
 //                            self.mapView.centerCoordinate = wkbPoint.coordinate()
                         })
+                        
                     }
                     self.animationTimers.append(timer)
                     delay += animationTime
@@ -333,6 +338,9 @@ extension LFPlaybackViewController {
             mapView.removeAnnotation(animateAnnotation!)
         }
         
+        pausePointIndex = 0
+        pausePathIndex = 0
+        playingPointIndex = 0
         playingPathIndex = 0
     }
 }
