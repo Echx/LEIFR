@@ -79,7 +79,7 @@ class LFPath: NSObject, NSSecureCoding {
 	}
 	
 	public func encode(with aCoder: NSCoder) {
-		aCoder.encodeConditionalObject(self.points, forKey: ArchiveKeyPropertyPoints)
+		aCoder.encode(self.points, forKey: ArchiveKeyPropertyPoints)
 	}
 	
 	public static var supportsSecureCoding: Bool {

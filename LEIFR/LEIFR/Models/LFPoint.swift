@@ -65,6 +65,7 @@ class LFPoint: NSObject, NSSecureCoding {
 	// MARK: NSSecureCoding
 	
 	public required init?(coder aDecoder: NSCoder) {
+		super.init()
 		self.latitude = aDecoder.decodeDouble(forKey: ArchiveKeyPropertyLatitude)
 		self.longitude = aDecoder.decodeDouble(forKey: ArchiveKeyPropertyLongitude)
 		self.altitude = aDecoder.decodeDouble(forKey: ArchiveKeyPropertyAltitude)
