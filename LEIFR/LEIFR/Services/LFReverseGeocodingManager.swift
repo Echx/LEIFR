@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import APOfflineReverseGeocoding
 
 class LFReverseGeocodingManager: NSObject {
 	

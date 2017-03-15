@@ -89,7 +89,6 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/APOfflineReverseGeocoding/APOfflineReverseGeocoding.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FSCalendar/FSCalendar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FontBlaster/FontBlaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
@@ -98,7 +97,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/wkb-ios/wkb_ios.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/APOfflineReverseGeocoding/APOfflineReverseGeocoding.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FSCalendar/FSCalendar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FontBlaster/FontBlaster.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"

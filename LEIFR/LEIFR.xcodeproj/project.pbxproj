@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0946951E798A2600B76B50 /* APReverseGeocodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946941E798A2600B76B50 /* APReverseGeocodingExtension.swift */; };
+		0C0946BE1E798C0100B76B50 /* APCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946B11E798C0100B76B50 /* APCountry.m */; };
+		0C0946BF1E798C0100B76B50 /* APReverseGeocoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946B31E798C0100B76B50 /* APReverseGeocoding.m */; };
+		0C0946C01E798C0100B76B50 /* countries.geo.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C0946B51E798C0100B76B50 /* countries.geo.json */; };
+		0C0946C11E798C0100B76B50 /* APCountryInfoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946B81E798C0100B76B50 /* APCountryInfoBuilder.m */; };
+		0C0946C21E798C0100B76B50 /* APPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946BB1E798C0100B76B50 /* APPolygon.m */; };
+		0C0946C31E798C0100B76B50 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0C0946BC1E798C0100B76B50 /* LICENSE */; };
+		0C0946C41E798C0100B76B50 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946BD1E798C0100B76B50 /* README.md */; };
 		0C4242521DC55405004F47F2 /* LFRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242511DC55405004F47F2 /* LFRecordButton.swift */; };
 		0C4242541DC5541E004F47F2 /* LFNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */; };
 		0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */; };
@@ -151,6 +159,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C0946941E798A2600B76B50 /* APReverseGeocodingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APReverseGeocodingExtension.swift; sourceTree = "<group>"; };
+		0C0946B01E798C0100B76B50 /* APCountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCountry.h; sourceTree = "<group>"; };
+		0C0946B11E798C0100B76B50 /* APCountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCountry.m; sourceTree = "<group>"; };
+		0C0946B21E798C0100B76B50 /* APReverseGeocoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APReverseGeocoding.h; sourceTree = "<group>"; };
+		0C0946B31E798C0100B76B50 /* APReverseGeocoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APReverseGeocoding.m; sourceTree = "<group>"; };
+		0C0946B51E798C0100B76B50 /* countries.geo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.geo.json; sourceTree = "<group>"; };
+		0C0946B71E798C0100B76B50 /* APCountryInfoBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCountryInfoBuilder.h; sourceTree = "<group>"; };
+		0C0946B81E798C0100B76B50 /* APCountryInfoBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCountryInfoBuilder.m; sourceTree = "<group>"; };
+		0C0946B91E798C0100B76B50 /* APCountryInfoBuilderDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCountryInfoBuilderDefines.h; sourceTree = "<group>"; };
+		0C0946BA1E798C0100B76B50 /* APPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPolygon.h; sourceTree = "<group>"; };
+		0C0946BB1E798C0100B76B50 /* APPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPolygon.m; sourceTree = "<group>"; };
+		0C0946BC1E798C0100B76B50 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0C0946BD1E798C0100B76B50 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C4242511DC55405004F47F2 /* LFRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFRecordButton.swift; sourceTree = "<group>"; };
 		0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFNavigationBar.swift; sourceTree = "<group>"; };
 		0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -698,6 +719,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0946AE1E798C0100B76B50 /* GeoLocation */ = {
+			isa = PBXGroup;
+			children = (
+				0C0946AF1E798C0100B76B50 /* APOfflineReverseGeocoding */,
+			);
+			path = GeoLocation;
+			sourceTree = "<group>";
+		};
+		0C0946AF1E798C0100B76B50 /* APOfflineReverseGeocoding */ = {
+			isa = PBXGroup;
+			children = (
+				0C0946B01E798C0100B76B50 /* APCountry.h */,
+				0C0946B11E798C0100B76B50 /* APCountry.m */,
+				0C0946B21E798C0100B76B50 /* APReverseGeocoding.h */,
+				0C0946B31E798C0100B76B50 /* APReverseGeocoding.m */,
+				0C0946B41E798C0100B76B50 /* GeoJSON */,
+				0C0946B61E798C0100B76B50 /* Internal */,
+				0C0946BC1E798C0100B76B50 /* LICENSE */,
+				0C0946BD1E798C0100B76B50 /* README.md */,
+			);
+			path = APOfflineReverseGeocoding;
+			sourceTree = "<group>";
+		};
+		0C0946B41E798C0100B76B50 /* GeoJSON */ = {
+			isa = PBXGroup;
+			children = (
+				0C0946B51E798C0100B76B50 /* countries.geo.json */,
+			);
+			path = GeoJSON;
+			sourceTree = "<group>";
+		};
+		0C0946B61E798C0100B76B50 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				0C0946B71E798C0100B76B50 /* APCountryInfoBuilder.h */,
+				0C0946B81E798C0100B76B50 /* APCountryInfoBuilder.m */,
+				0C0946B91E798C0100B76B50 /* APCountryInfoBuilderDefines.h */,
+				0C0946BA1E798C0100B76B50 /* APPolygon.h */,
+				0C0946BB1E798C0100B76B50 /* APPolygon.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
 		0C4242501DC55405004F47F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +852,7 @@
 		0CBB36821D85F9BD002C0EF0 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0C0946AE1E798C0100B76B50 /* GeoLocation */,
 				0CBB36831D85F9BD002C0EF0 /* Database */,
 			);
 			path = Libraries;
@@ -1741,6 +1806,7 @@
 				62054EC91DAD697400FEC851 /* LFConstant.swift */,
 				626A13B71DC5259B0051FE90 /* MapKitExtension.swift */,
 				62D739661E5397A300F95B5F /* WKBExtension.swift */,
+				0C0946941E798A2600B76B50 /* APReverseGeocodingExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1881,10 +1947,12 @@
 				0CFAEC201E675AEA00392BEE /* LFFlagCollectionViewCell.xib in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
 				0CF715F81E3F234100FA419F /* LFCollectionViewCell.xib in Resources */,
+				0C0946C31E798C0100B76B50 /* LICENSE in Resources */,
 				0CBB38631D85F9BD002C0EF0 /* HotPixel.inl in Resources */,
 				0CBB385B1D85F9BD002C0EF0 /* MultiLineString.inl in Resources */,
 				0CBB38611D85F9BD002C0EF0 /* WKTReader.inl in Resources */,
 				0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */,
+				0C0946C01E798C0100B76B50 /* countries.geo.json in Resources */,
 				625B56201E58B3F400FE623E /* LFPlaybackCalendarView.xib in Resources */,
 				0CBB38571D85F9BD002C0EF0 /* Envelope.inl in Resources */,
 				0CF136231DC9006500E122AC /* LFHistoryControlView.xib in Resources */,
@@ -2033,6 +2101,8 @@
 				626A13B81DC5259B0051FE90 /* MapKitExtension.swift in Sources */,
 				0CFAEC1F1E675AEA00392BEE /* LFFlagCollectionViewCell.swift in Sources */,
 				0CF1361A1DC8E2BD00E122AC /* LFTableViewCell.swift in Sources */,
+				0C0946C21E798C0100B76B50 /* APPolygon.m in Sources */,
+				0C0946951E798A2600B76B50 /* APReverseGeocodingExtension.swift in Sources */,
 				62027DC31DC3A46900B35F76 /* LFCachedPoint.swift in Sources */,
 				62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */,
 				0C61749A1E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift in Sources */,
@@ -2040,6 +2110,7 @@
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,
 				62027DD31DC3C35B00B35F76 /* LFCachedDatabaseManager.swift in Sources */,
+				0C0946C11E798C0100B76B50 /* APCountryInfoBuilder.m in Sources */,
 				0C6174A41E7713C6003AD136 /* LFStatisticsViewLayout.swift in Sources */,
 				0CE2D9A01E6722EB0070DC15 /* LFCachedCountry.swift in Sources */,
 				0CBB38811D85FFBF002C0EF0 /* LFDatabaseManager.swift in Sources */,
@@ -2052,11 +2123,14 @@
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
 				0CF716011E3F398500FA419F /* LFMapCell.swift in Sources */,
+				0C0946BE1E798C0100B76B50 /* APCountry.m in Sources */,
 				0CE2D99C1E671E2D0070DC15 /* LFReverseGeocodingManager.swift in Sources */,
 				62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */,
 				62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
 				62F5A7A91E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift in Sources */,
+				0C0946BF1E798C0100B76B50 /* APReverseGeocoding.m in Sources */,
+				0C0946C41E798C0100B76B50 /* README.md in Sources */,
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */,

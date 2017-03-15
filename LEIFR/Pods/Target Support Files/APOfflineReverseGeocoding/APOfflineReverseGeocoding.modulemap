@@ -1,6 +1,0 @@
-framework module APOfflineReverseGeocoding {
-  umbrella header "APOfflineReverseGeocoding-umbrella.h"
-
-  export *
-  module * { export * }
-}
