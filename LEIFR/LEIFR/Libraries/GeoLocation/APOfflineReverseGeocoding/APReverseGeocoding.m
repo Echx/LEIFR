@@ -52,6 +52,46 @@ PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
     return [self _geocodeCountryWithCoordinate:coordinate];
 }
 
+- (MKCoordinateRegion) regionForCountryWithCode:(NSString *)countryCode {
+	NSArray *countryData = self.countries;
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", countryCode];
+	NSDictionary *countryDict = [countryData filteredArrayUsingPredicate:predicate].firstObject;
+	
+	NSDictionary *geometry = [countryDict objectForKey:@"geometry"];
+	NSString *geometryType = [geometry valueForKey:@"type"];
+	NSArray *coordinates = [geometry objectForKey:@"coordinates"];
+	
+	double minLat = CGFLOAT_MAX;
+	double minLon = CGFLOAT_MAX;
+	double maxLat = CGFLOAT_MIN;
+	double maxLon = CGFLOAT_MIN;
+	
+	if ([geometryType isEqualToString:@"Polygon"]) {
+		NSArray *polygonPoints  = [coordinates objectAtIndex:0];
+		for (NSArray *points in polygonPoints) {
+			minLat = MIN(minLat, [points[1] doubleValue]);
+			maxLat = MAX(maxLat, [points[1] doubleValue]);
+			minLon = MIN(minLon, [points[0] doubleValue]);
+			maxLon = MAX(maxLon, [points[0] doubleValue]);
+		}
+	} else if([geometryType isEqualToString:@"MultiPolygon"]){
+		for (int j = 0; j < [coordinates count]; j++){
+			NSArray *polygonPoints = [[coordinates objectAtIndex:j] objectAtIndex:0];
+			for (NSArray *points in polygonPoints) {
+				minLat = MIN(minLat, [points[1] doubleValue]);
+				maxLat = MAX(maxLat, [points[1] doubleValue]);
+				minLon = MIN(minLon, [points[0] doubleValue]);
+				maxLon = MAX(maxLon, [points[0] doubleValue]);
+			}
+		}
+	}
+	
+	CLLocationCoordinate2D center = CLLocationCoordinate2DMake((minLat + maxLat) / 2, (minLon + maxLon) / 2);
+	MKCoordinateSpan span = MKCoordinateSpanMake((maxLat - minLat), (maxLon - minLon));
+
+	return MKCoordinateRegionMake(center, span);
+}
+
 #pragma mark - Private
 
 - (APCountry *)_geocodeCountryWithCoordinate:(CLLocationCoordinate2D)coordinate
@@ -59,7 +99,7 @@ PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
     NSArray *countryData = self.countries;
 
     for (int i = 0; i < [countryData count]; i++){
-        
+		
         NSDictionary *countryDict = [countryData objectAtIndex:i];
         NSDictionary *geometry = [countryDict objectForKey:@"geometry"];
         NSString *geometryType = [geometry valueForKey:@"type"];

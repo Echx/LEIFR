@@ -9,7 +9,7 @@
 import UIKit
 
 class LFFlagViewController: LFViewController {
-
+	
 	var countries = [[LFCachedCountry]]()
 	var displayIndex = 0
 	fileprivate var gridSpacing: CGFloat = 2
@@ -50,7 +50,8 @@ extension LFFlagViewController: UICollectionViewDataSource, UICollectionViewDele
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let country = countries[indexPath.section][indexPath.row]
-		print(country.localizedName())
+		let region = APReverseGeocoding.default().regionForCountry(withCode: country.code)
+		
 	}
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 #import "APCountry.h"
 
 @interface APReverseGeocoding : NSObject
@@ -48,6 +49,8 @@
  *  @return APCountry
  */
 - (APCountry *)geocodeCountryWithCoordinate:(CLLocationCoordinate2D)coordinate;
+
+- (MKCoordinateRegion) regionForCountryWithCode:(NSString *)countryCode;
 
 @end
 
