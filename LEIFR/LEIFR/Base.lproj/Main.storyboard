@@ -331,6 +331,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="x0I-1c-xoA" id="QPa-nf-sSO"/>
+                        <outlet property="titleLabel" destination="YMV-2x-jbI" id="yRd-cv-YeK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd1-GJ-MoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

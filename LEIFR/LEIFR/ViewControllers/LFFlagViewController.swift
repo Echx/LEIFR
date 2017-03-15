@@ -15,10 +15,13 @@ class LFFlagViewController: LFViewController {
 	fileprivate var gridSpacing: CGFloat = 2
 	
 	@IBOutlet var collectionView: UICollectionView!
+	@IBOutlet var titleLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.setup(collectionView: self.collectionView)
+		
+		self.titleLabel.text = self.title
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +47,7 @@ extension LFFlagViewController: UICollectionViewDataSource, UICollectionViewDele
 		collectionView.dataSource = self
 		collectionView.delegate = self
 		collectionView.contentInset = UIEdgeInsets(top: 84 + gridSpacing, left: 0, bottom: 200 + gridSpacing, right: 0)
-		collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 84, left: 0, bottom: 64, right: 0)
+		collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 84, left: 0, bottom: 0, right: 0)
 		LFFlagCollectionViewCell.registerCell(collectionView: collectionView, reuseIdentifier: String(describing: LFFlagCollectionViewCell.self))
 	}
 	

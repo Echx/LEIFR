@@ -93,6 +93,7 @@ class LFStatisticsCollectionViewController: UICollectionViewController {
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let controller = LFFlagViewController.defaultControllerFromStoryboard() as! LFFlagViewController
 		controller.countries = [continents[indexPath.row].5]
+		controller.title = continents[indexPath.row].1
 		self.present(controller, animated: true, completion: nil)
 	}
 
