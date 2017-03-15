@@ -10,16 +10,21 @@ import UIKit
 import wkb_ios
 
 class LFPath: NSObject {
-	fileprivate let lineString: WKBLineString
     fileprivate let minimumPointsPerPath = 5
+	var points = [LFPoint]()
+	
+	var pointCount: Int { return self.points.count }
+	var startTime: Date? { return points.first?.time }
+	var endTime: Date? { return points.last?.time }
 	
 	init(lineString: WKBLineString) {
-		self.lineString = lineString
 		super.init()
+		self.points = lineString.points.map({
+			return LFPoint(wkbPoint: $0 as! WKBPoint)
+		})
 	}
 	
 	override init() {
-		self.lineString = WKBLineString(hasZ: true, andHasM: true)
 		super.init()
 	}
 	
@@ -28,20 +33,14 @@ class LFPath: NSObject {
 	}
 	
 	func addPoint(latitude: Double, longitude: Double, altitude: Double, time: Date) {
-		let point = WKBPoint(hasZ: true, andHasM: true, andX: NSDecimalNumber(value: longitude as Double), andY: NSDecimalNumber(value: latitude as Double))
-		point?.z = NSDecimalNumber(value: altitude as Double)
-		point?.m = NSDecimalNumber(value: time.timeIntervalSince1970 as Double)
-		lineString.addPoint(point)
-	}
-	
-	func points() -> NSMutableArray {
-		return lineString.points
+		let point = LFPoint(longitude: longitude, latitude: latitude, altitude: altitude, time: time)
+		self.points.append(point)
 	}
 	
 	func WKTString() -> String{
 		let array = NSMutableArray()
-		for point in lineString.points {
-			array.add("\((point as AnyObject).x as NSDecimalNumber) \((point as AnyObject).y as NSDecimalNumber) \((point as AnyObject).z as NSDecimalNumber) \((point as AnyObject).m as NSDecimalNumber)")
+		for point in points {
+			array.add(point.description)
 		}
 		
 		let pointsString = array.componentsJoined(by: ", ")
@@ -49,43 +48,20 @@ class LFPath: NSObject {
 	}
     
     func isOverlappedWith(startDate: Date, endDate: Date) -> Bool {
-        let points = self.points()
-        if points.count == 0 {
-            return false
-        }
-        
-        let firstPoint = points.firstObject as! WKBPoint
-        let lastPoint = points.lastObject as! WKBPoint
-        return !(firstPoint.time > endDate || lastPoint.time < startDate)
+        let points = self.points
+		
+		guard points.count > 0 else {
+			return false
+		}
+		
+        return !(self.startTime! > endDate || self.endTime! < startDate)
     }
     
     func isValidPath() -> Bool {
-        return self.points().count >= minimumPointsPerPath
+        return self.points.count >= minimumPointsPerPath
     }
-}
-
-extension WKBPoint {
-	var latitude: Double {
-		get {
-			return Double(self.y)
-		}
-	}
 	
-	var longitude: Double {
-		get {
-			return Double(self.x)
-		}
-	}
-	
-	var altitude: Double {
-		get {
-			return Double(self.z)
-		}
-	}
-	
-	var time: Date {
-		get {
-			return Date(timeIntervalSince1970: Double(self.m))
-		}
+	override var description: String {
+		return self.WKTString()
 	}
 }

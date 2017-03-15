@@ -70,11 +70,7 @@ class LFPlaybackViewController: LFViewController {
                 } else {
                     self.paths = paths.sorted(by: {
                         (pathA, pathB) -> Bool in
-                        
-                        let originA = pathA.points().firstObject as! WKBPoint
-                        let originB = pathB.points().firstObject as! WKBPoint
-                        
-                        return originA.time < originB.time
+                        return pathA.startTime! < pathB.startTime!
                     })
                 }
             }
@@ -87,10 +83,8 @@ class LFPlaybackViewController: LFViewController {
                 paths in
                 
                 for path in paths {
-                    let startPoint = path.points().firstObject as! WKBPoint
-                    let endPoint = path.points().lastObject as! WKBPoint
-                    var startDate = startPoint.time
-                    var endDate = endPoint.time
+                    var startDate = path.startTime!
+                    var endDate = path.endTime!
                     var startComponent = self.gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: startDate)
                     var endComponent = self.gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: endDate)
                     startComponent.hour = 0
@@ -153,13 +147,12 @@ class LFPlaybackViewController: LFViewController {
         pausePathIndex = 0
         
         var delay = 0.0
-        let points = (path?.points())!
+        let points = (path?.points)!
         
         var zoomRect = MKMapRectNull
         DispatchQueue(label: "background").async {
             for point in points {
-                let wkbPoint = point as! WKBPoint
-                let fakeAnnotationPoint = MKMapPointForCoordinate(wkbPoint.coordinate())
+                let fakeAnnotationPoint = MKMapPointForCoordinate(point.coordinate)
                 let fakePointRect = MKMapRectMake(fakeAnnotationPoint.x, fakeAnnotationPoint.y, 0, 0)
                 if MKMapRectIsNull(zoomRect) {
                     zoomRect = fakePointRect
@@ -182,11 +175,10 @@ class LFPlaybackViewController: LFViewController {
             for k in self.pausePointIndex..<points.count {
                 self.pausePointIndex = 0
                 let point = points[k]
-                let wkbPoint = point as! WKBPoint
                 if previousM != nil {
-                    animationTime = (Double(wkbPoint.m) - previousM!) / self.animationFactor
+                    animationTime = (point.m - previousM!) / self.animationFactor
                 }
-                previousM = wkbPoint.m as Double?
+                previousM = point.m
                 DispatchQueue.main.async {
                     let timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) {
                         _ in
@@ -195,9 +187,9 @@ class LFPlaybackViewController: LFViewController {
                         self.playbackProgressView.progress = Float(self.playingPointIndex) / Float(points.count)
                         
                         UIView.animate(withDuration: animationTime, animations: {
-                            self.animateAnnotation?.coordinate = wkbPoint.coordinate()
-                            self.dateTimeLabel.text = self.dateFormatter.string(from: wkbPoint.time)
-//                            self.mapView.centerCoordinate = wkbPoint.coordinate()
+                            self.animateAnnotation?.coordinate = point.coordinate
+                            self.dateTimeLabel.text = self.dateFormatter.string(from: point.time)
+//                            self.mapView.centerCoordinate = point.coordinate
                         })
                         
                     }

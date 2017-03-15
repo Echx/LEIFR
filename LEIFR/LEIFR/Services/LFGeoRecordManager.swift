@@ -32,7 +32,7 @@ class LFGeoRecordManager: NSObject {
             pthread_mutex_unlock(&mutex)
         }
         print("flush point")
-        if self.bufferPath.points().count > 0 {
+        if self.bufferPath.pointCount > 0 {
             let databaseManager = LFDatabaseManager.shared
             databaseManager.savePath(self.bufferPath, completion: {
                 error in
