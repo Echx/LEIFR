@@ -82,29 +82,3 @@ class LFPath: NSObject {
 		return self.WKTString()
 	}
 }
-
-extension WKBPoint {
-	var latitude: Double {
-		get {
-			return Double(self.y)
-		}
-	}
-	
-	var longitude: Double {
-		get {
-			return Double(self.x)
-		}
-	}
-	
-	var altitude: Double {
-		get {
-			return Double(self.z)
-		}
-	}
-	
-	var time: Date {
-		get {
-			return Date(timeIntervalSince1970: Double(self.m))
-		}
-	}
-}
