@@ -14,7 +14,6 @@
 		0C0946C11E798C0100B76B50 /* APCountryInfoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946B81E798C0100B76B50 /* APCountryInfoBuilder.m */; };
 		0C0946C21E798C0100B76B50 /* APPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946BB1E798C0100B76B50 /* APPolygon.m */; };
 		0C0946C31E798C0100B76B50 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0C0946BC1E798C0100B76B50 /* LICENSE */; };
-		0C0946C41E798C0100B76B50 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0C0946BD1E798C0100B76B50 /* README.md */; };
 		0C4242521DC55405004F47F2 /* LFRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242511DC55405004F47F2 /* LFRecordButton.swift */; };
 		0C4242541DC5541E004F47F2 /* LFNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */; };
 		0C42AF261DAD47CF00849A5C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */; };
@@ -171,7 +170,6 @@
 		0C0946BA1E798C0100B76B50 /* APPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPolygon.h; sourceTree = "<group>"; };
 		0C0946BB1E798C0100B76B50 /* APPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPolygon.m; sourceTree = "<group>"; };
 		0C0946BC1E798C0100B76B50 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		0C0946BD1E798C0100B76B50 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C4242511DC55405004F47F2 /* LFRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFRecordButton.swift; sourceTree = "<group>"; };
 		0C4242531DC5541E004F47F2 /* LFNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFNavigationBar.swift; sourceTree = "<group>"; };
 		0C42AF251DAD47CF00849A5C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -737,7 +735,6 @@
 				0C0946B41E798C0100B76B50 /* GeoJSON */,
 				0C0946B61E798C0100B76B50 /* Internal */,
 				0C0946BC1E798C0100B76B50 /* LICENSE */,
-				0C0946BD1E798C0100B76B50 /* README.md */,
 			);
 			path = APOfflineReverseGeocoding;
 			sourceTree = "<group>";
@@ -2130,7 +2127,6 @@
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
 				62F5A7A91E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift in Sources */,
 				0C0946BF1E798C0100B76B50 /* APReverseGeocoding.m in Sources */,
-				0C0946C41E798C0100B76B50 /* README.md in Sources */,
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
 				0CBB384F1D85F9BD002C0EF0 /* FMDatabaseAdditions.m in Sources */,
 				62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */,

@@ -21,6 +21,8 @@ static NSString *const APReverseGeocodingCountriesKey  = @"features";
 
 @implementation APReverseGeocoding
 
+PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
+
 + (instancetype)defaultGeocoding
 {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];

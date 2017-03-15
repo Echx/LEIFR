@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#define PSPDF_NOT_DESIGNATED_INITIALIZER() PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
+#define PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(initName) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wobjc-designated-initializers\"") \
+- (instancetype)initName \
+{ do { \
+NSAssert2(NO, @"%@ is not the designated initializer for instances of %@.", NSStringFromSelector(_cmd), NSStringFromClass([self class])); \
+return nil; \
+} while (0); } \
+_Pragma("clang diagnostic pop")
+
 @interface APCountry : NSObject
 
 /**

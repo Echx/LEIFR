@@ -11,6 +11,8 @@
 
 @implementation APCountry
 
+PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
+
 + (instancetype)countryWithGEODictionary:(NSDictionary *)dictionary
 {
     return [[self alloc] initWithGeoDictionary:dictionary];

@@ -7,6 +7,7 @@
 //
 
 #import "APCountryInfoBuilder.h"
+#import "APCountry.h"
 
 @interface APCountryInfoBuilder ()
 
@@ -19,6 +20,8 @@
 @end
 
 @implementation APCountryInfoBuilder
+
+PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
 
 + (instancetype)builderWithCountryCode:(NSString *)countryCode
 {
