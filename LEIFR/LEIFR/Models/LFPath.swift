@@ -11,6 +11,7 @@ import wkb_ios
 
 class LFPath: NSObject {
 	fileprivate let lineString: WKBLineString
+    fileprivate let minimumPointsPerPath = 5
 	
 	init(lineString: WKBLineString) {
 		self.lineString = lineString
@@ -56,7 +57,10 @@ class LFPath: NSObject {
         let firstPoint = points.firstObject as! WKBPoint
         let lastPoint = points.lastObject as! WKBPoint
         return !(firstPoint.time > endDate || lastPoint.time < startDate)
-        
+    }
+    
+    func isValidPath() -> Bool {
+        return self.points().count >= minimumPointsPerPath
     }
 }
 

@@ -114,12 +114,16 @@ class LFDatabaseManager: NSObject {
                         
                         if let lineString = geometry as? WKBLineString {
                             let path = LFPath(lineString: lineString)
-                            paths.append(path)
+                            if path.isValidPath() {
+                                paths.append(path)
+                            }
                         } else if let multiLineString = geometry as? WKBMultiLineString {
                             print("multiline")
                             for lineString in multiLineString.getLineStrings() {
                                 let path = LFPath(lineString: lineString as! WKBLineString)
-                                paths.append(path)
+                                if path.isValidPath() {
+                                    paths.append(path)
+                                }
                             }
                         }
                     }
@@ -153,12 +157,16 @@ class LFDatabaseManager: NSObject {
                         
                         if let lineString = geometry as? WKBLineString {
                             let path = LFPath(lineString: lineString)
-                            paths.append(path)
+                            if path.isValidPath() {
+                                paths.append(path)
+                            }
                         } else if let multiLineString = geometry as? WKBMultiLineString {
                             print("multiline")
                             for lineString in multiLineString.getLineStrings() {
                                 let path = LFPath(lineString: lineString as! WKBLineString)
-                                paths.append(path)
+                                if path.isValidPath() {
+                                    paths.append(path)
+                                }
                             }
                         }
                     }
@@ -283,12 +291,16 @@ class LFDatabaseManager: NSObject {
 						
 						if let lineString = geometry as? WKBLineString {
 							let path = LFPath(lineString: lineString)
-							paths.append(path)
+                            if path.isValidPath() {
+                                paths.append(path)
+                            }
 						} else if let multiLineString = geometry as? WKBMultiLineString {
 							print("multiline")
 							for lineString in multiLineString.getLineStrings() {
 								let path = LFPath(lineString: lineString as! WKBLineString)
-								paths.append(path)
+                                if path.isValidPath() {
+                                    paths.append(path)
+                                }
 							}
 						}
 					}
@@ -328,12 +340,16 @@ class LFDatabaseManager: NSObject {
                         
                         if let lineString = geometry as? WKBLineString {
                             let path = LFPath(lineString: lineString)
-                            paths.append(path)
+                            if path.isValidPath() {
+                                paths.append(path)
+                            }
                         } else if let multiLineString = geometry as? WKBMultiLineString {
                             print("multiline")
                             for lineString in multiLineString.getLineStrings() {
                                 let path = LFPath(lineString: lineString as! WKBLineString)
-                                paths.append(path)
+                                if path.isValidPath() {
+                                    paths.append(path)
+                                }
                             }
                         }
                     }

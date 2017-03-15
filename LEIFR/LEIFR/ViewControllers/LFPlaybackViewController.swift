@@ -65,7 +65,14 @@ class LFPlaybackViewController: LFViewController {
                     self.startDate = nil
                     LFHoverTabViewController.defaultInstance.reloadControlView()
                 } else {
-                    self.paths = paths
+                    self.paths = paths.sorted(by: {
+                        (pathA, pathB) -> Bool in
+                        
+                        let originA = pathA.points().firstObject as! WKBPoint
+                        let originB = pathB.points().firstObject as! WKBPoint
+                        
+                        return originA.time < originB.time
+                    })
                 }
             }
         }
