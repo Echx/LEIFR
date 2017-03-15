@@ -12,7 +12,10 @@ import RealmSwift
 class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	fileprivate var cacheAccessQueue = DispatchQueue(label: "CACHE_QUEUE")
-	
+	fileprivate let minimumAlpha = 0.2
+	fileprivate let maximumAlpha = 0.8
+	fileprivate let overlayColor = UIColor.black
+	fileprivate let countCapForAlphaChange = 10.0
 	
 	override func canDraw(_ mapRect: MKMapRect, zoomScale: MKZoomScale) -> Bool {
 		return true
@@ -33,9 +36,8 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 			let rect = CGRect(x: point.x, y: point.y, width: gridSize, height: gridSize)
 			let count = cachedPoint.count
             
-            let weightedAlpha = Double(min(count, 5)) / 10.0
-            
-			context.setFillColor(red: 0, green: 0, blue: 0, alpha: CGFloat(weightedAlpha))
+            let weightedAlpha = minimumAlpha + (maximumAlpha - minimumAlpha) * min(Double(count), countCapForAlphaChange) / countCapForAlphaChange
+			context.setFillColor(overlayColor.withAlphaComponent(CGFloat(weightedAlpha)).cgColor)
 			context.fill(rect)
 		}
 	}
