@@ -59,9 +59,16 @@ class LFPoint: NSObject {
 		super.init()
 	}
 	
-	init(wkbPoint: WKBPoint) {
-		super.init()
-		
+	convenience init(longitude: Double, latitude: Double, altitude: Double, time: Date) {
+		self.init()
+		self.longitude = longitude
+		self.latitude = latitude
+		self.altitude = altitude
+		self.time = time
+	}
+	
+	convenience init(wkbPoint: WKBPoint) {
+		self.init()
 		self.longitude = wkbPoint.x.doubleValue
 		self.latitude = wkbPoint.y.doubleValue
 		self.altitude = wkbPoint.z.doubleValue

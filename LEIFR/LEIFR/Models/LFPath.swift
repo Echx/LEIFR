@@ -46,11 +46,7 @@ class LFPath: NSObject {
 	}
 	
 	func addPoint(latitude: Double, longitude: Double, altitude: Double, time: Date) {
-		let point = LFPoint()
-		point.latitude = latitude
-		point.longitude = longitude
-		point.altitude = altitude
-		point.time = time
+		let point = LFPoint(longitude: longitude, latitude: latitude, altitude: altitude, time: time)
 		self.points.append(point)
 	}
 	
