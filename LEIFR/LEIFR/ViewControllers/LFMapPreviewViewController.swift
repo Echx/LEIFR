@@ -19,8 +19,7 @@ class LFMapPreviewViewController: LFViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		self.mapView.setRegion(startRegion, animated: false)
+		self.mapView.setRegion(mapView.regionThatFits(startRegion), animated: false)
 		
 		self.configureMapAppearance()
 		self.configureMap()

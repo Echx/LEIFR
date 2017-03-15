@@ -66,6 +66,8 @@ PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
 	double maxLat = CGFLOAT_MIN;
 	double maxLon = CGFLOAT_MIN;
 	
+	BOOL modified = NO;
+	
 	if ([geometryType isEqualToString:@"Polygon"]) {
 		NSArray *polygonPoints  = [coordinates objectAtIndex:0];
 		for (NSArray *points in polygonPoints) {
@@ -73,6 +75,7 @@ PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
 			maxLat = MAX(maxLat, [points[1] doubleValue]);
 			minLon = MIN(minLon, [points[0] doubleValue]);
 			maxLon = MAX(maxLon, [points[0] doubleValue]);
+			modified = YES;
 		}
 	} else if([geometryType isEqualToString:@"MultiPolygon"]){
 		for (int j = 0; j < [coordinates count]; j++){
@@ -82,14 +85,18 @@ PSPDF_NOT_DESIGNATED_INITIALIZER_CUSTOM(init)
 				maxLat = MAX(maxLat, [points[1] doubleValue]);
 				minLon = MIN(minLon, [points[0] doubleValue]);
 				maxLon = MAX(maxLon, [points[0] doubleValue]);
+				modified = YES;
 			}
 		}
 	}
 	
-	CLLocationCoordinate2D center = CLLocationCoordinate2DMake((minLat + maxLat) / 2, (minLon + maxLon) / 2);
-	MKCoordinateSpan span = MKCoordinateSpanMake((maxLat - minLat), (maxLon - minLon));
-
-	return MKCoordinateRegionMake(center, span);
+	if (modified) {
+		CLLocationCoordinate2D center = CLLocationCoordinate2DMake((minLat + maxLat) / 2, (minLon + maxLon) / 2);
+		MKCoordinateSpan span = MKCoordinateSpanMake((maxLat - minLat), (maxLon - minLon));
+		return MKCoordinateRegionMake(center, span);
+	} else {
+		return MKCoordinateRegionForMapRect(MKMapRectWorld);
+	}
 }
 
 #pragma mark - Private
