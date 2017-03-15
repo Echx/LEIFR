@@ -48,9 +48,9 @@ class LFPoint: NSObject {
 	
 	var wkbPoint: WKBPoint {
 		get {
-			let point = WKBPoint(hasZ: true, andHasM: true, andX: NSDecimalNumber(value: longitude as Double), andY: NSDecimalNumber(value: latitude as Double))!
-			point.z = NSDecimalNumber(value: altitude as Double)
-			point.m = NSDecimalNumber(value: time.timeIntervalSince1970 as Double)
+			let point = WKBPoint(hasZ: true, andHasM: true, andX: NSDecimalNumber(value: longitude), andY: NSDecimalNumber(value: latitude))!
+			point.z = NSDecimalNumber(value: altitude)
+			point.m = NSDecimalNumber(value: time.timeIntervalSince1970)
 			return point
 		}
 	}
