@@ -9,7 +9,10 @@
 import UIKit
 import wkb_ios
 
-class LFPath: NSObject {
+class LFPath: NSObject, NSSecureCoding {
+	
+	fileprivate let ArchiveKeyPropertyPoints = "ArchiveKeyPropertyPoints"
+	
     fileprivate let minimumPointsPerPath = 5
 	var points = [LFPoint]()
 	
@@ -63,5 +66,23 @@ class LFPath: NSObject {
 	
 	override var description: String {
 		return self.WKTString()
+	}
+	
+	// MARK: NSSecureCoding
+	
+	public required init?(coder aDecoder: NSCoder) {
+		guard let points = aDecoder.decodeObject(forKey: ArchiveKeyPropertyPoints) as? [LFPoint] else {
+			return nil
+		}
+		
+		self.points = points
+	}
+	
+	public func encode(with aCoder: NSCoder) {
+		aCoder.encodeConditionalObject(self.points, forKey: ArchiveKeyPropertyPoints)
+	}
+	
+	public static var supportsSecureCoding: Bool {
+		return true;
 	}
 }

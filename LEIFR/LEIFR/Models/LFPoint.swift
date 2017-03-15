@@ -9,7 +9,12 @@
 import UIKit
 import wkb_ios
 
-class LFPoint: NSObject {
+class LFPoint: NSObject, NSSecureCoding {
+	
+	fileprivate let ArchiveKeyPropertyLatitude = "ArchiveKeyPropertyLatitude"
+	fileprivate let ArchiveKeyPropertyLongitude = "ArchiveKeyPropertyLongitude"
+	fileprivate let ArchiveKeyPropertyAltitude = "ArchiveKeyPropertyAltitude"
+	fileprivate let ArchiveKeyPropertyTime = "ArchiveKeyPropertyTime"
 	
 	var latitude: Double = 0
 	var longitude: Double = 0
@@ -55,5 +60,25 @@ class LFPoint: NSObject {
 		get {
 			return "\(self.x) \(self.y) \(self.z) \(self.m)"
 		}
+	}
+	
+	// MARK: NSSecureCoding
+	
+	public required init?(coder aDecoder: NSCoder) {
+		self.latitude = aDecoder.decodeDouble(forKey: ArchiveKeyPropertyLatitude)
+		self.longitude = aDecoder.decodeDouble(forKey: ArchiveKeyPropertyLongitude)
+		self.altitude = aDecoder.decodeDouble(forKey: ArchiveKeyPropertyAltitude)
+		self.time = Date(timeIntervalSince1970: aDecoder.decodeDouble(forKey: ArchiveKeyPropertyTime))
+	}
+	
+	public func encode(with aCoder: NSCoder) {
+		aCoder.encode(self.latitude, forKey: ArchiveKeyPropertyLatitude)
+		aCoder.encode(self.longitude, forKey: ArchiveKeyPropertyLongitude)
+		aCoder.encode(self.altitude, forKey: ArchiveKeyPropertyAltitude)
+		aCoder.encode(self.time.timeIntervalSince1970, forKey: ArchiveKeyPropertyTime)
+	}
+	
+	public static var supportsSecureCoding: Bool {
+		return true;
 	}
 }
