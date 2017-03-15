@@ -12,23 +12,10 @@ import wkb_ios
 class LFPath: NSObject {
     fileprivate let minimumPointsPerPath = 5
 	var points = [LFPoint]()
-	var pointCount: Int {
-		get {
-			return self.points.count
-		}
-	}
 	
-	var startTime: Date? {
-		get {
-			return points.first?.time
-		}
-	}
-	
-	var endTime: Date? {
-		get {
-			return points.last?.time
-		}
-	}
+	var pointCount: Int { return self.points.count }
+	var startTime: Date? { return points.first?.time }
+	var endTime: Date? { return points.last?.time }
 	
 	init(lineString: WKBLineString) {
 		super.init()

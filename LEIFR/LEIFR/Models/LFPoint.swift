@@ -16,35 +16,11 @@ class LFPoint: NSObject {
 	var altitude: Double = 0
 	var time: Date = Date()
 	
-	var x: Double {
-		get {
-			return longitude
-		}
-	}
-	
-	var y: Double {
-		get {
-			return latitude
-		}
-	}
-	
-	var z: Double {
-		get {
-			return altitude
-		}
-	}
-	
-	var m: Double {
-		get {
-			return time.timeIntervalSince1970
-		}
-	}
-	
-	var coordinate: CLLocationCoordinate2D {
-		get {
-			return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
-		}
-	}
+	var x: Double { return longitude }
+	var y: Double { return latitude }
+	var z: Double { return altitude }
+	var m: Double { return time.timeIntervalSince1970 }
+	var coordinate: CLLocationCoordinate2D { return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)}
 	
 	var wkbPoint: WKBPoint {
 		get {
