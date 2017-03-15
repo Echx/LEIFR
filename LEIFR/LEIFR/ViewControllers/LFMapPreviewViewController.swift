@@ -14,16 +14,30 @@ class LFMapPreviewViewController: LFViewController {
 	@IBOutlet var mapView: MKMapView!
 	var startRegion: MKCoordinateRegion!
 	
+	fileprivate var overlay: MKOverlay!
+	fileprivate var overlayRenderer: LFGeoPointsOverlayRenderer!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		self.mapView.setRegion(startRegion, animated: false)
 		
+		self.configureMapAppearance()
+		self.configureMap()
+    }
+	
+	fileprivate func configureMapAppearance() {
 		let layer = self.mapView.layer
 		layer.cornerRadius = 5
 		layer.borderWidth = 5
 		layer.borderColor = UIColor.white.cgColor
-    }
+	}
+	
+	fileprivate func configureMap() {
+		mapView.delegate = self
+		overlay = LFGeoPointsOverlay()
+		mapView.add(overlay, level: .aboveRoads)
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,4 +55,18 @@ class LFMapPreviewViewController: LFViewController {
     }
     */
 
+}
+
+extension LFMapPreviewViewController: MKMapViewDelegate {
+	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+		if overlay is LFGeoPointsOverlay {
+			if self.overlayRenderer == nil {
+				self.overlayRenderer = LFGeoPointsOverlayRenderer(overlay: overlay)
+			}
+			
+			return self.overlayRenderer
+		} else {
+			return MKOverlayRenderer(overlay: overlay)
+		}
+	}
 }

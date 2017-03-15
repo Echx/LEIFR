@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rE8-NP-YOe" customClass="UICircularProgressRingView" customModule="UICircularProgressRing">
-                                <rect key="frame" x="124.5" y="271" width="125" height="125"/>
+                                <rect key="frame" x="125" y="271" width="125" height="125"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rE8-NP-YOe" secondAttribute="height" id="aj2-NG-BRw"/>
