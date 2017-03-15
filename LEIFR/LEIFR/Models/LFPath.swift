@@ -70,11 +70,8 @@ class LFPath: NSObject {
 		guard points.count > 0 else {
 			return false
 		}
-        
-        let firstPoint = points.first!
-        let lastPoint = points.last!
 		
-        return !(firstPoint.time > endDate || lastPoint.time < startDate)
+        return !(self.startTime! > endDate || self.endTime! < startDate)
     }
     
     func isValidPath() -> Bool {
