@@ -163,10 +163,12 @@ class LFPlaybackViewController: LFViewController {
             }
         }
         
-        DispatchQueue(label:
-            "background").asyncAfter(deadline: .now()) {
+        DispatchQueue(label: "background").asyncAfter(deadline: .now()) {
             var previousM: Double?
             var animationTime = 0.1
+            if self.pausePointIndex >= points.count {
+                self.pausePointIndex = 0
+            }
             for k in self.pausePointIndex..<points.count {
                 self.pausePointIndex = 0
                 let point = points[k]
@@ -191,7 +193,7 @@ class LFPlaybackViewController: LFViewController {
                     delay += animationTime
                 }
             }
-            
+        
             delay += 0.1
             DispatchQueue.main.async {
                 
