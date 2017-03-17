@@ -41,6 +41,14 @@ class LFLocalFileManager: NSObject {
 	}
 	
 	func handleIncomingFile(with url: URL) -> Bool {
+		if var topController = UIApplication.shared.keyWindow?.rootViewController {
+			while let presentedViewController = topController.presentedViewController {
+				topController = presentedViewController
+			}
+			
+			LFTrackTabViewController.defaultInstance.switchToPage(index: 1)
+			topController.present(LFTrackTabViewController.defaultInstance, animated: true, completion: nil)
+		}
 		return true
 	}
 }
