@@ -68,6 +68,14 @@ extension LFTrackViewController: UITableViewDataSource {
 		tableView.scrollIndicatorInsets = UIEdgeInsets(top: topBarHeight, left: 0, bottom: 0, right: 0)
 		tableView.backgroundColor = self.view.backgroundColor
 		tableView.rowHeight = 80
+		
+		let label = UILabel()
+		label.text = "No Track Available".uppercased()
+		label.textColor = UIColor.white
+		label.textAlignment = .center
+		label.font = UIFont.systemFont(ofSize: 15, weight: 0.01)
+		tableView.backgroundView = label
+		
 		registerCells(for: tableView)
 	}
 	
