@@ -132,7 +132,6 @@ extension LFHistoryViewController {
 	
 	@IBAction func showAllTrackView(sender: UIButton) {
 		let controller = LFTrackViewController.controllerFromStoryboard()
-		controller.modalTransitionStyle = .crossDissolve
 		self.present(controller, animated: true, completion: nil)
 	}
     
