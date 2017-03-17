@@ -27,7 +27,7 @@ class LFTrackTabViewController: LFViewController {
 
 		self.tabControllers = [
 			LFMyTrackViewController.controllerFromStoryboard(),
-			LFMyTrackViewController.controllerFromStoryboard()
+			LFInboxViewController.controllerFromStoryboard()
 		]
 		
 		self.tabButtons = [tabButtonLeft, tabButtonRight]
