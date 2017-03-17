@@ -11,28 +11,20 @@ import UIKit
 class LFTrackViewController: LFViewController {
 	
 	@IBOutlet var tableView: UITableView!
+	fileprivate var paths = [LFPath]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		self.configure(tableView: tableView)
+		configure(tableView: tableView)
+		loadPaths()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	fileprivate func loadPaths() {
+		LFDatabaseManager.shared.getAllPaths(completion: {
+			self.paths = $0
+			self.tableView.reloadData()
+		})
+	}
 }
 
 extension LFTrackViewController: UITableViewDataSource {
@@ -56,12 +48,13 @@ extension LFTrackViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5
+		return paths.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: LFTrackTableViewCell.identifier, for: indexPath) as! LFTrackTableViewCell
 		cell.indexPath = indexPath
+		cell.path = paths[indexPath.row]
 		return cell
 	}
 }

@@ -43,7 +43,7 @@ class LFPath: NSObject, NSSecureCoding {
 			let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
 			return MKCoordinateRegion(center: center, span: span)
 		} else {
-			let span = MKCoordinateSpan(latitudeDelta: (south - north) / 2.0, longitudeDelta: (east - west) / 2.0)
+			let span = MKCoordinateSpan(latitudeDelta: (south - north) * 2.0, longitudeDelta: (east - west) * 2.0)
 			return MKCoordinateRegion(center: center, span: span)
 		}
 	}
