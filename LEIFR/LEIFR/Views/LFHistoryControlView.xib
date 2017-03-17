@@ -53,15 +53,26 @@
                         <action selector="toggleUserLocationWithSender:" destination="-1" eventType="touchUpInside" id="Hak-Nt-slD"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyZ-9B-eZt">
+                    <rect key="frame" x="280" y="44" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KyZ-9B-eZt" secondAttribute="height" id="ILv-Vy-gF2"/>
+                        <constraint firstAttribute="width" constant="48" id="ogR-w3-yir"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="ic_timeline_48pt"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.34901960780000002" blue="0.32156862749999998" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="15v-Vl-mYg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="60l-8c-mQV"/>
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FlW-cY-hwF"/>
+                <constraint firstItem="KyZ-9B-eZt" firstAttribute="centerY" secondItem="hQs-9w-GBp" secondAttribute="centerY" id="K7w-A4-UEL"/>
                 <constraint firstItem="15v-Vl-mYg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NuH-uB-YNV"/>
                 <constraint firstItem="xyR-I7-pI9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OHT-Fd-Xdn"/>
                 <constraint firstItem="hQs-9w-GBp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Yo1-cx-255"/>
                 <constraint firstItem="hQs-9w-GBp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="emw-Sy-Swg"/>
+                <constraint firstAttribute="trailing" secondItem="KyZ-9B-eZt" secondAttribute="trailing" constant="20" id="o3W-oq-RC5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-11" y="-483"/>
@@ -70,5 +81,6 @@
     <resources>
         <image name="GPS off" width="48" height="48"/>
         <image name="GPS on" width="48" height="48"/>
+        <image name="ic_timeline_48pt" width="48" height="48"/>
     </resources>
 </document>
