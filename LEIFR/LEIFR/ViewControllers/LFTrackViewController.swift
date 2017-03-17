@@ -43,6 +43,7 @@ extension LFTrackViewController: UITableViewDataSource {
 		tableView.contentInset = UIEdgeInsets(top: topBarHeight, left: 0, bottom: bottomBarHeight, right: 0)
 		tableView.scrollIndicatorInsets = UIEdgeInsets(top: topBarHeight, left: 0, bottom: 0, right: 0)
 		tableView.backgroundColor = self.view.backgroundColor
+		tableView.rowHeight = 80
 		registerCells(for: tableView)
 	}
 	
@@ -60,6 +61,7 @@ extension LFTrackViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: LFTrackTableViewCell.identifier, for: indexPath) as! LFTrackTableViewCell
+		cell.indexPath = indexPath
 		return cell
 	}
 }

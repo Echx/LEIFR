@@ -20,6 +20,33 @@ class LFPath: NSObject, NSSecureCoding {
 	var startTime: Date? { return points.first?.time }
 	var endTime: Date? { return points.last?.time }
 	
+	var boundedRegion: MKCoordinateRegion? {
+		guard points.count > 0 else {
+			return nil
+		}
+		
+		var west = Double(CGFloat.greatestFiniteMagnitude)
+		var east = Double(CGFloat.leastNormalMagnitude)
+		var north = Double(CGFloat.greatestFiniteMagnitude)
+		var south = Double(CGFloat.leastNormalMagnitude)
+
+		for point in points {
+			west = min(west, point.longitude)
+			east = max(east, point.longitude)
+			north = min(north, point.latitude)
+			south = max(south, point.latitude)
+		}
+		
+		let center = CLLocationCoordinate2D(latitude: (south + north) / 2.0, longitude: (east + west) / 2.0)
+		if points.count == 1 {
+			let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+			return MKCoordinateRegion(center: center, span: span)
+		} else {
+			let span = MKCoordinateSpan(latitudeDelta: (south - north) / 2.0, longitudeDelta: (east - west) / 2.0)
+			return MKCoordinateRegion(center: center, span: span)
+		}
+	}
+	
 	init(lineString: WKBLineString) {
 		super.init()
 		self.points = lineString.points.map({
