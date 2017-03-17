@@ -448,6 +448,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="diC-SP-QEc" id="tMp-3X-TlY"/>
+                        <outlet property="titleLabel" destination="mFv-l4-fRj" id="oSb-wS-S2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG8-7V-wWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -754,7 +755,7 @@
         <scene sceneID="13N-cR-1iv">
             <objects>
                 <collectionViewController id="wDW-Sx-Zln" customClass="LFStatisticsCollectionViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="TyL-dn-e5R">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TyL-dn-e5R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>

@@ -13,6 +13,8 @@ class LFTrackViewController: LFViewController {
 	fileprivate let amountToLoad = 10
 	
 	@IBOutlet var tableView: UITableView!
+	@IBOutlet var titleLabel: UILabel!
+	
 	fileprivate var paths = [LFPath]()
 	fileprivate var shouldHideLoadMoreButton = false
 	fileprivate var isLoading = false;
@@ -27,7 +29,15 @@ class LFTrackViewController: LFViewController {
         super.viewDidLoad()
 		configure(tableView: tableView)
 		loadPaths()
+		loadPathCount()
     }
+	
+	fileprivate func loadPathCount() {
+		LFDatabaseManager.shared.getPathCount(completion: {
+			count in
+			self.titleLabel.text = "All Tracks (\(count))"
+		})
+	}
 
 	fileprivate func loadPaths() {
 		guard !isLoading else {
@@ -89,6 +99,7 @@ extension LFTrackViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		tableView.backgroundView?.isHidden = paths.count != 0
 		return section == Section.tracks.rawValue ? paths.count : 1
 	}
 	

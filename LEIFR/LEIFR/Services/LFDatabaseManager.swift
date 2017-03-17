@@ -95,6 +95,23 @@ class LFDatabaseManager: NSObject {
 		})
 	}
 	
+	func getPathCount(completion: @escaping((Int) -> Void)) {
+		databaseQueue.inDatabase({
+			database in
+			let querySQL = "SELECT COUNT(track_id) FROM tracks"
+			let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
+			if (results.next()) {
+				if results.hasAnotherRow() {
+					completion(results.long(forColumnIndex: 0))
+					return
+				}
+			}
+			
+			completion(0)
+		})
+
+	}
+	
 	func getPaths(from trackID: Int?, amount: Int, completion: @escaping (([LFPath]) -> Void)) {
 		databaseQueue.inDatabase({
 			database in
@@ -114,7 +131,7 @@ class LFDatabaseManager: NSObject {
 			while (results.next()) {
 				if results.hasAnotherRow() {
 					if let data = results.data(forColumnIndex: 1) {
-						let identifier = Int(results.int(forColumnIndex: 0))
+						let identifier = results.long(forColumnIndex: 0)
 						let reader = WKBByteReader(data: data)
 						reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
 						let geometry = WKBGeometryReader.readGeometry(with: reader)
