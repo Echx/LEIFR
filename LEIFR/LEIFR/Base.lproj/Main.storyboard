@@ -470,7 +470,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RVl-R7-mRH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" red="0.83137254901960778" green="0.77647058823529413" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.9137254901960784" green="0.85490196078431369" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ANt-Dp-ZXY" id="cY0-Ur-II8"/>
                                     <outlet property="delegate" destination="ANt-Dp-ZXY" id="89O-O8-MQ8"/>

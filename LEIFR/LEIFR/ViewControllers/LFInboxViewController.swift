@@ -29,6 +29,31 @@ class LFInboxViewController: LFViewController {
 	fileprivate func loadPaths() {
 		incomingPaths = LFLocalFileManager.shared.getAllIncommingPaths()
 		self.tableView.reloadData()
+		self.titleLabel.text = "Inbox (\(incomingPaths.count))"
+	}
+	
+	fileprivate func deletePath(at indexPath: IndexPath) {
+		let incomingPath = incomingPaths[indexPath.row]
+		incomingPath.delete()
+		incomingPaths.remove(at: indexPath.row)
+		var indexPaths = [IndexPath]()
+		for row in indexPath.row..<self.incomingPaths.count {
+			indexPaths.append(IndexPath(row: row, section: 0))
+		}
+		self.tableView.deleteRows(at: [indexPath], with: .automatic)
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+			self.tableView.reloadRows(at: indexPaths, with: .fade)
+		})
+		
+		self.titleLabel.text = "Inbox (\(self.incomingPaths.count))"
+	}
+	
+	fileprivate var documentInteractionController: UIDocumentInteractionController?
+	fileprivate func sharePath(at indexPath: IndexPath) {
+		let url = incomingPaths[indexPath.row].url
+		let documentController = UIDocumentInteractionController(url: URL(fileURLWithPath: url!))
+		documentController.presentOpenInMenu(from: CGRect.zero, in: self.view, animated: true)
+		self.documentInteractionController = documentController
 	}
 }
 
@@ -49,7 +74,7 @@ extension LFInboxViewController: UITableViewDataSource {
 		label.font = UIFont.systemFont(ofSize: 15, weight: 0.01)
 		tableView.backgroundView = label
 		
-		tableView.backgroundColor = UIColor(hexString: "#D4C6BF")
+		tableView.backgroundColor = UIColor(hexString: "#E9DAD2")
 		
 		registerCells(for: tableView)
 	}
@@ -63,6 +88,7 @@ extension LFInboxViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		tableView.backgroundView?.isHidden = incomingPaths.count != 0
 		return incomingPaths.count
 	}
 	
@@ -71,5 +97,23 @@ extension LFInboxViewController: UITableViewDataSource {
 		cell.indexPath = indexPath
 		cell.incomingPath = incomingPaths[indexPath.row]
 		return cell
+	}
+}
+
+extension LFInboxViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+		let shareRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler:{
+			_, indexpath in
+			self.sharePath(at: indexPath)
+		})
+		shareRowAction.backgroundColor = UIColor(hexString: "#3498db");
+		
+		let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler:{
+			_, indexpath in
+			self.deletePath(at: indexPath)
+		})
+		deleteRowAction.backgroundColor = UIColor(hexString: "#e74c3c");
+		
+		return [deleteRowAction, shareRowAction];
 	}
 }

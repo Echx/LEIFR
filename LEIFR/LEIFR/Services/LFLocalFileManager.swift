@@ -14,6 +14,10 @@ class LFLocalFileManager: NSObject {
 	
 	var inboxDirectory = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/Inbox"
 	
+	func removeFile(at path: String) {
+		try? FileManager.default.removeItem(atPath: path)
+	}
+	
 	func getAllIncommingPaths() -> [LFIncomingPath] {
 		
 		var incomingPaths = [LFIncomingPath]()

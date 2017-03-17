@@ -176,18 +176,19 @@ extension LFMyTrackViewController: UITableViewDataSource {
 extension LFMyTrackViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-		let moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler:{
+		let shareRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler:{
 			_, indexpath in
 			self.sharePath(at: indexPath)
-		});
-		moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
+		})
+		shareRowAction.backgroundColor = UIColor(hexString: "#3498db");
 		
 		let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler:{
 			_, indexpath in
 			self.deletePath(at: indexPath)
-		});
+		})
+		deleteRowAction.backgroundColor = UIColor(hexString: "#e74c3c");
 		
-		return [deleteRowAction, moreRowAction];
+		return [deleteRowAction, shareRowAction];
 	}
 	
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -12,4 +12,8 @@ class LFIncomingPath: NSObject {
 	var path: LFPath!
 	var url: String!
 	var fileName: String!
+	
+	func delete() {
+		LFLocalFileManager.shared.removeFile(at: self.url)
+	}
 }
