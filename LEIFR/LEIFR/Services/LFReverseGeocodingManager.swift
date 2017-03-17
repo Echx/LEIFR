@@ -45,7 +45,6 @@ class LFReverseGeocodingManager: NSObject {
 				return
 			}
 			
-			print("Reverse geocoding finished!")
 			NotificationCenter.default.post(self.queueJobsCompleteNotification)
 		}
 	}

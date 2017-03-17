@@ -20,9 +20,8 @@ class LFGeoRecordManager: NSObject {
         defer {
             pthread_mutex_unlock(&mutex)
         }
-        print("save point")
+		
         let coordinate = newPoint.coordinate
-		LFReverseGeocodingManager.shared.reverseGeocoding(coordinate: coordinate)
         self.bufferPath.addPoint(latitude: coordinate.latitude, longitude: coordinate.longitude, altitude: newPoint.altitude)
     }
     
@@ -31,15 +30,15 @@ class LFGeoRecordManager: NSObject {
         defer {
             pthread_mutex_unlock(&mutex)
         }
-        print("flush point")
-        if self.bufferPath.pointCount > 0 {
+        print("Flushing point..")
+        if self.bufferPath.isValidPath() {
             let databaseManager = LFDatabaseManager.shared
             databaseManager.savePath(self.bufferPath, completion: {
                 error in
                 if error != nil {
 					print(error!)
 				} else {
-					print("path flushed")
+					print("Path flushed")
 					self.bufferPath = LFPath()
 				}
             })
@@ -48,7 +47,9 @@ class LFGeoRecordManager: NSObject {
 				trackID in
 				LFCachedDatabaseManager.shared.cachePath(with: trackID)
 			})
-        }
+		} else {
+			print("Path did not survive validation, discarded")
+		}
     }
     
     func startRecording() {

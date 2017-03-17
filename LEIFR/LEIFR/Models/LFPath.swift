@@ -89,7 +89,16 @@ class LFPath: NSObject, NSSecureCoding {
 	}
 	
 	func addPoint(latitude: Double, longitude: Double, altitude: Double, time: Date) {
+		if let last = points.last {
+			if (last.latitude == latitude && last.longitude == longitude) {
+				print("Duplicate Lat & Lon, point discarded")
+				return
+			}
+		}
+		
+		print("Point saved")
 		let point = LFPoint(longitude: longitude, latitude: latitude, altitude: altitude, time: time)
+		LFReverseGeocodingManager.shared.reverseGeocoding(coordinate: point.coordinate)
 		self.points.append(point)
 	}
 	
