@@ -28,18 +28,30 @@ class LFTrackViewController: LFViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		configure(tableView: tableView)
-		loadPaths()
-		loadPathCount()
+		loadDatabasePaths()
+		loadDatabasePathCount()
     }
 	
-	fileprivate func loadPathCount() {
+	fileprivate func loadDatabasePathCount() {
 		LFDatabaseManager.shared.getPathCount(completion: {
 			count in
 			self.titleLabel.text = "All Tracks (\(count))"
 		})
 	}
+	
+	fileprivate func pathCount() -> Int {
+		return paths.count
+	}
+	
+	fileprivate func path(at indexPath: IndexPath) -> LFPath {
+		return paths[indexPath.row]
+	}
+	
+	fileprivate func removePath(at indexPath: IndexPath) {
+		paths.remove(at: indexPath.row)
+	}
 
-	fileprivate func loadPaths() {
+	fileprivate func loadDatabasePaths() {
 		guard !isLoading else {
 			return
 		}
@@ -48,18 +60,18 @@ class LFTrackViewController: LFViewController {
 		
 		let from = paths.isEmpty ? nil : paths.last!.identifier! - 1
 		LFDatabaseManager.shared.getPaths(from: from, amount: amountToLoad, completion: {
-			paths in
-			if !paths.isEmpty{
-				let originalCount = self.paths.count
+			incomingPaths in
+			if !incomingPaths.isEmpty{
+				let originalCount = self.pathCount()
 				var indexPaths = [IndexPath]()
-				for row in originalCount..<originalCount + paths.count {
+				for row in originalCount..<originalCount + incomingPaths.count {
 					indexPaths.append(IndexPath(row: row, section: 0))
 				}
-				self.paths.append(contentsOf: paths)
+				self.paths.append(contentsOf: incomingPaths)
 				self.tableView.insertRows(at: indexPaths, with: .automatic)
 			}
 			
-			if paths.count < self.amountToLoad {
+			if incomingPaths.count < self.amountToLoad {
 				self.shouldHideLoadMoreButton = true
 				let indexSet = IndexSet(integer: 1)
 				self.tableView.deleteSections(indexSet, with: .automatic)
@@ -70,14 +82,14 @@ class LFTrackViewController: LFViewController {
 	}
 	
 	fileprivate func deletePath(at indexPath: IndexPath) {
-		let path = paths[indexPath.row]
+		let path = self.path(at: indexPath)
 		path.delete(completion: {
 			error in
 			DispatchQueue.main.async {
 				if error == nil {
-					self.paths.remove(at: indexPath.row)
+					self.removePath(at: indexPath)
 					var indexPaths = [IndexPath]()
-					for row in indexPath.row..<self.paths.count {
+					for row in indexPath.row..<self.pathCount() {
 						indexPaths.append(IndexPath(row: row, section: 0))
 					}
 					self.tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -85,7 +97,7 @@ class LFTrackViewController: LFViewController {
 						self.tableView.reloadRows(at: indexPaths, with: .fade)
 					})
 					
-					self.loadPathCount()
+					self.loadDatabasePathCount()
 				}
 			}
 		})
@@ -93,7 +105,7 @@ class LFTrackViewController: LFViewController {
 	
 	fileprivate var documentInteractionController: UIDocumentInteractionController?
 	fileprivate func sharePath(at indexPath: IndexPath) {
-		let path = paths[indexPath.row]
+		let path = self.path(at: indexPath)
 		let filePath = NSTemporaryDirectory() + "Path-\(path.identifier!).leifr"
 		let success = NSKeyedArchiver.archiveRootObject(path, toFile: filePath)
 		if success {
@@ -142,15 +154,15 @@ extension LFTrackViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		tableView.backgroundView?.isHidden = paths.count != 0
-		return section == Section.tracks.rawValue ? paths.count : 1
+		tableView.backgroundView?.isHidden = pathCount() != 0
+		return section == Section.tracks.rawValue ? pathCount() : 1
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if indexPath.section == Section.tracks.rawValue {
 			let cell = tableView.dequeueReusableCell(withIdentifier: LFTrackTableViewCell.identifier, for: indexPath) as! LFTrackTableViewCell
 			cell.indexPath = indexPath
-			cell.path = paths[indexPath.row]
+			cell.path = self.path(at: indexPath)
 			return cell
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: LFButtonCell.identifier, for: indexPath) as! LFButtonCell
@@ -183,10 +195,10 @@ extension LFTrackViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == Section.tracks.rawValue {
-			let path = paths[indexPath.row]
+			let path = self.path(at: indexPath)
 			print(path.points)
 		} else {
-			self.loadPaths()
+			self.loadDatabasePaths()
 		}
 	}
 }
