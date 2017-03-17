@@ -11,7 +11,13 @@ import Mapbox
 
 class LFTrackTableViewCell: LFTableViewCell {
 	
-	private static let mapPlaceHolderImage = #imageLiteral(resourceName: "map-placeholder")
+	fileprivate static let mapPlaceHolderImage = #imageLiteral(resourceName: "map-placeholder")
+	fileprivate static var intervalFormatter = DateIntervalFormatter()
+	
+	override class func initialize () {
+		super.initialize()
+		self.intervalFormatter.dateStyle = .medium
+	}
 	
 	@IBOutlet var mapImageView: UIImageView!
 	@IBOutlet var primaryLabel: UILabel!
@@ -23,6 +29,7 @@ class LFTrackTableViewCell: LFTableViewCell {
 	var path: LFPath! {
 		didSet {
 			updateMapImage()
+			updateTexts()
 		}
 	}
 	
@@ -52,7 +59,11 @@ class LFTrackTableViewCell: LFTableViewCell {
 	}
 	
 	fileprivate func updateTexts() {
+		if let interval = path.interval {
+			self.primaryLabel.text = LFTrackTableViewCell.intervalFormatter.string(from: interval)
+		}
 		
+		self.secondaryLabel.text = "\(path.startingCountry) · \(path.pointCount) Points"
 	}
 	
 	fileprivate func updateMapImage() {

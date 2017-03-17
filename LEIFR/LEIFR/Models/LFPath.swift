@@ -21,6 +21,23 @@ class LFPath: NSObject, NSSecureCoding {
 	var pointCount: Int { return self.points.count }
 	var startTime: Date? { return points.first?.time }
 	var endTime: Date? { return points.last?.time }
+	private var country: String?
+	var startingCountry: String {
+		if let result = country {
+			return result
+		}
+		
+		country = "No Country"
+		
+		if let first = points.first {
+			let countryCode = APReverseGeocoding.default().geocodeCountry(with: first.coordinate).code!
+			let identifier = Locale.identifier(fromComponents: [NSLocale.Key.countryCode.rawValue: countryCode])
+			let name = NSLocale(localeIdentifier: identifier).displayName(forKey: NSLocale.Key.countryCode, value: countryCode)
+			country = name
+		}
+		
+		return country!
+	}
 	
 	var interval: DateInterval? {
 		guard points.count > 0 else {
