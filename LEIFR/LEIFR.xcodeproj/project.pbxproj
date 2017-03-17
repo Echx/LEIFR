@@ -30,6 +30,8 @@
 		0C77BB4B1E7C066B00E11B2C /* LFTrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C77BB491E7C066B00E11B2C /* LFTrackTableViewCell.xib */; };
 		0C77BB4D1E7C7D0100E11B2C /* LFTrackTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB4C1E7C7D0100E11B2C /* LFTrackTabViewController.swift */; };
 		0C77BB4F1E7C858200E11B2C /* LFInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB4E1E7C858200E11B2C /* LFInboxViewController.swift */; };
+		0C77BB511E7C896400E11B2C /* LFLocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB501E7C896400E11B2C /* LFLocalFileManager.swift */; };
+		0C77BB531E7C897E00E11B2C /* LFIncomingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB521E7C897E00E11B2C /* LFIncomingPath.swift */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
@@ -190,6 +192,8 @@
 		0C77BB491E7C066B00E11B2C /* LFTrackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFTrackTableViewCell.xib; sourceTree = "<group>"; };
 		0C77BB4C1E7C7D0100E11B2C /* LFTrackTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTrackTabViewController.swift; sourceTree = "<group>"; };
 		0C77BB4E1E7C858200E11B2C /* LFInboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFInboxViewController.swift; sourceTree = "<group>"; };
+		0C77BB501E7C896400E11B2C /* LFLocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLocalFileManager.swift; sourceTree = "<group>"; };
+		0C77BB521E7C897E00E11B2C /* LFIncomingPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIncomingPath.swift; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
@@ -1650,6 +1654,7 @@
 				62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */,
 				0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */,
 				0CE2D99B1E671E2D0070DC15 /* LFReverseGeocodingManager.swift */,
+				0C77BB501E7C896400E11B2C /* LFLocalFileManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1675,6 +1680,7 @@
 				62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */,
 				62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */,
 				0CE2D99F1E6722EB0070DC15 /* LFCachedCountry.swift */,
+				0C77BB521E7C897E00E11B2C /* LFIncomingPath.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2135,6 +2141,7 @@
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
 				0CF716011E3F398500FA419F /* LFMapCell.swift in Sources */,
+				0C77BB511E7C896400E11B2C /* LFLocalFileManager.swift in Sources */,
 				0C0946BE1E798C0100B76B50 /* APCountry.m in Sources */,
 				0CE2D99C1E671E2D0070DC15 /* LFReverseGeocodingManager.swift in Sources */,
 				62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */,
@@ -2149,6 +2156,7 @@
 				62BF06961DA6F02B00E6957E /* UIKitExtension.swift in Sources */,
 				0CBB387F1D85FF66002C0EF0 /* LFPath.swift in Sources */,
 				0CCCC5A31DA6F38D00488B2E /* LFViewController.swift in Sources */,
+				0C77BB531E7C897E00E11B2C /* LFIncomingPath.swift in Sources */,
 				0C4242521DC55405004F47F2 /* LFRecordButton.swift in Sources */,
 				0CF1361E1DC8E38200E122AC /* LFButtonCell.swift in Sources */,
 				0C61749C1E76F226003AD136 /* LFStatisticsCollectionViewController.swift in Sources */,
