@@ -126,6 +126,14 @@ class LFPath: NSObject, NSSecureCoding {
         return self.points.count >= minimumPointsPerPath
     }
 	
+	func delete(completion:@escaping ((Error?) -> Void)) {
+		guard let identifier = self.identifier else {
+			return
+		}
+		
+		LFDatabaseManager.shared.deletePath(identifier, completion: completion)
+	}
+	
 	override var description: String {
 		return self.WKTString()
 	}

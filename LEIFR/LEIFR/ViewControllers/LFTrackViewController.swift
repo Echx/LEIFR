@@ -118,6 +118,33 @@ extension LFTrackViewController: UITableViewDataSource {
 }
 
 extension LFTrackViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return indexPath.section == Section.tracks.rawValue
+	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		let path = paths[indexPath.row]
+		path.delete(completion: {
+			error in
+			DispatchQueue.main.async {
+				if error == nil {
+					self.paths.remove(at: indexPath.row)
+					var indexPaths = [IndexPath]()
+					for row in indexPath.row..<self.paths.count {
+						indexPaths.append(IndexPath(row: row, section: 0))
+					}
+					tableView.deleteRows(at: [indexPath], with: .automatic)
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+						tableView.reloadRows(at: indexPaths, with: .fade)
+					})
+					
+					self.loadPathCount()
+				}
+			}
+		})
+	}
+	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == Section.tracks.rawValue {
 			let path = paths[indexPath.row]

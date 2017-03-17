@@ -95,6 +95,19 @@ class LFDatabaseManager: NSObject {
 		})
 	}
 	
+	func deletePath(_ pathIdentifier: Int, completion:@escaping ((Error?) -> Void)) {
+		self.databaseQueue.inDatabase({
+			database in
+			let insertSQL = "DELETE FROM tracks WHERE track_id = \(pathIdentifier)"
+			let isSuccessful = self.database.executeStatements(insertSQL)
+			if isSuccessful {
+				completion(nil)
+			} else {
+				completion(database?.lastError())
+			}
+		})
+	}
+	
 	func getPathCount(completion: @escaping((Int) -> Void)) {
 		databaseQueue.inDatabase({
 			database in
