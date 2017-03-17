@@ -16,10 +16,18 @@ class LFPath: NSObject, NSSecureCoding {
     fileprivate let minimumPointsPerPath = 5
 	var points = [LFPoint]()
 	var identifier: Int?
+	var thumbnail: UIImage?
 	
 	var pointCount: Int { return self.points.count }
 	var startTime: Date? { return points.first?.time }
 	var endTime: Date? { return points.last?.time }
+	
+	var interval: DateInterval? {
+		guard points.count > 0 else {
+			return nil
+		}
+		return DateInterval(start: startTime!, end: endTime!)
+	}
 	
 	var boundedRegion: MKCoordinateRegion? {
 		guard points.count > 0 else {

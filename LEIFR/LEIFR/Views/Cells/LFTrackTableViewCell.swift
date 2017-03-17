@@ -57,6 +57,11 @@ class LFTrackTableViewCell: LFTableViewCell {
 	
 	fileprivate func updateMapImage() {
 		if let path = self.path {
+			if let thumbnail = path.thumbnail {
+				self.mapImageView.image = thumbnail
+				return
+			}
+			
 			if let region = path.boundedRegion {
 				snapOptions.region = region
 			}
@@ -67,7 +72,9 @@ class LFTrackTableViewCell: LFTableViewCell {
 			optionalSnapShot, _ in
 			if let snapShot = optionalSnapShot {
 				UIView.transition(with: self.mapImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-					self.mapImageView.image = self.imageByDrawPath(path: self.path, on: snapShot)
+					let image = self.imageByDrawPath(path: self.path, on: snapShot)
+					self.mapImageView.image = image
+					self.path.thumbnail = image
 				}, completion: nil)
 			}
 		})
