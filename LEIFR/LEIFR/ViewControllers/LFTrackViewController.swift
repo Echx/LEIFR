@@ -10,9 +10,18 @@ import UIKit
 
 class LFTrackViewController: LFViewController {
 	
+	fileprivate let amountToLoad = 10
+	
 	@IBOutlet var tableView: UITableView!
 	fileprivate var paths = [LFPath]()
 	fileprivate var shouldHideLoadMoreButton = false
+	fileprivate var isLoading = false;
+	
+	enum Section: Int {
+		case tracks = 0
+		case loadMoreButton
+		case count
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +29,6 @@ class LFTrackViewController: LFViewController {
 		loadPaths()
     }
 
-	fileprivate var isLoading = false;
 	fileprivate func loadPaths() {
 		guard !isLoading else {
 			return
@@ -29,15 +37,24 @@ class LFTrackViewController: LFViewController {
 		isLoading = true
 		
 		let from = paths.isEmpty ? nil : paths.last!.identifier! - 1
-		LFDatabaseManager.shared.getPaths(from: from, amount: 10, completion: {
+		LFDatabaseManager.shared.getPaths(from: from, amount: amountToLoad, completion: {
 			paths in
-			if paths.isEmpty {
-				self.shouldHideLoadMoreButton = true
-				self.tableView.reloadData()
-			} else {
+			if !paths.isEmpty{
+				let originalCount = self.paths.count
+				var indexPaths = [IndexPath]()
+				for row in originalCount..<originalCount + paths.count {
+					indexPaths.append(IndexPath(row: row, section: 0))
+				}
 				self.paths.append(contentsOf: paths)
-				self.tableView.reloadData()
+				self.tableView.insertRows(at: indexPaths, with: .automatic)
 			}
+			
+			if paths.count < self.amountToLoad {
+				self.shouldHideLoadMoreButton = true
+				let indexSet = IndexSet(integer: 1)
+				self.tableView.deleteSections(indexSet, with: .automatic)
+			}
+			
 			self.isLoading = false
 		})
 	}
@@ -60,15 +77,15 @@ extension LFTrackViewController: UITableViewDataSource {
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return shouldHideLoadMoreButton ? 1 : 2
+		return shouldHideLoadMoreButton ? Section.loadMoreButton.rawValue : Section.count.rawValue
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return section == 0 ? paths.count : 1
+		return section == Section.tracks.rawValue ? paths.count : 1
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if indexPath.section == 0 {
+		if indexPath.section == Section.tracks.rawValue {
 			let cell = tableView.dequeueReusableCell(withIdentifier: LFTrackTableViewCell.identifier, for: indexPath) as! LFTrackTableViewCell
 			cell.indexPath = indexPath
 			cell.path = paths[indexPath.row]
@@ -83,7 +100,7 @@ extension LFTrackViewController: UITableViewDataSource {
 
 extension LFTrackViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if indexPath.section == 0 {
+		if indexPath.section == Section.tracks.rawValue {
 			let path = paths[indexPath.row]
 			print(path.points)
 		} else {
