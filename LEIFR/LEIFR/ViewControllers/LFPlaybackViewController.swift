@@ -81,7 +81,7 @@ class LFPlaybackViewController: LFViewController {
         if availableDates.count == 0 {
             LFDatabaseManager.shared.getAllPaths {
                 paths in
-                
+
                 for path in paths {
                     var startDate = path.startTime!
                     var endDate = path.endTime!
@@ -100,6 +100,7 @@ class LFPlaybackViewController: LFViewController {
                 }
                 
                 self.mergeDates()
+       
             }
         }
     }

@@ -80,7 +80,7 @@ extension LFPlaybackCalendarViewController: FSCalendarDelegate, FSCalendarDataSo
             return false
         }
         
-        return date > availableDates[0].0 && date < (availableDates.last?.1)!
+        return date >= availableDates[0].0 && date <= (availableDates.last?.1)!
     }
     
 }
