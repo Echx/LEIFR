@@ -28,7 +28,7 @@ class LFHistoryViewController: LFViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        LFTrackTabViewController.defaultInstance = LFTrackTabViewController.controllerFromStoryboard() as! LFTrackTabViewController
         self.configureMap()
     }
 	
@@ -131,8 +131,7 @@ extension LFHistoryViewController {
     }
 	
 	@IBAction func showAllTrackView(sender: UIButton) {
-		let controller = LFTrackViewController.controllerFromStoryboard()
-		self.present(controller, animated: true, completion: nil)
+		self.present(LFTrackTabViewController.defaultInstance, animated: true, completion: nil)
 	}
     
     override func accessoryTextForTab() -> String? {

@@ -1,5 +1,5 @@
 //
-//  LFTrackViewController.swift
+//  LFMyTrackViewController.swift
 //  LEIFR
 //
 //  Created by Jinghan Wang on 17/3/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LFTrackViewController: LFViewController {
+class LFMyTrackViewController: LFViewController {
 	
 	fileprivate let amountToLoad = 10
 	
@@ -35,7 +35,7 @@ class LFTrackViewController: LFViewController {
 	fileprivate func loadDatabasePathCount() {
 		LFDatabaseManager.shared.getPathCount(completion: {
 			count in
-			self.titleLabel.text = "All Tracks (\(count))"
+			self.titleLabel.text = "My Tracks (\(count))"
 		})
 	}
 	
@@ -117,7 +117,7 @@ class LFTrackViewController: LFViewController {
 	}
 }
 
-extension LFTrackViewController: UIDocumentInteractionControllerDelegate {
+extension LFMyTrackViewController: UIDocumentInteractionControllerDelegate {
 	func documentInteractionControllerDidDismissOpenInMenu(_ controller: UIDocumentInteractionController) {
 		if let url = controller.url {
 			try! FileManager.default.removeItem(at: url)
@@ -125,12 +125,13 @@ extension LFTrackViewController: UIDocumentInteractionControllerDelegate {
 	}
 }
 
-extension LFTrackViewController: UITableViewDataSource {
+extension LFMyTrackViewController: UITableViewDataSource {
 	
 	fileprivate func configure(tableView: UITableView) {
 		let topBarHeight: CGFloat = 84
-		tableView.contentInset = UIEdgeInsets(top: topBarHeight, left: 0, bottom: 0, right: 0)
-		tableView.scrollIndicatorInsets = UIEdgeInsets(top: topBarHeight, left: 0, bottom: 0, right: 0)
+		let bottomBarHeight: CGFloat = 64
+		tableView.contentInset = UIEdgeInsets(top: topBarHeight, left: 0, bottom: bottomBarHeight, right: 0)
+		tableView.scrollIndicatorInsets = UIEdgeInsets(top: topBarHeight, left: 0, bottom: bottomBarHeight, right: 0)
 		tableView.backgroundColor = self.view.backgroundColor
 		tableView.rowHeight = 80
 		
@@ -172,7 +173,7 @@ extension LFTrackViewController: UITableViewDataSource {
 	}
 }
 
-extension LFTrackViewController: UITableViewDelegate {
+extension LFMyTrackViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 		let moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler:{

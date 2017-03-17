@@ -359,10 +359,10 @@
             </objects>
             <point key="canvasLocation" x="2508" y="1612"/>
         </scene>
-        <!--Track View Controller-->
+        <!--My Track View Controller-->
         <scene sceneID="8mb-Cz-kwD">
             <objects>
-                <viewController storyboardIdentifier="LFTrackViewController" id="Rik-28-ewL" customClass="LFTrackViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LFMyTrackViewController" id="Rik-28-ewL" customClass="LFMyTrackViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JsC-YL-yMX"/>
                         <viewControllerLayoutGuide type="bottom" id="Wqg-sg-muJ"/>
@@ -392,8 +392,8 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Tracks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFv-l4-fRj">
-                                                        <rect key="frame" x="20" y="41" width="81" height="23"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Tracks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFv-l4-fRj">
+                                                        <rect key="frame" x="20" y="41" width="86" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="19"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -452,6 +452,106 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG8-7V-wWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="1612"/>
+        </scene>
+        <!--Track Tab View Controller-->
+        <scene sceneID="N8g-XZ-QdW">
+            <objects>
+                <viewController storyboardIdentifier="LFTrackTabViewController" id="HV7-QA-c3T" customClass="LFTrackTabViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WRq-fp-dyK"/>
+                        <viewControllerLayoutGuide type="bottom" id="u9n-F6-r8F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZUd-aB-OIX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQa-Qk-P8N">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBU-78-PVo">
+                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fNe-SQ-0x4">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJb-je-D9k">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZNd-2Z-ghp">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0VH-f2-qfa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dj9-gm-pYi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
+                                                                <state key="normal" image="ic_timeline_36pt"/>
+                                                                <connections>
+                                                                    <action selector="buttonDidClickWithSender:" destination="HV7-QA-c3T" eventType="touchUpInside" id="6RP-ld-4RS"/>
+                                                                    <action selector="buttonDidClickWithSender:" destination="Gba-mv-eLi" eventType="touchUpInside" id="LEy-yp-Gpq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHm-g5-16r">
+                                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="64"/>
+                                                                <state key="normal" image="ic_inbox_36pt"/>
+                                                                <connections>
+                                                                    <action selector="buttonDidClickWithSender:" destination="Gba-mv-eLi" eventType="touchUpInside" id="45Y-DQ-hPB"/>
+                                                                    <action selector="buttonDidClickWithSender:" destination="HV7-QA-c3T" eventType="touchUpInside" id="s1z-SC-apK"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="64" id="mLE-Sf-H9W"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="0VH-f2-qfa" secondAttribute="bottom" id="4KJ-Kh-DW8"/>
+                                                    <constraint firstItem="0VH-f2-qfa" firstAttribute="leading" secondItem="ZNd-2Z-ghp" secondAttribute="leading" id="ZBa-Ox-kGR"/>
+                                                    <constraint firstItem="0VH-f2-qfa" firstAttribute="top" secondItem="ZNd-2Z-ghp" secondAttribute="top" id="nG6-hs-uqa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0VH-f2-qfa" secondAttribute="trailing" id="xUO-GD-7ud"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="BeN-NV-aUx"/>
+                                            </constraints>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="FJb-je-D9k" secondAttribute="trailing" id="6DH-QL-fbu"/>
+                                        <constraint firstAttribute="bottom" secondItem="FJb-je-D9k" secondAttribute="bottom" id="FIa-S8-Xyf"/>
+                                        <constraint firstItem="FJb-je-D9k" firstAttribute="leading" secondItem="fNe-SQ-0x4" secondAttribute="leading" id="wSk-AJ-xaK"/>
+                                        <constraint firstItem="FJb-je-D9k" firstAttribute="top" secondItem="fNe-SQ-0x4" secondAttribute="top" id="x0S-KA-78E"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u9n-F6-r8F" firstAttribute="top" secondItem="jBU-78-PVo" secondAttribute="bottom" id="14M-TP-1y4"/>
+                            <constraint firstItem="vQa-Qk-P8N" firstAttribute="leading" secondItem="ZUd-aB-OIX" secondAttribute="leading" id="2fQ-oU-PuH"/>
+                            <constraint firstItem="u9n-F6-r8F" firstAttribute="top" secondItem="vQa-Qk-P8N" secondAttribute="bottom" id="II5-pD-FnG"/>
+                            <constraint firstAttribute="trailing" secondItem="vQa-Qk-P8N" secondAttribute="trailing" id="XkT-pT-WEc"/>
+                            <constraint firstAttribute="trailing" secondItem="jBU-78-PVo" secondAttribute="trailing" id="kho-xt-y7H"/>
+                            <constraint firstItem="vQa-Qk-P8N" firstAttribute="top" secondItem="ZUd-aB-OIX" secondAttribute="top" id="qfo-75-2Bd"/>
+                            <constraint firstItem="jBU-78-PVo" firstAttribute="leading" secondItem="ZUd-aB-OIX" secondAttribute="leading" id="t2B-I9-kid"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="vQa-Qk-P8N" id="bKp-j3-9zS"/>
+                        <outlet property="tabBar" destination="jBU-78-PVo" id="Lcd-CX-NXV"/>
+                        <outlet property="tabButtonLeft" destination="dj9-gm-pYi" id="cHz-xd-jpm"/>
+                        <outlet property="tabButtonRight" destination="IHm-g5-16r" id="aDW-sn-xgj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1v-Fz-MZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1813.5999999999999" y="927.88605697151434"/>
         </scene>
@@ -755,7 +855,7 @@
         <scene sceneID="13N-cR-1iv">
             <objects>
                 <collectionViewController id="wDW-Sx-Zln" customClass="LFStatisticsCollectionViewController" customModule="LEIFR" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TyL-dn-e5R">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="TyL-dn-e5R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1113,8 +1213,10 @@
     <resources>
         <image name="ic_camera_36pt" width="36" height="36"/>
         <image name="ic_clear" width="24" height="24"/>
+        <image name="ic_inbox_36pt" width="36" height="36"/>
         <image name="ic_public_36pt" width="36" height="36"/>
         <image name="ic_sentiment_very_satisfied_36pt" width="36" height="36"/>
+        <image name="ic_timeline_36pt" width="36" height="36"/>
         <image name="ic_watch_later_36pt" width="36" height="36"/>
     </resources>
 </document>
