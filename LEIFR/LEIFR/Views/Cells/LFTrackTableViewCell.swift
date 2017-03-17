@@ -76,19 +76,23 @@ class LFTrackTableViewCell: LFTableViewCell {
 			if let region = path.boundedRegion {
 				snapOptions.region = region
 			}
+			
+			let snapShotter = MKMapSnapshotter(options: self.snapOptions)
+			snapShotter.start(completionHandler: {
+				optionalSnapShot, _ in
+				DispatchQueue(label: "ImageProcessQueue").async {
+					if let snapShot = optionalSnapShot {
+						let image = self.imageByDrawPath(path: self.path, on: snapShot)
+						self.path.thumbnail = image
+						DispatchQueue.main.async {
+							UIView.transition(with: self.mapImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+								self.mapImageView.image = image
+							}, completion: nil)
+						}
+					}
+				}
+			})
 		}
-		
-		let snapShotter = MKMapSnapshotter(options: snapOptions)
-		snapShotter.start(completionHandler: {
-			optionalSnapShot, _ in
-			if let snapShot = optionalSnapShot {
-				UIView.transition(with: self.mapImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-					let image = self.imageByDrawPath(path: self.path, on: snapShot)
-					self.mapImageView.image = image
-					self.path.thumbnail = image
-				}, completion: nil)
-			}
-		})
 	}
 	
 	fileprivate func imageByDrawPath(path: LFPath, on mapSnapShot: MKMapSnapshot) -> UIImage {

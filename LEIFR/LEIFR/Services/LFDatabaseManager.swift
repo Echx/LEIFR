@@ -94,17 +94,68 @@ class LFDatabaseManager: NSObject {
 			}
 		})
 	}
-    
+	
+	func getPaths(from trackID: Int?, amount: Int, completion: @escaping (([LFPath]) -> Void)) {
+		databaseQueue.inDatabase({
+			database in
+			
+			var querySQL = "SELECT track_id, AsBinary(track_geometry) FROM tracks"
+			
+			if let id = trackID {
+				querySQL += " WHERE track_id <= \(id)"
+			}
+			
+			querySQL += " ORDER BY track_id DESC LIMIT \(amount)"
+			
+			let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
+			
+			var paths = [LFPath]()
+			
+			while (results.next()) {
+				if results.hasAnotherRow() {
+					if let data = results.data(forColumnIndex: 1) {
+						let identifier = Int(results.int(forColumnIndex: 0))
+						let reader = WKBByteReader(data: data)
+						reader?.byteOrder = Int(CFByteOrderBigEndian.rawValue)
+						let geometry = WKBGeometryReader.readGeometry(with: reader)
+						
+						if let lineString = geometry as? WKBLineString {
+							let path = LFPath(lineString: lineString)
+							if path.isValidPath() {
+								path.identifier = identifier
+								_ = path.startingCountry
+								paths.append(path)
+							}
+						} else if let multiLineString = geometry as? WKBMultiLineString {
+							print("multiline")
+							for lineString in multiLineString.getLineStrings() {
+								let path = LFPath(lineString: lineString as! WKBLineString)
+								if path.isValidPath() {
+									path.identifier = identifier
+									_ = path.startingCountry
+									paths.append(path)
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			completion(paths)
+		})
+
+	}
+	
     func getAllPaths(completion: @escaping (([LFPath]) -> Void)) {
         databaseQueue.inDatabase({
             database in
-            
+			
             let querySQL = "SELECT track_id, AsBinary(track_geometry) FROM tracks"
-            
+			
             let results = self.database.executeQuery(querySQL, withArgumentsIn: nil)!
-            
+			
             var paths = [LFPath]()
-            
+			
             while (results.next()) {
                 if results.hasAnotherRow() {
                     if let data = results.data(forColumnIndex: 1) {
