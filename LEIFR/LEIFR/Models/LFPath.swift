@@ -96,7 +96,7 @@ class LFPath: NSObject, NSSecureCoding {
 	func WKTString() -> String{
 		let array = NSMutableArray()
 		for point in points {
-			array.add(point.description)
+			array.add("\(point.x) \(point.y) \(point.z) \(point.m)")
 		}
 		
 		let pointsString = array.componentsJoined(by: ", ")

@@ -58,7 +58,7 @@ class LFPoint: NSObject, NSSecureCoding {
 	
 	override var description: String {
 		get {
-			return "\(self.x) \(self.y) \(self.z) \(self.m)"
+			return "[\(self.x) \(self.y) \(self.z) \(self.m)]\n"
 		}
 	}
 	
