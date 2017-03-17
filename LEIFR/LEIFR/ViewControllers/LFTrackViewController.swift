@@ -68,6 +68,32 @@ class LFTrackViewController: LFViewController {
 			self.isLoading = false
 		})
 	}
+	
+	fileprivate func deletePath(at indexPath: IndexPath) {
+		let path = paths[indexPath.row]
+		path.delete(completion: {
+			error in
+			DispatchQueue.main.async {
+				if error == nil {
+					self.paths.remove(at: indexPath.row)
+					var indexPaths = [IndexPath]()
+					for row in indexPath.row..<self.paths.count {
+						indexPaths.append(IndexPath(row: row, section: 0))
+					}
+					self.tableView.deleteRows(at: [indexPath], with: .automatic)
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+						self.tableView.reloadRows(at: indexPaths, with: .fade)
+					})
+					
+					self.loadPathCount()
+				}
+			}
+		})
+	}
+	
+	fileprivate func sharePath(at indexPath: IndexPath) {
+		
+	}
 }
 
 extension LFTrackViewController: UITableViewDataSource {
@@ -119,30 +145,23 @@ extension LFTrackViewController: UITableViewDataSource {
 
 extension LFTrackViewController: UITableViewDelegate {
 	
-	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return indexPath.section == Section.tracks.rawValue
+	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+		let moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler:{
+			_, indexpath in
+			self.sharePath(at: indexPath)
+		});
+		moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
+		
+		let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler:{
+			_, indexpath in
+			self.deletePath(at: indexPath)
+		});
+		
+		return [deleteRowAction, moreRowAction];
 	}
 	
-	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		let path = paths[indexPath.row]
-		path.delete(completion: {
-			error in
-			DispatchQueue.main.async {
-				if error == nil {
-					self.paths.remove(at: indexPath.row)
-					var indexPaths = [IndexPath]()
-					for row in indexPath.row..<self.paths.count {
-						indexPaths.append(IndexPath(row: row, section: 0))
-					}
-					tableView.deleteRows(at: [indexPath], with: .automatic)
-					DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-						tableView.reloadRows(at: indexPaths, with: .fade)
-					})
-					
-					self.loadPathCount()
-				}
-			}
-		})
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return indexPath.section == Section.tracks.rawValue
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
