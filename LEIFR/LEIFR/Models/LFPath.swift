@@ -15,6 +15,7 @@ class LFPath: NSObject, NSSecureCoding {
 	
     fileprivate let minimumPointsPerPath = 5
 	var points = [LFPoint]()
+	var identifier: Int?
 	
 	var pointCount: Int { return self.points.count }
 	var startTime: Date? { return points.first?.time }
