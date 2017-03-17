@@ -8,6 +8,8 @@
 
 import UIKit
 
-class LFIncomingPath: LFPath {
-	
+class LFIncomingPath: NSObject {
+	var path: LFPath!
+	var url: String!
+	var fileName: String!
 }

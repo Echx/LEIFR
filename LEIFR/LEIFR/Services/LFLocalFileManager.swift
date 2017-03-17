@@ -10,16 +10,33 @@ import UIKit
 
 class LFLocalFileManager: NSObject {
 
+	static var shared = LFLocalFileManager()
 	
-	fileprivate func checkInboxFolder() {
-		let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-		let documentsDirectory: AnyObject = paths[0] as AnyObject
-		let dataPath = documentsDirectory.appendingPathComponent("Inbox")!
+	var inboxDirectory = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/Inbox"
+	
+	func getAllIncommingPaths() -> [LFIncomingPath] {
 		
-		do {
-			try FileManager.default.createDirectory(atPath: dataPath.absoluteString, withIntermediateDirectories: false, attributes: nil)
-		} catch let error as NSError {
-			print(error.localizedDescription);
+		var incomingPaths = [LFIncomingPath]()
+		
+		guard let contents = try? FileManager.default.contentsOfDirectory(atPath: inboxDirectory) else {
+			return incomingPaths
 		}
+		
+		for fileName in contents {
+			let file = inboxDirectory + "/" + fileName
+			if let path = NSKeyedUnarchiver.unarchiveObject(withFile: file) as? LFPath {
+				let incomingPath = LFIncomingPath()
+				incomingPath.path = path
+				incomingPath.url = file
+				incomingPath.fileName = fileName
+				incomingPaths.append(incomingPath)
+			}
+		}
+		
+		return incomingPaths
+	}
+	
+	func handleIncomingFile(with url: URL) -> Bool {
+		return true
 	}
 }

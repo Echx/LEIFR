@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-		return true
+		return LFLocalFileManager.shared.handleIncomingFile(with: url)
 	}
 	
 	func handleDatabaseMigration () {

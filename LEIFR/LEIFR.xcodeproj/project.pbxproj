@@ -32,6 +32,8 @@
 		0C77BB4F1E7C858200E11B2C /* LFInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB4E1E7C858200E11B2C /* LFInboxViewController.swift */; };
 		0C77BB511E7C896400E11B2C /* LFLocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB501E7C896400E11B2C /* LFLocalFileManager.swift */; };
 		0C77BB531E7C897E00E11B2C /* LFIncomingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB521E7C897E00E11B2C /* LFIncomingPath.swift */; };
+		0C77BB561E7C938300E11B2C /* LFInboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB541E7C938300E11B2C /* LFInboxTableViewCell.swift */; };
+		0C77BB571E7C938300E11B2C /* LFInboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C77BB551E7C938300E11B2C /* LFInboxTableViewCell.xib */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
@@ -194,6 +196,8 @@
 		0C77BB4E1E7C858200E11B2C /* LFInboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFInboxViewController.swift; sourceTree = "<group>"; };
 		0C77BB501E7C896400E11B2C /* LFLocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLocalFileManager.swift; sourceTree = "<group>"; };
 		0C77BB521E7C897E00E11B2C /* LFIncomingPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFIncomingPath.swift; sourceTree = "<group>"; };
+		0C77BB541E7C938300E11B2C /* LFInboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFInboxTableViewCell.swift; sourceTree = "<group>"; };
+		0C77BB551E7C938300E11B2C /* LFInboxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFInboxTableViewCell.xib; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
@@ -1731,8 +1735,8 @@
 			isa = PBXGroup;
 			children = (
 				62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */,
-				0C77BB461E7C038F00E11B2C /* LFMyTrackViewController.swift */,
 				0C77BB4C1E7C7D0100E11B2C /* LFTrackTabViewController.swift */,
+				0C77BB461E7C038F00E11B2C /* LFMyTrackViewController.swift */,
 				0C77BB4E1E7C858200E11B2C /* LFInboxViewController.swift */,
 			);
 			name = "Tab 1";
@@ -1769,6 +1773,8 @@
 				0CF716001E3F398500FA419F /* LFMapCell.xib */,
 				0C77BB481E7C066B00E11B2C /* LFTrackTableViewCell.swift */,
 				0C77BB491E7C066B00E11B2C /* LFTrackTableViewCell.xib */,
+				0C77BB541E7C938300E11B2C /* LFInboxTableViewCell.swift */,
+				0C77BB551E7C938300E11B2C /* LFInboxTableViewCell.xib */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -1948,6 +1954,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBB385F1D85F9BD002C0EF0 /* GeometryGraph.inl in Resources */,
+				0C77BB571E7C938300E11B2C /* LFInboxTableViewCell.xib in Resources */,
 				0CBB38591D85F9BD002C0EF0 /* GeometryFactory.inl in Resources */,
 				0CBB385C1D85F9BD002C0EF0 /* MultiPolygon.inl in Resources */,
 				0CBB385D1D85F9BD002C0EF0 /* PrecisionModel.inl in Resources */,
@@ -2162,6 +2169,7 @@
 				0C61749C1E76F226003AD136 /* LFStatisticsCollectionViewController.swift in Sources */,
 				0CE2D9A21E6750A50070DC15 /* LFStatisticsViewController.swift in Sources */,
 				0C77BB471E7C038F00E11B2C /* LFMyTrackViewController.swift in Sources */,
+				0C77BB561E7C938300E11B2C /* LFInboxTableViewCell.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,28 +13,23 @@ class LFInboxViewController: LFViewController {
 	@IBOutlet var tableView: UITableView!
 	@IBOutlet var titleLabel: UILabel!
 	
+	fileprivate var incomingPaths = [LFIncomingPath]()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure(tableView: self.tableView)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		loadPaths()
+	}
+	
+	fileprivate func loadPaths() {
+		incomingPaths = LFLocalFileManager.shared.getAllIncommingPaths()
+		self.tableView.reloadData()
+	}
 }
 
 extension LFInboxViewController: UITableViewDataSource {
@@ -60,18 +55,21 @@ extension LFInboxViewController: UITableViewDataSource {
 	}
 	
 	fileprivate func registerCells(for tableView: UITableView) {
-		
+		LFInboxTableViewCell.registerCell(tableView: tableView, reuseIdentifier: LFInboxTableViewCell.identifier)
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 0
+		return 1
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 0
+		return incomingPaths.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return UITableViewCell()
+		let cell = tableView.dequeueReusableCell(withIdentifier: LFInboxTableViewCell.identifier, for: indexPath) as! LFInboxTableViewCell
+		cell.indexPath = indexPath
+		cell.incomingPath = incomingPaths[indexPath.row]
+		return cell
 	}
 }
