@@ -91,8 +91,25 @@ class LFTrackViewController: LFViewController {
 		})
 	}
 	
+	fileprivate var documentInteractionController: UIDocumentInteractionController?
 	fileprivate func sharePath(at indexPath: IndexPath) {
-		
+		let path = paths[indexPath.row]
+		let filePath = NSTemporaryDirectory() + "Path-\(path.identifier!).leifr"
+		let success = NSKeyedArchiver.archiveRootObject(path, toFile: filePath)
+		if success {
+			let documentController = UIDocumentInteractionController(url: URL(fileURLWithPath: filePath))
+			documentController.delegate = self
+			documentController.presentOpenInMenu(from: CGRect.zero, in: self.view, animated: true)
+			self.documentInteractionController = documentController
+		}
+	}
+}
+
+extension LFTrackViewController: UIDocumentInteractionControllerDelegate {
+	func documentInteractionControllerDidDismissOpenInMenu(_ controller: UIDocumentInteractionController) {
+		if let url = controller.url {
+			try! FileManager.default.removeItem(at: url)
+		}
 	}
 }
 
