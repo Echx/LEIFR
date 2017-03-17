@@ -58,3 +58,10 @@ extension LFTrackViewController: UITableViewDataSource {
 		return cell
 	}
 }
+
+extension LFTrackViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let path = paths[indexPath.row]
+		print(path.points)
+	}
+}
