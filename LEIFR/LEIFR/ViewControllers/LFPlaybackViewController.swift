@@ -26,6 +26,7 @@ class LFPlaybackViewController: LFViewController {
     fileprivate var paths: [LFPath]?
     fileprivate var animateAnnotation: MKPointAnnotation?
     fileprivate var pauseAnnotation: MKPointAnnotation?
+    fileprivate var pathPolyline: MKPolyline?
     fileprivate var startDate: Date?
     fileprivate var animationFactor = 60.0
     fileprivate var playbackState: PlaybackState = .stop
@@ -149,6 +150,12 @@ class LFPlaybackViewController: LFViewController {
         
         var delay = 0.0
         let points = (path?.points)!
+        
+        if self.pathPolyline != nil {
+            self.mapView.remove(self.pathPolyline!)
+        }
+        self.pathPolyline = MKPolyline(coordinates: (path?.coordinates())!, count: points.count)
+        self.mapView.add(self.pathPolyline!, level: .aboveRoads)
         
         var zoomRect = MKMapRectNull
         DispatchQueue(label: "background").async {
@@ -331,6 +338,10 @@ extension LFPlaybackViewController {
             mapView.removeAnnotation(animateAnnotation!)
         }
         
+        if pathPolyline != nil {
+            mapView.remove(pathPolyline)
+        }
+        
         pausePointIndex = 0
         pausePathIndex = 0
         playingPointIndex = 0
@@ -356,6 +367,18 @@ extension LFPlaybackViewController: MKMapViewDelegate {
         }
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay.isKind(of: MKPolyline.self) {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+            renderer.lineWidth = 4.0
+            
+            return renderer
+        } else {
+            return MKOverlayRenderer()
+        }
     }
 }
 

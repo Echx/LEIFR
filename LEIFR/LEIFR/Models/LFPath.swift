@@ -102,7 +102,7 @@ class LFPath: NSObject, NSSecureCoding {
 		self.points.append(point)
 	}
 	
-	func WKTString() -> String{
+	func WKTString() -> String {
 		let array = NSMutableArray()
 		for point in points {
 			array.add("\(point.x) \(point.y) \(point.z) \(point.m)")
@@ -111,6 +111,14 @@ class LFPath: NSObject, NSSecureCoding {
 		let pointsString = array.componentsJoined(by: ", ")
 		return "LINESTRINGZM(" + pointsString + ")"
 	}
+    
+    func coordinates() -> [CLLocationCoordinate2D] {
+        return self.points.map({
+            (point) -> CLLocationCoordinate2D in
+            
+            return point.coordinate
+        })
+    }
     
     func isOverlappedWith(startDate: Date, endDate: Date) -> Bool {
         let points = self.points
