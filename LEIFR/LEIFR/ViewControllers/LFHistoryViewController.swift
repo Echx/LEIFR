@@ -129,6 +129,12 @@ extension LFHistoryViewController {
 			isTrackingUserLocation = mapView.showsUserLocation;
 		}
     }
+	
+	@IBAction func showAllTrackView(sender: UIButton) {
+		let controller = LFTrackViewController.controllerFromStoryboard()
+		controller.modalTransitionStyle = .crossDissolve
+		self.present(controller, animated: true, completion: nil)
+	}
     
     override func accessoryTextForTab() -> String? {
         return "\"We are all leaders: whether we want to be or not. There is always someone we are influencing, either leading them to good or away from good.\""

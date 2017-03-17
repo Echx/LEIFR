@@ -25,6 +25,7 @@
 		0C6174A11E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61749F1E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift */; };
 		0C6174A21E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C6174A01E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib */; };
 		0C6174A41E7713C6003AD136 /* LFStatisticsViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */; };
+		0C77BB471E7C038F00E11B2C /* LFTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB461E7C038F00E11B2C /* LFTrackViewController.swift */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
@@ -180,6 +181,7 @@
 		0C61749F1E76F56E003AD136 /* LFStatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0C6174A01E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFStatisticsCollectionViewCell.xib; sourceTree = "<group>"; };
 		0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticsViewLayout.swift; sourceTree = "<group>"; };
+		0C77BB461E7C038F00E11B2C /* LFTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTrackViewController.swift; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
@@ -1715,6 +1717,7 @@
 			isa = PBXGroup;
 			children = (
 				62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */,
+				0C77BB461E7C038F00E11B2C /* LFTrackViewController.swift */,
 			);
 			name = "Tab 1";
 			sourceTree = "<group>";
@@ -2134,6 +2137,7 @@
 				0CF1361E1DC8E38200E122AC /* LFButtonCell.swift in Sources */,
 				0C61749C1E76F226003AD136 /* LFStatisticsCollectionViewController.swift in Sources */,
 				0CE2D9A21E6750A50070DC15 /* LFStatisticsViewController.swift in Sources */,
+				0C77BB471E7C038F00E11B2C /* LFTrackViewController.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

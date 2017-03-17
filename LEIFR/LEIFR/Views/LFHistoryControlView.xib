@@ -61,6 +61,9 @@
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="ic_timeline_48pt"/>
+                    <connections>
+                        <action selector="showAllTrackViewWithSender:" destination="-1" eventType="touchUpInside" id="c3P-aE-GTf"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.34901960780000002" blue="0.32156862749999998" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
