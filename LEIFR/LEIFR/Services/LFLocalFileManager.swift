@@ -45,9 +45,12 @@ class LFLocalFileManager: NSObject {
 			while let presentedViewController = topController.presentedViewController {
 				topController = presentedViewController
 			}
-			
+			// Switch to 0 then 1 to force inbox view reload
+			LFTrackTabViewController.defaultInstance.switchToPage(index: 0)
 			LFTrackTabViewController.defaultInstance.switchToPage(index: 1)
-			topController.present(LFTrackTabViewController.defaultInstance, animated: true, completion: nil)
+			if topController != LFTrackTabViewController.defaultInstance {
+				topController.present(LFTrackTabViewController.defaultInstance, animated: true, completion: nil)
+			}
 		}
 		return true
 	}
