@@ -26,6 +26,8 @@
 		0C6174A21E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C6174A01E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib */; };
 		0C6174A41E7713C6003AD136 /* LFStatisticsViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */; };
 		0C77BB471E7C038F00E11B2C /* LFTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB461E7C038F00E11B2C /* LFTrackViewController.swift */; };
+		0C77BB4A1E7C066B00E11B2C /* LFTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C77BB481E7C066B00E11B2C /* LFTrackTableViewCell.swift */; };
+		0C77BB4B1E7C066B00E11B2C /* LFTrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C77BB491E7C066B00E11B2C /* LFTrackTableViewCell.xib */; };
 		0C8468631E3DD68100B2E24A /* LFPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */; };
 		0C8468651E3DD7DB00B2E24A /* LFPhotoManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */; };
 		0C99600F1E4B57A800403B5A /* LFPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99600E1E4B57A800403B5A /* LFPoint.swift */; };
@@ -182,6 +184,8 @@
 		0C6174A01E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFStatisticsCollectionViewCell.xib; sourceTree = "<group>"; };
 		0C6174A31E7713C6003AD136 /* LFStatisticsViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFStatisticsViewLayout.swift; sourceTree = "<group>"; };
 		0C77BB461E7C038F00E11B2C /* LFTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTrackViewController.swift; sourceTree = "<group>"; };
+		0C77BB481E7C066B00E11B2C /* LFTrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTrackTableViewCell.swift; sourceTree = "<group>"; };
+		0C77BB491E7C066B00E11B2C /* LFTrackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFTrackTableViewCell.xib; sourceTree = "<group>"; };
 		0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManager.swift; sourceTree = "<group>"; };
 		0C8468641E3DD7DB00B2E24A /* LFPhotoManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPhotoManagerTest.swift; sourceTree = "<group>"; };
 		0C99600E1E4B57A800403B5A /* LFPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPoint.swift; sourceTree = "<group>"; };
@@ -1751,6 +1755,8 @@
 				0CF715FC1E3F2DFC00FA419F /* LFImageCell.xib */,
 				0CF715FF1E3F398500FA419F /* LFMapCell.swift */,
 				0CF716001E3F398500FA419F /* LFMapCell.xib */,
+				0C77BB481E7C066B00E11B2C /* LFTrackTableViewCell.swift */,
+				0C77BB491E7C066B00E11B2C /* LFTrackTableViewCell.xib */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -1964,6 +1970,7 @@
 				0CF1361B1DC8E2BD00E122AC /* LFTableViewCell.xib in Resources */,
 				0C6174A21E76F56E003AD136 /* LFStatisticsCollectionViewCell.xib in Resources */,
 				62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */,
+				0C77BB4B1E7C066B00E11B2C /* LFTrackTableViewCell.xib in Resources */,
 				0CF1361F1DC8E38200E122AC /* LFButtonCell.xib in Resources */,
 				0CBB385E1D85F9BD002C0EF0 /* DirectedEdge.inl in Resources */,
 				0CBB38621D85F9BD002C0EF0 /* MCIndexNoder.inl in Resources */,
@@ -2103,6 +2110,7 @@
 				62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */,
 				0CB053DB1E7996E50011BEF0 /* LFMapPreviewViewController.swift in Sources */,
 				0C61749A1E76E6A2003AD136 /* LFCurrentPathOverlayRenderer.swift in Sources */,
+				0C77BB4A1E7C066B00E11B2C /* LFTrackTableViewCell.swift in Sources */,
 				0CFAEC1C1E6758B800392BEE /* LFFlagViewController.swift in Sources */,
 				0CC333ED1DBFF33B00B76740 /* LFGeoPointsOverlayRenderer.swift in Sources */,
 				62BF069D1DA6F49200E6957E /* LFGeoJSONManager.swift in Sources */,

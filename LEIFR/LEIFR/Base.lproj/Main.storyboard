@@ -371,6 +371,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="diC-SP-QEc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.74901960779999999" green="0.83137254900000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rik-28-ewL" id="dTH-1m-I3P"/>
+                                    <outlet property="delegate" destination="Rik-28-ewL" id="Zwf-Pi-FHJ"/>
+                                </connections>
+                            </tableView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRa-Sb-rg5" customClass="LFNavigationBar" customModule="LEIFR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jac-X5-Rmv">
@@ -430,13 +439,20 @@
                         <constraints>
                             <constraint firstItem="ZRa-Sb-rg5" firstAttribute="top" secondItem="Ns5-ZY-530" secondAttribute="top" id="2Xs-Ay-n8U"/>
                             <constraint firstItem="ZRa-Sb-rg5" firstAttribute="leading" secondItem="Ns5-ZY-530" secondAttribute="leading" id="5Wt-N8-FDq"/>
+                            <constraint firstItem="diC-SP-QEc" firstAttribute="leading" secondItem="Ns5-ZY-530" secondAttribute="leading" id="6Rz-I7-3O3"/>
                             <constraint firstAttribute="trailing" secondItem="ZRa-Sb-rg5" secondAttribute="trailing" id="QMq-vH-V9q"/>
+                            <constraint firstItem="Wqg-sg-muJ" firstAttribute="top" secondItem="diC-SP-QEc" secondAttribute="bottom" id="VZT-I1-Lk3"/>
+                            <constraint firstItem="diC-SP-QEc" firstAttribute="top" secondItem="Ns5-ZY-530" secondAttribute="top" id="Ybq-PB-s5A"/>
+                            <constraint firstAttribute="trailing" secondItem="diC-SP-QEc" secondAttribute="trailing" id="q3A-qK-dYG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="diC-SP-QEc" id="tMp-3X-TlY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG8-7V-wWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="928"/>
+            <point key="canvasLocation" x="1813.5999999999999" y="927.88605697151434"/>
         </scene>
         <!--Map Preview View Controller-->
         <scene sceneID="AmF-Wn-adW">

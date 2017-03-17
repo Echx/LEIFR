@@ -9,11 +9,12 @@
 import UIKit
 
 class LFTrackViewController: LFViewController {
+	
+	@IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		self.configure(tableView: tableView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +33,33 @@ class LFTrackViewController: LFViewController {
     }
     */
 
+}
+
+extension LFTrackViewController: UITableViewDataSource {
+	
+	fileprivate func configure(tableView: UITableView) {
+		let topBarHeight: CGFloat = 84
+		let bottomBarHeight: CGFloat = 64
+		tableView.contentInset = UIEdgeInsets(top: topBarHeight, left: 0, bottom: bottomBarHeight, right: 0)
+		tableView.scrollIndicatorInsets = UIEdgeInsets(top: topBarHeight, left: 0, bottom: 0, right: 0)
+		tableView.backgroundColor = self.view.backgroundColor
+		registerCells(for: tableView)
+	}
+	
+	fileprivate func registerCells(for tableView: UITableView) {
+		LFTrackTableViewCell.registerCell(tableView: tableView, reuseIdentifier: LFTrackTableViewCell.identifier)
+	}
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 5
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: LFTrackTableViewCell.identifier, for: indexPath) as! LFTrackTableViewCell
+		return cell
+	}
 }
