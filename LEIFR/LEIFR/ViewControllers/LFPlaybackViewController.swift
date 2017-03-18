@@ -337,7 +337,7 @@ extension LFPlaybackViewController {
         if animateAnnotation != nil {
             mapView.removeAnnotation(animateAnnotation!)
         }
-        
+		
         if pathPolyline != nil {
             mapView.remove(pathPolyline!)
         }

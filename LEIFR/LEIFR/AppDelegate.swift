@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 	
+	func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+		return LFLocalFileManager.shared.handleIncomingFile(with: url)
+	}
+	
 	func handleDatabaseMigration () {
 		let config = Realm.Configuration(
 			// Set the new schema version. This must be greater than the previously used
