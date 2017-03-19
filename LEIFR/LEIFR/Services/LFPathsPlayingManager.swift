@@ -11,6 +11,7 @@ import UIKit
 class LFPathsPlayingManager: NSObject {
     
     static var shared = LFPathsPlayingManager()
+    var delegate: LFPathsPlayingManagerDelegate?
     
     var mapView: MKMapView?
     fileprivate var paths = [[LFPath]]()
@@ -24,12 +25,13 @@ class LFPathsPlayingManager: NSObject {
     func addPaths(_ paths: [LFPath]) {
         self.paths.append(paths)
         let manager = LFPathPlayingManager(mapView, paths: paths)
+        manager.delegate = self
         self.pathManagers.append(manager)
     }
     
     func playAnimation() {
         for manager in self.pathManagers {
-            manager.prepareAnimateAnnotation()
+            manager.prepareAnnotation()
             manager.playAnimation()
         }
     }
@@ -39,4 +41,20 @@ class LFPathsPlayingManager: NSObject {
             manager.pauseAnimation()
         }
     }
+    
+    func stopAnimation() {
+        for manager in self.pathManagers {
+            manager.stopAnimation()
+        }
+    }
+}
+
+extension LFPathsPlayingManager: LFPathPlayingManagerDelegate {
+    func didFinishAnimation() {
+        self.delegate.didFinishAnimations()
+    }
+}
+
+protocol LFPathsPlayingManagerDelegate {
+    func didFinishAnimations()
 }

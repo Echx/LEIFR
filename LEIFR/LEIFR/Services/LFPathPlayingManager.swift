@@ -17,7 +17,12 @@ class LFPathPlayingManager: NSObject {
     fileprivate var playingPointIndex = 0
     fileprivate var pausePathIndex = 0
     fileprivate var pausePointIndex = 0
+    fileprivate var pathPolyline: MKPolyline?
+    fileprivate var playbackState: PlaybackState = .stop
+    fileprivate var animationTimers = [Timer]()
+    fileprivate var annotationRemovalTimer: Timer?
     var paths: [LFPath]?
+    var delegate: LFPathPlayingManagerDelegate
     
     init(_ mapView: MKMapView?, paths: [LFPath]) {
         super.init()
@@ -29,10 +34,14 @@ class LFPathPlayingManager: NSObject {
     }
     
     func prepareAnnotation() {
-        self.mapView.addAnnotation(self.animateAnnotation!)
+        self.mapView?.addAnnotation(self.animateAnnotation!)
         if pauseAnnotation != nil {
-            mapView.removeAnnotation(pauseAnnotation!)
+            mapView?.removeAnnotation(pauseAnnotation!)
         }
+    }
+    
+    func stopAnimation() {
+        
     }
     
     func pauseAnimation() {
@@ -41,21 +50,19 @@ class LFPathPlayingManager: NSObject {
         pausePointIndex = playingPointIndex
         pauseAnnotation = MKPointAnnotation()
         pauseAnnotation?.coordinate = (animateAnnotation?.coordinate)!
-        mapView.addAnnotation(pauseAnnotation!)
+        mapView?.addAnnotation(pauseAnnotation!)
         if animateAnnotation != nil {
-            mapView.removeAnnotation(animateAnnotation!)
+            mapView?.removeAnnotation(animateAnnotation!)
         }
     }
     
     func playAnimation() {
         playingPathIndex = max(playingPathIndex, pausePathIndex)
         
-        guard playingPathIndex < (self.pathsPlayingManager.paths.count) else {
-            self.mapView.removeAnnotation(self.animateAnnotation!)
+        guard playingPathIndex < (self.paths.count) else {
+            self.mapView?.removeAnnotation(self.animateAnnotation!)
             
-            self.playButton.isSelected = false
-            self.playbackState = .play
-            self.stopButton.isHidden = true
+            self.delegate.didFinishAnimation()
             
             return
         }
@@ -69,7 +76,7 @@ class LFPathPlayingManager: NSObject {
         let points = (path.points)!
         
         if self.pathPolyline != nil {
-            self.mapView.remove(self.pathPolyline!)
+            self.mapView?.remove(self.pathPolyline!)
         }
         self.pathPolyline = MKPolyline(coordinates: (path?.coordinates())!, count: points.count)
         self.mapView.add(self.pathPolyline!, level: .aboveRoads)
@@ -87,7 +94,7 @@ class LFPathPlayingManager: NSObject {
             }
             
             DispatchQueue.main.async {
-                self.mapView.setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsetsMake(10, 10, 10, 10), animated: true)
+                self.mapView?.setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsetsMake(10, 10, 10, 10), animated: true)
             }
         }
         
@@ -135,3 +142,6 @@ class LFPathPlayingManager: NSObject {
     }
 }
 
+protocol LFPathPlayingManagerDelegate {
+    func didFinishAnimation()
+}

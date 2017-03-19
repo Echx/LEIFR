@@ -22,14 +22,10 @@ class LFPlaybackViewController: LFViewController {
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var playbackProgressView: UIProgressView!
     
-    fileprivate var pathPolyline: MKPolyline?
     fileprivate var startDate: Date?
     fileprivate var animationFactor = 60.0
-    fileprivate var playbackState: PlaybackState = .stop
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     fileprivate var availableDates = [(Date, Date)]()
-    fileprivate var animationTimers = [Timer]()
-    fileprivate var annotationRemovalTimer: Timer?
     fileprivate var dateFormatter = DateFormatter()
     fileprivate let pathsPlayingManager = LFPathsPlayingManager.shared
 
@@ -43,6 +39,7 @@ class LFPlaybackViewController: LFViewController {
         dateFormatter.timeStyle = .medium
         dateFormatter.timeZone = TimeZone(abbreviation: "SGT")
         mapView.delegate = self
+        pathsPlayingManager.delegate = self
         loadDateData()
     }
     
@@ -207,33 +204,7 @@ extension LFPlaybackViewController {
             self.view.layoutIfNeeded()
         })
         
-        for timer in animationTimers {
-            timer.invalidate()
-        }
-        
-        animationTimers = [Timer]()
-        
-        if annotationRemovalTimer != nil {
-            annotationRemovalTimer?.invalidate()
-            annotationRemovalTimer = nil
-        }
-        
-        if pauseAnnotation != nil {
-            mapView.removeAnnotation(pauseAnnotation!)
-        }
-        
-        if animateAnnotation != nil {
-            mapView.removeAnnotation(animateAnnotation!)
-        }
-		
-        if pathPolyline != nil {
-            mapView.remove(pathPolyline!)
-        }
-        
-        pausePointIndex = 0
-        pausePathIndex = 0
-        playingPointIndex = 0
-        playingPathIndex = 0
+        self.pathsPlayingManager.stopPlay()
     }
 }
 
@@ -275,5 +246,14 @@ extension LFPlaybackViewController: LFPlaybackCalendarDelagate {
         startDate = date
         LFHoverTabViewController.defaultInstance.reloadControlView()
         self.loadMapData()
+    }
+}
+
+
+extension LFPlaybackViewController: LFPathsPlayingManager {
+    func didFinishAnimations() {
+        self.playButton.isSelected = false
+        self.playbackState = .play
+        self.stopButton.isHidden = true
     }
 }
