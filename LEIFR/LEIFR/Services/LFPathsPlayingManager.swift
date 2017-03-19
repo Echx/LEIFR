@@ -14,6 +14,9 @@ class LFPathsPlayingManager: NSObject {
     var delegate: LFPathsPlayingManagerDelegate?
     
     var mapView: MKMapView?
+    var dateTimeLabel: UILabel!
+    var playbackProgressView: UIProgressView!
+    
     fileprivate var paths = [[LFPath]]()
     fileprivate var pathManagers = [LFPathPlayingManager]()
     
@@ -47,11 +50,22 @@ class LFPathsPlayingManager: NSObject {
             manager.stopAnimation()
         }
     }
+    
+    func killTimers() {
+        for managet in self.pathManagers {
+            managet.killTimers()
+        }
+    }
 }
 
 extension LFPathsPlayingManager: LFPathPlayingManagerDelegate {
     func didFinishAnimation() {
-        self.delegate.didFinishAnimations()
+        self.delegate?.didFinishAnimations()
+    }
+    
+    func updateTo(progress: Float, timeString: String) {
+        self.playbackProgressView.progress = progress
+        self.dateTimeLabel.text = timeString
     }
 }
 

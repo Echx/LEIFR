@@ -22,11 +22,10 @@ class LFPlaybackViewController: LFViewController {
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var playbackProgressView: UIProgressView!
     
+    fileprivate var playbackState: PlaybackState = .stop
     fileprivate var startDate: Date?
-    fileprivate var animationFactor = 60.0
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     fileprivate var availableDates = [(Date, Date)]()
-    fileprivate var dateFormatter = DateFormatter()
     fileprivate let pathsPlayingManager = LFPathsPlayingManager.shared
 
     override func viewDidLoad() {
@@ -35,11 +34,11 @@ class LFPlaybackViewController: LFViewController {
         // Do any additional setup after loading the view.
         playbackProgressView.progress = 0
         dateTimeViewTopConstraint.constant = -self.dateTimeView.frame.size.height
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .medium
-        dateFormatter.timeZone = TimeZone(abbreviation: "SGT")
         mapView.delegate = self
         pathsPlayingManager.delegate = self
+        pathsPlayingManager.mapView = mapView
+        pathsPlayingManager.dateTimeLabel = dateTimeLabel
+        pathsPlayingManager.playbackProgressView = playbackProgressView
         loadDateData()
     }
     
@@ -174,17 +173,7 @@ extension LFPlaybackViewController {
             playButton.isSelected = false
             playbackState = .pause
             
-            for timer in animationTimers {
-                timer.invalidate()
-            }
-            
-            animationTimers = [Timer]()
-            
-            if annotationRemovalTimer != nil {
-                annotationRemovalTimer?.invalidate()
-                annotationRemovalTimer = nil
-            }
-            
+            self.pathsPlayingManager.killTimers()
             self.pathsPlayingManager.pauseAnimation()
             break
         }
@@ -204,7 +193,7 @@ extension LFPlaybackViewController {
             self.view.layoutIfNeeded()
         })
         
-        self.pathsPlayingManager.stopPlay()
+        self.pathsPlayingManager.stopAnimation()
     }
 }
 
@@ -250,10 +239,10 @@ extension LFPlaybackViewController: LFPlaybackCalendarDelagate {
 }
 
 
-extension LFPlaybackViewController: LFPathsPlayingManager {
+extension LFPlaybackViewController: LFPathsPlayingManagerDelegate {
     func didFinishAnimations() {
         self.playButton.isSelected = false
-        self.playbackState = .play
+        self.playbackState = .stop
         self.stopButton.isHidden = true
     }
 }

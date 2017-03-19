@@ -18,11 +18,12 @@ class LFPathPlayingManager: NSObject {
     fileprivate var pausePathIndex = 0
     fileprivate var pausePointIndex = 0
     fileprivate var pathPolyline: MKPolyline?
-    fileprivate var playbackState: PlaybackState = .stop
     fileprivate var animationTimers = [Timer]()
     fileprivate var annotationRemovalTimer: Timer?
-    var paths: [LFPath]?
-    var delegate: LFPathPlayingManagerDelegate
+    fileprivate var animationFactor = 60.0
+    fileprivate var dateFormatter = DateFormatter()
+    var paths = [LFPath]()
+    var delegate: LFPathPlayingManagerDelegate?
     
     init(_ mapView: MKMapView?, paths: [LFPath]) {
         super.init()
@@ -31,6 +32,10 @@ class LFPathPlayingManager: NSObject {
         self.paths = paths
         self.animateAnnotation = MKPointAnnotation()
         self.pauseAnnotation = MKPointAnnotation()
+        
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        dateFormatter.timeZone = TimeZone(abbreviation: "SGT")
     }
     
     func prepareAnnotation() {
@@ -40,8 +45,47 @@ class LFPathPlayingManager: NSObject {
         }
     }
     
-    func stopAnimation() {
+    func killTimers() {
+        for timer in animationTimers {
+            timer.invalidate()
+        }
         
+        animationTimers = [Timer]()
+        
+        if annotationRemovalTimer != nil {
+            annotationRemovalTimer?.invalidate()
+            annotationRemovalTimer = nil
+        }
+    }
+    
+    func stopAnimation() {
+        for timer in animationTimers {
+            timer.invalidate()
+        }
+        
+        animationTimers = [Timer]()
+        
+        if annotationRemovalTimer != nil {
+            annotationRemovalTimer?.invalidate()
+            annotationRemovalTimer = nil
+        }
+        
+        if pauseAnnotation != nil {
+            mapView?.removeAnnotation(pauseAnnotation!)
+        }
+        
+        if animateAnnotation != nil {
+            mapView?.removeAnnotation(animateAnnotation!)
+        }
+        
+        if pathPolyline != nil {
+            mapView?.remove(pathPolyline!)
+        }
+        
+        pausePointIndex = 0
+        pausePathIndex = 0
+        playingPointIndex = 0
+        playingPathIndex = 0
     }
     
     func pauseAnimation() {
@@ -61,25 +105,24 @@ class LFPathPlayingManager: NSObject {
         
         guard playingPathIndex < (self.paths.count) else {
             self.mapView?.removeAnnotation(self.animateAnnotation!)
-            
-            self.delegate.didFinishAnimation()
+            self.delegate?.didFinishAnimation()
             
             return
         }
         
-        let path = self.pathsPlayingManager.paths[playingPathIndex]
+        let path = self.paths[playingPathIndex]
         playingPathIndex += 1
         playingPointIndex = pausePointIndex
         pausePathIndex = 0
         
         var delay = 0.0
-        let points = (path.points)!
-        
+        let points = path.points
+       
         if self.pathPolyline != nil {
             self.mapView?.remove(self.pathPolyline!)
         }
-        self.pathPolyline = MKPolyline(coordinates: (path?.coordinates())!, count: points.count)
-        self.mapView.add(self.pathPolyline!, level: .aboveRoads)
+        self.pathPolyline = MKPolyline(coordinates: path.coordinates(), count: points.count)
+        self.mapView?.add(self.pathPolyline!, level: .aboveRoads)
         
         var zoomRect = MKMapRectNull
         DispatchQueue(label: "background").async {
@@ -116,11 +159,10 @@ class LFPathPlayingManager: NSObject {
                         _ in
                         
                         self.playingPointIndex += 1
-                        self.playbackProgressView.progress = Float(self.playingPointIndex) / Float(points.count)
+                        self.delegate?.updateTo(progress: Float(self.playingPointIndex) / Float(points.count), timeString: self.dateFormatter.string(from: point.time))
                         
                         UIView.animate(withDuration: animationTime, animations: {
                             self.animateAnnotation?.coordinate = point.coordinate
-                            self.dateTimeLabel.text = self.dateFormatter.string(from: point.time)
                         })
                         
                     }
@@ -144,4 +186,6 @@ class LFPathPlayingManager: NSObject {
 
 protocol LFPathPlayingManagerDelegate {
     func didFinishAnimation()
+    
+    func updateTo(progress: Float, timeString: String)
 }
