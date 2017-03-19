@@ -121,7 +121,8 @@
 		626A13B61DC522270051FE90 /* LFZoomLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */; };
 		626A13B81DC5259B0051FE90 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B71DC5259B0051FE90 /* MapKitExtension.swift */; };
 		626A13B91DC526910051FE90 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B71DC5259B0051FE90 /* MapKitExtension.swift */; };
-		6270115E1E7F1D7900391B7B /* LFPathPlayingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270115D1E7F1D7900391B7B /* LFPathPlayingManager.swift */; };
+		6270115E1E7F1D7900391B7B /* LFPathsPlayingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270115D1E7F1D7900391B7B /* LFPathsPlayingManager.swift */; };
+		627011601E7F22CC00391B7B /* LFPathPlayingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270115F1E7F22CC00391B7B /* LFPathPlayingManager.swift */; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
 		62A628201D86C977009D0687 /* LFGeoRecordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */; };
 		62BF06961DA6F02B00E6957E /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF06951DA6F02B00E6957E /* UIKitExtension.swift */; };
@@ -679,7 +680,8 @@
 		62604E991E407E9600D17937 /* LFPlaybackControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFPlaybackControlView.xib; path = Cells/LFPlaybackControlView.xib; sourceTree = "<group>"; };
 		626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevelTest.swift; sourceTree = "<group>"; };
 		626A13B71DC5259B0051FE90 /* MapKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapKitExtension.swift; path = Extensions/MapKitExtension.swift; sourceTree = "<group>"; };
-		6270115D1E7F1D7900391B7B /* LFPathPlayingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPathPlayingManager.swift; sourceTree = "<group>"; };
+		6270115D1E7F1D7900391B7B /* LFPathsPlayingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPathsPlayingManager.swift; sourceTree = "<group>"; };
+		6270115F1E7F22CC00391B7B /* LFPathPlayingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPathPlayingManager.swift; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
 		62A6281F1D86C977009D0687 /* LFGeoRecordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManagerTest.swift; sourceTree = "<group>"; };
 		62BF06951DA6F02B00E6957E /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtension.swift; path = Extensions/UIKitExtension.swift; sourceTree = "<group>"; };
@@ -1661,7 +1663,8 @@
 				0C8468621E3DD68100B2E24A /* LFPhotoManager.swift */,
 				0CE2D99B1E671E2D0070DC15 /* LFReverseGeocodingManager.swift */,
 				0C77BB501E7C896400E11B2C /* LFLocalFileManager.swift */,
-				6270115D1E7F1D7900391B7B /* LFPathPlayingManager.swift */,
+				6270115D1E7F1D7900391B7B /* LFPathsPlayingManager.swift */,
+				6270115F1E7F22CC00391B7B /* LFPathPlayingManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -2151,6 +2154,7 @@
 				0CBB38521D85F9BD002C0EF0 /* FMResultSet.m in Sources */,
 				0CBB38501D85F9BD002C0EF0 /* FMDatabasePool.m in Sources */,
 				0CF716011E3F398500FA419F /* LFMapCell.swift in Sources */,
+				627011601E7F22CC00391B7B /* LFPathPlayingManager.swift in Sources */,
 				0C77BB511E7C896400E11B2C /* LFLocalFileManager.swift in Sources */,
 				0C0946BE1E798C0100B76B50 /* APCountry.m in Sources */,
 				0CE2D99C1E671E2D0070DC15 /* LFReverseGeocodingManager.swift in Sources */,
@@ -2172,7 +2176,7 @@
 				0C61749C1E76F226003AD136 /* LFStatisticsCollectionViewController.swift in Sources */,
 				0CE2D9A21E6750A50070DC15 /* LFStatisticsViewController.swift in Sources */,
 				0C77BB471E7C038F00E11B2C /* LFMyTrackViewController.swift in Sources */,
-				6270115E1E7F1D7900391B7B /* LFPathPlayingManager.swift in Sources */,
+				6270115E1E7F1D7900391B7B /* LFPathsPlayingManager.swift in Sources */,
 				0C77BB561E7C938300E11B2C /* LFInboxTableViewCell.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
 			);
