@@ -46,11 +46,6 @@ class LFTrackTabViewController: LFViewController {
 	
 	@IBAction func buttonDidClick(sender: UIButton) {
 		self.switchToPage(index: sender.tag)
-		
-		_ = tabButtons.map{$0.isSelected = false}
-		
-		sender.isSelected = true
-		self.currentTab = sender.tag
 	}
     
 	func switchToPage(index: Int) {
@@ -59,7 +54,7 @@ class LFTrackTabViewController: LFViewController {
 			let fromController = self.tabControllers[self.currentTab]
 			
 			toController.willMove(toParentViewController: self)
-			
+            
 			
 			//add new tab view
 			let toView = toController.view!
@@ -93,5 +88,13 @@ class LFTrackTabViewController: LFViewController {
 			
 			toController.didMove(toParentViewController: self)
 		}
+        
+        self.updateButtonStatus()
 	}
+    
+    fileprivate func updateButtonStatus() {
+        for button in [self.tabButtonLeft, self.tabButtonRight] {
+            button?.isSelected = button?.tag == self.currentTab
+        }
+    }
 }
