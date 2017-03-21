@@ -92,7 +92,7 @@ class LFTrackTabViewController: LFViewController {
         self.updateButtonStatus()
 	}
     
-    fileprivate func updateButtonStatus() {
+    private func updateButtonStatus() {
         for button in [self.tabButtonLeft, self.tabButtonRight] {
             button?.isSelected = button?.tag == self.currentTab
         }

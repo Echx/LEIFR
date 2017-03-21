@@ -124,8 +124,8 @@ extension LFInboxViewController: UITableViewDelegate {
         pathsPlayingManager.clearAllPaths()
         pathsPlayingManager.addPaths([path!])
         
-        LFHoverTabViewController.defaultInstance.loadControlViewForTab(atIndex: 1)
-        LFHoverTabViewController.defaultInstance.loadAccessoryViewForTab(atIndex: 1)
+        // refactoring needed for the button index
+        LFHoverTabViewController.defaultInstance.clickButton(atIndex: 1)
         LFHoverTabBaseController.defaultInstance.switchToPage(index: 1)
         
         self.dismissWithAnimation()
