@@ -198,7 +198,15 @@ extension LFMyTrackViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == Section.tracks.rawValue {
 			let path = self.path(at: indexPath)
-			print(path.points)
+            let pathsPlayingManager = LFPathsPlayingManager.shared
+            pathsPlayingManager.clearAllPaths()
+            pathsPlayingManager.addPaths([path])
+            
+            // refactoring needed for the button index
+            LFHoverTabViewController.defaultInstance.clickButton(atIndex: 1)
+            LFHoverTabBaseController.defaultInstance.switchToPage(index: 1)
+            
+            self.dismissWithAnimation()
 		} else {
 			self.loadDatabasePaths()
 		}
