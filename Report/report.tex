@@ -1,8 +1,13 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper]{article}
+\renewcommand{\baselinestretch}{1.5} 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage[parfill]{parskip}
+
+\setcounter{secnumdepth}{4}
 
 \begin{document}
 	\begin{titlepage}
@@ -10,17 +15,21 @@
 		
 			B.Comp. Dissertation
 			
-			\vspace*{2cm}
+			\vspace*{2.5cm}
 			
-			{\LARGE Design and Implementation of a Location Based Data Tracking and Visualization Tool for Hardcore Traveller on iOS Platform}
+			\fontsize{14pt}{14pt}\textbf {
+			    Design and Implementation of a Location Based\\
+                Data Tracking and Visualization Tool\\
+                for Hardcore Traveller on iOS Platform\\
+			}
 			
 			\vspace{2.5cm}
 			
-			By\\
+			By
 			
 			\vspace{0.5cm}
 			
-			Wang Jingxi
+			Wang Jinghan
 			
 			\vfill
 			
@@ -32,11 +41,132 @@
 		\end{center}
 	\end{titlepage}
 	
+	
+	\pagenumbering{roman}
+    \section*{Abstract}
+    \addcontentsline{toc}{section}{Abstract}
+    \clearpage
+    
+    
+    \section*{Acknowledgment}
+    \addcontentsline{toc}{section}{Acknowledgement}
+    \clearpage
+    
+    
+    \section*{List of Figures}
+    \addcontentsline{toc}{section}{List of Figures}
+    \clearpage
+	
+	
 	\tableofcontents
+
 
 	\newpage
 
-	\section{Introduction}
-	Leifr Eiríksson was an Icelandic explorer and the first known European to have discovered North America (excluding Greenland), before Christopher Columbus.
+
+    \pagenumbering{arabic}
+	\section{Introduction} % Lei
+	    \subsection{Background}
+	        Leifr Eiríksson was an Icelandic explorer and the first known European to have discovered North America (excluding Greenland), before Christopher Columbus. (Pain Points)
+	   \subsection{Overview}
+	        Jinghan Eiríksson was an Icelandic explorer and the first known European to have discovered North America (excluding Greenland), before Christopher Columbus.
+	   \subsection{Comparison to Existing Products}
+	        Jinxi Eiríksson was an Icelandic explorer and the first known European to have discovered North America (excluding Greenland), before Christopher Columbus.
+    \clearpage
+    
+    
+    \section{Use Cases and Application Demonstration}
+        \subsection{View Aggregated Records} % Lei 
+        \subsection{Record a New Path} % Lei
+        \subsection{View All Recorded Path} % Wang
+            \subsubsection{Share a Recorded Path}
+            \subsubsection{Paths Sharing}
+        \subsection{Replay Paths} % Lei
+            \subsubsection{Select Paths}
+                \paragraph{Select a Path From Path Lists}
+                \paragraph{Select Paths Starting From Some Date}
+            \subsubsection{Playback Control}
+        \subsection{Locate a Photo} % Wang
+        \subsection{Check Statistics of Visited Countries} % Wang
+    \clearpage    
+    
+    
+    \section{Application Architecture} % 一起画
+        % Class diagram and explanation
+    \clearpage
+    
+    % Available technology discussion
+    % Design choices
+    % 
+    \section{Development Details}
+    
+    As the title suggested, design and development are the two critical components of this project. In the previous section \textit{Application Architecture}, the high level structure of this application has been discussed. In this section, we will go into the details to discuss about the specific design decisions and the final implementation approaches for each individual feature. The whole section is categorized into front-end and back-end two parts, and the features of each part are listed accordingly. This section is produced jointly by Jinghan and Mingyu. Please refer to the individual subsections for specific attributions.
+        
+        \subsection{Front-End Details}
+        There are seven general features in terms of front end development. The first subsection \textit{Fundamentals} will discuss the overall view hierarchy while the rest will keep the focus on different views.
+            
+            \subsubsection{Fundamentals} % Wang
+            Based on the well accepted model-view-controller pattern, Apple has provided several standard templates for developers to organize the views in their applications. Some of the relevant ones include:
+            \begin{itemize}
+            \setlength\itemsep{0em}
+            \item master-detail application template
+            \item page-based application template
+            \item tabbed application template
+            \end{itemize}
+            
+            
+            The master-detail application template provides a convenient starting points for data driven applications where only brief data are shown in a list. Users will only view the details when they click on a specific list item. \texttt{UITableView} as the list view (master), is the perfect fit when showing text or simple image data, but not the geo-location data as we needed.\\
+            
+            The page-based application template, as the name suggested, is based on 
+            
+            \subsubsection{History Overview}
+                \paragraph{Map Framework} % Lei/mapbox dynamic updates
+                \paragraph{Rendering Details} % Wang
+            \subsubsection{Path Lists} % Lei
+            \subsubsection{Path Playback} % Lei 
+            \subsubsection{Photos} % Wang
+            \subsubsection{Statistics} % Wang
+            \subsubsection{Settings} % Lei
+        \subsection{Back-End Details}
+            \subsubsection{Fundamentals} % Wang
+            \subsubsection{SpatiaLite} % Wang
+                \paragraph{WKB} % Lei/mapbox dynamic updates
+                \paragraph{FMDB} % Lei/mapbox dynamic updates
+            \subsubsection{Realm} % Lei
+            \subsubsection{Photos} % Wang
+            \subsubsection{Direct Files} % Wang
+    \clearpage
+    
+    
+    \section{Conclusion} 
+        \subsection{Summary} % Lei 
+        \subsection{Difficulties and Limitations} % Wang
+        % WKT WKB, spatialite init, spatialite document, remove screenshots
+        \subsection{Future Plans} % Lei
+        \subsection{Commercial Potentials} % Wang
+    \clearpage
+    
+    
+    \pagenumbering{roman}
+    \setcounter{page}{10} % 记得改！！！！！
+    
+    \section*{Project Contribution}
+    \addcontentsline{toc}{section}{Project Contributions}
+    \clearpage
+    
+    
+    \section*{References}
+    \addcontentsline{toc}{section}{References}
+    \clearpage
+    
+    
+    \subsection*{Appendix A - Program Listing}
+    \addcontentsline{toc}{section}{Appendix A - Program Listing}%
+    \clearpage
+    
+    \subsection*{Appendix B - Installation Guide}
+    \addcontentsline{toc}{section}{Appendix B - Installation Guide}%
+    \clearpage
+    
 
 \end{document}
