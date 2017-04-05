@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Mapbox
 
 class LFTrackTableViewCell: LFTableViewCell {
 	
