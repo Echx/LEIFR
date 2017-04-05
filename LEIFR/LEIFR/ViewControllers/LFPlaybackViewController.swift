@@ -130,7 +130,7 @@ class LFPlaybackViewController: LFViewController {
 extension LFPlaybackViewController {
     override func controlViewForTab() -> UIView? {
         var view: UIView?
-        if startDate != nil {
+        if pathsPlayingManager.canPlay() {
             view = UIView.view(fromNib: "LFPlaybackControlView", owner: self)
         } else {
             view = UIView.view(fromNib: "LFPlaybackCalendarView", owner: self)

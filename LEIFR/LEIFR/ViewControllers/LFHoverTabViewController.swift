@@ -67,11 +67,19 @@ class LFHoverTabViewController: LFViewController {
 		self.loadControlViewForTab(atIndex: sender.tag)
 		self.loadAccessoryViewForTab(atIndex: sender.tag)
 		
-		_ = tabButtons.map{$0.isSelected = false}
-		
-		sender.isSelected = true
 		self.currentTab = sender.tag
+        self.updateButtonStatus()
 	}
+    
+    func clickButton(atIndex index: Int) {
+        self.buttonDidClick(sender: [tabButton0, tabButton1, tabButton2, tabButton3][index])
+    }
+    
+    private func updateButtonStatus() {
+        for button in [self.tabButton0, self.tabButton1, self.tabButton2, self.tabButton3] {
+            button?.isSelected = button?.tag == self.currentTab
+        }
+    }
     
     private func reloadControlViewForTab(atIndex index: Int) {
         self.tabControlView?.removeFromSuperview()

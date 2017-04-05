@@ -49,6 +49,7 @@ class LFInboxViewController: LFViewController {
 	}
 	
 	fileprivate var documentInteractionController: UIDocumentInteractionController?
+    
 	fileprivate func sharePath(at indexPath: IndexPath) {
 		let url = incomingPaths[indexPath.row].url
 		let documentController = UIDocumentInteractionController(url: URL(fileURLWithPath: url!))
@@ -116,4 +117,17 @@ extension LFInboxViewController: UITableViewDelegate {
 		
 		return [deleteRowAction, shareRowAction];
 	}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let path = self.incomingPaths[indexPath.row].path
+        let pathsPlayingManager = LFPathsPlayingManager.shared
+        pathsPlayingManager.clearAllPaths()
+        pathsPlayingManager.addPaths([path!])
+        
+        // refactoring needed for the button index
+        LFHoverTabViewController.defaultInstance.clickButton(atIndex: 1)
+        LFHoverTabBaseController.defaultInstance.switchToPage(index: 1)
+        LFHoverTabBaseController.defaultInstance.openTabView()
+        self.dismissWithAnimation()
+    }
 }

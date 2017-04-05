@@ -99,6 +99,10 @@ class LFHoverTabBaseController: LFViewController {
         snapHeightConstant(snapLevelIndex: tabViewSnapLevels.count - 1)
     }
     
+    func openTabView() {
+        snapHeightConstant(snapLevelIndex: tabViewSnapLevels.count - 2)
+    }
+    
     fileprivate func snapHeightConstant(snapLevelIndex: Int) {
         let snapLevel = self.tabViewSnapLevels[snapLevelIndex]
         let duration = TimeInterval(abs(self.tabViewTopConstraint.constant - snapLevel) / self.tabViewSnapLevels.last!) * 2

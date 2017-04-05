@@ -20,6 +20,10 @@ class LFPathsPlayingManager: NSObject {
     fileprivate var paths = [[LFPath]]()
     fileprivate var pathManagers = [LFPathPlayingManager]()
     
+    func canPlay() -> Bool {
+        return paths.map{ $0.count > 0 }.count > 0
+    }
+    
     func clearAllPaths() {
         self.paths = [[LFPath]]()
         self.pathManagers = [LFPathPlayingManager]()

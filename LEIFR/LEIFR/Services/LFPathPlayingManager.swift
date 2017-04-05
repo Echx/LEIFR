@@ -106,6 +106,8 @@ class LFPathPlayingManager: NSObject {
         guard playingPathIndex < (self.paths.count) else {
             self.mapView?.removeAnnotation(self.animateAnnotation!)
             self.delegate?.didFinishAnimation()
+            self.playingPathIndex = 0
+            self.playingPointIndex = 0
             
             return
         }
