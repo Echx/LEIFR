@@ -127,7 +127,7 @@ extension LFInboxViewController: UITableViewDelegate {
         // refactoring needed for the button index
         LFHoverTabViewController.defaultInstance.clickButton(atIndex: 1)
         LFHoverTabBaseController.defaultInstance.switchToPage(index: 1)
-        
+        LFHoverTabBaseController.defaultInstance.openTabView()
         self.dismissWithAnimation()
     }
 }

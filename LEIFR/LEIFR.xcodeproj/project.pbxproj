@@ -114,8 +114,6 @@
 		62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62054EC91DAD697400FEC851 /* LFConstant.swift */; };
 		62236FB61DB8083000D4F1B1 /* LFHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */; };
 		623A63521DC2098100F80E7F /* default.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 623A63511DC2098100F80E7F /* default.sqlite */; };
-		623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; };
-		623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 623EAEC21DA6D005004B1C76 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		625B56201E58B3F400FE623E /* LFPlaybackCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 625B561F1E58B3F400FE623E /* LFPlaybackCalendarView.xib */; };
 		62604E9A1E407E9600D17937 /* LFPlaybackControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62604E991E407E9600D17937 /* LFPlaybackControlView.xib */; };
 		626A13B61DC522270051FE90 /* LFZoomLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */; };
@@ -160,7 +158,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				623EAEC51DA6D012004B1C76 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,7 +672,6 @@
 		62054EC91DAD697400FEC851 /* LFConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LFConstant.swift; path = Extensions/LFConstant.swift; sourceTree = "<group>"; };
 		62236FB51DB8083000D4F1B1 /* LFHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryViewController.swift; sourceTree = "<group>"; };
 		623A63511DC2098100F80E7F /* default.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite; sourceTree = "<group>"; };
-		623EAEC21DA6D005004B1C76 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		625B561F1E58B3F400FE623E /* LFPlaybackCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFPlaybackCalendarView.xib; path = Cells/LFPlaybackCalendarView.xib; sourceTree = "<group>"; };
 		62604E991E407E9600D17937 /* LFPlaybackControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFPlaybackControlView.xib; path = Cells/LFPlaybackControlView.xib; sourceTree = "<group>"; };
 		626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevelTest.swift; sourceTree = "<group>"; };
@@ -710,7 +706,6 @@
 				0CBB38741D85F9F7002C0EF0 /* libc++.tbd in Frameworks */,
 				0CBB38651D85F9BD002C0EF0 /* libgeos.a in Frameworks */,
 				0CBB38691D85F9BD002C0EF0 /* libsqlite3.a in Frameworks */,
-				623EAEC41DA6D012004B1C76 /* Mapbox.framework in Frameworks */,
 				0CBB38681D85F9BD002C0EF0 /* libspatialite.a in Frameworks */,
 				0CBB38661D85F9BD002C0EF0 /* libgeos_c.a in Frameworks */,
 				0CBB386A1D85F9BD002C0EF0 /* mod_spatialite.a in Frameworks */,
@@ -808,7 +803,6 @@
 		0CBB30751D85F413002C0EF0 = {
 			isa = PBXGroup;
 			children = (
-				623EAEC21DA6D005004B1C76 /* Mapbox.framework */,
 				0CBB30801D85F413002C0EF0 /* LEIFR */,
 				0CBB30951D85F413002C0EF0 /* LEIFRTests */,
 				0CBB30A01D85F413002C0EF0 /* LEIFRUITests */,
