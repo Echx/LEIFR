@@ -241,8 +241,8 @@ extension LFPlaybackViewController: LFPlaybackCalendarDelagate {
 
 extension LFPlaybackViewController: LFPathsPlayingManagerDelegate {
     func didFinishAnimations() {
-        self.playButton.isSelected = false
+        self.playButton?.isSelected = false
         self.playbackState = .stop
-        self.stopButton.isHidden = true
+        self.stopButton?.isHidden = true
     }
 }
