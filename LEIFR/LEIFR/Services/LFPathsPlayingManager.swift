@@ -26,6 +26,8 @@ class LFPathsPlayingManager: NSObject {
     
     func clearAllPaths() {
         self.paths = [[LFPath]]()
+        self.stopAnimation()
+        self.killTimers()
         self.pathManagers = [LFPathPlayingManager]()
     }
     
