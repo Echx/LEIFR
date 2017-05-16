@@ -36,7 +36,25 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 			let rect = CGRect(x: point.x, y: point.y, width: gridSize, height: gridSize)
 			let count = cachedPoint.count
             
-            let weightedAlpha = minimumAlpha + (maximumAlpha - minimumAlpha) * min(Double(count), countCapForAlphaChange) / countCapForAlphaChange
+//            let weightedAlpha = minimumAlpha + (maximumAlpha - minimumAlpha) * min(Double(count), countCapForAlphaChange) / countCapForAlphaChange
+            
+            // use absolute value instead of relative value
+            // programmatic approach
+            var weightedAlpha = 0.0
+            if count <= 5 {
+                weightedAlpha = 0.2
+            } else if count <= 10 {
+                weightedAlpha = 0.3
+            } else if count <= 20 {
+                weightedAlpha = 0.4
+            } else if count <= 40 {
+                weightedAlpha = 0.5
+            } else if count <= 120 {
+                weightedAlpha = 0.6
+            } else {
+                weightedAlpha = 0.7
+            }
+            
 			context.setFillColor(overlayColor.withAlphaComponent(CGFloat(weightedAlpha)).cgColor)
 			context.fill(rect)
 		}
