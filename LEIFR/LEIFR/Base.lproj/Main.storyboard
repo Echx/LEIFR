@@ -97,11 +97,14 @@
                         <viewControllerLayoutGuide type="top" id="Hzd-DN-kUv"/>
                         <viewControllerLayoutGuide type="bottom" id="LK0-Qi-Ei0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9bW-6k-jfi">
+                    <view key="view" contentMode="scaleToFill" id="9bW-6k-jfi" customClass="MGLMapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="9bW-6k-jfi" id="Vu7-P2-xoz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpj-Om-BzA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

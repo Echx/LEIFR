@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import Mapbox
 
 class LFHistoryMapboxViewController: LFHistoryViewController {
+    @IBOutlet fileprivate weak var mapView: MGLMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureMap()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -20,6 +25,13 @@ class LFHistoryMapboxViewController: LFHistoryViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: basic configuration
+    fileprivate func configureMap() {
+        let styleURL = NSURL(string: "mapbox://styles/echx/cj1apel6y00ah2qmu2olw1zhl")! as URL
+        mapView.styleURL = styleURL
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
 
