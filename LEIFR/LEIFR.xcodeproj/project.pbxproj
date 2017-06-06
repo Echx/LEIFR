@@ -128,6 +128,9 @@
 		62BF069F1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */; };
 		62F0DBFC1D888A02006D05E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBF81D888A02006D05E0 /* LaunchScreen.storyboard */; };
 		62F0DBFD1D888A02006D05E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F0DBFA1D888A02006D05E0 /* Main.storyboard */; };
+		62F3D8061EE70BE600AADF23 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62F3D8051EE70BE600AADF23 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		62F3D8081EE70C1100AADF23 /* LFHistoryMapboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F3D8071EE70C1100AADF23 /* LFHistoryMapboxViewController.swift */; };
+		62F3D80B1EE7104300AADF23 /* LFHistoryMapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F3D80A1EE7104300AADF23 /* LFHistoryMapKitViewController.swift */; };
 		62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */; };
 		62F5A7A91E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A81E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift */; };
 		6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */; };
@@ -158,6 +161,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				62F3D8061EE70BE600AADF23 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +689,9 @@
 		62BF069E1DA6F6FE00E6957E /* LFGeoJSONManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoJSONManagerTest.swift; sourceTree = "<group>"; };
 		62F0DBF91D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		62F0DBFB1D888A02006D05E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LEIFR/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		62F3D8051EE70BE600AADF23 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		62F3D8071EE70C1100AADF23 /* LFHistoryMapboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryMapboxViewController.swift; sourceTree = "<group>"; };
+		62F3D80A1EE7104300AADF23 /* LFHistoryMapKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryMapKitViewController.swift; sourceTree = "<group>"; };
 		62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayBackAnnotationView.swift; sourceTree = "<group>"; };
 		62F5A7A81E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaybackCalendarViewController.swift; sourceTree = "<group>"; };
 		9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
@@ -803,6 +810,7 @@
 		0CBB30751D85F413002C0EF0 = {
 			isa = PBXGroup;
 			children = (
+				62F3D8051EE70BE600AADF23 /* Mapbox.framework */,
 				0CBB30801D85F413002C0EF0 /* LEIFR */,
 				0CBB30951D85F413002C0EF0 /* LEIFRTests */,
 				0CBB30A01D85F413002C0EF0 /* LEIFRUITests */,
@@ -1738,6 +1746,8 @@
 				0C77BB4C1E7C7D0100E11B2C /* LFTrackTabViewController.swift */,
 				0C77BB461E7C038F00E11B2C /* LFMyTrackViewController.swift */,
 				0C77BB4E1E7C858200E11B2C /* LFInboxViewController.swift */,
+				62F3D8071EE70C1100AADF23 /* LFHistoryMapboxViewController.swift */,
+				62F3D80A1EE7104300AADF23 /* LFHistoryMapKitViewController.swift */,
 			);
 			name = "Tab 1";
 			sourceTree = "<group>";
@@ -1846,6 +1856,7 @@
 				6265F7121D8889BB00EE54B2 /* Embed Frameworks */,
 				A870F9B0BFF6D8D5E523999D /* [CP] Embed Pods Frameworks */,
 				AF73CC7799628795222E7675 /* [CP] Copy Pods Resources */,
+				62F3D8091EE70D3C00AADF23 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -2014,6 +2025,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		62F3D8091EE70D3C00AADF23 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"";
+		};
 		9ADFECC818C35A622F90BAA9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2155,6 +2180,7 @@
 				62054ECA1DAD697400FEC851 /* LFConstant.swift in Sources */,
 				62027DD11DC3BB6500B35F76 /* LFCachedLevel.swift in Sources */,
 				0CBB30821D85F413002C0EF0 /* AppDelegate.swift in Sources */,
+				62F3D8081EE70C1100AADF23 /* LFHistoryMapboxViewController.swift in Sources */,
 				62F5A7A91E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift in Sources */,
 				0C0946BF1E798C0100B76B50 /* APReverseGeocoding.m in Sources */,
 				0CCCC5A11DA6F2E900488B2E /* LFHoverTabBaseController.swift in Sources */,
@@ -2173,6 +2199,7 @@
 				6270115E1E7F1D7900391B7B /* LFPathsPlayingManager.swift in Sources */,
 				0C77BB561E7C938300E11B2C /* LFInboxTableViewCell.swift in Sources */,
 				0CBB38511D85F9BD002C0EF0 /* FMDatabaseQueue.m in Sources */,
+				62F3D80B1EE7104300AADF23 /* LFHistoryMapKitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

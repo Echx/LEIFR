@@ -139,15 +139,6 @@ extension LFHistoryViewController {
     }
 }
 
-extension LFHistoryViewController: LFStoryboardBasedController {
-    class func defaultControllerFromStoryboard() -> LFViewController {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "LFHistoryViewController") as! LFViewController
-        
-        return controller
-    }
-}
-
 extension LFHistoryViewController: LFRecordButtonDelegate {
     func button(_ button: LFRecordButton, isForceTouchedWithForce force: CGFloat) {
         print(force)
