@@ -9,7 +9,7 @@
 import UIKit
 import Mapbox
 
-class LFHistoryMapboxViewController: LFHistoryViewController {
+class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
     
     override func viewDidLoad() {
@@ -17,6 +17,32 @@ class LFHistoryMapboxViewController: LFHistoryViewController {
         
         configureMap()
     }
+    
+    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+        let dbManager = LFCachedDatabaseManager.shared
+        let cachedPoints = dbManager.getPointsIn(zoomLevel: 21)
+        
+        guard cachedPoints.count > 0 else {
+            return
+        }
+        
+        var coordinates: [CLLocationCoordinate2D] = cachedPoints.map { (point) -> CLLocationCoordinate2D in
+            return MKCoordinateForMapPoint(MKMapPointMake(Double(point.x), Double(point.y)))
+        }
+        let pointsCollection = MGLPointCollectionFeature(coordinates: &coordinates, count: UInt(coordinates.count))
+        
+        let source = MGLShapeSource(identifier: "points", features: [pointsCollection!], options: nil)
+        style.addSource(source)
+        
+        let layer = MGLCircleStyleLayer(identifier: "circles", source: source)
+        layer.sourceLayerIdentifier = "points"
+        layer.circleColor = MGLStyleValue(rawValue: .green)
+        layer.circleRadius = MGLStyleValue(rawValue: 2)
+        layer.circleOpacity = MGLStyleValue(rawValue: 0.7)
+        style.addLayer(layer)
+
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
@@ -32,6 +58,8 @@ class LFHistoryMapboxViewController: LFHistoryViewController {
         let styleURL = NSURL(string: "mapbox://styles/echx/cj1apel6y00ah2qmu2olw1zhl")! as URL
         mapView.styleURL = styleURL
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        mapView.delegate = self
     }
 }
 
