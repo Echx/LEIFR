@@ -12,6 +12,10 @@ import Mapbox
 class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
     
+    let layerIdentifier = "pathLayer"
+    let sourceIdentifier = "pathSource"
+    var presentedLevel = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,8 +23,28 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     }
     
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+        loadLayer(withLevel: presentedLevel)
+    }
+    
+    func mapViewRegionIsChanging(_ mapView: MGLMapView) {
+        let newLevel = Int(mapView.zoomLevel) + 1
+        if newLevel != presentedLevel {
+            presentedLevel = newLevel
+            loadLayer(withLevel: presentedLevel)
+        }
+    }
+    
+    private func loadLayer(withLevel level: Int) {
+        if let oldLayer = mapView.style?.layer(withIdentifier: layerIdentifier) {
+            mapView.style?.removeLayer(oldLayer)
+        }
+        
+        if let oldSource = mapView.style?.source(withIdentifier: sourceIdentifier) {
+            mapView.style?.removeSource(oldSource)
+        }
+        
         let dbManager = LFCachedDatabaseManager.shared
-        let cachedPoints = dbManager.getPointsIn(zoomLevel: 21)
+        let cachedPoints = dbManager.getPointsIn(zoomLevel: level)
         
         guard cachedPoints.count > 0 else {
             return
@@ -31,15 +55,15 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         }
         let pointsCollection = MGLPointCollectionFeature(coordinates: &coordinates, count: UInt(coordinates.count))
         
-        let source = MGLShapeSource(identifier: "points", features: [pointsCollection!], options: nil)
-        style.addSource(source)
+        let source = MGLShapeSource(identifier: sourceIdentifier, features: [pointsCollection!], options: nil)
+        mapView.style?.addSource(source)
         
-        let layer = MGLCircleStyleLayer(identifier: "circles", source: source)
-        layer.sourceLayerIdentifier = "points"
+        let layer = MGLCircleStyleLayer(identifier: layerIdentifier, source: source)
+        layer.sourceLayerIdentifier = sourceIdentifier
         layer.circleColor = MGLStyleValue(rawValue: .green)
         layer.circleRadius = MGLStyleValue(rawValue: 2)
         layer.circleOpacity = MGLStyleValue(rawValue: 0.7)
-        style.addLayer(layer)
+        mapView.style?.addLayer(layer)
 
     }
     
