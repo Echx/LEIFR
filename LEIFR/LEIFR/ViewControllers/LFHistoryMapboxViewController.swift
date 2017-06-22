@@ -21,10 +21,12 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     var presentedLevel = 1
     var cachedLayers: [MGLCircleStyleLayer] = []
     var cachedSources: [MGLShapeSource] = []
+    var cachedPointLayers: [[LFCachedPoint]] = []
+    var cachingLock = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        preloadPoints()
         configureMap()
     }
     
@@ -40,6 +42,10 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         }
     }
     
+    private func preloadPoints() {
+        cachePoints(to: 11)
+    }
+    
     private func loadLayer(withLevel level: Int) {
         for layerIdentifier in layerIdentifiers {
             if let oldLayer = mapView.style?.layer(withIdentifier: layerIdentifier) {
@@ -53,8 +59,13 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
             }
         }
         
-        let dbManager = LFCachedDatabaseManager.shared
-        let cachedPoints = dbManager.getPointsIn(zoomLevel: level)
+        var cachedPoints: [LFCachedPoint] = []
+        if level < cachedPointLayers.count {
+            cachedPoints = cachedPointLayers[level]
+        } else {
+            cachePoints(to: level)
+            cachedPoints = cachedPointLayers[level]
+        }
         
         guard cachedPoints.count > 0 else {
             return
@@ -78,8 +89,24 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         addLayer(points: cachedPointsHigh, index: .high)
     }
     
+    private func cachePoints(to level: Int) {
+        if !cachingLock {
+            cachingLock = true
+            let currentLevel = cachedPointLayers.count
+            while cachedPointLayers.count <= level {
+                cachedPointLayers.append([])
+            }
+            
+            for cachingLevel in currentLevel...level {
+                let dbManager = LFCachedDatabaseManager.shared
+                cachedPointLayers[cachingLevel] = dbManager.getPointsIn(zoomLevel: level)
+            }
+            cachingLock = false
+        }
+        
+    }
     
-    fileprivate func addLayer(points: [LFCachedPoint], index: LayerIndex) {
+    private func addLayer(points: [LFCachedPoint], index: LayerIndex) {
         let i = index.hashValue
         var coordinates: [CLLocationCoordinate2D] = points.map { (point) -> CLLocationCoordinate2D in
             return MKCoordinateForMapPoint(MKMapPointMake(Double(point.x), Double(point.y)))
