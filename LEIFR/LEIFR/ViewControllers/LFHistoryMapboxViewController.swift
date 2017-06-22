@@ -12,8 +12,12 @@ import Mapbox
 class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
     
-    let layerIdentifier = "pathLayer"
-    let sourceIdentifier = "pathSource"
+    enum LayerIndex {
+        case low, mid, high
+    }
+    let layerIdentifiers = ["pathLayer-low", "pathLayer-mid", "pathLayer-high"]
+    let sourceIdentifiers = ["pathSource-low", "pathSource-mid", "pathSource-high"]
+    let layerColors: [UIColor] = [.green, .yellow, .red]
     var presentedLevel = 1
     var cachedLayers: [MGLCircleStyleLayer] = []
     var cachedSources: [MGLShapeSource] = []
@@ -37,12 +41,16 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     }
     
     private func loadLayer(withLevel level: Int) {
-        if let oldLayer = mapView.style?.layer(withIdentifier: layerIdentifier) {
-            mapView.style?.removeLayer(oldLayer)
+        for layerIdentifier in layerIdentifiers {
+            if let oldLayer = mapView.style?.layer(withIdentifier: layerIdentifier) {
+                mapView.style?.removeLayer(oldLayer)
+            }
         }
         
-        if let oldSource = mapView.style?.source(withIdentifier: sourceIdentifier) {
-            mapView.style?.removeSource(oldSource)
+        for sourceIdentifier in sourceIdentifiers {
+            if let oldSource = mapView.style?.source(withIdentifier: sourceIdentifier) {
+                mapView.style?.removeSource(oldSource)
+            }
         }
         
         let dbManager = LFCachedDatabaseManager.shared
@@ -52,21 +60,42 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
             return
         }
         
-        var coordinates: [CLLocationCoordinate2D] = cachedPoints.map { (point) -> CLLocationCoordinate2D in
+        // some nasty way to add different level of layers
+        let cachedPointsLow = cachedPoints.filter { (point) -> Bool in
+            return point.count < 5
+        }
+        
+        let cachedPointsMid = cachedPoints.filter { (point) -> Bool in
+            return point.count >= 5 && point.count < 20
+        }
+        
+        let cachedPointsHigh = cachedPoints.filter { (point) -> Bool in
+            return point.count > 20
+        }
+        
+        addLayer(points: cachedPointsLow, index: .low)
+        addLayer(points: cachedPointsMid, index: .mid)
+        addLayer(points: cachedPointsHigh, index: .high)
+    }
+    
+    
+    fileprivate func addLayer(points: [LFCachedPoint], index: LayerIndex) {
+        let i = index.hashValue
+        var coordinates: [CLLocationCoordinate2D] = points.map { (point) -> CLLocationCoordinate2D in
             return MKCoordinateForMapPoint(MKMapPointMake(Double(point.x), Double(point.y)))
         }
+        
         let pointsCollection = MGLPointCollectionFeature(coordinates: &coordinates, count: UInt(coordinates.count))
         
-        let source = MGLShapeSource(identifier: sourceIdentifier, features: [pointsCollection!], options: nil)
+        let source = MGLShapeSource(identifier: sourceIdentifiers[i], features: [pointsCollection!], options: nil)
         mapView.style?.addSource(source)
         
-        let layer = MGLCircleStyleLayer(identifier: layerIdentifier, source: source)
-        layer.sourceLayerIdentifier = sourceIdentifier
-        layer.circleColor = MGLStyleValue(rawValue: .green)
+        let layer = MGLCircleStyleLayer(identifier: layerIdentifiers[i], source: source)
+        layer.sourceLayerIdentifier = sourceIdentifiers[i]
+        layer.circleColor = MGLStyleValue(rawValue: layerColors[i])
         layer.circleRadius = MGLStyleValue(rawValue: 2)
         layer.circleOpacity = MGLStyleValue(rawValue: 0.7)
         mapView.style?.addLayer(layer)
-
     }
     
     
