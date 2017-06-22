@@ -37,25 +37,22 @@ class LFHistoryMapKitViewController: LFHistoryViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction override func toggleUserLocation(sender: UIButton) {
+        if !isTrackingUserLocation && self.mapView.showsUserLocation {
+            isTrackingUserLocation = true
+        } else {
+            sender.isSelected = !sender.isSelected
+            mapView.showsUserLocation = !self.mapView.showsUserLocation
+            isTrackingUserLocation = mapView.showsUserLocation
+        }
+    }
+    
     // MARK: basic configuration
     fileprivate func configureMap() {
         mapView.delegate = self
         overlay = LFGeoPointsOverlay()
         currentPathOverlay = LFCurrentPathOverlay()
         mapView.add(overlay, level: .aboveRoads)
-    }
-}
-
-// MARK: control panel
-extension LFHistoryMapKitViewController {
-    @IBAction func toggleUserLocation(sender: UIButton) {
-        if !isTrackingUserLocation && self.mapView.showsUserLocation {
-            isTrackingUserLocation = true
-        } else {
-            sender.isSelected = !sender.isSelected
-            mapView.showsUserLocation = !self.mapView.showsUserLocation
-            isTrackingUserLocation = mapView.showsUserLocation;
-        }
     }
 }
 

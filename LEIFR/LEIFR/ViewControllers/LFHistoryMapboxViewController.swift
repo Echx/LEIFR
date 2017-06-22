@@ -15,6 +15,8 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     let layerIdentifier = "pathLayer"
     let sourceIdentifier = "pathSource"
     var presentedLevel = 1
+    var cachedLayers: [MGLCircleStyleLayer] = []
+    var cachedSources: [MGLShapeSource] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     }
     
     func mapViewRegionIsChanging(_ mapView: MGLMapView) {
-        let newLevel = Int(mapView.zoomLevel) + 1
+        let newLevel = Int(mapView.zoomLevel) + 4
         if newLevel != presentedLevel {
             presentedLevel = newLevel
             loadLayer(withLevel: presentedLevel)
@@ -84,6 +86,14 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         mapView.delegate = self
+    }
+    
+    @IBAction override func toggleUserLocation(sender: UIButton) {
+        if !isTrackingUserLocation {
+            isTrackingUserLocation = true
+        } else {
+            sender.isSelected = !sender.isSelected
+        }
     }
 }
 

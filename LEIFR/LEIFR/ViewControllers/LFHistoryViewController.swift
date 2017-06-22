@@ -48,6 +48,10 @@ extension LFHistoryViewController {
         recordButton.delegate = self
     }
 	
+    @IBAction func toggleUserLocation(sender: UIButton) {
+        print("clicked")
+    }
+    
     @IBAction func toggleRecordButton(sender: UIButton) {
         sender.isSelected = !sender.isSelected
 		
