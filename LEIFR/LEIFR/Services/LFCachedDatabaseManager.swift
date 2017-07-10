@@ -184,6 +184,18 @@ class LFCachedDatabaseManager: NSObject {
 		notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionComplete), object: nil, userInfo: nil)
     }
     
+    func reconstructDatabaseFor(rect: MKMapRect, zoomScale: MKZoomScale) {
+        let dbManager = LFDatabaseManager.shared
+        let zoomLevel = zoomScale.toZoomLevel()
+        let gridSize = self.gridSize(for: zoomLevel)
+        dbManager.getPointsInRegion(MKCoordinateRegionForMapRect(rect), gridSize: gridSize) {
+            coordinates in
+            
+            print(coordinates.count)
+            self.savePoints(coordinates: coordinates, zoomLevel: zoomLevel)
+        }
+    }
+    
     func reconstructDatabaseFor(bounds: MGLCoordinateBounds, zoomLevel: Int) {
         let dbManager = LFDatabaseManager.shared
         let gridSize = self.gridSize(for: zoomLevel)

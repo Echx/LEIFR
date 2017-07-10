@@ -24,8 +24,8 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
         let dbManager = LFCachedDatabaseManager.shared
 		let cachedPoints = dbManager.getPointsIn(mapRect, zoomScale: zoomScale)
-		guard cachedPoints.count > 0 else {
-			return
+		if cachedPoints.count == 0 {
+			dbManager.reconstructDatabaseFor(rect: mapRect, zoomScale: zoomScale)
 		}
 		
 		let gridSize = self.gridSizeDrawn(for: zoomScale)

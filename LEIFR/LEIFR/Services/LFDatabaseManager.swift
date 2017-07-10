@@ -362,13 +362,10 @@ class LFDatabaseManager: NSObject {
         self.databaseQueue.inDatabase({
             database in
             
-            let swPoint = MKMapPointForCoordinate(bounds.sw)
-            let nePoint = MKMapPointForCoordinate(bounds.ne)
-            
-            let xMin = swPoint.x
-            let yMin = nePoint.y
-            let xMax = nePoint.x
-            let yMax = swPoint.y
+            let xMin = bounds.sw.longitude
+            let yMin = bounds.ne.latitude
+            let xMax = bounds.ne.longitude
+            let yMax = bounds.sw.latitude
            
             let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
             let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
