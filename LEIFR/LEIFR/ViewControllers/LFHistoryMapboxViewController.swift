@@ -34,14 +34,22 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
         loadLayer(withLevel: presentedLevel)
     }
-    
-    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+
+    func mapViewRegionIsChanging(_ mapView: MGLMapView) {
         let newLevel = Int(mapView.zoomLevel) + 4
         if newLevel != presentedLevel {
             presentedLevel = newLevel
             loadLayer(withLevel: presentedLevel)
         }
     }
+    
+//    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+//        let newLevel = Int(mapView.zoomLevel) + 4
+//        if newLevel != presentedLevel {
+//            presentedLevel = newLevel
+//            loadLayer(withLevel: presentedLevel)
+//        }
+//    }
     
     private func preloadPoints() {
         cachePoints(to: cachedLevel)
@@ -61,12 +69,11 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         }
         
         var cachedPoints: [LFCachedPoint] = []
-        if level < cachedLevel {
+        if level < cachedPointLayers.count {
             cachedPoints = cachedPointLayers[level]
         } else {
-//            cachePoints(to: level)
-            let bounds = mapView.visibleCoordinateBounds
-            cachedPoints = loadPoints(for: bounds, zoomLevel: level)
+//            let bounds = mapView.visibleCoordinateBounds
+//            cachedPoints = loadPoints(for: bounds, zoomLevel: level)
         }
         
         guard cachedPoints.count > 0 else {

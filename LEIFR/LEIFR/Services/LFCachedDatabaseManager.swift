@@ -15,7 +15,7 @@ class LFCachedDatabaseManager: NSObject {
     
     fileprivate let cacheRealm = try! Realm()
     fileprivate let bufferSize = 200
-    fileprivate let maxLevel = 8
+    fileprivate let maxLevel = 15
 	fileprivate let reverseGeocodingSamplingLevel = 13
     
     func savePoints(coordinates: [CLLocationCoordinate2D], zoomLevel: Int) {
@@ -163,22 +163,44 @@ class LFCachedDatabaseManager: NSObject {
         clearDatabase()
 		resetCountries()
 		
+        let maxX: CLLocationDegrees = 180.0
+        let maxY: CLLocationDegrees = 90.0
+        let minX: CLLocationDegrees = -180.0
+        let minY: CLLocationDegrees = -90.0
+        
 		let notificationCenter = NotificationCenter.default
 		
         let min = 1
+        // cached for 1-15(incl.)
         
         for level in min...maxLevel {
 			
             let gridSize = self.gridSize(for: level)
+            let step: Double = pow(2.0, Double(level / 3))
+            let stepX = (maxX - minX) / step
+            let stepY = (maxY - minY) / step
+            var x = minX
             
-            LFDatabaseManager.shared.getPointsInRegion(MKCoordinateRegionForMapRect(MKMapRectWorld), gridSize: gridSize, completion: {
-                coordinates in
-              
-                print(coordinates.count)
-                self.savePoints(coordinates: coordinates, zoomLevel: level)
-            })
-			
-			notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionProgress), object: nil, userInfo: ["progress": progress(for: level)])
+            var count = 0
+            while x < maxX {
+                var y = minY
+                while y < maxY {
+                    count += 1
+                    let bounds = MGLCoordinateBounds(sw: CLLocationCoordinate2DMake(y, x), ne: CLLocationCoordinate2DMake(y + stepY, x + stepX))
+                    LFDatabaseManager.shared.getPointsInBounds(bounds, gridSize: gridSize, completion: {
+                        coordinates in
+                        
+//                        print(bounds)
+//                        print(level)
+                        print(coordinates.count)
+                        print("\(count)/\(step * step)")
+                        self.savePoints(coordinates: coordinates, zoomLevel: level)
+                        notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionProgress), object: nil, userInfo: ["progress": self.progress(for: level, count: count)])
+                    })
+                    y += stepY
+                }
+                x += stepX
+            }
         }
 		
 		notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionComplete), object: nil, userInfo: nil)
@@ -246,8 +268,12 @@ class LFCachedDatabaseManager: NSObject {
     
     fileprivate func progress(for level: Int) -> CGFloat {
         // geometric sequence sum
-        print(pow(4, CGFloat(level)) / pow(4, CGFloat(maxLevel)) * 100)
         return pow(4, CGFloat(level)) / pow(4, CGFloat(maxLevel)) * 100
+    }
+    
+    fileprivate func progress(for level: Int, count: Int) -> CGFloat {
+        // geometric sequence sum
+        return (pow(4, CGFloat(level)) * (CGFloat(count) / pow(4, CGFloat(level / 3))) + pow(4, CGFloat(level - 1))) / pow(4, CGFloat(maxLevel)) * 100 / 1.25
     }
 }
 

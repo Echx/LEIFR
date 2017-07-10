@@ -44,7 +44,7 @@ class LFLoadingViewController: LFViewController {
 //                        77.3947529792786
 //                        237.614533007145
 //                        526.361443996429
-                        let interval = Date().timeIntervalSince(startingDate) * 0.1
+                        let interval = 0.1
 						self.progressView.setProgress(value: progress, animationDuration: interval, completion: {
 							self.updateInProgress = false
 						})
