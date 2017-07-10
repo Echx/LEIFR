@@ -19,6 +19,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     let sourceIdentifiers = ["pathSource-low", "pathSource-mid", "pathSource-high"]
     let layerColors: [UIColor] = [.green, .yellow, .red]
     var presentedLevel = 1
+    var cachedLevel = 11
     var cachedLayers: [MGLCircleStyleLayer] = []
     var cachedSources: [MGLShapeSource] = []
     var cachedPointLayers: [[LFCachedPoint]] = []
@@ -34,7 +35,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         loadLayer(withLevel: presentedLevel)
     }
     
-    func mapViewRegionIsChanging(_ mapView: MGLMapView) {
+    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
         let newLevel = Int(mapView.zoomLevel) + 4
         if newLevel != presentedLevel {
             presentedLevel = newLevel
@@ -43,7 +44,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     }
     
     private func preloadPoints() {
-        cachePoints(to: 11)
+        cachePoints(to: cachedLevel)
     }
     
     private func loadLayer(withLevel level: Int) {
@@ -60,10 +61,12 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         }
         
         var cachedPoints: [LFCachedPoint] = []
-        if level < cachedPointLayers.count {
+        if level < cachedLevel {
             cachedPoints = cachedPointLayers[level]
         } else {
-            cachePoints(to: level)
+//            cachePoints(to: level)
+            let bounds = mapView.visibleCoordinateBounds
+            loadPoints(for: bounds, zoomLevel: level)
             cachedPoints = cachedPointLayers[level]
         }
         
@@ -104,6 +107,15 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
             cachingLock = false
         }
         
+    }
+    
+    private func loadPoints(for bounds: MGLCoordinateBounds, zoomLevel: Int) {
+        let dbManager = LFCachedDatabaseManager.shared
+        let points = dbManager.getPointsIn(bounds, zoomLevel: zoomLevel)
+        if points.count == 0 {
+            print("oops")
+        }
+        cachedPointLayers[zoomLevel] = points
     }
     
     private func addLayer(points: [LFCachedPoint], index: LayerIndex) {

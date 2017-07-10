@@ -183,7 +183,7 @@ class LFDatabaseManagerTest: XCTestCase {
             
             fetchResponse2Received = true
             XCTAssertEqual(paths.count, 1, "Incorrect path number")
-            let point = paths[0].points()[0] as! WKBPoint
+            let point = paths[0].points[0] as! WKBPoint
             XCTAssertEqual(point.x!, 10, "Incorrect point")
         })
         

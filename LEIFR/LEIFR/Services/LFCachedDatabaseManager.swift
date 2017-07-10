@@ -8,6 +8,7 @@
 
 import RealmSwift
 import MapKit
+import Mapbox
 
 class LFCachedDatabaseManager: NSObject {
     static let shared = LFCachedDatabaseManager()
@@ -79,15 +80,30 @@ class LFCachedDatabaseManager: NSObject {
         return Array(points)
     }
     
-    func getPointsInRect(_ rect: MKMapRect, zoomScale: MKZoomScale) -> [LFCachedPoint] {
+    func getPointsIn(_ rect: MKMapRect, zoomScale: MKZoomScale) -> [LFCachedPoint] {
         let zoomLevel = zoomScale.toZoomLevel()
-		let cacheRealm = try! Realm()
-        let levelPredicate = "level = \(zoomLevel)"
-        
         let minX = Int(rect.origin.x - rect.size.width)
         let maxX = Int(rect.origin.x + rect.size.width)
         let minY = Int(rect.origin.y - rect.size.height)
         let maxY = Int(rect.origin.y + rect.size.height)
+        
+        return getPointsWith(minX: minX, maxX: maxX, minY: minY, maxY: maxY, zoomLevel: zoomLevel)
+    }
+    
+    func getPointsIn(_ bounds: MGLCoordinateBounds, zoomLevel: Int) -> [LFCachedPoint] {
+        let swPoint = MKMapPointForCoordinate(bounds.sw)
+        let nePoint = MKMapPointForCoordinate(bounds.ne)
+        let minX = Int(swPoint.x)
+        let maxX = Int(nePoint.x)
+        let minY = Int(nePoint.y)
+        let maxY = Int(swPoint.y)
+        
+        return getPointsWith(minX: minX, maxX: maxX, minY: minY, maxY: maxY, zoomLevel: zoomLevel)
+    }
+    
+    func getPointsWith(minX: Int, maxX: Int, minY: Int, maxY: Int, zoomLevel: Int) -> [LFCachedPoint] {
+        let cacheRealm = try! Realm()
+        let levelPredicate = "level = \(zoomLevel)"
         let xPredicate = "x >= \(minX) AND x <= \(maxX)"
         let yPredicate = "y >= \(minY) AND y <= \(maxY)"
         let currentLevels = cacheRealm.objects(LFCachedLevel.self).filter(levelPredicate)
@@ -99,6 +115,7 @@ class LFCachedDatabaseManager: NSObject {
         let points = currentLevels[0].points.filter("\(xPredicate) AND \(yPredicate)")
         return Array(points)
     }
+
     
     func getMaxPointsCountIn(zoomScale: MKZoomScale) -> Int {
         let zoomLevel = zoomScale.toZoomLevel()
