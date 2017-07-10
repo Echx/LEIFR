@@ -13,8 +13,8 @@ class LFCachedDatabaseManager: NSObject {
     static let shared = LFCachedDatabaseManager()
     
     fileprivate let cacheRealm = try! Realm()
-    fileprivate let bufferSize = 2000
-    fileprivate let maxLevel = 21
+    fileprivate let bufferSize = 200
+    fileprivate let maxLevel = 8
 	fileprivate let reverseGeocodingSamplingLevel = 13
     
     func savePoints(coordinates: [CLLocationCoordinate2D], zoomLevel: Int) {
@@ -148,17 +148,22 @@ class LFCachedDatabaseManager: NSObject {
 		
 		let notificationCenter = NotificationCenter.default
 		
-        for level in 1...maxLevel {
+        let min = 1
+        
+        for level in min...maxLevel {
 			
             let gridSize = self.gridSize(for: level)
             
             LFDatabaseManager.shared.getPointsInRegion(MKCoordinateRegionForMapRect(MKMapRectWorld), gridSize: gridSize, completion: {
                 coordinates in
-                
+              
+                print(coordinates.count)
+              
+
                 self.savePoints(coordinates: coordinates, zoomLevel: level)
             })
 			
-			notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionProgress), object: nil, userInfo: ["progress": progress(for: level + 1)])
+			notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionProgress), object: nil, userInfo: ["progress": progress(for: level)])
         }
 		
 		notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionComplete), object: nil, userInfo: nil)
@@ -203,6 +208,7 @@ class LFCachedDatabaseManager: NSObject {
     
     fileprivate func progress(for level: Int) -> CGFloat {
         // geometric sequence sum
+        print(pow(4, CGFloat(level)) / pow(4, CGFloat(maxLevel)) * 100)
         return pow(4, CGFloat(level)) / pow(4, CGFloat(maxLevel)) * 100
     }
 }

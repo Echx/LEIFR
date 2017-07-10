@@ -119,6 +119,7 @@
 		626A13B61DC522270051FE90 /* LFZoomLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */; };
 		626A13B81DC5259B0051FE90 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B71DC5259B0051FE90 /* MapKitExtension.swift */; };
 		626A13B91DC526910051FE90 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A13B71DC5259B0051FE90 /* MapKitExtension.swift */; };
+		626CF8F41F12924600CF9098 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 626CF8F31F12924600CF9098 /* Podfile */; };
 		6270115E1E7F1D7900391B7B /* LFPathsPlayingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270115D1E7F1D7900391B7B /* LFPathsPlayingManager.swift */; };
 		627011601E7F22CC00391B7B /* LFPathPlayingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270115F1E7F22CC00391B7B /* LFPathPlayingManager.swift */; };
 		62A6281E1D86B730009D0687 /* LFGeoRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */; };
@@ -133,8 +134,8 @@
 		62F3D80B1EE7104300AADF23 /* LFHistoryMapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F3D80A1EE7104300AADF23 /* LFHistoryMapKitViewController.swift */; };
 		62F5A7A41E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */; };
 		62F5A7A91E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5A7A81E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift */; };
-		6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */; };
-		E85EA76925BBD5C425DBCD78 /* Pods_LEIFRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */; };
+		897890D2EB1F60386D58DE00 /* Pods_LEIFRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEEB61D23AB3C5E6652F469 /* Pods_LEIFRTests.framework */; };
+		C9E924ED41353918BBD27AAA /* Pods_LEIFR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDBECD2D0FE8BF27631542E /* Pods_LEIFR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -668,8 +669,6 @@
 		0CFAEC1D1E675AEA00392BEE /* LFFlagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFFlagCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CFAEC1E1E675AEA00392BEE /* LFFlagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFFlagCollectionViewCell.xib; sourceTree = "<group>"; };
 		0CFC8B701DA6F9320084DD6F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
 		62027DC21DC3A46900B35F76 /* LFCachedPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedPoint.swift; sourceTree = "<group>"; };
 		62027DD01DC3BB6500B35F76 /* LFCachedLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedLevel.swift; sourceTree = "<group>"; };
 		62027DD21DC3C35B00B35F76 /* LFCachedDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCachedDatabaseManager.swift; sourceTree = "<group>"; };
@@ -680,6 +679,7 @@
 		62604E991E407E9600D17937 /* LFPlaybackControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LFPlaybackControlView.xib; path = Cells/LFPlaybackControlView.xib; sourceTree = "<group>"; };
 		626A13B51DC522270051FE90 /* LFZoomLevelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFZoomLevelTest.swift; sourceTree = "<group>"; };
 		626A13B71DC5259B0051FE90 /* MapKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapKitExtension.swift; path = Extensions/MapKitExtension.swift; sourceTree = "<group>"; };
+		626CF8F31F12924600CF9098 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../../Podfile; sourceTree = "<group>"; };
 		6270115D1E7F1D7900391B7B /* LFPathsPlayingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPathsPlayingManager.swift; sourceTree = "<group>"; };
 		6270115F1E7F22CC00391B7B /* LFPathPlayingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPathPlayingManager.swift; sourceTree = "<group>"; };
 		62A6281D1D86B730009D0687 /* LFGeoRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFGeoRecordManager.swift; sourceTree = "<group>"; };
@@ -694,10 +694,12 @@
 		62F3D80A1EE7104300AADF23 /* LFHistoryMapKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFHistoryMapKitViewController.swift; sourceTree = "<group>"; };
 		62F5A7A31E41C8EC002BB7C4 /* LFPlayBackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayBackAnnotationView.swift; sourceTree = "<group>"; };
 		62F5A7A81E4248BE002BB7C4 /* LFPlaybackCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaybackCalendarViewController.swift; sourceTree = "<group>"; };
-		9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
-		CD554A7B469F9393D5BD63B8 /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
-		DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E37A1D54B317D122EE629093 /* Pods-LEIFRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.debug.xcconfig"; sourceTree = "<group>"; };
+		79726ECAF3D4FA7FAFCB79E5 /* Pods-LEIFR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.release.xcconfig"; sourceTree = "<group>"; };
+		7EBCA970C39A4CE8AE8CC2E1 /* Pods-LEIFRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4FB4B2F2C6177A316D8FFD2 /* Pods-LEIFR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR.debug.xcconfig"; sourceTree = "<group>"; };
+		CAEEB61D23AB3C5E6652F469 /* Pods_LEIFRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D168E90D42F1446EA4D0D6F3 /* Pods-LEIFRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEIFRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests.release.xcconfig"; sourceTree = "<group>"; };
+		ECDBECD2D0FE8BF27631542E /* Pods_LEIFR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEIFR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -717,7 +719,7 @@
 				0CBB38661D85F9BD002C0EF0 /* libgeos_c.a in Frameworks */,
 				0CBB386A1D85F9BD002C0EF0 /* mod_spatialite.a in Frameworks */,
 				0CBB38671D85F9BD002C0EF0 /* libproj.a in Frameworks */,
-				6A4DF1E7C083CBC73228047F /* Pods_LEIFR.framework in Frameworks */,
+				C9E924ED41353918BBD27AAA /* Pods_LEIFR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,7 +727,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E85EA76925BBD5C425DBCD78 /* Pods_LEIFRTests.framework in Frameworks */,
+				897890D2EB1F60386D58DE00 /* Pods_LEIFRTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,7 +818,7 @@
 				0CBB30A01D85F413002C0EF0 /* LEIFRUITests */,
 				0CBB307F1D85F413002C0EF0 /* Products */,
 				5432B3B5B435532EF82F3B2E /* Frameworks */,
-				5730921F06119559274CD8FC /* Pods */,
+				2FA548CB02A216BAE7BE6678 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1674,6 +1676,7 @@
 		0CBB387C1D85FD36002C0EF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				626CF8F31F12924600CF9098 /* Podfile */,
 				623A63511DC2098100F80E7F /* default.sqlite */,
 				0C42AF241DAD47CF00849A5C /* Fonts */,
 				0CBB30811D85F413002C0EF0 /* AppDelegate.swift */,
@@ -1806,6 +1809,17 @@
 			name = "Collection View Cells";
 			sourceTree = "<group>";
 		};
+		2FA548CB02A216BAE7BE6678 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4FB4B2F2C6177A316D8FFD2 /* Pods-LEIFR.debug.xcconfig */,
+				79726ECAF3D4FA7FAFCB79E5 /* Pods-LEIFR.release.xcconfig */,
+				7EBCA970C39A4CE8AE8CC2E1 /* Pods-LEIFRTests.debug.xcconfig */,
+				D168E90D42F1446EA4D0D6F3 /* Pods-LEIFRTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5432B3B5B435532EF82F3B2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1815,21 +1829,10 @@
 				0CBB386F1D85F9E4002C0EF0 /* libxml2.2.tbd */,
 				0CBB386D1D85F9DE002C0EF0 /* libcharset.1.0.0.tbd */,
 				0CBB386B1D85F9D3002C0EF0 /* libiconv.tbd */,
-				DCA953086BDD8A7B41E3668B /* Pods_LEIFR.framework */,
-				4833BBAFEA1ABBCACC9DC781 /* Pods_LEIFRTests.framework */,
+				ECDBECD2D0FE8BF27631542E /* Pods_LEIFR.framework */,
+				CAEEB61D23AB3C5E6652F469 /* Pods_LEIFRTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5730921F06119559274CD8FC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CD554A7B469F9393D5BD63B8 /* Pods-LEIFR.debug.xcconfig */,
-				9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */,
-				E37A1D54B317D122EE629093 /* Pods-LEIFRTests.debug.xcconfig */,
-				58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		62BF06941DA6EFF000E6957E /* Extensions */ = {
@@ -1849,14 +1852,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CBB30A61D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFR" */;
 			buildPhases = (
-				9ADFECC818C35A622F90BAA9 /* [CP] Check Pods Manifest.lock */,
+				0F78665C27165D9AB60E3E96 /* [CP] Check Pods Manifest.lock */,
 				0CBB307A1D85F413002C0EF0 /* Sources */,
 				0CBB307B1D85F413002C0EF0 /* Frameworks */,
 				0CBB307C1D85F413002C0EF0 /* Resources */,
 				6265F7121D8889BB00EE54B2 /* Embed Frameworks */,
-				A870F9B0BFF6D8D5E523999D /* [CP] Embed Pods Frameworks */,
-				AF73CC7799628795222E7675 /* [CP] Copy Pods Resources */,
 				62F3D8091EE70D3C00AADF23 /* Run Script */,
+				59630DE13CB49C7C0B687B16 /* [CP] Embed Pods Frameworks */,
+				0B319ABD84EF3EADCB388AFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1871,12 +1874,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CBB30A91D85F413002C0EF0 /* Build configuration list for PBXNativeTarget "LEIFRTests" */;
 			buildPhases = (
-				DBCFE942A4F8451CE23E4737 /* [CP] Check Pods Manifest.lock */,
+				3FCDF36AED0FBCFCFFB06653 /* [CP] Check Pods Manifest.lock */,
 				0CBB308E1D85F413002C0EF0 /* Sources */,
 				0CBB308F1D85F413002C0EF0 /* Frameworks */,
 				0CBB30901D85F413002C0EF0 /* Resources */,
-				E31E18C957FFD1394FBEF8EE /* [CP] Embed Pods Frameworks */,
-				FEBABA18F8C885DE95F9984E /* [CP] Copy Pods Resources */,
+				EE77370A06590CCFA2422C39 /* [CP] Embed Pods Frameworks */,
+				C97278A7D89E4FFE51BB6734 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1976,6 +1979,7 @@
 				0CBB38601D85F9BD002C0EF0 /* ByteOrderDataInStream.inl in Resources */,
 				0CBB38581D85F9BD002C0EF0 /* GeometryCollection.inl in Resources */,
 				0C6174981E75DE36003AD136 /* LFSettingAccessoryView.xib in Resources */,
+				626CF8F41F12924600CF9098 /* Podfile in Resources */,
 				0CF715F41E3F227800FA419F /* LFHorizontalCollectionViewCell.xib in Resources */,
 				0CFAEC201E675AEA00392BEE /* LFFlagCollectionViewCell.xib in Resources */,
 				0CBB385A1D85F9BD002C0EF0 /* LineSegment.inl in Resources */,
@@ -2025,51 +2029,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		62F3D8091EE70D3C00AADF23 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"";
-		};
-		9ADFECC818C35A622F90BAA9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A870F9B0BFF6D8D5E523999D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AF73CC7799628795222E7675 /* [CP] Copy Pods Resources */ = {
+		0B319ABD84EF3EADCB388AFD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2084,7 +2044,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DBCFE942A4F8451CE23E4737 /* [CP] Check Pods Manifest.lock */ = {
+		0F78665C27165D9AB60E3E96 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2099,7 +2059,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E31E18C957FFD1394FBEF8EE /* [CP] Embed Pods Frameworks */ = {
+		3FCDF36AED0FBCFCFFB06653 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		59630DE13CB49C7C0B687B16 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2111,10 +2086,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFR/Pods-LEIFR-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FEBABA18F8C885DE95F9984E /* [CP] Copy Pods Resources */ = {
+		62F3D8091EE70D3C00AADF23 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"";
+		};
+		C97278A7D89E4FFE51BB6734 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2127,6 +2116,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE77370A06590CCFA2422C39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEIFRTests/Pods-LEIFRTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2352,7 +2356,7 @@
 		};
 		0CBB30A71D85F413002C0EF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD554A7B469F9393D5BD63B8 /* Pods-LEIFR.debug.xcconfig */;
+			baseConfigurationReference = C4FB4B2F2C6177A316D8FFD2 /* Pods-LEIFR.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2386,7 +2390,7 @@
 		};
 		0CBB30A81D85F413002C0EF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BC6566802FC81ACE1B9FD73 /* Pods-LEIFR.release.xcconfig */;
+			baseConfigurationReference = 79726ECAF3D4FA7FAFCB79E5 /* Pods-LEIFR.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2419,7 +2423,7 @@
 		};
 		0CBB30AA1D85F413002C0EF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E37A1D54B317D122EE629093 /* Pods-LEIFRTests.debug.xcconfig */;
+			baseConfigurationReference = 7EBCA970C39A4CE8AE8CC2E1 /* Pods-LEIFRTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2440,7 +2444,7 @@
 		};
 		0CBB30AB1D85F413002C0EF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58410AAC650FE0F5098E8127 /* Pods-LEIFRTests.release.xcconfig */;
+			baseConfigurationReference = D168E90D42F1446EA4D0D6F3 /* Pods-LEIFRTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

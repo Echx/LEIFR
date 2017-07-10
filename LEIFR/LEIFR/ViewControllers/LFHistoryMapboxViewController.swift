@@ -99,7 +99,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
             
             for cachingLevel in currentLevel...level {
                 let dbManager = LFCachedDatabaseManager.shared
-                cachedPointLayers[cachingLevel] = dbManager.getPointsIn(zoomLevel: level)
+                cachedPointLayers[cachingLevel] = dbManager.getPointsIn(zoomLevel: cachingLevel)
             }
             cachingLock = false
         }
@@ -145,6 +145,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     }
     
     @IBAction override func toggleUserLocation(sender: UIButton) {
+        mapView.showsUserLocation = !mapView.showsUserLocation
         if !isTrackingUserLocation {
             isTrackingUserLocation = true
         } else {

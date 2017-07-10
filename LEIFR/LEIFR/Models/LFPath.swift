@@ -13,7 +13,7 @@ class LFPath: NSObject, NSSecureCoding {
 	
 	fileprivate let ArchiveKeyPropertyPoints = "ArchiveKeyPropertyPoints"
 	
-    fileprivate let minimumPointsPerPath = 5
+    fileprivate let minimumPointsPerPath = 1
 	var points = [LFPoint]()
 	var identifier: Int?
 	var thumbnail: UIImage?

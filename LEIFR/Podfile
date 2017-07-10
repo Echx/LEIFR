@@ -6,16 +6,15 @@ target 'LEIFR' do
 
 pod 'FontBlaster'
 pod 'wkb-ios'
-pod 'RealmSwift', '2.0.3'
+pod 'RealmSwift'
 pod 'UICircularProgressRing'
 pod 'FSCalendar'
 
 end
 
 target 'LEIFRTests' do
-	
 pod 'wkb-ios'
-pod 'RealmSwift', '2.0.3'
+pod 'RealmSwift'
 
 end
 
