@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Mapbox
 import wkb_ios
 
 class LFDatabaseManager: NSObject {
@@ -301,8 +302,17 @@ class LFDatabaseManager: NSObject {
         self.getPointsInRegion(region, gridSize: 0.0, completion: completion)
     }
     
-    func getPointsInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion:@escaping (([CLLocationCoordinate2D]) -> Void)) {
+    func getPointsInRegion(_ region: MKCoordinateRegion, gridSize: Double, completion: @escaping (([CLLocationCoordinate2D]) -> Void)) {
         self.getPointsGeoJSONInRegion(region, gridSize: gridSize) {
+            geoJSON in
+            
+            let coordinates = LFGeoJSONManager.convertToCoordinates(geoJSON: geoJSON)
+            completion(coordinates)
+        }
+    }
+    
+    func getPointsInBounds(_ bounds: MGLCoordinateBounds, gridSize: Double, completion: @escaping (([CLLocationCoordinate2D]) -> Void)) {
+        self.getPointsGeoJSONInBounds(bounds, gridSize: gridSize) {
             geoJSON in
             
             let coordinates = LFGeoJSONManager.convertToCoordinates(geoJSON: geoJSON)
@@ -342,6 +352,44 @@ class LFDatabaseManager: NSObject {
 				completion(array)
 			}
 		})
+    }
+    
+    func getPointsGeoJSONInBounds(_ bounds: MGLCoordinateBounds, completion:@escaping (([String]) -> Void)) {
+        self.getPointsGeoJSONInBounds(bounds, gridSize: 0.0, completion: completion)
+    }
+
+    func getPointsGeoJSONInBounds(_ bounds: MGLCoordinateBounds, gridSize: Double, completion:@escaping (([String]) -> Void)) {
+        self.databaseQueue.inDatabase({
+            database in
+            
+            let swPoint = MKMapPointForCoordinate(bounds.sw)
+            let nePoint = MKMapPointForCoordinate(bounds.ne)
+            
+            let xMin = swPoint.x
+            let yMin = nePoint.y
+            let xMax = nePoint.x
+            let yMax = swPoint.y
+           
+            let screenPolygon = "GeomFromText('POLYGON((\(xMin) \(yMin), \(xMin) \(yMax), \(xMax) \(yMax), \(xMax) \(yMin)))')"
+            let select = "SELECT track_id, AsGeoJSON(DissolvePoints(SnapToGrid(GUnion(Intersection(SnapToGrid(track_geometry, 0.0, 0.0, \(gridSize), \(gridSize)), " + screenPolygon + ")), \(gridSize)))) FROM tracks "
+            let querySQL = select + "WHERE MbrOverlaps(track_geometry, " + screenPolygon + ") OR MbrContains(track_geometry, " + screenPolygon + ")"
+            
+            var array = [String]()
+            
+            if let results = self.database.executeQuery(querySQL, withArgumentsIn: nil) {
+                while (results.next()) {
+                    if results.hasAnotherRow() {
+                        if let geoJSON = results.string(forColumnIndex: 1) {
+                            array.append(geoJSON)
+                        }
+                    }
+                }
+            }
+            
+            DispatchQueue.main.async {
+                completion(array)
+            }
+        })
     }
 
 	

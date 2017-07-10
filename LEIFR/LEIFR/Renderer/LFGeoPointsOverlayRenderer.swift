@@ -23,7 +23,7 @@ class LFGeoPointsOverlayRenderer: MKOverlayRenderer {
 	
 	override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
         let dbManager = LFCachedDatabaseManager.shared
-		let cachedPoints = dbManager.getPointsIn(mapRect, zoomScale: zoomScale)
+		let cachedPoints = dbManager.getPointsInRect(mapRect, zoomScale: zoomScale)
 		guard cachedPoints.count > 0 else {
 			return
 		}

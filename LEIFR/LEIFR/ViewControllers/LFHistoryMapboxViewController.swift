@@ -66,8 +66,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         } else {
 //            cachePoints(to: level)
             let bounds = mapView.visibleCoordinateBounds
-            loadPoints(for: bounds, zoomLevel: level)
-            cachedPoints = cachedPointLayers[level]
+            cachedPoints = loadPoints(for: bounds, zoomLevel: level)
         }
         
         guard cachedPoints.count > 0 else {
@@ -109,13 +108,16 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
         
     }
     
-    private func loadPoints(for bounds: MGLCoordinateBounds, zoomLevel: Int) {
+    private func loadPoints(for bounds: MGLCoordinateBounds, zoomLevel: Int) -> [LFCachedPoint] {
         let dbManager = LFCachedDatabaseManager.shared
         let points = dbManager.getPointsIn(bounds, zoomLevel: zoomLevel)
+        
         if points.count == 0 {
             print("oops")
+            
+            dbManager.reconstructDatabaseFor(bounds: bounds, zoomLevel: zoomLevel)
         }
-        cachedPointLayers[zoomLevel] = points
+        return points
     }
     
     private func addLayer(points: [LFCachedPoint], index: LayerIndex) {

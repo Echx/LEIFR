@@ -175,8 +175,6 @@ class LFCachedDatabaseManager: NSObject {
                 coordinates in
               
                 print(coordinates.count)
-              
-
                 self.savePoints(coordinates: coordinates, zoomLevel: level)
             })
 			
@@ -184,6 +182,17 @@ class LFCachedDatabaseManager: NSObject {
         }
 		
 		notificationCenter.post(name: NSNotification.Name(rawValue: LFNotification.databaseReconstructionComplete), object: nil, userInfo: nil)
+    }
+    
+    func reconstructDatabaseFor(bounds: MGLCoordinateBounds, zoomLevel: Int) {
+        let dbManager = LFDatabaseManager.shared
+        let gridSize = self.gridSize(for: zoomLevel)
+        dbManager.getPointsInBounds(bounds, gridSize: gridSize) {
+            coordinates in
+            
+            print(coordinates.count)
+            self.savePoints(coordinates: coordinates, zoomLevel: zoomLevel)
+        }
     }
 	
 	func cachePath(with trackId: Int) {
