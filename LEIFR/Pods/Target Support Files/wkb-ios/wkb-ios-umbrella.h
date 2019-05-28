@@ -34,9 +34,13 @@
 #import "WKBByteWriter.h"
 #import "WKBGeometryReader.h"
 #import "WKBGeometryWriter.h"
+#import "WKBCentroidCurve.h"
+#import "WKBCentroidPoint.h"
+#import "WKBCentroidSurface.h"
 #import "WKBGeometryEnvelopeBuilder.h"
 #import "WKBGeometryJSONCompatible.h"
 #import "WKBGeometryPrinter.h"
+#import "WKBGeometryUtils.h"
 #import "wkb-ios-Bridging-Header.h"
 #import "wkb_ios.h"
 

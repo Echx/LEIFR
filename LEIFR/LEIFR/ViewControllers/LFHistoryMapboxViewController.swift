@@ -12,8 +12,9 @@ import Mapbox
 class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate {
     @IBOutlet fileprivate weak var mapView: MGLMapView!
     
-    enum LayerIndex {
-        case low, mid, high
+    enum LayerIndex: Int {
+        case low = 0
+        case mid, high
     }
     let layerIdentifiers = ["pathLayer-low", "pathLayer-mid", "pathLayer-high"]
     let sourceIdentifiers = ["pathSource-low", "pathSource-mid", "pathSource-high"]
@@ -128,7 +129,7 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     }
     
     private func addLayer(points: [LFCachedPoint], index: LayerIndex) {
-        let i = index.hashValue
+        let i = index.rawValue
         var coordinates: [CLLocationCoordinate2D] = points.map { (point) -> CLLocationCoordinate2D in
             return MKCoordinateForMapPoint(MKMapPointMake(Double(point.x), Double(point.y)))
         }

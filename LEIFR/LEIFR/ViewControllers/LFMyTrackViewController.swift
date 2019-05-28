@@ -139,7 +139,7 @@ extension LFMyTrackViewController: UITableViewDataSource {
 		label.text = "No Track Available".uppercased()
 		label.textColor = UIColor.white
 		label.textAlignment = .center
-		label.font = UIFont.systemFont(ofSize: 15, weight: 0.01)
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight(rawValue: 0.01))
 		tableView.backgroundView = label
 		
 		registerCells(for: tableView)

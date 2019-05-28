@@ -1,13 +1,13 @@
 PODS:
-  - FontBlaster (3.0.0)
-  - FSCalendar (2.7.0)
-  - Realm (2.8.3):
-    - Realm/Headers (= 2.8.3)
-  - Realm/Headers (2.8.3)
-  - RealmSwift (2.8.3):
-    - Realm (= 2.8.3)
-  - UICircularProgressRing (1.1.3)
-  - wkb-ios (1.0.6)
+  - FontBlaster (3.0.4)
+  - FSCalendar (2.7.9)
+  - Realm (2.9.1):
+    - Realm/Headers (= 2.9.1)
+  - Realm/Headers (2.9.1)
+  - RealmSwift (2.9.1):
+    - Realm (= 2.9.1)
+  - UICircularProgressRing (1.7.0)
+  - wkb-ios (1.0.7)
 
 DEPENDENCIES:
   - FontBlaster
@@ -16,14 +16,23 @@ DEPENDENCIES:
   - UICircularProgressRing
   - wkb-ios
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FontBlaster
+    - FSCalendar
+    - Realm
+    - RealmSwift
+    - UICircularProgressRing
+    - wkb-ios
+
 SPEC CHECKSUMS:
-  FontBlaster: 0f4a3e2f965968e2dfc3f7f5cec7214c3f3b2f07
-  FSCalendar: 4957703ebd99b4fd0bfd46bf3e3c6465c0a25482
-  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
-  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
-  UICircularProgressRing: 2da995fa7434af0438398d16400b9b825dbf9ddb
-  wkb-ios: 8d1526e825e3d088a5a191c8eefe213a9e41d25e
+  FontBlaster: 7c449905fcb26003b5596247aee4cb8b5c63f663
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
+  RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
+  UICircularProgressRing: 35c3d291b679161ea27fb6216fee58c40a4bb597
+  wkb-ios: 538035d3aa95dd0cadb430b682440d2646cc00ff
 
-PODFILE CHECKSUM: eb4a95ddca74ac491b49cdf581ea1cdde66ba7fe
+PODFILE CHECKSUM: d125b4695c026d16ff3fc2fde2ec41785278e5fd
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.6.1

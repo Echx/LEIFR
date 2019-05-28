@@ -1,19 +1,22 @@
-![Banner](/GitHubAssets/banner.png)
+![Banner](https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/banner.png)
 
-<h3 align="center">A circular progress bar for iOS written in Swift 3</h3>
+<h3 align="center">A circular progress bar for iOS written in Swift</h3>
 
 <p align="center">
-<img src="/GitHubAssets/demo.gif"/>  
+<img src="https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/demo.gif"/>  
 </p>
 
-![Styles](/GitHubAssets/styles-banner.png)
+![Styles](https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/styles-banner.png)
+
+### _Looking for awesome people to help maintain and contribute_
 
 ## Features
 
 * Interface builder designable
-* Highly customizable 
-* Animation for progress and value text built in
-* Written in Swift 3 and using Xcode 8
+* Highly customizable and flexible
+* Easy to use
+* Sleek animations
+* Written in Swift
 
 ## Installation 
 
@@ -33,20 +36,6 @@
 3. Run `pod install`
 4. Open up the `.xcworkspace` that CocoaPods created
 5. Done!
-
-__Note:__ If you have any issues with Swift 3 and CocoaPods you can try to force the version. (Cocoapods support for Swift 3 projects has been a bit wonky).
-
-Add this to the end of your `Podfile`
-
-```ruby
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |configuration|
-      configuration.build_settings['SWIFT_VERSION'] = "3.0"
-    end
-  end
-end
-```
 
 ### Carthage
 
@@ -76,9 +65,9 @@ Simply drag a `UIView` into your storyboard. Make sure to subclass `UICircularPr
 
 Design your heart out
 
-![ib-demo.gif](/GitHubAssets/ib-demo.gif)
+![ib-demo.gif](https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/.github/ib-demo.gif)
 
-### Code
+### Usage
 
 ```swift
 override func viewDidLoad() {
@@ -95,6 +84,7 @@ To set a value and animate the view
 
 ```swift
 // Somewhere not in viewDidLoad (since the views have not set yet, thus cannot be animated)
+// Remember to use unowned or weak self if refrencing self to avoid retain cycle
 progressRing.setProgress(value: 49, animationDuration: 2.0) {
   print("Done animating!")
   // Do anything your heart desires...
@@ -103,9 +93,9 @@ progressRing.setProgress(value: 49, animationDuration: 2.0) {
 
 ## Documentation
 
-Read all about everything there is to know here:
+Please read this before creating an issue about how to use the package:
 
-[DOCUMENTATION](http://htmlpreview.github.io/?https://github.com/luispadron/UICircularProgressRing/blob/master/docs/index.html)
+[DOCUMENTATION](https://htmlpreview.github.io/?https://raw.githubusercontent.com/luispadron/UICircularProgressRing/master/docs/Classes/UICircularProgressRingView.html)
 
 ## Example project
 
@@ -115,10 +105,6 @@ Take a look at the example project over [here](Example/)
 2. Open the `Example.xcworkspace` in Xcode
 3. Mess around and experiment!
 
-## Upcoming enhancements
-
-* ~~Add decreasing animation, currently nothing gets animated when decreasing value~~
-* ~~Better way of handling animation finishing, probably a completion block~~
 
 ## License
 

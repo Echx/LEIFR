@@ -67,7 +67,7 @@ class LFLoadingViewController: LFViewController {
 }
 
 extension LFLoadingViewController: UICircularProgressRingDelegate {
-	func finishedUpdatingProgressFor(_ ring: UICircularProgressRingView) {
-		
-	}
+    func finishedUpdatingProgress(forRing ring: UICircularProgressRingView) {
+        
+    }
 }

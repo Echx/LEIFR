@@ -1,10 +1,12 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/FSCalendar" "$PODS_CONFIGURATION_BUILD_DIR/FontBlaster" "$PODS_CONFIGURATION_BUILD_DIR/Realm" "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift" "$PODS_CONFIGURATION_BUILD_DIR/UICircularProgressRing" "$PODS_CONFIGURATION_BUILD_DIR/wkb-ios"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FSCalendar" "${PODS_CONFIGURATION_BUILD_DIR}/FontBlaster" "${PODS_CONFIGURATION_BUILD_DIR}/Realm" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift" "${PODS_CONFIGURATION_BUILD_DIR}/UICircularProgressRing" "${PODS_CONFIGURATION_BUILD_DIR}/wkb-ios"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FSCalendar/FSCalendar.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/FontBlaster/FontBlaster.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Realm/Realm.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift/RealmSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/UICircularProgressRing/UICircularProgressRing.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/wkb-ios/wkb_ios.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/FSCalendar/FSCalendar.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/FontBlaster/FontBlaster.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Realm/Realm.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift/RealmSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/UICircularProgressRing/UICircularProgressRing.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/wkb-ios/wkb_ios.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "FSCalendar" -framework "FontBlaster" -framework "Realm" -framework "RealmSwift" -framework "UICircularProgressRing" -framework "wkb_ios"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
-PODS_BUILD_DIR = $BUILD_DIR
-PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Realm/core"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "FSCalendar" -framework "FontBlaster" -framework "Foundation" -framework "QuartzCore" -framework "Realm" -framework "RealmSwift" -framework "UICircularProgressRing" -framework "UIKit" -framework "wkb_ios"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods

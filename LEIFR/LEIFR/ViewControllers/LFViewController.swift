@@ -42,16 +42,17 @@ class LFViewController: UIViewController {
 }
 
 extension LFViewController: LFHoverTabBarDataSource {
-	func controlViewForTab() -> UIView? {
+	@objc func controlViewForTab() -> UIView? {
 		return nil
 	}
 	
-	func accessoryViewForTab() -> UIView? {
+	@objc func accessoryViewForTab() -> UIView? {
 		let view = Bundle.main.loadNibNamed("LFSettingAccessoryView", owner: self, options: nil)![0] as? UIView
 		return view
 	}
 	
-	func accessoryTextForTab() -> String? {
+	@objc func accessoryTextForTab() -> String? {
 		return "Accessory view hasn't been implemented"
 	}
 }
+

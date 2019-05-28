@@ -13,11 +13,6 @@ class LFTrackTableViewCell: LFTableViewCell {
 	fileprivate static let mapPlaceHolderImage = #imageLiteral(resourceName: "map-placeholder")
 	fileprivate static var intervalFormatter = DateIntervalFormatter()
 	
-	override class func initialize () {
-		super.initialize()
-		self.intervalFormatter.dateStyle = .medium
-	}
-	
 	@IBOutlet var mapImageView: UIImageView!
 	@IBOutlet var primaryLabel: UILabel!
 	@IBOutlet var secondaryLabel: UILabel!

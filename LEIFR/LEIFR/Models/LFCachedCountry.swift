@@ -11,9 +11,9 @@ import RealmSwift
 
 class LFCachedCountry: Object {
 	
-	dynamic var code: String = ""
-	dynamic var continentCode: String = ""
-	dynamic var visited: Bool = false
+    @objc dynamic var code: String = ""
+    @objc dynamic var continentCode: String = ""
+    @objc dynamic var visited: Bool = false
 	
 	fileprivate lazy var locale: NSLocale = self.getCurrentLocale()
 	

@@ -25,7 +25,7 @@ class LFGeoRecordManager: NSObject {
         self.bufferPath.addPoint(latitude: coordinate.latitude, longitude: coordinate.longitude, altitude: newPoint.altitude)
     }
     
-    func flushPoints() {
+    @objc func flushPoints() {
         pthread_mutex_lock(&mutex)
         defer {
             pthread_mutex_unlock(&mutex)

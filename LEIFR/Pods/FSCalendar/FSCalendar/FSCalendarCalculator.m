@@ -38,8 +38,6 @@
     self = [super init];
     if (self) {
         self.calendar = calendar;
-        self.titleHeight = FSCalendarAutomaticDimension;
-        self.subtitleHeight = FSCalendarAutomaticDimension;
         
         self.months = [NSMutableDictionary dictionary];
         self.monthHeads = [NSMutableDictionary dictionary];
@@ -62,24 +60,6 @@
         return self.calendar;
     }
     return [super forwardingTargetForSelector:selector];
-}
-
-#pragma mark - Public properties
-
-- (CGFloat)titleHeight
-{
-    if (_titleHeight == FSCalendarAutomaticDimension) {
-        _titleHeight = [@"1" sizeWithAttributes:@{NSFontAttributeName:self.calendar.appearance.titleFont}].height;
-    }
-    return _titleHeight;
-}
-
-- (CGFloat)subtitleHeight
-{
-    if (_subtitleHeight == FSCalendarAutomaticDimension) {
-        _subtitleHeight = [@"1" sizeWithAttributes:@{NSFontAttributeName:self.calendar.appearance.subtitleFont}].height;
-    }
-    return _subtitleHeight;
 }
 
 #pragma mark - Public functions
@@ -153,7 +133,7 @@
             break;
         }
     }
-    if (item < 0) {
+    if (item < 0 || section < 0) {
         return nil;
     }
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];
@@ -268,8 +248,10 @@
 - (FSCalendarMonthPosition)monthPositionForIndexPath:(NSIndexPath *)indexPath
 {
     if (!indexPath) return FSCalendarMonthPositionNotFound;
+    if (self.calendar.transitionCoordinator.representingScope == FSCalendarScopeWeek) {
+        return FSCalendarMonthPositionCurrent;
+    }
     NSDate *date = [self dateForIndexPath:indexPath];
-    
     NSDate *page = [self pageForSection:indexPath.section];
     NSComparisonResult comparison = [self.gregorian compareDate:date toDate:page toUnitGranularity:NSCalendarUnitMonth];
     switch (comparison) {

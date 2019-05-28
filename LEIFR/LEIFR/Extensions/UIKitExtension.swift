@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
 	static let wetasphalt = UIColor(red: 51/255.0, green: 73/255.0, blue: 95/255.0, alpha: 1)
     class func eightBitColor(red: Float, green: Float, blue: Float, alpha: Float) -> UIColor {
-        return self.init(colorLiteralRed: red / 255, green: green / 255, blue: blue / 255, alpha: alpha)
+        return self.init(_colorLiteralRed: red / 255, green: green / 255, blue: blue / 255, alpha: alpha)
     }
 	
 	convenience init(hexString: String) {

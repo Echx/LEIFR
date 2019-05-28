@@ -379,7 +379,7 @@
 {
     switch (transition) {
         case FSCalendarTransitionMonthToWeek: {
-            [self.collectionView.visibleCells enumerateObjectsUsingBlock:^(UICollectionViewCell *obj, NSUInteger idx, BOOL * stop) {
+            [self.calendar.visibleCells enumerateObjectsUsingBlock:^(UICollectionViewCell *obj, NSUInteger idx, BOOL * stop) {
                 obj.contentView.layer.opacity = 1;
             }];
             self.collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -391,7 +391,7 @@
         }
         case FSCalendarTransitionWeekToMonth: {
             self.calendar.needsAdjustingViewFrame = YES;
-            [self.calendar.collectionView.visibleCells enumerateObjectsUsingBlock:^(UICollectionViewCell *obj, NSUInteger idx, BOOL * stop) {
+            [self.calendar.visibleCells enumerateObjectsUsingBlock:^(UICollectionViewCell *obj, NSUInteger idx, BOOL * stop) {
                 [CATransaction begin];
                 [CATransaction setDisableActions:YES];
                 obj.contentView.layer.opacity = 1;
@@ -421,7 +421,16 @@
         case FSCalendarTransitionMonthToWeek: {
 
             NSDate *focusedDate = ({
-                NSArray<NSDate *> *candidates = [NSSet setWithArray:@[self.calendar.selectedDate?:self.calendar.currentPage, self.calendar.today ?: self.calendar.currentPage, self.calendar.currentPage]].allObjects;
+                NSArray<NSDate *> *candidates = ({
+                    NSMutableArray *dates = self.calendar.selectedDates.reverseObjectEnumerator.allObjects.mutableCopy;
+                    if (self.calendar.today) {
+                        [dates addObject:self.calendar.today];
+                    }
+                    if (self.calendar.currentPage) {
+                        [dates addObject:self.calendar.currentPage];
+                    }
+                    dates.copy;
+                });
                 NSArray<NSDate *> *visibleCandidates = [candidates filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSDate *  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
                     NSIndexPath *indexPath = [self.calendar.calculator indexPathForDate:evaluatedObject scope:FSCalendarScopeMonth];
                     NSInteger currentSection = [self.calendar.calculator indexPathForDate:self.calendar.currentPage scope:FSCalendarScopeMonth].section;
@@ -450,14 +459,22 @@
             NSDate *currentPage = self.calendar.currentPage;
             
             NSDate *focusedDate = ({
-                NSDate *date =  [self.calendar.gregorian fs_lastDayOfWeek:currentPage];
-                NSArray<NSDate *> *candidates = [NSSet setWithArray:@[self.calendar.selectedDate?:date, self.calendar.today ?: date, date]].allObjects;
+                NSArray<NSDate *> *candidates = ({
+                    NSMutableArray *dates = self.calendar.selectedDates.reverseObjectEnumerator.allObjects.mutableCopy;
+                    if (self.calendar.today) {
+                        [dates addObject:self.calendar.today];
+                    }
+                    if (self.calendar.currentPage) {
+                        [dates addObject:[self.calendar.gregorian fs_lastDayOfWeek:currentPage]];
+                    }
+                    dates.copy;
+                });
                 NSArray<NSDate *> *visibleCandidates = [candidates filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSDate *  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
                     NSIndexPath *indexPath = [self.calendar.calculator indexPathForDate:evaluatedObject scope:FSCalendarScopeWeek];
                     NSInteger currentSection = [self.calendar.calculator indexPathForDate:self.calendar.currentPage scope:FSCalendarScopeWeek].section;
                     return indexPath.section == currentSection;
                 }]];
-                date = visibleCandidates.firstObject;
+                NSDate *date = visibleCandidates.firstObject;
                 date;
             });
             
@@ -514,11 +531,12 @@
             if (self.calendar.placeholderType == FSCalendarPlaceholderTypeFillSixRows) {
                 contentSize = self.cachedMonthSize;
             } else {
+                CGFloat padding = self.calendar.collectionViewLayout.sectionInsets.top + self.calendar.collectionViewLayout.sectionInsets.bottom;
                 contentSize = CGSizeMake(self.calendar.fs_width,
                                          self.calendar.preferredHeaderHeight+
                                          self.calendar.preferredWeekdayHeight+
                                          ([self.calendar.calculator numberOfRowsInMonth:page]*self.calendar.collectionViewLayout.estimatedItemSize.height)+
-                                         self.calendar.scopeHandle.fs_height);
+                                         self.calendar.scopeHandle.fs_height+padding);
             }
             break;
         }
@@ -533,10 +551,9 @@
 - (void)boundingRectWillChange:(CGRect)targetBounds animated:(BOOL)animated
 {
     self.calendar.scopeHandle.fs_bottom = CGRectGetMaxY(targetBounds);
-    self.calendar.bottomBorder.fs_top = CGRectGetMaxY(targetBounds);
     self.calendar.contentView.fs_height = CGRectGetHeight(targetBounds)-self.calendar.scopeHandle.fs_height;
     self.calendar.daysContainer.fs_height = CGRectGetHeight(targetBounds)-self.calendar.preferredHeaderHeight-self.calendar.preferredWeekdayHeight-self.calendar.scopeHandle.fs_height;
-    [self.calendar.delegate calendar:self.calendar boundingRectWillChange:targetBounds animated:YES];
+    [[self.calendar valueForKey:@"delegateProxy"] calendar:self.calendar boundingRectWillChange:targetBounds animated:animated];
 }
 
 - (void)performForwardTransition:(FSCalendarTransition)transition fromProgress:(CGFloat)progress
@@ -611,7 +628,7 @@
             [self.calendar didChangeValueForKey:@"scope"];
             
             [self performAlphaAnimationFrom:MAX(1-progress*1.1,0) to:1 duration:0.3 exception:self.pendingAttributes.focusedRowNumber completion:^{
-                [self.calendar.collectionView.visibleCells enumerateObjectsUsingBlock:^(__kindof UICollectionViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.calendar.visibleCells enumerateObjectsUsingBlock:^(__kindof UICollectionViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     obj.contentView.layer.opacity = 1;
                     [obj.contentView.layer removeAnimationForKey:@"opacity"];
                 }];
@@ -659,7 +676,7 @@
 
 - (void)performAlphaAnimationFrom:(CGFloat)fromAlpha to:(CGFloat)toAlpha duration:(CGFloat)duration exception:(NSInteger)exception completion:(void(^)())completion;
 {
-    [self.collectionView.visibleCells enumerateObjectsUsingBlock:^(FSCalendarCell *cell, NSUInteger idx, BOOL *stop) {
+    [self.calendar.visibleCells enumerateObjectsUsingBlock:^(FSCalendarCell *cell, NSUInteger idx, BOOL *stop) {
         if (CGRectContainsPoint(self.collectionView.bounds, cell.center)) {
             BOOL shouldPerformAlpha = NO;
             NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
@@ -686,7 +703,7 @@
 - (void)performAlphaAnimationWithProgress:(CGFloat)progress
 {
     CGFloat opacity = self.transition == FSCalendarTransitionMonthToWeek ? MAX((1-progress*1.1),0) : progress;
-    [self.collectionView.visibleCells enumerateObjectsUsingBlock:^(FSCalendarCell *cell, NSUInteger idx, BOOL *stop) {
+    [self.calendar.visibleCells enumerateObjectsUsingBlock:^(FSCalendarCell *cell, NSUInteger idx, BOOL *stop) {
         if (CGRectContainsPoint(self.collectionView.bounds, cell.center)) {
             BOOL shouldPerformAlpha = NO;
             NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];

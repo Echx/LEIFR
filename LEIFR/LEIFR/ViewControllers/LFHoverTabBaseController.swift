@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LFHoverTabBarDataSource {
-	func controlViewForTab() -> UIView?
+    func controlViewForTab() -> UIView?
 	func accessoryViewForTab() -> UIView?
 	func accessoryTextForTab() -> String?
 }
@@ -57,7 +57,7 @@ class LFHoverTabBaseController: LFViewController {
 	private var startY = CGFloat(0)
 	private var startConstant = CGFloat(0)
     
-	func tabViewDidDrag(gesture: UIPanGestureRecognizer) {
+    @objc func tabViewDidDrag(gesture: UIPanGestureRecognizer) {
 		
 		switch gesture.state {
 		case .began:
@@ -168,7 +168,7 @@ extension LFHoverTabBaseController: LFHoverTabDataSource {
 		return tabControllers[index].accessoryTextForTab()
 	}
 
-	func controlViewForTab(atIndex index: Int) -> UIView? {
+	@objc func controlViewForTab(atIndex index: Int) -> UIView? {
 		return tabControllers[index].controlViewForTab()
 	}
 	

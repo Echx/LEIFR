@@ -13,7 +13,7 @@ protocol LFHoverTabDelegate {
 }
 
 protocol LFHoverTabDataSource {
-	func controlViewForTab(atIndex index: Int) -> UIView?
+    func controlViewForTab(atIndex index: Int) -> UIView?
 	func accessoryViewForTab(atIndex index: Int) -> UIView?
 	func accessoryTextForTab(atIndex index: Int) -> String?
 }
