@@ -29,6 +29,9 @@ class LFHistoryMapboxViewController: LFHistoryViewController, MGLMapViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         preloadPoints()
+        
+        LFTrackTabViewController.defaultInstance = LFTrackTabViewController.controllerFromStoryboard() as! LFTrackTabViewController
+    
         configureMap()
     }
     

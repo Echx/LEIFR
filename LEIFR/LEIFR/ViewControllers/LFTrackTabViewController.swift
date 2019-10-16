@@ -10,7 +10,7 @@ import UIKit
 
 class LFTrackTabViewController: LFViewController {
 
-	static var defaultInstance: LFTrackTabViewController!;
+    static var defaultInstance: LFTrackTabViewController!;
 	
 	fileprivate var tabControllers = [LFViewController]()
 	fileprivate var currentTab = 1;
@@ -20,6 +20,7 @@ class LFTrackTabViewController: LFViewController {
 	@IBOutlet var tabButtonRight: UIButton!
 	fileprivate var tabButtons = [UIButton]()
 	
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		
